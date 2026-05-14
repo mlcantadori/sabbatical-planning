@@ -308,6 +308,8 @@ I want:
 
 China is one of the core pillars of the trip.
 
+Hard constraint — 30-day visa hard limit: I must exit China every 30 days. When building the route, treat Hong Kong, Taiwan, or South Korea as deliberate “reset” countries between China blocks so stays stay legal and logistics stay sane.
+
 I want:
 
 * ancient China
