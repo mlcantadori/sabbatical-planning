@@ -11,7 +11,7 @@ This should feel like:
 * immersive rather than rushed
 * awe-inspiring without becoming exhausting
 
-The trip may last up to ~14 months if needed for seasonal optimization.
+The trip may ideally last from 10 to ~14 months if needed for seasonal optimization.
 
 I want you to act as:
 
@@ -129,11 +129,8 @@ Potential places for this:
 
 * Taiwan
 * Japan countryside
-* Bali
-* Chiang Mai
 * beach towns
 * mountain towns
-* café neighborhoods
 * slower islands
 
 These periods are NOT inefficiencies.
@@ -158,7 +155,7 @@ Must include:
 * Hong Kong
 * Taiwan
 * Philippines
-* Uzbekistan
+* Uzbekistan or another country in Central Asia
 
 Open to:
 
@@ -321,7 +318,6 @@ I want:
 * “WTF China”
 * cyberpunk China
 * sacred China
-* food experiences
 
 But:
 I also know China can become mentally exhausting.
@@ -369,7 +365,6 @@ I want:
 * spirituality
 * intensity
 * animals
-* chaos
 * beauty
 * but not complete physical/emotional destruction
 
@@ -381,7 +376,7 @@ Ideal:
 ~150k BRL per person
 
 Maximum:
-~250k BRL per person
+~300k BRL per person
 
 We prefer:
 
