@@ -31,7 +31,7 @@ Your job is to optimize:
 * awe-per-month
 * sustainability over 14 months
 * contrast between chaos and stillness
-* realism with 30L backpacks
+* realism with 30L backpacks + carry ons
 * budget realism
 * recovery pacing
 * iconic moments WITHOUT burnout
@@ -185,10 +185,10 @@ So these are lower priority unless strategically useful.
 
 Macro chronology matters:
 
-* China and Annapurna (Nepal) are among the highest priorities; schedule them earlier in the overall trip when seasons, trekking windows, and routing allow — not pushed to the late months by default.
+* China is the highest priority; schedule it earlier in the overall trip.
 * Turkey and Central Asia belong toward the end of the sabbatical (later chapters), not at the front.
 
-Seasonality, diving windows, and the China visa hard limit still override naive geography; within those constraints, bias the plan toward this order.
+Seasonality, diving windows, and the China visa hard limit still override pure geography; within those constraints, bias the plan toward this order.
 
 ---
 
