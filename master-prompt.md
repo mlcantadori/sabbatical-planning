@@ -181,6 +181,17 @@ So these are lower priority unless strategically useful.
 
 ---
 
+# TRIP SEQUENCE PREFERENCES
+
+Macro chronology matters:
+
+* China and Annapurna (Nepal) are among the highest priorities; schedule them earlier in the overall trip when seasons, trekking windows, and routing allow — not pushed to the late months by default.
+* Turkey and Central Asia belong toward the end of the sabbatical (later chapters), not at the front.
+
+Seasonality, diving windows, and the China visa hard limit still override naive geography; within those constraints, bias the plan toward this order.
+
+---
+
 # IMPORTANT ADJUSTMENTS ALREADY DECIDED
 
 These are FINAL decisions already made:
