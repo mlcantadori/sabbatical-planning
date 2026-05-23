@@ -1,0 +1,110 @@
+// Coordinates for every chapter (`anchor`) and every place within.
+// Lat/lng pairs — used by the Leaflet map.
+// Anchors are city centroids; places are landmark coords where useful, else
+// city centroid.
+window.TRIP_GEO = {
+  // Chapter anchors (rough "you are here" point per chapter)
+  chapters: {
+    'turkey':       [41.0082, 28.9784], // Istanbul
+    'nepal':        [27.7172, 85.3240], // Kathmandu
+    'india':        [25.3176, 82.9739], // Varanasi
+    'japan-autumn': [35.6762, 139.6503], // Tokyo
+    'korea':        [37.5665, 126.9780], // Seoul
+    'taiwan':       [25.0330, 121.5654], // Taipei
+    'japan-winter': [36.6953, 137.8378], // Hakuba
+    'china-1':      [25.2736, 110.2900], // Guilin
+    'hk':           [22.3193, 114.1694], // Hong Kong
+    'china-2':      [31.2304, 121.4737], // Shanghai
+    'transit-1':    [1.3521, 103.8198],  // Singapore (transit)
+    'raja-ampat':   [-0.5897, 130.1053], // Wayag
+    'philippines':  [9.8500, 119.9500],  // Tubbataha
+    'bali':         [-8.7270, 115.5444], // Nusa Penida
+    'singapore':    [1.2834, 103.8607],  // Marina Bay
+    'bangkok':      [13.7460, 100.5018], // Bangkok
+    'koh-tao':      [10.0956, 99.8377],  // Koh Tao
+    'penang':       [5.4141, 100.3288],  // Georgetown
+    'kl':           [3.1579, 101.7117],  // KL
+    'borneo':       [5.7506, 117.8932],  // Sandakan
+    'komodo':       [-8.5872, 119.9020], // Komodo NP
+  },
+  // Place-level (drilldown) coords. Key is "chapterId/placeName".
+  places: {
+    // Turkey
+    'turkey/Istanbul':              [41.0082, 28.9784],
+    'turkey/Cappadocia':            [38.6431, 34.8284],
+    'turkey/Pamukkale + Ephesus':   [37.9233, 28.9663],
+    'turkey/Antalya':               [36.8969, 30.7133],
+    // Nepal
+    'nepal/Kathmandu':              [27.7172, 85.3240],
+    'nepal/Pokhara':                [28.2096, 83.9856],
+    'nepal/Annapurna Base Camp Trek': [28.5306, 83.8783],
+    'nepal/Pokhara recovery':       [28.2096, 83.9856],
+    // India
+    'india/Delhi':                  [28.6139, 77.2090],
+    'india/Varanasi':               [25.3176, 82.9739],
+    'india/Agra':                   [27.1751, 78.0421],
+    'india/Ranthambore':            [26.0173, 76.5026],
+    'india/Jaipur':                 [26.9124, 75.7873],
+    'india/Darjeeling':             [27.0410, 88.2663],
+    'india/Rishikesh':              [30.0869, 78.2676],
+    // Japan Autumn
+    'japan-autumn/Tokyo':           [35.6762, 139.6503],
+    'japan-autumn/Kyoto':           [35.0116, 135.7681],
+    'japan-autumn/Osaka':           [34.6937, 135.5023],
+    // Korea
+    'korea/Seoul':                  [37.5665, 126.9780],
+    'korea/Busan':                  [35.1796, 129.0756],
+    'korea/Gyeongju':               [35.8562, 129.2247],
+    'korea/Jeonju':                 [35.8242, 127.1480],
+    'korea/Seoul / Incheon':        [37.4563, 126.7052],
+    // Taiwan
+    'taiwan/Taipei':                [25.0330, 121.5654],
+    'taiwan/Hualien + Taroko Gorge':[24.1908, 121.6202],
+    // Japan Winter
+    'japan-winter/Osaka':           [34.6937, 135.5023],
+    'japan-winter/Kanazawa':        [36.5613, 136.6562],
+    'japan-winter/Hakuba Valley':   [36.6953, 137.8378],
+    'japan-winter/Matsumoto':       [36.2380, 137.9720],
+    // China 1
+    'china-1/Guilin / Yangshuo':    [24.7783, 110.4933],
+    'china-1/Zhangjiajie + Tianmen':[29.1170, 110.4790],
+    'china-1/Chongqing':            [29.4316, 106.9123],
+    'china-1/Chengdu':              [30.5728, 104.0668],
+    'china-1/Xi\u2019an + Huashan': [34.3416, 108.9398],
+    'china-1/Beijing':              [39.9042, 116.4074],
+    // HK
+    'hk/Hong Kong':                 [22.3193, 114.1694],
+    // China 2
+    'china-2/Shanghai':             [31.2304, 121.4737],
+    'china-2/Shenzhen':             [22.5431, 114.0579],
+    // Transit
+    'transit-1/Transit':            [1.3521, 103.8198],
+    // Raja Ampat
+    'raja-ampat/Liveaboard':        [-0.5897, 130.1053],
+    // Philippines
+    'philippines/Manila':           [14.5995, 120.9842],
+    'philippines/Tubbataha Reef':   [8.8500, 119.9500],
+    'philippines/El Nido':          [11.1949, 119.4013],
+    // Bali
+    'bali/Bali':                    [-8.6500, 115.2167],
+    'bali/Nusa Penida':             [-8.7270, 115.5444],
+    // Singapore
+    'singapore/Singapore':          [1.2834, 103.8607],
+    // Bangkok
+    'bangkok/Bangkok':              [13.7460, 100.5018],
+    // Koh Tao
+    'koh-tao/Koh Tao':              [10.0956, 99.8377],
+    'koh-tao/Koh Samui':            [9.5018, 100.0140],
+    // Penang
+    'penang/Penang':                [5.4141, 100.3288],
+    // KL
+    'kl/Kuala Lumpur':              [3.1579, 101.7117],
+    // Borneo
+    'borneo/Sepilok':               [5.8754, 117.9472],
+    'borneo/Kinabatangan River':    [5.4500, 118.0500],
+    'borneo/Kota Kinabalu':         [5.9804, 116.0735],
+    // Komodo
+    'komodo/Labuan Bajo / Flores':  [-8.4889, 119.8825],
+    'komodo/Komodo National Park':  [-8.5872, 119.4549],
+  },
+};

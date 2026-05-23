@@ -11,7 +11,7 @@ This should feel like:
 * immersive rather than rushed
 * awe-inspiring without becoming exhausting
 
-The trip may ideally last from 10 to ~14 months if needed for seasonal optimization.
+The trip ideally lasts ~9–10 months.
 
 I want you to act as:
 
@@ -19,8 +19,8 @@ I want you to act as:
 * logistics optimizer
 * seasonal/weather expert
 * emotional pacing designer
-* realistic devil’s advocate
-* “life architecture” advisor for a sabbatical year
+* realistic devil's advocate
+* "life architecture" advisor for a sabbatical year
 
 Your job is NOT just to maximize destinations.
 Your job is to optimize:
@@ -29,11 +29,12 @@ Your job is to optimize:
 * energy management
 * seasonality
 * awe-per-month
-* sustainability over 14 months
+* sustainability across the trip
 * contrast between chaos and stillness
 * realism with 30L backpacks + carry ons
 * budget realism
 * recovery pacing
+* geographic efficiency (no regional backtracking — this has real budget and energy costs)
 * iconic moments WITHOUT burnout
 
 ---
@@ -48,13 +49,13 @@ Examples:
 
 * Great Wall
 * Taj Mahal
-* Tokyo
-* Angkor-tier landmarks
 * Varanasi
-* Sakura / Japanese autumn
 * Cappadocia balloons
+* Annapurna Base Camp
+* Kanazawa in winter snow
+* Komodo dragons
 
-## 2. “WTF places”
+## 2. "WTF places"
 
 Places that feel unreal / futuristic / psychologically memorable:
 
@@ -71,10 +72,10 @@ Places that feel unreal / futuristic / psychologically memorable:
 
 Examples:
 
-* Avatar Mountains
+* Avatar Mountains (Zhangjiajie)
 * Annapurna Base Camp
-* Taiwan east coast
-* karst mountains
+* Taiwan east coast (Taroko Gorge)
+* karst mountains (Guilin)
 * dramatic mountain passes
 * volcanos
 * giant gorges
@@ -85,12 +86,13 @@ Examples:
 
 Examples:
 
-* tiger safaris
-* orangutans
-* manta rays
-* whale sharks
+* tiger safaris (Ranthambore)
+* orangutans (Borneo)
+* manta rays (Raja Ampat, Nusa Penida, Komodo)
+* whale sharks (Tubbataha, Raja Ampat)
 * Komodo dragons
-* monkeys
+* proboscis monkeys (Kinabatangan River)
+* pygmy elephants (Borneo)
 * unusual marine life
 
 ## 5. Scuba diving
@@ -101,15 +103,22 @@ Include:
 * liveaboards when worth it
 * manta rays
 * world-class reefs
-* wreck diving
 * excellent visibility
 * strong seasonality optimization
+
+Confirmed diving priorities:
+* Raja Ampat (liveaboard, March — mid-season, optimal conditions)
+* Tubbataha (liveaboard, March — opening of Mar–Jun operating window, UNESCO)
+* Nusa Penida / Crystal Bay (reef mantas, year-round)
+* Komodo (day trips from Labuan Bajo, late May–June — peak dry season; liveaboard not needed)
+* Koh Tao (fun dives, April — Gulf side dry season)
+* Sipadan (if permits booked 6+ months ahead — 120 permits/day maximum)
 
 ## 6. Temporary-life chapters
 
 This is CRITICAL and missing from many AI itineraries.
 
-I do NOT want 14 months of pure stimulation and movement.
+I do NOT want nonstop stimulation and movement.
 
 I need some periods that feel like:
 
@@ -120,18 +129,19 @@ I need some periods that feel like:
 * slowing down
 * belonging
 
-I want you to intentionally design:
+Design 4–6 shorter slow chapters of 5–10 ACTIVE slow days each.
+Do NOT count activity days (snowboarding, trekking) toward the slow-day total.
 
-* 2–5 slower “recovery” chapters
-  where we stay longer, decompress, build routine, and emotionally absorb the trip.
+Confirmed temporary-life chapters:
+* Tokyo (Japan Autumn)
+* Kyoto (Japan Autumn — temple routine)
+* Hakuba (Japan Winter — snowboard routine, onsen rhythm; activity days don't count)
+* Taipei (Taiwan)
+* Penang (Malaysia — best café-culture slow chapter in SEA)
+* Jeonju (South Korea — hanok village, Korean food, quiet)
 
-Potential places for this:
-
-* Taiwan
-* Japan countryside
-* beach towns
-* mountain towns
-* slower islands
+Bali is too touristic to serve as a genuine temporary-life chapter.
+Use Nusa Penida, Jeonju, Kanazawa, Penang, or similar less-curated places instead.
 
 These periods are NOT inefficiencies.
 They are strategic emotional pacing.
@@ -145,173 +155,168 @@ Must include:
 * China
 * India
 * Thailand
-* Indonesia
+* Indonesia (Bali briefly, Nusa Penida, Raja Ampat, Komodo)
 * Japan
 * South Korea
 * Nepal
 * Turkey
-* Malaysia
+* Malaysia (Penang + KL + Borneo/Sabah)
 * Singapore
-* Hong Kong
+* Hong Kong (visa reset)
 * Taiwan
 * Philippines
-* Uzbekistan or another country in Central Asia
 
-Open to:
+Removed from the trip:
 
-* additional countries ONLY if they truly improve the route
+* Uzbekistan — removed for now (may revisit in a future trip)
+* Bhutan — too expensive (SDF fee), poor budget efficiency
+* Kyrgyzstan — too logistically intense, too much "expedition energy"
+* Harbin — incompatible with 30L minimalist strategy (-30°C gear overhead)
+* Aral Sea — too much transport effort for payoff
 
-Do NOT include:
+Already visited (lower priority):
 
-* regions with wars/conflict
-* unnecessarily dangerous areas
-
-Already visited:
-
-* Chiang Mai
-* Chiang Rai
-* Laos
-* Vietnam
-* Cambodia
-* New Delhi
-* Jaisalmer
-* Udaipur
-
-So these are lower priority unless strategically useful.
+* Chiang Mai, Chiang Rai
+* Laos, Vietnam, Cambodia
+* New Delhi, Jaisalmer, Udaipur
 
 ---
 
-# TRIP SEQUENCE PREFERENCES
+# TRIP SEQUENCE — CONFIRMED GEOGRAPHIC ARC
 
-Macro chronology matters:
+The confirmed macro sequence (do not reorder without strong seasonal justification):
 
-* China is the highest priority; schedule it earlier in the overall trip.
-* Turkey and Central Asia belong toward the end of the sabbatical (later chapters), not at the front.
+1. **Turkey** (September) — best month for Turkey; balloons, Istanbul, coast
+2. **Nepal** (October) — post-monsoon peak trekking season, zero monsoon risk
+3. **India** (October–November, 22 days) — Ranthambore arrive Nov 7+, all zones confirmed open
+4. **Japan Autumn** (late November, 16 days) — Kyoto peak koyo; Nikko as day trip from Tokyo
+5. **South Korea** (December, 17 days) — Seoul + Busan + Gyeongju + Jeonju
+6. **Taiwan** (December–January, 9 days) — NYE Dec 31 in Taipei (Taipei 101 fireworks)
+7. **Japan Winter** (January, 18 days) — Kanazawa snow + Hakuba snowboarding
+8. **China Block 1** (January–February, 25 days) — south→north: Guilin, Zhangjiajie, Chongqing, Chengdu, Xi'an, Beijing
+9. **Hong Kong reset** (3 days between China blocks)
+10. **China Block 2** (February–March, 15 days) — Shanghai (10d) + Shenzhen (4d)
+11. **Raja Ampat** (March, liveaboard) — fly directly from China; mid-season, optimal conditions
+12. **Philippines / Tubbataha** (March–April, liveaboard) — in operating window
+13. **Bali** (2 days) + **Nusa Penida** (5 days) — after Philippines, before Singapore
+14. **Singapore** → **Bangkok** → **Thailand Koh Tao** (April) — Gulf side, dry season
+15. **Penang** → **KL** → **Borneo/Sabah** (May) — orangutans, wildlife
+16. **Komodo** (late May–June, day trips from Labuan Bajo) — peak dry season, dragons, diving
 
-Seasonality, diving windows, and the China visa hard limit still override pure geography; within those constraints, bias the plan toward this order.
-
----
-
-# IMPORTANT ADJUSTMENTS ALREADY DECIDED
-
-These are FINAL decisions already made:
-
-* Remove Bhutan
-
-  * too expensive for value
-  * SDF destroys budget efficiency
-
-* Remove Kyrgyzstan
-
-  * too logistically intense for this trip structure
-  * too much “expedition energy”
-
-* Remove Harbin
-
-  * incompatible with 30L minimalist strategy
-  * -30°C logistics create too much overhead
-
-* Remove Aral Sea
-
-  * too much transport effort for payoff
-
-* Keep Shenzhen
-
-  * but position it intentionally as a “future-tech contrast”
-  * not as a soulful cultural city
-
-* Add Guilin / Yangshuo
-
-* Add Taiwan east coast:
-
-  * Hualien
-  * Taroko Gorge
-  * Taitung
-
-* Add Huashan Plank Walk
-
-* Add Tianmen Mountain / Stairway to Heaven
-
-* Add snowboarding in Japan
+Geographic efficiency is a HARD CONSTRAINT.
+Do not design a route with regional backtracking (e.g., NE Asia → South Asia → NE Asia → South Asia).
+Every hop should move the route forward along the arc.
 
 ---
 
-# VERY IMPORTANT: JAPAN
+# IMPORTANT ADJUSTMENTS — ALL FINAL DECISIONS
 
-Japan has become one of the emotional pillars of the trip.
+## Removed
 
-I need you to think deeply about whether Japan should:
+* Uzbekistan — removed for now
+* Bhutan — SDF fee makes it poor value
+* Kyrgyzstan — too expedition-heavy
+* Harbin — winter gear incompatible with 30L strategy
+* Aral Sea — transport effort not worth payoff
 
-* happen once
-* or be split into two chapters
+## Added / Confirmed
 
-Potential split:
+* Nusa Penida (Indonesia) — raw, arid, dramatic cliffs, reef mantas at Crystal Bay. Replaces Bali as decompression.
+* Jeonju (South Korea) — best Korean food city, hanok village, quiet. Decompression chapter within Korea.
+* Kanazawa (Japan) — confirmed as Japan Winter anchor for New Year (instead of Kyoto). Snow, geisha district, Kenroku-en under snow lanterns.
+* Guilin / Yangshuo — confirmed
+* Taiwan east coast: Hualien, Taroko Gorge — confirmed
+* Huashan Plank Walk — confirmed
+* Tianmen Mountain / Stairway to Heaven — confirmed
+* Snowboarding in Hakuba — confirmed and non-negotiable
+* Shanghai — 10 days minimum (priority city alongside Beijing, Chongqing, Shenzhen)
+* Guangzhou day trip from Shenzhen — confirmed
 
-1. Winter Japan (powder snowboarding)
-2. Autumn Japan (koyo foliage)
+## Japan — CONFIRMED FINAL STRUCTURE
 
-Analyze:
+Two chapters. 34 days total combined. Zero city repeats between chapters.
 
-* emotional value
-* logistics
-* budget impact
-* pacing impact
-* whether this is truly worth it
+**Japan Autumn (16 days):**
+* Tokyo (6d, includes Nikko as day trip) → Kyoto (7d, peak koyo) → Osaka (3d)
+* Arrive late November for Kyoto peak. Night light-up events at Eikan-do and Tofuku-ji.
+* Nikko is a day trip from Tokyo — no overnight needed (2h each way by train).
 
-Snowboarding is NON-NEGOTIABLE.
+**Japan Winter (18 days):**
+* Osaka (1d transit) → Kanazawa (3d, snow) → Hakuba (11d, snowboarding) → Matsumoto (2d, departure) → fly from Nagoya
+* Do NOT repeat Kyoto or Tokyo in the winter chapter.
+* New Year is in Taipei (Taiwan 101 fireworks, Dec 31). Kanazawa is a pure snow chapter in early January — intimate, beautiful, no NYE crowds.
 
-But:
+**Hakuba confirmed over Niseko:**
+* Hakuba has authentic village feel, intact ryokan culture, equivalent powder.
+* Niseko is over-commercialized with heavy international crowd that erodes the Japan-ness.
 
-* we are NOT bringing snowboard gear
-* we are NOT carrying winter clothing for 14 months
+**Snowboard logistics:**
+* Buy light thermal base layers in Seoul before Japan.
+* Rent ALL snowboard equipment, jacket, pants, boots, helmet locally in Hakuba.
 
-We will:
+## China — CONFIRMED STRUCTURE
 
-* buy lightweight thermal layers before Japan
-* rent ALL snowboard equipment + outerwear locally
+Two blocks. 30-day visa hard limit per entry. HK reset between blocks (4 days).
 
-I want you to optimize this system realistically.
+**China Block 1 (25 days) — south to north in winter:**
+Guilin/Yangshuo → Zhangjiajie/Tianmen → Chongqing → Chengdu → Xi'an+Huashan → Beijing
+Exit: fly Beijing → HK
 
-Also:
-Please critically evaluate Niseko specifically.
-I suspect Hakuba or other areas may fit us emotionally better than the hyper-commercial Niseko atmosphere.
+**China Block 2 (15 days) — spring arriving:**
+Shanghai (10 days) → Shenzhen (4 days) + Guangzhou day trip → exit via HK → fly to Sorong (Raja Ampat)
+Shanghai needs 10 full days: French Concession, Bund, Pudong, Suzhou day trip.
+Fly directly from China to Raja Ampat — do NOT route via Bali first (Bali comes after Philippines).
+
+**Priority cities (need most time):** Shanghai, Beijing, Chongqing, Shenzhen
+
+## Nepal — CONFIRMED TIMING
+
+* Nepal in October — post-monsoon, gold standard trekking season.
+* Do NOT start Nepal in September — monsoon still clearing, risk of poor conditions.
+* Annapurna Base Camp trek: 13 days on trail, teahouse circuit, no camping needed.
+* Arrive Kathmandu by Oct 5 at latest to allow full October for trekking.
+
+## India — CONFIRMED STRUCTURE
+
+* Varanasi (5d) → Agra/Taj (2d) → Ranthambore tiger safari (4d) → Jaipur (3d) → Darjeeling (6d) → Rishikesh (4d) → Delhi (1d)
+* Ranthambore: arrive November 5 or later (NOT opening day Nov 1). All zones confirmed open by Nov 5, tigers highly active post-monsoon.
+* Dev Deepawali (Varanasi, November 5–6): NOT prioritized. Conflicts with Japan Autumn chapter. Varanasi is sacred and overwhelming on any day of the year.
+
+## Bali — CONFIRMED APPROACH
+
+* Bali maximum 2 days. Brief landing only (Canggu/Seminyak: food, beach fix).
+* Do NOT use Bali as a decompression or slow-life chapter — too touristic.
+* Nusa Penida (5 days, fast boat from Bali) is the actual slow/raw Indonesia chapter.
+
+## Thailand Beaches — CONFIRMED
+
+* Use Gulf of Thailand coast (Koh Tao, Koh Samui area), NOT Andaman.
+* Gulf side is DRY in May (opposite of Andaman which gets monsoon May–October).
+* Koh Tao also has excellent diving — bonus.
 
 ---
 
 # VERY IMPORTANT: DIVING & SEASONS
 
-This is CRITICAL.
-
 Do NOT optimize geographically if it breaks seasonality.
 
-The itinerary MUST prioritize:
+Confirmed seasonal constraints:
 
-* best diving windows
-* best weather windows
-* avoiding monsoon disasters
-* avoiding extreme heat when possible
-
-Important constraints:
-
-* Raja Ampat should be during ideal season
-
-  * NOT Jul/Aug rough season.
-
-* Komodo should align with dry season.
-
-* Tubbataha MUST align with operating window.
-
-* Annapurna must align with ideal trekking windows.
-
-* Japan snowboarding must align with peak powder.
-
-* Sakura / autumn foliage should be intentionally analyzed if included.
+* **Raja Ampat:** ideal October–April. Do not schedule July–August (rough season).
+* **Tubbataha:** operates March–June ONLY. UNESCO, remote Sulu Sea. Liveaboard required.
+* **Komodo:** June = peak dry season, best visibility. April–August acceptable.
+* **Annapurna:** October (post-monsoon peak) or March–May (pre-monsoon). October is best.
+* **Hakuba powder:** January–February peak. December possible but lighter.
+* **Kyoto koyo:** late November peak. Mid-November to early December.
+* **Ranthambore tigers:** November–March (cool, active at waterholes). Arrive Nov 5+.
+* **Nepal monsoon:** ends mid-September. Do not start trekking before late September. October is safe.
+* **Thailand Gulf coast:** dry season December–April. May is end of dry, still fine for Koh Tao.
+* **Turkey:** September is the best month (balloons most reliable, weather perfect, not overcrowded).
 
 I want:
 
-* a seasonal heat map
-* explicit climate reasoning
-* tradeoff analysis
+* explicit climate reasoning for each chapter
+* tradeoff analysis when seasons conflict
 
 ---
 
@@ -319,7 +324,8 @@ I want:
 
 China is one of the core pillars of the trip.
 
-Hard constraint — 30-day visa hard limit: I must exit China every 30 days. When building the route, treat Hong Kong, Taiwan, or South Korea as deliberate “reset” countries between China blocks so stays stay legal and logistics stay sane.
+Hard constraint — 30-day visa hard limit: must exit China every 30 days.
+Use Hong Kong as the reset country between blocks. HK is the cleanest gateway.
 
 I want:
 
@@ -328,32 +334,22 @@ I want:
 * absurd megacity density
 * intense landscapes
 * unusual engineering
-* “WTF China”
+* "WTF China"
 * cyberpunk China
 * sacred China
 
-But:
-I also know China can become mentally exhausting.
+Must include (all confirmed):
 
-Please intentionally evaluate:
+* Beijing (Great Wall, Forbidden City, hutongs)
+* Xi'an + Huashan Plank Walk
+* Chengdu (pandas)
+* Chongqing (cyberpunk megacity)
+* Zhangjiajie + Tianmen Mountain / Stairway to Heaven
+* Guilin / Yangshuo
+* Shanghai (10 days minimum — French Concession, Bund, Pudong, Suzhou day trip)
+* Shenzhen (future-tech contrast — not a soulful cultural city) + Guangzhou day trip
 
-* pacing
-* stimulation overload
-* recovery needs
-* whether the China blocks are too long
-* where decompression should happen afterward
-
-Include:
-
-* Chongqing
-* Zhangjiajie
-* Tianmen
-* Xi’an
-* Great Wall
-* Guilin/Yangshuo
-* Shenzhen
-* pandas
-* Huashan
+China is mentally exhausting. Design decompression immediately after each China block.
 
 ---
 
@@ -361,25 +357,25 @@ Include:
 
 I have NOT been to:
 
-* Taj Mahal
-* Varanasi
+* Taj Mahal — must include
+* Varanasi — must include
 
-These should be included.
+I HAVE done:
 
-I HAVE done Holi already.
+* Holi (done already)
+* New Delhi (visited, lower priority)
+* Jaisalmer, Udaipur (visited, lower priority)
 
-Critically evaluate:
+Dev Deepawali (Varanasi, November): not prioritized. Too much of a scheduling constraint vs Japan Autumn. Varanasi is transformative any time.
 
-* whether Dev Deepawali is truly worth the intensity
-* whether it improves or harms the long-term sabbatical pacing
+Must include:
 
-I want:
-
-* spirituality
-* intensity
-* animals
-* beauty
-* but not complete physical/emotional destruction
+* Varanasi (ghats, Ganga Aarti, cremation fires)
+* Agra (Taj Mahal at sunrise)
+* Ranthambore (tiger safari — arrive Nov 5+)
+* Darjeeling (tea, mountains, Toy Train, cool air)
+* Rishikesh (Ganges, yoga, spirituality)
+* Jaipur (not previously visited)
 
 ---
 
@@ -400,22 +396,27 @@ We prefer:
 
 Avoid:
 
-* “perrengue tourism”
+* "perrengue tourism"
 * unnecessary exhaustion
 * moving every 2 days
 * insane logistics just for checklist completion
 
-But:
-strategic splurges are welcome when truly worth it.
+Strategic splurges are welcome when truly worth it:
 
-Examples:
+* Raja Ampat liveaboard (mandatory)
+* Tubbataha liveaboard (mandatory)
+* Hakuba snowboarding
+* Cappadocia cave hotel + balloon flight
+* One ryokan night in Japan
+* Komodo liveaboard or good day-trip operator
+* Sipadan if permits secured
 
-* diving liveaboards
-* powder snow
-* unique ryokan
-* extraordinary train
-* unforgettable wildlife
-* once-in-a-lifetime experience
+**Key bookings to make before leaving Brazil:**
+* Raja Ampat liveaboard — book 6–12 months ahead
+* Tubbataha liveaboard — book 6–12 months ahead
+* Sipadan permits — book by November 2026
+* Cappadocia balloon — book 2–3 months ahead
+* Ranthambore jeep safari — book 3–6 months ahead for November
 
 ---
 
@@ -431,17 +432,18 @@ I want you to:
 4. identify over-optimization
 5. identify fatigue risks
 6. identify redundant experiences
-7. identify missing “stillness”
+7. identify missing "stillness"
 8. identify where the trip lacks human belonging
 9. identify where we may psychologically crash
 10. identify where we should intentionally slow down
+11. identify any geographic backtracking that inflates cost and energy
 
 Then:
 propose the BEST POSSIBLE version of this sabbatical.
 
 I want:
 
-* devil’s advocate analysis
+* devil's advocate analysis
 * strategic tradeoffs
 * emotional pacing analysis
 * climate logic
@@ -449,6 +451,7 @@ I want:
 * budget realism
 * recovery logic
 * memory density optimization
+* geographic efficiency analysis
 
 Do NOT behave like a generic itinerary generator.
 Behave like an elite sabbatical architect.
