@@ -1,604 +1,631 @@
 # Asia Sabbatical — Itinerary 2026–2027
 
-**Duration:** September 15, 2026 – June 4, 2027 (~8.6 months)
+**Duration:** August 24, 2026 – June 8, 2027 (288 days / ~9.5 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
-**Arc:** Turkey → South Asia → Northeast Asia → Southeast Asia & Indonesia → home
+**Arc:** Caucasus → Turkey → South Asia → Northeast Asia → China (metropolises) → Philippines → Indonesia → SE Asia → China (landscapes) → home
 
 ---
 
 ## Overview
 
-| Chapter | Destination | Dates | Days |
+| # | Destination | Dates | Days |
 |---|---|---|---|
-| 1 | Turkey | Sep 15 – Oct 5 | 20 |
-| 2 | Nepal | Oct 5 – Oct 31 | 26 |
-| 3 | India | Oct 31 – Nov 22 | 22 |
-| 4 | Japan — Autumn | Nov 22 – Dec 8 | 16 |
-| 5 | South Korea | Dec 8 – Dec 25 | 17 |
-| 6 | Taiwan | Dec 25 – Jan 3 | 9 |
-| 7 | Japan — Winter | Jan 3 – Jan 21 | 18 |
-| 8 | China Block 1 | Jan 21 – Feb 15 | 25 |
-| — | Hong Kong reset | Feb 15 – Feb 18 | 3 |
-| 9 | China Block 2 | Feb 18 – Mar 5 | 15 |
-| — | Transit to Sorong | Mar 5 – Mar 7 | 2 |
-| 10 | Raja Ampat | Mar 7 – Mar 18 | 11 |
-| 11 | Philippines | Mar 18 – Apr 1 | 14 |
-| 12 | Bali + Nusa Penida | Apr 1 – Apr 8 | 7 |
-| 13 | Singapore | Apr 8 – Apr 15 | 7 |
-| 14 | Bangkok | Apr 15 – Apr 22 | 7 |
-| 15 | Thailand — Koh Tao | Apr 22 – Apr 30 | 8 |
-| 16 | Penang | Apr 30 – May 10 | 10 |
-| 17 | Kuala Lumpur | May 10 – May 13 | 3 |
-| 18 | Borneo / Sabah | May 13 – May 23 | 10 |
-| 19 | Komodo | May 23 – Jun 4 | 12 |
+| 0 | Georgia | Aug 24 – Sep 5 | 12 |
+| 1 | Turkey | Sep 5 – Sep 30 | 25 |
+| 2 | Nepal (reduced) | Oct 1 – Oct 21 | 20 |
+| 3 | India (max 20d) | Oct 21 – Nov 10 | 20 |
+| 4 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
+| 5 | South Korea | Nov 30 – Dec 24 | 24 |
+| 6 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
+| 7 | Japan — Winter (Hakuba) | Jan 2 – Jan 12 | 10 |
+| 8 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
+| — | Hong Kong reset | Feb 11 – Feb 14 | 3 |
+| 9 | Philippines (warm-up diving) | Feb 14 – Mar 9 | 23 |
+| — | Transit → Sorong | Mar 9 – Mar 11 | 2 |
+| 10 | Raja Ampat liveaboard | Mar 11 – Mar 20 | 10 |
+| — | Transit Sorong → Bali | Mar 20 – Mar 22 | 2 |
+| 11 | Nusa Penida | Mar 22 – Mar 26 | 4 |
+| 12 | Komodo | Mar 26 – Apr 2 | 7 |
+| 13 | Bali + Volcano | Apr 2 – Apr 8 | 6 |
+| 14 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
+| 15 | Singapore | Apr 18 – Apr 25 | 7 |
+| 16 | Kuala Lumpur | Apr 25 – Apr 30 | 5 |
+| 17 | Penang | Apr 30 – May 5 | 5 |
+| 18 | Koh Tao + Koh Samui | May 5 – May 12 | 7 |
+| 19 | Bangkok | May 12 – May 19 | 7 |
+| 20 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
 
-**Japan total:** 34 days (16 autumn + 18 winter) — zero city repeats between chapters ✓
-**China total:** 40 days in-country (25 Block 1 + 15 Block 2) — China > Japan ✓
+**Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
+**China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
+**Indonesia visa:** Mar 9 entry → Apr 8 exit = 30 days ✓
+**NYE:** Taiwan Dec 31 ✓
+**Raja Ampat:** Mar 11–20 ✓
+
+---
+
+## Chapter 0 — GEORGIA
+### Aug 24 – Sep 5 · 12 days
+*Theme: Harvest season, Caucasus mountains, unspoiled culture*
+
+Late August Georgia: the vendima begins in Kakheti, Kazbegi is clear and cool, Tbilisi buzzes with end-of-summer energy. Almost no Western tourists. Direct flight to Istanbul at end.
+
+**Tbilisi — 4 days**
+- Old Town: carved wooden balconied houses, sulfur baths in Abanotubani district
+- Narikala Fortress + city walls overlooking the old city
+- Rustaveli Avenue galleries + Fabrika creative hub
+- Natural wine bars in Marjanishvili — Georgia invented wine 8,000 years ago
+- Khinkali dumplings + mtsvadi (grilled pork skewers)
+
+**Kazbegi — 4 days**
+- Gergeti Trinity Church (2,170m) — the defining Caucasus image, hike 3h or take 4x4
+- Truso Valley hike — mineral springs, ruined fortress, no crowds
+- Military Highway from Tbilisi — dramatic gorge drive through the Greater Caucasus
+- Mountain stillness, crisp air, zero international mass tourism
+
+**Kakheti — 4 days**
+- Wine capital of Georgia — harvest (vendima) begins late August
+- Sighnaghi — walled hilltop town overlooking the Alazani Valley
+- Bodbe Monastery — pilgrimage site, serene garden
+- Kvevri amber wine tasting direct from small producers
+- **Fly Tbilisi → Istanbul direct**
 
 ---
 
 ## Chapter 1 — TURKEY
-### Sep 15 – Oct 5 · 20 days
-*Theme: Ancient crossroads, surreal landscapes, warm Mediterranean end-of-summer*
+### Sep 5 – Sep 30 · 25 days
+*Theme: Ancient crossroads, Aegean coast, surreal landscapes*
 
-September is the single best month to visit Turkey. Cappadocia balloon flights have optimal morning conditions (cool, stable air). Istanbul is at peak warmth without summer crowds. The coast is 30°C and uncrowded. Starting here is both a seasonal and emotional choice — arriving into a familiar-feeling culture before the deeper disorientation of Asia.
+September is the single best month to visit Turkey. Cappadocia balloon flights at optimal conditions (cool stable morning air). Alacatı offers the best of the Aegean coast — wine, kite, cobblestone. Istanbul before the autumn shift.
 
-**Istanbul — 10 days**
+**Istanbul — 11 days**
 - Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market
-- Bosphorus ferry (the most beautiful commute on Earth)
+- Bosphorus ferry — the most beautiful commute on Earth
 - Hammam at Cağaloğlu Baths
-- Beyoğlu and Karaköy neighborhoods: modern restaurants, rooftop bars, contemporary art
+- Beyoğlu rooftop bars, Karaköy galleries
 - Meyhane dinners with raki and meze
 - Day trip to Princes' Islands by ferry
 
-**Cappadocia — 5 days**
-- Hot air balloon at sunrise — non-negotiable, book in advance
-- Göreme Open Air Museum
-- Underground cities (Derinkuyu or Kaymakli)
-- Rose Valley and Love Valley hikes
-- Cave hotel stay
+**Alacatı — 7 days**
+- Restored stone-house village on the Çeşme peninsula, Aegean coast
+- Windmills above the village — the iconic Alacatı image
+- Natural wine bars + boutique winery day trips in surrounding hills
+- Kite surfing + windsurfing (consistently ranked top spot in Europe)
+- Cobblestone bazaar alley — artisan shops, slow mornings
+- Çeşme beach + optional ferry to Chios
 
 **Pamukkale + Ephesus — 3 days**
-- White calcium travertine terraces
-- Hierapolis ruins
-- Ephesus ancient city (one of the best-preserved Roman cities anywhere)
+- White calcium travertine terraces — walking barefoot into warm pools
+- Hierapolis ruins on the plateau
+- Ephesus ancient city — one of the best-preserved Roman cities anywhere
 
-**Antalya coast — 2 days**
-- Mediterranean calm, old harbor, brief decompression before Asia begins
+**Cappadocia — 4 days**
+- Hot air balloon at sunrise — **book by Jul 2026** (Royal Balloon / Butterfly Balloons)
+- Göreme Open Air Museum
+- Underground cities: Derinkuyu, Kaymakli
+- Rose Valley + Love Valley hikes
+- Cave hotel stay in tuff stone
 
-**Fly Istanbul → Kathmandu Oct 5**
+**Fly Cappadocia → Kathmandu Oct 1**
 
 ---
 
 ## Chapter 2 — NEPAL
-### Oct 5 – Oct 31 · 26 days
+### Oct 1 – Oct 21 · 20 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 
-October is the gold standard trekking month in Nepal. The monsoon has fully cleared. Skies are crystalline. Himalayan views are unobstructed 360°. This is peak season for good reason.
+October is the gold standard trekking month. Monsoon has fully cleared. Skies crystalline. Himalayan views unobstructed 360°.
 
-**Kathmandu — 5 days (Oct 5–10)**
-- Boudhanath Stupa (one of the largest stupas in the world)
-- Pashupatinath Temple (sacred Hindu cremation ghats on the Bagmati River)
+**Kathmandu — 3 days (Oct 1–4)**
+- Boudhanath Stupa — one of the largest stupas on Earth
+- Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati
 - Swayambhunath (Monkey Temple)
-- Durbar Square
-- Altitude acclimatization, gear check, rest
+- Altitude acclimatization, gear check, ACAP + TIMS permits
 
-**Pokhara — 2 days (Oct 10–12)**
+**Pokhara — 2 days (Oct 4–6)**
 - Phewa Lake calm before the trek
-- Views of Annapurna range at dawn
+- Annapurna range at dawn from the lakeside
 
-**Annapurna Base Camp Trek — 13 days (Oct 12–25)**
-Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchhre Base Camp → Annapurna Base Camp (4,130m)
+**Annapurna Base Camp Trek — 13 days (Oct 6–19)**
+Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchhre Base Camp → ABC (4,130m)
 - Teahouse circuit — no camping gear needed
-- Rhododendron forests, glacial moraines, high alpine terrain
-- ABC sits in a natural amphitheater surrounded by Annapurna peaks on all sides
-- Return via same or alternate route through Jhinu hot springs
+- Rhododendron forests, glacial moraines, 360° Annapurna amphitheater at the top
+- Return via Jhinu hot springs
 
-**Pokhara recovery — 4 days (Oct 25–29)**
+**Pokhara recovery — 2 days (Oct 19–21)**
 - Lakeside slow meals, massage, reflection
 - Optional paragliding over Phewa Lake
 - Sārangkot sunrise over the Himalayas
 
-**Kathmandu — 2 days (Oct 29–31)**
-- Bhaktapur day trip (medieval city, less touristed than Kathmandu)
-- Departure prep
-
-**Fly Kathmandu → Delhi Oct 31**
+**Fly Pokhara → Delhi Oct 21**
 
 ---
 
 ## Chapter 3 — INDIA
-### Oct 31 – Nov 22 · 22 days
-*Theme: Sacred intensity, iconic monuments, wildlife, mountain escape*
+### Oct 21 – Nov 10 · 20 days
+*Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
-Structured so Ranthambore falls on November 7–11 — well past opening day, all zones confirmed operational, tigers highly active post-monsoon at waterholes.
+A tighter, more intentional India: Varanasi for spiritual intensity, the Golden Triangle, then a full week deep in Rishikesh for yoga, river, and mountain air. No Ranthambore, no Darjeeling — more depth, less breadth.
 
-**Delhi — 1 day (Oct 31 – Nov 1)**
-Transit, Old Delhi brief walk, overnight
+**Delhi — 1 day (Oct 21–22)**
+Transit, Old Delhi brief walk.
 
-**Varanasi — 4 days (Nov 1–5)**
-- The oldest continuously inhabited city on Earth
+**Varanasi — 2 days (Oct 22–24)**
 - Ghats at dawn: rowing on the Ganges in morning mist
 - Ganga Aarti at dusk: fire, flowers, bells, priests
-- Cremation ghats (Manikarnika): the most intense encounter with life and death anywhere
-- Chai, silk, wandering the narrow alleys
-- November: 24–28°C, post-monsoon clear, beautiful river light
+- Manikarnika cremation ghats
+- Chai, silk, narrow alleys
 
-**Agra — 2 days (Nov 5–7)**
-- Taj Mahal at sunrise — arrive by 6am, before tour groups, in golden light. Non-negotiable.
+**Agra — 3 days (Oct 24–27)**
+- Taj Mahal at sunrise — arrive 6am, golden light
 - Agra Fort
 - Mehtab Bagh (sunset Taj view across the river)
+- Fatehpur Sikri day trip
 
-**Ranthambore — 4 days (Nov 7–11)**
-- Tiger safari. November is excellent: cool mornings make tigers active, all zones fully open.
-- Zone 1–5 have the highest tiger density. Book jeep safaris in advance.
-- Also: leopards, sloth bears, crocodiles, massive lake with birds
-- Ranthambore Fort ruins inside the park
-
-**Jaipur — 2 days (Nov 11–13)**
-- Amber Fort (elephants, mirror palace)
+**Jaipur — 3 days (Oct 27–30)**
+- Amber Fort, mirror palace
 - Hawa Mahal, City Palace, Jantar Mantar observatory
 - Pink City bazaars
 
-**Darjeeling — 4 days (Nov 13–17)**
-- Toy Train (Darjeeling Himalayan Railway, UNESCO)
-- Tea estate walks and tastings
-- Tiger Hill sunrise: Kangchenjunga clear in November, often Everest visible
-- 10–18°C — cool mountain air after the plains heat
-- Slow: cafés, monastery visits, quiet walks
+**Rishikesh — 8 days (Oct 30 – Nov 7)**
+- Yoga + meditation at Parmarth Niketan (multi-day immersive)
+- Evening Ganga Aarti on the ghats — intimate, non-touristic
+- Beatles Ashram ruins (Maharishi Mahesh Yogi Ashram)
+- Ganges white-water rafting
+- Laxman Jhula + Ram Jhula suspension bridges
+- Ayurvedic treatments
+- Day trip: Haridwar Ganga Aarti + Har Ki Pauri
 
-**Rishikesh — 3 days (Nov 17–20)**
-- Evening Ganga Aarti on the ghats (more intimate than Varanasi)
-- Yoga and meditation (Parmarth Niketan ashram)
-- Beatles Ashram ruins
-- Rafting on the Ganges optional
-
-**Delhi — 2 days (Nov 20–22)**
+**Delhi — 3 days (Nov 7–10)**
 - Humayun's Tomb, Lodhi Garden walk
 - Departure prep
 
-**Fly Delhi → Tokyo Nov 22**
+**Fly Delhi → Tokyo Nov 10**
 
 ---
 
 ## Chapter 4 — JAPAN AUTUMN
-### Nov 22 – Dec 8 · 16 days
+### Nov 10 – Nov 30 · 20 days
 *Theme: Sacred refinement, koyo at peak, slow urban chapter*
 
-Late November is the finest week of autumn foliage in Kyoto. Temples hold special night illuminations (momiji light-ups) where maple trees are lit from below after dark — one of the most beautiful things Japan produces. Arriving Nov 22 catches the last and most dramatic days before leaves begin to fall in December.
+Sequence inverted from intuition: Tokyo first (peak city-koyo Nov 10–17), Osaka as bridge, Kyoto last. By Nov 22, Kyoto crowds are thinning but Eikan-do and Tofuku-ji still hold their finest color — late-season foliage at peak, fewer tourists.
 
-**Tokyo — 6 days (Nov 22–28)**
-- Shimokitazawa (vintage shops, live music, cafés)
-- Yanaka (old shitamachi neighborhood, cats, temples)
-- Shinjuku Gyoen: mid-autumn foliage still present in late November
+**Tokyo — 7 days (Nov 10–17)**
+- Shimokitazawa: vintage shops, live music, cafés
+- Yanaka: old shitamachi neighborhood, cats, temples, old Tokyo
+- Shinjuku Gyoen: peak-autumn foliage (Nov 10–17 prime window)
 - Harajuku, Omotesando
 - Tsukiji outer market breakfast
-- **Nikko — day trip from Tokyo** (2h each way by Tobu or JR): Tosho-gu shrine complex, Kegon Falls, foliage still dramatic in mountain setting
-- Temporary-life anchor: find a recurring coffee shop, walk the neighborhood, decompress from South Asia
+- Nikko day trip (2h): Tosho-gu shrine, Kegon Falls, mountain koyo
 
-**Kyoto — 7 days (Nov 28 – Dec 5)**
-- Eikan-do: famous for late-season foliage, holds night light-up events through late November / early December
-- Tofuku-ji: one of the most photographed koyo spots (maple bridge)
-- Fushimi Inari: thousands of torii gates, go at dawn
-- Arashiyama: bamboo grove, Tenryu-ji garden
-- Philosopher's Path in last autumn color
-- Nishiki Market for food
-- Slow mornings: tofu breakfast, temple walks, tea
-- Temporary-life chapter: recurring café, structured mornings, no rushing
-
-**Osaka — 3 days (Dec 5–8)**
+**Osaka — 5 days (Nov 17–22)**
 - Dotonbori, Kuromon Ichiba Market
-- Osaka Castle grounds
+- Osaka Castle grounds in autumn
 - Shinsekai neighborhood
-- Best street food in Japan: takoyaki, okonomiyaki, kushikatsu
+- Takoyaki, okonomiyaki, kushikatsu
+- Nara day trip: free-roaming deer, Todai-ji
 
-**Fly Osaka → Seoul Dec 8**
+**Kyoto — 8 days (Nov 22–30)**
+- Eikan-do: late-season foliage + night light-up (Nov 22–30 prime)
+- Tofuku-ji: most photographed koyo in Kyoto (maple bridge)
+- Fushimi Inari at dawn — thousands of torii gates, no crowds
+- Arashiyama: bamboo grove, Tenryu-ji
+- Philosopher's Path in last autumn color
+- Nishiki Market
+- Temporary-life chapter: recurring café, structured mornings
+
+**Fly Kyoto/Osaka → Seoul Nov 30**
 
 ---
 
 ## Chapter 5 — SOUTH KOREA
-### Dec 8 – Dec 25 · 17 days
+### Nov 30 – Dec 24 · 24 days
 *Theme: Electric winter hearth, K-culture, food depth, slow traditional chapter*
 
-Winter Korea is cozy and atmospheric. Palace grounds dusted with early snow, jjigae stews and makgeolli in pojangmacha tents, the Han River frozen at the edges. December in Seoul is vibrant with Christmas energy.
+Winter Korea is cozy and atmospheric. Palace grounds dusted with early snow, jjigae stews in pojangmacha tents, the Han River frozen at the edges. December Seoul is vibrant with Christmas energy.
 
-**Seoul — 5 days (Dec 8–13)**
-- Gyeongbokgung and Changdeokgung palaces in winter light
+**Seoul — 7 days (Nov 30 – Dec 7)**
+- Gyeongbokgung + Changdeokgung in winter light
 - Bukchon Hanok Village
-- Gwangjang Market: bindaetteok, raw beef, mayak gimbap
-- Namdaemun and Dongdaemun markets
-- Hongdae, Itaewon, Insadong neighborhoods
-- Café culture: Seoul has some of the best specialty coffee in Asia
+- Gwangjang Market: bindaetteok, mayak gimbap
+- Hongdae, Itaewon, Insadong
+- Specialty coffee culture (Seoul rivals Tokyo)
 - DMZ day trip
 
-**Busan — 4 days (Dec 13–17)**
-- Gamcheon Culture Village (colorful hillside neighborhood)
-- Jagalchi Fish Market: raw sea urchin, live octopus, haemultang
-- Haedong Yonggungsa Temple (seaside Buddhist temple)
-- Haeundae Beach in winter: dramatic, empty, beautiful
+**Busan — 5 days (Dec 7–12)**
+- Gamcheon Culture Village (colorful hillside)
+- Jagalchi Fish Market: raw sea urchin, live octopus
+- Haedong Yonggungsa seaside temple
+- Haeundae Beach empty and dramatic in winter
+- Gwangalli Bridge lit at night
 
-**Gyeongju — 2 days (Dec 17–19)**
-- 50 min from Busan by KTX — natural stop on the way up
-- Ancient capital of the Silla Kingdom (57 BC – 935 AD)
-- Bulguksa Temple (UNESCO), Seokguram Grotto
-- Tumuli Park: grass-covered royal burial mounds in the middle of the city
-- Anapji Pond: atmospheric at dusk
+**Gyeongju — 3 days (Dec 12–15)**
+- Ancient Silla capital (57 BC – 935 AD)
+- Bulguksa (UNESCO), Seokguram Grotto
+- Tumuli Park burial mounds in the middle of the city
+- Anapji Pond at dusk
 
-**Jeonju — 4 days (Dec 19–23)**
-- The best Korean food city. Period.
-- Jeonju Hanok Village: 800+ traditional Korean houses still inhabited
-- Bibimbap origin city: eat it here in a traditional courtyard
-- Makgeolli bars, traditional markets, slow pace
-- Decompression chapter within Korea: quiet, grounded, deeply Korean
+**Jeonju — 5 days (Dec 15–20)**
+- The best Korean food city
+- 800+ traditional hanok houses, still inhabited
+- Bibimbap origin city — eat it in a traditional courtyard
+- Makgeolli bars, slow pace, deeply Korean
 
-**Seoul / Incheon — 2 days (Dec 23–25)**
-- Return to Seoul briefly, Christmas atmosphere in Myeongdong
-- Departure prep
-
-**Fly Seoul → Taipei Dec 25**
+**Seoul / Incheon — 4 days (Dec 20–24)**
+- Christmas atmosphere in Myeongdong, Dongdaemun Design Plaza
+- Final Korean meals
+- Fly Seoul → Taipei Dec 24
 
 ---
 
 ## Chapter 6 — TAIWAN
-### Dec 25 – Jan 3 · 9 days
+### Dec 24 – Jan 2 · 9 days
 *Theme: Café culture, NYE fireworks, dramatic east coast*
 
-Arrive Christmas Day. January in Taiwan: 15–20°C, dry, clear. Taipei on New Year's Eve is one of Asia's great celebrations — the Taipei 101 countdown fireworks are world-famous, fired from the building itself in a vertical cascade.
+Arrive Christmas Eve. Taipei on New Year's Eve is one of Asia's great celebrations — Taipei 101 fireworks fired from the building itself in a vertical cascade over the city.
 
-**Taipei — 7 days (Dec 25–Jan 1)**
-- Da'an District: specialty coffee scene, bookshops, slow mornings
-- Jiufen: clifftop old mining town, lantern-lit teahouses, rain and mist
+**Taipei — 7 days (Dec 24–31)**
+- Da'an specialty coffee + bookshops
+- Jiufen: clifftop mining town, lantern-lit teahouses, rain and mist
 - Shilin Night Market
-- Elephant Mountain sunset hike over the skyline
-- MRT rhythm and city wandering
-- Temporary-life chapter: recurring café, grocery runs, structured mornings
-- **New Year's Eve Dec 31:** Taipei 101 countdown fireworks — fired from the building itself, visible across the city. One of Asia's great NYE moments.
+- Elephant Mountain sunset hike
+- Temporary-life chapter: recurring café, grocery runs, city rhythm
+- **New Year's Eve Dec 31:** Taipei 101 fireworks — one of Asia's great NYE moments ✓
 
-**Hualien + Taroko Gorge — 2 days (Jan 1–3)**
-- Train from Taipei along the Pacific coast (one of the most scenic rail journeys in Asia)
-- Taroko Gorge: marble canyon, jade-green river, suspension bridges, tunnels carved through cliff
-- Qingshui Cliffs (Pacific coast vertical walls dropping into the ocean)
-- January Hualien: cool and clear, few tourists
+**Hualien + Taroko Gorge — 2 days (Jan 1–2)**
+- Train along Pacific coast (one of the most scenic rail journeys in Asia)
+- Marble canyon, jade river, suspension bridges through the cliff
+- Qingshui Cliffs: Pacific walls dropping into the ocean
 
-**Fly Taipei → Osaka Jan 3**
+**Fly Taipei → Osaka Jan 2**
 
 ---
 
 ## Chapter 7 — JAPAN WINTER
-### Jan 3 – Jan 21 · 18 days
-*Theme: Snow architecture, powder snowboarding, mountain stillness*
+### Jan 2 – Jan 12 · 10 days
+*Theme: Powder snowboarding, mountain stillness, onsen*
 
-Zero cities repeated from the autumn chapter. Completely different emotional register: snow, mountains, physical exhilaration. New Year energy has passed — Japan in early January is calm, introspective, and deeply beautiful.
+Focused Hakuba. No Kanazawa, no Matsumoto — pure snowboard chapter. Early January is uncrowded and Japan is introspective. Rent everything locally.
 
-**Osaka — 1 day (Jan 3–4)**
-Arrival anchor. Winter seafood season (crab), Dotonbori at night.
+**Osaka — 1 day (Jan 2–3)**
+Arrival anchor. Winter crab season, Dotonbori at night. Overnight bus to Hakuba.
 
-**Kanazawa — 3 days (Jan 4–7)**
-- One of Japan's most beautiful cities, almost entirely off the tourist radar in winter
-- Kenroku-en Garden under snow lanterns (kotoji-toro lantern in snow is iconic)
-- Higashi Chaya geisha district: wooden teahouses, atmospheric in deep winter quiet
-- Omicho Market: fresh seafood from the Sea of Japan
-- Kanazawa Castle, sake breweries
-- January: calm, intimate, few visitors. One of Japan's hidden winter rewards.
+**Hakuba Valley — 8 days (Jan 3–11)**
+- Rent ALL equipment + outerwear locally (board, boots, jacket, helmet)
+- Hakuba over Niseko: authentic mountain village feel, Japan-ness intact
+- 6–7 actual snowboard days across three resorts: Happo-one, Goryu, Cortina
+- 1–2 onsen rest days, mountain restaurants
+- Izakaya nights, ramen, star-filled mountain sky
 
-**Hakuba Valley — 11 days (Jan 7–18)**
-- Rent ALL equipment and outerwear locally. Buy only light thermal base layers in Seoul beforehand.
-- Hakuba over Niseko: authentic mountain village feel, ryokan culture intact, equivalent powder quality, a fraction of the international crowd. The Japan-ness of the experience is preserved.
-- 7–8 actual snowboard days
-- 3–4 onsen, village walks, mountain restaurants
-- Happo-one, Goryu, Cortina: three different resorts with distinct characters
-- Night: izakaya, local ramen, star-filled mountain sky
+**Departure — 1 day (Jan 11–12)**
+Bus/train Hakuba → Nagoya. Fly to Shanghai — China Block 1 begins.
 
-**Matsumoto — 2 days (Jan 18–20)**
-- Matsumoto Castle: one of Japan's finest original castles, surrounded by moat and mountains
-- Sake brewery district
-- Natural departure point toward Nagoya
-
-**Fly from Nagoya → HK Jan 21, connect to Guilin**
-
-*Japan total: 16d autumn + 18d winter = 34 days. Zero city repeats. ✓*
+*Japan total: 20d autumn + 10d winter = 30 days. Zero city repeats. ✓*
 
 ---
 
-## Chapter 8 — CHINA BLOCK 1
-### Jan 21 – Feb 15 · 25 days
-*Theme: Surreal landscapes, ancient empire, cyberpunk cities*
+## Chapter 8 — CHINA BLOCK 1 (Metropolises)
+### Jan 12 – Feb 11 · 30 days
+*Theme: Imperial capital, global finance hub, future-tech frontier*
 
-South-to-north routing in winter. Southern China cities are mild (10–18°C). Cold increases northward. Beijing in February — empty and potentially snow-dusted — is one of its most extraordinary versions.
+The three great metropolises in one extended block. Beijing in January — empty and sometimes snow-dusted — is extraordinary. Shanghai rewards lingering in winter light. Shenzhen is the most forward-facing city on Earth.
 
-**Guilin / Yangshuo — 4 days (Jan 21–25)**
-- Li River karst landscape: limestone towers rising from flat plains, one of the most otherworldly landscapes on Earth
-- Bamboo raft on the Li River
-- Yangshuo: cycling through rice paddies between karst peaks
-- Winter mist settles between the towers at dawn — arguably more atmospheric than summer
-- 10–16°C
-
-**Zhangjiajie + Tianmen Mountain — 4 days (Jan 25–29)**
-- Avatar Mountains: the floating sandstone pillars that inspired Pandora
-- Tianmen Mountain Stairway to Heaven: 999 steps up a cliff face
-- Zhangjiajie Glass Bridge (world's longest glass-bottomed bridge)
-- Winter: sea of clouds fills the valleys between pillars. Possible light snow. Dramatic.
-- 4–10°C
-
-**Chongqing — 3 days (Jan 29 – Feb 1)**
-- The most cyberpunk city on Earth: 34 million people, bridges everywhere, monorail passing through apartment buildings, vertical city on cliffs above the Yangtze
-- Night city from the cable car across the river
-- Hongyadong: riverside stilted buildings lit up at night
-- Hotpot capital of China: mandatory multiple visits (perfect in winter cold)
-- 8–14°C
-
-**Chengdu — 3 days (Feb 1–4)**
-- Giant panda base: morning visit when pandas are active in the cold
-- Jinli Ancient Street, Kuanzhai Alley
-- Sichuan food: mapo tofu, dan dan noodles, more hotpot
-- 6–12°C
-
-**Xi'an + Huashan — 4 days (Feb 4–8)**
-- Terracotta Warriors: indoor museum, weather irrelevant, astounding at any time of year
-- Xi'an city walls (rent a bike and cycle the top)
-- Muslim Quarter: lamb skewers, biangbiang noodles, pomegranate juice
-- Huashan Plank Walk: iron chains bolted into cliff face, narrow wooden planks over a 2,000m drop. In winter with possible snow/ice, this is terrifying and legendary. Cable car option available if conditions are too extreme.
-
-**Beijing — 5 days (Feb 8–13)**
-- Great Wall (Mutianyu or Jinshanling): in February, empty and sometimes snow-dusted. One of the most dramatic versions possible. No crowds.
-- Forbidden City: vast imperial complex, winter light is extraordinary
+**Beijing — 8 days (Jan 12–20)**
+- Great Wall (Mutianyu): January, empty + possible snow-dusting. No crowds.
+- Forbidden City in winter light
 - Temple of Heaven
 - 798 Art District
-- Hutong neighborhood walk + Drum and Bell Towers
-- Night market and Peking duck
-- 3–10°C, warming toward spring
+- Hutong + Drum/Bell Towers
+- Peking duck
+- Summer Palace — ice on Kunming Lake
 
-**Travel buffer — 2 days (Feb 13–15)**
-Fly Beijing → HK Feb 15.
+**Shanghai — 14 days (Jan 20 – Feb 3)**
+- French Concession: plane-tree boulevards, Art Deco villas, best café scene in China
+- The Bund at night
+- Pudong skyline from the Bund side
+- Yu Garden — classical Chinese garden in the old city
+- Tianzifang arts + crafts alleys
+- **Suzhou day trip** (30min bullet): classical gardens, silk, canals
+- **Hangzhou day trip**: West Lake in winter mist
+- Xintiandi, M50 art district
+- Zhujiajiao water town day trip
+- Slow the pace here — Shanghai rewards lingering
+
+**Shenzhen — 5 days (Feb 3–8)**
+- Huaqiangbei Electronics Market: world's largest, floors of components and gadgets
+- OCT Contemporary Art District
+- Dafen Oil Painting Village
+- **Guangzhou day trip** (35min metro): Cantonese food, Shamian Island colonial architecture
+
+**Travel buffer — 3 days (Feb 8–11)**
+Shenzhen → HK exit Feb 11.
+
+*China Block 1: 30 days. Beijing (8) + Shanghai (14) + Shenzhen (5) + buffer (3) ✓*
 
 ---
 
 ## Hong Kong Reset
-### Feb 15 – Feb 18 · 3 days
+### Feb 11 – Feb 14 · 3 days
 
-Visa reset between China blocks.
+Visa reset between China and Philippines.
 - Victoria Peak, Kowloon neon, Star Ferry, dim sum, Temple Street Night Market
 - Rest, laundry, planning
 
-**Fly HK → Shanghai Feb 18**
+**Fly HK → Manila Feb 14**
 
 ---
 
-## Chapter 9 — CHINA BLOCK 2
-### Feb 18 – Mar 5 · 15 days
-*Theme: Cosmopolitan China, future-tech China*
+## Chapter 9 — PHILIPPINES
+### Feb 14 – Mar 9 · 23 days
+*Theme: WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
-February in Shanghai: the city is waking up to spring (10–16°C, warming). Shenzhen in late February–March: mild 20–24°C, excellent.
+Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/Moalboal for the sardine run. All day boats — no liveaboard here. This is the warm-up before Raja Ampat.
 
-**Shanghai — 10 days (Feb 18 – Mar 1)**
-- The French Concession: plane tree-lined boulevards in early spring, Art Deco villas, the best café and restaurant scene in China
-- The Bund: skyline across the Huangpu, best at night
-- Pudong: Lujiazui financial district, Oriental Pearl Tower, the futuristic counterpoint to colonial Bund
-- Yu Garden: classical Chinese garden inside the old city
-- Tianzifang: arts and crafts alley network
-- Suzhou day trip (30 min by bullet train): classical gardens, silk, canals, ancient water city
-- Xintiandi, M50 art district
-- Slow the pace here: Shanghai rewards lingering
+**Manila — 1 day (Feb 14–15)**
+- Intramuros (walled Spanish colonial city)
+- Fly Manila → Coron
 
-**Shenzhen — 4 days (Mar 1–5)**
-- Huaqiangbei Electronics Market: the world's largest electronics wholesale market, floors of components, gadgets, DIY tech. Future-tech overload.
-- OCT Contemporary Art District (B10, OCAT, creative spaces)
-- Dafen Oil Painting Village: 10,000 artists producing millions of oil paintings
-- Guangzhou day trip (35 min by metro): Cantonese food, Chen Clan Academy, Shamian Island colonial architecture
+**Coron — 6 days (Feb 15–21)**
+- Japanese WWII wrecks — Okikawa Maru, Irako, Akitsushima (sunk 1944): among the finest wreck diving on Earth
+- Kayangan Lake: crystal-clear inland lake framed by karst
+- Barracuda Lake: thermocline diving (hot/cold layers meet underwater)
+- CYC Beach + Twin Lagoon by banca boat
 
-**Exit Mar 5:** Cross border Shenzhen → HK → fly to Singapore.
+**El Nido — 8 days (Feb 21 – Mar 1)**
+- Island-hopping: Secret Lagoon, Big Lagoon, Small Lagoon, Cadlao Island
+- Nacpan Beach — empty twin beach
+- Limestone cliffs, turquoise shallows, snorkeling
+- Long beach lunches, no agenda
 
-*China total: Block 1 (25d) + Block 2 (15d) = 40 days. China (40d) > Japan (34d). ✓*
+**Cebu / Moalboal — 6 days (Mar 1–7)**
+- Sardine Run: millions of sardines school at Pescador Island — accessible from shore
+- Turtle Beach: sea turtles feeding right off the beach
+- Malapascua: thresher shark dive at dawn
+- Kawasan Falls canyoneering
+
+**Transfer to Sorong — 2 days (Mar 7–9)**
+- Cebu → Manado or Manila → Sorong
+- Indonesia visa on arrival — Day 1 of 30-day window
 
 ---
 
-## Transit → Raja Ampat
-### Mar 5 – Mar 7 · 2 days
+## Transit → Sorong
+### Mar 9 – Mar 11 · 2 days
 
-Fly HK/Shenzhen → Singapore → Sorong (West Papua). Standard routing via Singapore or Denpasar. Arrive Sorong Mar 7, board liveaboard same day.
+Cebu → Manado or Manila → Sorong. Arrive Sorong Mar 11, board liveaboard same day.
+Indonesia visa entry: Day 1 of 30. Visa expires Apr 8 — Borneo exit on that date ✓
 
 ---
 
 ## Chapter 10 — RAJA AMPAT
-### Mar 7 – Mar 18 · 11 days (1 day transit + 10 days liveaboard)
+### Mar 11 – Mar 20 · 10 days (liveaboard) ✓
 *Theme: The best diving on Earth*
 
-Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. The coral coverage, the sheer density of life — schools of fish so thick they block out the sun, pygmy seahorses on fan corals, manta rays gliding over cleaning stations, reef sharks patrolling walls — is unlike anywhere else.
-
-March 7 is solidly within the October–April ideal window — mid-season, optimal conditions.
+Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Mid-season — optimal conditions.
 
 **10 days on the water:**
-- Wayag: the postcard karst islands seen from above (kayak + hike to viewpoint)
+- Wayag: postcard karst islands seen from above (kayak + hike viewpoint)
 - Cape Kri: world record fish count dive site
 - Manta Sandy: manta ray cleaning station
-- Melissa's Garden: pristine hard coral garden
+- Melissa's Garden: pristine hard coral garden, density unmatched
 - Pianemo: smaller Wayag, equally dramatic, fewer boats
-- Blue Water Mantas (oceanic manta rays, wingspans up to 6m)
+- Blue Water Mantas (oceanic, wingspans up to 6m)
 - Wobbegong sharks, walking sharks, pygmy seahorses, nudibranchs
 
-Mandatory strategic splurge. Book an established operator (Papua Diving, Meridian Adventure, or similar) 6+ months in advance.
+Mandatory strategic splurge. Book Papua Diving, Meridian Adventure, or equivalent operator — **by Oct 2025**.
 
-**Fly Sorong → Manila Mar 18**
-
----
-
-## Chapter 11 — PHILIPPINES
-### Mar 18 – Apr 1 · 14 days
-*Theme: Diving holy grail, limestone island recovery*
-
-**Manila — 1 day (Mar 18–19)**
-- Intramuros (walled Spanish colonial city)
-- Fly Manila → Puerto Princesa, Palawan
-
-**Tubbataha Reef — 8–9 nights liveaboard (Mar 19–28)**
-- UNESCO World Heritage Site
-- Accessible ONLY from mid-March to June (ranger station opens ~Mar 15; sea conditions make it impossible outside this window)
-- Located in the Sulu Sea, 6 hours from Puerto Princesa by liveaboard
-- What you'll see: hammerhead sharks (schools, not single), whale sharks, manta rays, Napoleon wrasse, pristine walls dropping into the abyss, zero other tourists (strict permit limit)
-- March: opening of the operating window, excellent conditions
-
-**El Nido / Palawan — 3 days (Mar 28 – Apr 1)**
-- Recovery after two back-to-back liveaboards
-- Island-hopping: Secret Lagoon, Big Lagoon, Small Lagoon, Cadlao Island
-- Limestone cliffs, turquoise shallows, snorkeling
-- Long lunches on the beach, no agenda
-
-**Fly Manila → Bali Apr 1**
+**Disembark Sorong Mar 20 → fly to Bali**
 
 ---
 
-## Chapter 12 — BALI + NUSA PENIDA
-### Apr 1 – Apr 8 · 7 days
-*Theme: Tropical landing, raw island escape, manta warm-up*
+## Transit Sorong → Bali
+### Mar 20 – Mar 22 · 2 days
 
-**Bali — 2 days (Apr 1–3)**
-- Canggu or Seminyak: good food, beach clubs, the Bali fix
-- Brief and intentional. Bali is great but easy to overstay.
-- April Bali: 27–30°C, transition season, still excellent
-
-**Nusa Penida — 5 days (Apr 3–8)**
-Fast boat from Sanur, Bali (45 min).
-- Completely different from Bali: arid, dramatic, raw, far fewer tourists
-- Kelingking Beach: the T-Rex cliff, one of Indonesia's most dramatic viewpoints
-- Angel's Billabong and Broken Beach: natural infinity pool carved into clifftop
-- Crystal Bay: manta ray cleaning station, year-round guaranteed sightings. Reef mantas — a different, gentler experience from Raja Ampat's oceanic mantas.
-- Atuh Beach: remote east coast, dramatic rocks, almost no one
-- Scooter rental: the island is best explored independently
-
-Fast boat back to Bali → fly Bali → Singapore Apr 8.
+Off the boat in Sorong. Fly via Makassar or direct to Denpasar. Indonesia visa Day 11 of 30.
+Fast boat Sanur → Nusa Penida Mar 22.
 
 ---
 
-## Chapter 13 — SINGAPORE
-### Apr 8 – Apr 15 · 7 days
+## Chapter 11 — NUSA PENIDA
+### Mar 22 – Mar 26 · 4 days
+*Theme: Raw island drama, manta rays, vertical cliffs*
+
+Completely different from Bali: arid, dramatic, raw. Crystal Bay mantas year-round. Kelingking is one of the most dramatic coastal formations in Asia.
+
+- Kelingking Beach: the T-Rex cliff, most photographed in the Bali region
+- Angel's Billabong + Broken Beach: natural infinity pool carved into clifftop
+- Crystal Bay: reef manta cleaning station, year-round sightings (early morning dive)
+- Atuh Beach: remote east coast, dramatic
+- Scooter rental for full freedom
+
+---
+
+## Chapter 12 — KOMODO
+### Mar 26 – Apr 2 · 7 days
+*Theme: Dragons, world-class diving, wild Indonesia*
+
+Fly Bali → Labuan Bajo. April is entering peak dry season — visibility building, mantas reliable. Day trips from Labuan Bajo — no liveaboard needed.
+
+**Labuan Bajo / Flores — 2 days**
+- Gateway: dramatic harbor, wooden phinisi boats
+- Sunset from Bukit Cinta
+- Grilled fish with sambal
+
+**Komodo National Park — 5 days of day trips**
+*Diving:*
+- Manta Point: oceanic mantas (3–6m) in strong current
+- Crystal Rock + Castle Rock: world-class drift dives
+- Pink Beach: crushed red coral, excellent snorkeling
+- Batu Bolong: pinnacle, coral so dense no bare rock
+
+*Wildlife:*
+- Komodo Island or Rinca Island: Komodo dragons with ranger
+- Padar Island: sunrise hike to viewpoint — three colored bays below
+
+---
+
+## Chapter 13 — BALI + VOLCANO
+### Apr 2 – Apr 8 · 6 days
+*Theme: Temple culture, volcanic sunrise, close of Indonesia block*
+
+Final Indonesia days before the Borneo visa reset. Indonesia visa Day 24 of 30 on arrival.
+
+**Bali — 4 days**
+- Ubud: Tegallalang rice terraces, sacred monkey forest
+- Tanah Lot sunset temple on a sea rock
+- Seminyak / Canggu beach club final evening
+- Balinese cooking class
+
+**Mount Batur sunrise — 2 days**
+- 3am departure, 2-hour hike to crater rim at 1,717m
+- Sunrise over the caldera and crater lake — otherworldly
+- **Return and fly Bali → Kota Kinabalu → exits Indonesia on visa Day 30 ✓**
+
+---
+
+## Chapter 14 — BORNEO / SABAH
+### Apr 8 – Apr 18 · 10 days
+*Theme: Indonesia visa reset + wildlife chapter*
+
+Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatangan is one of SE Asia's finest wildlife corridors.
+
+**Kota Kinabalu — 2 days (Apr 8–10)**
+- Arrival, waterfront sunset over offshore islands
+- Filipino Night Market, rest
+
+**Sepilok + Sandakan — 1 day (Apr 10–11)**
+- Sepilok Orangutan Rehabilitation Centre: morning feeding platform — one of the most moving wildlife encounters anywhere
+- Bornean Sun Bear Conservation Centre (adjacent)
+- Transfer to Kinabatangan same day
+
+**Kinabatangan River — 5 days (Apr 11–16)**
+- Proboscis monkeys (endemic to Borneo, bizarre bulbous noses)
+- Pygmy elephants bathing at dawn — unmissable
+- Hornbills, kingfishers, monitor lizards, crocodiles
+- Fireflies illuminating the riverbank at night
+- Jungle lodges — wake to gibbons calling
+
+**Kota Kinabalu — 2 days (Apr 16–18)**
+- Tunku Abdul Rahman Marine Park snorkel day trip
+- Waterfront goodbye meal
+- Fly KK → Singapore to open the SE Asia final block
+
+*Note: Optional Sipadan diving (3 extra days, world-class) would extend this chapter. Book permits by Nov 2026 — 120/day limit.*
+
+---
+
+## Chapter 15 — SINGAPORE
+### Apr 18 – Apr 25 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
-- Maxwell Food Centre, Lau Pa Sat, Old Airport Road hawker: the best hawker food on Earth
+- Maxwell, Lau Pa Sat, Old Airport Road hawker centres: best in the world
 - Gardens by the Bay: Supertree Grove at night
 - Marina Bay Sands observation deck
-- Chinatown, Little India, Haji Lane (Arab Quarter)
+- Chinatown, Little India, Haji Lane
 - National Gallery Singapore
-- Changi Airport just to walk around (it has a waterfall inside)
-- Effective recharge hub: clean, organized, excellent food infrastructure, everything works
+- Changi Airport waterfall walk
 
 ---
 
-## Chapter 14 — BANGKOK
-### Apr 15 – Apr 22 · 7 days
-*Theme: Urban intensity, street food, temples*
+## Chapter 16 — KUALA LUMPUR
+### Apr 25 – Apr 30 · 5 days
+*Theme: Urban contrast before the island escape*
 
-- Wat Pho: reclining Buddha, massage school
-- Grand Palace + Wat Phra Kaew
-- Khlong (canal) boat commute through the city
-- Chatuchak Weekend Market (if timing aligns: Sat–Sun)
-- Yaowarat (Chinatown): best Chinese food outside China, especially at night
-- Asiatique riverfront night market
-- Kanchanaburi day trip: Death Railway, River Kwai Bridge, Erawan Falls (7-tier emerald waterfall)
-- Bangkok in April: 34–37°C, hot but city travel is fine
+- Petronas Twin Towers at night — best view from KLCC park reflection pool
+- Batu Caves: rainbow steps, macaques, Hindu temple inside limestone
+- Jalan Alor Night Food Street
+- Bukit Bintang neighborhood
+- Train north to Penang (ETS scenic coastal rail)
 
 ---
 
-## Chapter 15 — THAILAND BEACHES (KOH TAO / GULF COAST)
-### Apr 22 – Apr 30 · 8 days
+## Chapter 17 — PENANG
+### Apr 30 – May 5 · 5 days
+*Theme: Street food, café culture, colonial slow life*
+
+Georgetown is the best café-culture slow chapter in mainland SE Asia. Find a recurring breakfast spot.
+
+- Armenian Street: Zacharevic murals, shophouse architecture (UNESCO)
+- Gurney Drive hawker: char kway teow, asam laksa, cendol — the real versions
+- Clan Jetties: Chinese stilt villages over the water
+- Penang Hill funicular
+- Kek Lok Si Temple, Blue Mansion (Cheong Fatt Tze)
+- **Temporary-life chapter:** find a recurring breakfast spot, walk the same route each morning
+
+---
+
+## Chapter 18 — KOH TAO + KOH SAMUI
+### May 5 – May 12 · 7 days
 *Theme: Tropical reset, warm water, reef diving*
 
-Gulf of Thailand coast. April is firmly in the dry season on this side — opposite of the Andaman coast. Clear water, calm seas, 30°C.
+Gulf of Thailand coast. May is firmly in the dry season on this side — clear water, calm seas, 30°C.
 
-**Koh Tao — 6 days**
-- One of the best value diving destinations in the world
-- Japanese Gardens, Chumphon Pinnacle, Sail Rock (whale shark territory)
-- Snorkeling from the beach is excellent
+**Koh Tao — 5 days**
+- One of the best value diving destinations on Earth
+- Japanese Gardens, Chumphon Pinnacle, Sail Rock (whale shark territory in May)
 - No agenda: hammock, reef, lunch, repeat
 
 **Koh Samui — 2 days**
-- Brief stop: Chaweng Beach, Big Buddha, transfer point
-- Fly Koh Samui → Penang Apr 30
+- Chaweng Beach, Big Buddha
+- Transfer to Bangkok via Surat Thani
 
 ---
 
-## Chapter 16 — PENANG
-### Apr 30 – May 10 · 10 days
-*Theme: Street food, café culture, colonial slow life, temporary-life chapter*
+## Chapter 19 — BANGKOK
+### May 12 – May 19 · 7 days
+*Theme: Urban intensity, street food, temples*
 
-Georgetown is the best café-culture slow chapter in mainland Southeast Asia.
+Bangkok in May is 34–36°C — hot but city travel is fine with AC and canal boats.
 
-- Armenian Street and surrounding alleys: famous street art (Zacharevic murals), shophouse architecture
-- Gurney Drive hawker: char kway teow, Hokkien mee, cendol, asam laksa — the real versions
-- Clan Jetties: Chinese fishing villages built on stilts over the water, still inhabited
-- Penang Hill: funicular up, views over the island, colonial bungalows
-- Kek Lok Si Temple, Blue Mansion (Cheong Fatt Tze heritage hotel)
+- Wat Pho: reclining Buddha, massage school
+- Grand Palace + Wat Phra Kaew
+- Khlong canal boat commute through the city
+- Chatuchak Weekend Market (Sat–Sun)
+- Yaowarat (Chinatown) at night
+- Kanchanaburi day trip: Death Railway, River Kwai, Erawan Falls
 
-**Temporary-life chapter:** Find a recurring breakfast spot. Walk the same route each morning. Use the café as an office. Decompress. Penang is the perfect place to slow down mid-trip — enough happening to feel alive, slow enough to feel rested.
-
----
-
-## Chapter 17 — KUALA LUMPUR
-### May 10 – May 13 · 3 days
-
-- Petronas Twin Towers (go at night for the light reflection)
-- Batu Caves: Hindu temple complex inside a limestone cave, 272 rainbow-painted steps, macaques everywhere
-- Jalan Alor Night Food Street
-- Bukit Bintang neighborhood
-
-**Fly KL → Kota Kinabalu May 13**
+**Fly Bangkok → Guilin / Guangzhou May 19**
 
 ---
 
-## Chapter 18 — BORNEO / SABAH
-### May 13 – May 23 · 10 days
-*Theme: Wildlife encounters, orangutans, river safari*
+## Chapter 20 — CHINA BLOCK 2 (Landscapes)
+### May 19 – Jun 8 · 20 days
+*Theme: Surreal landscapes, ancient empire, spring China*
 
-**Sepilok — 2 days (May 13–15)**
-- Sepilok Orangutan Rehabilitation Centre: watch orangutans swing in from the jungle for feeding platforms — one of the most moving wildlife encounters anywhere
-- Bornean Sun Bear Conservation Centre (adjacent, also excellent)
+Spring is the ideal season for these regions. Li River mist in the karst, Zhangjiajie sea of clouds, pandas active in Chengdu. These sites in May are far superior to the winter timing they would have had in the old plan.
 
-**Kinabatangan River — 5 days (May 15–20)**
-- One of Southeast Asia's finest wildlife corridors
-- Proboscis monkeys (endemic to Borneo, bizarre bulbous noses, found almost nowhere else)
-- Pygmy elephants bathing in the river at dawn
-- Hornbills, kingfishers, monitor lizards, crocodiles
-- Fireflies at night along the riverbank
-- Jungle lodges: wake up to gibbons calling
+**Guilin / Yangshuo — 4 days (May 19–23)**
+- Li River karst: spring mist between limestone towers at dawn
+- Bamboo raft on the Li River
+- Cycling through rice paddies and karst peaks in Yangshuo
+- 22–26°C, green and misty — best season
 
-**Kota Kinabalu — 3 days (May 20–23)**
-- Sunset from the waterfront
-- Filipino Night Market
-- Optional: Sipadan diving (3 extra days, world-class — turtles, barracuda tornadoes, hammerheads). **Book permits by November 2026** — limit is 120 per day and sells out months ahead.
+**Zhangjiajie + Tianmen — 4 days (May 23–27)**
+- Avatar Mountains: floating sandstone pillars in spring sea of clouds
+- Tianmen Stairway to Heaven (999 steps)
+- Glass Bridge + Glass Cliff Walk
+- Spring green fills the valleys between pillars
 
-**Fly Kota Kinabalu → Labuan Bajo (via Bali or KL) May 23**
+**Chongqing — 3 days (May 27–30)**
+- The most cyberpunk city on Earth: 34M people, bridges everywhere
+- Cable car across the Yangtze
+- Hongyadong riverside stilted buildings at night
+- Hotpot capital
 
----
+**Chengdu — 3 days (May 30 – Jun 2)**
+- Giant panda base: spring morning, active babies
+- Jinli Ancient Street, Kuanzhai Alley
+- Mapo tofu, dan dan noodles, more hotpot
 
-## Chapter 19 — KOMODO
-### May 23 – Jun 4 · 12 days
-*Theme: Dragons, world-class diving, wild Indonesia, emotional close*
+**Xi'an — 4 days (Jun 2–6)**
+- Terracotta Warriors
+- Cycle the Xi'an city walls
+- Muslim Quarter: lamb skewers, biangbiang noodles
+- Huashan Plank Walk: iron chains, narrow planks, 2,000m drop
 
-Late May–June is peak dry season in Komodo. Best visibility (20–30m), calmest seas, most reliable weather. Day trips from Labuan Bajo are excellent — you don't need a liveaboard here.
+**Buffer — 2 days (Jun 6–8)**
+Travel, last meals. **Fly home Jun 8, 2027.**
 
-**Labuan Bajo / Flores — 2 days (May 23–25)**
-- Gateway to Komodo, dramatic harbor with traditional wooden phinisi boats
-- Sunset from Bukit Cinta hill over the bay and islands
-- Seafood dinner: fresh grilled fish with sambal
-
-**Komodo National Park — 10 days of day trips (May 25 – Jun 4)**
-Day trips by fast boat from Labuan Bajo (30–60 min to the main sites).
-
-*Diving:*
-- Manta Point: oceanic manta rays (3–6m wingspan) in strong current — one of the best manta dives on Earth
-- Crystal Rock and Castle Rock: world-class drift dives with sharks, tuna, napoleon wrasse
-- Pink Beach: named for its blush-tinted sand (crushed red coral), excellent snorkeling
-- Batu Bolong: a pinnacle rising from the deep, covered in coral so dense there's no bare rock
-
-*Wildlife:*
-- Komodo Island and Rinca Island: Komodo dragons in the wild. They're large, prehistoric, and genuinely dangerous. Walk with a ranger. The experience is surreal.
-- Padar Island: hike to the viewpoint at sunrise — three bays in different colors stretching below
-
-*Slow days:*
-- Pink Beach sunset
-- Phinisi boat life on day trips: fresh fish, island-hopping
-- Labuan Bajo has a growing restaurant scene for evenings
-
-**Fly Labuan Bajo → Singapore → home Jun 4**
+*China total: Block 1 (30d metropolises) + Block 2 (20d landscapes) = 50 days. China (50d) > Japan (30d). ✓*
 
 ---
 
@@ -606,12 +633,13 @@ Day trips by fast boat from Labuan Bajo (30–60 min to the main sites).
 
 | Destination | Dates | Duration | Notes |
 |---|---|---|---|
-| Nusa Penida — Crystal Bay | Apr 3–8 | 5d snorkel/dive | Reef mantas, year-round |
-| Raja Ampat | Mar 7–18 | 10d liveaboard | Mid-season, book 6+ months ahead |
-| Tubbataha Reef | Mar 19–28 | ~9d liveaboard | Opening of Mar–Jun window, UNESCO, book 6+ months ahead |
-| Koh Tao | Apr 22–28 | 6d | Value diving, whale sharks at Sail Rock |
-| Sipadan (optional) | May 20–23 | 3d | Permits: 120/day, book Nov 2026 |
-| Komodo | May 25 – Jun 4 | 10d day trips | Peak dry season, mantas + drift, no liveaboard needed |
+| Coron — WWII Wrecks | Feb 15–21 | 6d | Japanese warships — world's best wreck diving |
+| Cebu / Moalboal | Mar 1–7 | ~5d | Sardine run, thresher sharks at Malapascua |
+| Raja Ampat | Mar 11–20 | 10d liveaboard | Mid-season; book by Oct 2025 |
+| Nusa Penida — Crystal Bay | Mar 22–26 | 4d | Reef mantas, year-round |
+| Komodo | Mar 28 – Apr 1 | ~5d | Manta Point, drift dives, peak dry building |
+| Koh Tao | May 5–10 | 5d | Value diving, whale sharks at Sail Rock |
+| Sipadan (optional) | Apr 14–17 | 3d | 120 permits/day — book Nov 2026 |
 
 ---
 
@@ -619,22 +647,24 @@ Day trips by fast boat from Labuan Bajo (30–60 min to the main sites).
 
 | Chapter | Timing | Assessment |
 |---|---|---|
-| Turkey | Sep | Optimal — best month (balloons, coast, Istanbul) |
-| Nepal ABC trek | Oct | Optimal — peak post-monsoon, zero risk |
-| India / Ranthambore | Nov 7+ | Optimal — all zones open, tigers active |
-| Japan Autumn / Kyoto | late Nov | Excellent — late koyo + night light-ups |
+| Georgia | late Aug | Optimal — harvest season, cool mountains, no crowds |
+| Turkey | Sep 5–30 | Optimal — best month (balloons, coast, Istanbul) |
+| Nepal ABC trek | Oct 1+ | Optimal — peak post-monsoon, zero risk |
+| India | late Oct–Nov | Good — post-monsoon clear, Golden Triangle + Rishikesh |
+| Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
 | South Korea | Dec–Jan | Good — cozy winter, palaces, food |
-| Taiwan / NYE | Dec–Jan | Optimal — dry, clear, mild; Taipei 101 NYE |
-| Japan Winter / Hakuba | Jan | Optimal — peak powder |
-| China Block 1 (south→north) | Jan–Feb | Good — southern cities mild, Beijing cold but manageable |
-| China Block 2 Shanghai | Feb–Mar | Good — spring arriving, 10–16°C |
-| Raja Ampat | Mar 7–18 | Excellent — solidly mid-season within Oct–Apr window |
-| Tubbataha | Mar 19–28 | Good — opening of the operating window |
-| Bali / Nusa Penida | Apr | Good — warm, transition season |
-| Koh Tao / Gulf Thailand | Apr | Optimal — firmly in Gulf dry season |
+| Taiwan / NYE | Dec 24–Jan 2 | Optimal — dry, clear; Taipei 101 NYE ✓ |
+| Japan Winter / Hakuba | Jan 2–12 | Optimal — peak powder |
+| China Block 1 (cities) | Jan–Feb | Good — quiet Beijing, winter Shanghai, mild Shenzhen |
+| Philippines | Feb–Mar | Optimal — Coron + El Nido dry season; Cebu sardine run |
+| Raja Ampat | Mar 11–20 | Excellent — mid-season within Oct–Apr window ✓ |
+| Nusa Penida | Mar 22–26 | Good — transition, mantas year-round |
+| Komodo | late Mar–Apr | Good — dry season building, visibility improving |
+| Bali + Volcano | Apr 2–8 | Good — warm, transition season |
+| Borneo | Apr 8–18 | Good — dry season, wildlife active |
+| Koh Tao / Gulf Thailand | May 5–12 | Optimal — firmly Gulf dry season |
 | Penang | Apr–May | Good — warm, café culture unaffected |
-| Borneo | May | Good — orangutans year-round |
-| Komodo | late May–Jun | Excellent — peak dry season, best visibility |
+| China Block 2 (landscapes) | May–Jun | Excellent — spring mist on karst, best Zhangjiajie season |
 
 ---
 
@@ -642,32 +672,46 @@ Day trips by fast boat from Labuan Bajo (30–60 min to the main sites).
 
 | Place | Stay | Character |
 |---|---|---|
-| Tokyo | 6d | City rhythm, cafés, neighborhoods |
-| Kyoto (autumn) | 7d | Temple routine, slow mornings, tofu breakfasts |
-| Jeonju | 4d | Hanok village, food, deep Korea |
+| Tokyo | 7d | City rhythm, cafés, neighborhoods, koyo walks |
+| Kyoto (autumn) | 8d | Temple routine, slow mornings, tofu breakfasts |
+| Jeonju | 5d | Hanok village, food, deep Korea |
 | Taipei | 7d | Coffee culture, NYE, MRT life |
-| Penang | 10d | Street food, morning walks, editorial pace |
-| Hakuba | 11d | Mountain life, onsen, snowboard routine |
+| Penang | 5d | Street food, morning walks, editorial pace |
+| Hakuba | 8d | Mountain life, onsen, snowboard routine |
+
+---
+
+## Indonesia Visa Block (30-day window)
+
+| Segment | Dates | Days in visa |
+|---|---|---|
+| Transit Cebu → Sorong | Mar 9–11 | Entry Day 1 |
+| Raja Ampat liveaboard | Mar 11–20 | Days 3–12 |
+| Transit Sorong → Bali | Mar 20–22 | Days 12–14 |
+| Nusa Penida | Mar 22–26 | Days 14–18 |
+| Komodo | Mar 26 – Apr 2 | Days 18–25 |
+| Bali + Volcano | Apr 2–8 | Days 25–30 |
+| **Exit to Borneo** | **Apr 8** | **Day 30 ✓** |
 
 ---
 
 ## Packing Notes
 
 - **Base kit:** carry-on + 30L backpack only throughout
-- **Japan winter:** buy light thermal base layers in Seoul before heading to Japan. Rent ALL snowboard equipment, jacket, pants, boots, helmet locally in Hakuba. Multiple rental shops in the village.
-- **Diving:** personal mask and computer worth bringing; BCD, regulator, wetsuit rented at each dive site
-- **Nusa Penida:** bring reef-safe sunscreen, rash guard, water shoes (rocky entry points)
-- **Nepal trek:** rent trekking poles and sleeping bag liner in Kathmandu if needed; teahouses provide blankets and meals
+- **Japan winter:** buy light thermal base layers in Seoul. Rent ALL snowboard gear in Hakuba.
+- **Diving:** personal mask and computer worth bringing; BCD, regulator, wetsuit rented per site
+- **Nusa Penida:** reef-safe sunscreen, rash guard, water shoes (rocky entries)
+- **Nepal trek:** rent trekking poles + sleeping bag liner in Kathmandu; teahouses provide blankets and meals
 
 ---
 
 ## Budget Anchors
 
-**Expensive chapters:** Raja Ampat liveaboard, Tubbataha liveaboard, Hakuba lift passes + gear rental, Japan generally
-**Cheap anchors:** Nepal, India, Indonesia (outside liveaboards), Malaysia, Borneo, Philippines (outside liveaboards)
-**Strategic splurges worth it:** Both liveaboards, Hakuba snowboarding, one Kyoto ryokan night, Cappadocia cave hotel, Kanazawa boutique hotel in geisha district
+**Expensive chapters:** Raja Ampat liveaboard, Hakuba lift passes + gear rental, Japan generally
+**Cheap anchors:** Nepal, India, Indonesia (outside dives), Malaysia, Philippines (outside dives)
+**Strategic splurges worth it:** Raja Ampat liveaboard, Hakuba snowboarding, one Kyoto ryokan night, Cappadocia cave hotel
 
-Estimated: USD 48,000–60,000 for both (~140–175k BRL/person at current rates). Inside ideal budget.
+Estimated: USD 48,000–60,000 for both (~140–175k BRL/person at current rates).
 
 ---
 
@@ -675,12 +719,11 @@ Estimated: USD 48,000–60,000 for both (~140–175k BRL/person at current rates
 
 | Item | When to book | Notes |
 |---|---|---|
-| Raja Ampat liveaboard | By Oct 2025 | Best operators (Papua Diving, Meridian Adventure) book out far in advance |
-| Tubbataha liveaboard | By Oct 2025 | Operating window is fixed and boats fill |
-| Sipadan permits | By Nov 2026 | 120 permits/day maximum, books out months ahead |
-| Cappadocia balloon | By Aug 2026 | Best companies (Royal Balloon, Butterfly Balloons) fill quickly in Sep |
-| Annapurna permits | On arrival in Nepal | ACAP permit and TIMS card available in Kathmandu |
-| Ranthambore jeep safari | 3–6 months ahead | Zone 1–5 slots book fast for peak Nov season |
+| Raja Ampat liveaboard | **By Oct 2025** | Papua Diving / Meridian Adventure — Mar 11–20 dates, book 6+ months ahead |
+| Sipadan permits | By Nov 2026 | 120 permits/day cap — only if adding Sipadan to Borneo chapter |
+| Cappadocia balloon | **By Jul 2026** | Royal Balloon / Butterfly Balloons — September fills fast |
+| Annapurna permits | On arrival in Nepal | ACAP permit + TIMS card available in Kathmandu |
+| Kinabatangan river lodge | By Feb 2027 | Book 2–3 months ahead; good lodges fill in dry season |
 
 ---
 
