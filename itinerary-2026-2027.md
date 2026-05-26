@@ -2,7 +2,7 @@
 
 **Duration:** August 24, 2026 – June 8, 2027 (288 days / ~9.5 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
-**Arc:** Caucasus → Turkey → South Asia → Northeast Asia → China (metropolises) → Philippines → Indonesia → SE Asia → China (landscapes) → home
+**Arc:** Americas → Mediterranean → Turkey → South Asia → Northeast Asia → China (metropolises) → Philippines → Indonesia → SE Asia → China (landscapes) → home
 
 ---
 
@@ -10,30 +10,31 @@
 
 | # | Destination | Dates | Days |
 |---|---|---|---|
-| 0 | Georgia | Aug 24 – Sep 5 | 12 |
-| 1 | Turkey | Sep 5 – Sep 30 | 25 |
-| 2 | Nepal (reduced) | Oct 1 – Oct 21 | 20 |
-| 3 | India (max 20d) | Oct 21 – Nov 10 | 20 |
-| 4 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
-| 5 | South Korea | Nov 30 – Dec 24 | 24 |
-| 6 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
-| 7 | Japan — Winter (Hakuba) | Jan 2 – Jan 12 | 10 |
-| 8 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
+| 0 | Toronto | Aug 24 – Aug 27 | 3 |
+| 1 | Athens | Aug 27 – Sep 8 | 12 |
+| 2 | Turkey | Sep 8 – Sep 30 | 22 |
+| 3 | Nepal (reduced) | Oct 1 – Oct 21 | 20 |
+| 4 | India (max 20d) | Oct 21 – Nov 10 | 20 |
+| 5 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
+| 6 | South Korea | Nov 30 – Dec 24 | 24 |
+| 7 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
+| 8 | Japan — Winter (Hakuba) | Jan 2 – Jan 12 | 10 |
+| 9 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
 | — | Hong Kong reset | Feb 11 – Feb 14 | 3 |
-| 9 | Philippines (warm-up diving) | Feb 14 – Mar 9 | 23 |
+| 10 | Philippines (warm-up diving) | Feb 14 – Mar 9 | 23 |
 | — | Transit → Sorong | Mar 9 – Mar 11 | 2 |
-| 10 | Raja Ampat liveaboard | Mar 11 – Mar 20 | 10 |
+| 11 | Raja Ampat liveaboard | Mar 11 – Mar 20 | 10 |
 | — | Transit Sorong → Bali | Mar 20 – Mar 22 | 2 |
-| 11 | Nusa Penida | Mar 22 – Mar 26 | 4 |
-| 12 | Komodo | Mar 26 – Apr 2 | 7 |
-| 13 | Bali + Volcano | Apr 2 – Apr 8 | 6 |
-| 14 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
-| 15 | Singapore | Apr 18 – Apr 25 | 7 |
-| 16 | Kuala Lumpur | Apr 25 – Apr 30 | 5 |
-| 17 | Penang | Apr 30 – May 5 | 5 |
-| 18 | Koh Tao + Koh Samui | May 5 – May 12 | 7 |
-| 19 | Bangkok | May 12 – May 19 | 7 |
-| 20 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
+| 12 | Nusa Penida | Mar 22 – Mar 26 | 4 |
+| 13 | Komodo | Mar 26 – Apr 2 | 7 |
+| 14 | Bali + Volcano | Apr 2 – Apr 8 | 6 |
+| 15 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
+| 16 | Singapore | Apr 18 – Apr 25 | 7 |
+| 17 | Kuala Lumpur | Apr 25 – Apr 30 | 5 |
+| 18 | Penang | Apr 30 – May 5 | 5 |
+| 19 | Koh Tao + Koh Samui | May 5 – May 12 | 7 |
+| 20 | Bangkok | May 12 – May 19 | 7 |
+| 21 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
 
 **Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
 **China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
@@ -43,41 +44,59 @@
 
 ---
 
-## Chapter 0 — GEORGIA
-### Aug 24 – Sep 5 · 12 days
-*Theme: Harvest season, Caucasus mountains, unspoiled culture*
+## Chapter 0 — TORONTO
+### Aug 24 – Aug 27 · 3 days
+*Theme: North American send-off, city stopover before Europe*
 
-Late August Georgia: the vendima begins in Kakheti, Kazbegi is clear and cool, Tbilisi buzzes with end-of-summer energy. Almost no Western tourists. Direct flight to Istanbul at end.
+Three days in Toronto before crossing the Atlantic — a proper send-off from North America. Late August means warm evenings, patios open, and Kensington Market at its best.
 
-**Tbilisi — 4 days**
-- Old Town: carved wooden balconied houses, sulfur baths in Abanotubani district
-- Narikala Fortress + city walls overlooking the old city
-- Rustaveli Avenue galleries + Fabrika creative hub
-- Natural wine bars in Marjanishvili — Georgia invented wine 8,000 years ago
-- Khinkali dumplings + mtsvadi (grilled pork skewers)
-
-**Kazbegi — 4 days**
-- Gergeti Trinity Church (2,170m) — the defining Caucasus image, hike 3h or take 4x4
-- Truso Valley hike — mineral springs, ruined fortress, no crowds
-- Military Highway from Tbilisi — dramatic gorge drive through the Greater Caucasus
-- Mountain stillness, crisp air, zero international mass tourism
-
-**Kakheti — 4 days**
-- Wine capital of Georgia — harvest (vendima) begins late August
-- Sighnaghi — walled hilltop town overlooking the Alazani Valley
-- Bodbe Monastery — pilgrimage site, serene garden
-- Kvevri amber wine tasting direct from small producers
-- **Fly Tbilisi → Istanbul direct**
+**Toronto — 3 days**
+- Kensington Market: multicultural street market, vintage shops, food stalls
+- Distillery District: Victorian industrial complex turned arts village
+- CN Tower + Harbourfront waterfront walk along Lake Ontario
+- High Park late-summer picnic
+- Toronto Islands ferry — city skyline across the lake
+- Optional day trip: Niagara Falls (1.5h by car or GO bus)
+- **Fly Toronto → Athens**
 
 ---
 
-## Chapter 1 — TURKEY
-### Sep 5 – Sep 30 · 25 days
+## Chapter 1 — ATHENS
+### Aug 27 – Sep 8 · 12 days
+*Theme: Ancient Mediterranean, cradle of Western civilization, island prologue*
+
+Athens in late August: the Acropolis catches golden light at 7am before the crowds arrive. Monastiraki is electric at night. The Greek islands are a fast ferry away. A perfect opener before the rest of the world.
+
+**Athens — 8 days**
+- Acropolis + Parthenon — arrive at opening, golden light before 9am
+- Monastiraki flea market + evening mezedes bars
+- Plaka neighborhood: neoclassical houses, bougainvillea, cats
+- Anafiotika: whitewashed Cycladic enclave inside the city
+- National Archaeological Museum — world-class antiquities
+- Keramikos cemetery walk
+- Lycabettus Hill rooftop sunset over the whole city
+- Roof garden dinners with Acropolis views in Koukaki
+
+**Hydra island — 2 days**
+- No cars or motorcycles — only donkeys and feet
+- Port town of stone mansions rising from the harbor
+- Swimming off the rocks, fresh grilled octopus
+- Fast ferry from Piraeus (2h)
+
+**Cape Sounion + Delphi — 2 days**
+- Temple of Poseidon at Cape Sounion — cliff's edge, Aegean 360° below
+- Delphi: Oracle sanctuary, museum, dramatic mountain valley
+- **Fly Athens → Istanbul**
+
+---
+
+## Chapter 2 — TURKEY
+### Sep 8 – Sep 30 · 22 days
 *Theme: Ancient crossroads, Aegean coast, surreal landscapes*
 
 September is the single best month to visit Turkey. Cappadocia balloon flights at optimal conditions (cool stable morning air). Alacatı offers the best of the Aegean coast — wine, kite, cobblestone. Istanbul before the autumn shift.
 
-**Istanbul — 11 days**
+**Istanbul — 9 days**
 - Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market
 - Bosphorus ferry — the most beautiful commute on Earth
 - Hammam at Cağaloğlu Baths
@@ -85,7 +104,7 @@ September is the single best month to visit Turkey. Cappadocia balloon flights a
 - Meyhane dinners with raki and meze
 - Day trip to Princes' Islands by ferry
 
-**Alacatı — 7 days**
+**Alacatı — 6 days**
 - Restored stone-house village on the Çeşme peninsula, Aegean coast
 - Windmills above the village — the iconic Alacatı image
 - Natural wine bars + boutique winery day trips in surrounding hills
@@ -109,7 +128,7 @@ September is the single best month to visit Turkey. Cappadocia balloon flights a
 
 ---
 
-## Chapter 2 — NEPAL
+## Chapter 3 — NEPAL
 ### Oct 1 – Oct 21 · 20 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 
@@ -140,7 +159,7 @@ Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchh
 
 ---
 
-## Chapter 3 — INDIA
+## Chapter 4 — INDIA
 ### Oct 21 – Nov 10 · 20 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
@@ -183,7 +202,7 @@ Transit, Old Delhi brief walk.
 
 ---
 
-## Chapter 4 — JAPAN AUTUMN
+## Chapter 5 — JAPAN AUTUMN
 ### Nov 10 – Nov 30 · 20 days
 *Theme: Sacred refinement, koyo at peak, slow urban chapter*
 
@@ -217,7 +236,7 @@ Sequence inverted from intuition: Tokyo first (peak city-koyo Nov 10–17), Osak
 
 ---
 
-## Chapter 5 — SOUTH KOREA
+## Chapter 6 — SOUTH KOREA
 ### Nov 30 – Dec 24 · 24 days
 *Theme: Electric winter hearth, K-culture, food depth, slow traditional chapter*
 
@@ -257,7 +276,7 @@ Winter Korea is cozy and atmospheric. Palace grounds dusted with early snow, jji
 
 ---
 
-## Chapter 6 — TAIWAN
+## Chapter 7 — TAIWAN
 ### Dec 24 – Jan 2 · 9 days
 *Theme: Café culture, NYE fireworks, dramatic east coast*
 
@@ -280,7 +299,7 @@ Arrive Christmas Eve. Taipei on New Year's Eve is one of Asia's great celebratio
 
 ---
 
-## Chapter 7 — JAPAN WINTER
+## Chapter 8 — JAPAN WINTER
 ### Jan 2 – Jan 12 · 10 days
 *Theme: Powder snowboarding, mountain stillness, onsen*
 
@@ -303,7 +322,7 @@ Bus/train Hakuba → Nagoya. Fly to Shanghai — China Block 1 begins.
 
 ---
 
-## Chapter 8 — CHINA BLOCK 1 (Metropolises)
+## Chapter 9 — CHINA BLOCK 1 (Metropolises)
 ### Jan 12 – Feb 11 · 30 days
 *Theme: Imperial capital, global finance hub, future-tech frontier*
 
@@ -354,7 +373,7 @@ Visa reset between China and Philippines.
 
 ---
 
-## Chapter 9 — PHILIPPINES
+## Chapter 10 — PHILIPPINES
 ### Feb 14 – Mar 9 · 23 days
 *Theme: WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
@@ -396,7 +415,7 @@ Indonesia visa entry: Day 1 of 30. Visa expires Apr 8 — Borneo exit on that da
 
 ---
 
-## Chapter 10 — RAJA AMPAT
+## Chapter 11 — RAJA AMPAT
 ### Mar 11 – Mar 20 · 10 days (liveaboard) ✓
 *Theme: The best diving on Earth*
 
@@ -425,7 +444,7 @@ Fast boat Sanur → Nusa Penida Mar 22.
 
 ---
 
-## Chapter 11 — NUSA PENIDA
+## Chapter 12 — NUSA PENIDA
 ### Mar 22 – Mar 26 · 4 days
 *Theme: Raw island drama, manta rays, vertical cliffs*
 
@@ -439,7 +458,7 @@ Completely different from Bali: arid, dramatic, raw. Crystal Bay mantas year-rou
 
 ---
 
-## Chapter 12 — KOMODO
+## Chapter 13 — KOMODO
 ### Mar 26 – Apr 2 · 7 days
 *Theme: Dragons, world-class diving, wild Indonesia*
 
@@ -463,7 +482,7 @@ Fly Bali → Labuan Bajo. April is entering peak dry season — visibility build
 
 ---
 
-## Chapter 13 — BALI + VOLCANO
+## Chapter 14 — BALI + VOLCANO
 ### Apr 2 – Apr 8 · 6 days
 *Theme: Temple culture, volcanic sunrise, close of Indonesia block*
 
@@ -482,7 +501,7 @@ Final Indonesia days before the Borneo visa reset. Indonesia visa Day 24 of 30 o
 
 ---
 
-## Chapter 14 — BORNEO / SABAH
+## Chapter 15 — BORNEO / SABAH
 ### Apr 8 – Apr 18 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -513,7 +532,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 15 — SINGAPORE
+## Chapter 16 — SINGAPORE
 ### Apr 18 – Apr 25 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -526,7 +545,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 16 — KUALA LUMPUR
+## Chapter 17 — KUALA LUMPUR
 ### Apr 25 – Apr 30 · 5 days
 *Theme: Urban contrast before the island escape*
 
@@ -538,7 +557,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 17 — PENANG
+## Chapter 18 — PENANG
 ### Apr 30 – May 5 · 5 days
 *Theme: Street food, café culture, colonial slow life*
 
@@ -553,7 +572,7 @@ Georgetown is the best café-culture slow chapter in mainland SE Asia. Find a re
 
 ---
 
-## Chapter 18 — KOH TAO + KOH SAMUI
+## Chapter 19 — KOH TAO + KOH SAMUI
 ### May 5 – May 12 · 7 days
 *Theme: Tropical reset, warm water, reef diving*
 
@@ -570,7 +589,7 @@ Gulf of Thailand coast. May is firmly in the dry season on this side — clear w
 
 ---
 
-## Chapter 19 — BANGKOK
+## Chapter 20 — BANGKOK
 ### May 12 – May 19 · 7 days
 *Theme: Urban intensity, street food, temples*
 
@@ -587,7 +606,7 @@ Bangkok in May is 34–36°C — hot but city travel is fine with AC and canal b
 
 ---
 
-## Chapter 20 — CHINA BLOCK 2 (Landscapes)
+## Chapter 21 — CHINA BLOCK 2 (Landscapes)
 ### May 19 – Jun 8 · 20 days
 *Theme: Surreal landscapes, ancient empire, spring China*
 

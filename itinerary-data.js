@@ -41,13 +41,15 @@ window.TRIP = (function () {
 
   // ── Regions for visual grouping / coloring ──
   const REGIONS = {
-    crossroads:  { name: 'Crossroads',     accent: '#c2693a' },
-    himalaya:    { name: 'Himalaya',       accent: '#7a8a52' },
-    northeast:   { name: 'Northeast',      accent: '#a8543e' },
-    middle:      { name: 'China & HK',     accent: '#b03a3a' },
-    archipelago: { name: 'Archipelago',    accent: '#2c6f7a' },
-    isthmus:     { name: 'SE Asia',        accent: '#c98a2a' },
-    rainforest:  { name: 'Rainforest',     accent: '#3d6e4f' },
+    americas:     { name: 'Americas',       accent: '#8b6040' },
+    mediterranean:{ name: 'Mediterranean',  accent: '#4a7fa5' },
+    crossroads:   { name: 'Crossroads',     accent: '#c2693a' },
+    himalaya:     { name: 'Himalaya',       accent: '#7a8a52' },
+    northeast:    { name: 'Northeast',      accent: '#a8543e' },
+    middle:       { name: 'China & HK',     accent: '#b03a3a' },
+    archipelago:  { name: 'Archipelago',    accent: '#2c6f7a' },
+    isthmus:      { name: 'SE Asia',        accent: '#c98a2a' },
+    rainforest:   { name: 'Rainforest',     accent: '#3d6e4f' },
   };
 
   // ── Chapters ──
@@ -55,36 +57,50 @@ window.TRIP = (function () {
   // intro (poetic), tldr (condensed), weather, region, places[]
   const chapters = [
     {
-      id: 'georgia', num: 0, kind: 'chapter', region: 'crossroads',
-      country: 'Georgia', flag: '🇬🇪', title: 'Georgia',
-      start: '2026-08-24', end: '2026-09-05', days: 12,
-      theme: 'Harvest season, Caucasus mountains, unspoiled culture',
-      intro: 'Late August Georgia: the vendima begins in Kakheti, Kazbegi is clear and cool, Tbilisi buzzes with end-of-summer energy. Zero Western-tourist crowds. Direct flight to Istanbul at end.',
-      tldr: 'Tbilisi · Kazbegi · Kakheti wine country',
-      weather: { hi: 28, lo: 15, label: 'Late summer, 28°/15°', emoji: '🍇' },
-      photos: ['tbilisi old town sulfur baths','kazbegi gergeti church mountains','kakheti vineyard harvest georgia','narikala fortress tbilisi'],
+      id: 'toronto', num: 0, kind: 'chapter', region: 'americas',
+      country: 'Canada', flag: '🇨🇦', title: 'Toronto',
+      start: '2026-08-24', end: '2026-08-27', days: 3,
+      theme: 'North American send-off, city stopover before Europe',
+      intro: 'Three days in Toronto before crossing the Atlantic — a proper send-off from North America. Late August means warm evenings, patios open, and Kensington Market at its best.',
+      tldr: 'Kensington Market · Distillery District · CN Tower',
+      weather: { hi: 27, lo: 17, label: 'Late summer, 27°/17°', emoji: '🍁' },
+      photos: ['toronto cn tower distillery district','kensington market toronto summer','toronto harbourfront lake ontario','niagara falls mist canada'],
       places: [
-        { name: 'Tbilisi', days: 4, query: 'Old Town Tbilisi, Georgia',
-          highlights: ['Old Town — carved wooden balconied houses, sulfur baths in Abanotubani','Narikala Fortress + city walls','Rustaveli Avenue galleries + Fabrika creative hub','Natural wine bars in Marjanishvili — Georgia invented wine 8,000 years ago','Khinkali dumplings + mtsvadi (grilled pork skewers)'] },
-        { name: 'Kazbegi', days: 4, query: 'Kazbegi, Georgia',
-          highlights: ['Gergeti Trinity Church (2,170m) — defining Caucasus image, hike 3h or 4x4','Truso Valley — mineral springs, ruined fortress, no one else there','Military Highway drive from Tbilisi — dramatic gorge through the Caucasus','Mountain stillness, crisp air, zero international tourism'] },
-        { name: 'Kakheti', days: 4, query: 'Sighnaghi, Kakheti, Georgia',
-          highlights: ['Wine capital of Georgia — harvest (vendima) begins late August','Sighnaghi — walled hilltop town overlooking the Alazani Valley','Bodbe Monastery — pilgrimage site, serene garden','Kvevri amber wine tasting direct from small producers','Fly Tbilisi → Istanbul direct to open Turkey chapter'] },
+        { name: 'Toronto', days: 3, query: 'Kensington Market, Toronto',
+          highlights: ['Kensington Market — multicultural street market, vintage shops, food stalls','Distillery District — Victorian industrial complex turned arts village','CN Tower + the Harbourfront waterfront walk','High Park late-summer picnic','Toronto Islands ferry — city skyline across Lake Ontario','Optional day trip: Niagara Falls (1.5h by car or GO bus)','Fly Toronto → Athens to open Mediterranean chapter'] },
       ],
     },
     {
-      id: 'turkey', num: 1, kind: 'chapter', region: 'crossroads',
+      id: 'athens', num: 1, kind: 'chapter', region: 'mediterranean',
+      country: 'Greece', flag: '🇬🇷', title: 'Athens',
+      start: '2026-08-27', end: '2026-09-08', days: 12,
+      theme: 'Ancient Mediterranean, cradle of Western civilization, island prologue',
+      intro: 'Athens in late August: the Acropolis catches golden light at 7am before the crowds arrive. Monastiraki is electric at night. The Greek islands are a fast ferry away. A perfect opener before the rest of the world.',
+      tldr: 'Athens · Acropolis · Hydra island · Cape Sounion',
+      weather: { hi: 32, lo: 22, label: 'Warm Mediterranean, 32°/22°', emoji: '🏛️' },
+      photos: ['athens acropolis parthenon sunrise','monastiraki flea market athens night','hydra island greece donkeys','cape sounion poseidon temple sunset'],
+      places: [
+        { name: 'Athens', days: 8, query: 'Acropolis, Athens, Greece',
+          highlights: ['Acropolis + Parthenon — arrive at opening, golden light before 9am','Monastiraki flea market + evening mezedes bars','Plaka neighborhood — neoclassical houses, bougainvillea, cats','Anafiotika — whitewashed Cycladic enclave inside the city','National Archaeological Museum — world-class antiquities','Keramikos + Kerameikos cemetery walk','Lycabettus Hill rooftop sunset over the whole city','Roof garden dinners with Acropolis views in Koukaki'] },
+        { name: 'Hydra', days: 2, query: 'Hydra Island, Greece',
+          highlights: ['No cars or motorcycles — only donkeys and feet','Port town of stone mansions rising up from the harbor','Swimming off the rocks, fresh grilled octopus','Day boat or overnight stay from Piraeus (2h fast ferry)'] },
+        { name: 'Cape Sounion + Delphi', days: 2, query: 'Cape Sounion, Greece',
+          highlights: ['Temple of Poseidon at Cape Sounion — cliff\'s edge, Aegean 360° below','Delphi: Oracle sanctuary, museum, dramatic mountain valley','Fly Athens → Istanbul to open Turkey chapter'] },
+      ],
+    },
+    {
+      id: 'turkey', num: 2, kind: 'chapter', region: 'crossroads',
       country: 'Turkey', flag: '🇹🇷', title: 'Turkey',
-      start: '2026-09-05', end: '2026-09-30', days: 25,
+      start: '2026-09-08', end: '2026-09-30', days: 22,
       theme: 'Ancient crossroads, Aegean coast, surreal landscapes',
       intro: 'September is the single best month to visit Turkey. Cappadocia balloon flights have optimal morning conditions. Alacatı offers Aegean coast life at its best. Istanbul before the autumn shift.',
       tldr: 'Istanbul · Alacatı · Pamukkale · Ephesus · Cappadocia',
       weather: { hi: 28, lo: 16, label: 'Late summer, 28°/16°', emoji: '☀️' },
       photos: ['istanbul hagia sophia bosphorus','alacatı windmill aegean coast','cappadocia hot air balloons','pamukkale white terraces'],
       places: [
-        { name: 'Istanbul', days: 11, query: 'Istanbul, Turkey',
+        { name: 'Istanbul', days: 9, query: 'Istanbul, Turkey',
           highlights: ['Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market','Bosphorus ferry — the most beautiful commute on Earth','Hammam at Cağaloğlu Baths','Beyoğlu rooftop bars, Karaköy galleries','Meyhane dinners with raki + meze','Princes\' Islands day trip by ferry'] },
-        { name: 'Alacatı', days: 7, query: 'Alacatı, Çeşme, Turkey',
+        { name: 'Alacatı', days: 6, query: 'Alacatı, Çeşme, Turkey',
           highlights: ['Restored stone-house village on the Aegean — Çeşme peninsula','Windmills above the village — the iconic Alacatı image','Natural wine bars + boutique wineries in the surrounding hills','Kite surfing + windsurfing (consistently ranked top spot in Europe)','Cobblestone bazaar alley — artisan shops, slow mornings','Çeşme beach + optional ferry across to Chios'] },
         { name: 'Pamukkale + Ephesus', days: 3, query: 'Pamukkale, Turkey',
           highlights: ['White calcium travertine terraces — walking barefoot into warm pools','Hierapolis ruins on the plateau above','Ephesus — one of the best-preserved Roman cities anywhere'] },
@@ -94,7 +110,7 @@ window.TRIP = (function () {
       booking: ['Cappadocia balloon — book by Jul 2026 (Royal Balloon / Butterfly Balloons)'],
     },
     {
-      id: 'nepal', num: 2, kind: 'chapter', region: 'himalaya',
+      id: 'nepal', num: 3, kind: 'chapter', region: 'himalaya',
       country: 'Nepal', flag: '🇳🇵', title: 'Nepal',
       start: '2026-10-01', end: '2026-10-21', days: 20,
       theme: 'Sacred roof of the world, physical peak, elemental beauty',
@@ -115,7 +131,7 @@ window.TRIP = (function () {
       booking: ['ACAP permit + TIMS card — on arrival in Kathmandu'],
     },
     {
-      id: 'india', num: 3, kind: 'chapter', region: 'himalaya',
+      id: 'india', num: 4, kind: 'chapter', region: 'himalaya',
       country: 'India', flag: '🇮🇳', title: 'India',
       start: '2026-10-21', end: '2026-11-10', days: 20,
       theme: 'Sacred intensity, iconic monuments, Himalayan slow life',
@@ -140,7 +156,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'japan-autumn', num: 4, kind: 'chapter', region: 'northeast',
+      id: 'japan-autumn', num: 5, kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Autumn',
       start: '2026-11-10', end: '2026-11-30', days: 20,
       theme: 'Sacred refinement, koyo at peak, slow urban chapter',
@@ -158,7 +174,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'korea', num: 5, kind: 'chapter', region: 'northeast',
+      id: 'korea', num: 6, kind: 'chapter', region: 'northeast',
       country: 'South Korea', flag: '🇰🇷', title: 'South Korea',
       start: '2026-11-30', end: '2026-12-24', days: 24,
       theme: 'Electric winter hearth, K-culture, food depth, slow traditional chapter',
@@ -180,7 +196,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'taiwan', num: 6, kind: 'chapter', region: 'northeast',
+      id: 'taiwan', num: 7, kind: 'chapter', region: 'northeast',
       country: 'Taiwan', flag: '🇹🇼', title: 'Taiwan',
       start: '2026-12-24', end: '2027-01-02', days: 9,
       theme: 'Café culture, NYE fireworks, dramatic east coast',
@@ -196,7 +212,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'japan-winter', num: 7, kind: 'chapter', region: 'northeast',
+      id: 'japan-winter', num: 8, kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Winter',
       start: '2027-01-02', end: '2027-01-12', days: 10,
       theme: 'Powder snowboarding, mountain stillness, onsen',
@@ -214,7 +230,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'china-1', num: 8, kind: 'chapter', region: 'middle',
+      id: 'china-1', num: 9, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 1',
       start: '2027-01-12', end: '2027-02-11', days: 30,
       theme: 'Imperial capital, global finance hub, future-tech frontier',
@@ -234,7 +250,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'hk', num: 9, kind: 'reset', region: 'middle',
+      id: 'hk', num: 10, kind: 'reset', region: 'middle',
       country: 'Hong Kong', flag: '🇭🇰', title: 'Hong Kong reset',
       start: '2027-02-11', end: '2027-02-14', days: 3,
       theme: 'Visa reset between China and Philippines',
@@ -248,7 +264,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'philippines', num: 10, kind: 'chapter', region: 'archipelago',
+      id: 'philippines', num: 11, kind: 'chapter', region: 'archipelago',
       country: 'Philippines', flag: '🇵🇭', title: 'Philippines',
       start: '2027-02-14', end: '2027-03-09', days: 23,
       theme: 'WWII wreck diving, limestone islands, warm-up for Raja Ampat',
@@ -286,7 +302,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'raja-ampat', num: 11, kind: 'chapter', region: 'archipelago',
+      id: 'raja-ampat', num: 12, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Raja Ampat',
       start: '2027-03-11', end: '2027-03-20', days: 10,
       theme: 'The best diving on Earth',
@@ -316,7 +332,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'nusa-penida', num: 12, kind: 'chapter', region: 'archipelago',
+      id: 'nusa-penida', num: 13, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Nusa Penida',
       start: '2027-03-22', end: '2027-03-26', days: 4,
       theme: 'Raw island drama, manta rays, vertical cliffs',
@@ -331,7 +347,7 @@ window.TRIP = (function () {
       diving: { sites: 4, type: 'Day dives', operators: 'Crystal Bay Dive (most reliable for mantas)' },
     },
     {
-      id: 'komodo', num: 13, kind: 'chapter', region: 'archipelago',
+      id: 'komodo', num: 14, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Komodo',
       start: '2027-03-26', end: '2027-04-02', days: 7,
       theme: 'Dragons, world-class diving, wild Indonesia',
@@ -348,7 +364,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day trips by fast boat', operators: 'Many operators in Labuan Bajo' },
     },
     {
-      id: 'bali-volcano', num: 14, kind: 'chapter', region: 'archipelago',
+      id: 'bali-volcano', num: 15, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Bali + Volcano',
       start: '2027-04-02', end: '2027-04-08', days: 6,
       theme: 'Tropical landing, temple culture, volcanic sunrise',
@@ -364,7 +380,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'borneo', num: 15, kind: 'chapter', region: 'rainforest',
+      id: 'borneo', num: 16, kind: 'chapter', region: 'rainforest',
       country: 'Malaysia', flag: '🇲🇾', title: 'Borneo / Sabah',
       start: '2027-04-08', end: '2027-04-18', days: 10,
       theme: 'Indonesia visa reset + wildlife chapter',
@@ -385,7 +401,7 @@ window.TRIP = (function () {
       booking: ['Kinabatangan river lodge — book 2–3 months ahead; Sipadan permits by Nov 2026 if adding 3 extra days'],
     },
     {
-      id: 'singapore', num: 16, kind: 'chapter', region: 'isthmus',
+      id: 'singapore', num: 17, kind: 'chapter', region: 'isthmus',
       country: 'Singapore', flag: '🇸🇬', title: 'Singapore',
       start: '2027-04-18', end: '2027-04-25', days: 7,
       theme: 'World-class food, modern wonder, city recharge',
@@ -399,7 +415,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'kl', num: 17, kind: 'chapter', region: 'isthmus',
+      id: 'kl', num: 18, kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Kuala Lumpur',
       start: '2027-04-25', end: '2027-04-30', days: 5,
       theme: 'Urban contrast, Petronas, food before the island escape',
@@ -413,7 +429,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'penang', num: 18, kind: 'chapter', region: 'isthmus',
+      id: 'penang', num: 19, kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Penang',
       start: '2027-04-30', end: '2027-05-05', days: 5,
       theme: 'Street food, café culture, colonial slow life',
@@ -427,7 +443,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'koh-tao', num: 19, kind: 'chapter', region: 'isthmus',
+      id: 'koh-tao', num: 20, kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Koh Tao + Koh Samui',
       start: '2027-05-05', end: '2027-05-12', days: 7,
       theme: 'Tropical reset, warm water, reef diving',
@@ -444,7 +460,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on island' },
     },
     {
-      id: 'bangkok', num: 20, kind: 'chapter', region: 'isthmus',
+      id: 'bangkok', num: 21, kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Bangkok',
       start: '2027-05-12', end: '2027-05-19', days: 7,
       theme: 'Urban intensity, street food, temples',
@@ -458,7 +474,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'china-2', num: 21, kind: 'chapter', region: 'middle',
+      id: 'china-2', num: 22, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 2',
       start: '2027-05-19', end: '2027-06-08', days: 20,
       theme: 'Surreal landscapes, ancient empire, spring China',
@@ -528,7 +544,8 @@ window.TRIP = (function () {
   // months: 1-indexed array of good months. If a chapter's start month falls
   // outside this range, a season warning is shown in the impact preview.
   const optimalWindows = {
-    'georgia':      { months: [8, 9],                note: 'Aug–Sep: harvest season, cool mountains, Kakheti vendima' },
+    'toronto':      { months: [7, 8, 9],              note: 'Jul–Sep: warm summer, patios open, Lake Ontario swimmable' },
+    'athens':       { months: [5, 6, 9, 10],         note: 'May–Jun and Sep–Oct: ideal temps; Aug is peak heat + crowds' },
     'turkey':       { months: [9, 10],               note: 'Sep–Oct: post-summer, ideal weather, balloon season' },
     'nepal':        { months: [10, 11],              note: 'Oct–Nov: post-monsoon, crystalline skies, best trekking' },
     'india':        { months: [10, 11, 12],          note: 'Oct–Dec: post-monsoon, clear skies, India circuit' },
