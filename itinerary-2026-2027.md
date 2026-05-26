@@ -20,21 +20,15 @@
 | 7 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
 | 8 | Japan — Winter (Hakuba) | Jan 2 – Jan 12 | 10 |
 | 9 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
-| — | Hong Kong reset | Feb 11 – Feb 14 | 3 |
-| 10 | Philippines (warm-up diving) | Feb 14 – Mar 9 | 23 |
-| — | Transit → Sorong | Mar 9 – Mar 11 | 2 |
-| 11 | Raja Ampat liveaboard | Mar 11 – Mar 20 | 10 |
-| — | Transit Sorong → Bali | Mar 20 – Mar 22 | 2 |
-| 12 | Nusa Penida | Mar 22 – Mar 26 | 4 |
-| 13 | Komodo | Mar 26 – Apr 2 | 7 |
-| 14 | Bali + Volcano | Apr 2 – Apr 8 | 6 |
-| 15 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
-| 16 | Singapore | Apr 18 – Apr 25 | 7 |
-| 17 | Kuala Lumpur | Apr 25 – Apr 30 | 5 |
-| 18 | Penang | Apr 30 – May 5 | 5 |
-| 19 | Koh Tao + Koh Samui | May 5 – May 12 | 7 |
-| 20 | Bangkok | May 12 – May 19 | 7 |
-| 21 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
+| 10 | Hong Kong | Feb 11 – Feb 16 | 5 |
+| 11 | Philippines (warm-up diving) | Feb 16 – Mar 9 | 21 |
+| 12 | Indonesia — Raja Ampat | Mar 9 – Mar 22 | 14 |
+| 13 | Indonesia — Nusa Penida · Komodo · Bali | Mar 22 – Apr 8 | 17 |
+| 14 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
+| 15 | Singapore | Apr 18 – Apr 25 | 7 |
+| 16 | Malaysia — KL + Penang | Apr 25 – May 5 | 10 |
+| 17 | Thailand | May 5 – May 19 | 14 |
+| 18 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
 
 **Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
 **China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
@@ -362,34 +356,42 @@ Shenzhen → HK exit Feb 11.
 
 ---
 
-## Hong Kong Reset
-### Feb 11 – Feb 14 · 3 days
+## Chapter 10 — HONG KONG
+### Feb 11 – Feb 16 · 5 days
+*Theme: Neon city, dim sum, city recharge between China and Philippines*
 
-Visa reset between China and Philippines.
-- Victoria Peak, Kowloon neon, Star Ferry, dim sum, Temple Street Night Market
+Five days in one of the world's great cities. Not just a transit — a proper chapter. Neon-soaked Kowloon, world-class dim sum, and the Star Ferry at night.
+
+- Victoria Peak: harbor panorama at dusk, city grid below
+- Star Ferry crossing: Kowloon → Central at night
+- Dim sum yum cha: Tim Ho Wan, Lin Heung, One Dim Sum
+- Temple Street Night Market: jade, fortune tellers, street food
+- Nan Lian Garden + Chi Lin Nunnery (free, stunning)
+- Lamma Island day trip: seafood lunch, car-free village walk
+- Tai O fishing village: stilt houses over tidal channels
 - Rest, laundry, planning
 
-**Fly HK → Manila Feb 14**
+**Fly HK → Manila Feb 16**
 
 ---
 
-## Chapter 10 — PHILIPPINES
-### Feb 14 – Mar 9 · 23 days
+## Chapter 11 — PHILIPPINES
+### Feb 16 – Mar 9 · 21 days
 *Theme: WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
 Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/Moalboal for the sardine run. All day boats — no liveaboard here. This is the warm-up before Raja Ampat.
 
-**Manila — 1 day (Feb 14–15)**
+**Manila — 1 day (Feb 16–17)**
 - Intramuros (walled Spanish colonial city)
 - Fly Manila → Coron
 
-**Coron — 6 days (Feb 15–21)**
+**Coron — 6 days (Feb 17–23)**
 - Japanese WWII wrecks — Okikawa Maru, Irako, Akitsushima (sunk 1944): among the finest wreck diving on Earth
 - Kayangan Lake: crystal-clear inland lake framed by karst
 - Barracuda Lake: thermocline diving (hot/cold layers meet underwater)
 - CYC Beach + Twin Lagoon by banca boat
 
-**El Nido — 8 days (Feb 21 – Mar 1)**
+**El Nido — 6 days (Feb 23 – Mar 1)**
 - Island-hopping: Secret Lagoon, Big Lagoon, Small Lagoon, Cadlao Island
 - Nacpan Beach — empty twin beach
 - Limestone cliffs, turquoise shallows, snorkeling
@@ -407,21 +409,18 @@ Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/M
 
 ---
 
-## Transit → Sorong
-### Mar 9 – Mar 11 · 2 days
+## Chapter 12 — INDONESIA — RAJA AMPAT
+### Mar 9 – Mar 22 · 14 days
+*Theme: The best diving on Earth — liveaboard deep dive*
 
-Cebu → Manado or Manila → Sorong. Arrive Sorong Mar 11, board liveaboard same day.
-Indonesia visa entry: Day 1 of 30. Visa expires Apr 8 — Borneo exit on that date ✓
+Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Transit in, 10 days on the water, transit back to Bali.
 
----
+**Transit to Sorong — 2 days (Mar 9–11)**
+- Cebu → Manado or Manila → Sorong routing
+- Indonesia visa on arrival — Day 1 of 30-day window
+- Pack down to liveaboard dive kit, board same day
 
-## Chapter 11 — RAJA AMPAT
-### Mar 11 – Mar 20 · 10 days (liveaboard) ✓
-*Theme: The best diving on Earth*
-
-Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Mid-season — optimal conditions.
-
-**10 days on the water:**
+**Raja Ampat Liveaboard — 10 days (Mar 11–20)**
 - Wayag: postcard karst islands seen from above (kayak + hike viewpoint)
 - Cape Kri: world record fish count dive site
 - Manta Sandy: manta ray cleaning station
@@ -429,79 +428,49 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 - Pianemo: smaller Wayag, equally dramatic, fewer boats
 - Blue Water Mantas (oceanic, wingspans up to 6m)
 - Wobbegong sharks, walking sharks, pygmy seahorses, nudibranchs
+- Book Papua Diving / Meridian Adventure — **by Oct 2025**
 
-Mandatory strategic splurge. Book Papua Diving, Meridian Adventure, or equivalent operator — **by Oct 2025**.
-
-**Disembark Sorong Mar 20 → fly to Bali**
-
----
-
-## Transit Sorong → Bali
-### Mar 20 – Mar 22 · 2 days
-
-Off the boat in Sorong. Fly via Makassar or direct to Denpasar. Indonesia visa Day 11 of 30.
-Fast boat Sanur → Nusa Penida Mar 22.
+**Transit Sorong → Bali — 2 days (Mar 20–22)**
+- Off the boat in Sorong, fly via Makassar or direct to Denpasar
+- Indonesia visa Day 11 of 30 — 19 days remaining
+- Fast boat Sanur → Nusa Penida Mar 22
 
 ---
 
-## Chapter 12 — NUSA PENIDA
-### Mar 22 – Mar 26 · 4 days
-*Theme: Raw island drama, manta rays, vertical cliffs*
+## Chapter 13 — INDONESIA — NUSA PENIDA · KOMODO · BALI
+### Mar 22 – Apr 8 · 17 days
+*Theme: Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block*
 
-Completely different from Bali: arid, dramatic, raw. Crystal Bay mantas year-round. Kelingking is one of the most dramatic coastal formations in Asia.
+Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, manta-filled. Komodo: dragons and world-class drift dives. Bali: rice terraces and a volcano at 3am. Indonesia visa exits Day 30 ✓
 
+**Nusa Penida — 4 days (Mar 22–26)**
 - Kelingking Beach: the T-Rex cliff, most photographed in the Bali region
 - Angel's Billabong + Broken Beach: natural infinity pool carved into clifftop
 - Crystal Bay: reef manta cleaning station, year-round sightings (early morning dive)
 - Atuh Beach: remote east coast, dramatic
 - Scooter rental for full freedom
 
----
-
-## Chapter 13 — KOMODO
-### Mar 26 – Apr 2 · 7 days
-*Theme: Dragons, world-class diving, wild Indonesia*
-
-Fly Bali → Labuan Bajo. April is entering peak dry season — visibility building, mantas reliable. Day trips from Labuan Bajo — no liveaboard needed.
-
-**Labuan Bajo / Flores — 2 days**
-- Gateway: dramatic harbor, wooden phinisi boats
-- Sunset from Bukit Cinta
-- Grilled fish with sambal
-
-**Komodo National Park — 5 days of day trips**
-*Diving:*
+**Komodo — 7 days (Mar 26 – Apr 2)**
+- Fly Bali → Labuan Bajo: dramatic harbor, wooden phinisi boats
 - Manta Point: oceanic mantas (3–6m) in strong current
 - Crystal Rock + Castle Rock: world-class drift dives
 - Pink Beach: crushed red coral, excellent snorkeling
 - Batu Bolong: pinnacle, coral so dense no bare rock
-
-*Wildlife:*
 - Komodo Island or Rinca Island: Komodo dragons with ranger
-- Padar Island: sunrise hike to viewpoint — three colored bays below
+- Padar Island: sunrise hike — three colored bays stretching below
 
----
-
-## Chapter 14 — BALI + VOLCANO
-### Apr 2 – Apr 8 · 6 days
-*Theme: Temple culture, volcanic sunrise, close of Indonesia block*
-
-Final Indonesia days before the Borneo visa reset. Indonesia visa Day 24 of 30 on arrival.
-
-**Bali — 4 days**
+**Bali + Volcano — 6 days (Apr 2–8)**
 - Ubud: Tegallalang rice terraces, sacred monkey forest
 - Tanah Lot sunset temple on a sea rock
 - Seminyak / Canggu beach club final evening
 - Balinese cooking class
-
-**Mount Batur sunrise — 2 days**
-- 3am departure, 2-hour hike to crater rim at 1,717m
-- Sunrise over the caldera and crater lake — otherworldly
-- **Return and fly Bali → Kota Kinabalu → exits Indonesia on visa Day 30 ✓**
+- Mount Batur: 3am departure, 2-hour hike to crater rim at 1,717m
+- Sunrise over the caldera and crater lake — **Indonesia visa exits Day 30 ✓**
+- **Fly Bali → Kota Kinabalu**
 
 ---
 
-## Chapter 15 — BORNEO / SABAH
+## Chapter 14 — BORNEO / SABAH
 ### Apr 8 – Apr 18 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -532,7 +501,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 16 — SINGAPORE
+## Chapter 15 — SINGAPORE
 ### Apr 18 – Apr 25 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -545,24 +514,20 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 17 — KUALA LUMPUR
-### Apr 25 – Apr 30 · 5 days
-*Theme: Urban contrast before the island escape*
+## Chapter 16 — MALAYSIA — KL + PENANG
+### Apr 25 – May 5 · 10 days
+*Theme: Urban intensity, street food capital, colonial slow life*
 
+KL for the city spectacle and food, Penang for the most rewarding slow chapter in mainland SE Asia. Georgetown is UNESCO, effortlessly liveable, and the hawker food is unsurpassed.
+
+**Kuala Lumpur — 5 days (Apr 25–30)**
 - Petronas Twin Towers at night — best view from KLCC park reflection pool
 - Batu Caves: rainbow steps, macaques, Hindu temple inside limestone
 - Jalan Alor Night Food Street
 - Bukit Bintang neighborhood
 - Train north to Penang (ETS scenic coastal rail)
 
----
-
-## Chapter 18 — PENANG
-### Apr 30 – May 5 · 5 days
-*Theme: Street food, café culture, colonial slow life*
-
-Georgetown is the best café-culture slow chapter in mainland SE Asia. Find a recurring breakfast spot.
-
+**Penang — 5 days (Apr 30 – May 5)**
 - Armenian Street: Zacharevic murals, shophouse architecture (UNESCO)
 - Gurney Drive hawker: char kway teow, asam laksa, cendol — the real versions
 - Clan Jetties: Chinese stilt villages over the water
@@ -572,29 +537,22 @@ Georgetown is the best café-culture slow chapter in mainland SE Asia. Find a re
 
 ---
 
-## Chapter 19 — KOH TAO + KOH SAMUI
-### May 5 – May 12 · 7 days
-*Theme: Tropical reset, warm water, reef diving*
+## Chapter 17 — THAILAND
+### May 5 – May 19 · 14 days
+*Theme: Islands, reef diving, urban intensity, street food*
 
-Gulf of Thailand coast. May is firmly in the dry season on this side — clear water, calm seas, 30°C.
+Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Bangkok: temples, canal boats, and the best street food city on Earth.
 
-**Koh Tao — 5 days**
+**Koh Tao — 5 days (May 5–10)**
 - One of the best value diving destinations on Earth
 - Japanese Gardens, Chumphon Pinnacle, Sail Rock (whale shark territory in May)
 - No agenda: hammock, reef, lunch, repeat
 
-**Koh Samui — 2 days**
+**Koh Samui — 2 days (May 10–12)**
 - Chaweng Beach, Big Buddha
-- Transfer to Bangkok via Surat Thani
+- Ferry to Surat Thani → bus/flight to Bangkok
 
----
-
-## Chapter 20 — BANGKOK
-### May 12 – May 19 · 7 days
-*Theme: Urban intensity, street food, temples*
-
-Bangkok in May is 34–36°C — hot but city travel is fine with AC and canal boats.
-
+**Bangkok — 7 days (May 12–19)**
 - Wat Pho: reclining Buddha, massage school
 - Grand Palace + Wat Phra Kaew
 - Khlong canal boat commute through the city
@@ -606,7 +564,7 @@ Bangkok in May is 34–36°C — hot but city travel is fine with AC and canal b
 
 ---
 
-## Chapter 21 — CHINA BLOCK 2 (Landscapes)
+## Chapter 18 — CHINA BLOCK 2 (Landscapes)
 ### May 19 – Jun 8 · 20 days
 *Theme: Surreal landscapes, ancient empire, spring China*
 
@@ -652,7 +610,7 @@ Travel, last meals. **Fly home Jun 8, 2027.**
 
 | Destination | Dates | Duration | Notes |
 |---|---|---|---|
-| Coron — WWII Wrecks | Feb 15–21 | 6d | Japanese warships — world's best wreck diving |
+| Coron — WWII Wrecks | Feb 17–23 | 6d | Japanese warships — world's best wreck diving |
 | Cebu / Moalboal | Mar 1–7 | ~5d | Sardine run, thresher sharks at Malapascua |
 | Raja Ampat | Mar 11–20 | 10d liveaboard | Mid-season; book by Oct 2025 |
 | Nusa Penida — Crystal Bay | Mar 22–26 | 4d | Reef mantas, year-round |
@@ -666,8 +624,7 @@ Travel, last meals. **Fly home Jun 8, 2027.**
 
 | Chapter | Timing | Assessment |
 |---|---|---|
-| Georgia | late Aug | Optimal — harvest season, cool mountains, no crowds |
-| Turkey | Sep 5–30 | Optimal — best month (balloons, coast, Istanbul) |
+| Turkey | Sep 8–30 | Optimal — best month (balloons, coast, Istanbul) |
 | Nepal ABC trek | Oct 1+ | Optimal — peak post-monsoon, zero risk |
 | India | late Oct–Nov | Good — post-monsoon clear, Golden Triangle + Rishikesh |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
