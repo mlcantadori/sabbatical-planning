@@ -8,7 +8,7 @@ window.TRIP_GEO = {
     'georgia':      [41.6938,  44.8015], // Tbilisi
     'turkey':       [41.0082,  28.9784], // Istanbul
     'nepal':        [27.7172,  85.3240], // Kathmandu
-    'india':        [30.0869,  78.2676], // Rishikesh (heart of chapter)
+    'india':        [28.6139,  77.2090], // New Delhi
     'japan-autumn': [35.6762, 139.6503], // Tokyo
     'korea':        [37.5665, 126.9780], // Seoul
     'taiwan':       [25.0330, 121.5654], // Taipei
@@ -21,7 +21,7 @@ window.TRIP_GEO = {
     'transit-2':    [-8.6500, 115.2167], // Bali (Denpasar area)
     'nusa-penida':  [-8.7270, 115.5444], // Nusa Penida
     'komodo':       [-8.4889, 119.8825], // Labuan Bajo
-    'bali-volcano': [-8.2427, 115.3747], // Mount Batur / Kintamani
+    'bali-volcano': [-8.5069, 115.2625], // Ubud, Bali
     'borneo':       [ 5.9804, 116.0735], // Kota Kinabalu
     'singapore':    [ 1.2834, 103.8607], // Marina Bay
     'kl':           [ 3.1579, 101.7117], // KL
