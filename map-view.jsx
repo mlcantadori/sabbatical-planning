@@ -73,7 +73,7 @@
       // Chapter pins
       ROUTE_CHAPTERS.forEach((c) => {
         const region = REGIONS[c.region] || { accent: '#c2693a' };
-        const num = c.kind === 'chapter' ? (c.num == null ? '' : c.num.toString()) : '·';
+        const num = c.kind === 'transit' ? '·' : (c.num == null ? '' : c.num.toString());
         const html = `
           <div class="map-pin" data-chapter="${c.id}">
             <div class="map-pin-num" style="--pin-c: ${region.accent};">${num}</div>

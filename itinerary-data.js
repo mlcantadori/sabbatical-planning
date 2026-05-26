@@ -234,7 +234,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'hk', num: null, kind: 'reset', region: 'middle',
+      id: 'hk', num: 9, kind: 'reset', region: 'middle',
       country: 'Hong Kong', flag: '🇭🇰', title: 'Hong Kong reset',
       start: '2027-02-11', end: '2027-02-14', days: 3,
       theme: 'Visa reset between China and Philippines',
@@ -248,7 +248,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'philippines', num: 9, kind: 'chapter', region: 'archipelago',
+      id: 'philippines', num: 10, kind: 'chapter', region: 'archipelago',
       country: 'Philippines', flag: '🇵🇭', title: 'Philippines',
       start: '2027-02-14', end: '2027-03-09', days: 23,
       theme: 'WWII wreck diving, limestone islands, warm-up for Raja Ampat',
@@ -286,7 +286,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'raja-ampat', num: 10, kind: 'chapter', region: 'archipelago',
+      id: 'raja-ampat', num: 11, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Raja Ampat',
       start: '2027-03-11', end: '2027-03-20', days: 10,
       theme: 'The best diving on Earth',
@@ -316,7 +316,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'nusa-penida', num: 11, kind: 'chapter', region: 'archipelago',
+      id: 'nusa-penida', num: 12, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Nusa Penida',
       start: '2027-03-22', end: '2027-03-26', days: 4,
       theme: 'Raw island drama, manta rays, vertical cliffs',
@@ -331,7 +331,7 @@ window.TRIP = (function () {
       diving: { sites: 4, type: 'Day dives', operators: 'Crystal Bay Dive (most reliable for mantas)' },
     },
     {
-      id: 'komodo', num: 12, kind: 'chapter', region: 'archipelago',
+      id: 'komodo', num: 13, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Komodo',
       start: '2027-03-26', end: '2027-04-02', days: 7,
       theme: 'Dragons, world-class diving, wild Indonesia',
@@ -348,7 +348,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day trips by fast boat', operators: 'Many operators in Labuan Bajo' },
     },
     {
-      id: 'bali-volcano', num: 13, kind: 'chapter', region: 'archipelago',
+      id: 'bali-volcano', num: 14, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Bali + Volcano',
       start: '2027-04-02', end: '2027-04-08', days: 6,
       theme: 'Tropical landing, temple culture, volcanic sunrise',
@@ -364,7 +364,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'borneo', num: 14, kind: 'chapter', region: 'rainforest',
+      id: 'borneo', num: 15, kind: 'chapter', region: 'rainforest',
       country: 'Malaysia', flag: '🇲🇾', title: 'Borneo / Sabah',
       start: '2027-04-08', end: '2027-04-18', days: 10,
       theme: 'Indonesia visa reset + wildlife chapter',
@@ -385,7 +385,7 @@ window.TRIP = (function () {
       booking: ['Kinabatangan river lodge — book 2–3 months ahead; Sipadan permits by Nov 2026 if adding 3 extra days'],
     },
     {
-      id: 'singapore', num: 15, kind: 'chapter', region: 'isthmus',
+      id: 'singapore', num: 16, kind: 'chapter', region: 'isthmus',
       country: 'Singapore', flag: '🇸🇬', title: 'Singapore',
       start: '2027-04-18', end: '2027-04-25', days: 7,
       theme: 'World-class food, modern wonder, city recharge',
@@ -399,7 +399,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'kl', num: 16, kind: 'chapter', region: 'isthmus',
+      id: 'kl', num: 17, kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Kuala Lumpur',
       start: '2027-04-25', end: '2027-04-30', days: 5,
       theme: 'Urban contrast, Petronas, food before the island escape',
@@ -413,7 +413,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'penang', num: 17, kind: 'chapter', region: 'isthmus',
+      id: 'penang', num: 18, kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Penang',
       start: '2027-04-30', end: '2027-05-05', days: 5,
       theme: 'Street food, café culture, colonial slow life',
@@ -427,7 +427,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'koh-tao', num: 18, kind: 'chapter', region: 'isthmus',
+      id: 'koh-tao', num: 19, kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Koh Tao + Koh Samui',
       start: '2027-05-05', end: '2027-05-12', days: 7,
       theme: 'Tropical reset, warm water, reef diving',
@@ -444,7 +444,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on island' },
     },
     {
-      id: 'bangkok', num: 19, kind: 'chapter', region: 'isthmus',
+      id: 'bangkok', num: 20, kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Bangkok',
       start: '2027-05-12', end: '2027-05-19', days: 7,
       theme: 'Urban intensity, street food, temples',
@@ -458,7 +458,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'china-2', num: 20, kind: 'chapter', region: 'middle',
+      id: 'china-2', num: 21, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 2',
       start: '2027-05-19', end: '2027-06-08', days: 20,
       theme: 'Surreal landscapes, ancient empire, spring China',
