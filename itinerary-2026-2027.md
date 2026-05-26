@@ -13,8 +13,8 @@
 | 0 | Toronto | Aug 24 – Aug 27 | 3 |
 | 1 | Athens | Aug 27 – Sep 8 | 12 |
 | 2 | Turkey | Sep 8 – Sep 30 | 22 |
-| 3 | Nepal (reduced) | Oct 1 – Oct 21 | 20 |
-| 4 | India (max 20d) | Oct 21 – Nov 10 | 20 |
+| 3 | India (max 20d) | Oct 1 – Oct 21 | 20 |
+| 4 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 5 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
 | 6 | South Korea | Nov 30 – Dec 24 | 24 |
 | 7 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
@@ -122,64 +122,33 @@ September is the single best month to visit Turkey. Cappadocia balloon flights a
 
 ---
 
-## Chapter 3 — NEPAL
+## Chapter 3 — INDIA
 ### Oct 1 – Oct 21 · 20 days
-*Theme: Sacred roof of the world, physical peak, elemental beauty*
-
-October is the gold standard trekking month. Monsoon has fully cleared. Skies crystalline. Himalayan views unobstructed 360°.
-
-**Kathmandu — 3 days (Oct 1–4)**
-- Boudhanath Stupa — one of the largest stupas on Earth
-- Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati
-- Swayambhunath (Monkey Temple)
-- Altitude acclimatization, gear check, ACAP + TIMS permits
-
-**Pokhara — 2 days (Oct 4–6)**
-- Phewa Lake calm before the trek
-- Annapurna range at dawn from the lakeside
-
-**Annapurna Base Camp Trek — 13 days (Oct 6–19)**
-Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchhre Base Camp → ABC (4,130m)
-- Teahouse circuit — no camping gear needed
-- Rhododendron forests, glacial moraines, 360° Annapurna amphitheater at the top
-- Return via Jhinu hot springs
-
-**Pokhara recovery — 2 days (Oct 19–21)**
-- Lakeside slow meals, massage, reflection
-- Optional paragliding over Phewa Lake
-- Sārangkot sunrise over the Himalayas
-
-**Fly Pokhara → Delhi Oct 21**
-
----
-
-## Chapter 4 — INDIA
-### Oct 21 – Nov 10 · 20 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
 A tighter, more intentional India: Varanasi for spiritual intensity, the Golden Triangle, then a full week deep in Rishikesh for yoga, river, and mountain air. No Ranthambore, no Darjeeling — more depth, less breadth.
 
-**Delhi — 1 day (Oct 21–22)**
+**Delhi — 1 day (Oct 1–2)**
 Transit, Old Delhi brief walk.
 
-**Varanasi — 2 days (Oct 22–24)**
+**Varanasi — 2 days (Oct 2–4)**
 - Ghats at dawn: rowing on the Ganges in morning mist
 - Ganga Aarti at dusk: fire, flowers, bells, priests
 - Manikarnika cremation ghats
 - Chai, silk, narrow alleys
 
-**Agra — 3 days (Oct 24–27)**
+**Agra — 3 days (Oct 4–7)**
 - Taj Mahal at sunrise — arrive 6am, golden light
 - Agra Fort
 - Mehtab Bagh (sunset Taj view across the river)
 - Fatehpur Sikri day trip
 
-**Jaipur — 3 days (Oct 27–30)**
+**Jaipur — 3 days (Oct 7–10)**
 - Amber Fort, mirror palace
 - Hawa Mahal, City Palace, Jantar Mantar observatory
 - Pink City bazaars
 
-**Rishikesh — 8 days (Oct 30 – Nov 7)**
+**Rishikesh — 8 days (Oct 10–18)**
 - Yoga + meditation at Parmarth Niketan (multi-day immersive)
 - Evening Ganga Aarti on the ghats — intimate, non-touristic
 - Beatles Ashram ruins (Maharishi Mahesh Yogi Ashram)
@@ -188,11 +157,42 @@ Transit, Old Delhi brief walk.
 - Ayurvedic treatments
 - Day trip: Haridwar Ganga Aarti + Har Ki Pauri
 
-**Delhi — 3 days (Nov 7–10)**
+**Delhi — 3 days (Oct 18–21)**
 - Humayun's Tomb, Lodhi Garden walk
 - Departure prep
 
-**Fly Delhi → Tokyo Nov 10**
+**Fly Delhi → Kathmandu Oct 21**
+
+---
+
+## Chapter 4 — NEPAL
+### Oct 21 – Nov 10 · 20 days
+*Theme: Sacred roof of the world, physical peak, elemental beauty*
+
+Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude.
+
+**Kathmandu — 3 days (Oct 21–24)**
+- Boudhanath Stupa — one of the largest stupas on Earth
+- Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati
+- Swayambhunath (Monkey Temple)
+- Altitude acclimatization, gear check, ACAP + TIMS permits
+
+**Pokhara — 2 days (Oct 24–26)**
+- Phewa Lake calm before the trek
+- Annapurna range at dawn from the lakeside
+
+**Annapurna Base Camp Trek — 13 days (Oct 26 – Nov 8)**
+Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchhre Base Camp → ABC (4,130m)
+- Teahouse circuit — no camping gear needed
+- Rhododendron forests, glacial moraines, 360° Annapurna amphitheater at the top
+- Return via Jhinu hot springs
+
+**Pokhara recovery — 2 days (Nov 8–10)**
+- Lakeside slow meals, massage, reflection
+- Optional paragliding over Phewa Lake
+- Sārangkot sunrise over the Himalayas
+
+**Fly Pokhara → Tokyo Nov 10**
 
 ---
 
@@ -625,8 +625,8 @@ Travel, last meals. **Fly home Jun 8, 2027.**
 | Chapter | Timing | Assessment |
 |---|---|---|
 | Turkey | Sep 8–30 | Optimal — best month (balloons, coast, Istanbul) |
-| Nepal ABC trek | Oct 1+ | Optimal — peak post-monsoon, zero risk |
-| India | late Oct–Nov | Good — post-monsoon clear, Golden Triangle + Rishikesh |
+| India | Oct 1–21 | Optimal — post-monsoon clear, Golden Triangle + Rishikesh |
+| Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
 | South Korea | Dec–Jan | Good — cozy winter, palaces, food |
 | Taiwan / NYE | Dec 24–Jan 2 | Optimal — dry, clear; Taipei 101 NYE ✓ |
