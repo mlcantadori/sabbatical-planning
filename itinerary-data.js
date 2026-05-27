@@ -2,7 +2,7 @@
 // Drives all three design directions. Read-only at runtime.
 
 window.TRIP = (function () {
-  const START = new Date('2026-08-24');
+  const START = new Date('2026-06-21');
   const END = new Date('2027-06-08');
   const MS = 86400000;
   const totalDays = Math.round((END - START) / MS);
@@ -57,7 +57,53 @@ window.TRIP = (function () {
   // intro (poetic), tldr (condensed), weather, region, places[]
   const chapters = [
     {
-      id: 'toronto', num: 0, kind: 'chapter', region: 'americas',
+      id: 'rio', num: 1, kind: 'chapter', region: 'americas',
+      country: 'Brasil', flag: '🇧🇷', title: 'Rio de Janeiro',
+      start: '2026-06-21', end: '2026-07-20', days: 29,
+      theme: 'A cidade maravilhosa — verão carioca, morro, praia, samba',
+      intro: 'Junho e julho são a melhor época no Rio: céu limpo, temperatura ideal, sem umidade do verão. A cidade como ela é — sem a loucura do carnaval, mas com toda a energia.',
+      tldr: 'Copacabana · Lapa · Santa Teresa · Paraty',
+      weather: { hi: 27, lo: 18, label: 'Inverno carioca, 27°/18°', emoji: '🌊' },
+      photos: ['rio de janeiro cristo redentor sunset','copacabana beach rio sunrise','lapa arches santa teresa rio','paraty colonial boats bay'],
+      places: [
+        { name: 'Rio de Janeiro', days: 25, query: 'Ipanema, Rio de Janeiro',
+          highlights: ['Cristo Redentor ao amanhecer — antes das 8h, sem turistas','Pão de Açúcar no fim do dia — teleférico + vista da Baía de Guanabara','Copacabana + Ipanema: calçadão, quiosques, vôlei de praia','Lapa na quinta e sexta: frevos, samba ao vivo, arcos iluminados','Santa Teresa: bonde histórico, ateliês, Bar do Gomez','Maracanã: assistir um clássico Fla-Flu ou Fla-Vasco','Jardim Botânico + Lagoa Rodrigo de Freitas: corrida ou pedalada','Museu do Amanhã + Boulevard Olímpico: revitalização da zona portuária','Feira de São Cristóvão aos fins de semana: forró, comida nordestina','Prainha + Grumari: praias selvagens no extremo oeste da cidade'] },
+        { name: 'Paraty', days: 4, query: 'Paraty, Rio de Janeiro',
+          highlights: ['Centro histórico colonial tombado pela UNESCO — ruas de pedra, casarões brancos','Passeio de escuna pela baía: ilhas desertas, cachoeiras, snorkel','Cachaça artesanal: visita a alambiques no entorno','Trilha da Pedra Branca com vista do litoral verde','Passagem para o sul — caminho para Cumbuco'] },
+      ],
+    },
+    {
+      id: 'cumbuco', num: 2, kind: 'chapter', region: 'americas',
+      country: 'Brasil', flag: '🇧🇷', title: 'Cumbuco',
+      start: '2026-07-21', end: '2026-08-17', days: 27,
+      theme: 'Kite, lagoa, dunas — melhor vento do Brasil',
+      intro: 'Julho a agosto é o pico da temporada de vento no Ceará. Cumbuco tem a combinação perfeita: vento constante, lagoas de água doce para fazer kite, dunas, jangadas, e ritmo de interior nordestino.',
+      tldr: 'Cumbuco · Lagoa do Cauípe · Jericoacoara',
+      weather: { hi: 30, lo: 24, label: 'Nordeste seco, 30°/24°', emoji: '🪁' },
+      photos: ['cumbuco kitesurf lagoa ceara','jericoacoara sand dune sunset','lagoa azul cumbuco ceara','jangada fishing boat nordeste brazil'],
+      places: [
+        { name: 'Cumbuco', days: 20, query: 'Cumbuco, Caucaia, Ceará',
+          highlights: ['Kitesurf na Lagoa do Cauípe — vento de 25–35 nós constante, água rasa e quente','Aulas e progressão de kite (ou wing/windsurf) no flatwater da lagoa','Passeio de buggy pelas dunas e lagoas da orla','Jangada ao amanhecer com pescadores locais','Lagoa Barra Seca + Lagoa Grande de buggy','Pôr do sol na praia com caju gelado','Frutos do mar frescos na orla: lagosta, camarão, peixe grelhado'] },
+        { name: 'Jericoacoara', days: 7, query: 'Jericoacoara, Ceará',
+          highlights: ['Dunas de Jeri ao pôr do sol — ritual diário de toda a vila','Lagoa Azul e Lagoa do Paraíso de buggy: kite no flatwater perfeito','Pedra Furada ao amanhecer sem ninguém','Windsurf e kite entre Jeri e Preá','Vila sem ruas asfaltadas, energia no ar','Fly Fortaleza → Toronto para abrir o bloco internacional'] },
+      ],
+    },
+    {
+      id: 'saopaulo', num: 3, kind: 'chapter', region: 'americas',
+      country: 'Brasil', flag: '🇧🇷', title: 'São Paulo',
+      start: '2026-08-17', end: '2026-08-23', days: 6,
+      theme: 'Metrópole cultural, gastronomia, despedida',
+      intro: 'Seis dias para fechar o ciclo brasileiro antes de embarcar. São Paulo tem a melhor cena gastronômica da América Latina e um circuito cultural denso — MASP, Pinacoteca, Vila Madelena.',
+      tldr: 'MASP · Vila Madelena · Liberdade · Ibirapuera',
+      weather: { hi: 24, lo: 14, label: 'Inverno paulistano, 24°/14°', emoji: '☕' },
+      photos: ['masp museu arte sao paulo paulista','vila madelena beco batman street art','ibirapuera park sao paulo','liberdade japanese quarter sao paulo'],
+      places: [
+        { name: 'São Paulo', days: 6, query: 'Avenida Paulista, São Paulo',
+          highlights: ['MASP — acervo europeu em estrutura suspensa sobre a Paulista','Pinacoteca do Estado — melhor museu de arte brasileira','Vila Madelena: Beco do Batman, ateliês, bares, brunch','Liberdade: bairro japonês — yakisoba, onigiri, cultura nikkei','Ibirapuera: corrida, Museu Afro, Oca, pavilhões de Niemeyer','Mercadão Municipal: mortadela, bacalhau, frutas exóticas','Jantar de despedida no Japinha ou rodízio paulistano clássico','Fly São Paulo → Toronto para abrir o sabbatical internacional'] },
+      ],
+    },
+    {
+      id: 'toronto', num: 4, kind: 'chapter', region: 'americas',
       country: 'Canada', flag: '🇨🇦', title: 'Toronto',
       start: '2026-08-24', end: '2026-08-27', days: 3,
       theme: 'North American send-off, city stopover before Europe',
@@ -71,7 +117,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'athens', num: 1, kind: 'chapter', region: 'mediterranean',
+      id: 'athens', num: 5, kind: 'chapter', region: 'mediterranean',
       country: 'Greece', flag: '🇬🇷', title: 'Athens',
       start: '2026-08-27', end: '2026-09-08', days: 12,
       theme: 'Ancient Mediterranean, cradle of Western civilization, island prologue',
@@ -89,7 +135,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'turkey', num: 2, kind: 'chapter', region: 'crossroads',
+      id: 'turkey', num: 6, kind: 'chapter', region: 'crossroads',
       country: 'Turkey', flag: '🇹🇷', title: 'Turkey',
       start: '2026-09-08', end: '2026-09-30', days: 22,
       theme: 'Ancient crossroads, Aegean coast, surreal landscapes',
@@ -110,7 +156,7 @@ window.TRIP = (function () {
       booking: ['Cappadocia balloon — book by Jul 2026 (Royal Balloon / Butterfly Balloons)'],
     },
     {
-      id: 'india', num: 3, kind: 'chapter', region: 'himalaya',
+      id: 'india', num: 7, kind: 'chapter', region: 'himalaya',
       country: 'India', flag: '🇮🇳', title: 'India',
       start: '2026-10-01', end: '2026-10-21', days: 20,
       theme: 'Sacred intensity, iconic monuments, Himalayan slow life',
@@ -135,7 +181,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'nepal', num: 4, kind: 'chapter', region: 'himalaya',
+      id: 'nepal', num: 8, kind: 'chapter', region: 'himalaya',
       country: 'Nepal', flag: '🇳🇵', title: 'Nepal',
       start: '2026-10-21', end: '2026-11-10', days: 20,
       theme: 'Sacred roof of the world, physical peak, elemental beauty',
@@ -156,7 +202,7 @@ window.TRIP = (function () {
       booking: ['ACAP permit + TIMS card — on arrival in Kathmandu'],
     },
     {
-      id: 'japan-autumn', num: 5, kind: 'chapter', region: 'northeast',
+      id: 'japan-autumn', num: 9, kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Autumn',
       start: '2026-11-10', end: '2026-11-30', days: 20,
       theme: 'Sacred refinement, koyo at peak, slow urban chapter',
@@ -174,7 +220,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'korea', num: 6, kind: 'chapter', region: 'northeast',
+      id: 'korea', num: 10, kind: 'chapter', region: 'northeast',
       country: 'South Korea', flag: '🇰🇷', title: 'South Korea',
       start: '2026-11-30', end: '2026-12-24', days: 24,
       theme: 'Electric winter hearth, K-culture, food depth, slow traditional chapter',
@@ -196,7 +242,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'taiwan', num: 7, kind: 'chapter', region: 'northeast',
+      id: 'taiwan', num: 11, kind: 'chapter', region: 'northeast',
       country: 'Taiwan', flag: '🇹🇼', title: 'Taiwan',
       start: '2026-12-24', end: '2027-01-02', days: 9,
       theme: 'Café culture, NYE fireworks, dramatic east coast',
@@ -212,7 +258,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'japan-winter', num: 8, kind: 'chapter', region: 'northeast',
+      id: 'japan-winter', num: 12, kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Winter',
       start: '2027-01-02', end: '2027-01-12', days: 10,
       theme: 'Powder snowboarding, mountain stillness, onsen',
@@ -230,7 +276,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'china-1', num: 9, kind: 'chapter', region: 'middle',
+      id: 'china-1', num: 13, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 1',
       start: '2027-01-12', end: '2027-02-11', days: 30,
       theme: 'Imperial capital, global finance hub, future-tech frontier',
@@ -250,7 +296,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'hk', num: 10, kind: 'chapter', region: 'middle',
+      id: 'hk', num: 14, kind: 'chapter', region: 'middle',
       country: 'Hong Kong', flag: '🇭🇰', title: 'Hong Kong',
       start: '2027-02-11', end: '2027-02-16', days: 5,
       theme: 'Neon city, dim sum, visa reset between China and Philippines',
@@ -264,7 +310,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'philippines', num: 11, kind: 'chapter', region: 'archipelago',
+      id: 'philippines', num: 15, kind: 'chapter', region: 'archipelago',
       country: 'Philippines', flag: '🇵🇭', title: 'Philippines',
       start: '2027-02-16', end: '2027-03-09', days: 21,
       theme: 'WWII wreck diving, limestone islands, warm-up for Raja Ampat',
@@ -288,7 +334,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'indonesia-1', num: 12, kind: 'chapter', region: 'archipelago',
+      id: 'indonesia-1', num: 16, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia — Raja Ampat',
       start: '2027-03-09', end: '2027-03-22', days: 14,
       theme: 'The best diving on Earth — liveaboard deep dive',
@@ -308,7 +354,7 @@ window.TRIP = (function () {
       booking: ['Raja Ampat liveaboard — book by Oct 2025 (Mar 11–20 dates)'],
     },
     {
-      id: 'indonesia-2', num: 13, kind: 'chapter', region: 'archipelago',
+      id: 'indonesia-2', num: 17, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia — Nusa Penida · Komodo · Bali',
       start: '2027-03-22', end: '2027-04-08', days: 17,
       theme: 'Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block',
@@ -327,7 +373,7 @@ window.TRIP = (function () {
       diving: { sites: 12, type: 'Day dives + day boats', operators: 'Crystal Bay Dive (Nusa Penida); multiple operators in Labuan Bajo (Komodo)' },
     },
     {
-      id: 'borneo', num: 14, kind: 'chapter', region: 'rainforest',
+      id: 'borneo', num: 18, kind: 'chapter', region: 'rainforest',
       country: 'Malaysia', flag: '🇲🇾', title: 'Borneo / Sabah',
       start: '2027-04-08', end: '2027-04-18', days: 10,
       theme: 'Indonesia visa reset + wildlife chapter',
@@ -348,7 +394,7 @@ window.TRIP = (function () {
       booking: ['Kinabatangan river lodge — book 2–3 months ahead; Sipadan permits by Nov 2026 if adding 3 extra days'],
     },
     {
-      id: 'singapore', num: 15, kind: 'chapter', region: 'isthmus',
+      id: 'singapore', num: 19, kind: 'chapter', region: 'isthmus',
       country: 'Singapore', flag: '🇸🇬', title: 'Singapore',
       start: '2027-04-18', end: '2027-04-25', days: 7,
       theme: 'World-class food, modern wonder, city recharge',
@@ -362,7 +408,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'malaysia', num: 16, kind: 'chapter', region: 'isthmus',
+      id: 'malaysia', num: 20, kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia',
       start: '2027-04-25', end: '2027-05-05', days: 10,
       theme: 'Urban intensity, street food capital, colonial slow life',
@@ -378,7 +424,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'thailand', num: 17, kind: 'chapter', region: 'isthmus',
+      id: 'thailand', num: 21, kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Thailand',
       start: '2027-05-05', end: '2027-05-19', days: 14,
       theme: 'Islands, reef diving, urban intensity, street food',
@@ -397,7 +443,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on Koh Tao' },
     },
     {
-      id: 'china-2', num: 18, kind: 'chapter', region: 'middle',
+      id: 'china-2', num: 22, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 2',
       start: '2027-05-19', end: '2027-06-08', days: 20,
       theme: 'Surreal landscapes, ancient empire, spring China',
@@ -467,6 +513,9 @@ window.TRIP = (function () {
   // months: 1-indexed array of good months. If a chapter's start month falls
   // outside this range, a season warning is shown in the impact preview.
   const optimalWindows = {
+    'rio':          { months: [6, 7, 8, 9],            note: 'Jun–Sep: inverno carioca seco, sem umidade, praias limpas' },
+    'cumbuco':      { months: [7, 8, 9, 10, 11],      note: 'Jul–Nov: pico da temporada de vento no Ceará, Jeri em destaque' },
+    'saopaulo':     { months: [5, 6, 7, 8, 9],        note: 'Mai–Set: inverno paulistano, menos umidade, agradável para cidade' },
     'toronto':      { months: [7, 8, 9],              note: 'Jul–Sep: warm summer, patios open, Lake Ontario swimmable' },
     'athens':       { months: [5, 6, 9, 10],         note: 'May–Jun and Sep–Oct: ideal temps; Aug is peak heat + crowds' },
     'turkey':       { months: [9, 10],               note: 'Sep–Oct: post-summer, ideal weather, balloon season' },

@@ -5,8 +5,11 @@
 window.TRIP_GEO = {
   // Chapter anchors (rough "you are here" point per chapter)
   chapters: {
-    'toronto':      [43.6532,  -79.3832], // CN Tower, Toronto
-    'athens':       [37.9838,   23.7275], // Acropolis, Athens
+    'rio':          [-22.9068,  -43.1729], // Ipanema, Rio de Janeiro
+    'cumbuco':      [ -3.2833,  -38.7667], // Cumbuco, Ceará
+    'saopaulo':     [-23.5505,  -46.6333], // Av. Paulista, São Paulo
+    'toronto':      [ 43.6532,  -79.3832], // CN Tower, Toronto
+    'athens':       [ 37.9838,   23.7275], // Acropolis, Athens
     'turkey':       [41.0082,   28.9784], // Istanbul
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
@@ -27,8 +30,16 @@ window.TRIP_GEO = {
   },
   // Place-level (drilldown) coords. Key is "chapterId/placeName".
   places: {
+    // Rio de Janeiro
+    'rio/Rio de Janeiro':                     [-22.9068,  -43.1729],
+    'rio/Paraty':                             [-23.2178,  -44.7131],
+    // Cumbuco
+    'cumbuco/Cumbuco':                        [ -3.2833,  -38.7667],
+    'cumbuco/Jericoacoara':                   [ -2.7978,  -40.5120],
+    // São Paulo
+    'saopaulo/São Paulo':                     [-23.5505,  -46.6333],
     // Toronto
-    'toronto/Toronto':                        [43.6532,  -79.3832],
+    'toronto/Toronto':                        [ 43.6532,  -79.3832],
     // Athens
     'athens/Athens':                          [37.9838,   23.7275],
     'athens/Hydra':                           [37.3478,   23.4764],

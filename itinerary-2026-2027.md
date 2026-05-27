@@ -1,8 +1,8 @@
 # Asia Sabbatical — Itinerary 2026–2027
 
-**Duration:** August 24, 2026 – June 8, 2027 (288 days / ~9.5 months)
+**Duration:** June 21, 2026 – June 8, 2027 (352 days / ~12 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
-**Arc:** Americas → Mediterranean → Turkey → South Asia → Northeast Asia → China (metropolises) → Philippines → Indonesia → SE Asia → China (landscapes) → home
+**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Ásia do Sul → Nordeste Asiático → China (metrópoles) → Filipinas → Indonésia → Ásia do Sudeste → China (paisagens) → home
 
 ---
 
@@ -10,25 +10,28 @@
 
 | # | Destination | Dates | Days |
 |---|---|---|---|
-| 0 | Toronto | Aug 24 – Aug 27 | 3 |
-| 1 | Athens | Aug 27 – Sep 8 | 12 |
-| 2 | Turkey | Sep 8 – Sep 30 | 22 |
-| 3 | India (max 20d) | Oct 1 – Oct 21 | 20 |
-| 4 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
-| 5 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
-| 6 | South Korea | Nov 30 – Dec 24 | 24 |
-| 7 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
-| 8 | Japan — Winter (Hakuba) | Jan 2 – Jan 12 | 10 |
-| 9 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
-| 10 | Hong Kong | Feb 11 – Feb 16 | 5 |
-| 11 | Philippines (warm-up diving) | Feb 16 – Mar 9 | 21 |
-| 12 | Indonesia — Raja Ampat | Mar 9 – Mar 22 | 14 |
-| 13 | Indonesia — Nusa Penida · Komodo · Bali | Mar 22 – Apr 8 | 17 |
-| 14 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
-| 15 | Singapore | Apr 18 – Apr 25 | 7 |
-| 16 | Malaysia | Apr 25 – May 5 | 10 |
-| 17 | Thailand | May 5 – May 19 | 14 |
-| 18 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
+| 1 | Rio de Janeiro | Jun 21 – Jul 20 | 29 |
+| 2 | Cumbuco | Jul 21 – Aug 17 | 27 |
+| 3 | São Paulo | Aug 17 – Aug 23 | 6 |
+| 4 | Toronto | Aug 24 – Aug 27 | 3 |
+| 5 | Athens | Aug 27 – Sep 8 | 12 |
+| 6 | Turkey | Sep 8 – Sep 30 | 22 |
+| 7 | India (max 20d) | Oct 1 – Oct 21 | 20 |
+| 8 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
+| 9 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
+| 10 | South Korea | Nov 30 – Dec 24 | 24 |
+| 11 | Taiwan (NYE ✓) | Dec 24 – Jan 2 | 9 |
+| 12 | Japan — Winter (Hakuba) | Jan 2 – Jan 12 | 10 |
+| 13 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
+| 14 | Hong Kong | Feb 11 – Feb 16 | 5 |
+| 15 | Philippines (warm-up diving) | Feb 16 – Mar 9 | 21 |
+| 16 | Indonesia — Raja Ampat | Mar 9 – Mar 22 | 14 |
+| 17 | Indonesia — Nusa Penida · Komodo · Bali | Mar 22 – Apr 8 | 17 |
+| 18 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
+| 19 | Singapore | Apr 18 – Apr 25 | 7 |
+| 20 | Malaysia | Apr 25 – May 5 | 10 |
+| 21 | Thailand | May 5 – May 19 | 14 |
+| 22 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
 
 **Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
 **China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
@@ -38,7 +41,88 @@
 
 ---
 
-## Chapter 0 — TORONTO
+## Chapter 1 — RIO DE JANEIRO
+### Jun 21 – Jul 20 · 29 days
+*Theme: Tropical metropolis, iconic beaches, Atlantic Forest, colonial charm*
+
+The trip opens at home — in the best possible version of home. Late June into July is Rio's clearest season: low humidity, brilliant sun, Zona Sul beaches at their sharpest, and the Carioca rhythm at full tilt. A city this alive deserves 29 days, not a weekend.
+
+**Rio de Janeiro — 25 days**
+- Ipanema + Leblon: morning beach ritual, bossa nova origin streets, kiosks with açaí
+- Copacabana waterfront promenade at dawn — the entire arc before the crowds arrive
+- Sugarloaf Mountain (Pão de Açúcar): cable car to the summit, Guanabara Bay panorama
+- Christ the Redeemer from Cosme Velho — arrive before 8am for fog-free views
+- Santa Teresa: bohemian hilltop neighborhood, colonial architecture, bonde tram, art studios
+- Lapa Arches + Saturday Feira do Rio Antigo: antiques, street musicians, street food
+- Museu do Amanhã (Museum of Tomorrow) on the revitalized Mauá Pier
+- Tijuca National Forest: the world's largest urban forest — Cascatinha waterfall, Pico da Tijuca hike
+- Maracanã stadium: tour the temple of Brazilian football
+- Feira de São Cristóvão: northeastern food and culture festival, every weekend
+- Favela tour: Vidigal or Santa Marta — responsible local guides only
+- Churrasquinho at Arpoador, watching the sunset over the sea from the rock
+- Day trip: Petrópolis (1.5h by bus) — Emperor's summer palace, mountain air, cream puffs
+
+**Paraty — 4 days**
+- Colonial Portuguese town, perfectly preserved — no cars in the historic center
+- Baía de Paraty: schooner day trip to secluded beaches and transparent water
+- Cachaça distillery visits in the surrounding mountains (Paraty is Brazil's cachaça heartland)
+- Festa Literária Internacional de Paraty (FLIP) — world-class literary festival held annually in July
+- Hiking: Pedra Branca waterfall trail through Atlantic Forest
+
+**Fly Rio → Toronto Jul 20** (or fly direct Rio → Athens with Toronto layover)
+
+---
+
+## Chapter 2 — CUMBUCO
+### Jul 21 – Aug 17 · 27 days
+*Theme: Wind and dunes, kite surfing capital, northeastern Brazil at its most elemental*
+
+The Brazilian Northeast in July–August is the most reliable kite wind window in the world — 25–35 knots, every single afternoon, right to left across the beach. Cumbuco is the launching pad. Jericoacoara is the endgame.
+
+**Cumbuco — 20 days**
+- Kitesurfing: ideal conditions from Jul–Oct, Cumbuco beach consistently ranked top 5 worldwide
+- Lagoa do Parnamirim: freshwater lagoon for flatwater kiting and sandboarding
+- Buggy rides across the white dunes at sunset — the classic Cumbuco image
+- Capoeira on the beach at dusk
+- Lagosta (lobster) fresh from the boat — Ceará's signature seafood meal
+- Cumbuquinha Beach: quieter bay, calm water, palm-thatch restaurants
+- Fortaleza (30min): Mercado Central, Beira-Mar craft market, Iracema beach promenade — day trips when the wind drops
+
+**Jericoacoara — 7 days**
+- "Jeri": one of the world's top kite destinations — consistent trade winds, massive dune lagoons
+- Lagoa Azul + Lagoa do Paraíso: paddleboard on luminous blue water flanked by dunes
+- Pedra Furada: sea-sculpted rock arch at the water's edge
+- Serrote: the dune above town, packed at sunset, worth it
+- Rua do Forró: sandy main street, dancing every night, no cars
+- Kiteboarding between lagoons via sandboard drag (local experience)
+
+**Fly Fortaleza → São Paulo Aug 17**
+
+---
+
+## Chapter 3 — SÃO PAULO
+### Aug 17 – Aug 23 · 6 days
+*Theme: Brazil's megalopolis — art, food, nightlife, and the world's best Japanese food outside Japan*
+
+Six days in the city that never sleeps and never explains itself. São Paulo is the engine of Brazil — raw, plural, endlessly creative. The food scene alone justifies a month; six days forces discipline and rewards ruthlessness.
+
+**São Paulo — 6 days**
+- Avenida Paulista: the city's spine — MASP (Museu de Arte de São Paulo) with its glass chassis suspended over the pavement
+- Vila Madalena: street art corridor (Batman Alley), galleries, natural wine bars, indie record shops
+- Liberdade: the largest Japanese community outside Japan — ramen, yakisoba, the Sunday street market
+- Pinacoteca do Estado: best fine arts museum in Brazil, stunning Campos Elíseos building
+- Mercadão (Mercado Municipal): the mortadella sandwich is non-negotiable
+- Ibirapuera Park: Sunday morning — joggers, skaters, families, Niemeyer pavilions, swans
+- Bixiga (Bela Vista): Italian neighborhood, old-school trattorias, pizza at midnight (SP pizza culture is serious)
+- Higienópolis: bookshops, Jewish delis, the Masp of the Art Nouveau world
+- Pinheiros neighborhood bar crawl: natural wine, craft beer, city pulse
+- Day trip option: Serra da Cantareira (Atlantic Forest) — 45min north, waterfalls and trails
+
+**Fly São Paulo → Toronto Aug 23**
+
+---
+
+## Chapter 4 — TORONTO
 ### Aug 24 – Aug 27 · 3 days
 *Theme: North American send-off, city stopover before Europe*
 
@@ -55,7 +139,7 @@ Three days in Toronto before crossing the Atlantic — a proper send-off from No
 
 ---
 
-## Chapter 1 — ATHENS
+## Chapter 5 — ATHENS
 ### Aug 27 – Sep 8 · 12 days
 *Theme: Ancient Mediterranean, cradle of Western civilization, island prologue*
 
@@ -84,7 +168,7 @@ Athens in late August: the Acropolis catches golden light at 7am before the crow
 
 ---
 
-## Chapter 2 — TURKEY
+## Chapter 6 — TURKEY
 ### Sep 8 – Sep 30 · 22 days
 *Theme: Ancient crossroads, Aegean coast, surreal landscapes*
 
@@ -122,7 +206,7 @@ September is the single best month to visit Turkey. Cappadocia balloon flights a
 
 ---
 
-## Chapter 3 — INDIA
+## Chapter 7 — INDIA
 ### Oct 1 – Oct 21 · 20 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
@@ -165,7 +249,7 @@ Transit, Old Delhi brief walk.
 
 ---
 
-## Chapter 4 — NEPAL
+## Chapter 8 — NEPAL
 ### Oct 21 – Nov 10 · 20 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 
@@ -196,7 +280,7 @@ Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchh
 
 ---
 
-## Chapter 5 — JAPAN AUTUMN
+## Chapter 9 — JAPAN AUTUMN
 ### Nov 10 – Nov 30 · 20 days
 *Theme: Sacred refinement, koyo at peak, slow urban chapter*
 
@@ -230,7 +314,7 @@ Sequence inverted from intuition: Tokyo first (peak city-koyo Nov 10–17), Osak
 
 ---
 
-## Chapter 6 — SOUTH KOREA
+## Chapter 10 — SOUTH KOREA
 ### Nov 30 – Dec 24 · 24 days
 *Theme: Electric winter hearth, K-culture, food depth, slow traditional chapter*
 
@@ -270,7 +354,7 @@ Winter Korea is cozy and atmospheric. Palace grounds dusted with early snow, jji
 
 ---
 
-## Chapter 7 — TAIWAN
+## Chapter 11 — TAIWAN
 ### Dec 24 – Jan 2 · 9 days
 *Theme: Café culture, NYE fireworks, dramatic east coast*
 
@@ -293,7 +377,7 @@ Arrive Christmas Eve. Taipei on New Year's Eve is one of Asia's great celebratio
 
 ---
 
-## Chapter 8 — JAPAN WINTER
+## Chapter 12 — JAPAN WINTER
 ### Jan 2 – Jan 12 · 10 days
 *Theme: Powder snowboarding, mountain stillness, onsen*
 
@@ -316,7 +400,7 @@ Bus/train Hakuba → Nagoya. Fly to Shanghai — China Block 1 begins.
 
 ---
 
-## Chapter 9 — CHINA BLOCK 1 (Metropolises)
+## Chapter 13 — CHINA BLOCK 1 (Metropolises)
 ### Jan 12 – Feb 11 · 30 days
 *Theme: Imperial capital, global finance hub, future-tech frontier*
 
@@ -356,7 +440,7 @@ Shenzhen → HK exit Feb 11.
 
 ---
 
-## Chapter 10 — HONG KONG
+## Chapter 14 — HONG KONG
 ### Feb 11 – Feb 16 · 5 days
 *Theme: Neon city, dim sum, city recharge between China and Philippines*
 
@@ -375,7 +459,7 @@ Five days in one of the world's great cities. Not just a transit — a proper ch
 
 ---
 
-## Chapter 11 — PHILIPPINES
+## Chapter 15 — PHILIPPINES
 ### Feb 16 – Mar 9 · 21 days
 *Theme: WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
@@ -409,7 +493,7 @@ Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/M
 
 ---
 
-## Chapter 12 — INDONESIA — RAJA AMPAT
+## Chapter 16 — INDONESIA — RAJA AMPAT
 ### Mar 9 – Mar 22 · 14 days
 *Theme: The best diving on Earth — liveaboard deep dive*
 
@@ -437,7 +521,7 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 
 ---
 
-## Chapter 13 — INDONESIA — NUSA PENIDA · KOMODO · BALI
+## Chapter 17 — INDONESIA — NUSA PENIDA · KOMODO · BALI
 ### Mar 22 – Apr 8 · 17 days
 *Theme: Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block*
 
@@ -470,7 +554,7 @@ Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, man
 
 ---
 
-## Chapter 14 — BORNEO / SABAH
+## Chapter 18 — BORNEO / SABAH
 ### Apr 8 – Apr 18 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -501,7 +585,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 15 — SINGAPORE
+## Chapter 19 — SINGAPORE
 ### Apr 18 – Apr 25 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -514,7 +598,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 16 — MALAYSIA
+## Chapter 20 — MALAYSIA
 ### Apr 25 – May 5 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
@@ -537,7 +621,7 @@ KL for the city spectacle and food, Penang for the most rewarding slow chapter i
 
 ---
 
-## Chapter 17 — THAILAND
+## Chapter 21 — THAILAND
 ### May 5 – May 19 · 14 days
 *Theme: Islands, reef diving, urban intensity, street food*
 
@@ -564,7 +648,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Ban
 
 ---
 
-## Chapter 18 — CHINA BLOCK 2 (Landscapes)
+## Chapter 22 — CHINA BLOCK 2 (Landscapes)
 ### May 19 – Jun 8 · 20 days
 *Theme: Surreal landscapes, ancient empire, spring China*
 
