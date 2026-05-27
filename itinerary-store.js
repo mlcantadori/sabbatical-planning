@@ -7,7 +7,7 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  const LS_KEY = 'trip-data-v2';
+  const LS_KEY = 'trip-data-v3';
   const listeners = new Set();
   let chapters;
 
