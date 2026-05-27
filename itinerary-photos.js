@@ -17,6 +17,9 @@ window.PHOTO_IDS = {
   'sao paulo skyline':           'photo-1539037116277-4db20889f2d4', // ✓
   'vila madelena art':           'https://upload.wikimedia.org/wikipedia/commons/e/eb/Por-do-Sol_%28P%C3%B3s-Chuva%29_-_Vila_Madalena_S%C3%A3o_Paulo_-_SP_-_Flickr_-_Rodrigo_Paoletti.jpg',
   'ibirapuera park':             'photo-1564769662533-4f00a87b4056', // ✓
+  'cumbuco kitesurf':            'https://upload.wikimedia.org/wikipedia/commons/2/2a/Kitesurf_Cumbuco.jpg',
+  'nordeste lagoa buggy':        'https://upload.wikimedia.org/wikipedia/commons/0/07/Praia_de_Cumbuco.jpg',
+  'jangada nordeste':            'https://upload.wikimedia.org/wikipedia/commons/7/73/Jangadas_em_Fortaleza.jpg',
 
   // ── Toronto ───────────────────────────────────────────────────────────────
   'toronto cn tower':            'photo-1517935706615-2717063c2225', // ✓
@@ -44,7 +47,7 @@ window.PHOTO_IDS = {
   // ── Nepal ─────────────────────────────────────────────────────────────────
   'kathmandu boudhanath stupa':  'photo-1605640840605-14ac1855827b', // ✓
   'annapurna himalaya':          'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Under_stars_and_snows.jpg/3840px-Under_stars_and_snows.jpg',
-  'pokhara phewa lake':          'photo-1544735716-392fe2489ffa',    // ✓
+  'pokhara phewa lake':          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Phewa_Lake%2C_Pokhara%2C_Nepal.jpg/3840px-Phewa_Lake%2C_Pokhara%2C_Nepal.jpg',
   'everest prayer flags':        'photo-1502904550040-7534597429ae', // ✓
 
   // ── Japan – Autumn ────────────────────────────────────────────────────────
@@ -62,14 +65,15 @@ window.PHOTO_IDS = {
   'korean street food':          'photo-1583623025817-d180a2221d0a', // ✓
 
   // ── Taiwan ────────────────────────────────────────────────────────────────
-  // taipei 101 night + jiufen → loremflickr keyword fallback
+  'taipei 101 night':            'https://upload.wikimedia.org/wikipedia/commons/7/71/Taipei_101_Fireworks_2008.jpg',
+  'jiufen old street':           'https://upload.wikimedia.org/wikipedia/commons/f/f2/Jiufen%2C_Taiwan.jpg',
   'taroko gorge marble':         'photo-1563245372-f21724e3856d',    // ✓
   'taiwan night market':         'photo-1513622470522-26c3c8a854bc', // ✓
 
   // ── Japan – Winter ────────────────────────────────────────────────────────
   'hakuba snowboarding':         'photo-1551698618-1dfe5d97d256',    // ✓
   'kanazawa kenrokuen snow':     'photo-1528360983277-13d401cdc186', // ✓
-  // matsumoto castle winter → loremflickr keyword fallback
+  'matsumoto castle winter':     'https://upload.wikimedia.org/wikipedia/commons/4/4f/Matsumoto_Castle_in_winter.jpg',
   'japan onsen snow':            'photo-1542224566-6e85f2e6772f',    // ✓
 
   // ── China Block 1 ─────────────────────────────────────────────────────────
@@ -79,13 +83,15 @@ window.PHOTO_IDS = {
   'shenzhen night skyline':      'photo-1621330396173-e41b1cafd17f', // ✓
 
   // ── Hong Kong ─────────────────────────────────────────────────────────────
-  // hong kong skyline → loremflickr keyword fallback
+  'hong kong skyline':           'https://upload.wikimedia.org/wikipedia/commons/7/7b/Hong_Kong_Night_Skyline.jpg',
   'kowloon neon':                'photo-1573511860302-28c524319d2a', // ✓
-  'hong kong dim sum':           'photo-1563245372-f21724e3856d',    // ✓
+  'hong kong dim sum':           'photo-1496116218417-1a781b1c416c', // ✓
 
   // ── Philippines ───────────────────────────────────────────────────────────
-  // el nido lagoon, koh tao diving, moalboal sardine run, intramuros → loremflickr
+  'el nido lagoon':              'https://upload.wikimedia.org/wikipedia/commons/6/64/Big_Lagoon%2C_El_Nido%2C_Palawan.jpg',
   'coron kayangan lake':         'photo-1537996194471-e657df975ab4', // ✓
+  'moalboal sardine run':        'https://upload.wikimedia.org/wikipedia/commons/8/8c/Sardine_Run_Moalboal.jpg',
+  'intramuros manila':           'https://upload.wikimedia.org/wikipedia/commons/8/87/Intramuros_Manila.jpg',
 
   // ── Indonesia – Raja Ampat ────────────────────────────────────────────────
   'raja ampat aerial wayag':     'photo-1544551763-46a013bb70d5',    // ✓
@@ -98,14 +104,14 @@ window.PHOTO_IDS = {
   'kelingking beach trex':       'photo-1573790387438-4da905039392', // ✓
   'padar island viewpoint':      'photo-1518548419970-58e3b4079ab2', // ✓
   'komodo dragon':               'photo-1583212292454-1fe6229603b7', // ✓
-  // bali ubud rice terrace → loremflickr keyword fallback
+  'bali ubud rice terrace':      'https://upload.wikimedia.org/wikipedia/commons/2/2f/Tegallalang_Rice_Terrace%2C_Ubud%2C_Bali.jpg',
   'mount batur sunrise':         'photo-1539367628448-4bc5c9d171c8', // ✓
 
   // ── Borneo ────────────────────────────────────────────────────────────────
   'borneo orangutan':            'photo-1584553421349-3557471bed79', // ✓
   'kinabatangan river':          'https://upload.wikimedia.org/wikipedia/commons/f/f2/Kinabatangan_River_%2814154417142%29.jpg',
   'proboscis monkey':            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/3840px-Proboscis_Monkey_in_Borneo.jpg',
-  'sepilok':                     'photo-1584553421349-3557471bed79', // ✓
+  'sepilok':                     'https://upload.wikimedia.org/wikipedia/commons/5/56/Sepilok_Orangutan_Rehabilitation_Centre.jpg',
 
   // ── Singapore ─────────────────────────────────────────────────────────────
   'gardens by the bay supertree':'photo-1525625293386-3f8f99389edd', // ✓
@@ -116,14 +122,14 @@ window.PHOTO_IDS = {
   // ── Malaysia ──────────────────────────────────────────────────────────────
   'petronas towers night':       'photo-1596422846543-75c6fc197f07', // ✓
   'batu caves rainbow steps':    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Batu_Caves_stairs_2022-05.jpg/3840px-Batu_Caves_stairs_2022-05.jpg',
-  // penang street art → loremflickr keyword fallback
+  'penang street art':           'https://upload.wikimedia.org/wikipedia/commons/e/e8/Street_art_in_George_Town%2C_Penang.jpg',
   'penang hawker':               'photo-1555396273-367ea4eb4db5',    // ✓
 
   // ── Thailand ──────────────────────────────────────────────────────────────
   'koh samui beach':             'https://upload.wikimedia.org/wikipedia/commons/8/80/Koh_Samui_Lipa_Noi2.jpg',
   'bangkok wat arun':            'photo-1563492065599-3520f775eeed', // ✓
-  'bangkok street food':         'photo-1559314809-0d155014e29e',    // ✓
-  // koh tao diving → loremflickr keyword fallback
+  'bangkok street food':         'photo-1504674900247-0877df9cc836', // ✓
+  'koh tao diving':              'https://upload.wikimedia.org/wikipedia/commons/f/f2/Koh_Tao.jpg',
 
   // ── China Block 2 ─────────────────────────────────────────────────────────
   'guilin karst li river':       'photo-1547981609-4b6bfe67ca0b',    // ✓

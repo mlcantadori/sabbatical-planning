@@ -19,6 +19,10 @@ function Photo({
   const primary = photoVal ? photoVal.startsWith('http') ? photoVal : `https://images.unsplash.com/${photoVal}?w=1200&h=900&fit=crop&auto=format` : photoUrl(keyword, 1200, 900);
   const fallback = photoUrl(keyword, 1200, 900);
   const [src, setSrc] = React.useState(primary);
+  React.useEffect(() => {
+    setLoaded(false);
+    setSrc(primary);
+  }, [primary, keyword]);
   const wrap = {
     position: 'relative',
     aspectRatio: ratio === 'auto' ? undefined : ratio,

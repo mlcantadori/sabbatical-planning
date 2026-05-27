@@ -11,6 +11,10 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
     : photoUrl(keyword, 1200, 900);
   const fallback = photoUrl(keyword, 1200, 900);
   const [src, setSrc] = React.useState(primary);
+  React.useEffect(() => {
+    setLoaded(false);
+    setSrc(primary);
+  }, [primary, keyword]);
 
   const wrap = {
     position: 'relative',
