@@ -363,7 +363,7 @@ window.TRIP = (function () {
     },
     {
       id: 'malaysia', num: 16, kind: 'chapter', region: 'isthmus',
-      country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia — KL + Penang',
+      country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia',
       start: '2027-04-25', end: '2027-05-05', days: 10,
       theme: 'Urban intensity, street food capital, colonial slow life',
       intro: 'KL for the city spectacle and food, Penang for the most rewarding slow chapter in mainland SE Asia. Georgetown is UNESCO, effortlessly liveable, and the hawker food is unsurpassed.',

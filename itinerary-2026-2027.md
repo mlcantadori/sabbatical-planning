@@ -26,7 +26,7 @@
 | 13 | Indonesia — Nusa Penida · Komodo · Bali | Mar 22 – Apr 8 | 17 |
 | 14 | Borneo / Sabah | Apr 8 – Apr 18 | 10 |
 | 15 | Singapore | Apr 18 – Apr 25 | 7 |
-| 16 | Malaysia — KL + Penang | Apr 25 – May 5 | 10 |
+| 16 | Malaysia | Apr 25 – May 5 | 10 |
 | 17 | Thailand | May 5 – May 19 | 14 |
 | 18 | China Block 2 (landscapes) | May 19 – Jun 8 | 20 |
 
@@ -514,7 +514,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 16 — MALAYSIA — KL + PENANG
+## Chapter 16 — MALAYSIA
 ### Apr 25 – May 5 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
