@@ -62,14 +62,12 @@ window.TRIP = (function () {
       start: '2026-06-21', end: '2026-07-20', days: 29,
       theme: 'A cidade maravilhosa — verão carioca, morro, praia, samba',
       intro: 'Junho e julho são a melhor época no Rio: céu limpo, temperatura ideal, sem umidade do verão. A cidade como ela é — sem a loucura do carnaval, mas com toda a energia.',
-      tldr: 'Copacabana · Lapa · Santa Teresa · Paraty',
+      tldr: 'Copacabana · Lapa · Santa Teresa · Sugarloaf',
       weather: { hi: 27, lo: 18, label: 'Inverno carioca, 27°/18°', emoji: '🌊' },
-      photos: ['rio de janeiro cristo redentor sunset','copacabana beach rio sunrise','lapa arches santa teresa rio','paraty colonial boats bay'],
+      photos: ['rio aerial', 'copacabana beach', 'lapa arches', 'santa teresa rio'],
       places: [
-        { name: 'Rio de Janeiro', days: 25, query: 'Ipanema, Rio de Janeiro',
+        { name: 'Rio de Janeiro', days: 29, query: 'Ipanema, Rio de Janeiro',
           highlights: ['Cristo Redentor ao amanhecer — antes das 8h, sem turistas','Pão de Açúcar no fim do dia — teleférico + vista da Baía de Guanabara','Copacabana + Ipanema: calçadão, quiosques, vôlei de praia','Lapa na quinta e sexta: frevos, samba ao vivo, arcos iluminados','Santa Teresa: bonde histórico, ateliês, Bar do Gomez','Maracanã: assistir um clássico Fla-Flu ou Fla-Vasco','Jardim Botânico + Lagoa Rodrigo de Freitas: corrida ou pedalada','Museu do Amanhã + Boulevard Olímpico: revitalização da zona portuária','Feira de São Cristóvão aos fins de semana: forró, comida nordestina','Prainha + Grumari: praias selvagens no extremo oeste da cidade'] },
-        { name: 'Paraty', days: 4, query: 'Paraty, Rio de Janeiro',
-          highlights: ['Centro histórico colonial tombado pela UNESCO — ruas de pedra, casarões brancos','Passeio de escuna pela baía: ilhas desertas, cachoeiras, snorkel','Cachaça artesanal: visita a alambiques no entorno','Trilha da Pedra Branca com vista do litoral verde','Passagem para o sul — caminho para Cumbuco'] },
       ],
     },
     {
@@ -78,14 +76,12 @@ window.TRIP = (function () {
       start: '2026-07-21', end: '2026-08-17', days: 27,
       theme: 'Kite, lagoa, dunas — melhor vento do Brasil',
       intro: 'Julho a agosto é o pico da temporada de vento no Ceará. Cumbuco tem a combinação perfeita: vento constante, lagoas de água doce para fazer kite, dunas, jangadas, e ritmo de interior nordestino.',
-      tldr: 'Cumbuco · Lagoa do Cauípe · Jericoacoara',
+      tldr: 'Cumbuco · Lagoa do Cauípe · dunas · jangadas',
       weather: { hi: 30, lo: 24, label: 'Nordeste seco, 30°/24°', emoji: '🪁' },
-      photos: ['cumbuco kitesurf lagoa ceara','jericoacoara sand dune sunset','lagoa azul cumbuco ceara','jangada fishing boat nordeste brazil'],
+      photos: ['cumbuco kitesurf', 'nordeste lagoa buggy', 'jangada nordeste'],
       places: [
-        { name: 'Cumbuco', days: 20, query: 'Cumbuco, Caucaia, Ceará',
+        { name: 'Cumbuco', days: 27, query: 'Cumbuco, Caucaia, Ceará',
           highlights: ['Kitesurf na Lagoa do Cauípe — vento de 25–35 nós constante, água rasa e quente','Aulas e progressão de kite (ou wing/windsurf) no flatwater da lagoa','Passeio de buggy pelas dunas e lagoas da orla','Jangada ao amanhecer com pescadores locais','Lagoa Barra Seca + Lagoa Grande de buggy','Pôr do sol na praia com caju gelado','Frutos do mar frescos na orla: lagosta, camarão, peixe grelhado'] },
-        { name: 'Jericoacoara', days: 7, query: 'Jericoacoara, Ceará',
-          highlights: ['Dunas de Jeri ao pôr do sol — ritual diário de toda a vila','Lagoa Azul e Lagoa do Paraíso de buggy: kite no flatwater perfeito','Pedra Furada ao amanhecer sem ninguém','Windsurf e kite entre Jeri e Preá','Vila sem ruas asfaltadas, energia no ar','Fly Fortaleza → Toronto para abrir o bloco internacional'] },
       ],
     },
     {
@@ -96,7 +92,7 @@ window.TRIP = (function () {
       intro: 'Seis dias para fechar o ciclo brasileiro antes de embarcar. São Paulo tem a melhor cena gastronômica da América Latina e um circuito cultural denso — MASP, Pinacoteca, Vila Madelena.',
       tldr: 'MASP · Vila Madelena · Liberdade · Ibirapuera',
       weather: { hi: 24, lo: 14, label: 'Inverno paulistano, 24°/14°', emoji: '☕' },
-      photos: ['masp museu arte sao paulo paulista','vila madelena beco batman street art','ibirapuera park sao paulo','liberdade japanese quarter sao paulo'],
+      photos: ['masp sao paulo', 'sao paulo skyline', 'ibirapuera park', 'vila madelena art'],
       places: [
         { name: 'São Paulo', days: 6, query: 'Avenida Paulista, São Paulo',
           highlights: ['MASP — acervo europeu em estrutura suspensa sobre a Paulista','Pinacoteca do Estado — melhor museu de arte brasileira','Vila Madelena: Beco do Batman, ateliês, bares, brunch','Liberdade: bairro japonês — yakisoba, onigiri, cultura nikkei','Ibirapuera: corrida, Museu Afro, Oca, pavilhões de Niemeyer','Mercadão Municipal: mortadela, bacalhau, frutas exóticas','Jantar de despedida no Japinha ou rodízio paulistano clássico','Fly São Paulo → Toronto para abrir o sabbatical internacional'] },
@@ -110,7 +106,7 @@ window.TRIP = (function () {
       intro: 'Three days in Toronto before crossing the Atlantic — a proper send-off from North America. Late August means warm evenings, patios open, and Kensington Market at its best.',
       tldr: 'Kensington Market · Distillery District · CN Tower',
       weather: { hi: 27, lo: 17, label: 'Late summer, 27°/17°', emoji: '🍁' },
-      photos: ['toronto cn tower distillery district','kensington market toronto summer','toronto harbourfront lake ontario','niagara falls mist canada'],
+      photos: ['toronto cn tower', 'toronto distillery', 'niagara falls'],
       places: [
         { name: 'Toronto', days: 3, query: 'Kensington Market, Toronto',
           highlights: ['Kensington Market — multicultural street market, vintage shops, food stalls','Distillery District — Victorian industrial complex turned arts village','CN Tower + the Harbourfront waterfront walk','High Park late-summer picnic','Toronto Islands ferry — city skyline across Lake Ontario','Optional day trip: Niagara Falls (1.5h by car or GO bus)','Fly Toronto → Athens to open Mediterranean chapter'] },
@@ -124,7 +120,7 @@ window.TRIP = (function () {
       intro: 'Athens in late August: the Acropolis catches golden light at 7am before the crowds arrive. Monastiraki is electric at night. The Greek islands are a fast ferry away. A perfect opener before the rest of the world.',
       tldr: 'Athens · Acropolis · Hydra island · Cape Sounion',
       weather: { hi: 32, lo: 22, label: 'Warm Mediterranean, 32°/22°', emoji: '🏛️' },
-      photos: ['athens acropolis parthenon sunrise','monastiraki flea market athens night','hydra island greece donkeys','cape sounion poseidon temple sunset'],
+      photos: ['athens acropolis', 'athens monastiraki', 'hydra island greece', 'cape sounion'],
       places: [
         { name: 'Athens', days: 8, query: 'Acropolis, Athens, Greece',
           highlights: ['Acropolis + Parthenon — arrive at opening, golden light before 9am','Monastiraki flea market + evening mezedes bars','Plaka neighborhood — neoclassical houses, bougainvillea, cats','Anafiotika — whitewashed Cycladic enclave inside the city','National Archaeological Museum — world-class antiquities','Keramikos + Kerameikos cemetery walk','Lycabettus Hill rooftop sunset over the whole city','Roof garden dinners with Acropolis views in Koukaki'] },
@@ -142,7 +138,7 @@ window.TRIP = (function () {
       intro: 'September is the single best month to visit Turkey. Cappadocia balloon flights have optimal morning conditions. Alacatı offers Aegean coast life at its best. Istanbul before the autumn shift.',
       tldr: 'Istanbul · Alacatı · Pamukkale · Ephesus · Cappadocia',
       weather: { hi: 28, lo: 16, label: 'Late summer, 28°/16°', emoji: '☀️' },
-      photos: ['istanbul hagia sophia bosphorus','alacatı windmill aegean coast','cappadocia hot air balloons','pamukkale white terraces'],
+      photos: ['istanbul mosque', 'alacati aegean', 'cappadocia balloons', 'pamukkale terraces'],
       places: [
         { name: 'Istanbul', days: 9, query: 'Istanbul, Turkey',
           highlights: ['Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market','Bosphorus ferry — the most beautiful commute on Earth','Hammam at Cağaloğlu Baths','Beyoğlu rooftop bars, Karaköy galleries','Meyhane dinners with raki + meze','Princes\' Islands day trip by ferry'] },
@@ -163,7 +159,7 @@ window.TRIP = (function () {
       intro: 'A tighter, more intentional India: Varanasi for spiritual intensity, the Golden Triangle, then a full week in Rishikesh for yoga, river, and mountain air.',
       tldr: 'Delhi · Varanasi · Agra · Jaipur · Rishikesh',
       weather: { hi: 30, lo: 16, label: 'Post-monsoon clear, 30°/16°', emoji: '🌅' },
-      photos: ['taj mahal agra sunrise','varanasi ghats dawn rowing','jaipur amber fort rajasthan','rishikesh ganga yoga ashram'],
+      photos: ['taj mahal sunrise', 'varanasi ghats', 'jaipur palace', 'rishikesh yoga'],
       places: [
         { name: 'Delhi', days: 1, query: 'Old Delhi, India',
           highlights: ['Transit, Old Delhi brief walk'] },
@@ -188,7 +184,7 @@ window.TRIP = (function () {
       intro: 'Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude.',
       tldr: 'Kathmandu · Pokhara · Annapurna Base Camp trek',
       weather: { hi: 18, lo: 2, label: 'Late post-monsoon, 18°/2°', emoji: '🏔️' },
-      photos: ['kathmandu boudhanath stupa','annapurna himalaya trek','pokhara phewa lake dawn','everest prayer flags wind'],
+      photos: ['kathmandu boudhanath stupa', 'annapurna himalaya', 'pokhara phewa lake', 'everest prayer flags'],
       places: [
         { name: 'Kathmandu', days: 3, query: 'Kathmandu, Nepal',
           highlights: ['Boudhanath Stupa — one of the largest stupas on Earth','Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati','Swayambhunath (Monkey Temple)','Altitude acclimatization, gear check, ACAP + TIMS permits'] },
@@ -209,7 +205,7 @@ window.TRIP = (function () {
       intro: 'Tokyo first for peak city-koyo. Osaka as the bridge. Kyoto last — crowds thin after Nov 26 while late-season foliage (Eikan-do, Tofuku-ji) holds. This order means the best is saved.',
       tldr: 'Tokyo · Osaka · Kyoto — peak koyo (Kyoto last)',
       weather: { hi: 14, lo: 6, label: 'Crisp autumn, 14°/6°', emoji: '🍁' },
-      photos: ['tokyo shinjuku gyoen koyo autumn','kyoto eikando maple night','fushimi inari gates dawn','osaka dotonbori canal','arashiyama bamboo grove'],
+      photos: ['kyoto autumn maple', 'fushimi inari', 'tokyo shimokitazawa', 'osaka dotonbori', 'arashiyama bamboo'],
       places: [
         { name: 'Tokyo', days: 7, query: 'Shimokitazawa, Tokyo',
           highlights: ['Shimokitazawa vintage shops + live music','Yanaka shitamachi neighborhood — cats, temples, old Tokyo','Shinjuku Gyoen peak-autumn foliage (Nov 10–17 prime window)','Harajuku, Omotesando','Tsukiji outer market breakfast','Nikko day trip — Tosho-gu shrine, Kegon Falls, mountain koyo'] },
@@ -227,7 +223,7 @@ window.TRIP = (function () {
       intro: 'Palace grounds dusted with early snow, jjigae stews and makgeolli in pojangmacha tents, the Han River frozen at the edges. December Seoul is vibrant with Christmas energy.',
       tldr: 'Seoul · Busan · Gyeongju · Jeonju · Christmas Seoul',
       weather: { hi: 6, lo: -3, label: 'Cold + cozy, 6°/-3°', emoji: '❄️' },
-      photos: ['seoul gyeongbokgung winter snow','busan gamcheon culture village','gyeongju bulguksa temple','jeonju hanok village','korean street food night market'],
+      photos: ['seoul palace winter', 'busan gamcheon', 'gyeongju temple', 'jeonju hanok', 'korean street food'],
       places: [
         { name: 'Seoul', days: 7, query: 'Gyeongbokgung, Seoul',
           highlights: ['Gyeongbokgung + Changdeokgung in winter light','Bukchon Hanok Village','Gwangjang Market — bindaetteok, mayak gimbap','Hongdae, Itaewon, Insadong','Specialty coffee culture — Seoul has some of Asia\'s best','DMZ day trip'] },
@@ -249,7 +245,7 @@ window.TRIP = (function () {
       intro: 'Arrive Christmas Eve. Taipei on New Year\'s Eve is one of Asia\'s great celebrations — the Taipei 101 countdown fireworks fired from the building itself in a vertical cascade.',
       tldr: 'Taipei · Jiufen · NYE Dec 31 · Taroko Gorge',
       weather: { hi: 18, lo: 13, label: 'Dry, clear, mild, 18°/13°', emoji: '🎆' },
-      photos: ['taipei 101 nye fireworks night','jiufen old street lanterns mist','taroko gorge marble canyon jade river','taiwan shilin night market'],
+      photos: ['taipei 101 night', 'jiufen old street', 'taroko gorge marble', 'taiwan night market'],
       places: [
         { name: 'Taipei', days: 7, query: 'Da\'an District, Taipei',
           highlights: ['Da\'an specialty coffee + bookshops','Jiufen — clifftop mining town, lantern-lit teahouses, mist','Shilin Night Market','Elephant Mountain sunset hike over the skyline','NYE Dec 31: Taipei 101 fireworks — fired from the building, visible citywide ✓'] },
@@ -265,7 +261,7 @@ window.TRIP = (function () {
       intro: 'Focused Hakuba: a pure snowboard chapter. No city detours — just powder, onsen, and mountain ramen. Early January is uncrowded and Japan is introspective.',
       tldr: 'Osaka (arrival) · Hakuba Valley (8 days snowboard)',
       weather: { hi: 4, lo: -4, label: 'Snow + powder, 4°/-4°', emoji: '🏂' },
-      photos: ['hakuba valley snowboard powder japan','hakuba alps view sunrise','japan mountain onsen snow steam','hakuba village izakaya night'],
+      photos: ['hakuba snowboarding', 'japan onsen snow', 'kanazawa kenrokuen snow', 'matsumoto castle winter'],
       places: [
         { name: 'Osaka', days: 1, query: 'Dotonbori, Osaka',
           highlights: ['Arrival anchor from Taipei','Winter seafood season — crab in Dotonbori','Overnight bus or JR to Hakuba'] },
@@ -283,7 +279,7 @@ window.TRIP = (function () {
       intro: 'The three great metropolises in one extended block. Beijing in January — empty and sometimes snow-dusted — is one of its finest versions. Shanghai rewards lingering. Shenzhen is the most forward-facing city on Earth.',
       tldr: 'Beijing · Shanghai · Suzhou · Shenzhen',
       weather: { hi: 8, lo: -2, label: 'Cold north, mild south', emoji: '🏙️' },
-      photos: ['beijing great wall mutianyu snow','shanghai bund night huangpu','shanghai french concession art deco','shenzhen skyline tech night'],
+      photos: ['great wall snow', 'shanghai bund night', 'shanghai french concession', 'shenzhen night skyline'],
       places: [
         { name: 'Beijing', days: 8, query: 'Mutianyu Great Wall, Beijing',
           highlights: ['Great Wall (Mutianyu) — empty + snow-dusted in January','Forbidden City in winter light','Temple of Heaven','798 Art District','Hutong + Drum/Bell Towers','Peking duck','Summer Palace — ice on Kunming Lake'] },
@@ -303,7 +299,7 @@ window.TRIP = (function () {
       intro: 'Five days in one of the world\'s great cities. Neon-soaked Kowloon, world-class dim sum, the Star Ferry crossing at night. A proper chapter, not just a transit.',
       tldr: 'Victoria Peak · Kowloon neon · Dim sum · Lamma Island',
       weather: { hi: 19, lo: 15, label: 'Mild, 19°/15°', emoji: '🥟' },
-      photos: ['hong kong victoria harbour skyline night','hong kong dim sum yum cha','kowloon neon signs street','lamma island hong kong seafood'],
+      photos: ['hong kong skyline', 'kowloon neon', 'hong kong dim sum'],
       places: [
         { name: 'Hong Kong', days: 5, query: 'Victoria Peak, Hong Kong',
           highlights: ['Victoria Peak — harbor panorama at dusk, city grid below','Star Ferry crossing: Kowloon → Central at night','Dim sum yum cha: Tim Ho Wan, Lin Heung, One Dim Sum','Temple Street Night Market — jade, fortune tellers, street food','Nan Lian Garden + Chi Lin Nunnery (free, stunning)','Lamma Island day trip: seafood lunch, car-free village walk','Tai O fishing village: stilt houses over tidal channels','Rest, laundry, planning — fly HK → Manila Feb 16'] },
@@ -317,7 +313,7 @@ window.TRIP = (function () {
       intro: 'Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/Moalboal for the sardine run — all warm-up diving before Raja Ampat. No liveaboard here.',
       tldr: 'Manila · Coron · El Nido · Cebu/Moalboal',
       weather: { hi: 31, lo: 25, label: 'Dry season, 31°/25°', emoji: '🏝️' },
-      photos: ['el nido big lagoon limestone palawan','coron kayangan lake','cebu moalboal sardine run','intramuros manila colonial'],
+      photos: ['el nido lagoon', 'coron kayangan lake', 'moalboal sardine run', 'intramuros manila'],
       places: [
         { name: 'Manila', days: 1, query: 'Intramuros, Manila',
           highlights: ['Intramuros — walled Spanish colonial city','Fly Manila → Coron'] },
@@ -341,7 +337,7 @@ window.TRIP = (function () {
       intro: 'Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Transit in, 10 days on the water, transit back to Bali.',
       tldr: 'Transit to Sorong · 10d liveaboard · Back to Bali',
       weather: { hi: 32, lo: 26, label: 'Mid-season ideal, 32°/26°', emoji: '🐠' },
-      photos: ['raja ampat wayag aerial karst','manta ray cleaning station indonesia','coral reef raja ampat density','pygmy seahorse fan coral','reef sharks indonesia'],
+      photos: ['raja ampat aerial wayag', 'manta ray cleaning station', 'coral reef indonesia', 'pygmy seahorse', 'reef sharks'],
       places: [
         { name: 'Transit to Sorong', days: 2, query: 'Sorong, West Papua',
           highlights: ['Cebu → Manado or Manila → Sorong routing','Indonesia visa on arrival — Day 1 of 30-day window','Pack down to liveaboard dive kit, board same day'] },
@@ -361,7 +357,7 @@ window.TRIP = (function () {
       intro: 'Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, manta-filled. Komodo: dragons and world-class drift dives. Bali: rice terraces and a volcano at 3am. Indonesia visa exits Day 30 ✓',
       tldr: 'Nusa Penida · Komodo · Ubud · Mount Batur sunrise',
       weather: { hi: 31, lo: 24, label: 'Dry season building, 31°/24°', emoji: '🌋' },
-      photos: ['kelingking beach trex cliff nusa penida','padar island three bays viewpoint','komodo dragon rinca','mount batur sunrise crater lake','bali ubud rice terrace tegallalang'],
+      photos: ['kelingking beach trex', 'padar island viewpoint', 'komodo dragon', 'bali ubud rice terrace', 'mount batur sunrise'],
       places: [
         { name: 'Nusa Penida', days: 4, query: 'Kelingking Beach, Nusa Penida',
           highlights: ['Kelingking Beach — T-Rex cliff, most photographed in the Bali region','Angel\'s Billabong + Broken Beach — natural infinity pool carved into clifftop','Crystal Bay — reef mantas year-round (early morning dive)','Atuh Beach — remote east coast, dramatic rock formations','Scooter rental for full freedom'] },
@@ -380,7 +376,7 @@ window.TRIP = (function () {
       intro: 'Bali → KK flight exits Indonesia on Day 30 — perfectly timed reset. Kinabatangan is one of SE Asia\'s finest wildlife corridors. Proboscis monkeys, pygmy elephants bathing at dawn.',
       tldr: 'KK · Sepilok · Kinabatangan River · KK departure',
       weather: { hi: 32, lo: 24, label: 'Tropical rainforest', emoji: '🦧' },
-      photos: ['sepilok orangutan rehabilitation borneo','kinabatangan pygmy elephant dawn river','proboscis monkey borneo endemic','kinabatangan river lodge morning mist'],
+      photos: ['borneo orangutan', 'kinabatangan river', 'proboscis monkey', 'sepilok'],
       places: [
         { name: 'Kota Kinabalu', days: 2, query: 'Kota Kinabalu, Sabah',
           highlights: ['Arrival, waterfront sunset over offshore islands','Filipino Night Market','Rest after Indonesia block'] },
@@ -401,7 +397,7 @@ window.TRIP = (function () {
       intro: 'Effective recharge hub: clean, organized, excellent food infrastructure, everything works.',
       tldr: 'Hawker centres · Gardens by the Bay · Marina Bay',
       weather: { hi: 31, lo: 25, label: 'Hot + humid', emoji: '🌳' },
-      photos: ['gardens by the bay supertree night','marina bay sands singapore','maxwell food centre hawker','changi jewel waterfall singapore'],
+      photos: ['gardens by the bay supertree', 'marina bay sands night', 'singapore hawker food', 'changi airport waterfall'],
       places: [
         { name: 'Singapore', days: 7, query: 'Marina Bay, Singapore',
           highlights: ['Maxwell, Lau Pa Sat, Old Airport Road hawker centres — best in the world','Gardens by the Bay — Supertree Grove at night','Marina Bay Sands observation deck','Chinatown, Little India, Haji Lane','National Gallery Singapore','Changi Airport waterfall walk (best airport in the world)'] },
@@ -415,7 +411,7 @@ window.TRIP = (function () {
       intro: 'KL for the city spectacle and food, Penang for the most rewarding slow chapter in mainland SE Asia. Georgetown is UNESCO, effortlessly liveable, and the hawker food is unsurpassed.',
       tldr: 'Petronas · Batu Caves · Georgetown · Gurney Drive hawker',
       weather: { hi: 33, lo: 24, label: 'Warm + humid', emoji: '☕' },
-      photos: ['petronas twin towers night kl','batu caves rainbow steps macaques','penang zacharevic street art murals','char kway teow penang hawker'],
+      photos: ['petronas towers night', 'batu caves rainbow steps', 'penang street art', 'penang hawker'],
       places: [
         { name: 'Kuala Lumpur', days: 5, query: 'Petronas Twin Towers, KL',
           highlights: ['Petronas Twin Towers at night — best view from KLCC park reflection pool','Batu Caves — rainbow steps, macaques, Hindu temple inside limestone cave','Jalan Alor Night Food Street','Bukit Bintang neighborhood','Train north to Penang (ETS / KTM — scenic coastal rail)'] },
@@ -431,7 +427,7 @@ window.TRIP = (function () {
       intro: 'Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Bangkok: temples, canal boats, and the best street food city on Earth.',
       tldr: 'Koh Tao · Koh Samui · Bangkok',
       weather: { hi: 36, lo: 25, label: 'Dry Gulf coast → hot city', emoji: '🛺' },
-      photos: ['koh tao diving chumphon pinnacle','sail rock whale shark koh tao','bangkok wat arun chao phraya','yaowarat chinatown bangkok night'],
+      photos: ['koh tao diving', 'koh samui beach', 'bangkok wat arun', 'bangkok street food'],
       places: [
         { name: 'Koh Tao', days: 5, query: 'Koh Tao, Thailand',
           highlights: ['One of the best value diving destinations on Earth','Japanese Gardens, Chumphon Pinnacle','Sail Rock — whale shark territory (reliable in May)','Hammock, reef, lunch, repeat'] },
@@ -450,7 +446,7 @@ window.TRIP = (function () {
       intro: 'Spring is the ideal season for these landscapes. Li River mist in the karst, Zhangjiajie sea of clouds, pandas active in Chengdu. These regions shine more in May than in winter.',
       tldr: 'Guilin · Zhangjiajie · Chongqing · Chengdu · Xi\'an',
       weather: { hi: 26, lo: 16, label: 'Spring, 26°/16°', emoji: '🐼' },
-      photos: ['guilin li river karst mist spring','zhangjiajie avatar pillars sea clouds','chongqing night cyberpunk yangtze','chengdu giant panda base','xian terracotta warriors army'],
+      photos: ['guilin karst li river', 'zhangjiajie avatar pillars', 'chongqing cyberpunk night', 'chengdu panda', 'xian terracotta warriors'],
       places: [
         { name: 'Guilin / Yangshuo', days: 4, query: 'Yangshuo, China',
           highlights: ['Li River karst — spring mist between limestone towers at dawn','Bamboo raft on the Li River','Cycling through rice paddies and karst peaks','Spring névoa and green — arguably the best season'] },

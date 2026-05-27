@@ -3,9 +3,11 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
   const { photoUrl } = window.TRIP.helpers;
   const [loaded, setLoaded] = React.useState(false);
   const photoId = window.PHOTO_IDS?.[keyword];
-  const src = photoId
+  const primary = photoId
     ? `https://images.unsplash.com/${photoId}?w=1200&h=900&fit=crop&auto=format`
     : photoUrl(keyword, 1200, 900);
+  const fallback = photoUrl(keyword, 1200, 900);
+  const [src, setSrc] = React.useState(primary);
 
   const wrap = {
     position: 'relative',
@@ -22,7 +24,7 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
         src={src}
         alt={alt || keyword}
         onLoad={() => setLoaded(true)}
-        onError={() => setLoaded(true)}
+        onError={() => { if (src !== fallback) setSrc(fallback); setLoaded(true); }}
         style={{
           position: 'absolute', inset: 0,
           width: '100%', height: '100%', objectFit: 'cover',

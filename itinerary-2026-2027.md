@@ -47,7 +47,7 @@
 
 The trip opens at home — in the best possible version of home. Late June into July is Rio's clearest season: low humidity, brilliant sun, Zona Sul beaches at their sharpest, and the Carioca rhythm at full tilt. A city this alive deserves 29 days, not a weekend.
 
-**Rio de Janeiro — 25 days**
+**Rio de Janeiro — 29 days**
 - Ipanema + Leblon: morning beach ritual, bossa nova origin streets, kiosks with açaí
 - Copacabana waterfront promenade at dawn — the entire arc before the crowds arrive
 - Sugarloaf Mountain (Pão de Açúcar): cable car to the summit, Guanabara Bay panorama
@@ -62,13 +62,6 @@ The trip opens at home — in the best possible version of home. Late June into 
 - Churrasquinho at Arpoador, watching the sunset over the sea from the rock
 - Day trip: Petrópolis (1.5h by bus) — Emperor's summer palace, mountain air, cream puffs
 
-**Paraty — 4 days**
-- Colonial Portuguese town, perfectly preserved — no cars in the historic center
-- Baía de Paraty: schooner day trip to secluded beaches and transparent water
-- Cachaça distillery visits in the surrounding mountains (Paraty is Brazil's cachaça heartland)
-- Festa Literária Internacional de Paraty (FLIP) — world-class literary festival held annually in July
-- Hiking: Pedra Branca waterfall trail through Atlantic Forest
-
 **Fly Rio → Toronto Jul 20** (or fly direct Rio → Athens with Toronto layover)
 
 ---
@@ -77,24 +70,17 @@ The trip opens at home — in the best possible version of home. Late June into 
 ### Jul 21 – Aug 17 · 27 days
 *Theme: Wind and dunes, kite surfing capital, northeastern Brazil at its most elemental*
 
-The Brazilian Northeast in July–August is the most reliable kite wind window in the world — 25–35 knots, every single afternoon, right to left across the beach. Cumbuco is the launching pad. Jericoacoara is the endgame.
+The Brazilian Northeast in July–August is the most reliable kite wind window in the world — 25–35 knots, every single afternoon, right to left across the beach. 27 days of wind, lagoon, dunes, and rhythm.
 
-**Cumbuco — 20 days**
+**Cumbuco — 27 days**
 - Kitesurfing: ideal conditions from Jul–Oct, Cumbuco beach consistently ranked top 5 worldwide
-- Lagoa do Parnamirim: freshwater lagoon for flatwater kiting and sandboarding
+- Lagoa do Cauípe + Lagoa do Parnamirim: freshwater flatwater lagoons — perfect for progression
 - Buggy rides across the white dunes at sunset — the classic Cumbuco image
 - Capoeira on the beach at dusk
 - Lagosta (lobster) fresh from the boat — Ceará's signature seafood meal
 - Cumbuquinha Beach: quieter bay, calm water, palm-thatch restaurants
 - Fortaleza (30min): Mercado Central, Beira-Mar craft market, Iracema beach promenade — day trips when the wind drops
-
-**Jericoacoara — 7 days**
-- "Jeri": one of the world's top kite destinations — consistent trade winds, massive dune lagoons
-- Lagoa Azul + Lagoa do Paraíso: paddleboard on luminous blue water flanked by dunes
-- Pedra Furada: sea-sculpted rock arch at the water's edge
-- Serrote: the dune above town, packed at sunset, worth it
-- Rua do Forró: sandy main street, dancing every night, no cars
-- Kiteboarding between lagoons via sandboard drag (local experience)
+- Lagoa Grande + Lagoa Barra Seca: buggy day trip into the interior dune lagoons
 
 **Fly Fortaleza → São Paulo Aug 17**
 
