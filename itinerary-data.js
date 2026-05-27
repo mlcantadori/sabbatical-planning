@@ -20,13 +20,17 @@ window.TRIP = (function () {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   }
 
-  // Picsum.photos with a deterministic seed — always loads, looks photographic,
-  // consistent across reloads. NOT the actual destination but a placeholder
-  // until the user swaps in their own photos. The seed is keyword-based so
-  // each chapter gets a consistent set across sessions.
-  function photoUrl(keywords, w = 1200, h = 800) {
-    const seed = encodeURIComponent(keywords).replace(/%20/g, '-');
-    return `https://picsum.photos/seed/${seed}/${w}/${h}`;
+  // loremflickr — returns real Flickr photos matching the keyword.
+  // Deterministic per keyword via a hash-derived lock value.
+  function photoUrl(keywords, w = 1200, h = 900) {
+    const terms = encodeURIComponent(keywords.trim().replace(/\s+/g, ','));
+    let hash = 0;
+    for (let i = 0; i < keywords.length; i++) {
+      hash = ((hash << 5) - hash) + keywords.charCodeAt(i);
+      hash |= 0;
+    }
+    const lock = Math.abs(hash) % 500;
+    return `https://loremflickr.com/${w}/${h}/${terms}?lock=${lock}`;
   }
 
   function fmt(d, { year = false } = {}) {
