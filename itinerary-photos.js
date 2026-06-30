@@ -10,13 +10,13 @@ window.PHOTO_IDS = {
   'rio aerial':                  'photo-1483729558449-99ef09a8c325', // aerial bay + Cristo ✓
   'copacabana beach':            'photo-1516306580123-e6e52b1b7b5f', // Copacabana arc ✓
   'lapa arches':                 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Centro_do_Rio_de_Janeiro_by_Diego_Baravelli.jpg',
-  'santa teresa rio':            'photo-1614531341773-3bff8b7cb3fc', // Santa Teresa ✓
+  'santa teresa rio':            'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bondinho_de_Santa_Teresa_na_Esta%C3%A7%C3%A3o_Carioca_02.jpg/1920px-Bondinho_de_Santa_Teresa_na_Esta%C3%A7%C3%A3o_Carioca_02.jpg',
 
   // ── Brasil — São Paulo ─────────────────────────────────────────────────────
-  'masp sao paulo':              'photo-1544735716-392fe2489ffa',    // ✓
+  'masp sao paulo':              'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/MASP_Brazil.jpg/1920px-MASP_Brazil.jpg',
   'sao paulo skyline':           'photo-1539037116277-4db20889f2d4', // ✓
   'vila madelena art':           'https://upload.wikimedia.org/wikipedia/commons/e/eb/Por-do-Sol_%28P%C3%B3s-Chuva%29_-_Vila_Madalena_S%C3%A3o_Paulo_-_SP_-_Flickr_-_Rodrigo_Paoletti.jpg',
-  'ibirapuera park':             'photo-1564769662533-4f00a87b4056', // ✓
+  'ibirapuera park':             'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Parque_Ibirapuera_e_Obelisco_2017.jpg/1920px-Parque_Ibirapuera_e_Obelisco_2017.jpg',
   // Local photos from the trip — see extra-pictures/cumbuco/
   'cumbuco beach kites':         'extra-pictures/cumbuco/20231014_154930.jpg',
   'cumbuco kitesurf':            'extra-pictures/cumbuco/PXL_20240921_142226699.jpg',
