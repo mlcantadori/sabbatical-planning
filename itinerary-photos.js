@@ -21,6 +21,7 @@ window.PHOTO_IDS = {
   'cumbuco beach kites':         'extra-pictures/cumbuco/20231014_154930.jpg',
   'cumbuco kitesurf':            'extra-pictures/cumbuco/PXL_20240921_142226699.jpg',
   'cumbuco mural':               'extra-pictures/cumbuco/PXL_20241103_003746700.jpg',
+  'super cumbuco':               'extra-pictures/cumbuco/Screenshot%202026-06-29%20at%2021.05.25.png',
 
   // ── Toronto ───────────────────────────────────────────────────────────────
   'toronto cn tower':            'photo-1517935706615-2717063c2225', // ✓

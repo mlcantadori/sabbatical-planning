@@ -82,7 +82,7 @@ window.TRIP = (function () {
       intro: 'Julho a agosto é o pico da temporada de vento no Ceará. Cumbuco tem a combinação perfeita: vento constante, lagoas de água doce para fazer kite, dunas, jangadas, e ritmo de interior nordestino.',
       tldr: 'Cumbuco · Lagoa do Cauípe · dunas · jangadas',
       weather: { hi: 30, lo: 24, label: 'Nordeste seco, 30°/24°', emoji: '🪁' },
-      photos: ['cumbuco beach kites', 'cumbuco kitesurf', 'cumbuco mural'],
+      photos: ['cumbuco beach kites', 'cumbuco kitesurf', 'cumbuco mural', 'super cumbuco'],
       places: [
         { name: 'Cumbuco', days: 27, query: 'Cumbuco, Caucaia, Ceará',
           highlights: ['Kitesurf na Lagoa do Cauípe — vento de 25–35 nós constante, água rasa e quente','Aulas e progressão de kite (ou wing/windsurf) no flatwater da lagoa','Passeio de buggy pelas dunas e lagoas da orla','Jangada ao amanhecer com pescadores locais','Lagoa Barra Seca + Lagoa Grande de buggy','Pôr do sol na praia com caju gelado','Frutos do mar frescos na orla: lagosta, camarão, peixe grelhado'] },
