@@ -3,9 +3,11 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
   const { photoUrl } = window.TRIP.helpers;
   const [loaded, setLoaded] = React.useState(false);
   const photoVal = window.PHOTO_IDS?.[keyword];
-  // photoVal can be a full URL (Wikipedia/Commons) or an Unsplash photo-ID string
+  // photoVal can be a full URL (Wikipedia/Commons), a local relative path
+  // (e.g. "extra-pictures/…"), or an Unsplash photo-ID string. URLs and local
+  // paths contain a "/"; Unsplash IDs ("photo-xxxx") never do.
   const primary = photoVal
-    ? (photoVal.startsWith('http')
+    ? (photoVal.includes('/')
         ? photoVal
         : `https://images.unsplash.com/${photoVal}?w=1200&h=900&fit=crop&auto=format`)
     : photoUrl(keyword, 1200, 900);

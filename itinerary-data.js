@@ -82,7 +82,7 @@ window.TRIP = (function () {
       intro: 'Julho a agosto é o pico da temporada de vento no Ceará. Cumbuco tem a combinação perfeita: vento constante, lagoas de água doce para fazer kite, dunas, jangadas, e ritmo de interior nordestino.',
       tldr: 'Cumbuco · Lagoa do Cauípe · dunas · jangadas',
       weather: { hi: 30, lo: 24, label: 'Nordeste seco, 30°/24°', emoji: '🪁' },
-      photos: ['cumbuco kitesurf', 'nordeste lagoa buggy', 'jangada nordeste'],
+      photos: ['cumbuco beach kites', 'cumbuco kitesurf', 'cumbuco mural'],
       places: [
         { name: 'Cumbuco', days: 27, query: 'Cumbuco, Caucaia, Ceará',
           highlights: ['Kitesurf na Lagoa do Cauípe — vento de 25–35 nós constante, água rasa e quente','Aulas e progressão de kite (ou wing/windsurf) no flatwater da lagoa','Passeio de buggy pelas dunas e lagoas da orla','Jangada ao amanhecer com pescadores locais','Lagoa Barra Seca + Lagoa Grande de buggy','Pôr do sol na praia com caju gelado','Frutos do mar frescos na orla: lagosta, camarão, peixe grelhado'] },
@@ -188,7 +188,7 @@ window.TRIP = (function () {
       intro: 'Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude.',
       tldr: 'Kathmandu · Pokhara · Annapurna Base Camp trek',
       weather: { hi: 18, lo: 2, label: 'Late post-monsoon, 18°/2°', emoji: '🏔️' },
-      photos: ['kathmandu boudhanath stupa', 'annapurna himalaya', 'pokhara phewa lake', 'everest prayer flags'],
+      photos: ['annapurna himalaya', 'kathmandu boudhanath stupa', 'pokhara phewa lake', 'everest prayer flags'],
       places: [
         { name: 'Kathmandu', days: 3, query: 'Kathmandu, Nepal',
           highlights: ['Boudhanath Stupa — one of the largest stupas on Earth','Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati','Swayambhunath (Monkey Temple)','Altitude acclimatization, gear check, ACAP + TIMS permits'] },

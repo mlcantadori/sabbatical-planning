@@ -7,7 +7,7 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  const LS_KEY = 'trip-data-v3';
+  const LS_KEY = 'trip-data-v4';
   const listeners = new Set();
   let chapters;
 
@@ -36,10 +36,15 @@ window.STORE = (function () {
     try { saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch {}
     if (saved && Array.isArray(saved.chapters)) {
       chapters = saved.chapters;
+      const srcById = new Map(window.TRIP.chapters.map((c) => [c.id, c]));
       // Defensive: make sure every chapter has the fields we expect
       chapters.forEach((c) => {
         if (!c.places) c.places = [];
         c.places.forEach((p) => { if (!p.highlights) p.highlights = []; });
+        // photos are source-derived, never user-edited — always re-bake from TRIP
+        // so curated photo edits propagate without a cache bump or Reset.
+        const src = srcById.get(c.id);
+        if (src && Array.isArray(src.photos)) c.photos = src.photos.slice();
       });
       return;
     }
