@@ -28,17 +28,22 @@ window.PHOTO_IDS = {
   'toronto distillery':          'photo-1495567720989-cebdbdd97913', // ✓
   'niagara falls':               'https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg',
 
-  // ── Athens ────────────────────────────────────────────────────────────────
+  // ── Greece ────────────────────────────────────────────────────────────────
   'athens acropolis':            'photo-1555993539-1732b0258235',    // Parthenon ✓
   'athens monastiraki':          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Monastiraki_Square_and_in_the_distance_the_Acropolis.jpg/1920px-Monastiraki_Square_and_in_the_distance_the_Acropolis.jpg',
   'hydra island greece':         'photo-1533105079780-92b9be482077', // ✓
   'cape sounion':                'https://upload.wikimedia.org/wikipedia/commons/c/c2/Cape_Sounion_AC.JPG',
+  'santorini oia':               'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Oia%2C_Santorini_sunset.jpg/1920px-Oia%2C_Santorini_sunset.jpg',
+  'folegandros chora':           'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Chora%2C_Folegandros%2C_Greece.jpg/1920px-Chora%2C_Folegandros%2C_Greece.jpg',
+  'chania old town':             'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Chania%2C_old_harbour_2019a.jpg/1920px-Chania%2C_old_harbour_2019a.jpg',
+  'milos sarakiniko':            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Sarakiniko_Beach_on_Milos_Island%2C_Greece_with_a_view_of_the_Aegean_Sea.jpg/1920px-Sarakiniko_Beach_on_Milos_Island%2C_Greece_with_a_view_of_the_Aegean_Sea.jpg',
 
   // ── Turkey ────────────────────────────────────────────────────────────────
   'istanbul mosque':             'photo-1524231757912-21f4fe3a7200', // ✓
   'alacati aegean':              'https://upload.wikimedia.org/wikipedia/commons/2/23/Alacati_Streets.jpg',
   'cappadocia balloons':         'photo-1527838832700-5059252407fa', // ✓
   'pamukkale terraces':          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/The_Travertine_terraces_of_Pamukkale.jpg/1920px-The_Travertine_terraces_of_Pamukkale.jpg',
+  'ephesus library':             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ephesus_-_Celsus_Library.jpg/1920px-Ephesus_-_Celsus_Library.jpg',
 
   // ── India ─────────────────────────────────────────────────────────────────
   'taj mahal sunrise':           'photo-1524492412937-b28074a5d7da', // ✓

@@ -38,26 +38,26 @@ window.TRIP_GEO = {
     'saopaulo/São Paulo':                     [-23.5505,  -46.6333],
     // Toronto
     'toronto/Toronto':                        [ 43.6532,  -79.3832],
-    // Athens
+    // Greece
     'athens/Athens':                          [37.9838,   23.7275],
-    'athens/Hydra':                           [37.3478,   23.4764],
-    'athens/Cape Sounion + Delphi':           [37.6500,   24.0167], // Cape Sounion
+    'athens/Peloponnese':                     [37.5675,   22.8039], // Nafplio
+    'athens/Santorini':                       [36.4610,   25.3760], // Oia
+    'athens/Crete (Chania)':                  [35.5138,   24.0180],
+    'athens/Milos':                           [36.7397,   24.4265], // Plaka
     // Turkey
-    'turkey/Istanbul':                        [41.0082,   28.9784],
     'turkey/Alacatı':                         [38.2789,   26.3793],
-    'turkey/Pamukkale + Ephesus':             [37.9233,   28.9663],
+    'turkey/Selçuk (Ephesus)':                [37.9411,   27.3419], // Ephesus
     'turkey/Cappadocia':                      [38.6431,   34.8284],
+    'turkey/Istanbul':                        [41.0082,   28.9784],
     // Nepal
     'nepal/Kathmandu':                        [27.7172,   85.3240],
     'nepal/Pokhara':                          [28.2096,   83.9856],
     'nepal/Annapurna Base Camp Trek':         [28.5306,   83.8783],
     'nepal/Pokhara recovery':                 [28.2096,   83.9856],
     // India
-    'india/Delhi':                            [28.6139,   77.2090],
-    'india/Varanasi':                         [25.3176,   82.9739],
-    'india/Agra':                             [27.1751,   78.0421],
-    'india/Jaipur':                           [26.9124,   75.7873],
+    'india/Delhi + Agra':                     [27.1751,   78.0421], // Agra
     'india/Rishikesh':                        [30.0869,   78.2676],
+    'india/Varanasi':                         [25.3176,   82.9739],
     // Japan Autumn
     'japan-autumn/Tokyo':                     [35.6762,  139.6503],
     'japan-autumn/Osaka':                     [34.6937,  135.5023],

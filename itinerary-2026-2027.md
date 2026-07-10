@@ -12,11 +12,11 @@
 |---|---|---|---|
 | 1 | Rio de Janeiro | Jun 21 – Jul 20 | 29 |
 | 2 | Cumbuco | Jul 21 – Aug 17 | 27 |
-| 3 | São Paulo | Aug 17 – Aug 23 | 6 |
-| 4 | Toronto | Aug 24 – Aug 27 | 3 |
-| 5 | Athens | Aug 27 – Sep 8 | 12 |
-| 6 | Turkey | Sep 8 – Sep 30 | 22 |
-| 7 | India (max 20d) | Oct 1 – Oct 21 | 20 |
+| 3 | São Paulo | Aug 17 – Aug 26 | 10 |
+| 4 | Toronto | Aug 27 – Aug 31 | 5 |
+| 5 | Greece | Sep 1 – Sep 22 | 21 |
+| 6 | Türkiye | Sep 22 – Oct 10 | 18 |
+| 7 | India (compact) | Oct 10 – Oct 21 | 11 |
 | 8 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 9 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
 | 10 | South Korea | Nov 30 – Dec 24 | 24 |
@@ -87,12 +87,12 @@ The Brazilian Northeast in July–August is the most reliable kite wind window i
 ---
 
 ## Chapter 3 — SÃO PAULO
-### Aug 17 – Aug 23 · 6 days
+### Aug 17 – Aug 26 · 10 days
 *Theme: Brazil's megalopolis — art, food, nightlife, and the world's best Japanese food outside Japan*
 
-Six days in the city that never sleeps and never explains itself. São Paulo is the engine of Brazil — raw, plural, endlessly creative. The food scene alone justifies a month; six days forces discipline and rewards ruthlessness.
+Ten days in the city that never sleeps and never explains itself. São Paulo is the engine of Brazil — raw, plural, endlessly creative. The food scene alone justifies a month; ten days lets you go deep without rushing the goodbye.
 
-**São Paulo — 6 days**
+**São Paulo — 10 days**
 - Avenida Paulista: the city's spine — MASP (Museu de Arte de São Paulo) with its glass chassis suspended over the pavement
 - Vila Madalena: street art corridor (Batman Alley), galleries, natural wine bars, indie record shops
 - Liberdade: the largest Japanese community outside Japan — ramen, yakisoba, the Sunday street market
@@ -104,17 +104,17 @@ Six days in the city that never sleeps and never explains itself. São Paulo is 
 - Pinheiros neighborhood bar crawl: natural wine, craft beer, city pulse
 - Day trip option: Serra da Cantareira (Atlantic Forest) — 45min north, waterfalls and trails
 
-**Fly São Paulo → Toronto Aug 23**
+**Fly São Paulo → Toronto Aug 27**
 
 ---
 
 ## Chapter 4 — TORONTO
-### Aug 24 – Aug 27 · 3 days
+### Aug 27 – Aug 31 · 5 days
 *Theme: North American send-off, city stopover before Europe*
 
-Three days in Toronto before crossing the Atlantic — a proper send-off from North America. Late August means warm evenings, patios open, and Kensington Market at its best.
+Five days in Toronto before crossing the Atlantic — a proper send-off from North America. Late August means warm evenings, patios open, and Kensington Market at its best. Overnight flight out Aug 31, landing in Athens Sep 1.
 
-**Toronto — 3 days**
+**Toronto — 5 days**
 - Kensington Market: multicultural street market, vintage shops, food stalls
 - Distillery District: Victorian industrial complex turned arts village
 - CN Tower + Harbourfront waterfront walk along Lake Ontario
@@ -125,42 +125,81 @@ Three days in Toronto before crossing the Atlantic — a proper send-off from No
 
 ---
 
-## Chapter 5 — ATHENS
-### Aug 27 – Sep 8 · 12 days
-*Theme: Ancient Mediterranean, cradle of Western civilization, island prologue*
+## Chapter 5 — GREECE
+### Sep 1 – Sep 22 · 21 days
+*Theme: Ancient Mediterranean, Peloponnese road trip, island-hopping south*
 
-Athens in late August: the Acropolis catches golden light at 7am before the crowds arrive. Monastiraki is electric at night. The Greek islands are a fast ferry away. A perfect opener before the rest of the world.
+Three weeks arcing south through Greece in September — crowds thinning, sea at its warmest. Athens and the Acropolis, a Peloponnese road trip, then the islands: two caldera nights on Santorini, five days out of Chania, and closing slow on Milos.
 
-**Athens — 8 days**
+**Athens — 3 nights (Sep 1–3)**
 - Acropolis + Parthenon — arrive at opening, golden light before 9am
 - Monastiraki flea market + evening mezedes bars
-- Plaka neighborhood: neoclassical houses, bougainvillea, cats
-- Anafiotika: whitewashed Cycladic enclave inside the city
+- Plaka + Anafiotika: whitewashed Cycladic enclave inside the city
 - National Archaeological Museum — world-class antiquities
-- Keramikos cemetery walk
 - Lycabettus Hill rooftop sunset over the whole city
 - Roof garden dinners with Acropolis views in Koukaki
 
-**Hydra island — 2 days**
-- No cars or motorcycles — only donkeys and feet
-- Port town of stone mansions rising from the harbor
-- Swimming off the rocks, fresh grilled octopus
-- Fast ferry from Piraeus (2h)
+**Peloponnese road trip — 5 nights (Sep 4–8)**
+- Corinth Canal stop en route from Athens
+- Nafplio: Venetian old town, Palamidi fortress, seafront tavernas
+- Epidaurus: best-preserved ancient theater, still in use
+- Mycenae: Lion Gate, Bronze Age citadel of Agamemnon
+- Coastal road trip — swims and fish tavernas between ruins
+- Return to Piraeus for the morning ferry south
 
-**Cape Sounion + Delphi — 2 days**
-- Temple of Poseidon at Cape Sounion — cliff's edge, Aegean 360° below
-- Delphi: Oracle sanctuary, museum, dramatic mountain valley
-- **Fly Athens → Istanbul**
+**Santorini — 2 nights (Sep 9–10)**
+- Two caldera nights — Oia sunset without the day-trip crowds
+- Cliff walk Fira → Imerovigli → Oia along the caldera rim
+- Akrotiri: Bronze Age town preserved under volcanic ash
+- Ferry onward to Crete (~2h)
+
+**Crete (Chania) — 5 nights (Sep 11–15)**
+- Chania Venetian harbor + lighthouse, old town alleys
+- Balos lagoon + Gramvousa boat day
+- Elafonisi pink-sand beach
+- Seitan Limania hidden cliff cove
+- Cretan tavernas: dakos, lamb, raki on the house
+
+**Milos — 6 nights (Sep 16–21)**
+- Sarakiniko: white volcanic moonscape over turquoise water
+- Kleftiko boat day — pirate-cove cliffs, sea caves, swimming stops
+- Plaka sunset over the gulf + Venetian kastro
+- Fishing villages: Klima's painted syrmata boathouses, Mandrakia
+- Tsigrado + Firopotamos + Papafragas swims
+
+**Fly Milos → Türkiye (via Athens) Sep 22**
 
 ---
 
-## Chapter 6 — TURKEY
-### Sep 8 – Sep 30 · 22 days
+## Chapter 6 — TÜRKIYE
+### Sep 22 – Oct 10 · 18 days
 *Theme: Ancient crossroads, Aegean coast, surreal landscapes*
 
-September is the single best month to visit Turkey. Cappadocia balloon flights at optimal conditions (cool stable morning air). Alacatı offers the best of the Aegean coast — wine, kite, cobblestone. Istanbul before the autumn shift.
+Arriving from Greece in late September — still the best window for Turkey. Landing on the Aegean side: Alaçatı first, then Ephesus from Selçuk, Cappadocia balloons in optimal cool morning air, and a full week in Istanbul to close.
 
-**Istanbul — 9 days**
+**Alaçatı — 4 days (Sep 22–25)**
+- Arrive from Greece — fly via Athens/Izmir or Chios–Çeşme ferry
+- Restored stone-house village on the Çeşme peninsula, Aegean coast
+- Windmills above the village — the iconic Alaçatı image
+- Natural wine bars + boutique winery day trips in surrounding hills
+- Kite surfing + windsurfing (consistently ranked top spot in Europe)
+- Cobblestone bazaar alley — artisan shops, slow mornings
+
+**Selçuk (Ephesus) — 2 days (Sep 26–27)**
+- Ephesus ancient city — one of the best-preserved Roman cities anywhere
+- Library of Celsus at opening hour, before the cruise buses
+- Basilica of St. John + Ayasuluk fortress above town
+- Şirince hill village — wine, stone houses, long lunch
+- Optional day trip: Pamukkale travertine terraces (~3h)
+
+**Cappadocia — 4 days (Sep 28 – Oct 1)**
+- Hot air balloon at sunrise — **book by Jul 2026** (Royal Balloon / Butterfly Balloons)
+- Göreme Open Air Museum
+- Underground cities: Derinkuyu, Kaymakli
+- Rose Valley + Love Valley hikes
+- Cave hotel stay in tuff stone
+
+**Istanbul — 8 days (Oct 2–9)**
 - Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market
 - Bosphorus ferry — the most beautiful commute on Earth
 - Hammam at Cağaloğlu Baths
@@ -168,57 +207,23 @@ September is the single best month to visit Turkey. Cappadocia balloon flights a
 - Meyhane dinners with raki and meze
 - Day trip to Princes' Islands by ferry
 
-**Alacatı — 6 days**
-- Restored stone-house village on the Çeşme peninsula, Aegean coast
-- Windmills above the village — the iconic Alacatı image
-- Natural wine bars + boutique winery day trips in surrounding hills
-- Kite surfing + windsurfing (consistently ranked top spot in Europe)
-- Cobblestone bazaar alley — artisan shops, slow mornings
-- Çeşme beach + optional ferry to Chios
-
-**Pamukkale + Ephesus — 3 days**
-- White calcium travertine terraces — walking barefoot into warm pools
-- Hierapolis ruins on the plateau
-- Ephesus ancient city — one of the best-preserved Roman cities anywhere
-
-**Cappadocia — 4 days**
-- Hot air balloon at sunrise — **book by Jul 2026** (Royal Balloon / Butterfly Balloons)
-- Göreme Open Air Museum
-- Underground cities: Derinkuyu, Kaymakli
-- Rose Valley + Love Valley hikes
-- Cave hotel stay in tuff stone
-
-**Fly Cappadocia → Kathmandu Oct 1**
+**Fly Istanbul → Delhi Oct 10**
 
 ---
 
 ## Chapter 7 — INDIA
-### Oct 1 – Oct 21 · 20 days
+### Oct 10 – Oct 21 · 11 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
-A tighter, more intentional India: Varanasi for spiritual intensity, the Golden Triangle, then a full week deep in Rishikesh for yoga, river, and mountain air. No Ranthambore, no Darjeeling — more depth, less breadth.
+A compact, intentional India: land in Delhi, straight to the Taj, then five days in Rishikesh for yoga, river, and mountain air, closing with Varanasi at full spiritual intensity before flying direct to Kathmandu.
 
-**Delhi — 1 day (Oct 1–2)**
-Transit, Old Delhi brief walk.
-
-**Varanasi — 2 days (Oct 2–4)**
-- Ghats at dawn: rowing on the Ganges in morning mist
-- Ganga Aarti at dusk: fire, flowers, bells, priests
-- Manikarnika cremation ghats
-- Chai, silk, narrow alleys
-
-**Agra — 3 days (Oct 4–7)**
+**Delhi + Agra — 2 days (Oct 10–11)**
+- Land in Delhi from Istanbul, express train to Agra
 - Taj Mahal at sunrise — arrive 6am, golden light
 - Agra Fort
 - Mehtab Bagh (sunset Taj view across the river)
-- Fatehpur Sikri day trip
 
-**Jaipur — 3 days (Oct 7–10)**
-- Amber Fort, mirror palace
-- Hawa Mahal, City Palace, Jantar Mantar observatory
-- Pink City bazaars
-
-**Rishikesh — 8 days (Oct 10–18)**
+**Rishikesh — 5 days (Oct 12–16)**
 - Yoga + meditation at Parmarth Niketan (multi-day immersive)
 - Evening Ganga Aarti on the ghats — intimate, non-touristic
 - Beatles Ashram ruins (Maharishi Mahesh Yogi Ashram)
@@ -227,11 +232,14 @@ Transit, Old Delhi brief walk.
 - Ayurvedic treatments
 - Day trip: Haridwar Ganga Aarti + Har Ki Pauri
 
-**Delhi — 3 days (Oct 18–21)**
-- Humayun's Tomb, Lodhi Garden walk
-- Departure prep
+**Varanasi — 4 days (Oct 17–20)**
+- Ghats at dawn: rowing on the Ganges in morning mist
+- Ganga Aarti at dusk: fire, flowers, bells, priests
+- Manikarnika cremation ghats
+- Sarnath — where Buddha first taught, 10km out
+- Chai, silk, narrow alleys
 
-**Fly Delhi → Kathmandu Oct 21**
+**Fly Varanasi → Kathmandu Oct 21 (direct, ~1h)**
 
 ---
 
@@ -694,8 +702,9 @@ Travel, last meals. **Fly home Jun 8, 2027.**
 
 | Chapter | Timing | Assessment |
 |---|---|---|
-| Turkey | Sep 8–30 | Optimal — best month (balloons, coast, Istanbul) |
-| India | Oct 1–21 | Optimal — post-monsoon clear, Golden Triangle + Rishikesh |
+| Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
+| Türkiye | Sep 22 – Oct 10 | Optimal — best window (balloons, coast, Istanbul) |
+| India | Oct 10–21 | Optimal — post-monsoon clear, Taj + Rishikesh + Varanasi |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
 | South Korea | Dec–Jan | Good — cozy winter, palaces, food |
