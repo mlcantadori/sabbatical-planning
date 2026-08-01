@@ -1,5 +1,3 @@
-"use strict";
-
 // Leaflet map view. Reads chapters + place coords from the store so it
 // re-renders when the user adds/removes/edits.
 

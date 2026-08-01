@@ -7,7 +7,7 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  const LS_KEY = 'trip-data-v6';
+  const LS_KEY = 'trip-data-v8';
   const listeners = new Set();
   let chapters;
 
@@ -68,6 +68,7 @@ window.STORE = (function () {
       anchor: (window.TRIP_GEO.chapters[c.id] || [0, 0]).slice(),
       booking: c.booking ? c.booking.slice() : null,
       diving: c.diving ? { ...c.diving } : null,
+      decisions: c.decisions ? c.decisions.slice() : null,
       places: c.places.map((p) => ({
         name: p.name,
         days: p.days,

@@ -40,15 +40,17 @@ window.TRIP_GEO = {
     'toronto/Toronto':                        [ 43.6532,  -79.3832],
     // Greece
     'athens/Athens':                          [37.9838,   23.7275],
-    'athens/Peloponnese':                     [37.5675,   22.8039], // Nafplio
-    'athens/Santorini':                       [36.4610,   25.3760], // Oia
-    'athens/Crete (Chania)':                  [35.5138,   24.0180],
+    'athens/Crete — Chania':                  [35.5138,   24.0180],
+    'athens/Crete — Rethymno':                [35.3667,   24.4833],
+    'athens/Santorini':                       [36.4166,   25.4335], // Fira
+    'athens/Folegandros':                     [36.6167,   24.9167], // Chora
     'athens/Milos':                           [36.7397,   24.4265], // Plaka
+    'athens/Athens — buffer':                 [37.9838,   23.7275],
     // Turkey
-    'turkey/Alacatı':                         [38.2789,   26.3793],
-    'turkey/Selçuk (Ephesus)':                [37.9411,   27.3419], // Ephesus
-    'turkey/Cappadocia':                      [38.6431,   34.8284],
-    'turkey/Istanbul':                        [41.0082,   28.9784],
+    'turkey/Cappadocia — Mustafapaşa':        [38.5722,   34.8975],
+    'turkey/Şirince':                         [37.9247,   27.4092],
+    'turkey/Pamukkale':                       [37.9142,   29.1189],
+    'turkey/Istanbul — Kadıköy':              [40.9927,   29.0280],
     // Nepal
     'nepal/Kathmandu':                        [27.7172,   85.3240],
     'nepal/Pokhara':                          [28.2096,   83.9856],

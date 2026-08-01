@@ -1,5 +1,3 @@
-"use strict";
-
 // Chapter list (left rail / mobile list), detail panel (right slideover /
 // mobile full-screen), binder overlay, and inline editing UI.
 
@@ -41,7 +39,7 @@
       className: "kicker"
     }, "The Arc"), /*#__PURE__*/React.createElement("div", {
       className: "chapter-list-meta"
-    }, chapters.length, " entries \xB7 ", store.getTotalDays(), " days")), /*#__PURE__*/React.createElement("button", {
+    }, chapters.length, " entries · ", store.getTotalDays(), " days")), /*#__PURE__*/React.createElement("button", {
       className: `pill-btn ${editing ? 'is-active' : ''}`,
       onClick: onToggleEdit,
       title: "Toggle edit mode"
@@ -121,7 +119,7 @@
       style: {
         background: region.accent
       }
-    }), fmt(ch.start), " \u2013 ", fmt(ch.end), " \xB7 ", ch.days, "d")), editing && /*#__PURE__*/React.createElement(window.ActionMenu, {
+    }), fmt(ch.start), " – ", fmt(ch.end), " · ", ch.days, "d")), editing && /*#__PURE__*/React.createElement(window.ActionMenu, {
       className: "chapter-row-menu",
       items: [{
         label: 'Edit details…',
@@ -191,7 +189,7 @@
       }
     }, ch.kind === 'chapter' ? `Chapter ${(ch.num || '').toString().padStart(2, '0')}` : ch.kind.toUpperCase()), /*#__PURE__*/React.createElement("span", {
       className: "kicker"
-    }, region.name, " \xB7 ", ch.country, " ", ch.flag)), /*#__PURE__*/React.createElement("div", {
+    }, region.name, " · ", ch.country, " ", ch.flag)), /*#__PURE__*/React.createElement("div", {
       className: "detail-head-actions"
     }, editing && /*#__PURE__*/React.createElement("button", {
       className: "icon-btn",
@@ -283,7 +281,7 @@
       onCommit: t => store.updateChapter(ch.id, {
         intro: t
       }),
-      placeholder: "Add a few sentences setting the scene\u2026"
+      placeholder: "Add a few sentences setting the scene…"
     }), ch.photos.length > 1 && /*#__PURE__*/React.createElement("div", {
       className: "photo-strip"
     }, ch.photos.slice(1, 4).map((k, i) => /*#__PURE__*/React.createElement(window.Photo, {
@@ -293,34 +291,40 @@
     }))), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
       title: `Itinerary · ${ch.places.length} stop${ch.places.length === 1 ? '' : 's'}`
-    }), ch.places.map((p, i) => /*#__PURE__*/React.createElement(PlaceRow, {
-      key: i,
-      chapterId: ch.id,
-      place: p,
-      idx: i,
-      offsetDays: ch.places.slice(0, i).reduce((s, x) => s + x.days, 0),
-      region: region,
-      isActive: selectedPlaceIdx === i,
-      editing: editing,
-      onSelect: () => onSelectPlace(i),
-      onEdit: () => setEditPlace(i),
-      onAddBelow: async () => {
-        const name = prompt('Name of new stop?');
-        if (!name) return;
-        let coords = null;
-        try {
-          coords = await window.geocode(name + ' ' + ch.country);
-        } catch {}
-        store.addPlace(ch.id, i, {
-          name,
-          query: name,
-          coords: coords || ch.anchor
-        });
-      },
-      onDelete: () => {
-        if (confirm(`Delete "${p.name}"?`)) store.removePlace(ch.id, i);
-      }
-    })), editing && /*#__PURE__*/React.createElement("button", {
+    }), ch.places.map((p, i) => {
+      const offsetDays = ch.places.slice(0, i).reduce((s, x) => s + x.days, 0);
+      const startDate = new Date(new Date(ch.start).getTime() + offsetDays * 86400000);
+      const endDate = new Date(startDate.getTime() + (p.days - 1) * 86400000);
+      return /*#__PURE__*/React.createElement(PlaceRow, {
+        key: i,
+        chapterId: ch.id,
+        place: p,
+        idx: i,
+        startDate: startDate,
+        endDate: endDate,
+        region: region,
+        isActive: selectedPlaceIdx === i,
+        editing: editing,
+        onSelect: () => onSelectPlace(i),
+        onEdit: () => setEditPlace(i),
+        onAddBelow: async () => {
+          const name = prompt('Name of new stop?');
+          if (!name) return;
+          let coords = null;
+          try {
+            coords = await window.geocode(name + ' ' + ch.country);
+          } catch {}
+          store.addPlace(ch.id, i, {
+            name,
+            query: name,
+            coords: coords || ch.anchor
+          });
+        },
+        onDelete: () => {
+          if (confirm(`Delete "${p.name}"?`)) store.removePlace(ch.id, i);
+        }
+      });
+    }), editing && /*#__PURE__*/React.createElement("button", {
       className: "add-row place-add-row",
       onClick: async () => {
         const name = prompt('Name of new stop?');
@@ -351,10 +355,18 @@
       small: true
     }), /*#__PURE__*/React.createElement("div", {
       className: "diving-inline"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, ch.diving.sites), " sites \xB7 ", ch.diving.type), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, ch.diving.sites), " sites · ", ch.diving.type), /*#__PURE__*/React.createElement("div", {
       className: "muted"
-    }, ch.diving.operators))), /*#__PURE__*/React.createElement(SectionHead, {
+    }, ch.diving.operators))), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
       num: "04",
+      title: "Route decisions",
+      small: true
+    }), /*#__PURE__*/React.createElement("ul", {
+      className: "alert-list"
+    }, ch.decisions.map((d, i) => /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, d)))), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "05",
       title: "Notes & journal",
       small: true
     }), /*#__PURE__*/React.createElement("textarea", {
@@ -395,7 +407,7 @@
       className: `section-head ${small ? 'is-small' : ''}`
     }, /*#__PURE__*/React.createElement("span", {
       className: "section-head-num"
-    }, "\xA7", num), /*#__PURE__*/React.createElement("span", {
+    }, "§", num), /*#__PURE__*/React.createElement("span", {
       className: "section-head-title"
     }, title));
   }
@@ -403,7 +415,8 @@
     chapterId,
     place,
     idx,
-    offsetDays,
+    startDate,
+    endDate,
     region,
     isActive,
     editing,
@@ -414,6 +427,8 @@
   }) {
     const store = window.useStore();
     const coords = place.coords;
+    const sameDay = startDate.getTime() === endDate.getTime();
+    const sameMonth = !sameDay && startDate.getUTCMonth() === endDate.getUTCMonth() && startDate.getUTCFullYear() === endDate.getUTCFullYear();
     return /*#__PURE__*/React.createElement("div", {
       className: `place-row ${isActive ? 'is-active' : ''} ${editing ? 'is-editing' : ''}`,
       onClick: onSelect
@@ -421,9 +436,9 @@
       className: "place-row-day"
     }, /*#__PURE__*/React.createElement("span", {
       className: "place-row-day-num"
-    }, offsetDays + 1, /*#__PURE__*/React.createElement("span", {
+    }, fmt(startDate), !sameDay && /*#__PURE__*/React.createElement("span", {
       className: "place-row-day-dash"
-    }, "\u2013", offsetDays + place.days)), /*#__PURE__*/React.createElement("span", {
+    }, "–", sameMonth ? endDate.getUTCDate() : fmt(endDate))), /*#__PURE__*/React.createElement("span", {
       className: "place-row-day-label"
     }, place.days, "d")), /*#__PURE__*/React.createElement("span", {
       className: "place-row-body"
@@ -458,7 +473,7 @@
         store.removeHighlight(chapterId, idx, j);
       },
       title: "Remove"
-    }, "\xD7")) : h)), editing && /*#__PURE__*/React.createElement("li", {
+    }, "×")) : h)), editing && /*#__PURE__*/React.createElement("li", {
       className: "hl-add"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: e => {
@@ -661,7 +676,7 @@
     }, /*#__PURE__*/React.createElement("input", {
       value: form.weatherLabel,
       onChange: e => update('weatherLabel', e.target.value),
-      placeholder: "e.g. Late summer, 28\xB0/16\xB0"
+      placeholder: "e.g. Late summer, 28°/16°"
     })), /*#__PURE__*/React.createElement(Field, {
       label: "Weather emoji"
     }, /*#__PURE__*/React.createElement("input", {
@@ -705,7 +720,7 @@
       className: "consequence-list"
     }, c.daysDelta !== 0 && /*#__PURE__*/React.createElement("li", null, "This chapter changes by ", /*#__PURE__*/React.createElement("strong", null, sign(c.daysDelta), " days"), ".", c.tripEndDelta !== 0 && ` Trip end shifts by ${sign(c.tripEndDelta)} days.`), c.chainShifts.length > 0 && /*#__PURE__*/React.createElement("li", {
       className: "consequence-chain"
-    }, "Subsequent chapters not auto-shifted \u2014\xA0", /*#__PURE__*/React.createElement("strong", null, c.chainShifts.map(s => s.title).join(', ')), "\xA0would each need to shift by ", /*#__PURE__*/React.createElement("strong", null, sign(c.chainShifts[0].delta), " days"), " to stay continuous."), c.gapConflicts.map((g, i) => /*#__PURE__*/React.createElement("li", {
+    }, "Subsequent chapters not auto-shifted —\xA0", /*#__PURE__*/React.createElement("strong", null, c.chainShifts.map(s => s.title).join(', ')), "\xA0would each need to shift by ", /*#__PURE__*/React.createElement("strong", null, sign(c.chainShifts[0].delta), " days"), " to stay continuous."), c.gapConflicts.map((g, i) => /*#__PURE__*/React.createElement("li", {
       key: i,
       className: "consequence-warn"
     }, g.type === 'gap' ? `Gap of ${g.gapDays} day${g.gapDays > 1 ? 's' : ''} between ${g.titles[0]} and ${g.titles[1]}.` : `Overlap of ${Math.abs(g.gapDays)} day${Math.abs(g.gapDays) > 1 ? 's' : ''} with ${g.titles[1]}.`)), c.seasonWarnings.map((w, i) => /*#__PURE__*/React.createElement("li", {
@@ -818,31 +833,35 @@
     }, tab === 'bookings' && /*#__PURE__*/React.createElement(BookingsView, null), tab === 'diving' && /*#__PURE__*/React.createElement(DivingView, null), tab === 'budget' && /*#__PURE__*/React.createElement(BudgetView, null), tab === 'packing' && /*#__PURE__*/React.createElement(PackingView, null), tab === 'snapshots' && /*#__PURE__*/React.createElement(SnapshotsView, null)));
   }
   function BookingsView() {
-    const [done, setDone] = React.useState(() => {
+    // Keyed by task text (stable across reordering), not array index.
+    // Items marked `done: true` in the data are confirmed-by-default and
+    // can't be unchecked away by a stale/missing localStorage entry.
+    const [overrides, setOverrides] = React.useState(() => {
       try {
-        return JSON.parse(localStorage.getItem('bookings-done') || '{}');
+        return JSON.parse(localStorage.getItem('bookings-done-v2') || '{}');
       } catch {
         return {};
       }
     });
-    const setAndSave = (i, v) => {
+    const isChecked = b => overrides[b.task] ?? !!b.done;
+    const setAndSave = (task, v) => {
       const next = {
-        ...done,
-        [i]: v
+        ...overrides,
+        [task]: v
       };
-      setDone(next);
+      setOverrides(next);
       try {
-        localStorage.setItem('bookings-done', JSON.stringify(next));
+        localStorage.setItem('bookings-done-v2', JSON.stringify(next));
       } catch {}
     };
-    const doneCount = bookings.filter((_, i) => done[i]).length;
+    const doneCount = bookings.filter(isChecked).length;
     return /*#__PURE__*/React.createElement("div", {
       className: "binder-pane"
     }, /*#__PURE__*/React.createElement("div", {
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "\xA7 Pre-departure"), /*#__PURE__*/React.createElement("h2", {
+    }, "§ Pre-departure"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Book before you leave Brazil"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -855,7 +874,7 @@
     }, "checked off"))), /*#__PURE__*/React.createElement("div", {
       className: "booking-grid"
     }, bookings.map((b, i) => {
-      const isDone = !!done[i];
+      const isDone = isChecked(b);
       return /*#__PURE__*/React.createElement("div", {
         key: i,
         className: `booking-card ${isDone ? 'is-done' : ''}`
@@ -863,7 +882,7 @@
         className: "stamp"
       }, "Critical"), /*#__PURE__*/React.createElement("button", {
         className: `booking-check ${isDone ? 'is-done' : ''}`,
-        onClick: () => setAndSave(i, !isDone)
+        onClick: () => setAndSave(b.task, !isDone)
       }, isDone && /*#__PURE__*/React.createElement(window.Icon.check, {
         size: 14
       })), /*#__PURE__*/React.createElement("div", {
@@ -888,7 +907,7 @@
       style: {
         color: '#1c4a5e'
       }
-    }, "\xA7 Underwater"), /*#__PURE__*/React.createElement("h2", {
+    }, "§ Underwater"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title",
       style: {
         color: '#1c4a5e'
@@ -938,7 +957,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "\xA7 Money"), /*#__PURE__*/React.createElement("h2", {
+    }, "§ Money"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Budget anchors"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -963,7 +982,31 @@
       items: budget.splurges,
       tone: "neutral",
       bordered: true
-    })));
+    })), budget.chapterAnchors && budget.chapterAnchors.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
+      num: "02",
+      title: "Chapter anchors",
+      small: true
+    }), budget.chapterAnchors.map((ca, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      className: "budget-hero",
+      style: {
+        marginBottom: 16
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "budget-hero-big",
+      style: {
+        fontSize: '1.6rem'
+      }
+    }, ca.title), /*#__PURE__*/React.createElement("div", {
+      className: "budget-hero-sub"
+    }, ca.total, " · ", ca.sub), /*#__PURE__*/React.createElement("ul", {
+      className: "alert-list",
+      style: {
+        marginTop: 12
+      }
+    }, ca.items.map((it, j) => /*#__PURE__*/React.createElement("li", {
+      key: j
+    }, it))))))));
   }
   function BudgetCard({
     title,
@@ -986,7 +1029,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "\xA7 Kit"), /*#__PURE__*/React.createElement("h2", {
+    }, "§ Kit"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Packing"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -1032,7 +1075,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "\xA7 Versions"), /*#__PURE__*/React.createElement("h2", {
+    }, "§ Versions"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Saved versions"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -1043,9 +1086,9 @@
     }, /*#__PURE__*/React.createElement("button", {
       className: "btn-primary",
       onClick: saveNew
-    }, "Save current as\u2026"))), snaps.length === 0 ? /*#__PURE__*/React.createElement("div", {
+    }, "Save current as…"))), snaps.length === 0 ? /*#__PURE__*/React.createElement("div", {
       className: "snapshot-empty"
-    }, "No versions saved yet. Click \"Save current as\u2026\" to capture the current itinerary.") : /*#__PURE__*/React.createElement("div", {
+    }, "No versions saved yet. Click \"Save current as…\" to capture the current itinerary.") : /*#__PURE__*/React.createElement("div", {
       className: "snapshot-list"
     }, snaps.map(s => /*#__PURE__*/React.createElement("div", {
       key: s.name,
@@ -1134,24 +1177,24 @@
       className: "diff-summary-chip"
     }, "No changes")), /*#__PURE__*/React.createElement("table", {
       className: "diff-table"
-    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Chapter"), /*#__PURE__*/React.createElement("th", null, "Current dates"), /*#__PURE__*/React.createElement("th", null, "Snapshot dates"), /*#__PURE__*/React.createElement("th", null, "\u0394 days"), /*#__PURE__*/React.createElement("th", null, "\u0394 start"))), /*#__PURE__*/React.createElement("tbody", null, diff.added.map(c => /*#__PURE__*/React.createElement("tr", {
+    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Chapter"), /*#__PURE__*/React.createElement("th", null, "Current dates"), /*#__PURE__*/React.createElement("th", null, "Snapshot dates"), /*#__PURE__*/React.createElement("th", null, "Δ days"), /*#__PURE__*/React.createElement("th", null, "Δ start"))), /*#__PURE__*/React.createElement("tbody", null, diff.added.map(c => /*#__PURE__*/React.createElement("tr", {
       key: c.id,
       className: "diff-row-added"
-    }, /*#__PURE__*/React.createElement("td", null, c.flag, " ", c.title), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " \u2013 ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
+    }, /*#__PURE__*/React.createElement("td", null, c.flag, " ", c.title), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " – ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-muted"
-    }, "\u2014"), /*#__PURE__*/React.createElement("td", {
+    }, "—"), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-pos"
-    }, "+", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "\u2014"))), diff.removed.map(c => /*#__PURE__*/React.createElement("tr", {
+    }, "+", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "—"))), diff.removed.map(c => /*#__PURE__*/React.createElement("tr", {
       key: c.id,
       className: "diff-row-removed"
     }, /*#__PURE__*/React.createElement("td", null, c.flag, " ", c.title), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-muted"
-    }, "\u2014"), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " \u2013 ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
+    }, "—"), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " – ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-neg"
-    }, "-", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "\u2014"))), diff.modified.map(m => /*#__PURE__*/React.createElement("tr", {
+    }, "-", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "—"))), diff.modified.map(m => /*#__PURE__*/React.createElement("tr", {
       key: m.id,
       className: "diff-row-modified"
-    }, /*#__PURE__*/React.createElement("td", null, m.title), /*#__PURE__*/React.createElement("td", null, fmtDate(m.current.start), " \u2013 ", fmtDate(m.current.end)), /*#__PURE__*/React.createElement("td", null, fmtDate(m.snapshot.start), " \u2013 ", fmtDate(m.snapshot.end)), /*#__PURE__*/React.createElement("td", {
+    }, /*#__PURE__*/React.createElement("td", null, m.title), /*#__PURE__*/React.createElement("td", null, fmtDate(m.current.start), " – ", fmtDate(m.current.end)), /*#__PURE__*/React.createElement("td", null, fmtDate(m.snapshot.start), " – ", fmtDate(m.snapshot.end)), /*#__PURE__*/React.createElement("td", {
       className: m.daysDelta > 0 ? 'diff-cell-pos' : m.daysDelta < 0 ? 'diff-cell-neg' : ''
     }, m.daysDelta !== 0 ? sign(m.daysDelta) + 'd' : '—'), /*#__PURE__*/React.createElement("td", {
       className: m.dateDelta !== 0 ? 'diff-cell-shifted' : ''

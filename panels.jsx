@@ -254,13 +254,18 @@
               )}
 
               <SectionHead num="01" title={`Itinerary · ${ch.places.length} stop${ch.places.length === 1 ? '' : 's'}`} />
-              {ch.places.map((p, i) => (
+              {ch.places.map((p, i) => {
+                const offsetDays = ch.places.slice(0, i).reduce((s, x) => s + x.days, 0);
+                const startDate = new Date(new Date(ch.start).getTime() + offsetDays * 86400000);
+                const endDate = new Date(startDate.getTime() + (p.days - 1) * 86400000);
+                return (
                 <PlaceRow
                   key={i}
                   chapterId={ch.id}
                   place={p}
                   idx={i}
-                  offsetDays={ch.places.slice(0, i).reduce((s, x) => s + x.days, 0)}
+                  startDate={startDate}
+                  endDate={endDate}
                   region={region}
                   isActive={selectedPlaceIdx === i}
                   editing={editing}
@@ -277,7 +282,8 @@
                     if (confirm(`Delete "${p.name}"?`)) store.removePlace(ch.id, i);
                   }}
                 />
-              ))}
+                );
+              })}
               {editing && (
                 <button
                   className="add-row place-add-row"
@@ -311,7 +317,16 @@
                 </>
               )}
 
-              <SectionHead num="04" title="Notes & journal" small />
+              {ch.decisions && ch.decisions.length > 0 && (
+                <>
+                  <SectionHead num="04" title="Route decisions" small />
+                  <ul className="alert-list">
+                    {ch.decisions.map((d, i) => <li key={i}>{d}</li>)}
+                  </ul>
+                </>
+              )}
+
+              <SectionHead num="05" title="Notes & journal" small />
               <textarea
                 className="journal-input"
                 value={note}
@@ -354,16 +369,23 @@
     );
   }
 
-  function PlaceRow({ chapterId, place, idx, offsetDays, region, isActive, editing, onSelect, onEdit, onAddBelow, onDelete }) {
+  function PlaceRow({ chapterId, place, idx, startDate, endDate, region, isActive, editing, onSelect, onEdit, onAddBelow, onDelete }) {
     const store = window.useStore();
     const coords = place.coords;
+    const sameDay = startDate.getTime() === endDate.getTime();
+    const sameMonth = !sameDay
+      && startDate.getUTCMonth() === endDate.getUTCMonth()
+      && startDate.getUTCFullYear() === endDate.getUTCFullYear();
     return (
       <div
         className={`place-row ${isActive ? 'is-active' : ''} ${editing ? 'is-editing' : ''}`}
         onClick={onSelect}>
         <span className="place-row-day">
           <span className="place-row-day-num">
-            {offsetDays + 1}<span className="place-row-day-dash">–{offsetDays + place.days}</span>
+            {fmt(startDate)}
+            {!sameDay && (
+              <span className="place-row-day-dash">–{sameMonth ? endDate.getUTCDate() : fmt(endDate)}</span>
+            )}
           </span>
           <span className="place-row-day-label">{place.days}d</span>
         </span>
@@ -669,15 +691,19 @@
   }
 
   function BookingsView() {
-    const [done, setDone] = React.useState(() => {
-      try { return JSON.parse(localStorage.getItem('bookings-done') || '{}'); } catch { return {}; }
+    // Keyed by task text (stable across reordering), not array index.
+    // Items marked `done: true` in the data are confirmed-by-default and
+    // can't be unchecked away by a stale/missing localStorage entry.
+    const [overrides, setOverrides] = React.useState(() => {
+      try { return JSON.parse(localStorage.getItem('bookings-done-v2') || '{}'); } catch { return {}; }
     });
-    const setAndSave = (i, v) => {
-      const next = { ...done, [i]: v };
-      setDone(next);
-      try { localStorage.setItem('bookings-done', JSON.stringify(next)); } catch {}
+    const isChecked = (b) => overrides[b.task] ?? !!b.done;
+    const setAndSave = (task, v) => {
+      const next = { ...overrides, [task]: v };
+      setOverrides(next);
+      try { localStorage.setItem('bookings-done-v2', JSON.stringify(next)); } catch {}
     };
-    const doneCount = bookings.filter((_, i) => done[i]).length;
+    const doneCount = bookings.filter(isChecked).length;
     return (
       <div className="binder-pane">
         <div className="binder-pane-head">
@@ -693,11 +719,11 @@
         </div>
         <div className="booking-grid">
           {bookings.map((b, i) => {
-            const isDone = !!done[i];
+            const isDone = isChecked(b);
             return (
               <div key={i} className={`booking-card ${isDone ? 'is-done' : ''}`}>
                 {b.critical && !isDone && <div className="stamp">Critical</div>}
-                <button className={`booking-check ${isDone ? 'is-done' : ''}`} onClick={() => setAndSave(i, !isDone)}>
+                <button className={`booking-check ${isDone ? 'is-done' : ''}`} onClick={() => setAndSave(b.task, !isDone)}>
                   {isDone && <window.Icon.check size={14} />}
                 </button>
                 <div className="booking-body">
@@ -769,6 +795,23 @@
           <BudgetCard title="Cheap anchors" items={budget.cheap} tone="cool" />
           <BudgetCard title="Strategic splurges" items={budget.splurges} tone="neutral" bordered />
         </div>
+
+        {budget.chapterAnchors && budget.chapterAnchors.length > 0 && (
+          <>
+            <SectionHead num="02" title="Chapter anchors" small />
+            {budget.chapterAnchors.map((ca, i) => (
+              <div key={i} className="budget-hero" style={{ marginBottom: 16 }}>
+                <div>
+                  <div className="budget-hero-big" style={{ fontSize: '1.6rem' }}>{ca.title}</div>
+                  <div className="budget-hero-sub">{ca.total} · {ca.sub}</div>
+                  <ul className="alert-list" style={{ marginTop: 12 }}>
+                    {ca.items.map((it, j) => <li key={j}>{it}</li>)}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     );
   }

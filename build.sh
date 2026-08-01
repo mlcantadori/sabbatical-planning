@@ -9,7 +9,7 @@ const fs = require('fs');
 const dir = './';
 const files = ['shared', 'map-view', 'panels', 'app'];
 const opts = {
-  presets: [['@babel/preset-env', { targets: 'last 2 Chrome versions' }], '@babel/preset-react'],
+  presets: [['@babel/preset-env', { targets: 'last 2 Chrome versions' }], ['@babel/preset-react', { runtime: 'classic' }]],
   compact: false,
 };
 fs.mkdirSync('dist', { recursive: true });

@@ -77,28 +77,28 @@ window.TRIP = (function () {
     {
       id: 'cumbuco', num: 2, kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'Cumbuco',
-      start: '2026-07-21', end: '2026-08-17', days: 27,
+      start: '2026-07-21', end: '2026-08-19', days: 29,
       theme: 'Kite, lagoa, dunas — melhor vento do Brasil',
       intro: 'Julho a agosto é o pico da temporada de vento no Ceará. Cumbuco tem a combinação perfeita: vento constante, lagoas de água doce para fazer kite, dunas, jangadas, e ritmo de interior nordestino.',
       tldr: 'Cumbuco · Lagoa do Cauípe · dunas · jangadas',
       weather: { hi: 30, lo: 24, label: 'Nordeste seco, 30°/24°', emoji: '🪁' },
       photos: ['cumbuco beach kites', 'cumbuco kitesurf', 'cumbuco mural', 'super cumbuco'],
       places: [
-        { name: 'Cumbuco', days: 27, query: 'Cumbuco, Caucaia, Ceará',
+        { name: 'Cumbuco', days: 29, query: 'Cumbuco, Caucaia, Ceará',
           highlights: ['Kitesurf na Lagoa do Cauípe — vento de 25–35 nós constante, água rasa e quente','Aulas e progressão de kite (ou wing/windsurf) no flatwater da lagoa','Passeio de buggy pelas dunas e lagoas da orla','Jangada ao amanhecer com pescadores locais','Lagoa Barra Seca + Lagoa Grande de buggy','Pôr do sol na praia com caju gelado','Frutos do mar frescos na orla: lagosta, camarão, peixe grelhado'] },
       ],
     },
     {
       id: 'saopaulo', num: 3, kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'São Paulo',
-      start: '2026-08-17', end: '2026-08-27', days: 10,
+      start: '2026-08-19', end: '2026-08-26', days: 7,
       theme: 'Metrópole cultural, gastronomia, despedida',
       intro: 'Dez dias para fechar o ciclo brasileiro antes de embarcar. São Paulo tem a melhor cena gastronômica da América Latina e um circuito cultural denso — MASP, Pinacoteca, Vila Madelena.',
       tldr: 'MASP · Vila Madelena · Liberdade · Ibirapuera',
       weather: { hi: 24, lo: 14, label: 'Inverno paulistano, 24°/14°', emoji: '☕' },
       photos: ['masp sao paulo', 'sao paulo skyline', 'ibirapuera park', 'vila madelena art'],
       places: [
-        { name: 'São Paulo', days: 10, query: 'Avenida Paulista, São Paulo',
+        { name: 'São Paulo', days: 7, query: 'Avenida Paulista, São Paulo',
           highlights: ['MASP — acervo europeu em estrutura suspensa sobre a Paulista','Pinacoteca do Estado — melhor museu de arte brasileira','Vila Madelena: Beco do Batman, ateliês, bares, brunch','Liberdade: bairro japonês — yakisoba, onigiri, cultura nikkei','Ibirapuera: corrida, Museu Afro, Oca, pavilhões de Niemeyer','Mercadão Municipal: mortadela, bacalhau, frutas exóticas','Jantar de despedida no Japinha ou rodízio paulistano clássico','Fly São Paulo → Toronto para abrir o sabbatical internacional'] },
       ],
     },
@@ -119,45 +119,52 @@ window.TRIP = (function () {
     {
       id: 'athens', num: 5, kind: 'chapter', region: 'mediterranean',
       country: 'Greece', flag: '🇬🇷', title: 'Greece',
-      start: '2026-09-01', end: '2026-09-22', days: 21,
-      theme: 'Ancient Mediterranean, Peloponnese road trip, island-hopping south',
-      intro: 'Three weeks arcing south through Greece in September — crowds thinning, sea at its warmest. Athens and the Acropolis, a Peloponnese road trip, then the islands: two caldera nights on Santorini, five days out of Chania, and closing slow on Milos.',
-      tldr: 'Athens · Peloponnese · Santorini · Crete · Milos',
+      start: '2026-09-01', end: '2026-09-21', days: 20,
+      theme: 'Athens, Cretan trails, island-hopping the western Cyclades — 100% booked ✅',
+      intro: 'Twenty nights arcing south through Greece in September — crowds thinning, sea at its warmest. Athens first, then Crete in hybrid mode (car-free Chania, car-only Rethymno), and the ferry chain north through Santorini, Folegandros and Milos. Every bed, ferry and flight is locked.',
+      tldr: 'Athens · Chania · Rethymno · Santorini · Folegandros · Milos',
       weather: { hi: 29, lo: 20, label: 'September Aegean, 29°/20°', emoji: '🏛️' },
-      photos: ['athens acropolis', 'athens monastiraki', 'santorini oia', 'chania old town', 'milos sarakiniko'],
+      photos: ['athens acropolis', 'chania old town', 'santorini oia', 'folegandros chora', 'milos sarakiniko'],
       places: [
-        { name: 'Athens', days: 3, query: 'Acropolis, Athens, Greece',
-          highlights: ['Acropolis + Parthenon — arrive at opening, golden light before 9am','Monastiraki flea market + evening mezedes bars','Plaka + Anafiotika — whitewashed Cycladic enclave inside the city','National Archaeological Museum — world-class antiquities','Lycabettus Hill rooftop sunset over the whole city','Roof garden dinners with Acropolis views in Koukaki'] },
-        { name: 'Peloponnese', days: 5, query: 'Nafplio, Peloponnese, Greece',
-          highlights: ['Corinth Canal stop en route from Athens','Nafplio — Venetian old town, Palamidi fortress, seafront tavernas','Epidaurus — best-preserved ancient theater, still in use','Mycenae — Lion Gate, Bronze Age citadel of Agamemnon','Coastal road trip: swims and fish tavernas between ruins','Return to Athens/Piraeus for the morning ferry south'] },
-        { name: 'Santorini', days: 2, query: 'Oia, Santorini',
-          highlights: ['Two caldera nights — Oia sunset without the day-trip crowds','Cliff walk Fira → Imerovigli → Oia along the caldera rim','Akrotiri — Bronze Age town preserved under volcanic ash','Ferry onward to Crete (~2h)'] },
-        { name: 'Crete (Chania)', days: 5, query: 'Chania old town, Crete',
-          highlights: ['Chania Venetian harbor + lighthouse, old town alleys','Balos lagoon + Gramvousa boat day','Elafonisi pink-sand beach','Seitan Limania — hidden cliff cove swim','Cretan tavernas: dakos, lamb, raki on the house','Ferry/flight north to Milos'] },
-        { name: 'Milos', days: 6, query: 'Sarakiniko, Milos',
-          highlights: ['Sarakiniko — white volcanic moonscape over turquoise water','Kleftiko boat day — pirate-cove cliffs, sea caves, swimming stops','Plaka sunset over the gulf + Venetian kastro','Fishing villages: Klima\'s painted syrmata boathouses, Mandrakia','Tsigrado + Firopotamos + Papafragas swims','Fly to Türkiye (via Athens) to open the Anatolian chapter'] },
+        { name: 'Athens', days: 4, query: 'Acropolis, Athens, Greece',
+          highlights: ['Acropolis + Parthenon — arrive at opening, golden light before 9am','Plaka + Anafiotika — whitewashed Cycladic enclave inside the city','Mount Hymettus — trail morning above the city','Exarchia — anarchist-bohemian quarter, bookshops, mezedes','Monastiraki flea market + evening mezedes bars','Sep 5, 06h45 flight to Chania — X95 24h bus from Syntagma ~04h30 or night-rate taxi ~€55; online check-in the evening before'] },
+        { name: 'Crete — Chania', days: 4, query: 'Chania old town, Crete',
+          highlights: ['Car-free base — tours and buses only','Samaria Gorge tour — transfer included','Balos lagoon + Gramvousa boat from Kissamos','Elafonisi pink-sand beach by bus','Chania Venetian harbor + lighthouse, old town alleys','Cretan tavernas: dakos, lamb, raki on the house'] },
+        { name: 'Crete — Rethymno', days: 3, query: 'Rethymno old town, Crete',
+          highlights: ['Car days Sep 9–12 — pick up Chania or Rethymno, drop in Rethymno','Amari Valley — authentic interior villages under Psiloritis','Preveli palm beach + Kourtaliotiko gorge','South-coast swims off the tourist line','Sep 12 seasonal fast ferry Rethymno → Santorini','Plan B if meltemi cancels: car/bus to Heraklion (~1h15) + ferry from there'] },
+        { name: 'Santorini', days: 2, query: 'Fira, Santorini',
+          highlights: ['Lodging outside the caldera — budget lever already applied','Cliff walk Fira → Imerovigli → Oia along the caldera rim','Local buses + ATV to get around','Sep 14 ferry to Folegandros'] },
+        { name: 'Folegandros', days: 2, query: 'Chora, Folegandros',
+          highlights: ['The un-hyped bet — 100% walkable island, no car','Chora — one of the prettiest villages in the Cyclades','Panagia church trail at sunset','Agali beach + Katergo by small boat','Local bus ~€2 per hop','Sep 16 short ferry hop to Milos'] },
+        { name: 'Milos', days: 4, query: 'Sarakiniko, Milos',
+          highlights: ['Sarakiniko — white volcanic moonscape over turquoise water','Kleftiko boat day — the chapter splurge (~€240)','ATV/car for ~3 days — Tsigrado, Firopotamos, Papafragas swims','Plaka sunset + Klima\'s painted syrmata boathouses','Checkout adjusted Sep 22 → 20 ✅','Sep 20 ferry Milos → Athens (Piraeus) — bought ✅'] },
+        { name: 'Athens — buffer', days: 1, query: 'Piraeus, Athens',
+          highlights: ['Buffer night near the airport — booked ✅','Sep 21 flight Athens → Cappadocia via IST, single Turkish ticket — bought ✅'] },
       ],
+      booking: ['Crete car (Rethymno leg) — reserve close to the date','Samaria tour + Balos boat — book 2–3 days ahead, weather-dependent','Kleftiko boat, Milos — book 1–2 days ahead'],
+      decisions: ['Crete replaced Naxos — superlative trails, authentic interior, cheaper; Heraklion dropped, Rethymno gets 3 nights with the direct seasonal ferry','Hybrid car scheme in Crete: Chania car-free (tours), car only for the Rethymno leg','Folegandros kept as the un-hyped bet — fully walkable island','Milos→Athens flight discarded; bought ferry + buffer night solves the connection'],
     },
     {
       id: 'turkey', num: 6, kind: 'chapter', region: 'crossroads',
       country: 'Turkey', flag: '🇹🇷', title: 'Turkey',
-      start: '2026-09-22', end: '2026-10-10', days: 18,
-      theme: 'Ancient crossroads, Aegean coast, surreal landscapes',
-      intro: 'Arriving from Greece in late September — still the best window for Turkey. Landing on the Aegean side: Alaçatı first, then Ephesus from Selçuk, Cappadocia balloons in optimal cool morning air, and a full week in Istanbul to close, flying out to India.',
-      tldr: 'Alaçatı · Ephesus · Cappadocia · Istanbul',
+      start: '2026-09-21', end: '2026-10-09', days: 18,
+      theme: 'Cappadocia sunrise, Aegean hill villages, temporary life in Kadıköy',
+      intro: 'Landing from Athens on a single Turkish ticket via IST. Mustafapaşa over Göreme, Şirince over Selçuk — authenticity and cost. Pamukkale by dolmuş, then ten nights of temporary life on Istanbul\'s Asian side, flying out to Delhi on the night of Oct 9.',
+      tldr: 'Cappadocia (Mustafapaşa) · Şirince · Pamukkale · Istanbul — Kadıköy',
       weather: { hi: 26, lo: 14, label: 'Early autumn, 26°/14°', emoji: '☀️' },
-      photos: ['alacati aegean', 'ephesus library', 'cappadocia balloons', 'istanbul mosque'],
+      photos: ['cappadocia balloons', 'ephesus library', 'pamukkale terraces', 'istanbul mosque'],
       places: [
-        { name: 'Alacatı', days: 4, query: 'Alacatı, Çeşme, Turkey',
-          highlights: ['Arrive from Greece — fly via Athens/Izmir or Chios–Çeşme ferry','Restored stone-house village on the Aegean — Çeşme peninsula','Windmills above the village — the iconic Alacatı image','Natural wine bars + boutique wineries in the surrounding hills','Kite surfing + windsurfing (consistently ranked top spot in Europe)','Cobblestone bazaar alley — artisan shops, slow mornings'] },
-        { name: 'Selçuk (Ephesus)', days: 2, query: 'Ephesus, Selçuk, Turkey',
-          highlights: ['Ephesus — one of the best-preserved Roman cities anywhere','Library of Celsus at opening hour, before the cruise buses','Basilica of St. John + Ayasuluk fortress above town','Şirince hill village — wine, stone houses, long lunch','Optional day trip: Pamukkale travertine terraces (~3h)'] },
-        { name: 'Cappadocia', days: 4, query: 'Göreme, Cappadocia, Turkey',
-          highlights: ['Hot air balloon at sunrise — book by Jul 2026 (Royal Balloon / Butterfly Balloons)','Göreme Open Air Museum','Underground cities: Derinkuyu, Kaymakli','Rose Valley + Love Valley hikes','Cave hotel stay — tuff stone rooms carved into fairy chimneys'] },
-        { name: 'Istanbul', days: 8, query: 'Istanbul, Turkey',
-          highlights: ['Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market','Bosphorus ferry — the most beautiful commute on Earth','Hammam at Cağaloğlu Baths','Beyoğlu rooftop bars, Karaköy galleries','Meyhane dinners with raki + meze','Princes\' Islands day trip by ferry','Fly Istanbul → Delhi to open the India chapter'] },
+        { name: 'Cappadocia — Mustafapaşa', days: 4, query: 'Mustafapaşa, Cappadocia, Turkey',
+          highlights: ['Sep 21 arrival from Athens via IST — single Turkish ticket, bought ✅','Hot air balloon Sep 22 or 23 — CONFIRM Mustafapaşa pickup before paying','Mustafapaşa over Göreme — Greek-Ottoman stone village, no tour-bus core','Rose Valley + Love Valley hikes','Underground cities: Derinkuyu, Kaymakli','Sep 25 fly Kayseri or Nevşehir → Izmir (~1h)'] },
+        { name: 'Şirince', days: 2, query: 'Şirince, Selçuk, Turkey',
+          highlights: ['Şirince over Selçuk — hill village of stone houses and wine','Car for the 2 days','Ephesus early on Sep 26 — Library of Celsus before the cruise buses','Long lunches, village bazaar, fruit wines'] },
+        { name: 'Pamukkale', days: 2, query: 'Pamukkale, Denizli, Turkey',
+          highlights: ['Bus/dolmuş from Şirince','Travertine terraces early or late — golden light, thin crowds','Hierapolis ruins + antique pool','Sep 29 fly Denizli → Istanbul (~1h)'] },
+        { name: 'Istanbul — Kadıköy', days: 10, query: 'Moda, Kadıköy, Istanbul',
+          highlights: ['Temporary-life block: 10 nights in a Kadıköy/Moda apart, fortnightly rate','Istanbulkart + ferries — the most beautiful commute on Earth','Balat + Fener lanes, Chora church mosaics','Princes\' Islands day trip by ferry','Kuzguncuk — the village street on the Bosphorus','Meyhane dinners with raki + meze, Kadıköy market mornings','Oct 9 night: fly Istanbul → Delhi (to buy — Indigo/Turkish direct ~6h30)'] },
       ],
-      booking: ['Cappadocia balloon — book by Jul 2026 (Royal Balloon / Butterfly Balloons)'],
+      booking: ['Balloon for Sep 22/23 — book within 1–2 weeks; confirm Mustafapaşa pickup first','Istanbul → Delhi Oct 9 night — buy by early Aug (~€480 couple)','Stays: Mustafapaşa (Sep 21–25), Şirince (25–27), Pamukkale (27–29)','Kadıköy/Moda apart Sep 29 – Oct 9 — fortnightly/weekly discount','Internal flights Kayseri/Nevşehir→Izmir + Denizli→Istanbul — Pegasus/AJet/SunExpress, 6–8 weeks out','Şirince car (2 days) + India e-Visa by mid-Sep'],
+      decisions: ['Mustafapaşa > Göreme and Şirince > Selçuk — authenticity + cost','Istanbul as a single 10-night block on the Asian side — the temporary-life model'],
     },
     {
       id: 'india', num: 7, kind: 'chapter', region: 'himalaya',
@@ -469,13 +476,27 @@ window.TRIP = (function () {
   // Compute total chapter count for headers
   const chapterCount = chapters.filter(c => c.kind === 'chapter').length;
 
-  // Bookings (flat list pulled from chapters + a few overall)
+  // Bookings (flat list pulled from chapters + a few overall).
+  // done: true → already confirmed (rendered pre-checked; can't be lost to a
+  // localStorage wipe because it lives in the data).
   const bookings = [
+    // ── Pending — Türkiye, by urgency ──
+    { task: 'Cappadocia balloon — Sep 22 or 23',        by: 'Next 1–2 weeks',        critical: true,  notes: 'CONFIRM pickup in Mustafapaşa before paying' },
+    { task: 'Istanbul → Delhi flight — Oct 9 night',    by: 'By early Aug 2026',     critical: true,  notes: 'Indigo/Turkish direct ~6h30, ~€480 couple — monitor price' },
+    { task: 'Türkiye stays: Mustafapaşa · Şirince · Pamukkale', by: 'Jul–Aug 2026', critical: false, notes: 'Sep 21–25 / 25–27 / 27–29' },
+    { task: 'Istanbul apart — Kadıköy/Moda, Sep 29 – Oct 9', by: 'Jul–Aug 2026',    critical: false, notes: 'Fortnightly/weekly discount on 10 nights' },
+    { task: 'Türkiye internal flights',                 by: '6–8 weeks out (early Aug)', critical: false, notes: 'Kayseri/Nevşehir→Izmir Sep 25 · Denizli→Istanbul Sep 29 — Pegasus/AJet/SunExpress' },
+    { task: 'India e-Visa',                             by: 'By mid-Sep 2026',       critical: false, notes: 'Before the Oct 9 flight to Delhi' },
+    { task: 'Close-to-date: Crete car · Samaria + Balos · Kleftiko · Şirince car', by: 'On the road, 2–3 days ahead', critical: false, notes: 'Boat tours are weather-dependent — book short' },
+    // ── Pending — rest of the trip ──
     { task: 'Raja Ampat liveaboard',     by: 'By Oct 2025', critical: true,  notes: 'Papua Diving / Meridian Adventure — Mar 11–20; books out 6+ months ahead' },
     { task: 'Sipadan permits',           by: 'By Nov 2026', critical: true,  notes: '120 permits/day cap — if adding Sipadan to Borneo chapter' },
-    { task: 'Cappadocia balloon',        by: 'By Jul 2026', critical: false, notes: 'Royal Balloon / Butterfly Balloons' },
     { task: 'Annapurna permits',         by: 'On arrival',  critical: false, notes: 'ACAP permit + TIMS card in Kathmandu' },
     { task: 'Kinabatangan river lodge',  by: 'By Feb 2027', critical: false, notes: 'Book 2–3 months ahead; good lodges fill in dry season' },
+    // ── Confirmed — Greece 100% ✅ ──
+    { task: 'Greece stays — all 7 booked',  by: 'Done ✅', critical: false, done: true, notes: 'Athens 1–5 · Chania 5–9 · Rethymno 9–12 · Santorini 12–14 · Folegandros 14–16 · Milos 16–20 (checkout adjusted 22→20) · Athens buffer 20–21' },
+    { task: 'Greece ferries — all 4 bought', by: 'Done ✅', critical: false, done: true, notes: 'Rethymno→Santorini Sep 12 · Santorini→Folegandros Sep 14 · Folegandros→Milos Sep 16 · Milos→Athens Sep 20' },
+    { task: 'Flights: Athens→Chania + Athens→Cappadocia', by: 'Done ✅', critical: false, done: true, notes: 'Sep 5 06h45 to Chania · Sep 21 to Cappadocia via IST, single Turkish ticket' },
   ];
 
   // Diving log
@@ -495,7 +516,22 @@ window.TRIP = (function () {
     inBRL: '~140–175k BRL per person',
     expensive: ['Raja Ampat liveaboard', 'Hakuba lift passes + gear rental', 'Japan generally', 'China cities'],
     cheap: ['Nepal', 'India', 'Indonesia (outside dives)', 'Malaysia', 'Philippines (outside dives)'],
-    splurges: ['Raja Ampat liveaboard', 'Hakuba snowboarding', 'One Kyoto ryokan night', 'Cappadocia cave hotel'],
+    splurges: ['Raja Ampat liveaboard', 'Hakuba snowboarding', 'One Kyoto ryokan night', 'Kleftiko boat, Milos (~€240)', 'Cappadocia balloon (~€520)'],
+    // Per-chapter anchors — detailed figures for chapters that are locked.
+    chapterAnchors: [
+      {
+        title: 'Greece–Türkiye — v7 (Sep 1 – Oct 9, 38 nights, couple)',
+        total: '€6,100–6,400',
+        sub: '≈ R$ 27.5–29k/month at €1 ≈ R$ 5.85 · ceiling R$ 25k/month',
+        items: [
+          'Stays €/night: Athens 70–80 · Chania 65–75 · Rethymno 55–65 · Santorini 100–120 (outside caldera) · Folegandros 75–85 · Milos 80–90 · airport buffer',
+          'Crete car 3d ~€130–150 + west-Crete tours ~€130 · Milos ATV ~€105',
+          'Türkiye internal flights ~€170 · Istanbulkart ~€50 · IST→Delhi ~€480',
+          'Splurges: Kleftiko boat ~€240 · balloon ~€520',
+          'Cut levers: street-level food in Türkiye, conventional ferries; outside-caldera lodging already applied',
+        ],
+      },
+    ],
   };
 
   // Packing notes
