@@ -107,7 +107,7 @@ window.STORE = (function () {
         theme: partial.theme || '',
         intro: partial.intro || '',
         tldr: partial.tldr || '',
-        weather: partial.weather || { hi: 25, lo: 18, label: '—', emoji: '🌤' },
+        weather: partial.weather || { hi: 25, lo: 18, label: '—', emoji: '🌤', rainyDays: 0 },
         photos: partial.photos || [partial.title || 'travel landscape'],
         anchor: partial.anchor || [0, 0],
         booking: null,
