@@ -101,6 +101,11 @@
             <span className="chapter-row-region-dot" style={{ background: region.accent }} />
             {fmt(ch.start)} – {fmt(ch.end)} · {ch.days}d
           </span>
+          {ch.weather && (
+            <span className="chapter-row-weather">
+              {ch.weather.hi}°/{ch.weather.lo}° · 🌧 {ch.weather.rainyDays ?? 0}d
+            </span>
+          )}
         </span>
         {editing && (
           <window.ActionMenu
@@ -202,6 +207,8 @@
             <Stat label="Window" value={`${fmt(ch.start)} – ${fmt(ch.end)}`} sub={`${ch.days} days`} />
             <Stat label="Day of trip" value={`${today.n}–${todayEnd.n}`} sub={`of ${totalDays}`} />
             <Stat label="Weather" value={ch.weather?.label || '—'} sub={ch.weather?.emoji} />
+            <Stat label="Temp" value={ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—'} sub="high / low" />
+            <Stat label="Rain" value={ch.weather ? `${ch.weather.rainyDays ?? 0} days` : '—'} sub="rainy days" />
           </div>
 
           <div className="seg">
@@ -499,6 +506,8 @@
       theme: ch.theme || '', intro: ch.intro || '',
       anchor: ch.anchor ? ch.anchor.join(', ') : '',
       weatherLabel: ch.weather?.label || '', weatherEmoji: ch.weather?.emoji || '',
+      weatherHi: ch.weather?.hi ?? '', weatherLo: ch.weather?.lo ?? '',
+      weatherRainyDays: ch.weather?.rainyDays ?? '',
     });
     const update = (k, v) => setForm((f) => ({ ...f, [k]: v }));
 
@@ -517,7 +526,13 @@
         region: form.region, start: form.start, end: form.end,
         theme: form.theme, intro: form.intro,
         anchor: (!isNaN(lat) && !isNaN(lng)) ? [lat, lng] : ch.anchor,
-        weather: { ...ch.weather, label: form.weatherLabel, emoji: form.weatherEmoji },
+        weather: {
+          ...ch.weather,
+          label: form.weatherLabel, emoji: form.weatherEmoji,
+          hi: parseInt(form.weatherHi, 10) || 0,
+          lo: parseInt(form.weatherLo, 10) || 0,
+          rainyDays: parseInt(form.weatherRainyDays, 10) || 0,
+        },
       });
       onClose();
     };
@@ -550,6 +565,9 @@
           </Field>
           <Field label="Weather summary"><input value={form.weatherLabel} onChange={(e) => update('weatherLabel', e.target.value)} placeholder="e.g. Late summer, 28°/16°" /></Field>
           <Field label="Weather emoji"><input value={form.weatherEmoji} onChange={(e) => update('weatherEmoji', e.target.value)} maxLength={4} /></Field>
+          <Field label="Temp high (°C)"><input type="number" value={form.weatherHi} onChange={(e) => update('weatherHi', e.target.value)} /></Field>
+          <Field label="Temp low (°C)"><input type="number" value={form.weatherLo} onChange={(e) => update('weatherLo', e.target.value)} /></Field>
+          <Field label="Rainy days"><input type="number" min="0" value={form.weatherRainyDays} onChange={(e) => update('weatherRainyDays', e.target.value)} /></Field>
           <Field label="Theme" hint="Italic deck under the title">
             <input value={form.theme} onChange={(e) => update('theme', e.target.value)} />
           </Field>

@@ -119,7 +119,9 @@
       style: {
         background: region.accent
       }
-    }), fmt(ch.start), " – ", fmt(ch.end), " · ", ch.days, "d")), editing && /*#__PURE__*/React.createElement(window.ActionMenu, {
+    }), fmt(ch.start), " – ", fmt(ch.end), " · ", ch.days, "d"), ch.weather && /*#__PURE__*/React.createElement("span", {
+      className: "chapter-row-weather"
+    }, ch.weather.hi, "°/", ch.weather.lo, "° · 🌧 ", ch.weather.rainyDays ?? 0, "d")), editing && /*#__PURE__*/React.createElement(window.ActionMenu, {
       className: "chapter-row-menu",
       items: [{
         label: 'Edit details…',
@@ -250,6 +252,14 @@
       label: "Weather",
       value: ch.weather?.label || '—',
       sub: ch.weather?.emoji
+    }), /*#__PURE__*/React.createElement(Stat, {
+      label: "Temp",
+      value: ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—',
+      sub: "high / low"
+    }), /*#__PURE__*/React.createElement(Stat, {
+      label: "Rain",
+      value: ch.weather ? `${ch.weather.rainyDays ?? 0} days` : '—',
+      sub: "rainy days"
     })), /*#__PURE__*/React.createElement("div", {
       className: "seg"
     }, [['overview', 'Condensed'], ['full', 'Full detail']].map(([k, l]) => /*#__PURE__*/React.createElement("button", {
@@ -573,7 +583,10 @@
       intro: ch.intro || '',
       anchor: ch.anchor ? ch.anchor.join(', ') : '',
       weatherLabel: ch.weather?.label || '',
-      weatherEmoji: ch.weather?.emoji || ''
+      weatherEmoji: ch.weather?.emoji || '',
+      weatherHi: ch.weather?.hi ?? '',
+      weatherLo: ch.weather?.lo ?? '',
+      weatherRainyDays: ch.weather?.rainyDays ?? ''
     });
     const update = (k, v) => setForm(f => ({
       ...f,
@@ -606,7 +619,10 @@
         weather: {
           ...ch.weather,
           label: form.weatherLabel,
-          emoji: form.weatherEmoji
+          emoji: form.weatherEmoji,
+          hi: parseInt(form.weatherHi, 10) || 0,
+          lo: parseInt(form.weatherLo, 10) || 0,
+          rainyDays: parseInt(form.weatherRainyDays, 10) || 0
         }
       });
       onClose();
@@ -683,6 +699,25 @@
       value: form.weatherEmoji,
       onChange: e => update('weatherEmoji', e.target.value),
       maxLength: 4
+    })), /*#__PURE__*/React.createElement(Field, {
+      label: "Temp high (°C)"
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "number",
+      value: form.weatherHi,
+      onChange: e => update('weatherHi', e.target.value)
+    })), /*#__PURE__*/React.createElement(Field, {
+      label: "Temp low (°C)"
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "number",
+      value: form.weatherLo,
+      onChange: e => update('weatherLo', e.target.value)
+    })), /*#__PURE__*/React.createElement(Field, {
+      label: "Rainy days"
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "number",
+      min: "0",
+      value: form.weatherRainyDays,
+      onChange: e => update('weatherRainyDays', e.target.value)
     })), /*#__PURE__*/React.createElement(Field, {
       label: "Theme",
       hint: "Italic deck under the title"
