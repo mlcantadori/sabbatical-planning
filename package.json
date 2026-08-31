@@ -1,0 +1,13 @@
+{
+  "name": "sabbatical-planning",
+  "private": true,
+  "scripts": {
+    "build": "./build.sh",
+    "validate:photos": "node scripts/validate-photo-urls.mjs"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1"
+  }
+}

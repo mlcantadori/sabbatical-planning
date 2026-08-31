@@ -1,3 +1,5 @@
+"use strict";
+
 // App shell — header + body + binder switch + detail panel + mobile mode.
 
 (function () {
@@ -57,7 +59,7 @@
       className: "app-brand-mark"
     }, "Asia"), /*#__PURE__*/React.createElement("div", {
       className: "app-brand-meta"
-    }, "Sabbatical · 2026·2027 · Two travelers · ", store.getTotalDays(), " days")), /*#__PURE__*/React.createElement("div", {
+    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers \xB7 ", store.getTotalDays(), " days")), /*#__PURE__*/React.createElement("div", {
       className: "app-progress"
     }, /*#__PURE__*/React.createElement("span", {
       className: "app-progress-label"
@@ -129,11 +131,11 @@
       className: "map-legend"
     }, /*#__PURE__*/React.createElement("div", {
       className: "map-legend-title"
-    }, /*#__PURE__*/React.createElement("span", null, "Route · ", store.getChapters().filter(c => c.kind === 'chapter').length, " chapters"), /*#__PURE__*/React.createElement("span", {
+    }, /*#__PURE__*/React.createElement("span", null, "Route \xB7 ", store.getChapters().filter(c => c.kind === 'chapter').length, " chapters"), /*#__PURE__*/React.createElement("span", {
       style: {
         opacity: 0.4
       }
-    }, "▾")), /*#__PURE__*/React.createElement("div", {
+    }, "\u25BE")), /*#__PURE__*/React.createElement("div", {
       className: "map-legend-items"
     }, Object.entries(window.TRIP.REGIONS).map(([k, r]) => /*#__PURE__*/React.createElement("div", {
       key: k,
@@ -158,7 +160,7 @@
       className: "map-reset"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset
-    }, "← Back to whole route"))), showDetail && /*#__PURE__*/React.createElement(window.DetailPanel, {
+    }, "\u2190 Back to whole route"))), showDetail && /*#__PURE__*/React.createElement(window.DetailPanel, {
       chapterId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
       onSelectPlace: onSelectPlace,
