@@ -42,6 +42,7 @@ window.PHOTO_IDS = {
   'istanbul mosque':             'photo-1524231757912-21f4fe3a7200', // ✓
   'alacati aegean':              'https://upload.wikimedia.org/wikipedia/commons/2/23/Alacati_Streets.jpg',
   'cappadocia balloons':         'photo-1527838832700-5059252407fa', // ✓
+  'kas harbour':                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ka%C5%9F%2C_Andifli%2C_07580_Ka%C5%9F-Antalya%2C_Turkey_-_panoramio.jpg/1920px-Ka%C5%9F%2C_Andifli%2C_07580_Ka%C5%9F-Antalya%2C_Turkey_-_panoramio.jpg',
   'pamukkale terraces':          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/The_Travertine_terraces_of_Pamukkale.jpg/1920px-The_Travertine_terraces_of_Pamukkale.jpg',
   'ephesus library':             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ephesus_-_Celsus_Library.jpg/1920px-Ephesus_-_Celsus_Library.jpg',
 

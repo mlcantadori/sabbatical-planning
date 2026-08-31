@@ -47,10 +47,10 @@ window.TRIP_GEO = {
     'athens/Milos':                           [36.7397,   24.4265], // Plaka
     'athens/Athens — buffer':                 [37.9838,   23.7275],
     // Turkey
-    'turkey/Cappadocia — Mustafapaşa':        [38.5722,   34.8975],
-    'turkey/Şirince':                         [37.9247,   27.4092],
-    'turkey/Pamukkale':                       [37.9142,   29.1189],
-    'turkey/Istanbul — Kadıköy':              [40.9927,   29.0280],
+    'turkey/Cappadocia — Göreme':             [38.6431,   34.8289],
+    'turkey/Alaçatı':                         [38.2822,   26.3747],
+    'turkey/Kaş':                             [36.2018,   29.6377],
+    'turkey/Istanbul':                         [41.0082,   28.9784],
     // Nepal
     'nepal/Kathmandu':                        [27.7172,   85.3240],
     'nepal/Pokhara':                          [28.2096,   83.9856],
