@@ -175,7 +175,7 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 ### Sep 21 – Oct 9 · 18 days
 *Theme: Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
 
-Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight, then a rental-car loop from Izmir: Alaçatı and Kaş, driving back to ADB on Oct 3 for an evening flight into Istanbul.
+Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight, then a rental-car loop from Izmir: Alaçatı and Kaş, driving back to ADB on Sep 30 for an evening flight into Istanbul.
 
 **Cappadocia (Göreme) — 3 nights (Sep 21–24)**
 - Arrive Göreme Sep 21 from Athens via IST — single Turkish ticket, bought ✅
@@ -184,24 +184,23 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 - Underground cities: Derinkuyu, Kaymakli
 - Sep 24 fly Kayseri (ASR) → Izmir (ADB)
 
-**Alaçatı — 4 nights (Sep 24–28)**
+**Alaçatı — 3 nights (Sep 24–27)**
 - Pick up rental car at ADB — about an hour west
 - Kitesurfing window on the Çeşme peninsula
 - Restored stone-house village, windmills, Aegean coastline
 - Cobblestone bazaar, slow mornings, natural wine bars
 
-**Kaş — 5 nights (Sep 28 – Oct 3)**
+**Kaş — 3 nights (Sep 27–30)**
 - Drive south down the coast
-- Scuba diving — the chapter dive anchor
 - Kaputaş Beach
 - Lycian Way treks from town
 
-**Kaş → Izmir — Oct 3**
+**Kaş → Izmir — Sep 30**
 - Drive ~5.5 hours back to Izmir (ADB)
 - Drop the rental car
 - Evening flight ADB → Istanbul (~1h15)
 
-**Istanbul — 6 nights (Oct 3–9)**
+**Istanbul — 9 nights (Sep 30 – Oct 9)**
 - Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet
 - Asian side — Kadıköy/Moda ferries and market mornings
 - Bosphorus ferries
