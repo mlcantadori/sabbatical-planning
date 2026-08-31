@@ -15,7 +15,7 @@
 | 3 | São Paulo | Aug 17 – Aug 26 | 10 |
 | 4 | Toronto | Aug 27 – Aug 31 | 5 |
 | 5 | Greece | Sep 1 – Sep 22 | 21 |
-| 6 | Türkiye | Sep 21 – Oct 9 | 18 |
+| 6 | Türkiye | Sep 21 – Oct 10 | 19 |
 | 7 | India (compact) | Oct 10 – Oct 21 | 11 |
 | 8 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 9 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
@@ -172,20 +172,20 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 ---
 
 ## Chapter 6 — TÜRKIYE
-### Sep 21 – Oct 9 · 18 days
+### Sep 21 – Oct 10 · 19 days
 *Theme: Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
 
-Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight, then a rental-car loop from Izmir: Alaçatı and Kaş, driving back to ADB on Sep 30 for an evening flight into Istanbul.
+Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight, then take the 22:50 flight from Kayseri to Izmir for a rental-car loop: Alaçatı and Kaş, driving back to ADB on Sep 30 for an evening flight into Istanbul.
 
 **Cappadocia (Göreme) — 3 nights (Sep 21–24)**
 - Arrive Göreme Sep 21 from Athens via IST — single Turkish ticket, bought ✅
 - Valleys: Rose Valley, Love Valley, Göreme Open Air Museum
 - Hot air balloon flight — Sep 22 or 23
 - Underground cities: Derinkuyu, Kaymakli
-- Sep 24 fly Kayseri (ASR) → Izmir (ADB)
+- Sep 24, 22:50: fly Kayseri (ASR) → Izmir (ADB)
 
 **Alaçatı — 3 nights (Sep 24–27)**
-- Pick up rental car at ADB — about an hour west
+- Pick up the rental car directly at ADB — about an hour west
 - Kitesurfing window on the Çeşme peninsula
 - Restored stone-house village, windmills, Aegean coastline
 - Cobblestone bazaar, slow mornings, natural wine bars
@@ -200,14 +200,14 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 - Drop the rental car
 - Evening flight ADB → Istanbul (~1h15)
 
-**Istanbul — 9 nights (Sep 30 – Oct 9)**
+**Istanbul — 10 nights (Sep 30 – Oct 10)**
 - Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet
 - Asian side — Kadıköy/Moda ferries and market mornings
 - Bosphorus ferries
 - Princes' Islands day trip
-- Fly Istanbul → Delhi Oct 9 night
+- Fly Istanbul → Delhi Oct 10
 
-**Fly Istanbul → Delhi Oct 9**
+**Fly Istanbul → Delhi Oct 10**
 
 ---
 
@@ -703,7 +703,7 @@ Travel, last meals. **Fly home Jun 8, 2027.**
 | Chapter | Timing | Assessment |
 |---|---|---|
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
-| Türkiye | Sep 21 – Oct 9 | Optimal — best window (balloons, coast, Istanbul) |
+| Türkiye | Sep 21 – Oct 10 | Optimal — best window (balloons, coast, Istanbul) |
 | India | Oct 10–21 | Optimal — post-monsoon clear, Taj + Rishikesh + Varanasi |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
