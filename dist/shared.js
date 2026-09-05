@@ -1,3 +1,5 @@
+"use strict";
+
 // Photo component — Curated sources (Unsplash ID or full URL) → loremflickr fallback.
 function Photo({
   keyword,

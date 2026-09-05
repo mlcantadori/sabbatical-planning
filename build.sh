@@ -3,7 +3,9 @@
 # Run from the project directory: ./build.sh
 set -e
 cd "$(dirname "$0")"
-NODE_PATH=/tmp/node_modules node -e "
+# Babel is installed locally via `npm install`; Node resolves it from
+# this project's node_modules directory.
+node -e "
 const { transformSync } = require('@babel/core');
 const fs = require('fs');
 const dir = './';

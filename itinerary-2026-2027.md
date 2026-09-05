@@ -15,7 +15,7 @@
 | 3 | São Paulo | Aug 17 – Aug 26 | 10 |
 | 4 | Toronto | Aug 27 – Aug 31 | 5 |
 | 5 | Greece | Sep 1 – Sep 22 | 21 |
-| 6 | Türkiye | Sep 22 – Oct 10 | 18 |
+| 6 | Türkiye | Sep 21 – Oct 10 | 19 |
 | 7 | India (compact) | Oct 10 – Oct 21 | 11 |
 | 8 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 9 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
@@ -172,40 +172,40 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 ---
 
 ## Chapter 6 — TÜRKIYE
-### Sep 22 – Oct 10 · 18 days
-*Theme: Ancient crossroads, Aegean coast, surreal landscapes*
+### Sep 21 – Oct 10 · 19 days
+*Theme: Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
 
-Arriving from Greece in late September — still the best window for Turkey. Landing on the Aegean side: Alaçatı first, then Ephesus from Selçuk, Cappadocia balloons in optimal cool morning air, and a full week in Istanbul to close.
+Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight, then take the 22:50 flight from Kayseri to Izmir for a rental-car loop: Alaçatı and Kaş, driving back to ADB on Sep 30 for an evening flight into Istanbul.
 
-**Alaçatı — 4 days (Sep 22–25)**
-- Arrive from Greece — fly via Athens/Izmir or Chios–Çeşme ferry
-- Restored stone-house village on the Çeşme peninsula, Aegean coast
-- Windmills above the village — the iconic Alaçatı image
-- Natural wine bars + boutique winery day trips in surrounding hills
-- Kite surfing + windsurfing (consistently ranked top spot in Europe)
-- Cobblestone bazaar alley — artisan shops, slow mornings
-
-**Selçuk (Ephesus) — 2 days (Sep 26–27)**
-- Ephesus ancient city — one of the best-preserved Roman cities anywhere
-- Library of Celsus at opening hour, before the cruise buses
-- Basilica of St. John + Ayasuluk fortress above town
-- Şirince hill village — wine, stone houses, long lunch
-- Optional day trip: Pamukkale travertine terraces (~3h)
-
-**Cappadocia — 4 days (Sep 28 – Oct 1)**
-- Hot air balloon at sunrise — **book by Jul 2026** (Royal Balloon / Butterfly Balloons)
-- Göreme Open Air Museum
+**Cappadocia (Göreme) — 3 nights (Sep 21–24)**
+- Arrive Göreme Sep 21 from Athens via IST — single Turkish ticket, bought ✅
+- Valleys: Rose Valley, Love Valley, Göreme Open Air Museum
+- Hot air balloon flight — Sep 22 or 23
 - Underground cities: Derinkuyu, Kaymakli
-- Rose Valley + Love Valley hikes
-- Cave hotel stay in tuff stone
+- Sep 24, 22:50: fly Kayseri (ASR) → Izmir (ADB)
 
-**Istanbul — 8 days (Oct 2–9)**
-- Hagia Sophia, Topkapi Palace, Grand Bazaar, Spice Market
-- Bosphorus ferry — the most beautiful commute on Earth
-- Hammam at Cağaloğlu Baths
-- Beyoğlu rooftop bars, Karaköy galleries
-- Meyhane dinners with raki and meze
-- Day trip to Princes' Islands by ferry
+**Alaçatı — 3 nights (Sep 24–27)**
+- Pick up the rental car directly at ADB — about an hour west
+- Kitesurfing window on the Çeşme peninsula
+- Restored stone-house village, windmills, Aegean coastline
+- Cobblestone bazaar, slow mornings, natural wine bars
+
+**Kaş — 3 nights (Sep 27–30)**
+- Drive south down the coast
+- Kaputaş Beach
+- Lycian Way treks from town
+
+**Kaş → Izmir — Sep 30**
+- Drive ~5.5 hours back to Izmir (ADB)
+- Drop the rental car
+- Evening flight ADB → Istanbul (~1h15)
+
+**Istanbul — 10 nights (Sep 30 – Oct 10)**
+- Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet
+- Asian side — Kadıköy/Moda ferries and market mornings
+- Bosphorus ferries
+- Princes' Islands day trip
+- Fly Istanbul → Delhi Oct 10
 
 **Fly Istanbul → Delhi Oct 10**
 
@@ -703,7 +703,7 @@ Travel, last meals. **Fly home Jun 8, 2027.**
 | Chapter | Timing | Assessment |
 |---|---|---|
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
-| Türkiye | Sep 22 – Oct 10 | Optimal — best window (balloons, coast, Istanbul) |
+| Türkiye | Sep 21 – Oct 10 | Optimal — best window (balloons, coast, Istanbul) |
 | India | Oct 10–21 | Optimal — post-monsoon clear, Taj + Rishikesh + Varanasi |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |

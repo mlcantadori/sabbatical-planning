@@ -1,3 +1,5 @@
+"use strict";
+
 // Chapter list (left rail / mobile list), detail panel (right slideover /
 // mobile full-screen), binder overlay, and inline editing UI.
 
@@ -39,7 +41,7 @@
       className: "kicker"
     }, "The Arc"), /*#__PURE__*/React.createElement("div", {
       className: "chapter-list-meta"
-    }, chapters.length, " entries · ", store.getTotalDays(), " days")), /*#__PURE__*/React.createElement("button", {
+    }, chapters.length, " entries \xB7 ", store.getTotalDays(), " days")), /*#__PURE__*/React.createElement("button", {
       className: `pill-btn ${editing ? 'is-active' : ''}`,
       onClick: onToggleEdit,
       title: "Toggle edit mode"
@@ -119,9 +121,9 @@
       style: {
         background: region.accent
       }
-    }), fmt(ch.start), " – ", fmt(ch.end), " · ", ch.days, "d"), ch.weather && /*#__PURE__*/React.createElement("span", {
+    }), fmt(ch.start), " \u2013 ", fmt(ch.end), " \xB7 ", ch.days, "d"), ch.weather && /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-weather"
-    }, ch.weather.hi, "°/", ch.weather.lo, "° · 🌧 ", ch.weather.rainyDays ?? 0, "d")), editing && /*#__PURE__*/React.createElement(window.ActionMenu, {
+    }, ch.weather.hi, "\xB0/", ch.weather.lo, "\xB0 \xB7 \uD83C\uDF27 ", ch.weather.rainyDays ?? 0, "d")), editing && /*#__PURE__*/React.createElement(window.ActionMenu, {
       className: "chapter-row-menu",
       items: [{
         label: 'Edit details…',
@@ -191,7 +193,7 @@
       }
     }, ch.kind === 'chapter' ? `Chapter ${(ch.num || '').toString().padStart(2, '0')}` : ch.kind.toUpperCase()), /*#__PURE__*/React.createElement("span", {
       className: "kicker"
-    }, region.name, " · ", ch.country, " ", ch.flag)), /*#__PURE__*/React.createElement("div", {
+    }, region.name, " \xB7 ", ch.country, " ", ch.flag)), /*#__PURE__*/React.createElement("div", {
       className: "detail-head-actions"
     }, editing && /*#__PURE__*/React.createElement("button", {
       className: "icon-btn",
@@ -291,7 +293,7 @@
       onCommit: t => store.updateChapter(ch.id, {
         intro: t
       }),
-      placeholder: "Add a few sentences setting the scene…"
+      placeholder: "Add a few sentences setting the scene\u2026"
     }), ch.photos.length > 1 && /*#__PURE__*/React.createElement("div", {
       className: "photo-strip"
     }, ch.photos.slice(1, 4).map((k, i) => /*#__PURE__*/React.createElement(window.Photo, {
@@ -365,7 +367,7 @@
       small: true
     }), /*#__PURE__*/React.createElement("div", {
       className: "diving-inline"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, ch.diving.sites), " sites · ", ch.diving.type), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, ch.diving.sites), " sites \xB7 ", ch.diving.type), /*#__PURE__*/React.createElement("div", {
       className: "muted"
     }, ch.diving.operators))), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
       num: "04",
@@ -417,7 +419,7 @@
       className: `section-head ${small ? 'is-small' : ''}`
     }, /*#__PURE__*/React.createElement("span", {
       className: "section-head-num"
-    }, "§", num), /*#__PURE__*/React.createElement("span", {
+    }, "\xA7", num), /*#__PURE__*/React.createElement("span", {
       className: "section-head-title"
     }, title));
   }
@@ -448,7 +450,7 @@
       className: "place-row-day-num"
     }, fmt(startDate), !sameDay && /*#__PURE__*/React.createElement("span", {
       className: "place-row-day-dash"
-    }, "–", sameMonth ? endDate.getUTCDate() : fmt(endDate))), /*#__PURE__*/React.createElement("span", {
+    }, "\u2013", sameMonth ? endDate.getUTCDate() : fmt(endDate))), /*#__PURE__*/React.createElement("span", {
       className: "place-row-day-label"
     }, place.days, "d")), /*#__PURE__*/React.createElement("span", {
       className: "place-row-body"
@@ -483,7 +485,7 @@
         store.removeHighlight(chapterId, idx, j);
       },
       title: "Remove"
-    }, "×")) : h)), editing && /*#__PURE__*/React.createElement("li", {
+    }, "\xD7")) : h)), editing && /*#__PURE__*/React.createElement("li", {
       className: "hl-add"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: e => {
@@ -692,7 +694,7 @@
     }, /*#__PURE__*/React.createElement("input", {
       value: form.weatherLabel,
       onChange: e => update('weatherLabel', e.target.value),
-      placeholder: "e.g. Late summer, 28°/16°"
+      placeholder: "e.g. Late summer, 28\xB0/16\xB0"
     })), /*#__PURE__*/React.createElement(Field, {
       label: "Weather emoji"
     }, /*#__PURE__*/React.createElement("input", {
@@ -700,13 +702,13 @@
       onChange: e => update('weatherEmoji', e.target.value),
       maxLength: 4
     })), /*#__PURE__*/React.createElement(Field, {
-      label: "Temp high (°C)"
+      label: "Temp high (\xB0C)"
     }, /*#__PURE__*/React.createElement("input", {
       type: "number",
       value: form.weatherHi,
       onChange: e => update('weatherHi', e.target.value)
     })), /*#__PURE__*/React.createElement(Field, {
-      label: "Temp low (°C)"
+      label: "Temp low (\xB0C)"
     }, /*#__PURE__*/React.createElement("input", {
       type: "number",
       value: form.weatherLo,
@@ -755,7 +757,7 @@
       className: "consequence-list"
     }, c.daysDelta !== 0 && /*#__PURE__*/React.createElement("li", null, "This chapter changes by ", /*#__PURE__*/React.createElement("strong", null, sign(c.daysDelta), " days"), ".", c.tripEndDelta !== 0 && ` Trip end shifts by ${sign(c.tripEndDelta)} days.`), c.chainShifts.length > 0 && /*#__PURE__*/React.createElement("li", {
       className: "consequence-chain"
-    }, "Subsequent chapters not auto-shifted —\xA0", /*#__PURE__*/React.createElement("strong", null, c.chainShifts.map(s => s.title).join(', ')), "\xA0would each need to shift by ", /*#__PURE__*/React.createElement("strong", null, sign(c.chainShifts[0].delta), " days"), " to stay continuous."), c.gapConflicts.map((g, i) => /*#__PURE__*/React.createElement("li", {
+    }, "Subsequent chapters not auto-shifted \u2014\xA0", /*#__PURE__*/React.createElement("strong", null, c.chainShifts.map(s => s.title).join(', ')), "\xA0would each need to shift by ", /*#__PURE__*/React.createElement("strong", null, sign(c.chainShifts[0].delta), " days"), " to stay continuous."), c.gapConflicts.map((g, i) => /*#__PURE__*/React.createElement("li", {
       key: i,
       className: "consequence-warn"
     }, g.type === 'gap' ? `Gap of ${g.gapDays} day${g.gapDays > 1 ? 's' : ''} between ${g.titles[0]} and ${g.titles[1]}.` : `Overlap of ${Math.abs(g.gapDays)} day${Math.abs(g.gapDays) > 1 ? 's' : ''} with ${g.titles[1]}.`)), c.seasonWarnings.map((w, i) => /*#__PURE__*/React.createElement("li", {
@@ -896,7 +898,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "§ Pre-departure"), /*#__PURE__*/React.createElement("h2", {
+    }, "\xA7 Pre-departure"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Book before you leave Brazil"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -942,7 +944,7 @@
       style: {
         color: '#1c4a5e'
       }
-    }, "§ Underwater"), /*#__PURE__*/React.createElement("h2", {
+    }, "\xA7 Underwater"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title",
       style: {
         color: '#1c4a5e'
@@ -992,7 +994,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "§ Money"), /*#__PURE__*/React.createElement("h2", {
+    }, "\xA7 Money"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Budget anchors"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -1034,7 +1036,7 @@
       }
     }, ca.title), /*#__PURE__*/React.createElement("div", {
       className: "budget-hero-sub"
-    }, ca.total, " · ", ca.sub), /*#__PURE__*/React.createElement("ul", {
+    }, ca.total, " \xB7 ", ca.sub), /*#__PURE__*/React.createElement("ul", {
       className: "alert-list",
       style: {
         marginTop: 12
@@ -1064,7 +1066,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "§ Kit"), /*#__PURE__*/React.createElement("h2", {
+    }, "\xA7 Kit"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Packing"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -1110,7 +1112,7 @@
       className: "binder-pane-head"
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "§ Versions"), /*#__PURE__*/React.createElement("h2", {
+    }, "\xA7 Versions"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
     }, "Saved versions"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
@@ -1121,9 +1123,9 @@
     }, /*#__PURE__*/React.createElement("button", {
       className: "btn-primary",
       onClick: saveNew
-    }, "Save current as…"))), snaps.length === 0 ? /*#__PURE__*/React.createElement("div", {
+    }, "Save current as\u2026"))), snaps.length === 0 ? /*#__PURE__*/React.createElement("div", {
       className: "snapshot-empty"
-    }, "No versions saved yet. Click \"Save current as…\" to capture the current itinerary.") : /*#__PURE__*/React.createElement("div", {
+    }, "No versions saved yet. Click \"Save current as\u2026\" to capture the current itinerary.") : /*#__PURE__*/React.createElement("div", {
       className: "snapshot-list"
     }, snaps.map(s => /*#__PURE__*/React.createElement("div", {
       key: s.name,
@@ -1212,24 +1214,24 @@
       className: "diff-summary-chip"
     }, "No changes")), /*#__PURE__*/React.createElement("table", {
       className: "diff-table"
-    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Chapter"), /*#__PURE__*/React.createElement("th", null, "Current dates"), /*#__PURE__*/React.createElement("th", null, "Snapshot dates"), /*#__PURE__*/React.createElement("th", null, "Δ days"), /*#__PURE__*/React.createElement("th", null, "Δ start"))), /*#__PURE__*/React.createElement("tbody", null, diff.added.map(c => /*#__PURE__*/React.createElement("tr", {
+    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Chapter"), /*#__PURE__*/React.createElement("th", null, "Current dates"), /*#__PURE__*/React.createElement("th", null, "Snapshot dates"), /*#__PURE__*/React.createElement("th", null, "\u0394 days"), /*#__PURE__*/React.createElement("th", null, "\u0394 start"))), /*#__PURE__*/React.createElement("tbody", null, diff.added.map(c => /*#__PURE__*/React.createElement("tr", {
       key: c.id,
       className: "diff-row-added"
-    }, /*#__PURE__*/React.createElement("td", null, c.flag, " ", c.title), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " – ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
+    }, /*#__PURE__*/React.createElement("td", null, c.flag, " ", c.title), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " \u2013 ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-muted"
-    }, "—"), /*#__PURE__*/React.createElement("td", {
+    }, "\u2014"), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-pos"
-    }, "+", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "—"))), diff.removed.map(c => /*#__PURE__*/React.createElement("tr", {
+    }, "+", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "\u2014"))), diff.removed.map(c => /*#__PURE__*/React.createElement("tr", {
       key: c.id,
       className: "diff-row-removed"
     }, /*#__PURE__*/React.createElement("td", null, c.flag, " ", c.title), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-muted"
-    }, "—"), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " – ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
+    }, "\u2014"), /*#__PURE__*/React.createElement("td", null, fmtDate(c.start), " \u2013 ", fmtDate(c.end)), /*#__PURE__*/React.createElement("td", {
       className: "diff-cell-neg"
-    }, "-", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "—"))), diff.modified.map(m => /*#__PURE__*/React.createElement("tr", {
+    }, "-", c.days, "d"), /*#__PURE__*/React.createElement("td", null, "\u2014"))), diff.modified.map(m => /*#__PURE__*/React.createElement("tr", {
       key: m.id,
       className: "diff-row-modified"
-    }, /*#__PURE__*/React.createElement("td", null, m.title), /*#__PURE__*/React.createElement("td", null, fmtDate(m.current.start), " – ", fmtDate(m.current.end)), /*#__PURE__*/React.createElement("td", null, fmtDate(m.snapshot.start), " – ", fmtDate(m.snapshot.end)), /*#__PURE__*/React.createElement("td", {
+    }, /*#__PURE__*/React.createElement("td", null, m.title), /*#__PURE__*/React.createElement("td", null, fmtDate(m.current.start), " \u2013 ", fmtDate(m.current.end)), /*#__PURE__*/React.createElement("td", null, fmtDate(m.snapshot.start), " \u2013 ", fmtDate(m.snapshot.end)), /*#__PURE__*/React.createElement("td", {
       className: m.daysDelta > 0 ? 'diff-cell-pos' : m.daysDelta < 0 ? 'diff-cell-neg' : ''
     }, m.daysDelta !== 0 ? sign(m.daysDelta) + 'd' : '—'), /*#__PURE__*/React.createElement("td", {
       className: m.dateDelta !== 0 ? 'diff-cell-shifted' : ''
