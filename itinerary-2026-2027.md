@@ -2,7 +2,7 @@
 
 **Duration:** June 21, 2026 – June 18, 2027 (362 days / ~12 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
-**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Ásia do Sul → Nordeste Asiático → China (metrópoles) → Filipinas → Indonésia → Ásia do Sudeste → China (paisagens) → home
+**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Baku → Ásia do Sul → Nordeste Asiático → China (metrópoles) → Filipinas → Indonésia → Ásia do Sudeste → China (paisagens) → home
 
 ---
 
@@ -16,23 +16,23 @@
 | 4 | Toronto | Aug 27 – Aug 31 | 5 |
 | 5 | Greece | Sep 1 – Sep 22 | 21 |
 | 6 | Türkiye | Sep 21 – Oct 12 | 21 |
-| – | Baku (stopover) | Oct 13 | 1 |
-| 7 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
-| 8 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
-| 9 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
-| 10 | South Korea | Nov 30 – Dec 24 | 24 |
-| 11 | Taiwan (NYE ✓) | Dec 24 – Jan 12 | 19 |
-| 12 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
-| 13 | Hong Kong | Feb 11 – Feb 16 | 5 |
-| 14 | Japan — Winter (Hakuba) | Feb 16 – Feb 26 | 10 |
-| 15 | Philippines (warm-up diving) | Feb 26 – Mar 19 | 21 |
-| 16 | Indonesia — Raja Ampat | Mar 19 – Apr 1 | 14 |
-| 17 | Indonesia — Nusa Penida · Komodo · Bali | Apr 1 – Apr 18 | 17 |
-| 18 | Borneo / Sabah | Apr 18 – Apr 28 | 10 |
-| 19 | Singapore | Apr 28 – May 5 | 7 |
-| 20 | Malaysia | May 5 – May 15 | 10 |
-| 21 | Thailand | May 15 – May 29 | 14 |
-| 22 | China Block 2 (landscapes) | May 29 – Jun 18 | 20 |
+| 7 | Baku | Oct 12 – Oct 14 | 2 |
+| 8 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
+| 9 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
+| 10 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
+| 11 | South Korea | Nov 30 – Dec 24 | 24 |
+| 12 | Taiwan (NYE ✓) | Dec 24 – Jan 12 | 19 |
+| 13 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
+| 14 | Hong Kong | Feb 11 – Feb 16 | 5 |
+| 15 | Japan — Winter (Hakuba) | Feb 16 – Feb 26 | 10 |
+| 16 | Philippines (warm-up diving) | Feb 26 – Mar 19 | 21 |
+| 17 | Indonesia — Raja Ampat | Mar 19 – Apr 1 | 14 |
+| 18 | Indonesia — Nusa Penida · Komodo · Bali | Apr 1 – Apr 18 | 17 |
+| 19 | Borneo / Sabah | Apr 18 – Apr 28 | 10 |
+| 20 | Singapore | Apr 28 – May 5 | 7 |
+| 21 | Malaysia | May 5 – May 15 | 10 |
+| 22 | Thailand | May 15 – May 29 | 14 |
+| 23 | China Block 2 (landscapes) | May 29 – Jun 18 | 20 |
 
 **Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
 **China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
@@ -202,15 +202,26 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 - Princes' Islands day trip
 - Fly Istanbul (IST) → Baku (GYD) Oct 12, bought ✅
 
-**Baku stopover — Oct 13 (1 day)**
-- Leave IST Oct 12, stopover in Baku, Azerbaijan Oct 13
-- Arrive DEL Oct 14 — IST → GYD → DEL flights bought ✅
+---
+
+## Chapter 7 — BAKU
+### Oct 12 – Oct 14 · 2 days
+*Theme: Caspian layover between Istanbul and Delhi*
+
+One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DEL Oct 14. Flame Towers at dusk, the walled Old City, and the Caspian promenade — flights bought ✅.
+
+**Baku — 2 days**
+- Oct 12: fly Istanbul (IST) → Baku (GYD)
+- Oct 13: Flame Towers — Caspian bay panorama at dusk
+- Icherisheher (Old City) — Maiden Tower + Palace of the Shirvanshahs
+- Caspian promenade (Bulvar) waterfront walk
+- Oct 14: fly Baku (GYD) → Delhi (DEL)
 
 **Fly Baku → Delhi Oct 14**
 
 ---
 
-## Chapter 7 — INDIA
+## Chapter 8 — INDIA
 ### Oct 14 – Oct 21 · 7 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
@@ -242,7 +253,7 @@ A compact, intentional India, compressed by the Baku routing: land in Delhi Oct 
 
 ---
 
-## Chapter 8 — NEPAL
+## Chapter 9 — NEPAL
 ### Oct 21 – Nov 10 · 20 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 
@@ -273,7 +284,7 @@ Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchh
 
 ---
 
-## Chapter 9 — JAPAN AUTUMN
+## Chapter 10 — JAPAN AUTUMN
 ### Nov 10 – Nov 30 · 20 days
 *Theme: Sacred refinement, koyo at peak, slow urban chapter*
 
@@ -307,7 +318,7 @@ Sequence inverted from intuition: Tokyo first (peak city-koyo Nov 10–17), Osak
 
 ---
 
-## Chapter 10 — SOUTH KOREA
+## Chapter 11 — SOUTH KOREA
 ### Nov 30 – Dec 24 · 24 days
 *Theme: Electric winter hearth, K-culture, food depth, slow traditional chapter*
 
@@ -347,7 +358,7 @@ Winter Korea is cozy and atmospheric. Palace grounds dusted with early snow, jji
 
 ---
 
-## Chapter 11 — TAIWAN
+## Chapter 12 — TAIWAN
 ### Dec 24 – Jan 12 · 19 days
 *Theme: Café culture, NYE fireworks, dramatic east coast*
 
@@ -373,7 +384,7 @@ Arrive Christmas Eve. Taipei on New Year's Eve is one of Asia's great celebratio
 
 ---
 
-## Chapter 12 — CHINA BLOCK 1 (Metropolises)
+## Chapter 13 — CHINA BLOCK 1 (Metropolises)
 ### Jan 12 – Feb 11 · 30 days
 *Theme: Imperial capital, global finance hub, future-tech frontier*
 
@@ -413,7 +424,7 @@ Shenzhen → HK exit Feb 11.
 
 ---
 
-## Chapter 13 — HONG KONG
+## Chapter 14 — HONG KONG
 ### Feb 11 – Feb 16 · 5 days
 *Theme: Neon city, dim sum, city recharge between China and Hakuba*
 
@@ -432,7 +443,7 @@ Five days in one of the world's great cities. Not just a transit — a proper ch
 
 ---
 
-## Chapter 14 — JAPAN WINTER
+## Chapter 15 — JAPAN WINTER
 ### Feb 16 – Feb 26 · 10 days
 *Theme: Powder snowboarding, mountain stillness, onsen*
 
@@ -455,7 +466,7 @@ Bus/train Hakuba → Nagoya or Tokyo. Fly to Manila — Philippines begins Feb 2
 
 ---
 
-## Chapter 15 — PHILIPPINES
+## Chapter 16 — PHILIPPINES
 ### Feb 26 – Mar 19 · 21 days
 *Theme: WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
@@ -489,7 +500,7 @@ Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/M
 
 ---
 
-## Chapter 16 — INDONESIA — RAJA AMPAT
+## Chapter 17 — INDONESIA — RAJA AMPAT
 ### Mar 19 – Apr 1 · 14 days
 *Theme: The best diving on Earth — liveaboard deep dive*
 
@@ -517,7 +528,7 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 
 ---
 
-## Chapter 17 — INDONESIA — NUSA PENIDA · KOMODO · BALI
+## Chapter 18 — INDONESIA — NUSA PENIDA · KOMODO · BALI
 ### Apr 1 – Apr 18 · 17 days
 *Theme: Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block*
 
@@ -550,7 +561,7 @@ Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, man
 
 ---
 
-## Chapter 18 — BORNEO / SABAH
+## Chapter 19 — BORNEO / SABAH
 ### Apr 18 – Apr 28 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -581,7 +592,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 19 — SINGAPORE
+## Chapter 20 — SINGAPORE
 ### Apr 28 – May 5 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -594,7 +605,7 @@ Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatang
 
 ---
 
-## Chapter 20 — MALAYSIA
+## Chapter 21 — MALAYSIA
 ### May 5 – May 15 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
@@ -617,7 +628,7 @@ KL for the city spectacle and food, Penang for the most rewarding slow chapter i
 
 ---
 
-## Chapter 21 — THAILAND
+## Chapter 22 — THAILAND
 ### May 15 – May 29 · 14 days
 *Theme: Islands, reef diving, urban intensity, street food*
 
@@ -644,7 +655,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Ban
 
 ---
 
-## Chapter 22 — CHINA BLOCK 2 (Landscapes)
+## Chapter 23 — CHINA BLOCK 2 (Landscapes)
 ### May 29 – Jun 18 · 20 days
 *Theme: Surreal landscapes, ancient empire, spring China*
 
@@ -706,7 +717,7 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 |---|---|---|
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
 | Türkiye | Sep 21 – Oct 12 | Optimal — best window (balloons, coast, Istanbul) |
-| Baku stopover | Oct 13 · 1 day | Transit — IST → GYD Oct 12, GYD → DEL Oct 14, bought ✅ |
+| Baku | Oct 12–14 | Transit — IST → GYD Oct 12, full day Oct 13, GYD → DEL Oct 14, bought ✅ |
 | India | Oct 14–21 | Good — post-monsoon clear, compressed to 7d by Baku routing |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |

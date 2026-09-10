@@ -150,7 +150,7 @@ window.TRIP = (function () {
       start: '2026-09-21', end: '2026-10-12', days: 21,
       theme: 'Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul',
       intro: 'Landing from Athens on a single Turkish ticket via IST into Göreme. Three nights in the valleys (balloon booked ✅), then take the 22:50 ASR→ADB flight for a rental-car loop: Alaçatı kitesurfing and three nights in Kaş for the Lycian coast. Stays until Izmir all booked ✅. Drive back to Izmir on Sep 30, evening hop into Istanbul, twelve nights on both shores before the Oct 12 flight to Baku.',
-      tldr: 'Cappadocia (Göreme) · Alaçatı · Kaş · Istanbul · Baku stopover',
+      tldr: 'Cappadocia (Göreme) · Alaçatı · Kaş · Istanbul',
       weather: { hi: 26, lo: 14, label: 'Early autumn, 26°/14°', emoji: '☀️', rainyDays: 3 },
       photos: ['cappadocia balloons', 'alacati aegean', 'kas harbour', 'istanbul mosque'],
       places: [
@@ -162,14 +162,26 @@ window.TRIP = (function () {
           highlights: ['Drive south down the coast from Alaçatı','Kaputaş Beach','Lycian Way treks from town','Stays Kaş Sep 27–30 booked ✅','Sep 30: ~5.5h drive Kaş → Izmir (ADB), drop the car'] },
         { name: 'Istanbul', days: 12, query: 'Sultanahmet, Istanbul',
           highlights: ['Sep 30 evening flight ADB → Istanbul (~1h15), bought ✅','Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet without rushing','Asian side — Kadıköy/Moda ferries and market mornings','Bosphorus ferries — the most beautiful commute on Earth','Princes\' Islands day trip','Oct 12: fly Istanbul (IST) → Baku (GYD), bought ✅'] },
-        { name: 'Baku stopover', days: 1, query: 'Baku, Azerbaijan',
-          highlights: ['Leave IST Oct 12, stopover in Baku Oct 13','Arrive DEL Oct 14 — IST → GYD → DEL flights bought ✅'] },
       ],
       booking: ['Balloon Sep 22/23 — booked ✅','IST → GYD Oct 12 + GYD → DEL Oct 14 — bought ✅','Stays until Izmir booked ✅: Göreme (Sep 21–24), Alaçatı (24–27), Kaş (27–30)','Rental car ADB Sep 24 – 30 — collect directly at ADB and return there after Kaş→Izmir drive','Internal flights ASR→ADB at 22:50 Sep 24 + ADB→IST evening Sep 30 — bought ✅','India e-Visa by mid-Sep'],
       decisions: ['Göreme as the Cappadocia base — valleys, balloon logistics, Open Air Museum','Coastal loop by rental car (Alaçatı + Kaş) instead of Şirince/Pamukkale','Istanbul extended to 12 nights (Sep 30 – Oct 12), then Baku stopover Oct 13 to break IST → DEL','Stays until Izmir + flights until DEL locked'],
     },
     {
-      id: 'india', num: 7, kind: 'chapter', region: 'himalaya',
+      id: 'baku', num: 7, kind: 'chapter', region: 'crossroads',
+      country: 'Azerbaijan', flag: '🇦🇿', title: 'Baku',
+      start: '2026-10-12', end: '2026-10-14', days: 2,
+      theme: 'Caspian layover between Istanbul and Delhi',
+      intro: 'One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DEL Oct 14. Flame Towers at dusk, the walled Old City, and the Caspian promenade.',
+      tldr: 'Flame Towers · Icherisheher · Caspian Bulvar',
+      weather: { hi: 19, lo: 13, label: 'Mild autumn, 19°/13°', emoji: '🔥', rainyDays: 2 },
+      photos: ['baku flame towers', 'baku old city'],
+      places: [
+        { name: 'Baku', days: 2, query: 'Baku, Azerbaijan',
+          highlights: ['Oct 12: fly Istanbul (IST) → Baku (GYD), bought ✅','Oct 13: Flame Towers — Caspian bay panorama at dusk','Icherisheher (Old City) — Maiden Tower + Palace of the Shirvanshahs','Caspian promenade (Bulvar) waterfront walk','Oct 14: fly Baku (GYD) → Delhi (DEL), bought ✅'] },
+      ],
+    },
+    {
+      id: 'india', num: 8, kind: 'chapter', region: 'himalaya',
       country: 'India', flag: '🇮🇳', title: 'India',
       start: '2026-10-14', end: '2026-10-21', days: 7,
       theme: 'Sacred intensity, iconic monuments, Himalayan slow life',
@@ -188,7 +200,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'nepal', num: 8, kind: 'chapter', region: 'himalaya',
+      id: 'nepal', num: 9, kind: 'chapter', region: 'himalaya',
       country: 'Nepal', flag: '🇳🇵', title: 'Nepal',
       start: '2026-10-21', end: '2026-11-10', days: 20,
       theme: 'Sacred roof of the world, physical peak, elemental beauty',
@@ -209,7 +221,7 @@ window.TRIP = (function () {
       booking: ['ACAP permit + TIMS card — on arrival in Kathmandu'],
     },
     {
-      id: 'japan-autumn', num: 9, kind: 'chapter', region: 'northeast',
+      id: 'japan-autumn', num: 10, kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Autumn',
       start: '2026-11-10', end: '2026-11-30', days: 20,
       theme: 'Sacred refinement, koyo at peak, slow urban chapter',
@@ -227,7 +239,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'korea', num: 10, kind: 'chapter', region: 'northeast',
+      id: 'korea', num: 11, kind: 'chapter', region: 'northeast',
       country: 'South Korea', flag: '🇰🇷', title: 'South Korea',
       start: '2026-11-30', end: '2026-12-24', days: 24,
       theme: 'Electric winter hearth, K-culture, food depth, slow traditional chapter',
@@ -249,7 +261,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'taiwan', num: 11, kind: 'chapter', region: 'northeast',
+      id: 'taiwan', num: 12, kind: 'chapter', region: 'northeast',
       country: 'Taiwan', flag: '🇹🇼', title: 'Taiwan',
       start: '2026-12-24', end: '2027-01-12', days: 19,
       theme: 'Café culture, NYE fireworks, dramatic east coast',
@@ -267,7 +279,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'china-1', num: 12, kind: 'chapter', region: 'middle',
+      id: 'china-1', num: 13, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 1',
       start: '2027-01-12', end: '2027-02-11', days: 30,
       theme: 'Imperial capital, global finance hub, future-tech frontier',
@@ -287,7 +299,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'hk', num: 13, kind: 'chapter', region: 'middle',
+      id: 'hk', num: 14, kind: 'chapter', region: 'middle',
       country: 'Hong Kong', flag: '🇭🇰', title: 'Hong Kong',
       start: '2027-02-11', end: '2027-02-16', days: 5,
       theme: 'Neon city, dim sum, city recharge between China and Hakuba',
@@ -301,7 +313,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'japan-winter', num: 14, kind: 'chapter', region: 'northeast',
+      id: 'japan-winter', num: 15, kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Winter',
       start: '2027-02-16', end: '2027-02-26', days: 10,
       theme: 'Powder snowboarding, mountain stillness, onsen',
@@ -319,7 +331,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'philippines', num: 15, kind: 'chapter', region: 'archipelago',
+      id: 'philippines', num: 16, kind: 'chapter', region: 'archipelago',
       country: 'Philippines', flag: '🇵🇭', title: 'Philippines',
       start: '2027-02-26', end: '2027-03-19', days: 21,
       theme: 'WWII wreck diving, limestone islands, warm-up for Raja Ampat',
@@ -343,7 +355,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'indonesia-1', num: 16, kind: 'chapter', region: 'archipelago',
+      id: 'indonesia-1', num: 17, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia — Raja Ampat',
       start: '2027-03-19', end: '2027-04-01', days: 14,
       theme: 'The best diving on Earth — liveaboard deep dive',
@@ -363,7 +375,7 @@ window.TRIP = (function () {
       booking: ['Raja Ampat liveaboard — book by Oct 2025 (Mar 21–30 dates)'],
     },
     {
-      id: 'indonesia-2', num: 17, kind: 'chapter', region: 'archipelago',
+      id: 'indonesia-2', num: 18, kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia — Nusa Penida · Komodo · Bali',
       start: '2027-04-01', end: '2027-04-18', days: 17,
       theme: 'Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block',
@@ -382,7 +394,7 @@ window.TRIP = (function () {
       diving: { sites: 12, type: 'Day dives + day boats', operators: 'Crystal Bay Dive (Nusa Penida); multiple operators in Labuan Bajo (Komodo)' },
     },
     {
-      id: 'borneo', num: 18, kind: 'chapter', region: 'rainforest',
+      id: 'borneo', num: 19, kind: 'chapter', region: 'rainforest',
       country: 'Malaysia', flag: '🇲🇾', title: 'Borneo / Sabah',
       start: '2027-04-18', end: '2027-04-28', days: 10,
       theme: 'Indonesia visa reset + wildlife chapter',
@@ -403,7 +415,7 @@ window.TRIP = (function () {
       booking: ['Kinabatangan river lodge — book 2–3 months ahead; Sipadan permits by Nov 2026 if adding 3 extra days'],
     },
     {
-      id: 'singapore', num: 19, kind: 'chapter', region: 'isthmus',
+      id: 'singapore', num: 20, kind: 'chapter', region: 'isthmus',
       country: 'Singapore', flag: '🇸🇬', title: 'Singapore',
       start: '2027-04-28', end: '2027-05-05', days: 7,
       theme: 'World-class food, modern wonder, city recharge',
@@ -417,7 +429,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'malaysia', num: 20, kind: 'chapter', region: 'isthmus',
+      id: 'malaysia', num: 21, kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia',
       start: '2027-05-05', end: '2027-05-15', days: 10,
       theme: 'Urban intensity, street food capital, colonial slow life',
@@ -433,7 +445,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'thailand', num: 21, kind: 'chapter', region: 'isthmus',
+      id: 'thailand', num: 22, kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Thailand',
       start: '2027-05-15', end: '2027-05-29', days: 14,
       theme: 'Islands, reef diving, urban intensity, street food',
@@ -452,7 +464,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on Koh Tao' },
     },
     {
-      id: 'china-2', num: 22, kind: 'chapter', region: 'middle',
+      id: 'china-2', num: 23, kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 2',
       start: '2027-05-29', end: '2027-06-18', days: 20,
       theme: 'Surreal landscapes, ancient empire, spring China',
@@ -557,6 +569,7 @@ window.TRIP = (function () {
     'toronto':      { months: [7, 8, 9],              note: 'Jul–Sep: warm summer, patios open, Lake Ontario swimmable' },
     'athens':       { months: [5, 6, 9, 10],         note: 'May–Jun and Sep–Oct: ideal temps; Aug is peak heat + crowds' },
     'turkey':       { months: [9, 10],               note: 'Sep–Oct: post-summer, ideal weather, balloon season' },
+    'baku':         { months: [10],                  note: 'Oct: mild Caspian autumn, good stopover weather' },
     'nepal':        { months: [10, 11],              note: 'Oct–Nov: post-monsoon, crystalline skies, best trekking' },
     'india':        { months: [10, 11, 12],          note: 'Oct–Dec: post-monsoon, clear skies, India circuit' },
     'japan-autumn': { months: [11],                  note: 'Nov: peak koyo in Kyoto temples, Tofuku-ji, Eikan-do' },
