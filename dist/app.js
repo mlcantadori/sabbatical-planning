@@ -81,7 +81,18 @@
     }), " ", !isMobile && 'Map'), /*#__PURE__*/React.createElement("button", {
       className: view === 'budget' ? 'is-active' : '',
       onClick: () => setView('budget')
-    }, isMobile ? '$' : 'Budget'))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
+    }, isMobile ? '$' : 'Budget'))), isMobile && /*#__PURE__*/React.createElement("div", {
+      className: "app-progress mobile-progress",
+      title: `Day ${today.n} of ${store.getTotalDays()}`
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "app-progress-label"
+    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays()), /*#__PURE__*/React.createElement("div", {
+      className: "app-progress-bar"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: `${today.n / Math.max(1, store.getTotalDays()) * 100}%`
+      }
+    }))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode"
     }, /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode-toggle"

@@ -68,6 +68,14 @@
           </div>
         </header>
 
+        {/* Mobile progress strip: days + bar below the header (hidden on desktop) */}
+        {isMobile && (
+          <div className="app-progress mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
+            <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
+            <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
+          </div>
+        )}
+
         {/* Mobile sub-header: map / list toggle (only while in map view) */}
         {isMobile && view === 'map' && (
           <div className="mobile-mode">

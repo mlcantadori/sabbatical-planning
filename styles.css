@@ -1714,8 +1714,16 @@ button {
 }
 
 @media (max-width: 880px) {
-  .app { grid-template-rows: 54px auto 1fr; }
+  .app { grid-template-rows: 54px auto auto 1fr; }
   .mobile-mode { display: flex; }
+
+  /* Progress strip below the header on mobile (the in-header one stays hidden) */
+  .mobile-progress {
+    display: flex;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
 
   .app-header { padding: 0 14px; gap: 10px; }
   .app-brand-mark { font-size: 18px; }
@@ -1726,6 +1734,7 @@ button {
   .app-main, .app-main.no-detail {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    grid-row: -1;
     position: relative;
   }
   .chapter-list {
