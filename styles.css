@@ -295,41 +295,96 @@ button {
 .map-container {
   width: 100%;
   height: 100%;
-  background: #ece6d6;
-}
-.leaflet-container {
-  background: #ece6d6;
-  font-family: var(--f-sans);
-}
-/* Force tiles visible — Leaflet's fade animation occasionally leaves
-   them stuck at opacity 0 in sandboxed iframes. */
-.leaflet-tile,
-.leaflet-tile-loaded { opacity: 1 !important; }
-.leaflet-control-zoom {
-  border: 1px solid var(--rule) !important;
-  border-radius: 6px !important;
+  background: #dfe4e2;
   overflow: hidden;
-  margin: 16px !important;
 }
-.leaflet-control-zoom a {
-  background: var(--paper) !important;
-  color: var(--ink) !important;
-  border-bottom: 1px solid var(--rule) !important;
-  font-size: 16px !important;
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
+/* D3 Equal Earth layers */
+.eq-svg { display: block; }
+.eq-sphere { fill: #dfe4e2; }
+.eq-graticule {
+  fill: none;
+  stroke: rgba(31, 24, 18, 0.08);
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
 }
-.leaflet-control-zoom a:hover {
-  background: var(--paper-2) !important;
+.eq-land { fill: #ece5d3; }
+.eq-borders {
+  fill: none;
+  stroke: #c3bf98;
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
 }
-.leaflet-control-attribution {
-  background: rgba(244, 239, 230, 0.85) !important;
-  font-family: var(--f-mono) !important;
-  font-size: 9px !important;
-  color: var(--ink-3) !important;
-  padding: 2px 8px !important;
-  margin: 12px !important;
+.eq-route {
+  stroke: #c2693a;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.6;
+  stroke-dasharray: 4 6;
+  stroke-linecap: round;
+}
+/* HTML pin overlay */
+.eq-pins {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.eq-pin-wrap {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.eq-pin-wrap .map-pin,
+.eq-pin-wrap .map-place {
+  width: 0;
+  height: 0;
+  pointer-events: auto;
+}
+.eq-popup {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 16px));
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: var(--shadow-1);
+  padding: 12px 14px;
+  z-index: 600;
+  pointer-events: auto;
+}
+.eq-zoom {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.eq-zoom button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.eq-zoom button + button { border-top: 1px solid var(--rule); }
+.eq-zoom button:hover { background: var(--paper-2); }
+.eq-attr {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 500;
+  background: rgba(244, 239, 230, 0.85);
+  font-family: var(--f-mono);
+  font-size: 9px;
+  color: var(--ink-3);
+  padding: 2px 8px;
   border-radius: 3px;
 }
 
