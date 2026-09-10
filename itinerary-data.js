@@ -538,7 +538,7 @@ window.TRIP = (function () {
     fxBRL: 5.2,
     estimate: 'USD ~97.5k for two',
     perDay: '~USD 269/day for two',
-    inBRL: '~R$254k per person at R$5.20',
+    inBRL: '~R$253k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
@@ -549,11 +549,12 @@ window.TRIP = (function () {
       { item: 'Greece ferries, 4 legs (2 pax)', cost: 770, note: 'Booked ✅ — €685 actual' },
       { item: 'Petrópolis–Teresópolis trail (2 pax)', cost: 770, note: 'Actual — R$4,000' },
       { item: 'Diving certs AOW + Nitrox (2 pax)', cost: 960, note: 'Actual — R$5,000' },
+      { item: 'Rio Airbnb, Jun 21–Jul 19', cost: 1350, note: 'Actual — R$7,000' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
     chapters: [
-      { id: 'rio', days: 29, lodging: 1500, food: 1200, transport: 300, activities: 1730, fees: 0, note: 'Monthly Airbnb ~$1,500 · trail R$4,000 + certs R$5,000 actual (~$1,730)' },
+      { id: 'rio', days: 29, lodging: 1350, food: 1200, transport: 300, activities: 1730, fees: 0, note: 'Airbnb R$7,000 actual (~$1,350, Jun 21–Jul 19) · trail R$4,000 + certs R$5,000 actual' },
       { id: 'cumbuco', days: 29, lodging: 1900, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Airbnb actual $1,900/mo · own kite gear · downwinder support' },
       { id: 'saopaulo', days: 7, lodging: 500, food: 350, transport: 150, activities: 100, fees: 0, note: '~$70/n hotel/Airbnb · metro/Uber + farewell dinner' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
