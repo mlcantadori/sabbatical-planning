@@ -536,9 +536,9 @@ window.TRIP = (function () {
     currency: 'USD',
     basis: 'couple · 362 days · mid-range with strategic splurges',
     fxBRL: 5.2,
-    estimate: 'USD ~97.5k for two',
-    perDay: '~USD 269/day for two',
-    inBRL: '~R$253k per person at R$5.20',
+    estimate: 'USD ~97k for two',
+    perDay: '~USD 268/day for two',
+    inBRL: '~R$252k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
@@ -550,13 +550,14 @@ window.TRIP = (function () {
       { item: 'Petrópolis–Teresópolis trail (2 pax)', cost: 770, note: 'Actual — R$4,000' },
       { item: 'Diving certs AOW + Nitrox (2 pax)', cost: 960, note: 'Actual — R$5,000' },
       { item: 'Rio Airbnb, Jun 21–Jul 19', cost: 1350, note: 'Actual — R$7,000' },
+      { item: 'São Paulo Airbnb, Aug 19–26', cost: 270, note: 'Actual — R$1,400' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
     chapters: [
       { id: 'rio', days: 29, lodging: 1350, food: 1200, transport: 300, activities: 1730, fees: 0, note: 'Airbnb R$7,000 actual (~$1,350, Jun 21–Jul 19) · trail R$4,000 + certs R$5,000 actual' },
       { id: 'cumbuco', days: 29, lodging: 1900, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Airbnb actual $1,900/mo · own kite gear · downwinder support' },
-      { id: 'saopaulo', days: 7, lodging: 500, food: 350, transport: 150, activities: 100, fees: 0, note: '~$70/n hotel/Airbnb · metro/Uber + farewell dinner' },
+      { id: 'saopaulo', days: 7, lodging: 270, food: 350, transport: 150, activities: 100, fees: 0, note: 'Airbnb R$1,400 actual (~$270, Aug 19–26) · metro/Uber + farewell dinner' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
       { id: 'turkey', days: 21, lodging: 1900, food: 1470, transport: 710, activities: 780, fees: 120, note: 'Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 · e-visa' },
