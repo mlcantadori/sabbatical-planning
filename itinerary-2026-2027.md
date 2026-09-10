@@ -17,7 +17,7 @@
 | 5 | Greece | Sep 1 – Sep 22 | 21 |
 | 6 | Türkiye | Sep 21 – Oct 12 | 21 |
 | 7 | Azerbaijan | Oct 12 – Oct 14 | 2 |
-| 8 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
+| 8 | India (compact, via Baku) | Oct 14 – Oct 20 | 6 |
 | 9 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 10 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
 | 11 | South Korea | Nov 30 – Dec 24 | 24 |
@@ -214,34 +214,26 @@ One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DE
 ---
 
 ## Chapter 8 — INDIA
-### Oct 14 – Oct 21 · 7 days
+### Oct 14 – Oct 20 · 6 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
-A compact, intentional India, compressed by the Baku routing: land in Delhi Oct 14 from Baku, straight to the Taj, then Rishikesh for yoga, river, and mountain air, closing with Varanasi at full spiritual intensity before flying direct to Kathmandu.
+A tight, intentional India: land in Delhi Oct 14 from Baku, straight to the Taj with three unhurried days around Delhi and Agra, then Varanasi Oct 17–20 at full spiritual intensity before flying direct to Kathmandu on Oct 20.
 
-**Delhi + Agra — 1 day (Oct 14–15)**
+**Delhi + Agra — 3 days (Oct 14–17)**
 - Land in Delhi from Baku (IST → GYD Oct 12 → DEL Oct 14), express train to Agra
 - Taj Mahal at sunrise — arrive 6am, golden light
 - Agra Fort
 - Mehtab Bagh (sunset Taj view across the river)
+- Old Delhi — Jama Masjid + Chandni Chowk food walk
 
-**Rishikesh — 3 days (Oct 15–18)**
-- Yoga + meditation at Parmarth Niketan (multi-day immersive)
-- Evening Ganga Aarti on the ghats — intimate, non-touristic
-- Beatles Ashram ruins (Maharishi Mahesh Yogi Ashram)
-- Ganges white-water rafting
-- Laxman Jhula + Ram Jhula suspension bridges
-- Ayurvedic treatments
-- Day trip: Haridwar Ganga Aarti + Har Ki Pauri
-
-**Varanasi — 3 days (Oct 18–20)**
-- Ghats at dawn: rowing on the Ganges in morning mist
+**Varanasi — 3 days (Oct 17–20)**
+- Arrive Oct 17 — Ghats at dawn: rowing on the Ganges in morning mist
 - Ganga Aarti at dusk: fire, flowers, bells, priests
 - Manikarnika cremation ghats
 - Sarnath — where Buddha first taught, 10km out
 - Chai, silk, narrow alleys
 
-**Fly Varanasi → Kathmandu Oct 21 (direct, ~1h)**
+**Fly Varanasi → Kathmandu Oct 20 (direct, ~1h)**
 
 ---
 
@@ -710,7 +702,7 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
 | Türkiye | Sep 21 – Oct 12 | Optimal — best window (balloons, coast, Istanbul) |
 | Azerbaijan | Oct 12–14 | Transit — IST → GYD Oct 12, full day Oct 13, GYD → DEL Oct 14, bought ✅ |
-| India | Oct 14–21 | Good — post-monsoon clear, compressed to 7d by Baku routing |
+| India | Oct 14–20 | Good — post-monsoon clear, Taj + Varanasi in 6d |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
 | South Korea | Dec–Jan | Good — cozy winter, palaces, food |
@@ -770,20 +762,20 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 97,000 for two · ~USD 268/day · 362 days** (~R$252k per person at R$5.20)
+**Grand total: ~USD 97,000 for two · ~USD 267/day · 362 days** (~R$251k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,100 / ~R$21,200 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,100 / ~R$21,100 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
 | Lodging (23 chapters) | 26,595 | 27% |
-| Food (23 chapters) | 20,125 | 21% |
-| Activities & diving | 20,310 | 21% |
+| Food (23 chapters) | 20,080 | 21% |
+| Activities & diving | 20,130 | 21% |
 | Inter-chapter flights | 10,070 | 10% |
-| Local transport | 10,115 | 10% |
+| Local transport | 10,105 | 10% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 385 | <1% |
-| Contingency (8%) | 7,180 | 7% |
+| Contingency (8%) | 7,161 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -798,7 +790,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 5 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
 | 6 | Türkiye | 21 | 237 | 4,980 | Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 |
 | 7 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
-| 8 | India | 7 | 163 | 1,140 | Trains ~$100 · Taj/forts/boats ~$170 · Parmarth yoga ~$150 |
+| 8 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
 | 9 | Nepal | 20 | 135 | 2,690 | Trek $2,000 locked · KTM/Pokhara hotels + food off-trek |
 | 10 | Japan — Autumn | 20 | 252 | 5,030 | Business hotels ~$125/n · Tokyo–Osaka–Kyoto rail · Nikko/Nara |
 | 11 | South Korea | 24 | 239 | 5,740 | ~$125/n hotels · KTX Seoul–Busan + buses · DMZ tour |
@@ -815,7 +807,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$77,530** · 361 days.
+Chapters subtotal: **$77,295** · 360 days.
 
 ### Inter-chapter flights (couple)
 
@@ -836,7 +828,7 @@ Chapters subtotal: **$77,530** · 361 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,750 + 8% contingency $7,180 = **~$97,000**.
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,515 + 8% contingency $7,161 = **~$97,000**.
 
 ### Assumptions & levers
 
