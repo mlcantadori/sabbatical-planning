@@ -51,11 +51,10 @@
         <header className="app-header">
           <div className="app-brand">
             <div className="app-brand-mark">Asia</div>
-            <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers · {store.getTotalDays()} days</div>
+            <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers</div>
           </div>
 
-          <div className="app-progress">
-            <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
+          <div className="app-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
             <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
           </div>
 
