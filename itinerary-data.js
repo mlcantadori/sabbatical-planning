@@ -170,7 +170,7 @@ window.TRIP = (function () {
     },
     {
       id: 'baku', kind: 'chapter', region: 'crossroads',
-      country: 'Azerbaijan', flag: '🇦🇿', title: 'Baku',
+      country: 'Azerbaijan', flag: '🇦🇿', title: 'Azerbaijan',
       start: '2026-10-12', end: '2026-10-14', days: 2,
       theme: 'Caspian layover between Istanbul and Delhi',
       intro: 'One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DEL Oct 14. Flame Towers at dusk, the walled Old City, and the Caspian promenade.',

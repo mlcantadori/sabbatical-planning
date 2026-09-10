@@ -16,7 +16,7 @@
 | 4 | Toronto | Aug 27 – Aug 31 | 5 |
 | 5 | Greece | Sep 1 – Sep 22 | 21 |
 | 6 | Türkiye | Sep 21 – Oct 12 | 21 |
-| 7 | Baku | Oct 12 – Oct 14 | 2 |
+| 7 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 8 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
 | 9 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 10 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
@@ -204,7 +204,7 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 
 ---
 
-## Chapter 7 — BAKU
+## Chapter 7 — AZERBAIJAN
 ### Oct 12 – Oct 14 · 2 days
 *Theme: Caspian layover between Istanbul and Delhi*
 
@@ -717,7 +717,7 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 |---|---|---|
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
 | Türkiye | Sep 21 – Oct 12 | Optimal — best window (balloons, coast, Istanbul) |
-| Baku | Oct 12–14 | Transit — IST → GYD Oct 12, full day Oct 13, GYD → DEL Oct 14, bought ✅ |
+| Azerbaijan | Oct 12–14 | Transit — IST → GYD Oct 12, full day Oct 13, GYD → DEL Oct 14, bought ✅ |
 | India | Oct 14–21 | Good — post-monsoon clear, compressed to 7d by Baku routing |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
