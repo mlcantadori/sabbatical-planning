@@ -839,7 +839,9 @@ button {
 
 .place-row {
   display: grid;
-  grid-template-columns: minmax(56px, auto) 1fr auto;
+  /* Fixed date column so the divider aligns across rows regardless of
+     date-string length ("Oct 13" vs "Sep 30 – Oct 12"). */
+  grid-template-columns: 116px 1fr auto;
   gap: 12px;
   width: 100%;
   padding: 12px 8px;
