@@ -909,17 +909,51 @@
         </div>
         <p className="binder-pane-sub">Click a column header to sort ▲▼ · hover a row for its note. $/d is per couple.</p>
 
-        <SectionHead num="03" title="Locked costs" small />
+        <SectionHead num="03" title="From chapters to grand total" small />
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+            <tbody>
+              {[
+                ['Chapters subtotal (23 chapters)', chTotal, chTotal],
+                ['+ Inter-chapter flights (14 legs)', flightsTotal, chTotal + flightsTotal],
+                ['+ Insurance & extras', extrasTotal, subtotal],
+              ].map(([label, amount, running], i) => (
+                <tr key={i} style={{ borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)' }}>
+                  <td style={{ padding: '6px 8px 6px 0' }}>{label}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(amount)}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap', opacity: 0.55 }}>= {fmt$(running)}</td>
+                </tr>
+              ))}
+              <tr style={{ borderTop: '1px solid rgba(0,0,0,.08)' }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>= Subtotal</td>
+                <td></td>
+                <td style={{ textAlign: 'right', whiteSpace: 'nowrap', fontWeight: 700 }}>{fmt$(subtotal)}</td>
+              </tr>
+              <tr style={{ borderTop: '1px solid rgba(0,0,0,.08)' }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>+ Contingency {budget.contingencyPct}%</td>
+                <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(contingency)}</td>
+                <td></td>
+              </tr>
+              <tr style={{ borderTop: '2px solid rgba(0,0,0,.2)', fontWeight: 700 }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>= Grand total</td>
+                <td></td>
+                <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(grand)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <SectionHead num="04" title="Locked costs" small />
         <ul className="alert-list">
           {budget.locked.map((l, i) => <li key={i}><strong>{l.item} — {fmt$(l.cost)}.</strong> {l.note}</li>)}
         </ul>
 
-        <SectionHead num="04" title="Key flights (couple)" small />
+        <SectionHead num="05" title="Key flights (couple)" small />
         <ul className="alert-list">
           {budget.flights.map((f, i) => <li key={i}><strong>{f.route} — {fmt$(f.cost)}.</strong> {f.note}</li>)}
         </ul>
 
-        <SectionHead num="05" title="Assumptions & levers" small />
+        <SectionHead num="06" title="Assumptions & levers" small />
         <ul className="alert-list">
           {budget.assumptions.map((a, i) => <li key={i}>{a}</li>)}
           {budget.levers.map((l, i) => <li key={'l' + i}>{l}</li>)}

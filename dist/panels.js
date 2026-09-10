@@ -1134,6 +1134,81 @@
       className: "binder-pane-sub"
     }, "Click a column header to sort \u25B2\u25BC \xB7 hover a row for its note. $/d is per couple."), /*#__PURE__*/React.createElement(SectionHead, {
       num: "03",
+      title: "From chapters to grand total",
+      small: true
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        overflowX: 'auto'
+      }
+    }, /*#__PURE__*/React.createElement("table", {
+      style: {
+        width: '100%',
+        borderCollapse: 'collapse',
+        fontSize: 12
+      }
+    }, /*#__PURE__*/React.createElement("tbody", null, [['Chapters subtotal (23 chapters)', chTotal, chTotal], ['+ Inter-chapter flights (14 legs)', flightsTotal, chTotal + flightsTotal], ['+ Insurance & extras', extrasTotal, subtotal]].map(([label, amount, running], i) => /*#__PURE__*/React.createElement("tr", {
+      key: i,
+      style: {
+        borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)'
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, label), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
+      }
+    }, fmt$(amount)), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap',
+        opacity: 0.55
+      }
+    }, "= ", fmt$(running)))), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '1px solid rgba(0,0,0,.08)'
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "= Subtotal"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap',
+        fontWeight: 700
+      }
+    }, fmt$(subtotal))), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '1px solid rgba(0,0,0,.08)'
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "+ Contingency ", budget.contingencyPct, "%"), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
+      }
+    }, fmt$(contingency)), /*#__PURE__*/React.createElement("td", null)), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '2px solid rgba(0,0,0,.2)',
+        fontWeight: 700
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "= Grand total"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
+      }
+    }, fmt$(grand)))))), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "04",
       title: "Locked costs",
       small: true
     }), /*#__PURE__*/React.createElement("ul", {
@@ -1141,7 +1216,7 @@
     }, budget.locked.map((l, i) => /*#__PURE__*/React.createElement("li", {
       key: i
     }, /*#__PURE__*/React.createElement("strong", null, l.item, " \u2014 ", fmt$(l.cost), "."), " ", l.note))), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "04",
+      num: "05",
       title: "Key flights (couple)",
       small: true
     }), /*#__PURE__*/React.createElement("ul", {
@@ -1149,7 +1224,7 @@
     }, budget.flights.map((f, i) => /*#__PURE__*/React.createElement("li", {
       key: i
     }, /*#__PURE__*/React.createElement("strong", null, f.route, " \u2014 ", fmt$(f.cost), "."), " ", f.note))), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "05",
+      num: "06",
       title: "Assumptions & levers",
       small: true
     }), /*#__PURE__*/React.createElement("ul", {
