@@ -1001,6 +1001,8 @@
     const contingency = Math.round(subtotal * budget.contingencyPct / 100);
     const grand = subtotal + contingency;
     const perDay = Math.round(grand / totalDays);
+    const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
+    const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
     const pct = n => Math.round(n / grand * 100) + '%';
     return /*#__PURE__*/React.createElement("div", {
       className: "binder-pane"
@@ -1018,7 +1020,9 @@
       className: "budget-hero-big"
     }, fmt$(grand), " for two"), /*#__PURE__*/React.createElement("div", {
       className: "budget-hero-sub"
-    }, fmt$(perDay), "/day \xB7 ", totalDays, " days \xB7 ", budget.inBRL)), /*#__PURE__*/React.createElement(SectionHead, {
+    }, fmt$(perDay), "/day \xB7 ", totalDays, " days \xB7 ", budget.inBRL), /*#__PURE__*/React.createElement("div", {
+      className: "budget-hero-sub"
+    }, "\u2248 $", perPersonMonth.toLocaleString('en-US'), " / R$", perPersonMonthBRL.toLocaleString('en-US'), " per person/month")), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
       title: "Where it goes",
       small: true

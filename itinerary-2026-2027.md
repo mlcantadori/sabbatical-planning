@@ -772,6 +772,8 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 
 **Grand total: ~USD 95,000 for two · ~USD 262/day · 362 days** (~R$247k per person at R$5.20)
 
+**Monthly run-rate: ~USD 4,000 / ~R$20,800 per person/month** (30.44-day months, all-in)
+
 | Bucket | USD | Share |
 |---|---|---|
 | Lodging (23 chapters) | 27,135 | 29% |

@@ -814,6 +814,8 @@
     const contingency = Math.round(subtotal * budget.contingencyPct / 100);
     const grand = subtotal + contingency;
     const perDay = Math.round(grand / totalDays);
+    const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
+    const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
     const pct = (n) => Math.round(n / grand * 100) + '%';
     return (
       <div className="binder-pane">
@@ -827,6 +829,7 @@
         <div className="budget-hero">
           <div className="budget-hero-big">{fmt$(grand)} for two</div>
           <div className="budget-hero-sub">{fmt$(perDay)}/day · {totalDays} days · {budget.inBRL}</div>
+          <div className="budget-hero-sub">≈ ${perPersonMonth.toLocaleString('en-US')} / R${perPersonMonthBRL.toLocaleString('en-US')} per person/month</div>
         </div>
 
         <SectionHead num="01" title="Where it goes" small />

@@ -535,6 +535,7 @@ window.TRIP = (function () {
   const budget = {
     currency: 'USD',
     basis: 'couple · 362 days · mid-range with strategic splurges',
+    fxBRL: 5.2,
     estimate: 'USD ~95k for two',
     perDay: '~USD 262/day for two',
     inBRL: '~R$247k per person at R$5.20',
