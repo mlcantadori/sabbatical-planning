@@ -55,6 +55,7 @@
           </div>
 
           <div className="app-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
+            <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
             <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
           </div>
 

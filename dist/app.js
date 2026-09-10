@@ -61,7 +61,9 @@
     }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers")), /*#__PURE__*/React.createElement("div", {
       className: "app-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "app-progress-label"
+    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays()), /*#__PURE__*/React.createElement("div", {
       className: "app-progress-bar"
     }, /*#__PURE__*/React.createElement("div", {
       style: {
