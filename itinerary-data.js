@@ -538,7 +538,7 @@ window.TRIP = (function () {
     fxBRL: 5.2,
     estimate: 'USD ~97k for two',
     perDay: '~USD 267/day for two',
-    inBRL: '~R$251k per person at R$5.20',
+    inBRL: '~R$253k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
@@ -546,6 +546,7 @@ window.TRIP = (function () {
       { item: 'Raja Ampat liveaboard 10d (2 pax)', cost: 8400, note: 'Quoted/held — the trip splurge' },
       { item: 'Annapurna Base Camp trek, all-in (2 pax)', cost: 2000, note: 'Guide + porter + teahouses + meals + permits (ACAP/TIMS)' },
       { item: 'Cumbuco Airbnb, 1 month', cost: 1900, note: 'Actual — paid' },
+      { item: 'Greece ferries, 4 legs (2 pax)', cost: 770, note: 'Booked ✅ — €685 actual' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
@@ -554,7 +555,7 @@ window.TRIP = (function () {
       { id: 'cumbuco', days: 29, lodging: 1900, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Airbnb actual $1,900/mo · own kite gear · downwinder support' },
       { id: 'saopaulo', days: 7, lodging: 500, food: 350, transport: 150, activities: 100, fees: 0, note: '~$70/n hotel/Airbnb · metro/Uber + farewell dinner' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
-      { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 800, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries ~$340 · Chania car ~$240 · Kleftiko ~$260' },
+      { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
       { id: 'turkey', days: 21, lodging: 1900, food: 1470, transport: 710, activities: 780, fees: 120, note: 'Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 · e-visa' },
       { id: 'baku', days: 2, lodging: 160, food: 140, transport: 60, activities: 30, fees: 50, note: 'Mid hotel 2n · ASAN e-visa · walkable old city' },
       { id: 'india', days: 7, lodging: 270, food: 315, transport: 200, activities: 300, fees: 55, note: 'Trains ~$100 · Taj + forts + boats ~$110 · Parmarth yoga ~$150 · e-visa' },
