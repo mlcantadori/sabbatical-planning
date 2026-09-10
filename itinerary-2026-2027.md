@@ -770,20 +770,20 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 95,000 for two · ~USD 262/day · 362 days** (~R$247k per person at R$5.20)
+**Grand total: ~USD 97,000 for two · ~USD 267/day · 362 days** (~R$251k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,000 / ~R$20,800 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,100 / ~R$21,100 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (23 chapters) | 27,135 | 29% |
+| Lodging (23 chapters) | 27,135 | 28% |
 | Food (23 chapters) | 20,125 | 21% |
 | Activities & diving | 19,980 | 21% |
-| Inter-chapter flights | 8,670 | 9% |
-| Local transport | 9,535 | 10% |
+| Inter-chapter flights | 10,070 | 10% |
+| Local transport | 9,685 | 10% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 385 | <1% |
-| Contingency (8%) | 7,038 | 7% |
+| Contingency (8%) | 7,162 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900.
 
@@ -811,11 +811,11 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 18 | Nusa Penida · Komodo · Bali | 17 | 209 | 3,560 | Komodo 3D2N boat ~$440 + park ~$80 · dives ~$570 · Batur ~$120 |
 | 19 | Borneo / Sabah | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
 | 20 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
-| 21 | Malaysia | 10 | 113 | 1,130 | KL + Penang guesthouses · ETS rail |
-| 22 | Thailand | 14 | 171 | 2,400 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Kanchanaburi |
+| 21 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
+| 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$77,160** · 361 days.
+Chapters subtotal: **$77,310** · 361 days.
 
 ### Inter-chapter flights (couple)
 
@@ -824,8 +824,10 @@ Chapters subtotal: **$77,160** · 361 days.
 | Brazil domestic (GIG→FOR→GRU) | 750 | Estimate |
 | GRU → Toronto → Athens | 1,700 | Bought ✅ |
 | Athens → Cappadocia via IST | 500 | Bought ✅ (est.) |
+| Istanbul → Baku → Delhi | 1,000 | Bought ✅ (est. ~$500pp) |
 | Varanasi → Kathmandu (direct) | 360 | ~$180pp Buddha Air |
 | Kathmandu/Pokhara → Tokyo | 1,100 | Estimate ~$550pp |
+| Osaka → Seoul | 400 | Estimate |
 | Seoul → Taipei | 500 | Estimate |
 | Taipei → Shanghai | 500 | Estimate |
 | Hong Kong → Osaka | 400 | Estimate, LCC |
@@ -834,7 +836,7 @@ Chapters subtotal: **$77,160** · 361 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$8,670**. Plus insurance $1,800 + eSIMs/sundries $350. Subtotal $87,980 + 8% contingency $7,038 = **~$95,000**.
+Flights subtotal: **$10,070**. Plus insurance $1,800 + eSIMs/sundries $350. Subtotal $89,530 + 8% contingency $7,162 = **~$97,000**.
 
 ### Assumptions & levers
 
