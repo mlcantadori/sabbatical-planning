@@ -23,6 +23,9 @@
     const [selectedId, setSelectedId] = React.useState(null);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(null);
     const [focusKey, setFocusKey] = React.useState(0);
+    const [mapMode, setMapMode] = React.useState(() => {
+      try { return localStorage.getItem('map-mode') || '2d'; } catch { return '2d'; }
+    });
     const isMobile = useIsMobile();
 
     const today = dayCounter(TODAY);
@@ -106,13 +109,37 @@
 
           {(!isMobile || mobileMode === 'map') && (
             <div className="map-stage">
-              <window.MapView
-                selectedId={selectedId}
-                selectedPlaceIdx={selectedPlaceIdx}
-                onSelectChapter={onSelectChapter}
-                onSelectPlace={onSelectPlace}
-                focusKey={focusKey === 0 ? null : 'world'}
-              />
+              {mapMode === 'globe' ? (
+                <window.GlobeView
+                  selectedId={selectedId}
+                  selectedPlaceIdx={selectedPlaceIdx}
+                  onSelectChapter={onSelectChapter}
+                  onSelectPlace={onSelectPlace}
+                  focusKey={focusKey === 0 ? null : 'world'}
+                />
+              ) : (
+                <window.MapView
+                  selectedId={selectedId}
+                  selectedPlaceIdx={selectedPlaceIdx}
+                  onSelectChapter={onSelectChapter}
+                  onSelectPlace={onSelectPlace}
+                  focusKey={focusKey === 0 ? null : 'world'}
+                />
+              )}
+              <div className="mobile-mode-toggle eq-mode">
+                <button
+                  className={mapMode === 'map' ? 'is-active' : ''}
+                  onClick={() => {
+                    setMapMode('map');
+                    try { localStorage.setItem('map-mode', 'map'); } catch {}
+                  }}>Map</button>
+                <button
+                  className={mapMode === 'globe' ? 'is-active' : ''}
+                  onClick={() => {
+                    setMapMode('globe');
+                    try { localStorage.setItem('map-mode', 'globe'); } catch {}
+                  }}>Globe</button>
+              </div>
 
               {selectedId && (
                 <div className="map-reset">
