@@ -46,6 +46,10 @@ window.PHOTO_IDS = {
   'pamukkale terraces':          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/The_Travertine_terraces_of_Pamukkale.jpg/1920px-The_Travertine_terraces_of_Pamukkale.jpg',
   'ephesus library':             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ephesus_-_Celsus_Library.jpg/1920px-Ephesus_-_Celsus_Library.jpg',
 
+  // ── Baku (vendored locally — see extra-pictures/baku/) ────────────────────
+  'baku flame towers':             'extra-pictures/baku/flame-towers-day.jpg',
+  'baku old city':                 'extra-pictures/baku/old-city.jpg',
+
   // ── India ─────────────────────────────────────────────────────────────────
   'taj mahal sunrise':           'photo-1524492412937-b28074a5d7da', // ✓
   'varanasi ghats':              'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Boats_at_sunrise_Ganges_River_Varanasi_Uttar_Pradesh_Schwiki.jpg/1920px-Boats_at_sunrise_Ganges_River_Varanasi_Uttar_Pradesh_Schwiki.jpg',

@@ -11,6 +11,7 @@ window.TRIP_GEO = {
     'toronto':      [ 43.6532,  -79.3832], // CN Tower, Toronto
     'athens':       [ 37.9838,   23.7275], // Acropolis, Athens
     'turkey':       [41.0082,   28.9784], // Istanbul
+    'baku':         [40.4093,   49.8671], // Baku
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
     'japan-autumn': [35.6762,  139.6503], // Tokyo
@@ -51,6 +52,8 @@ window.TRIP_GEO = {
     'turkey/Alaçatı':                         [38.2822,   26.3747],
     'turkey/Kaş':                             [36.2018,   29.6377],
     'turkey/Istanbul':                         [41.0082,   28.9784],
+    // Baku
+    'baku/Baku':                                 [40.4093,   49.8671],
     // Nepal
     'nepal/Kathmandu':                        [27.7172,   85.3240],
     'nepal/Pokhara':                          [28.2096,   83.9856],
