@@ -125,6 +125,10 @@ button {
   background: var(--rule);
   position: relative;
   overflow: hidden;
+  /* The brand text shares a baseline with the 22px mark, so it sits low
+     in the 60px header while this bar is dead-centered — nudge the bar
+     down to the text's visual center. */
+  transform: translateY(2px);
 }
 .app-progress-bar > div {
   position: absolute;
