@@ -134,6 +134,9 @@ button {
   background: var(--rule);
   position: relative;
   overflow: hidden;
+  /* Optical alignment: Plex Mono caps sit high in the em box, so a
+     geometrically centered bar reads low next to the label. */
+  transform: translateY(-2px);
 }
 .app-progress-bar > div {
   position: absolute;
