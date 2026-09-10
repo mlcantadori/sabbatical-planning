@@ -33,12 +33,12 @@
       mapRef.current = map;
       window._map = map;
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        subdomains: 'abcd', maxZoom: 19, attribution: '',
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19, attribution: '',
       }).addTo(map);
       L.control.zoom({ position: 'bottomright' }).addTo(map);
       L.control.attribution({ position: 'bottomleft', prefix: false })
-        .addAttribution('© OpenStreetMap · CARTO').addTo(map);
+        .addAttribution('Tiles © Esri — Source: Esri, HERE, Garmin, OpenStreetMap contributors').addTo(map);
 
       const onResize = () => map.invalidateSize();
       window.addEventListener('resize', onResize);
