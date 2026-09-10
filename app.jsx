@@ -114,24 +114,6 @@
                 focusKey={focusKey === 0 ? null : 'world'}
               />
 
-              <div className="map-legend">
-                <div className="map-legend-title">
-                  <span>Route · {store.getChapters().filter((c) => c.kind === 'chapter').length} chapters</span>
-                  <span style={{ opacity: 0.4 }}>▾</span>
-                </div>
-                <div className="map-legend-items">
-                  {Object.entries(window.TRIP.REGIONS).map(([k, r]) => (
-                    <div key={k} className="map-legend-item">
-                      <span className="map-legend-swatch" style={{ background: r.accent }} />
-                      <span>{r.name}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="map-legend-action">
-                  <button onClick={onReset}>Reset view</button>
-                </div>
-              </div>
-
               {selectedId && (
                 <div className="map-reset">
                   <button onClick={onReset}>← Back to whole route</button>

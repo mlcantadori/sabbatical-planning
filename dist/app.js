@@ -119,29 +119,7 @@
       onSelectChapter: onSelectChapter,
       onSelectPlace: onSelectPlace,
       focusKey: focusKey === 0 ? null : 'world'
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "map-legend"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "map-legend-title"
-    }, /*#__PURE__*/React.createElement("span", null, "Route \xB7 ", store.getChapters().filter(c => c.kind === 'chapter').length, " chapters"), /*#__PURE__*/React.createElement("span", {
-      style: {
-        opacity: 0.4
-      }
-    }, "\u25BE")), /*#__PURE__*/React.createElement("div", {
-      className: "map-legend-items"
-    }, Object.entries(window.TRIP.REGIONS).map(([k, r]) => /*#__PURE__*/React.createElement("div", {
-      key: k,
-      className: "map-legend-item"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "map-legend-swatch",
-      style: {
-        background: r.accent
-      }
-    }), /*#__PURE__*/React.createElement("span", null, r.name)))), /*#__PURE__*/React.createElement("div", {
-      className: "map-legend-action"
-    }, /*#__PURE__*/React.createElement("button", {
-      onClick: onReset
-    }, "Reset view"))), selectedId && /*#__PURE__*/React.createElement("div", {
+    }), selectedId && /*#__PURE__*/React.createElement("div", {
       className: "map-reset"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset
