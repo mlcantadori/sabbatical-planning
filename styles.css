@@ -122,6 +122,7 @@ button {
 .app-progress-label {
   font-family: var(--f-mono);
   font-size: 10px;
+  line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-3);
