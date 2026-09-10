@@ -70,16 +70,26 @@ async function main() {
 
   const directUrls = Object.entries(photoIds).filter(([, value]) => String(value).startsWith('http'));
   const broken = [];
+  const rateLimited = [];
 
   for (const [keyword, url] of directUrls) {
     const result = await checkUrl(url);
-    if (!result.ok) broken.push({ keyword, url, ...result });
+    if (result.ok) continue;
+    // 429 = rate-limited by the host (e.g. Wikimedia throttling this network),
+    // not proof the photo is gone. Warn instead of failing so content commits
+    // aren't blocked by transient throttling. Photos stay included by reference.
+    if (result.status === 429) {
+      rateLimited.push({ keyword, url, ...result });
+      continue;
+    }
+    broken.push({ keyword, url, ...result });
   }
 
   console.log(`Checked keywords: ${keywords.length}`);
   console.log(`Direct URLs: ${directUrls.length}`);
   console.log(`Missing keyword mappings: ${missing.length}`);
   console.log(`Broken URLs: ${broken.length}`);
+  console.log(`Rate-limited (skipped): ${rateLimited.length}`);
 
   if (missing.length) {
     console.log('\nMissing mappings:');
@@ -94,8 +104,16 @@ async function main() {
     }
   }
 
+  if (rateLimited.length) {
+    console.log('\nRate-limited (not verified, keeping URLs):');
+    for (const item of rateLimited) {
+      console.log(`- ${item.keyword}: [${item.status}] ${item.url}`);
+    }
+  }
+
   if (missing.length || broken.length) process.exit(1);
-  console.log('\nPhoto validation passed.');
+  if (rateLimited.length) console.log('\nPhoto validation passed with rate-limit warnings.');
+  else console.log('\nPhoto validation passed.');
 }
 
 main().catch((err) => {
