@@ -770,28 +770,28 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 97,000 for two · ~USD 268/day · 362 days** (~R$253k per person at R$5.20)
+**Grand total: ~USD 97,500 for two · ~USD 269/day · 362 days** (~R$254k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,100 / ~R$21,200 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,100 / ~R$21,300 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
 | Lodging (23 chapters) | 27,135 | 28% |
 | Food (23 chapters) | 20,125 | 21% |
-| Activities & diving | 19,980 | 21% |
+| Activities & diving | 20,310 | 21% |
 | Inter-chapter flights | 10,070 | 10% |
 | Local transport | 10,115 | 10% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 385 | <1% |
-| Contingency (8%) | 7,197 | 7% |
+| Contingency (8%) | 7,223 | 7% |
 
-**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅.
+**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000.
 
 ### Per-chapter breakdown (couple)
 
 | # | Chapter | Days | $/day | Total | Key drivers |
 |---|---|---|---|---|---|
-| 1 | Rio de Janeiro | 29 | 152 | 4,400 | Monthly Airbnb ~$1,500 · AOW + Nitrox certs ~$1,200 |
+| 1 | Rio de Janeiro | 29 | 163 | 4,730 | Monthly Airbnb ~$1,500 · trail R$4,000 + certs R$5,000 actual (~$1,730) |
 | 2 | Cumbuco | 29 | 129 | 3,750 | Airbnb actual $1,900/mo · own kite gear |
 | 3 | São Paulo | 7 | 157 | 1,100 | ~$70/n hotel/Airbnb · metro/Uber + farewell dinner |
 | 4 | Toronto | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
@@ -815,7 +815,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$77,740** · 361 days.
+Chapters subtotal: **$78,070** · 361 days.
 
 ### Inter-chapter flights (couple)
 
@@ -836,7 +836,7 @@ Chapters subtotal: **$77,740** · 361 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,960 + 8% contingency $7,197 = **~$97,000**.
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $90,290 + 8% contingency $7,223 = **~$97,500**.
 
 ### Assumptions & levers
 
