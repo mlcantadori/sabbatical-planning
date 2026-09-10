@@ -50,7 +50,9 @@ window.TRIP_GEO = {
     // Turkey
     'turkey/Cappadocia — Göreme':             [38.6431,   34.8289],
     'turkey/Alaçatı':                         [38.2822,   26.3747],
+    'turkey/Şirince':                         [37.9429,   27.3417],
     'turkey/Kaş':                             [36.2018,   29.6377],
+    'turkey/Akyaka':                          [37.0545,   28.3269],
     'turkey/Istanbul':                         [41.0082,   28.9784],
     // Baku
     'baku/Baku':                                 [40.4093,   49.8671],
