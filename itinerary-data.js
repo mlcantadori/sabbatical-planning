@@ -535,22 +535,23 @@ window.TRIP = (function () {
   const budget = {
     currency: 'USD',
     basis: 'couple · 362 days · mid-range with strategic splurges',
-    estimate: 'USD ~92k for two',
-    perDay: '~USD 254/day for two',
-    inBRL: '~R$253k per person at R$5.50',
+    estimate: 'USD ~95k for two',
+    perDay: '~USD 262/day for two',
+    inBRL: '~R$247k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
       { item: 'GRU–YYZ–ATH flights (2 pax)', cost: 1700, note: 'Bought ✅ — long-haul positioning into the trip' },
       { item: 'Raja Ampat liveaboard 10d (2 pax)', cost: 8400, note: 'Quoted/held — the trip splurge' },
       { item: 'Annapurna Base Camp trek, all-in (2 pax)', cost: 2000, note: 'Guide + porter + teahouses + meals + permits (ACAP/TIMS)' },
+      { item: 'Cumbuco Airbnb, 1 month', cost: 1900, note: 'Actual — paid' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
     chapters: [
-      { id: 'rio', days: 29, lodging: 0, food: 1200, transport: 300, activities: 1400, fees: 0, note: 'Home base, no lodging · AOW + Nitrox certs ~$1,200 · trail buses/food' },
-      { id: 'cumbuco', days: 29, lodging: 950, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Monthly condo ~$950 · own kite gear · downwinder support' },
-      { id: 'saopaulo', days: 7, lodging: 0, food: 350, transport: 150, activities: 100, fees: 0, note: 'Family stay · metro/Uber + farewell dinner' },
+      { id: 'rio', days: 29, lodging: 1500, food: 1200, transport: 300, activities: 1400, fees: 0, note: 'Monthly Airbnb ~$1,500 · AOW + Nitrox certs ~$1,200 · trail buses/food' },
+      { id: 'cumbuco', days: 29, lodging: 1900, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Airbnb actual $1,900/mo · own kite gear · downwinder support' },
+      { id: 'saopaulo', days: 7, lodging: 500, food: 350, transport: 150, activities: 100, fees: 0, note: '~$70/n hotel/Airbnb · metro/Uber + farewell dinner' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 800, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries ~$340 · Chania car ~$240 · Kleftiko ~$260' },
       { id: 'turkey', days: 21, lodging: 1900, food: 1470, transport: 710, activities: 780, fees: 120, note: 'Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 · e-visa' },
@@ -595,14 +596,14 @@ window.TRIP = (function () {
       'All figures USD for two; mid-range with strategic splurges, researched Oct 2026 prices',
       'China entries assume the 30-day visa-free policy for Brazil holds — otherwise add ~$300 for two visas',
       'Own kite gear in Cumbuco; mask + dive computer owned; snowboard kit rented in Hakuba',
-      'Rio / São Paulo / Toronto use home or friends stays — zero lodging',
+      'Toronto is the only free stay — lodging is paid in all other 22 chapters',
       'Inter-chapter flights are one-way advance fares; peak-season spikes are what the 8% contingency is for',
     ],
     levers: [
       'Diving is ~$12k of the total — fewer Coron/Komodo/Tao dive days saves $1,500+ fast',
       'Japan + Korea are ~$12k combined — business hotels + konbini breakfasts already assumed; ryokan splurge kept to zero',
       'Shoulder-season flights (booked early) and slow-travel lodging (weekly rates) are the two biggest structural savers',
-      'Home bases (Rio, São Paulo, Toronto friends) save ~$4k in lodging vs hotels',
+      'Only Toronto avoids lodging costs; monthly rates in Rio/Cumbuco beat nightly prices',
     ],
   };
 

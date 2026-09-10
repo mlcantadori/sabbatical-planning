@@ -770,28 +770,28 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 92,000 for two · ~USD 254/day · 362 days** (~R$253k per person at R$5.50)
+**Grand total: ~USD 95,000 for two · ~USD 262/day · 362 days** (~R$247k per person at R$5.20)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (23 chapters) | 24,185 | 26% |
-| Food (23 chapters) | 20,125 | 22% |
-| Activities & diving | 19,980 | 22% |
+| Lodging (23 chapters) | 27,135 | 29% |
+| Food (23 chapters) | 20,125 | 21% |
+| Activities & diving | 19,980 | 21% |
 | Inter-chapter flights | 8,670 | 9% |
 | Local transport | 9,535 | 10% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 385 | <1% |
-| Contingency (8%) | 6,802 | 7% |
+| Contingency (8%) | 7,038 | 7% |
 
-**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000.
+**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900.
 
 ### Per-chapter breakdown (couple)
 
 | # | Chapter | Days | $/day | Total | Key drivers |
 |---|---|---|---|---|---|
-| 1 | Rio de Janeiro | 29 | 100 | 2,900 | Home base, no lodging · AOW + Nitrox certs ~$1,200 |
-| 2 | Cumbuco | 29 | 97 | 2,800 | Monthly condo ~$950 · own kite gear |
-| 3 | São Paulo | 7 | 86 | 600 | Family stay · metro/Uber + farewell dinner |
+| 1 | Rio de Janeiro | 29 | 152 | 4,400 | Monthly Airbnb ~$1,500 · AOW + Nitrox certs ~$1,200 |
+| 2 | Cumbuco | 29 | 129 | 3,750 | Airbnb actual $1,900/mo · own kite gear |
+| 3 | São Paulo | 7 | 157 | 1,100 | ~$70/n hotel/Airbnb · metro/Uber + farewell dinner |
 | 4 | Toronto | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
 | 5 | Greece | 20 | 239 | 4,770 | Stays ~$85/n · 4 ferries ~$340 · Chania car ~$240 · Kleftiko ~$260 |
 | 6 | Türkiye | 21 | 237 | 4,980 | Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 |
@@ -813,7 +813,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 22 | Thailand | 14 | 171 | 2,400 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$74,210** · 361 days.
+Chapters subtotal: **$77,160** · 361 days.
 
 ### Inter-chapter flights (couple)
 
@@ -832,13 +832,13 @@ Chapters subtotal: **$74,210** · 361 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$8,670**. Plus insurance $1,800 + eSIMs/sundries $350. Subtotal $85,030 + 8% contingency $6,802 = **~$92,000**.
+Flights subtotal: **$8,670**. Plus insurance $1,800 + eSIMs/sundries $350. Subtotal $87,980 + 8% contingency $7,038 = **~$95,000**.
 
 ### Assumptions & levers
 
 - China entries assume the 30-day visa-free policy for Brazil holds — otherwise add ~$300 for two visas.
 - Own kite gear in Cumbuco; mask + dive computer owned; snowboard kit rented in Hakuba.
-- Rio / São Paulo / Toronto use home or friends stays — saves ~$4k vs hotels.
+- Lodging is paid everywhere except Toronto (friend's place); monthly Airbnb rates in Rio/Cumbuco beat nightly prices.
 - Diving is ~$12k of the total — fewer Coron/Komodo/Tao dive days saves $1,500+ fast.
 - Inter-chapter flights are advance one-way fares; peak-season spikes are what the contingency is for.
 
