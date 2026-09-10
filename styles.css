@@ -1730,11 +1730,11 @@ button {
   .app-nav { padding: 2px; gap: 0; }
   .app-nav button { padding: 5px 8px; font-size: 9px; gap: 3px; }
 
-  /* Single-column on mobile — chapter list OR map fills the space */
+  /* Single-column on mobile — chapter list OR map fills the space.
+     DOM order matches visual order, so default auto-placement is correct. */
   .app-main, .app-main.no-detail {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-row: -1;
     position: relative;
   }
   .chapter-list {
