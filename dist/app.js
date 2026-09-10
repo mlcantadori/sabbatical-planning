@@ -29,7 +29,6 @@
     const [selectedId, setSelectedId] = React.useState(null);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(null);
     const [focusKey, setFocusKey] = React.useState(0);
-    const [editing, setEditing] = React.useState(false);
     const isMobile = useIsMobile();
     const today = dayCounter(TODAY);
     const isBinder = view !== 'map';
@@ -50,7 +49,7 @@
     };
     const showDetail = view === 'map' && selectedId;
     return /*#__PURE__*/React.createElement("div", {
-      className: `app ${isMobile ? 'is-mobile' : ''} ${editing ? 'is-editing' : ''}`
+      className: `app ${isMobile ? 'is-mobile' : ''}`
     }, /*#__PURE__*/React.createElement("header", {
       className: "app-header"
     }, /*#__PURE__*/React.createElement("div", {
@@ -81,21 +80,9 @@
     }, /*#__PURE__*/React.createElement(window.Icon.map, {
       size: 12
     }), " ", !isMobile && 'Map'), /*#__PURE__*/React.createElement("button", {
-      className: view === 'bookings' ? 'is-active' : '',
-      onClick: () => setView('bookings')
-    }, isMobile ? 'Book' : 'Bookings'), /*#__PURE__*/React.createElement("button", {
-      className: view === 'diving' ? 'is-active' : '',
-      onClick: () => setView('diving')
-    }, isMobile ? 'Dive' : 'Diving'), /*#__PURE__*/React.createElement("button", {
       className: view === 'budget' ? 'is-active' : '',
       onClick: () => setView('budget')
-    }, isMobile ? '$' : 'Budget'), /*#__PURE__*/React.createElement("button", {
-      className: view === 'packing' ? 'is-active' : '',
-      onClick: () => setView('packing')
-    }, isMobile ? 'Pack' : 'Packing'), /*#__PURE__*/React.createElement("button", {
-      className: view === 'snapshots' ? 'is-active' : '',
-      onClick: () => setView('snapshots')
-    }, isMobile ? 'Ver' : 'Versions'))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
+    }, isMobile ? '$' : 'Budget'))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode"
     }, /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode-toggle"
@@ -109,16 +96,11 @@
       onClick: () => setMobileMode('list')
     }, /*#__PURE__*/React.createElement(window.Icon.list, {
       size: 12
-    }), " List")), /*#__PURE__*/React.createElement("button", {
-      className: `pill-btn ${editing ? 'is-active' : ''}`,
-      onClick: () => setEditing(e => !e)
-    }, editing ? 'Done' : 'Edit')), /*#__PURE__*/React.createElement("div", {
+    }), " List"))), /*#__PURE__*/React.createElement("div", {
       className: `app-main ${showDetail ? '' : 'no-detail'} mobile-${mobileMode}`
     }, (!isMobile || mobileMode === 'list') && /*#__PURE__*/React.createElement(window.ChapterList, {
       selectedId: selectedId,
-      onSelect: onSelectChapter,
-      editing: editing,
-      onToggleEdit: () => setEditing(e => !e)
+      onSelect: onSelectChapter
     }), (!isMobile || mobileMode === 'map') && /*#__PURE__*/React.createElement("div", {
       className: "map-stage"
     }, /*#__PURE__*/React.createElement(window.MapView, {
@@ -149,14 +131,7 @@
       className: "map-legend-action"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset
-    }, "Reset view"), /*#__PURE__*/React.createElement("button", {
-      onClick: () => {
-        if (confirm('Reset to the original itinerary? Your edits will be lost.')) {
-          store.reset();
-          onReset();
-        }
-      }
-    }, "Restore defaults"))), selectedId && /*#__PURE__*/React.createElement("div", {
+    }, "Reset view"))), selectedId && /*#__PURE__*/React.createElement("div", {
       className: "map-reset"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset
@@ -164,11 +139,8 @@
       chapterId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
       onSelectPlace: onSelectPlace,
-      onClose: onCloseDetail,
-      editing: editing
+      onClose: onCloseDetail
     }), isBinder && /*#__PURE__*/React.createElement(window.Binder, {
-      activeTab: view,
-      onSwitchTab: setView,
       onClose: () => setView('map')
     })));
   }
