@@ -127,6 +127,10 @@ button {
   text-transform: uppercase;
   color: var(--ink-3);
   white-space: nowrap;
+  /* Trim the text box to cap-height so the bar centers on the visible
+     glyphs instead of the font's em box (Plex Mono caps sit high in it). */
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 .app-progress-bar {
   flex: 1;
@@ -134,9 +138,6 @@ button {
   background: var(--rule);
   position: relative;
   overflow: hidden;
-  /* Optical alignment: Plex Mono caps sit high in the em box, so a
-     geometrically centered bar reads low next to the label. */
-  transform: translateY(-2px);
 }
 .app-progress-bar > div {
   position: absolute;
