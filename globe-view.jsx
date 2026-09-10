@@ -147,6 +147,13 @@
       controls.maxDistance = 9;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.55;
+      // First manual grab (drag or wheel) stops the spin for good —
+      // it only resumes on an explicit "back to whole route".
+      controls.addEventListener('start', () => {
+        const s = st.current; if (!s) return;
+        s.spinOff = true;
+        s.controls.autoRotate = false;
+      });
 
       // HTML overlays
       const overlay = document.createElement('div');
@@ -168,6 +175,7 @@
       st.current = {
         renderer, scene, camera, controls, earth, arcs, stars,
         overlay, popupEl, w: 0, h: 0, raf: 0, tween: null, world: true,
+        spinOff: false,
       };
 
       const home = llv(HOME.lat, HOME.lng, HOME.r);
@@ -227,6 +235,8 @@
 
     function dolly(f) {
       const s = st.current; if (!s) return;
+      s.spinOff = true;
+      s.controls.autoRotate = false;
       const len = Math.max(1.45, Math.min(9, s.camera.position.length() * f));
       s.camera.position.setLength(len);
     }
@@ -384,7 +394,7 @@
       [...s.overlay.querySelectorAll('.eq-place-wrap')].forEach((el) => el.remove());
       s.popupEl.style.display = 'none';
       s.popupEl._anchor = null;
-      s.controls.autoRotate = !selectedId;
+      s.controls.autoRotate = !selectedId && !s.spinOff;
 
       if (!selectedId) return;
       const ch = chapters.find((c) => c.id === selectedId);
@@ -442,6 +452,8 @@
       const s = st.current; if (!s) return;
       if (focusKey === 'world') {
         flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r), 1100);
+        s.spinOff = false;
+        if (!propsRef.current.selectedId) s.controls.autoRotate = true;
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [focusKey]);
