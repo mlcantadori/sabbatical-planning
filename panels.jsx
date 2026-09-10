@@ -816,6 +816,34 @@
     const perDay = Math.round(grand / totalDays);
     const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
     const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
+    // Sortable per-chapter table: click any header to sort asc/desc.
+    const COLS = [
+      ['idx', '#'],
+      ['title', 'Chapter'],
+      ['days', 'd'],
+      ['perDay', '$/d'],
+      ['lodging', 'Lodg.'],
+      ['food', 'Food'],
+      ['transport', 'Trans.'],
+      ['activities', 'Activ.'],
+      ['fees', 'Fees'],
+      ['total', 'Total'],
+    ];
+    const [sortKey, setSortKey] = React.useState('idx');
+    const [sortDir, setSortDir] = React.useState(1);
+    const rows = budget.chapters.map((r, i) => ({
+      ...r, idx: i + 1, title: titleById[r.id] || r.id,
+      total: rowTotal(r), perDay: rowTotal(r) / r.days,
+    }));
+    const sorted = [...rows].sort((a, b) => {
+      const va = a[sortKey], vb = b[sortKey];
+      const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
+      return cmp * sortDir;
+    });
+    const toggleSort = (k) => {
+      if (k === sortKey) setSortDir((d) => -d);
+      else { setSortKey(k); setSortDir(1); }
+    };
     const pct = (n) => Math.round(n / grand * 100) + '%';
     return (
       <div className="binder-pane">
@@ -847,19 +875,27 @@
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
             <thead>
               <tr style={{ textAlign: 'left', opacity: 0.65 }}>
-                <th style={{ padding: '6px 8px 6px 0' }}>Chapter</th>
-                <th>d</th>
-                <th>$/d</th>
-                <th style={{ textAlign: 'right' }}>Total</th>
+                {COLS.map(([k, label]) => (
+                  <th key={k} onClick={() => toggleSort(k)}
+                    style={{ padding: '6px 8px 6px 0', cursor: 'pointer', whiteSpace: 'nowrap', textAlign: k === 'total' ? 'right' : 'left' }}>
+                    {label}{sortKey === k ? (sortDir === 1 ? ' ▲' : ' ▼') : ''}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {budget.chapters.map((r) => (
+              {sorted.map((r) => (
                 <tr key={r.id} style={{ borderTop: '1px solid rgba(0,0,0,.08)' }} title={r.note}>
-                  <td style={{ padding: '6px 8px 6px 0' }}>{titleById[r.id] || r.id}</td>
+                  <td style={{ opacity: 0.55 }}>{r.idx}</td>
+                  <td style={{ padding: '6px 8px 6px 0', whiteSpace: 'nowrap' }}>{r.title}</td>
                   <td>{r.days}</td>
-                  <td>{fmt$(rowTotal(r) / r.days).replace('USD ', '$')}</td>
-                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(rowTotal(r))}</td>
+                  <td>{fmt$(r.perDay).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.lodging).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.food).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.transport).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.activities).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.fees).replace('USD ', '$')}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(r.total)}</td>
                 </tr>
               ))}
               <tr style={{ borderTop: '2px solid rgba(0,0,0,.2)', fontWeight: 700 }}>
@@ -871,7 +907,7 @@
             </tbody>
           </table>
         </div>
-        <p className="binder-pane-sub">Hover/tap a row for the line-item note. $/d is per couple.</p>
+        <p className="binder-pane-sub">Click a column header to sort ▲▼ · hover a row for its note. $/d is per couple.</p>
 
         <SectionHead num="03" title="Locked costs" small />
         <ul className="alert-list">

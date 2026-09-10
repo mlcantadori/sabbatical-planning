@@ -1003,6 +1003,29 @@
     const perDay = Math.round(grand / totalDays);
     const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
     const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
+    // Sortable per-chapter table: click any header to sort asc/desc.
+    const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'd'], ['perDay', '$/d'], ['lodging', 'Lodg.'], ['food', 'Food'], ['transport', 'Trans.'], ['activities', 'Activ.'], ['fees', 'Fees'], ['total', 'Total']];
+    const [sortKey, setSortKey] = React.useState('idx');
+    const [sortDir, setSortDir] = React.useState(1);
+    const rows = budget.chapters.map((r, i) => ({
+      ...r,
+      idx: i + 1,
+      title: titleById[r.id] || r.id,
+      total: rowTotal(r),
+      perDay: rowTotal(r) / r.days
+    }));
+    const sorted = [...rows].sort((a, b) => {
+      const va = a[sortKey],
+        vb = b[sortKey];
+      const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
+      return cmp * sortDir;
+    });
+    const toggleSort = k => {
+      if (k === sortKey) setSortDir(d => -d);else {
+        setSortKey(k);
+        setSortDir(1);
+      }
+    };
     const pct = n => Math.round(n / grand * 100) + '%';
     return /*#__PURE__*/React.createElement("div", {
       className: "binder-pane"
@@ -1065,15 +1088,16 @@
         textAlign: 'left',
         opacity: 0.65
       }
-    }, /*#__PURE__*/React.createElement("th", {
+    }, COLS.map(([k, label]) => /*#__PURE__*/React.createElement("th", {
+      key: k,
+      onClick: () => toggleSort(k),
       style: {
-        padding: '6px 8px 6px 0'
+        padding: '6px 8px 6px 0',
+        cursor: 'pointer',
+        whiteSpace: 'nowrap',
+        textAlign: k === 'total' ? 'right' : 'left'
       }
-    }, "Chapter"), /*#__PURE__*/React.createElement("th", null, "d"), /*#__PURE__*/React.createElement("th", null, "$/d"), /*#__PURE__*/React.createElement("th", {
-      style: {
-        textAlign: 'right'
-      }
-    }, "Total"))), /*#__PURE__*/React.createElement("tbody", null, budget.chapters.map(r => /*#__PURE__*/React.createElement("tr", {
+    }, label, sortKey === k ? sortDir === 1 ? ' ▲' : ' ▼' : '')))), /*#__PURE__*/React.createElement("tbody", null, sorted.map(r => /*#__PURE__*/React.createElement("tr", {
       key: r.id,
       style: {
         borderTop: '1px solid rgba(0,0,0,.08)'
@@ -1081,14 +1105,19 @@
       title: r.note
     }, /*#__PURE__*/React.createElement("td", {
       style: {
-        padding: '6px 8px 6px 0'
+        opacity: 0.55
       }
-    }, titleById[r.id] || r.id), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(rowTotal(r) / r.days).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", {
+    }, r.idx), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0',
+        whiteSpace: 'nowrap'
+      }
+    }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.food).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", {
       style: {
         textAlign: 'right',
         whiteSpace: 'nowrap'
       }
-    }, fmt$(rowTotal(r))))), /*#__PURE__*/React.createElement("tr", {
+    }, fmt$(r.total)))), /*#__PURE__*/React.createElement("tr", {
       style: {
         borderTop: '2px solid rgba(0,0,0,.2)',
         fontWeight: 700
@@ -1103,7 +1132,7 @@
       }
     }, fmt$(chTotal)))))), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
-    }, "Hover/tap a row for the line-item note. $/d is per couple."), /*#__PURE__*/React.createElement(SectionHead, {
+    }, "Click a column header to sort \u25B2\u25BC \xB7 hover a row for its note. $/d is per couple."), /*#__PURE__*/React.createElement(SectionHead, {
       num: "03",
       title: "Locked costs",
       small: true
