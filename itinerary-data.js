@@ -94,14 +94,14 @@ window.TRIP = (function () {
       id: 'saopaulo', kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'São Paulo',
       start: '2026-08-19', end: '2026-08-26', days: 7,
-      theme: 'Metrópole cultural, gastronomia, despedida',
-      intro: 'Dez dias para fechar o ciclo brasileiro antes de embarcar. São Paulo tem a melhor cena gastronômica da América Latina e um circuito cultural denso — MASP, Pinacoteca, Vila Madelena.',
-      tldr: 'MASP · Vila Madelena · Liberdade · Ibirapuera',
+      theme: 'Friends & family, farewell BBQ',
+      intro: 'No sightseeing — just time with friends and family in São Paulo before leaving Brazil. Closed the Brazil chapter with a farewell BBQ.',
+      tldr: 'Friends & family · Farewell BBQ',
       weather: { hi: 24, lo: 14, label: 'Inverno paulistano, 24°/14°', emoji: '☕', rainyDays: 1 },
       photos: ['masp sao paulo', 'sao paulo skyline', 'ibirapuera park', 'vila madelena art'],
       places: [
         { name: 'São Paulo', days: 7, query: 'Avenida Paulista, São Paulo',
-          highlights: ['MASP — acervo europeu em estrutura suspensa sobre a Paulista','Pinacoteca do Estado — melhor museu de arte brasileira','Vila Madelena: Beco do Batman, ateliês, bares, brunch','Liberdade: bairro japonês — yakisoba, onigiri, cultura nikkei','Ibirapuera: corrida, Museu Afro, Oca, pavilhões de Niemeyer','Mercadão Municipal: mortadela, bacalhau, frutas exóticas','Jantar de despedida no Japinha ou rodízio paulistano clássico','Fly São Paulo → Toronto para abrir o sabbatical internacional'] },
+          highlights: ['No sightseeing — time with friends and family only','Farewell BBQ before leaving Brazil','Fly São Paulo → Toronto to open the international leg'] },
       ],
     },
     {

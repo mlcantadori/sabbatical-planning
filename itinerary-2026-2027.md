@@ -74,21 +74,13 @@ Stayed in a condo and did short kitesurfing sessions from there, with occasional
 
 ## Chapter 3 — SÃO PAULO
 ### Aug 17 – Aug 26 · 10 days
-*Theme: Brazil's megalopolis — art, food, nightlife, and the world's best Japanese food outside Japan*
+*Theme: Friends & family, farewell BBQ*
 
-Ten days in the city that never sleeps and never explains itself. São Paulo is the engine of Brazil — raw, plural, endlessly creative. The food scene alone justifies a month; ten days lets you go deep without rushing the goodbye.
+No sightseeing — just time with friends and family in São Paulo before leaving Brazil. Closed the Brazil chapter with a farewell BBQ.
 
 **São Paulo — 10 days**
-- Avenida Paulista: the city's spine — MASP (Museu de Arte de São Paulo) with its glass chassis suspended over the pavement
-- Vila Madalena: street art corridor (Batman Alley), galleries, natural wine bars, indie record shops
-- Liberdade: the largest Japanese community outside Japan — ramen, yakisoba, the Sunday street market
-- Pinacoteca do Estado: best fine arts museum in Brazil, stunning Campos Elíseos building
-- Mercadão (Mercado Municipal): the mortadella sandwich is non-negotiable
-- Ibirapuera Park: Sunday morning — joggers, skaters, families, Niemeyer pavilions, swans
-- Bixiga (Bela Vista): Italian neighborhood, old-school trattorias, pizza at midnight (SP pizza culture is serious)
-- Higienópolis: bookshops, Jewish delis, the Masp of the Art Nouveau world
-- Pinheiros neighborhood bar crawl: natural wine, craft beer, city pulse
-- Day trip option: Serra da Cantareira (Atlantic Forest) — 45min north, waterfalls and trails
+- No sightseeing — time with friends and family only
+- Farewell BBQ before leaving Brazil
 
 **Fly São Paulo → Toronto Aug 27**
 
