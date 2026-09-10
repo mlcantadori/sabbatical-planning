@@ -44,24 +44,13 @@
 
 ## Chapter 1 — RIO DE JANEIRO
 ### Jun 21 – Jul 20 · 29 days
-*Theme: Tropical metropolis, iconic beaches, Atlantic Forest, colonial charm*
+*Theme: Home base — mountains and diving certs*
 
-The trip opens at home — in the best possible version of home. Late June into July is Rio's clearest season: low humidity, brilliant sun, Zona Sul beaches at their sharpest, and the Carioca rhythm at full tilt. A city this alive deserves 29 days, not a weekend.
+The trip opens at home. This Rio chapter focused on two things: the Petrópolis–Teresópolis trail and diving certifications (Advanced Open Water + NITROX).
 
 **Rio de Janeiro — 29 days**
-- Ipanema + Leblon: morning beach ritual, bossa nova origin streets, kiosks with açaí
-- Copacabana waterfront promenade at dawn — the entire arc before the crowds arrive
-- Sugarloaf Mountain (Pão de Açúcar): cable car to the summit, Guanabara Bay panorama
-- Christ the Redeemer from Cosme Velho — arrive before 8am for fog-free views
-- Santa Teresa: bohemian hilltop neighborhood, colonial architecture, bonde tram, art studios
-- Lapa Arches + Saturday Feira do Rio Antigo: antiques, street musicians, street food
-- Museu do Amanhã (Museum of Tomorrow) on the revitalized Mauá Pier
-- Tijuca National Forest: the world's largest urban forest — Cascatinha waterfall, Pico da Tijuca hike
-- Maracanã stadium: tour the temple of Brazilian football
-- Feira de São Cristóvão: northeastern food and culture festival, every weekend
-- Favela tour: Vidigal or Santa Marta — responsible local guides only
-- Churrasquinho at Arpoador, watching the sunset over the sea from the rock
-- Day trip: Petrópolis (1.5h by bus) — Emperor's summer palace, mountain air, cream puffs
+- Petrópolis–Teresópolis trail (Serra dos Órgãos)
+- Diving certifications: Advanced Open Water + NITROX
 
 **Fly Rio → Toronto Jul 20** (or fly direct Rio → Athens with Toronto layover)
 
@@ -69,19 +58,14 @@ The trip opens at home — in the best possible version of home. Late June into 
 
 ## Chapter 2 — CUMBUCO
 ### Jul 21 – Aug 17 · 27 days
-*Theme: Wind and dunes, kite surfing capital, northeastern Brazil at its most elemental*
+*Theme: Condo base, short kite sessions, downwinders*
 
-The Brazilian Northeast in July–August is the most reliable kite wind window in the world — 25–35 knots, every single afternoon, right to left across the beach. 27 days of wind, lagoon, dunes, and rhythm.
+Stayed in a condo and did short kitesurfing sessions from there, with occasional downwinders from the village center.
 
 **Cumbuco — 27 days**
-- Kitesurfing: ideal conditions from Jul–Oct, Cumbuco beach consistently ranked top 5 worldwide
-- Lagoa do Cauípe + Lagoa do Parnamirim: freshwater flatwater lagoons — perfect for progression
-- Buggy rides across the white dunes at sunset — the classic Cumbuco image
-- Capoeira on the beach at dusk
-- Lagosta (lobster) fresh from the boat — Ceará's signature seafood meal
-- Cumbuquinha Beach: quieter bay, calm water, palm-thatch restaurants
-- Fortaleza (30min): Mercado Central, Beira-Mar craft market, Iracema beach promenade — day trips when the wind drops
-- Lagoa Grande + Lagoa Barra Seca: buggy day trip into the interior dune lagoons
+- Stayed in a condo — home base
+- Short kitesurfing sessions from the condo
+- Occasional downwinders from the village center
 
 **Fly Fortaleza → São Paulo Aug 17**
 
@@ -132,11 +116,16 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 
 **Athens — 3 nights (Sep 1–3)**
 - Acropolis + Parthenon — arrive at opening, golden light before 9am
-- Monastiraki flea market + evening mezedes bars
 - Plaka + Anafiotika: whitewashed Cycladic enclave inside the city
-- National Archaeological Museum — world-class antiquities
-- Lycabettus Hill rooftop sunset over the whole city
-- Roof garden dinners with Acropolis views in Koukaki
+- Acropolis Museum
+- Monastiraki flea market + evening mezedes bars
+- Philopappos Hill
+- Pnyx
+- Ancient Agora + Roman Agora
+- National Garden
+- Panathenaic Stadium
+- Odyssey at the Thision Open Air Cinema
+- Took the X95 bus to the airport
 
 **Peloponnese road trip — 5 nights (Sep 4–8)**
 - Corinth Canal stop en route from Athens
