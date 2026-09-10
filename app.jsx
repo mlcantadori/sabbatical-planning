@@ -23,7 +23,6 @@
     const [selectedId, setSelectedId] = React.useState(null);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(null);
     const [focusKey, setFocusKey] = React.useState(0);
-    const [editing, setEditing] = React.useState(false);
     const isMobile = useIsMobile();
 
     const today = dayCounter(TODAY);
@@ -48,14 +47,14 @@
     const showDetail = view === 'map' && selectedId;
 
     return (
-      <div className={`app ${isMobile ? 'is-mobile' : ''} ${editing ? 'is-editing' : ''}`}>
+      <div className={`app ${isMobile ? 'is-mobile' : ''}`}>
         <header className="app-header">
           <div className="app-brand">
             <div className="app-brand-mark">Asia</div>
-            <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers · {store.getTotalDays()} days</div>
+            <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers</div>
           </div>
 
-          <div className="app-progress">
+          <div className="app-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
             <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
             <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
           </div>
@@ -66,11 +65,7 @@
             <button className={view === 'map' ? 'is-active' : ''} onClick={() => setView('map')}>
               <window.Icon.map size={12} /> {!isMobile && 'Map'}
             </button>
-            <button className={view === 'bookings' ? 'is-active' : ''} onClick={() => setView('bookings')}>{isMobile ? 'Book' : 'Bookings'}</button>
-            <button className={view === 'diving' ? 'is-active' : ''} onClick={() => setView('diving')}>{isMobile ? 'Dive' : 'Diving'}</button>
             <button className={view === 'budget' ? 'is-active' : ''} onClick={() => setView('budget')}>{isMobile ? '$' : 'Budget'}</button>
-            <button className={view === 'packing' ? 'is-active' : ''} onClick={() => setView('packing')}>{isMobile ? 'Pack' : 'Packing'}</button>
-            <button className={view === 'snapshots' ? 'is-active' : ''} onClick={() => setView('snapshots')}>{isMobile ? 'Ver' : 'Versions'}</button>
           </div>
         </header>
 
@@ -89,11 +84,6 @@
                 <window.Icon.list size={12} /> List
               </button>
             </div>
-            <button
-              className={`pill-btn ${editing ? 'is-active' : ''}`}
-              onClick={() => setEditing((e) => !e)}>
-              {editing ? 'Done' : 'Edit'}
-            </button>
           </div>
         )}
 
@@ -104,8 +94,6 @@
             <window.ChapterList
               selectedId={selectedId}
               onSelect={onSelectChapter}
-              editing={editing}
-              onToggleEdit={() => setEditing((e) => !e)}
             />
           )}
 
@@ -134,12 +122,6 @@
                 </div>
                 <div className="map-legend-action">
                   <button onClick={onReset}>Reset view</button>
-                  <button onClick={() => {
-                    if (confirm('Reset to the original itinerary? Your edits will be lost.')) {
-                      store.reset();
-                      onReset();
-                    }
-                  }}>Restore defaults</button>
                 </div>
               </div>
 
@@ -157,12 +139,11 @@
               selectedPlaceIdx={selectedPlaceIdx}
               onSelectPlace={onSelectPlace}
               onClose={onCloseDetail}
-              editing={editing}
             />
           )}
 
           {isBinder && (
-            <window.Binder activeTab={view} onSwitchTab={setView} onClose={() => setView('map')} />
+            <window.Binder onClose={() => setView('map')} />
           )}
         </div>
       </div>

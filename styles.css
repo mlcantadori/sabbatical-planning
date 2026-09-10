@@ -846,7 +846,8 @@ button {
   grid-template-columns: minmax(56px, auto) 1fr auto;
   gap: 12px;
   width: 100%;
-  padding: 12px 0;
+  padding: 12px 8px;
+  margin: 0 -8px;
   border: none;
   background: transparent;
   text-align: left;
@@ -856,14 +857,10 @@ button {
 }
 .place-row:hover {
   background: var(--paper-2);
-  margin: 0 -8px;
-  padding: 12px 8px;
   border-bottom: 1px dashed var(--rule);
 }
 .place-row.is-active {
   background: var(--paper-2);
-  margin: 0 -8px;
-  padding: 12px 8px;
 }
 .place-row-day {
   border-right: 1px solid var(--rule);
