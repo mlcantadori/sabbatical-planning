@@ -57,11 +57,13 @@ window.TRIP = (function () {
   };
 
   // ── Chapters ──
-  // Each entry: id, num, kind, country, flag, title, dates, days, theme,
+  // Each entry: id, kind, country, flag, title, dates, days, theme,
   // intro (poetic), tldr (condensed), weather, region, places[]
+  // NOTE: chapter numbers are NOT stored here — itinerary-store.js derives
+  // them from array order on load, so inserting/reordering is renumber-free.
   const chapters = [
     {
-      id: 'rio', num: 1, kind: 'chapter', region: 'americas',
+      id: 'rio', kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'Rio de Janeiro',
       start: '2026-06-21', end: '2026-07-20', days: 29,
       theme: 'Home base — mountains and diving certs',
@@ -75,7 +77,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'cumbuco', num: 2, kind: 'chapter', region: 'americas',
+      id: 'cumbuco', kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'Cumbuco',
       start: '2026-07-21', end: '2026-08-19', days: 29,
       theme: 'Condo base, short kite sessions, downwinders',
@@ -89,7 +91,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'saopaulo', num: 3, kind: 'chapter', region: 'americas',
+      id: 'saopaulo', kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'São Paulo',
       start: '2026-08-19', end: '2026-08-26', days: 7,
       theme: 'Metrópole cultural, gastronomia, despedida',
@@ -103,7 +105,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'toronto', num: 4, kind: 'chapter', region: 'americas',
+      id: 'toronto', kind: 'chapter', region: 'americas',
       country: 'Canada', flag: '🇨🇦', title: 'Toronto',
       start: '2026-08-27', end: '2026-09-01', days: 5,
       theme: 'Friends & family send-off before Europe',
@@ -117,7 +119,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'athens', num: 5, kind: 'chapter', region: 'mediterranean',
+      id: 'athens', kind: 'chapter', region: 'mediterranean',
       country: 'Greece', flag: '🇬🇷', title: 'Greece',
       start: '2026-09-01', end: '2026-09-21', days: 20,
       theme: 'Athens, Cretan trails, island-hopping the western Cyclades — 100% booked ✅',
@@ -145,7 +147,7 @@ window.TRIP = (function () {
       decisions: ['Crete replaced Naxos — superlative trails, authentic interior, cheaper; Heraklion dropped, Rethymno gets 3 nights with the direct seasonal ferry','Car rented in Chania (not Rethymno) — west-Crete day trips: Balos, Elafonisi, Therisos Gorge, Falasarna; Rethymno as car-free city base','Visited in Crete: Balos, Elafonisi, Therisos Gorge, Falasarna beach, Chania + Rethymno cities — other spots excluded','Folegandros kept as the un-hyped bet — fully walkable island','Milos→Athens flight discarded; bought ferry + buffer night solves the connection'],
     },
     {
-      id: 'turkey', num: 6, kind: 'chapter', region: 'crossroads',
+      id: 'turkey', kind: 'chapter', region: 'crossroads',
       country: 'Turkey', flag: '🇹🇷', title: 'Turkey',
       start: '2026-09-21', end: '2026-10-12', days: 21,
       theme: 'Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul',
@@ -167,7 +169,7 @@ window.TRIP = (function () {
       decisions: ['Göreme as the Cappadocia base — valleys, balloon logistics, Open Air Museum','Coastal loop by rental car (Alaçatı + Kaş) instead of Şirince/Pamukkale','Istanbul extended to 12 nights (Sep 30 – Oct 12), then Baku stopover Oct 13 to break IST → DEL','Stays until Izmir + flights until DEL locked'],
     },
     {
-      id: 'baku', num: 7, kind: 'chapter', region: 'crossroads',
+      id: 'baku', kind: 'chapter', region: 'crossroads',
       country: 'Azerbaijan', flag: '🇦🇿', title: 'Baku',
       start: '2026-10-12', end: '2026-10-14', days: 2,
       theme: 'Caspian layover between Istanbul and Delhi',
@@ -181,7 +183,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'india', num: 8, kind: 'chapter', region: 'himalaya',
+      id: 'india', kind: 'chapter', region: 'himalaya',
       country: 'India', flag: '🇮🇳', title: 'India',
       start: '2026-10-14', end: '2026-10-21', days: 7,
       theme: 'Sacred intensity, iconic monuments, Himalayan slow life',
@@ -200,7 +202,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'nepal', num: 9, kind: 'chapter', region: 'himalaya',
+      id: 'nepal', kind: 'chapter', region: 'himalaya',
       country: 'Nepal', flag: '🇳🇵', title: 'Nepal',
       start: '2026-10-21', end: '2026-11-10', days: 20,
       theme: 'Sacred roof of the world, physical peak, elemental beauty',
@@ -221,7 +223,7 @@ window.TRIP = (function () {
       booking: ['ACAP permit + TIMS card — on arrival in Kathmandu'],
     },
     {
-      id: 'japan-autumn', num: 10, kind: 'chapter', region: 'northeast',
+      id: 'japan-autumn', kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Autumn',
       start: '2026-11-10', end: '2026-11-30', days: 20,
       theme: 'Sacred refinement, koyo at peak, slow urban chapter',
@@ -239,7 +241,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'korea', num: 11, kind: 'chapter', region: 'northeast',
+      id: 'korea', kind: 'chapter', region: 'northeast',
       country: 'South Korea', flag: '🇰🇷', title: 'South Korea',
       start: '2026-11-30', end: '2026-12-24', days: 24,
       theme: 'Electric winter hearth, K-culture, food depth, slow traditional chapter',
@@ -261,7 +263,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'taiwan', num: 12, kind: 'chapter', region: 'northeast',
+      id: 'taiwan', kind: 'chapter', region: 'northeast',
       country: 'Taiwan', flag: '🇹🇼', title: 'Taiwan',
       start: '2026-12-24', end: '2027-01-12', days: 19,
       theme: 'Café culture, NYE fireworks, dramatic east coast',
@@ -279,7 +281,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'china-1', num: 13, kind: 'chapter', region: 'middle',
+      id: 'china-1', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 1',
       start: '2027-01-12', end: '2027-02-11', days: 30,
       theme: 'Imperial capital, global finance hub, future-tech frontier',
@@ -299,7 +301,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'hk', num: 14, kind: 'chapter', region: 'middle',
+      id: 'hk', kind: 'chapter', region: 'middle',
       country: 'Hong Kong', flag: '🇭🇰', title: 'Hong Kong',
       start: '2027-02-11', end: '2027-02-16', days: 5,
       theme: 'Neon city, dim sum, city recharge between China and Hakuba',
@@ -313,7 +315,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'japan-winter', num: 15, kind: 'chapter', region: 'northeast',
+      id: 'japan-winter', kind: 'chapter', region: 'northeast',
       country: 'Japan', flag: '🇯🇵', title: 'Japan — Winter',
       start: '2027-02-16', end: '2027-02-26', days: 10,
       theme: 'Powder snowboarding, mountain stillness, onsen',
@@ -331,7 +333,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'philippines', num: 16, kind: 'chapter', region: 'archipelago',
+      id: 'philippines', kind: 'chapter', region: 'archipelago',
       country: 'Philippines', flag: '🇵🇭', title: 'Philippines',
       start: '2027-02-26', end: '2027-03-19', days: 21,
       theme: 'WWII wreck diving, limestone islands, warm-up for Raja Ampat',
@@ -355,7 +357,7 @@ window.TRIP = (function () {
       booking: [],
     },
     {
-      id: 'indonesia-1', num: 17, kind: 'chapter', region: 'archipelago',
+      id: 'indonesia-1', kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia — Raja Ampat',
       start: '2027-03-19', end: '2027-04-01', days: 14,
       theme: 'The best diving on Earth — liveaboard deep dive',
@@ -375,7 +377,7 @@ window.TRIP = (function () {
       booking: ['Raja Ampat liveaboard — book by Oct 2025 (Mar 21–30 dates)'],
     },
     {
-      id: 'indonesia-2', num: 18, kind: 'chapter', region: 'archipelago',
+      id: 'indonesia-2', kind: 'chapter', region: 'archipelago',
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia — Nusa Penida · Komodo · Bali',
       start: '2027-04-01', end: '2027-04-18', days: 17,
       theme: 'Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block',
@@ -394,7 +396,7 @@ window.TRIP = (function () {
       diving: { sites: 12, type: 'Day dives + day boats', operators: 'Crystal Bay Dive (Nusa Penida); multiple operators in Labuan Bajo (Komodo)' },
     },
     {
-      id: 'borneo', num: 19, kind: 'chapter', region: 'rainforest',
+      id: 'borneo', kind: 'chapter', region: 'rainforest',
       country: 'Malaysia', flag: '🇲🇾', title: 'Borneo / Sabah',
       start: '2027-04-18', end: '2027-04-28', days: 10,
       theme: 'Indonesia visa reset + wildlife chapter',
@@ -415,7 +417,7 @@ window.TRIP = (function () {
       booking: ['Kinabatangan river lodge — book 2–3 months ahead; Sipadan permits by Nov 2026 if adding 3 extra days'],
     },
     {
-      id: 'singapore', num: 20, kind: 'chapter', region: 'isthmus',
+      id: 'singapore', kind: 'chapter', region: 'isthmus',
       country: 'Singapore', flag: '🇸🇬', title: 'Singapore',
       start: '2027-04-28', end: '2027-05-05', days: 7,
       theme: 'World-class food, modern wonder, city recharge',
@@ -429,7 +431,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'malaysia', num: 21, kind: 'chapter', region: 'isthmus',
+      id: 'malaysia', kind: 'chapter', region: 'isthmus',
       country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia',
       start: '2027-05-05', end: '2027-05-15', days: 10,
       theme: 'Urban intensity, street food capital, colonial slow life',
@@ -445,7 +447,7 @@ window.TRIP = (function () {
       ],
     },
     {
-      id: 'thailand', num: 22, kind: 'chapter', region: 'isthmus',
+      id: 'thailand', kind: 'chapter', region: 'isthmus',
       country: 'Thailand', flag: '🇹🇭', title: 'Thailand',
       start: '2027-05-15', end: '2027-05-29', days: 14,
       theme: 'Islands, reef diving, urban intensity, street food',
@@ -464,7 +466,7 @@ window.TRIP = (function () {
       diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on Koh Tao' },
     },
     {
-      id: 'china-2', num: 23, kind: 'chapter', region: 'middle',
+      id: 'china-2', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China — Block 2',
       start: '2027-05-29', end: '2027-06-18', days: 20,
       theme: 'Surreal landscapes, ancient empire, spring China',

@@ -79,6 +79,9 @@ window.STORE = (function () {
     }));
   }
   init();
+  // Chapter numbers always derive from array order — never from static data —
+  // so inserting/reordering chapters can't leave stale numbers behind.
+  renumber();
 
   function save() {
     try { localStorage.setItem(LS_KEY, JSON.stringify({ chapters })); } catch {}
