@@ -766,13 +766,85 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 ---
 
-## Budget Anchors
+## Budget — Full Trip Estimate
 
-**Expensive chapters:** Raja Ampat liveaboard, Hakuba lift passes + gear rental, Japan generally
-**Cheap anchors:** Nepal, India, Indonesia (outside dives), Malaysia, Philippines (outside dives)
-**Strategic splurges worth it:** Raja Ampat liveaboard, Hakuba snowboarding, one Kyoto ryokan night, Cappadocia cave hotel
+All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-Estimated: USD 48,000–60,000 for both (~140–175k BRL/person at current rates).
+**Grand total: ~USD 97,000 for two · ~USD 268/day · 362 days** (~R$252k per person at R$5.20)
+
+**Monthly run-rate: ~USD 4,100 / ~R$21,200 per person/month** (30.44-day months, all-in)
+
+| Bucket | USD | Share |
+|---|---|---|
+| Lodging (23 chapters) | 26,595 | 27% |
+| Food (23 chapters) | 20,125 | 21% |
+| Activities & diving | 20,310 | 21% |
+| Inter-chapter flights | 10,070 | 10% |
+| Local transport | 10,115 | 10% |
+| Insurance + eSIMs/sundries | 2,150 | 2% |
+| Visas & park fees | 385 | <1% |
+| Contingency (8%) | 7,180 | 7% |
+
+**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
+
+### Per-chapter breakdown (couple)
+
+| # | Chapter | Days | $/day | Total | Key drivers |
+|---|---|---|---|---|---|
+| 1 | Rio de Janeiro | 29 | 158 | 4,580 | Airbnb R$7,000 actual (~$1,350) · trail R$4,000 + certs R$5,000 actual |
+| 2 | Cumbuco | 29 | 129 | 3,750 | Airbnb actual $1,900/mo · own kite gear |
+| 3 | São Paulo | 7 | 124 | 870 | Airbnb R$1,400 actual (~$270) · metro/Uber + farewell dinner |
+| 4 | Toronto | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
+| 5 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
+| 6 | Türkiye | 21 | 237 | 4,980 | Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 |
+| 7 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
+| 8 | India | 7 | 163 | 1,140 | Trains ~$100 · Taj/forts/boats ~$170 · Parmarth yoga ~$150 |
+| 9 | Nepal | 20 | 135 | 2,690 | Trek $2,000 locked · KTM/Pokhara hotels + food off-trek |
+| 10 | Japan — Autumn | 20 | 252 | 5,030 | Business hotels ~$125/n · Tokyo–Osaka–Kyoto rail · Nikko/Nara |
+| 11 | South Korea | 24 | 239 | 5,740 | ~$125/n hotels · KTX Seoul–Busan + buses · DMZ tour |
+| 12 | Taiwan | 19 | 179 | 3,395 | ~$95/n · Hualien/Alishan trains · Taipei 101 + museums |
+| 13 | China Block 1 | 30 | 173 | 5,200 | ~$85/n · Beijing–Shanghai + Shanghai–Shenzhen bullets ~$535 |
+| 14 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
+| 15 | Japan — Winter | 10 | 439 | 4,390 | Valley 7d pass ~$930 + full rental ~$950 · buses |
+| 16 | Philippines | 21 | 191 | 4,015 | Coron 4 dive-days ~$760 · Malapascua ~$160 · island tours ~$210 |
+| 17 | Raja Ampat | 14 | 713 | 9,980 | Liveaboard $8,400 locked · Sorong flights ~$1,200 |
+| 18 | Nusa Penida · Komodo · Bali | 17 | 209 | 3,560 | Komodo 3D2N boat ~$440 + park ~$80 · dives ~$570 · Batur ~$120 |
+| 19 | Borneo / Sabah | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
+| 20 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
+| 21 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
+| 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
+| 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
+
+Chapters subtotal: **$77,530** · 361 days.
+
+### Inter-chapter flights (couple)
+
+| Route | USD | Status |
+|---|---|---|
+| Brazil domestic (GIG→FOR→GRU) | 750 | Estimate |
+| GRU → Toronto → Athens | 1,700 | Bought ✅ |
+| Athens → Cappadocia via IST | 500 | Bought ✅ (est.) |
+| Istanbul → Baku → Delhi | 1,000 | Bought ✅ (est. ~$500pp) |
+| Varanasi → Kathmandu (direct) | 360 | ~$180pp Buddha Air |
+| Kathmandu/Pokhara → Tokyo | 1,100 | Estimate ~$550pp |
+| Osaka → Seoul | 400 | Estimate |
+| Seoul → Taipei | 500 | Estimate |
+| Taipei → Shanghai | 500 | Estimate |
+| Hong Kong → Osaka | 400 | Estimate, LCC |
+| Tokyo/Nagoya → Manila | 560 | Estimate |
+| Manila/Cebu → Sorong | 700 | Estimate |
+| Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
+| Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
+
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,750 + 8% contingency $7,180 = **~$97,000**.
+
+### Assumptions & levers
+
+- China entries assume the 30-day visa-free policy for Brazil holds — otherwise add ~$300 for two visas.
+- Own kite gear in Cumbuco; mask + dive computer owned; snowboard kit rented in Hakuba.
+- Lodging is paid everywhere except Toronto (friend's place); monthly Airbnb rates in Rio/Cumbuco beat nightly prices.
+- Diving is ~$12k of the total — fewer Coron/Komodo/Tao dive days saves $1,500+ fast.
+- Inter-chapter flights are advance one-way fares; peak-season spikes are what the contingency is for.
 
 ---
 

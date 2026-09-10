@@ -795,41 +795,169 @@
   }
 
   function BudgetView() {
+    const store = useStore();
+    const fmt$ = (n) => 'USD ' + Math.round(n).toLocaleString('en-US');
+    const CATS = [
+      ['lodging', 'Lodging'],
+      ['food', 'Food'],
+      ['transport', 'Local transport'],
+      ['activities', 'Activities & diving'],
+      ['fees', 'Visas & park fees'],
+    ];
+    const titleById = Object.fromEntries(store.getChapters().map((c) => [c.id, c.title]));
+    const rowTotal = (r) => CATS.reduce((s, [k]) => s + (r[k] || 0), 0);
+    const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
+    const chTotal = budget.chapters.reduce((s, r) => s + rowTotal(r), 0);
+    const flightsTotal = budget.flights.reduce((s, f) => s + f.cost, 0);
+    const extrasTotal = budget.extras.reduce((s, e) => s + e.cost, 0);
+    const subtotal = chTotal + flightsTotal + extrasTotal;
+    const contingency = Math.round(subtotal * budget.contingencyPct / 100);
+    const grand = subtotal + contingency;
+    const perDay = Math.round(grand / totalDays);
+    const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
+    const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
+    // Sortable per-chapter table: click any header to sort asc/desc.
+    const COLS = [
+      ['idx', '#'],
+      ['title', 'Chapter'],
+      ['days', 'd'],
+      ['perDay', '$/d'],
+      ['lodging', 'Lodg.'],
+      ['food', 'Food'],
+      ['transport', 'Trans.'],
+      ['activities', 'Activ.'],
+      ['fees', 'Fees'],
+      ['total', 'Total'],
+    ];
+    const [sortKey, setSortKey] = React.useState('idx');
+    const [sortDir, setSortDir] = React.useState(1);
+    const rows = budget.chapters.map((r, i) => ({
+      ...r, idx: i + 1, title: titleById[r.id] || r.id,
+      total: rowTotal(r), perDay: rowTotal(r) / r.days,
+    }));
+    const sorted = [...rows].sort((a, b) => {
+      const va = a[sortKey], vb = b[sortKey];
+      const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
+      return cmp * sortDir;
+    });
+    const toggleSort = (k) => {
+      if (k === sortKey) setSortDir((d) => -d);
+      else { setSortKey(k); setSortDir(1); }
+    };
+    const pct = (n) => Math.round(n / grand * 100) + '%';
     return (
       <div className="binder-pane">
         <div className="binder-pane-head">
           <div>
             <div className="kicker">§ Money</div>
-            <h2 className="binder-pane-title">Budget anchors</h2>
-            <p className="binder-pane-sub">Where the money goes and what's worth the splurge.</p>
+            <h2 className="binder-pane-title">Budget</h2>
+            <p className="binder-pane-sub">{budget.basis}. Totals compute from the lines below — nothing hardcoded.</p>
           </div>
         </div>
         <div className="budget-hero">
-          <div className="budget-hero-big">{budget.estimate}</div>
-          <div className="budget-hero-sub">{budget.inBRL}</div>
-        </div>
-        <div className="budget-grid">
-          <BudgetCard title="Expensive chapters" items={budget.expensive} tone="warn" />
-          <BudgetCard title="Cheap anchors" items={budget.cheap} tone="cool" />
-          <BudgetCard title="Strategic splurges" items={budget.splurges} tone="neutral" bordered />
+          <div className="budget-hero-big">{fmt$(grand)} for two</div>
+          <div className="budget-hero-sub">{fmt$(perDay)}/day · {totalDays} days · {budget.inBRL}</div>
+          <div className="budget-hero-sub">≈ ${perPersonMonth.toLocaleString('en-US')} / R${perPersonMonthBRL.toLocaleString('en-US')} per person/month</div>
         </div>
 
-        {budget.chapterAnchors && budget.chapterAnchors.length > 0 && (
-          <>
-            <SectionHead num="02" title="Chapter anchors" small />
-            {budget.chapterAnchors.map((ca, i) => (
-              <div key={i} className="budget-hero" style={{ marginBottom: 16 }}>
-                <div>
-                  <div className="budget-hero-big" style={{ fontSize: '1.6rem' }}>{ca.title}</div>
-                  <div className="budget-hero-sub">{ca.total} · {ca.sub}</div>
-                  <ul className="alert-list" style={{ marginTop: 12 }}>
-                    {ca.items.map((it, j) => <li key={j}>{it}</li>)}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </>
-        )}
+        <SectionHead num="01" title="Where it goes" small />
+        <div className="budget-grid">
+          {CATS.map(([k, label]) => (
+            <BudgetCard key={k} title={label} items={[fmt$(catTotals[k]), pct(catTotals[k]) + ' of trip']} tone="neutral" />
+          ))}
+          <BudgetCard title="Inter-chapter flights" items={[fmt$(flightsTotal), pct(flightsTotal) + ' of trip']} tone="warn" />
+          <BudgetCard title="Insurance & extras" items={[fmt$(extrasTotal), pct(extrasTotal) + ' of trip']} tone="cool" />
+          <BudgetCard title={`Contingency ${budget.contingencyPct}%`} items={[fmt$(contingency), 'peak fares, FX, surprises']} tone="neutral" bordered />
+        </div>
+
+        <SectionHead num="02" title="Per chapter" small />
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+            <thead>
+              <tr style={{ textAlign: 'left', opacity: 0.65 }}>
+                {COLS.map(([k, label]) => (
+                  <th key={k} onClick={() => toggleSort(k)}
+                    style={{ padding: '6px 8px 6px 0', cursor: 'pointer', whiteSpace: 'nowrap', textAlign: k === 'total' ? 'right' : 'left' }}>
+                    {label}{sortKey === k ? (sortDir === 1 ? ' ▲' : ' ▼') : ''}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {sorted.map((r) => (
+                <tr key={r.id} style={{ borderTop: '1px solid rgba(0,0,0,.08)' }} title={r.note}>
+                  <td style={{ opacity: 0.55 }}>{r.idx}</td>
+                  <td style={{ padding: '6px 8px 6px 0', whiteSpace: 'nowrap' }}>{r.title}</td>
+                  <td>{r.days}</td>
+                  <td>{fmt$(r.perDay).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.lodging).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.food).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.transport).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.activities).replace('USD ', '$')}</td>
+                  <td>{fmt$(r.fees).replace('USD ', '$')}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(r.total)}</td>
+                </tr>
+              ))}
+              <tr style={{ borderTop: '2px solid rgba(0,0,0,.2)', fontWeight: 700 }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>Chapters</td>
+                <td>{budget.chapters.reduce((s, r) => s + r.days, 0)}</td>
+                <td></td>
+                <td style={{ textAlign: 'right' }}>{fmt$(chTotal)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="binder-pane-sub">Click a column header to sort ▲▼ · hover a row for its note. $/d is per couple.</p>
+
+        <SectionHead num="03" title="From chapters to grand total" small />
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+            <tbody>
+              {[
+                ['Chapters subtotal (23 chapters)', chTotal, chTotal],
+                ['+ Inter-chapter flights (14 legs)', flightsTotal, chTotal + flightsTotal],
+                ['+ Insurance & extras', extrasTotal, subtotal],
+              ].map(([label, amount, running], i) => (
+                <tr key={i} style={{ borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)' }}>
+                  <td style={{ padding: '6px 8px 6px 0' }}>{label}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(amount)}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap', opacity: 0.55 }}>= {fmt$(running)}</td>
+                </tr>
+              ))}
+              <tr style={{ borderTop: '1px solid rgba(0,0,0,.08)' }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>= Subtotal</td>
+                <td></td>
+                <td style={{ textAlign: 'right', whiteSpace: 'nowrap', fontWeight: 700 }}>{fmt$(subtotal)}</td>
+              </tr>
+              <tr style={{ borderTop: '1px solid rgba(0,0,0,.08)' }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>+ Contingency {budget.contingencyPct}%</td>
+                <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(contingency)}</td>
+                <td></td>
+              </tr>
+              <tr style={{ borderTop: '2px solid rgba(0,0,0,.2)', fontWeight: 700 }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>= Grand total</td>
+                <td></td>
+                <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(grand)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <SectionHead num="04" title="Locked costs" small />
+        <ul className="alert-list">
+          {budget.locked.map((l, i) => <li key={i}><strong>{l.item} — {fmt$(l.cost)}.</strong> {l.note}</li>)}
+        </ul>
+
+        <SectionHead num="05" title="Key flights (couple)" small />
+        <ul className="alert-list">
+          {budget.flights.map((f, i) => <li key={i}><strong>{f.route} — {fmt$(f.cost)}.</strong> {f.note}</li>)}
+        </ul>
+
+        <SectionHead num="06" title="Assumptions & levers" small />
+        <ul className="alert-list">
+          {budget.assumptions.map((a, i) => <li key={i}>{a}</li>)}
+          {budget.levers.map((l, i) => <li key={'l' + i}>{l}</li>)}
+        </ul>
       </div>
     );
   }

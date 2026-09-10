@@ -988,6 +988,45 @@
     }, d.notes))))));
   }
   function BudgetView() {
+    const store = useStore();
+    const fmt$ = n => 'USD ' + Math.round(n).toLocaleString('en-US');
+    const CATS = [['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Local transport'], ['activities', 'Activities & diving'], ['fees', 'Visas & park fees']];
+    const titleById = Object.fromEntries(store.getChapters().map(c => [c.id, c.title]));
+    const rowTotal = r => CATS.reduce((s, [k]) => s + (r[k] || 0), 0);
+    const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
+    const chTotal = budget.chapters.reduce((s, r) => s + rowTotal(r), 0);
+    const flightsTotal = budget.flights.reduce((s, f) => s + f.cost, 0);
+    const extrasTotal = budget.extras.reduce((s, e) => s + e.cost, 0);
+    const subtotal = chTotal + flightsTotal + extrasTotal;
+    const contingency = Math.round(subtotal * budget.contingencyPct / 100);
+    const grand = subtotal + contingency;
+    const perDay = Math.round(grand / totalDays);
+    const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
+    const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
+    // Sortable per-chapter table: click any header to sort asc/desc.
+    const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'd'], ['perDay', '$/d'], ['lodging', 'Lodg.'], ['food', 'Food'], ['transport', 'Trans.'], ['activities', 'Activ.'], ['fees', 'Fees'], ['total', 'Total']];
+    const [sortKey, setSortKey] = React.useState('idx');
+    const [sortDir, setSortDir] = React.useState(1);
+    const rows = budget.chapters.map((r, i) => ({
+      ...r,
+      idx: i + 1,
+      title: titleById[r.id] || r.id,
+      total: rowTotal(r),
+      perDay: rowTotal(r) / r.days
+    }));
+    const sorted = [...rows].sort((a, b) => {
+      const va = a[sortKey],
+        vb = b[sortKey];
+      const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
+      return cmp * sortDir;
+    });
+    const toggleSort = k => {
+      if (k === sortKey) setSortDir(d => -d);else {
+        setSortKey(k);
+        setSortDir(1);
+      }
+    };
+    const pct = n => Math.round(n / grand * 100) + '%';
     return /*#__PURE__*/React.createElement("div", {
       className: "binder-pane"
     }, /*#__PURE__*/React.createElement("div", {
@@ -996,54 +1035,205 @@
       className: "kicker"
     }, "\xA7 Money"), /*#__PURE__*/React.createElement("h2", {
       className: "binder-pane-title"
-    }, "Budget anchors"), /*#__PURE__*/React.createElement("p", {
+    }, "Budget"), /*#__PURE__*/React.createElement("p", {
       className: "binder-pane-sub"
-    }, "Where the money goes and what's worth the splurge."))), /*#__PURE__*/React.createElement("div", {
+    }, budget.basis, ". Totals compute from the lines below \u2014 nothing hardcoded."))), /*#__PURE__*/React.createElement("div", {
       className: "budget-hero"
     }, /*#__PURE__*/React.createElement("div", {
       className: "budget-hero-big"
-    }, budget.estimate), /*#__PURE__*/React.createElement("div", {
+    }, fmt$(grand), " for two"), /*#__PURE__*/React.createElement("div", {
       className: "budget-hero-sub"
-    }, budget.inBRL)), /*#__PURE__*/React.createElement("div", {
+    }, fmt$(perDay), "/day \xB7 ", totalDays, " days \xB7 ", budget.inBRL), /*#__PURE__*/React.createElement("div", {
+      className: "budget-hero-sub"
+    }, "\u2248 $", perPersonMonth.toLocaleString('en-US'), " / R$", perPersonMonthBRL.toLocaleString('en-US'), " per person/month")), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "01",
+      title: "Where it goes",
+      small: true
+    }), /*#__PURE__*/React.createElement("div", {
       className: "budget-grid"
-    }, /*#__PURE__*/React.createElement(BudgetCard, {
-      title: "Expensive chapters",
-      items: budget.expensive,
+    }, CATS.map(([k, label]) => /*#__PURE__*/React.createElement(BudgetCard, {
+      key: k,
+      title: label,
+      items: [fmt$(catTotals[k]), pct(catTotals[k]) + ' of trip'],
+      tone: "neutral"
+    })), /*#__PURE__*/React.createElement(BudgetCard, {
+      title: "Inter-chapter flights",
+      items: [fmt$(flightsTotal), pct(flightsTotal) + ' of trip'],
       tone: "warn"
     }), /*#__PURE__*/React.createElement(BudgetCard, {
-      title: "Cheap anchors",
-      items: budget.cheap,
+      title: "Insurance & extras",
+      items: [fmt$(extrasTotal), pct(extrasTotal) + ' of trip'],
       tone: "cool"
     }), /*#__PURE__*/React.createElement(BudgetCard, {
-      title: "Strategic splurges",
-      items: budget.splurges,
+      title: `Contingency ${budget.contingencyPct}%`,
+      items: [fmt$(contingency), 'peak fares, FX, surprises'],
       tone: "neutral",
       bordered: true
-    })), budget.chapterAnchors && budget.chapterAnchors.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
+    })), /*#__PURE__*/React.createElement(SectionHead, {
       num: "02",
-      title: "Chapter anchors",
+      title: "Per chapter",
       small: true
-    }), budget.chapterAnchors.map((ca, i) => /*#__PURE__*/React.createElement("div", {
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        overflowX: 'auto'
+      }
+    }, /*#__PURE__*/React.createElement("table", {
+      style: {
+        width: '100%',
+        borderCollapse: 'collapse',
+        fontSize: 12
+      }
+    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+      style: {
+        textAlign: 'left',
+        opacity: 0.65
+      }
+    }, COLS.map(([k, label]) => /*#__PURE__*/React.createElement("th", {
+      key: k,
+      onClick: () => toggleSort(k),
+      style: {
+        padding: '6px 8px 6px 0',
+        cursor: 'pointer',
+        whiteSpace: 'nowrap',
+        textAlign: k === 'total' ? 'right' : 'left'
+      }
+    }, label, sortKey === k ? sortDir === 1 ? ' ▲' : ' ▼' : '')))), /*#__PURE__*/React.createElement("tbody", null, sorted.map(r => /*#__PURE__*/React.createElement("tr", {
+      key: r.id,
+      style: {
+        borderTop: '1px solid rgba(0,0,0,.08)'
+      },
+      title: r.note
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        opacity: 0.55
+      }
+    }, r.idx), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0',
+        whiteSpace: 'nowrap'
+      }
+    }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.food).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
+      }
+    }, fmt$(r.total)))), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '2px solid rgba(0,0,0,.2)',
+        fontWeight: 700
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "Chapters"), /*#__PURE__*/React.createElement("td", null, budget.chapters.reduce((s, r) => s + r.days, 0)), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right'
+      }
+    }, fmt$(chTotal)))))), /*#__PURE__*/React.createElement("p", {
+      className: "binder-pane-sub"
+    }, "Click a column header to sort \u25B2\u25BC \xB7 hover a row for its note. $/d is per couple."), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "03",
+      title: "From chapters to grand total",
+      small: true
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        overflowX: 'auto'
+      }
+    }, /*#__PURE__*/React.createElement("table", {
+      style: {
+        width: '100%',
+        borderCollapse: 'collapse',
+        fontSize: 12
+      }
+    }, /*#__PURE__*/React.createElement("tbody", null, [['Chapters subtotal (23 chapters)', chTotal, chTotal], ['+ Inter-chapter flights (14 legs)', flightsTotal, chTotal + flightsTotal], ['+ Insurance & extras', extrasTotal, subtotal]].map(([label, amount, running], i) => /*#__PURE__*/React.createElement("tr", {
       key: i,
-      className: "budget-hero",
       style: {
-        marginBottom: 16
+        borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)'
       }
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-big",
+    }, /*#__PURE__*/React.createElement("td", {
       style: {
-        fontSize: '1.6rem'
+        padding: '6px 8px 6px 0'
       }
-    }, ca.title), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-sub"
-    }, ca.total, " \xB7 ", ca.sub), /*#__PURE__*/React.createElement("ul", {
-      className: "alert-list",
+    }, label), /*#__PURE__*/React.createElement("td", {
       style: {
-        marginTop: 12
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
       }
-    }, ca.items.map((it, j) => /*#__PURE__*/React.createElement("li", {
-      key: j
-    }, it))))))));
+    }, fmt$(amount)), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap',
+        opacity: 0.55
+      }
+    }, "= ", fmt$(running)))), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '1px solid rgba(0,0,0,.08)'
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "= Subtotal"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap',
+        fontWeight: 700
+      }
+    }, fmt$(subtotal))), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '1px solid rgba(0,0,0,.08)'
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "+ Contingency ", budget.contingencyPct, "%"), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
+      }
+    }, fmt$(contingency)), /*#__PURE__*/React.createElement("td", null)), /*#__PURE__*/React.createElement("tr", {
+      style: {
+        borderTop: '2px solid rgba(0,0,0,.2)',
+        fontWeight: 700
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: '6px 8px 6px 0'
+      }
+    }, "= Grand total"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      style: {
+        textAlign: 'right',
+        whiteSpace: 'nowrap'
+      }
+    }, fmt$(grand)))))), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "04",
+      title: "Locked costs",
+      small: true
+    }), /*#__PURE__*/React.createElement("ul", {
+      className: "alert-list"
+    }, budget.locked.map((l, i) => /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, /*#__PURE__*/React.createElement("strong", null, l.item, " \u2014 ", fmt$(l.cost), "."), " ", l.note))), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "05",
+      title: "Key flights (couple)",
+      small: true
+    }), /*#__PURE__*/React.createElement("ul", {
+      className: "alert-list"
+    }, budget.flights.map((f, i) => /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, /*#__PURE__*/React.createElement("strong", null, f.route, " \u2014 ", fmt$(f.cost), "."), " ", f.note))), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "06",
+      title: "Assumptions & levers",
+      small: true
+    }), /*#__PURE__*/React.createElement("ul", {
+      className: "alert-list"
+    }, budget.assumptions.map((a, i) => /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, a)), budget.levers.map((l, i) => /*#__PURE__*/React.createElement("li", {
+      key: 'l' + i
+    }, l))));
   }
   function BudgetCard({
     title,
