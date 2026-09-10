@@ -561,7 +561,7 @@ window.TRIP = (function () {
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
       { id: 'turkey', days: 21, lodging: 1900, food: 1470, transport: 710, activities: 780, fees: 120, note: 'Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 · e-visa' },
-      { id: 'baku', days: 2, lodging: 160, food: 140, transport: 60, activities: 30, fees: 50, note: 'Mid hotel 2n · ASAN e-visa · walkable old city' },
+      { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
       { id: 'india', days: 7, lodging: 270, food: 315, transport: 200, activities: 300, fees: 55, note: 'Trains ~$100 · Taj + forts + boats ~$110 · Parmarth yoga ~$150 · e-visa' },
       { id: 'nepal', days: 20, lodging: 245, food: 245, transport: 100, activities: 2000, fees: 100, note: 'Trek $2,000 locked · KTM/Pokhara hotels + food off-trek · 30d visa' },
       { id: 'japan-autumn', days: 20, lodging: 2530, food: 1800, transport: 550, activities: 150, fees: 0, note: 'Business hotels ~$125/n · Tokyo–Osaka–Kyoto rail · Nikko/Nara day trips' },
@@ -604,14 +604,14 @@ window.TRIP = (function () {
       'All figures USD for two; mid-range with strategic splurges, researched Oct 2026 prices',
       'China entries assume the 30-day visa-free policy for Brazil holds — otherwise add ~$300 for two visas',
       'Own kite gear in Cumbuco; mask + dive computer owned; snowboard kit rented in Hakuba',
-      'Toronto is the only free stay — lodging is paid in all other 22 chapters',
+      'Free stays: Toronto (friends) and Azerbaijan (stopover program) — lodging paid elsewhere',
       'Inter-chapter flights are one-way advance fares; peak-season spikes are what the 8% contingency is for',
     ],
     levers: [
       'Diving is ~$12k of the total — fewer Coron/Komodo/Tao dive days saves $1,500+ fast',
       'Japan + Korea are ~$12k combined — business hotels + konbini breakfasts already assumed; ryokan splurge kept to zero',
       'Shoulder-season flights (booked early) and slow-travel lodging (weekly rates) are the two biggest structural savers',
-      'Only Toronto avoids lodging costs; monthly rates in Rio/Cumbuco beat nightly prices',
+      'Toronto + Azerbaijan avoid lodging costs; monthly rates in Rio/Cumbuco beat nightly prices',
     ],
   };
 
