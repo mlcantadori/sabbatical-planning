@@ -343,6 +343,102 @@ button {
   to { stroke-dashoffset: -30; }
 }
 
+/* 3D globe (Three.js satellite Earth) */
+.map-container canvas { display: block; }
+/* 2D / 3D mode toggle */
+.eq-mode {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 500;
+  background: var(--paper);
+  box-shadow: var(--shadow-1);
+  border-radius: 999px;
+}
+/* Flighty-style dark globe theme */
+.map-container.is-globe { background: #0a141c; }
+/* HTML pin overlay for the globe */
+.eq-pins {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.eq-pin-wrap {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.eq-pin-wrap .map-pin,
+.eq-pin-wrap .map-place {
+  width: 0;
+  height: 0;
+  pointer-events: auto;
+}
+/* Country labels (3D globe) */
+.eq-country {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  font-family: var(--f-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 230, 0.72);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.eq-popup {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 16px));
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: var(--shadow-1);
+  padding: 12px 14px;
+  z-index: 600;
+  pointer-events: auto;
+}
+.eq-zoom {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.eq-zoom button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.eq-zoom button + button { border-top: 1px solid var(--rule); }
+.eq-zoom button:hover { background: var(--paper-2); }
+.eq-attr {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 500;
+  background: rgba(244, 239, 230, 0.85);
+  font-family: var(--f-mono);
+  font-size: 9px;
+  color: var(--ink-3);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
 /* Pin styles */
 .map-pin-wrap {
   background: transparent !important;

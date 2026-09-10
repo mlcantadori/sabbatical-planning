@@ -29,6 +29,13 @@
     const [selectedId, setSelectedId] = React.useState(null);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(null);
     const [focusKey, setFocusKey] = React.useState(0);
+    const [mapMode, setMapMode] = React.useState(() => {
+      try {
+        return localStorage.getItem('map-mode') || '2d';
+      } catch {
+        return '2d';
+      }
+    });
     const isMobile = useIsMobile();
     const today = dayCounter(TODAY);
     const isBinder = view !== 'map';
@@ -113,13 +120,37 @@
       onSelect: onSelectChapter
     }), (!isMobile || mobileMode === 'map') && /*#__PURE__*/React.createElement("div", {
       className: "map-stage"
-    }, /*#__PURE__*/React.createElement(window.MapView, {
+    }, mapMode === 'globe' ? /*#__PURE__*/React.createElement(window.GlobeView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
       onSelectChapter: onSelectChapter,
       onSelectPlace: onSelectPlace,
       focusKey: focusKey === 0 ? null : 'world'
-    }), selectedId && /*#__PURE__*/React.createElement("div", {
+    }) : /*#__PURE__*/React.createElement(window.MapView, {
+      selectedId: selectedId,
+      selectedPlaceIdx: selectedPlaceIdx,
+      onSelectChapter: onSelectChapter,
+      onSelectPlace: onSelectPlace,
+      focusKey: focusKey === 0 ? null : 'world'
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "mobile-mode-toggle eq-mode"
+    }, /*#__PURE__*/React.createElement("button", {
+      className: mapMode === 'map' ? 'is-active' : '',
+      onClick: () => {
+        setMapMode('map');
+        try {
+          localStorage.setItem('map-mode', 'map');
+        } catch {}
+      }
+    }, "Map"), /*#__PURE__*/React.createElement("button", {
+      className: mapMode === 'globe' ? 'is-active' : '',
+      onClick: () => {
+        setMapMode('globe');
+        try {
+          localStorage.setItem('map-mode', 'globe');
+        } catch {}
+      }
+    }, "Globe")), selectedId && /*#__PURE__*/React.createElement("div", {
       className: "map-reset"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset

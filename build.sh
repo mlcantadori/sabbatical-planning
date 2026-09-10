@@ -9,7 +9,7 @@ node -e "
 const { transformSync } = require('@babel/core');
 const fs = require('fs');
 const dir = './';
-const files = ['shared', 'map-view', 'panels', 'app'];
+const files = ['shared', 'map-view', 'globe-view', 'panels', 'app'];
 const opts = {
   presets: [['@babel/preset-env', { targets: 'last 2 Chrome versions' }], ['@babel/preset-react', { runtime: 'classic' }]],
   compact: false,
