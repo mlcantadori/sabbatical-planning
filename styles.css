@@ -119,20 +119,16 @@ button {
   flex: 0 1 220px;
   min-width: 0;
 }
-.app-progress-label {
-  font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  white-space: nowrap;
-}
 .app-progress-bar {
   flex: 1;
   height: 3px;
   background: var(--rule);
   position: relative;
   overflow: hidden;
+  /* The brand text shares a baseline with the 22px mark, so it sits low
+     in the 60px header while this bar is dead-centered — nudge the bar
+     down to the text's visual center. */
+  transform: translateY(2px);
 }
 .app-progress-bar > div {
   position: absolute;
@@ -1728,15 +1724,24 @@ button {
 }
 
 @media (max-width: 880px) {
-  .app { grid-template-rows: 54px auto 1fr; }
+  .app { grid-template-rows: 54px auto auto 1fr; }
   .mobile-mode { display: flex; }
+
+  /* Progress strip below the header on mobile (the in-header one stays hidden) */
+  .mobile-progress {
+    display: flex;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
 
   .app-header { padding: 0 14px; gap: 10px; }
   .app-brand-mark { font-size: 18px; }
   .app-nav { padding: 2px; gap: 0; }
   .app-nav button { padding: 5px 8px; font-size: 9px; gap: 3px; }
 
-  /* Single-column on mobile — chapter list OR map fills the space */
+  /* Single-column on mobile — chapter list OR map fills the space.
+     DOM order matches visual order, so default auto-placement is correct. */
   .app-main, .app-main.no-detail {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

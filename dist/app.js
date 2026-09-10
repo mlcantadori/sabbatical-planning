@@ -58,12 +58,10 @@
       className: "app-brand-mark"
     }, "Asia"), /*#__PURE__*/React.createElement("div", {
       className: "app-brand-meta"
-    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers")), /*#__PURE__*/React.createElement("div", {
+    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers \xB7 Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
       className: "app-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-progress-label"
-    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays()), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "app-progress-bar"
     }, /*#__PURE__*/React.createElement("div", {
       style: {
@@ -83,7 +81,18 @@
     }), " ", !isMobile && 'Map'), /*#__PURE__*/React.createElement("button", {
       className: view === 'budget' ? 'is-active' : '',
       onClick: () => setView('budget')
-    }, isMobile ? '$' : 'Budget'))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
+    }, isMobile ? '$' : 'Budget'))), isMobile && /*#__PURE__*/React.createElement("div", {
+      className: "app-progress mobile-progress",
+      title: `Day ${today.n} of ${store.getTotalDays()}`
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "app-progress-label"
+    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays()), /*#__PURE__*/React.createElement("div", {
+      className: "app-progress-bar"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: `${today.n / Math.max(1, store.getTotalDays()) * 100}%`
+      }
+    }))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode"
     }, /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode-toggle"
@@ -110,29 +119,7 @@
       onSelectChapter: onSelectChapter,
       onSelectPlace: onSelectPlace,
       focusKey: focusKey === 0 ? null : 'world'
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "map-legend"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "map-legend-title"
-    }, /*#__PURE__*/React.createElement("span", null, "Route \xB7 ", store.getChapters().filter(c => c.kind === 'chapter').length, " chapters"), /*#__PURE__*/React.createElement("span", {
-      style: {
-        opacity: 0.4
-      }
-    }, "\u25BE")), /*#__PURE__*/React.createElement("div", {
-      className: "map-legend-items"
-    }, Object.entries(window.TRIP.REGIONS).map(([k, r]) => /*#__PURE__*/React.createElement("div", {
-      key: k,
-      className: "map-legend-item"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "map-legend-swatch",
-      style: {
-        background: r.accent
-      }
-    }), /*#__PURE__*/React.createElement("span", null, r.name)))), /*#__PURE__*/React.createElement("div", {
-      className: "map-legend-action"
-    }, /*#__PURE__*/React.createElement("button", {
-      onClick: onReset
-    }, "Reset view"))), selectedId && /*#__PURE__*/React.createElement("div", {
+    }), selectedId && /*#__PURE__*/React.createElement("div", {
       className: "map-reset"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset

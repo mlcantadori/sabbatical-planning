@@ -209,7 +209,19 @@
       });
       layersRef.current.places.forEach(m => m.remove());
       layersRef.current.places = [];
-      if (!selectedId) return;
+
+      // No chapter selected (e.g. detail panel just closed): the map column
+      // widens, so force Leaflet to re-measure or tiles won't fill the freed
+      // area and a grey box remains where the panel was.
+      if (!selectedId) {
+        setTimeout(() => {
+          if (mapRef.current) mapRef.current.invalidateSize();
+        }, 50);
+        setTimeout(() => {
+          if (mapRef.current) mapRef.current.invalidateSize();
+        }, 350);
+        return;
+      }
       const ch = chapters.find(c => c.id === selectedId);
       if (!ch) return;
       const placeCoords = [];
