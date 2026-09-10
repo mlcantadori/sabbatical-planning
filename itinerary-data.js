@@ -162,7 +162,7 @@ window.TRIP = (function () {
           highlights: ['Drive south down the coast from Alaçatı','Kaputaş Beach','Lycian Way treks from town','Stays Kaş Sep 27–30 booked ✅','Sep 30: ~5.5h drive Kaş → Izmir (ADB), drop the car'] },
         { name: 'Istanbul', days: 12, query: 'Sultanahmet, Istanbul',
           highlights: ['Sep 30 evening flight ADB → Istanbul (~1h15), bought ✅','Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet without rushing','Asian side — Kadıköy/Moda ferries and market mornings','Bosphorus ferries — the most beautiful commute on Earth','Princes\' Islands day trip','Oct 12: fly Istanbul (IST) → Baku (GYD), bought ✅'] },
-        { name: 'Baku stopover', days: 2, query: 'Baku, Azerbaijan',
+        { name: 'Baku stopover', days: 1, query: 'Baku, Azerbaijan',
           highlights: ['Leave IST Oct 12, stopover in Baku Oct 13','Arrive DEL Oct 14 — IST → GYD → DEL flights bought ✅'] },
       ],
       booking: ['Balloon Sep 22/23 — booked ✅','IST → GYD Oct 12 + GYD → DEL Oct 14 — bought ✅','Stays until Izmir booked ✅: Göreme (Sep 21–24), Alaçatı (24–27), Kaş (27–30)','Rental car ADB Sep 24 – 30 — collect directly at ADB and return there after Kaş→Izmir drive','Internal flights ASR→ADB at 22:50 Sep 24 + ADB→IST evening Sep 30 — bought ✅','India e-Visa by mid-Sep'],

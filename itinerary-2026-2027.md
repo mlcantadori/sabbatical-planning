@@ -16,6 +16,7 @@
 | 4 | Toronto | Aug 27 – Aug 31 | 5 |
 | 5 | Greece | Sep 1 – Sep 22 | 21 |
 | 6 | Türkiye | Sep 21 – Oct 12 | 21 |
+| – | Baku (stopover) | Oct 13 | 1 |
 | 7 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
 | 8 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
 | 9 | Japan — Autumn | Nov 10 – Nov 30 | 20 |
@@ -201,7 +202,7 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 - Princes' Islands day trip
 - Fly Istanbul (IST) → Baku (GYD) Oct 12, bought ✅
 
-**Baku stopover — Oct 12–14**
+**Baku stopover — Oct 13 (1 day)**
 - Leave IST Oct 12, stopover in Baku, Azerbaijan Oct 13
 - Arrive DEL Oct 14 — IST → GYD → DEL flights bought ✅
 
@@ -705,7 +706,7 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 |---|---|---|
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
 | Türkiye | Sep 21 – Oct 12 | Optimal — best window (balloons, coast, Istanbul) |
-| Baku stopover | Oct 12–14 | Transit — IST → GYD Oct 12, GYD → DEL Oct 14, bought ✅ |
+| Baku stopover | Oct 13 · 1 day | Transit — IST → GYD Oct 12, GYD → DEL Oct 14, bought ✅ |
 | India | Oct 14–21 | Good — post-monsoon clear, compressed to 7d by Baku routing |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Japan Autumn / Kyoto last | Nov 10–30 | Excellent — Kyoto Nov 22–30 avoids peak crowds, late koyo holds |
