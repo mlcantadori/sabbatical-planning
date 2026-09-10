@@ -7,6 +7,47 @@
   const {
     REGIONS
   } = window.TRIP;
+
+  // Great-circle interpolation between two [lat,lng] points — the actual
+  // shortest path a flight follows over the sphere, not an arbitrary bulge.
+  function greatCircleSegment(p1, p2, segments = 48) {
+    const toRad = d => d * Math.PI / 180,
+      toDeg = r => r * 180 / Math.PI;
+    const lat1 = toRad(p1[0]),
+      lng1 = toRad(p1[1]);
+    const lat2 = toRad(p2[0]),
+      lng2 = toRad(p2[1]);
+    const d = 2 * Math.asin(Math.sqrt(Math.sin((lat2 - lat1) / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin((lng2 - lng1) / 2) ** 2));
+    if (d < 1e-9) return [p1, p2];
+    const pts = [];
+    let prevLng = null;
+    for (let i = 0; i <= segments; i++) {
+      const f = i / segments;
+      const A = Math.sin((1 - f) * d) / Math.sin(d);
+      const B = Math.sin(f * d) / Math.sin(d);
+      const x = A * Math.cos(lat1) * Math.cos(lng1) + B * Math.cos(lat2) * Math.cos(lng2);
+      const y = A * Math.cos(lat1) * Math.sin(lng1) + B * Math.cos(lat2) * Math.sin(lng2);
+      const z = A * Math.sin(lat1) + B * Math.sin(lat2);
+      const lat = toDeg(Math.atan2(z, Math.sqrt(x * x + y * y)));
+      let lng = toDeg(Math.atan2(y, x));
+      // Unwrap so the path doesn't jump across the antimeridian on screen.
+      if (prevLng !== null) {
+        while (lng - prevLng > 180) lng -= 360;
+        while (lng - prevLng < -180) lng += 360;
+      }
+      prevLng = lng;
+      pts.push([lat, lng]);
+    }
+    return pts;
+  }
+  function curvedRoute(points) {
+    const full = [];
+    for (let i = 0; i < points.length - 1; i++) {
+      const seg = greatCircleSegment(points[i], points[i + 1]);
+      full.push(...(i === 0 ? seg : seg.slice(1)));
+    }
+    return full;
+  }
   function MapView({
     selectedId,
     selectedPlaceIdx,
@@ -84,10 +125,11 @@
       // Route polyline
       const routePoints = ROUTE_CHAPTERS.map(c => c.anchor).filter(Boolean);
       if (routePoints.length > 1) {
-        const route = L.polyline(routePoints, {
-          color: '#c2693a',
+        const route = L.polyline(curvedRoute(routePoints), {
+          className: 'route-line',
+          color: '#8a8272',
           weight: 1.8,
-          opacity: 0.55,
+          opacity: 0.6,
           dashArray: '4, 6',
           lineCap: 'round',
           lineJoin: 'round'

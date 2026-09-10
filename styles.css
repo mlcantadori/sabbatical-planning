@@ -337,6 +337,16 @@ button {
   border-radius: 3px;
 }
 
+.route-line {
+  animation: route-ants 6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-line { animation: none; }
+}
+@keyframes route-ants {
+  to { stroke-dashoffset: -30; }
+}
+
 /* Pin styles */
 .map-pin-wrap {
   background: transparent !important;
