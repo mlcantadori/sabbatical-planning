@@ -43,8 +43,9 @@ function main() {
   const hardNum = [...source.matchAll(/id:\s*'([^']*)',\s*num:\s*(\d+)/g)];
   hardNum.forEach((m) => errors.push(`Hardcoded num in data: id '${m[1]}' has num: ${m[2]} (remove it — numbers derive from order)`));
 
-  // 2. Overview table.
-  const overviewRows = [...md.matchAll(/^\| (\d+) \| (.+?) \|.*\|$/gm)]
+  // 2. Overview table (only the ## Overview section — other tables reuse numbering).
+  const overviewSection = (md.split(/^## Overview$/m)[1] || '').split(/^## /m)[0];
+  const overviewRows = [...overviewSection.matchAll(/^\| (\d+) \| (.+?) \|.*\|$/gm)]
     .map((m) => ({ num: Number(m[1]), title: m[2].trim() }));
   if (overviewRows.length !== chapters.length) {
     errors.push(`Overview has ${overviewRows.length} numbered rows but data has ${chapters.length} chapters`);

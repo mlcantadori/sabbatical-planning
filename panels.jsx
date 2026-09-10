@@ -795,41 +795,96 @@
   }
 
   function BudgetView() {
+    const store = useStore();
+    const fmt$ = (n) => 'USD ' + Math.round(n).toLocaleString('en-US');
+    const CATS = [
+      ['lodging', 'Lodging'],
+      ['food', 'Food'],
+      ['transport', 'Local transport'],
+      ['activities', 'Activities & diving'],
+      ['fees', 'Visas & park fees'],
+    ];
+    const titleById = Object.fromEntries(store.getChapters().map((c) => [c.id, c.title]));
+    const rowTotal = (r) => CATS.reduce((s, [k]) => s + (r[k] || 0), 0);
+    const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
+    const chTotal = budget.chapters.reduce((s, r) => s + rowTotal(r), 0);
+    const flightsTotal = budget.flights.reduce((s, f) => s + f.cost, 0);
+    const extrasTotal = budget.extras.reduce((s, e) => s + e.cost, 0);
+    const subtotal = chTotal + flightsTotal + extrasTotal;
+    const contingency = Math.round(subtotal * budget.contingencyPct / 100);
+    const grand = subtotal + contingency;
+    const perDay = Math.round(grand / totalDays);
+    const pct = (n) => Math.round(n / grand * 100) + '%';
     return (
       <div className="binder-pane">
         <div className="binder-pane-head">
           <div>
             <div className="kicker">§ Money</div>
-            <h2 className="binder-pane-title">Budget anchors</h2>
-            <p className="binder-pane-sub">Where the money goes and what's worth the splurge.</p>
+            <h2 className="binder-pane-title">Budget</h2>
+            <p className="binder-pane-sub">{budget.basis}. Totals compute from the lines below — nothing hardcoded.</p>
           </div>
         </div>
         <div className="budget-hero">
-          <div className="budget-hero-big">{budget.estimate}</div>
-          <div className="budget-hero-sub">{budget.inBRL}</div>
-        </div>
-        <div className="budget-grid">
-          <BudgetCard title="Expensive chapters" items={budget.expensive} tone="warn" />
-          <BudgetCard title="Cheap anchors" items={budget.cheap} tone="cool" />
-          <BudgetCard title="Strategic splurges" items={budget.splurges} tone="neutral" bordered />
+          <div className="budget-hero-big">{fmt$(grand)} for two</div>
+          <div className="budget-hero-sub">{fmt$(perDay)}/day · {totalDays} days · {budget.inBRL}</div>
         </div>
 
-        {budget.chapterAnchors && budget.chapterAnchors.length > 0 && (
-          <>
-            <SectionHead num="02" title="Chapter anchors" small />
-            {budget.chapterAnchors.map((ca, i) => (
-              <div key={i} className="budget-hero" style={{ marginBottom: 16 }}>
-                <div>
-                  <div className="budget-hero-big" style={{ fontSize: '1.6rem' }}>{ca.title}</div>
-                  <div className="budget-hero-sub">{ca.total} · {ca.sub}</div>
-                  <ul className="alert-list" style={{ marginTop: 12 }}>
-                    {ca.items.map((it, j) => <li key={j}>{it}</li>)}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </>
-        )}
+        <SectionHead num="01" title="Where it goes" small />
+        <div className="budget-grid">
+          {CATS.map(([k, label]) => (
+            <BudgetCard key={k} title={label} items={[fmt$(catTotals[k]), pct(catTotals[k]) + ' of trip']} tone="neutral" />
+          ))}
+          <BudgetCard title="Inter-chapter flights" items={[fmt$(flightsTotal), pct(flightsTotal) + ' of trip']} tone="warn" />
+          <BudgetCard title="Insurance & extras" items={[fmt$(extrasTotal), pct(extrasTotal) + ' of trip']} tone="cool" />
+          <BudgetCard title={`Contingency ${budget.contingencyPct}%`} items={[fmt$(contingency), 'peak fares, FX, surprises']} tone="neutral" bordered />
+        </div>
+
+        <SectionHead num="02" title="Per chapter" small />
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+            <thead>
+              <tr style={{ textAlign: 'left', opacity: 0.65 }}>
+                <th style={{ padding: '6px 8px 6px 0' }}>Chapter</th>
+                <th>d</th>
+                <th>$/d</th>
+                <th style={{ textAlign: 'right' }}>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {budget.chapters.map((r) => (
+                <tr key={r.id} style={{ borderTop: '1px solid rgba(0,0,0,.08)' }} title={r.note}>
+                  <td style={{ padding: '6px 8px 6px 0' }}>{titleById[r.id] || r.id}</td>
+                  <td>{r.days}</td>
+                  <td>{fmt$(rowTotal(r) / r.days).replace('USD ', '$')}</td>
+                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>{fmt$(rowTotal(r))}</td>
+                </tr>
+              ))}
+              <tr style={{ borderTop: '2px solid rgba(0,0,0,.2)', fontWeight: 700 }}>
+                <td style={{ padding: '6px 8px 6px 0' }}>Chapters</td>
+                <td>{budget.chapters.reduce((s, r) => s + r.days, 0)}</td>
+                <td></td>
+                <td style={{ textAlign: 'right' }}>{fmt$(chTotal)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="binder-pane-sub">Hover/tap a row for the line-item note. $/d is per couple.</p>
+
+        <SectionHead num="03" title="Locked costs" small />
+        <ul className="alert-list">
+          {budget.locked.map((l, i) => <li key={i}><strong>{l.item} — {fmt$(l.cost)}.</strong> {l.note}</li>)}
+        </ul>
+
+        <SectionHead num="04" title="Key flights (couple)" small />
+        <ul className="alert-list">
+          {budget.flights.map((f, i) => <li key={i}><strong>{f.route} — {fmt$(f.cost)}.</strong> {f.note}</li>)}
+        </ul>
+
+        <SectionHead num="05" title="Assumptions & levers" small />
+        <ul className="alert-list">
+          {budget.assumptions.map((a, i) => <li key={i}>{a}</li>)}
+          {budget.levers.map((l, i) => <li key={'l' + i}>{l}</li>)}
+        </ul>
       </div>
     );
   }

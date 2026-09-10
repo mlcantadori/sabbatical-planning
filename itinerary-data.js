@@ -528,27 +528,81 @@ window.TRIP = (function () {
     { where: 'Sipadan (optional)',       dates: 'Apr 24–27',    days: 3,  notes: '120 permits/day — book by Nov 2026' },
   ];
 
-  // Budget anchors
+  // Budget — full-trip model, USD for two travelers (couple).
+  // Per-chapter parts are researched estimates (see notes); the three locked
+  // costs came from actual bookings/quotes. Totals are COMPUTED in the UI
+  // (BudgetView) from these parts — never hardcoded — so edits stay consistent.
   const budget = {
-    estimate: 'USD 48–60k for two',
-    inBRL: '~140–175k BRL per person',
-    expensive: ['Raja Ampat liveaboard', 'Hakuba lift passes + gear rental', 'Japan generally', 'China cities'],
-    cheap: ['Nepal', 'India', 'Indonesia (outside dives)', 'Malaysia', 'Philippines (outside dives)'],
-    splurges: ['Raja Ampat liveaboard', 'Hakuba snowboarding', 'One Kyoto ryokan night', 'Kleftiko boat, Milos (~€240)', 'Cappadocia balloon (~€520)'],
-    // Per-chapter anchors — detailed figures for chapters that are locked.
-    chapterAnchors: [
-      {
-        title: 'Greece–Türkiye — v7 (Sep 1 – Oct 9, 38 nights, couple)',
-        total: '€6,100–6,400',
-        sub: '≈ R$ 27.5–29k/month at €1 ≈ R$ 5.85 · ceiling R$ 25k/month',
-        items: [
-          'Stays €/night: Athens 70–80 · Chania 65–75 · Rethymno 55–65 · Santorini 100–120 (outside caldera) · Folegandros 75–85 · Milos 80–90 · airport buffer',
-          'Crete car 3d ~€130–150 + west-Crete tours ~€130 · Milos ATV ~€105',
-          'Türkiye: ASR→ADB + ADB→IST ~€170 · ADB rental car ~6d · Istanbulkart ~€50 · IST→Delhi ~€480',
-          'Splurges: Kleftiko boat ~€240 · balloon ~€520',
-          'Cut levers: street-level food in Türkiye, conventional ferries; outside-caldera lodging already applied',
-        ],
-      },
+    currency: 'USD',
+    basis: 'couple · 362 days · mid-range with strategic splurges',
+    estimate: 'USD ~92k for two',
+    perDay: '~USD 254/day for two',
+    inBRL: '~R$253k per person at R$5.50',
+    contingencyPct: 8,
+    // Confirmed figures — do not re-estimate.
+    locked: [
+      { item: 'GRU–YYZ–ATH flights (2 pax)', cost: 1700, note: 'Bought ✅ — long-haul positioning into the trip' },
+      { item: 'Raja Ampat liveaboard 10d (2 pax)', cost: 8400, note: 'Quoted/held — the trip splurge' },
+      { item: 'Annapurna Base Camp trek, all-in (2 pax)', cost: 2000, note: 'Guide + porter + teahouses + meals + permits (ACAP/TIMS)' },
+    ],
+    // Per-chapter estimates for two. lodging/food are chapter totals; transport
+    // is in-chapter only (inter-chapter flights live in `flights` below).
+    chapters: [
+      { id: 'rio', days: 29, lodging: 0, food: 1200, transport: 300, activities: 1400, fees: 0, note: 'Home base, no lodging · AOW + Nitrox certs ~$1,200 · trail buses/food' },
+      { id: 'cumbuco', days: 29, lodging: 950, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Monthly condo ~$950 · own kite gear · downwinder support' },
+      { id: 'saopaulo', days: 7, lodging: 0, food: 350, transport: 150, activities: 100, fees: 0, note: 'Family stay · metro/Uber + farewell dinner' },
+      { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
+      { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 800, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries ~$340 · Chania car ~$240 · Kleftiko ~$260' },
+      { id: 'turkey', days: 21, lodging: 1900, food: 1470, transport: 710, activities: 780, fees: 120, note: 'Stays ~$90/n · balloon ~$480 · car 6d ~$370 · internal flights ~$190 · e-visa' },
+      { id: 'baku', days: 2, lodging: 160, food: 140, transport: 60, activities: 30, fees: 50, note: 'Mid hotel 2n · ASAN e-visa · walkable old city' },
+      { id: 'india', days: 7, lodging: 270, food: 315, transport: 200, activities: 300, fees: 55, note: 'Trains ~$100 · Taj + forts + boats ~$110 · Parmarth yoga ~$150 · e-visa' },
+      { id: 'nepal', days: 20, lodging: 245, food: 245, transport: 100, activities: 2000, fees: 100, note: 'Trek $2,000 locked · KTM/Pokhara hotels + food off-trek · 30d visa' },
+      { id: 'japan-autumn', days: 20, lodging: 2530, food: 1800, transport: 550, activities: 150, fees: 0, note: 'Business hotels ~$125/n · Tokyo–Osaka–Kyoto rail · Nikko/Nara day trips' },
+      { id: 'korea', days: 24, lodging: 3000, food: 1920, transport: 500, activities: 320, fees: 0, note: '~$125/n hotels · KTX Seoul–Busan + regional buses · DMZ tour' },
+      { id: 'taiwan', days: 19, lodging: 1805, food: 1140, transport: 330, activities: 120, fees: 0, note: '~$95/n · Hualien/Alishan trains · Taipei 101 + museums' },
+      { id: 'china-1', days: 30, lodging: 2550, food: 1650, transport: 850, activities: 150, fees: 0, note: '~$85/n · Beijing–Shanghai + Shanghai–Shenzhen bullets ~$535 · assumes 30d visa-free entry' },
+      { id: 'hk', days: 5, lodging: 750, food: 450, transport: 120, activities: 0, fees: 0, note: '~$150/n · Peak tram + ferries + Lamma · free gardens/markets' },
+      { id: 'japan-winter', days: 10, lodging: 1300, food: 950, transport: 260, activities: 1880, fees: 0, note: 'Valley 7d pass ~$930 + full rental ~$950 · Osaka–Hakuba buses' },
+      { id: 'philippines', days: 21, lodging: 1155, food: 1050, transport: 550, activities: 1260, fees: 0, note: 'Coron 4 dive-days ~$760 · Malapascua ~$160 · sardines ~$120 · island tours ~$210' },
+      { id: 'indonesia-1', days: 14, lodging: 160, food: 160, transport: 1200, activities: 8400, fees: 60, note: 'Liveaboard $8,400 locked · to/from Sorong flights ~$1,200 · VOA' },
+      { id: 'indonesia-2', days: 17, lodging: 990, food: 850, transport: 510, activities: 1210, fees: 0, note: 'Komodo 3D2N boat ~$440 + park ~$80 · Komodo dives ~$340 · Penida mantas ~$230 · Batur ~$120' },
+      { id: 'borneo', days: 10, lodging: 1020, food: 200, transport: 520, activities: 60, fees: 0, note: 'Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) · Sepilok fees' },
+      { id: 'singapore', days: 7, lodging: 980, food: 385, transport: 105, activities: 100, fees: 0, note: '~$140/n · hawker-first food · Gardens domes' },
+      { id: 'malaysia', days: 10, lodging: 550, food: 400, transport: 120, activities: 60, fees: 0, note: 'KL + Penang guesthouses · ETS rail · Penang Hill + mansions' },
+      { id: 'thailand', days: 14, lodging: 770, food: 700, transport: 320, activities: 610, fees: 0, note: 'Koh Tao 3 local dive-days ~$360 + Sail Rock ~$190 · Samui transfer · Kanchanaburi' },
+      { id: 'china-2', days: 20, lodging: 1400, food: 1000, transport: 980, activities: 330, fees: 0, note: 'BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180' },
+    ],
+    // Between-chapter flights for two (in-chapter transport stays above).
+    flights: [
+      { route: 'Brazil domestic (GIG→FOR→GRU)', cost: 750, note: 'Estimate' },
+      { route: 'GRU → Toronto → Athens', cost: 1700, note: 'Bought ✅ (locked)' },
+      { route: 'Athens → Cappadocia via IST', cost: 500, note: 'Bought ✅ (est.)' },
+      { route: 'Varanasi → Kathmandu (direct)', cost: 360, note: '~$180pp Buddha Air' },
+      { route: 'Kathmandu/Pokhara → Tokyo', cost: 1100, note: 'Estimate ~$550pp' },
+      { route: 'Seoul → Taipei', cost: 500, note: 'Estimate' },
+      { route: 'Taipei → Shanghai', cost: 500, note: 'Estimate' },
+      { route: 'Hong Kong → Osaka', cost: 400, note: 'Estimate, LCC' },
+      { route: 'Tokyo/Nagoya → Manila', cost: 560, note: 'Estimate' },
+      { route: 'Manila/Cebu → Sorong', cost: 700, note: 'Estimate' },
+      { route: 'Kota Kinabalu → Singapore', cost: 200, note: 'Estimate, AirAsia' },
+      { route: "Xi'an → São Paulo (home)", cost: 1400, note: 'Estimate ~$700pp' },
+    ],
+    extras: [
+      { item: 'Travel insurance, 12 months (couple)', cost: 1800, note: 'Backpacker annual-style policy' },
+      { item: 'eSIMs + trail/trek sundries', cost: 350, note: '~15 countries + thermals/laundry gaps' },
+    ],
+    assumptions: [
+      'All figures USD for two; mid-range with strategic splurges, researched Oct 2026 prices',
+      'China entries assume the 30-day visa-free policy for Brazil holds — otherwise add ~$300 for two visas',
+      'Own kite gear in Cumbuco; mask + dive computer owned; snowboard kit rented in Hakuba',
+      'Rio / São Paulo / Toronto use home or friends stays — zero lodging',
+      'Inter-chapter flights are one-way advance fares; peak-season spikes are what the 8% contingency is for',
+    ],
+    levers: [
+      'Diving is ~$12k of the total — fewer Coron/Komodo/Tao dive days saves $1,500+ fast',
+      'Japan + Korea are ~$12k combined — business hotels + konbini breakfasts already assumed; ryokan splurge kept to zero',
+      'Shoulder-season flights (booked early) and slow-travel lodging (weekly rates) are the two biggest structural savers',
+      'Home bases (Rio, São Paulo, Toronto friends) save ~$4k in lodging vs hotels',
     ],
   };
 
