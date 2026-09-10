@@ -836,7 +836,7 @@ Chapters subtotal: **$77,310** · 361 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$10,070**. Plus insurance $1,800 + eSIMs/sundries $350. Subtotal $89,530 + 8% contingency $7,162 = **~$97,000**.
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,530 + 8% contingency $7,162 = **~$97,000**.
 
 ### Assumptions & levers
 

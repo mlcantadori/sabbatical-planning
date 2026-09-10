@@ -592,7 +592,7 @@ window.TRIP = (function () {
       { route: "Xi'an → São Paulo (home)", cost: 1400, note: 'Estimate ~$700pp' },
     ],
     extras: [
-      { item: 'Travel insurance, 12 months (couple)', cost: 1800, note: 'Backpacker annual-style policy' },
+      { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },
       { item: 'eSIMs + trail/trek sundries', cost: 350, note: '~15 countries + thermals/laundry gaps' },
     ],
     assumptions: [
