@@ -130,19 +130,38 @@
     return created.result.id;
   }
 
+  function errText(e) {
+    if (!e) return 'unknown error';
+    if (typeof e === 'string') return e;
+    if (e.message) return e.message;
+    try {
+      const r = e.result;
+      if (r && r.error) return 'HTTP ' + (e.status || '?') + ': ' + (r.error.message || JSON.stringify(r.error));
+    } catch {}
+    return 'HTTP ' + (e.status || '?');
+  }
+
+  // Returns { ok: true } or { ok: false, error, id, summary } — never
+  // throws, so one bad event can't abort the whole sync. Tries update
+  // first (existing event), then insert (new event); records both errors
+  // when both fail so the report names the exact culprit.
   async function upsert(calendarId, ev) {
+    let patchErr = null;
     try {
       await window.gapi.client.calendar.events.patch({
         calendarId,
         eventId: ev.id,
         resource: { summary: ev.summary, description: ev.description, start: ev.start, end: ev.end },
       });
+      return { ok: true, created: false };
     } catch (e) {
-      if (e && e.status === 404) {
-        await window.gapi.client.calendar.events.insert({ calendarId, resource: ev });
-      } else {
-        throw e;
-      }
+      patchErr = e;
+    }
+    try {
+      await window.gapi.client.calendar.events.insert({ calendarId, resource: ev });
+      return { ok: true, created: true };
+    } catch (e2) {
+      return { ok: false, id: ev.id, summary: ev.summary, error: errText(e2) + ' [patch: ' + errText(patchErr) + ']' };
     }
   }
 
@@ -177,14 +196,25 @@
     const events = buildEvents(window.TRIP);
     say('Syncing ' + events.length + ' events…');
     let n = 0;
+    const failed = [];
     for (const ev of events) {
-      await upsert(calendarId, ev);
-      n++;
+      const r = await upsert(calendarId, ev);
+      if (r.ok) n++;
+      else failed.push(r);
+      if (n % 10 === 0) say('Syncing ' + n + '/' + events.length + '…');
     }
-    const pruned = await prune(calendarId, events.map((e) => e.id));
+    let pruned = 0;
+    try {
+      pruned = await prune(calendarId, events.map((e) => e.id));
+    } catch (e) {
+      failed.push({ id: '(prune)', summary: 'stale-entry cleanup', error: errText(e) });
+    }
     const stamp = new Date().toISOString();
-    try { localStorage.setItem(LS_LAST, stamp); } catch {}
-    return { synced: n, pruned, at: stamp };
+    try {
+      localStorage.setItem(LS_LAST, stamp);
+      localStorage.setItem('gcal-last-report', JSON.stringify({ at: stamp, synced: n, failed }));
+    } catch {}
+    return { synced: n, failed, pruned, at: stamp };
   }
 
   function SyncButton({ compact }) {
@@ -205,7 +235,13 @@
         const d = new Date(r.at);
         const hh = String(d.getHours()).padStart(2, '0');
         const mm = String(d.getMinutes()).padStart(2, '0');
-        setLabel('Synced ✓ ' + hh + ':' + mm);
+        if (r.failed.length === 0) {
+          setLabel('Synced ✓ ' + hh + ':' + mm);
+        } else {
+          setLabel('Synced ' + r.synced + '/' + (r.synced + r.failed.length) + ' — retry');
+          alert('Calendar sync: ' + r.synced + ' ok, ' + r.failed.length + ' failed:\n'
+            + r.failed.map((f) => '• ' + f.summary + ' [' + f.id + ']: ' + f.error).join('\n'));
+        }
       } catch (e) {
         setLabel('Sync failed — retry');
         alert('Calendar sync failed: ' + ((e && (e.message || (e.result && e.result.error && e.result.error.message))) || e));
