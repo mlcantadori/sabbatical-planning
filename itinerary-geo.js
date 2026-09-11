@@ -49,7 +49,6 @@ window.TRIP_GEO = {
     'athens/Athens — buffer':                 [37.9838,   23.7275],
     // Turkey
     'turkey/Cappadocia — Göreme':             [38.6431,   34.8289],
-    'turkey/Izmir — transit':                  [38.2924,   27.1565],
     'turkey/Alaçatı':                         [38.2822,   26.3747],
     'turkey/Şirince':                         [37.9429,   27.3417],
     'turkey/Kaş':                             [36.2018,   29.6377],
