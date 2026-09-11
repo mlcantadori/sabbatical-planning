@@ -72,6 +72,7 @@
               <window.Icon.map size={12} /> {!isMobile && 'Map'}
             </button>
             <button className={view === 'budget' ? 'is-active' : ''} onClick={() => setView('budget')}>{isMobile ? '$' : 'Budget'}</button>
+            <window.SyncButton compact={isMobile} />
           </div>
         </header>
 

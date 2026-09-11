@@ -818,12 +818,15 @@ Chapters subtotal: **$77,340** · 360 days.
 
 ### Inter-chapter flights (couple)
 
-| Route | USD | Status |
-|---|---|---|
-| Brazil domestic (GIG→FOR→GRU) | 750 | Estimate |
-| GRU → Toronto → Athens | 1,700 | Bought ✅ |
-| Athens → Cappadocia via IST | 500 | Bought ✅ (est.) |
-| Istanbul → Baku → Delhi | 1,000 | Bought ✅ (est. ~$500pp) |
+| Route | Date | USD | Status |
+|---|---|---|---|
+| Rio → Fortaleza | Jul 20 | 400 | Estimate |
+| Fortaleza → São Paulo | Aug 17 | 350 | Estimate |
+| São Paulo → Toronto | Aug 27 | 900 | Bought ✅ |
+| Toronto → Athens | Aug 31 | 800 | Bought ✅ (overnight) |
+| Athens → Cappadocia via IST | Sep 21 | 500 | Bought ✅ (est.) |
+| Istanbul → Baku | Oct 12 | 450 | Bought ✅ (est.) |
+| Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
 | Varanasi → Kathmandu (direct) | 360 | ~$180pp Buddha Air |
 | Kathmandu/Pokhara → Tokyo | 1,100 | Estimate ~$550pp |
 | Osaka → Seoul | 400 | Estimate |
