@@ -318,6 +318,7 @@
     const fmt$ = n => 'USD ' + Math.round(n).toLocaleString('en-US');
     const CATS = [['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Local transport'], ['activities', 'Activities & diving'], ['fees', 'Visas & park fees']];
     const titleById = Object.fromEntries(store.getChapters().map(c => [c.id, c.title]));
+    const datesById = Object.fromEntries(store.getChapters().map(c => [c.id, dayRange(c.start, c.end)]));
     const rowTotal = r => CATS.reduce((s, [k]) => s + (r[k] || 0), 0);
     const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
     const chTotal = budget.chapters.reduce((s, r) => s + rowTotal(r), 0);
@@ -438,7 +439,12 @@
         padding: '6px 8px 6px 0',
         whiteSpace: 'nowrap'
       }
-    }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.food).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", {
+    }, r.title, /*#__PURE__*/React.createElement("div", {
+      style: {
+        opacity: 0.55,
+        fontSize: 11
+      }
+    }, datesById[r.id] || '')), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.food).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", {
       style: {
         textAlign: 'right',
         whiteSpace: 'nowrap'
