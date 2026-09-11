@@ -1,14 +1,10 @@
-// Google Calendar sync configuration.
-// 1. Copy this file to `calendar-config.js` (gitignored, never committed).
-// 2. Paste your OAuth Client ID below.
+// Google Calendar sync configuration — OPTIONAL override.
+// The trip's OAuth Client ID is baked into calendar.jsx, so this file is
+// only needed if you ever rotate the ID: copy to `calendar-config.js`
+// (gitignored, never committed) and set window.SABBATICAL_CALENDAR_CLIENT_ID.
 //
-// Get one at https://console.cloud.google.com:
-//   APIs & Services → enable "Google Calendar API" → Credentials →
-//   Create Credentials → OAuth client ID → Web application.
-//   Authorized JavaScript origins (add both):
-//     https://mlcantadori.github.io
-//     http://localhost:8000
-// The consent screen only needs your own Gmail as a test user while the
-// app status is "Testing".
+// Authorized JavaScript origins on the Client ID must include:
+//   https://mlcantadori.github.io
+//   http://localhost:8000   (local testing)
 
 window.SABBATICAL_CALENDAR_CLIENT_ID = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
