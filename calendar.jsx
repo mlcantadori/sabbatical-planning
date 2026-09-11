@@ -106,15 +106,10 @@
   function buildEvents(trip) {
     const events = [];
     const used = new Set();
+    // No chapter-level events — one event per stop ("Istanbul - Turkey"),
+    // so the calendar never carries stale chapter titles. Old chapter
+    // entries are pruned automatically on the next sync (see prune()).
     trip.chapters.filter((c) => c.kind === 'chapter').forEach((c) => {
-      events.push({
-        id: eid('sabbaticalch', c.id, used),
-        summary: (c.country + ' ' + (c.flag || '')).trim(),
-        description: [c.title, c.theme, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
-        start: { date: c.start },
-        end: { date: addDays(c.end, 1) },
-        extendedProperties: { private: { sabbatical: '1' } },
-      });
       // One event per stop, dates derived from the chapter start +
       // cumulative place days (same convention as the itinerary view).
       let offset = 0;
