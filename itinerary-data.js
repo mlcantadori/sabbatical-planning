@@ -64,7 +64,7 @@ window.TRIP = (function () {
   const chapters = [
     {
       id: 'rio', kind: 'chapter', region: 'americas',
-      country: 'Brasil', flag: '🇧🇷', title: 'Rio de Janeiro',
+      country: 'Brasil', flag: '🇧🇷', title: 'Brasil',
       start: '2026-06-21', end: '2026-07-20', days: 29,
       theme: 'Home base — mountains and diving certs',
       intro: 'The trip opens at home. This Rio chapter focused on two things: the Petrópolis–Teresópolis trail and diving certifications (Advanced Open Water + NITROX).',
@@ -78,7 +78,7 @@ window.TRIP = (function () {
     },
     {
       id: 'cumbuco', kind: 'chapter', region: 'americas',
-      country: 'Brasil', flag: '🇧🇷', title: 'Cumbuco',
+      country: 'Brasil', flag: '🇧🇷', title: 'Brasil',
       start: '2026-07-21', end: '2026-08-19', days: 29,
       theme: 'Condo base, short kite sessions, downwinders',
       intro: 'Stayed in a condo and did short kitesurfing sessions from there, with occasional downwinders from the village center.',
@@ -92,7 +92,7 @@ window.TRIP = (function () {
     },
     {
       id: 'saopaulo', kind: 'chapter', region: 'americas',
-      country: 'Brasil', flag: '🇧🇷', title: 'São Paulo',
+      country: 'Brasil', flag: '🇧🇷', title: 'Brasil',
       start: '2026-08-19', end: '2026-08-26', days: 7,
       theme: 'Friends & family, farewell BBQ',
       intro: 'No sightseeing — just time with friends and family in São Paulo before leaving Brazil. Closed the Brazil chapter with a farewell BBQ.',
@@ -106,7 +106,7 @@ window.TRIP = (function () {
     },
     {
       id: 'toronto', kind: 'chapter', region: 'americas',
-      country: 'Canada', flag: '🇨🇦', title: 'Toronto',
+      country: 'Canada', flag: '🇨🇦', title: 'Canada',
       start: '2026-08-27', end: '2026-09-01', days: 5,
       theme: 'Friends & family send-off before Europe',
       intro: 'Five days in Toronto before crossing the Atlantic — mostly to meet friends and family. Stayed at a friend\'s place, played with their kids. Overnight flight out on Aug 31, landing in Athens Sep 1.',
@@ -228,7 +228,7 @@ window.TRIP = (function () {
     },
     {
       id: 'japan-autumn', kind: 'chapter', region: 'northeast',
-      country: 'Japan', flag: '🇯🇵', title: 'Japan — Autumn',
+      country: 'Japan', flag: '🇯🇵', title: 'Japan',
       start: '2026-11-10', end: '2026-11-30', days: 20,
       theme: 'Sacred refinement, koyo at peak, slow urban chapter',
       intro: 'Tokyo first for peak city-koyo. Osaka as the bridge. Kyoto last — crowds thin after Nov 26 while late-season foliage (Eikan-do, Tofuku-ji) holds. This order means the best is saved.',
@@ -286,7 +286,7 @@ window.TRIP = (function () {
     },
     {
       id: 'china-1', kind: 'chapter', region: 'middle',
-      country: 'China', flag: '🇨🇳', title: 'China — Block 1',
+      country: 'China', flag: '🇨🇳', title: 'China',
       start: '2027-01-12', end: '2027-02-11', days: 30,
       theme: 'Imperial capital, global finance hub, future-tech frontier',
       intro: 'The three great metropolises in one extended block. Beijing in January — empty and sometimes snow-dusted — is one of its finest versions. Shanghai rewards lingering. Shenzhen is the most forward-facing city on Earth.',
@@ -320,7 +320,7 @@ window.TRIP = (function () {
     },
     {
       id: 'japan-winter', kind: 'chapter', region: 'northeast',
-      country: 'Japan', flag: '🇯🇵', title: 'Japan — Winter',
+      country: 'Japan', flag: '🇯🇵', title: 'Japan',
       start: '2027-02-16', end: '2027-02-26', days: 10,
       theme: 'Powder snowboarding, mountain stillness, onsen',
       intro: 'Focused Hakuba: a pure snowboard chapter. No city detours — just powder, onsen, and mountain ramen. February brings a deeper snowpack than early January; scheduling after China and Hong Kong keeps the journey coherent.',
@@ -388,7 +388,7 @@ window.TRIP = (function () {
     },
     {
       id: 'borneo', kind: 'chapter', region: 'rainforest',
-      country: 'Malaysia', flag: '🇲🇾', title: 'Borneo / Sabah',
+      country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia',
       start: '2027-04-18', end: '2027-04-28', days: 10,
       theme: 'Indonesia visa reset + wildlife chapter',
       intro: 'Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d extension. Kinabatangan is one of SE Asia\'s finest wildlife corridors. Proboscis monkeys, pygmy elephants bathing at dawn.',
@@ -458,7 +458,7 @@ window.TRIP = (function () {
     },
     {
       id: 'china-2', kind: 'chapter', region: 'middle',
-      country: 'China', flag: '🇨🇳', title: 'China — Block 2',
+      country: 'China', flag: '🇨🇳', title: 'China',
       start: '2027-05-29', end: '2027-06-18', days: 20,
       theme: 'Surreal landscapes, ancient empire, spring China',
       intro: 'Spring is the ideal season for these landscapes. Li River mist in the karst, Zhangjiajie sea of clouds, pandas active in Chengdu. These regions shine more in May than in winter.',
