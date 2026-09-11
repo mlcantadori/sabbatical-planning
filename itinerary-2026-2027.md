@@ -26,13 +26,12 @@
 | 14 | Hong Kong | Feb 11 – Feb 16 | 5 |
 | 15 | Japan — Winter (Hakuba) | Feb 16 – Feb 26 | 10 |
 | 16 | Philippines (warm-up diving) | Feb 26 – Mar 11 | 13 |
-| 17 | Indonesia — Raja Ampat | Mar 11 – Mar 22 | 11 |
-| 18 | Indonesia — Nusa Penida · Komodo · Bali | Mar 22 – Apr 18 | 27 |
-| 19 | Borneo / Sabah | Apr 18 – Apr 28 | 10 |
-| 20 | Singapore | Apr 28 – May 5 | 7 |
-| 21 | Malaysia | May 5 – May 15 | 10 |
-| 22 | Thailand | May 15 – May 29 | 14 |
-| 23 | China Block 2 (landscapes) | May 29 – Jun 18 | 20 |
+| 17 | Indonesia | Mar 11 – Apr 18 | 38 |
+| 18 | Borneo / Sabah | Apr 18 – Apr 28 | 10 |
+| 19 | Singapore | Apr 28 – May 5 | 7 |
+| 20 | Malaysia | May 5 – May 15 | 10 |
+| 21 | Thailand | May 15 – May 29 | 14 |
+| 22 | China Block 2 (landscapes) | May 29 – Jun 18 | 20 |
 
 **Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
 **China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
@@ -494,11 +493,11 @@ Compressed to 13 days by the early Raja Ampat boarding (Mar 11): Coron keeps fiv
 
 ---
 
-## Chapter 17 — INDONESIA — RAJA AMPAT
-### Mar 11 – Mar 22 · 11 days
-*Theme: The best diving on Earth — liveaboard deep dive*
+## Chapter 17 — INDONESIA
+### Mar 11 – Apr 18 · 38 days
+*Theme: The best diving on Earth, then slow islands — liveaboard, cliffs, dragons, volcano*
 
-Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Board on arrival day, 10 days on the water Mar 11–20, transit back to Bali. NOTE: VOA Day 1 ~Mar 11 — extend +30d in Bali (~$60) to cover the Apr 18 exit.
+Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Board on arrival day, 10 days on the water Mar 11–20, then slow down: ten days in Ubud, Nusa Penida mantas, Komodo dragons and drift dives, Bali rice terraces and a volcano at 3am. NOTE: VOA Day 1 ~Mar 11 — extend +30d in Bali (~$60) to cover the Apr 18 exit.
 
 **Raja Ampat Liveaboard — 10 days (Mar 11–20)**
 - Wayag: postcard karst islands seen from above (kayak + hike viewpoint)
@@ -513,14 +512,6 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 **Transit Sorong → Bali — Mar 21**
 - Mar 21: off the boat in Sorong, fly via Makassar or direct to Denpasar
 - Onward to Ubud Mar 22 — slow recovery week
-
----
-
-## Chapter 18 — INDONESIA — NUSA PENIDA · KOMODO · BALI
-### Mar 22 – Apr 18 · 27 days
-*Theme: Slow Ubud recovery, raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block*
-
-Ten slow days in Ubud recovering from the liveaboard, then three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, manta-filled. Komodo: dragons and world-class drift dives. Bali: rice terraces and a volcano at 3am. VOA extended +30d in Bali — exits via KK Apr 18 ✓
 
 **Ubud — 10 days (Mar 22 – Apr 1)**
 - Slow recovery week after the liveaboard
@@ -555,7 +546,7 @@ Ten slow days in Ubud recovering from the liveaboard, then three distinct Indone
 
 ---
 
-## Chapter 19 — BORNEO / SABAH
+## Chapter 18 — BORNEO / SABAH
 ### Apr 18 – Apr 28 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -586,7 +577,7 @@ Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d e
 
 ---
 
-## Chapter 20 — SINGAPORE
+## Chapter 19 — SINGAPORE
 ### Apr 28 – May 5 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -599,7 +590,7 @@ Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d e
 
 ---
 
-## Chapter 21 — MALAYSIA
+## Chapter 20 — MALAYSIA
 ### May 5 – May 15 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
@@ -622,7 +613,7 @@ KL for the city spectacle and food, Penang for the most rewarding slow chapter i
 
 ---
 
-## Chapter 22 — THAILAND
+## Chapter 21 — THAILAND
 ### May 15 – May 29 · 14 days
 *Theme: Islands, reef diving, urban intensity, street food*
 
@@ -649,7 +640,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Ban
 
 ---
 
-## Chapter 23 — CHINA BLOCK 2 (Landscapes)
+## Chapter 22 — CHINA BLOCK 2 (Landscapes)
 ### May 29 – Jun 18 · 20 days
 *Theme: Surreal landscapes, ancient empire, spring China*
 
@@ -811,13 +802,12 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 14 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
 | 15 | Japan — Winter | 10 | 439 | 4,390 | Valley 7d pass ~$930 + full rental ~$950 · buses |
 | 16 | Philippines | 13 | 218 | 2,835 | Coron 4 dive-days ~$760 · sardines ~$120 · island tours ~$140 (Malapascua dropped) |
-| 17 | Raja Ampat | 11 | 905 | 9,950 | Liveaboard $8,400 locked (Mar 11–20) · Sorong flights ~$1,200 · VOA + extension |
-| 18 | Nusa Penida · Komodo · Bali | 27 | 163 | 4,410 | Ubud slow 10n ~$550 · Komodo 3D2N boat ~$440 + park ~$80 · dives ~$570 · Batur ~$120 |
-| 19 | Borneo / Sabah | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
-| 20 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
-| 21 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
-| 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
-| 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
+| 17 | Indonesia | 38 | 588 | 22,360 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · Komodo boat + dives · Batur |
+| 18 | Borneo / Sabah | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
+| 19 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
+| 20 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
+| 21 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
+| 22 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
 Chapters subtotal: **$77,150** · 360 days.
 

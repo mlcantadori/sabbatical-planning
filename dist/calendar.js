@@ -102,42 +102,23 @@
     used.add(id);
     return id;
   }
-  // Display city per chapter for event titles ("Athens - Greece 🇬🇷").
-  // Explicit map — deriving from stops is unreliable for multi-stop chapters.
-  const CITY = {
-    rio: 'Rio de Janeiro',
-    cumbuco: 'Cumbuco',
-    saopaulo: 'São Paulo',
-    toronto: 'Toronto',
-    athens: 'Athens',
-    turkey: 'Istanbul',
-    baku: 'Baku',
-    india: 'Delhi',
-    nepal: 'Kathmandu',
-    'japan-autumn': 'Tokyo',
-    korea: 'Seoul',
-    taiwan: 'Taipei',
-    'china-1': 'Beijing',
-    hk: 'Hong Kong',
-    'japan-winter': 'Hakuba',
-    philippines: 'Coron',
-    'indonesia-1': 'Sorong',
-    'indonesia-2': 'Bali',
-    borneo: 'Kota Kinabalu',
-    singapore: 'Singapore',
-    malaysia: 'Kuala Lumpur',
-    thailand: 'Bangkok',
-    'china-2': 'Guilin'
-  };
+  // City name for a stop, derived from the authored place name (first
+  // segment before any + — – · / separator). Generic travel-day rows
+  // (Buffer, Transfer/Transit) are skipped — they are not destinations.
+  function stopCity(name) {
+    return String(name).split(/[+—–·/]/)[0].trim();
+  }
+  function isSkippableStop(name) {
+    return /^(buffer|transfer|transit)\b/i.test(String(name).trim());
+  }
   function buildEvents(trip) {
     const events = [];
     const used = new Set();
     trip.chapters.filter(c => c.kind === 'chapter').forEach(c => {
-      const city = CITY[c.id] || c.title;
       events.push({
         id: eid('sabbaticalch', c.id, used),
-        summary: (city + ' - ' + c.country + ' ' + (c.flag || '')).trim(),
-        description: [c.theme, c.tldr, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
+        summary: (c.country + ' ' + (c.flag || '')).trim(),
+        description: [c.title, c.theme, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
         start: {
           date: c.start
         },
@@ -149,6 +130,33 @@
             sabbatical: '1'
           }
         }
+      });
+      // One event per stop, dates derived from the chapter start +
+      // cumulative place days (same convention as the itinerary view).
+      let offset = 0;
+      (c.places || []).forEach(p => {
+        const city = stopCity(p.name);
+        const d = p.days || 0;
+        if (!isSkippableStop(p.name) && city && d > 0) {
+          const s = addDays(c.start, offset);
+          events.push({
+            id: eid('sabbaticalev', c.id + city, used),
+            summary: (city + ' - ' + c.country + ' ' + (c.flag || '')).trim(),
+            description: [p.query, s + ' → ' + addDays(c.start, offset + d - 1) + ' · ' + d + (d === 1 ? ' day' : ' days')].filter(Boolean).join('\n'),
+            start: {
+              date: s
+            },
+            end: {
+              date: addDays(c.start, offset + d)
+            },
+            extendedProperties: {
+              private: {
+                sabbatical: '1'
+              }
+            }
+          });
+        }
+        offset += d;
       });
     });
     (trip.budget.flights || []).filter(f => f.date).forEach((f, i) => {
