@@ -21,8 +21,7 @@ window.TRIP_GEO = {
     'china-1':      [39.9042,  116.4074], // Beijing
     'hk':           [22.3193,  114.1694], // Hong Kong
     'philippines':  [11.9964,  119.4192], // Coron
-    'indonesia-1':  [-0.5897,  130.1053], // Wayag, Raja Ampat
-    'indonesia-2':  [-8.7270,  115.5444], // Nusa Penida
+    'indonesia':      [-8.5069,  115.2625], // Ubud, Bali (most nights)
     'borneo':       [ 5.9804,  116.0735], // Kota Kinabalu
     'singapore':    [ 1.2834,  103.8607], // Marina Bay
     'malaysia':     [ 3.1579,  101.7117], // KL
@@ -53,6 +52,7 @@ window.TRIP_GEO = {
     'turkey/Şirince':                         [37.9429,   27.3417],
     'turkey/Kaş':                             [36.2018,   29.6377],
     'turkey/Akyaka':                          [37.0545,   28.3269],
+    'turkey/Izmir':                           [38.4237,   27.1428],
     'turkey/Istanbul':                         [41.0082,   28.9784],
     // Baku
     'baku/Baku':                                 [40.4093,   49.8671],
@@ -96,13 +96,13 @@ window.TRIP_GEO = {
     'philippines/Cebu / Moalboal':            [10.2720,  123.4220],
     'philippines/Transfer to Sorong':         [-0.8917,  131.2500],
     // Indonesia Block 1 — Raja Ampat
-    'indonesia-1/Transit to Sorong':          [-0.8917,  131.2500],
-    'indonesia-1/Raja Ampat Liveaboard':      [-0.5897,  130.1053],
-    'indonesia-1/Transit Sorong → Bali':      [-8.6500,  115.2167],
-    // Indonesia Block 2
-    'indonesia-2/Nusa Penida':               [-8.7270,  115.5444],
-    'indonesia-2/Komodo':                    [-8.4889,  119.8825], // Labuan Bajo
-    'indonesia-2/Bali + Volcano':            [-8.5069,  115.2625], // Ubud
+    // Indonesia (single chapter)
+    'indonesia/Raja Ampat Liveaboard':          [-0.5897,  130.1053], // Wayag
+    'indonesia/Transit Sorong → Bali':          [-8.6500,  115.2167], // Denpasar
+    'indonesia/Ubud':                           [-8.5069,  115.2625],
+    'indonesia/Nusa Penida':                    [-8.7270,  115.5444],
+    'indonesia/Komodo':                         [-8.4889,  119.8825], // Labuan Bajo
+    'indonesia/Bali + Volcano':                 [-8.5069,  115.2625], // Ubud
     // Borneo
     'borneo/Kota Kinabalu':                   [ 5.9804,  116.0735],
     'borneo/Sepilok + Sandakan':              [ 5.8754,  117.9472],

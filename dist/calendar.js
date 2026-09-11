@@ -89,8 +89,8 @@
 
   // Pure function of TRIP data — safe to unit-test without Google.
   // NOTE: Google event IDs must be base32hex (lowercase a–v + 0–9 ONLY —
-  // w, x, y, z fail with "Invalid resource id value"), so slugs drop
-  // everything else. Uniqueness is enforced deterministically below.
+  // w, x, y, z fail with "Invalid resource id value"), so the eid helper
+  // strips everything else and enforces uniqueness deterministically.
   function eid(prefix, raw, used) {
     const core = String(raw).toLowerCase().replace(/[^a-z0-9]/g, '').replace(/[wxyz]/g, '') || 'event';
     let id = prefix + core;
@@ -102,14 +102,23 @@
     used.add(id);
     return id;
   }
+  // City name for a stop, derived from the authored place name (first
+  // segment before any + — – · / separator). Generic travel-day rows
+  // (Buffer, Transfer/Transit) are skipped — they are not destinations.
+  function stopCity(name) {
+    return String(name).split(/[+—–·/]/)[0].trim();
+  }
+  function isSkippableStop(name) {
+    return /^(buffer|transfer|transit)\b/i.test(String(name).trim());
+  }
   function buildEvents(trip) {
     const events = [];
     const used = new Set();
     trip.chapters.filter(c => c.kind === 'chapter').forEach(c => {
       events.push({
         id: eid('sabbaticalch', c.id, used),
-        summary: ((c.flag || '') + ' ' + c.title).trim(),
-        description: [c.theme, c.tldr, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
+        summary: (c.country + ' ' + (c.flag || '')).trim(),
+        description: [c.title, c.theme, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
         start: {
           date: c.start
         },
@@ -121,6 +130,33 @@
             sabbatical: '1'
           }
         }
+      });
+      // One event per stop, dates derived from the chapter start +
+      // cumulative place days (same convention as the itinerary view).
+      let offset = 0;
+      (c.places || []).forEach(p => {
+        const city = stopCity(p.name);
+        const d = p.days || 0;
+        if (!isSkippableStop(p.name) && city && d > 0) {
+          const s = addDays(c.start, offset);
+          events.push({
+            id: eid('sabbaticalev', c.id + city, used),
+            summary: (city + ' - ' + c.country + ' ' + (c.flag || '')).trim(),
+            description: [p.query, s + ' → ' + addDays(c.start, offset + d - 1) + ' · ' + d + (d === 1 ? ' day' : ' days')].filter(Boolean).join('\n'),
+            start: {
+              date: s
+            },
+            end: {
+              date: addDays(c.start, offset + d)
+            },
+            extendedProperties: {
+              private: {
+                sabbatical: '1'
+              }
+            }
+          });
+        }
+        offset += d;
       });
     });
     (trip.budget.flights || []).filter(f => f.date).forEach((f, i) => {
@@ -134,6 +170,26 @@
         },
         end: {
           date: addDays(f.date, 1)
+        },
+        extendedProperties: {
+          private: {
+            sabbatical: '1'
+          }
+        }
+      });
+    });
+    // Hand-authored highlights: key attractions + car rentals (trip.calendarEvents).
+    // `end` is the inclusive last day; Google gets end-exclusive.
+    (trip.calendarEvents || []).forEach(a => {
+      events.push({
+        id: eid('sabbaticalev', a.id || a.title, used),
+        summary: a.title,
+        description: [a.note, a.start + ' → ' + a.end].filter(Boolean).join('\n'),
+        start: {
+          date: a.start
+        },
+        end: {
+          date: addDays(a.end, 1)
         },
         extendedProperties: {
           private: {

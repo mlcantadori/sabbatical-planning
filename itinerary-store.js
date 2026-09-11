@@ -7,7 +7,9 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  const LS_KEY = 'trip-data-v8';
+  // v9: Indonesia merged into a single chapter — old caches reference
+  // split chapter ids that no longer exist, so force a fresh re-bake.
+  const LS_KEY = 'trip-data-v9';
   const listeners = new Set();
   let chapters;
 
