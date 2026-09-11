@@ -80,14 +80,26 @@
   }
 
   // Pure function of TRIP data — safe to unit-test without Google.
-  // NOTE: Google event IDs allow lowercase a–z + 0–9 ONLY (hyphens,
-  // underscores etc. fail with "Invalid resource id value"), so IDs are
-  // plain alphanumeric slugs.
+  // NOTE: Google event IDs must be base32hex (lowercase a–v + 0–9 ONLY —
+  // w, x, y, z fail with "Invalid resource id value"), so the eid helper
+  // strips everything else and enforces uniqueness deterministically.
+  function eid(prefix, raw, used) {
+    const core = String(raw).toLowerCase().replace(/[^a-z0-9]/g, '').replace(/[wxyz]/g, '') || 'event';
+    let id = prefix + core;
+    let n = 0;
+    while (used.has(id)) {
+      n += 1;
+      id = prefix + core + 'q' + n; // 'q' + digits stay valid + deterministic
+    }
+    used.add(id);
+    return id;
+  }
   function buildEvents(trip) {
     const events = [];
+    const used = new Set();
     trip.chapters.filter((c) => c.kind === 'chapter').forEach((c) => {
       events.push({
-        id: 'sabbaticalch' + c.id.replace(/[^a-z0-9]/g, ''),
+        id: eid('sabbaticalch', c.id, used),
         summary: ((c.flag || '') + ' ' + c.title).trim(),
         description: [c.theme, c.tldr, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
         start: { date: c.start },
@@ -98,11 +110,23 @@
     (trip.budget.flights || []).filter((f) => f.date).forEach((f, i) => {
       const slug = f.route.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60) || ('leg' + i);
       events.push({
-        id: 'sabbaticalfl' + slug,
+        id: eid('sabbaticalfl', slug, used),
         summary: '✈️ ' + f.route,
         description: ['Date: ' + f.date, f.note, f.cost != null ? 'Budget: USD ' + f.cost + ' for two' : null].filter(Boolean).join('\n'),
         start: { date: f.date },
         end: { date: addDays(f.date, 1) },
+        extendedProperties: { private: { sabbatical: '1' } },
+      });
+    });
+    // Hand-authored highlights: key attractions + car rentals (trip.calendarEvents).
+    // `end` is the inclusive last day; Google gets end-exclusive.
+    (trip.calendarEvents || []).forEach((a) => {
+      events.push({
+        id: eid('sabbaticalev', a.id || a.title, used),
+        summary: a.title,
+        description: [a.note, a.start + ' → ' + a.end].filter(Boolean).join('\n'),
+        start: { date: a.start },
+        end: { date: addDays(a.end, 1) },
         extendedProperties: { private: { sabbatical: '1' } },
       });
     });

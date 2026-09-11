@@ -25,9 +25,9 @@
 | 13 | China Block 1 (metropolises) | Jan 12 – Feb 11 | 30 |
 | 14 | Hong Kong | Feb 11 – Feb 16 | 5 |
 | 15 | Japan — Winter (Hakuba) | Feb 16 – Feb 26 | 10 |
-| 16 | Philippines (warm-up diving) | Feb 26 – Mar 19 | 21 |
-| 17 | Indonesia — Raja Ampat | Mar 19 – Apr 1 | 14 |
-| 18 | Indonesia — Nusa Penida · Komodo · Bali | Apr 1 – Apr 18 | 17 |
+| 16 | Philippines (warm-up diving) | Feb 26 – Mar 11 | 13 |
+| 17 | Indonesia — Raja Ampat | Mar 11 – Mar 22 | 11 |
+| 18 | Indonesia — Nusa Penida · Komodo · Bali | Mar 22 – Apr 18 | 27 |
 | 19 | Borneo / Sabah | Apr 18 – Apr 28 | 10 |
 | 20 | Singapore | Apr 28 – May 5 | 7 |
 | 21 | Malaysia | May 5 – May 15 | 10 |
@@ -37,9 +37,9 @@
 **Japan total:** 30 days (20 autumn + 10 winter) — zero city repeats ✓
 **China total:** 50 days in-country (30 Block 1 + 20 Block 2) ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
-**Indonesia visa:** Mar 19 entry → Apr 18 exit = 30 days ✓
+**Indonesia visa:** Mar 11 entry +30d extension in Bali → Apr 18 exit ✓
 **NYE:** Taiwan Dec 31 ✓
-**Raja Ampat:** Mar 21–30 ✓
+**Raja Ampat:** Mar 11–20 ✓
 
 ---
 
@@ -159,7 +159,7 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 ### Sep 21 – Oct 12 · 21 days
 *Theme: Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
 
-Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight (booked ✅), then take the Sep 24, 22:50 flight from Kayseri to Izmir for a rental-car loop down the Aegean coast: Alaçatı, Şirince (Ephesus), Kaş and Akyaka, returning the car at ADB on Oct 2 for a flight into Istanbul, where we stay until the end of the chapter. Stays Göreme booked ✅; coastal stays need (re)booking for the new dates.
+Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight (booked ✅), then take the Sep 24, 22:50 flight from Kayseri to Izmir for a rental-car loop down the Aegean coast: Alaçatı, Şirince (Ephesus), Kaş, Akyaka and a night in Izmir, returning the car at ADB on Oct 3 for a flight into Istanbul, where we stay until the end of the chapter. Stays Göreme booked ✅; coastal stays need (re)booking for the new dates.
 
 **Cappadocia (Göreme) — 3 nights (Sep 21–24)**
 - Arrive Göreme Sep 21 from Athens via IST — single Turkish ticket, bought ✅
@@ -188,13 +188,16 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 **Akyaka — 1 night (Oct 1)**
 - Drive ~2.5–3h from Kaş
 - Azmak River, slow evening
+- Oct 2: drive ~2.5h to Izmir, night in the city
 
-**Fly out — Oct 2**
-- Drive ~2.5h to Izmir airport (ADB) — leave very early if the flight is in the morning
-- Drop the rental car at ADB
+**Izmir — 1 night (Oct 2)**
+- Night in Izmir after the coastal loop
+
+**Fly out — Oct 3**
+- Return the rental car at ADB
 - Fly ADB → Istanbul (~1h15)
 
-**Istanbul — 10 nights (Oct 2 – Oct 12)**
+**Istanbul — 9 nights (Oct 3 – Oct 12)**
 - Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet
 - Asian side — Kadıköy/Moda ferries and market mornings
 - Bosphorus ferries
@@ -210,11 +213,11 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DEL Oct 14. Flame Towers at dusk, the walled Old City, and the Caspian promenade — flights bought ✅.
 
 **Baku — 2 days**
-- Oct 12: fly Istanbul (IST) → Baku (GYD)
+- Oct 12: fly Istanbul (IST) → Baku (GYD), land 23:05
 - Oct 13: Flame Towers — Caspian bay panorama at dusk
 - Icherisheher (Old City) — Maiden Tower + Palace of the Shirvanshahs
 - Caspian promenade (Bulvar) waterfront walk
-- Oct 14: fly Baku (GYD) → Delhi (DEL)
+- Oct 13, 22:35: fly Baku (GYD) → Delhi (DEL), arrive Oct 14
 
 **Fly Baku → Delhi Oct 14**
 
@@ -256,17 +259,17 @@ Late October into November — post-monsoon clarity holds, skies still crystalli
 - Swayambhunath (Monkey Temple)
 - Altitude acclimatization, gear check, ACAP + TIMS permits
 
-**Pokhara — 2 days (Oct 24–26)**
-- Phewa Lake calm before the trek
+**Pokhara — 1 day (Oct 24)**
+- Phewa Lake calm before the trek — staging night
 - Annapurna range at dawn from the lakeside
 
-**Annapurna Base Camp Trek — 13 days (Oct 26 – Nov 8)**
+**Annapurna Base Camp Trek — 11 days (Oct 25 – Nov 4)**
 Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchhre Base Camp → ABC (4,130m)
 - Teahouse circuit — no camping gear needed
 - Rhododendron forests, glacial moraines, 360° Annapurna amphitheater at the top
 - Return via Jhinu hot springs
 
-**Pokhara recovery — 2 days (Nov 8–10)**
+**Pokhara recovery — 5 days (Nov 5–9)**
 - Lakeside slow meals, massage, reflection
 - Optional paragliding over Phewa Lake
 - Sārangkot sunrise over the Himalayas
@@ -458,51 +461,46 @@ Bus/train Hakuba → Nagoya or Tokyo. Fly to Manila — Philippines begins Feb 2
 ---
 
 ## Chapter 16 — PHILIPPINES
-### Feb 26 – Mar 19 · 21 days
+### Feb 26 – Mar 11 · 13 days
 *Theme: WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
-Coron for the greatest wreck dives on Earth. El Nido for limestone drama. Cebu/Moalboal for the sardine run. All day boats — no liveaboard here. This is the warm-up before Raja Ampat.
+Compressed to 13 days by the early Raja Ampat boarding (Mar 11): Coron keeps five days for the greatest wreck dives on Earth, El Nido three for limestone drama, Cebu/Moalboal two for the sardine run — Malapascua thresher dropped for schedule. All day boats — no liveaboard here. This is the warm-up before Raja Ampat.
 
 **Manila — 1 day (Feb 26–27)**
 - Intramuros (walled Spanish colonial city)
 - Fly Manila → Coron
 
-**Coron — 6 days (Feb 27 – Mar 5)**
+**Coron — 5 days (Feb 27 – Mar 4)**
 - Japanese WWII wrecks — Okikawa Maru, Irako, Akitsushima (sunk 1944): among the finest wreck diving on Earth
 - Kayangan Lake: crystal-clear inland lake framed by karst
 - Barracuda Lake: thermocline diving (hot/cold layers meet underwater)
 - CYC Beach + Twin Lagoon by banca boat
 
-**El Nido — 6 days (Mar 5–11)**
-- Island-hopping: Secret Lagoon, Big Lagoon, Small Lagoon, Cadlao Island
+**El Nido — 3 days (Mar 4–7)**
+- Island-hopping express: Big Lagoon, Small Lagoon, Cadlao Island
 - Nacpan Beach — empty twin beach
 - Limestone cliffs, turquoise shallows, snorkeling
 - Long beach lunches, no agenda
 
-**Cebu / Moalboal — 6 days (Mar 11–17)**
+**Cebu / Moalboal — 2 days (Mar 7–9)**
 - Sardine Run: millions of sardines school at Pescador Island — accessible from shore
 - Turtle Beach: sea turtles feeding right off the beach
-- Malapascua: thresher shark dive at dawn
-- Kawasan Falls canyoneering
+- Malapascua thresher dropped — no time before the Mar 11 boarding
+- Kawasan Falls canyoneering (if time)
 
-**Transfer to Sorong — 2 days (Mar 17–19)**
+**Transfer to Sorong — 2 days (Mar 9–11)**
 - Cebu → Manado or Manila → Sorong
-- Indonesia visa on arrival — Day 1 of 30-day window
+- Indonesia visa on arrival — Day 1 ~Mar 11 (extend +30d in Bali to cover Apr 18 exit)
 
 ---
 
 ## Chapter 17 — INDONESIA — RAJA AMPAT
-### Mar 19 – Apr 1 · 14 days
+### Mar 11 – Mar 22 · 11 days
 *Theme: The best diving on Earth — liveaboard deep dive*
 
-Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Transit in, 10 days on the water, transit back to Bali.
+Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Board on arrival day, 10 days on the water Mar 11–20, transit back to Bali. NOTE: VOA Day 1 ~Mar 11 — extend +30d in Bali (~$60) to cover the Apr 18 exit.
 
-**Transit to Sorong — 2 days (Mar 19–21)**
-- Cebu → Manado or Manila → Sorong routing
-- Indonesia visa on arrival — Day 1 of 30-day window
-- Pack down to liveaboard dive kit, board same day
-
-**Raja Ampat Liveaboard — 10 days (Mar 21–30)**
+**Raja Ampat Liveaboard — 10 days (Mar 11–20)**
 - Wayag: postcard karst islands seen from above (kayak + hike viewpoint)
 - Cape Kri: world record fish count dive site
 - Manta Sandy: manta ray cleaning station
@@ -510,20 +508,25 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 - Pianemo: smaller Wayag, equally dramatic, fewer boats
 - Blue Water Mantas (oceanic, wingspans up to 6m)
 - Wobbegong sharks, walking sharks, pygmy seahorses, nudibranchs
-- Book Papua Diving / Meridian Adventure — **by Oct 2025**
+- Book Papua Diving / Meridian Adventure — **Mar 11–20 dates (moved!)**
 
-**Transit Sorong → Bali — 2 days (Mar 30 – Apr 1)**
-- Off the boat in Sorong, fly via Makassar or direct to Denpasar
-- Indonesia visa Day 11 of 30 — 19 days remaining
-- Fast boat Sanur → Nusa Penida Apr 1
+**Transit Sorong → Bali — Mar 21**
+- Mar 21: off the boat in Sorong, fly via Makassar or direct to Denpasar
+- Onward to Ubud Mar 22 — slow recovery week
 
 ---
 
 ## Chapter 18 — INDONESIA — NUSA PENIDA · KOMODO · BALI
-### Apr 1 – Apr 18 · 17 days
-*Theme: Raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block*
+### Mar 22 – Apr 18 · 27 days
+*Theme: Slow Ubud recovery, raw cliffs, dragon islands, volcanic sunrise — close of Indonesia block*
 
-Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, manta-filled. Komodo: dragons and world-class drift dives. Bali: rice terraces and a volcano at 3am. Indonesia visa exits Day 30 ✓
+Ten slow days in Ubud recovering from the liveaboard, then three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, manta-filled. Komodo: dragons and world-class drift dives. Bali: rice terraces and a volcano at 3am. VOA extended +30d in Bali — exits via KK Apr 18 ✓
+
+**Ubud — 10 days (Mar 22 – Apr 1)**
+- Slow recovery week after the liveaboard
+- Tegallalang rice terraces at dawn, sacred monkey forest
+- Slow mornings, warungs, massages — no agenda
+- Day trip: Tirta Empul water temple
 
 **Nusa Penida — 4 days (Apr 1–5)**
 - Kelingking Beach: the T-Rex cliff, most photographed in the Bali region
@@ -547,7 +550,7 @@ Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, man
 - Seminyak / Canggu beach club final evening
 - Balinese cooking class
 - Mount Batur: 3am departure, 2-hour hike to crater rim at 1,717m
-- Sunrise over the caldera and crater lake — **Indonesia visa exits Day 30 ✓**
+- Sunrise over the caldera and crater lake — exits via KK Apr 18 on extended VOA ✓
 - **Fly Bali → Kota Kinabalu**
 
 ---
@@ -556,7 +559,7 @@ Three distinct Indonesian worlds back to back. Nusa Penida: stark, dramatic, man
 ### Apr 18 – Apr 28 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
-Bali → KK flight exits Indonesia on visa Day 30 — perfect timing. Kinabatangan is one of SE Asia's finest wildlife corridors.
+Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d extension. Kinabatangan is one of SE Asia's finest wildlife corridors.
 
 **Kota Kinabalu — 2 days (Apr 18–20)**
 - Arrival, waterfront sunset over offshore islands
@@ -692,9 +695,9 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 | Destination | Dates | Duration | Notes |
 |---|---|---|---|
-| Coron — WWII Wrecks | Feb 27 – Mar 5 | 6d | Japanese warships — world's best wreck diving |
-| Cebu / Moalboal | Mar 11–17 | ~5d | Sardine run, thresher sharks at Malapascua |
-| Raja Ampat | Mar 21–30 | 10d liveaboard | Mid-season; book by Oct 2025 |
+| Coron — WWII Wrecks | Feb 27 – Mar 4 | 5d | Japanese warships — world's best wreck diving |
+| Cebu / Moalboal | Mar 7–9 | 2d | Sardine run (Malapascua dropped for schedule) |
+| Raja Ampat | Mar 11–20 | 10d liveaboard | Mid-season; moved dates, confirm with operator |
 | Nusa Penida — Crystal Bay | Apr 1–5 | 4d | Reef mantas, year-round |
 | Komodo | Apr 7–12 | ~5d | Manta Point, drift dives, peak dry building |
 | Koh Tao | May 15–20 | 5d | Value diving, whale sharks at Sail Rock |
@@ -717,7 +720,7 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 | Japan Winter / Hakuba | Feb 16–26 | Optimal — peak powder after Lunar New Year crowds |
 | China Block 1 (cities) | Jan–Feb | Good — quiet Beijing, winter Shanghai, mild Shenzhen |
 | Philippines | Feb–Mar | Optimal — Coron + El Nido dry season; Cebu sardine run |
-| Raja Ampat | Mar 21–30 | Excellent — mid-season within Oct–Apr window ✓ |
+| Raja Ampat | Mar 11–20 | Excellent — mid-season within Oct–Apr window ✓ |
 | Nusa Penida | Apr 1–5 | Good — transition, mantas year-round |
 | Komodo | late Mar–Apr | Good — dry season building, visibility improving |
 | Bali + Volcano | Apr 2–8 | Good — warm, transition season |
@@ -741,17 +744,19 @@ Travel, last meals. **Fly home Jun 18, 2027.**
 
 ---
 
-## Indonesia Visa Block (30-day window)
+## Indonesia Visa Block (30-day VOA + 30-day extension)
+
+VOA Day 1 ~Mar 11 (Sorong arrival). A single 30-day window no longer covers the Apr 18 exit — extend +30d in Bali (~$60 for two, immigration office or agent).
 
 | Segment | Dates | Days in visa |
 |---|---|---|
-| Transit Cebu → Sorong | Mar 19–21 | Entry Day 1 |
-| Raja Ampat liveaboard | Mar 21–30 | Days 3–12 |
-| Transit Sorong → Bali | Mar 30 – Apr 1 | Days 12–14 |
-| Nusa Penida | Apr 1–5 | Days 14–18 |
-| Komodo | Apr 5–12 | Days 18–25 |
-| Bali + Volcano | Apr 12–18 | Days 25–30 |
-| **Exit to Borneo** | **Apr 18** | **Day 30 ✓** |
+| Transit Cebu → Sorong | Mar 9–11 | Entry Day 1 ~Mar 11 |
+| Raja Ampat liveaboard | Mar 11–20 | Days 1–10 |
+| Transit Sorong → Bali + Ubud | Mar 21 – Apr 1 | Days 11–22 |
+| Nusa Penida | Apr 1–5 | Extension window |
+| Komodo | Apr 5–12 | Extension window |
+| Bali + Volcano | Apr 12–18 | Extension window |
+| **Exit to Borneo** | **Apr 18** | **Extended VOA ✓** |
 
 ---
 
@@ -775,14 +780,14 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (23 chapters) | 26,560 | 27% |
-| Food (23 chapters) | 20,080 | 21% |
-| Activities & diving | 20,130 | 21% |
+| Lodging (23 chapters) | 26,380 | 27% |
+| Food (23 chapters) | 20,210 | 21% |
+| Activities & diving | 19,890 | 21% |
 | Inter-chapter flights | 10,070 | 10% |
-| Local transport | 10,185 | 11% |
+| Local transport | 10,225 | 11% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 385 | <1% |
-| Contingency (8%) | 7,165 | 7% |
+| Contingency (8%) | 7,150 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -795,26 +800,26 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 3 | São Paulo | 7 | 124 | 870 | Airbnb R$1,400 actual (~$270) · metro/Uber + farewell dinner |
 | 4 | Toronto | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
 | 5 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
-| 6 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n (from Sep 24) + Şirince/Kaş/Akyaka + Istanbul 10n |
+| 6 | Türkiye | 21 | 241 | 5,055 | Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Izmir 1n + Istanbul 9n |
 | 7 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 8 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
-| 9 | Nepal | 20 | 135 | 2,690 | Trek $2,000 locked · KTM/Pokhara hotels + food off-trek |
+| 9 | Nepal | 20 | 142 | 2,830 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 6n |
 | 10 | Japan — Autumn | 20 | 252 | 5,030 | Business hotels ~$125/n · Tokyo–Osaka–Kyoto rail · Nikko/Nara |
 | 11 | South Korea | 24 | 239 | 5,740 | ~$125/n hotels · KTX Seoul–Busan + buses · DMZ tour |
 | 12 | Taiwan | 19 | 179 | 3,395 | ~$95/n · Hualien/Alishan trains · Taipei 101 + museums |
 | 13 | China Block 1 | 30 | 173 | 5,200 | ~$85/n · Beijing–Shanghai + Shanghai–Shenzhen bullets ~$535 |
 | 14 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
 | 15 | Japan — Winter | 10 | 439 | 4,390 | Valley 7d pass ~$930 + full rental ~$950 · buses |
-| 16 | Philippines | 21 | 191 | 4,015 | Coron 4 dive-days ~$760 · Malapascua ~$160 · island tours ~$210 |
-| 17 | Raja Ampat | 14 | 713 | 9,980 | Liveaboard $8,400 locked · Sorong flights ~$1,200 |
-| 18 | Nusa Penida · Komodo · Bali | 17 | 209 | 3,560 | Komodo 3D2N boat ~$440 + park ~$80 · dives ~$570 · Batur ~$120 |
+| 16 | Philippines | 13 | 218 | 2,835 | Coron 4 dive-days ~$760 · sardines ~$120 · island tours ~$140 (Malapascua dropped) |
+| 17 | Raja Ampat | 11 | 905 | 9,950 | Liveaboard $8,400 locked (Mar 11–20) · Sorong flights ~$1,200 · VOA + extension |
+| 18 | Nusa Penida · Komodo · Bali | 27 | 163 | 4,410 | Ubud slow 10n ~$550 · Komodo 3D2N boat ~$440 + park ~$80 · dives ~$570 · Batur ~$120 |
 | 19 | Borneo / Sabah | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
 | 20 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
 | 21 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
 | 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$77,340** · 360 days.
+Chapters subtotal: **$77,150** · 360 days.
 
 ### Inter-chapter flights (couple)
 
@@ -827,18 +832,18 @@ Chapters subtotal: **$77,340** · 360 days.
 | Athens → Cappadocia via IST | Sep 21 | 500 | Bought ✅ (est.) |
 | Istanbul → Baku | Oct 12 | 450 | Bought ✅ (est.) |
 | Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
-| Varanasi → Kathmandu (direct) | 360 | ~$180pp Buddha Air |
-| Kathmandu/Pokhara → Tokyo | 1,100 | Estimate ~$550pp |
-| Osaka → Seoul | 400 | Estimate |
-| Seoul → Taipei | 500 | Estimate |
-| Taipei → Shanghai | 500 | Estimate |
-| Hong Kong → Osaka | 400 | Estimate, LCC |
-| Tokyo/Nagoya → Manila | 560 | Estimate |
-| Manila/Cebu → Sorong | 700 | Estimate |
-| Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
-| Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
+| Varanasi → Kathmandu (direct) | Oct 20 | 360 | ~$180pp Buddha Air |
+| Kathmandu/Pokhara → Tokyo | Nov 10 | 1,100 | Estimate ~$550pp |
+| Osaka → Seoul | Nov 30 | 400 | Estimate |
+| Seoul → Taipei | Dec 24 | 500 | Estimate |
+| Taipei → Shanghai | Jan 12 | 500 | Estimate |
+| Hong Kong → Osaka | Feb 16 | 400 | Estimate, LCC |
+| Tokyo/Nagoya → Manila | Feb 26 | 560 | Estimate |
+| Manila/Cebu → Sorong | Mar 9 | 700 | Estimate |
+| Kota Kinabalu → Singapore | Apr 28 | 200 | Estimate, AirAsia |
+| Xi'an → São Paulo (home) | Jun 18 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,560 + 8% contingency $7,165 = **~$97,000**.
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,370 + 8% contingency $7,150 = **~$97,000**.
 
 ### Assumptions & levers
 
@@ -854,11 +859,11 @@ Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/su
 
 | Item | When to book | Notes |
 |---|---|---|
-| Raja Ampat liveaboard | **By Oct 2025** | Papua Diving / Meridian Adventure — Mar 21–30 dates, book 6+ months ahead |
+| Raja Ampat liveaboard | **By Oct 2025** | Papua Diving / Meridian Adventure — Mar 11–20 dates (MOVED — reconfirm!), book 6+ months ahead |
 | Sipadan permits | By Nov 2026 | 120 permits/day cap — only if adding Sipadan to Borneo chapter |
 | Cappadocia balloon | Booked ✅ | Sep 22 or 23 — Royal Balloon / Butterfly Balloons |
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
-| Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
+| Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 · Izmir Oct 2 (+ all Greece stays) |
 | Annapurna permits | On arrival in Nepal | ACAP permit + TIMS card available in Kathmandu |
 | Kinabatangan river lodge | By Feb 2027 | Book 2–3 months ahead; good lodges fill in dry season |
 

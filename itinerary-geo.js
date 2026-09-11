@@ -53,6 +53,7 @@ window.TRIP_GEO = {
     'turkey/Şirince':                         [37.9429,   27.3417],
     'turkey/Kaş':                             [36.2018,   29.6377],
     'turkey/Akyaka':                          [37.0545,   28.3269],
+    'turkey/Izmir':                           [38.4237,   27.1428],
     'turkey/Istanbul':                         [41.0082,   28.9784],
     // Baku
     'baku/Baku':                                 [40.4093,   49.8671],
@@ -100,6 +101,7 @@ window.TRIP_GEO = {
     'indonesia-1/Raja Ampat Liveaboard':      [-0.5897,  130.1053],
     'indonesia-1/Transit Sorong → Bali':      [-8.6500,  115.2167],
     // Indonesia Block 2
+    'indonesia-2/Ubud':                      [-8.5069,  115.2625],
     'indonesia-2/Nusa Penida':               [-8.7270,  115.5444],
     'indonesia-2/Komodo':                    [-8.4889,  119.8825], // Labuan Bajo
     'indonesia-2/Bali + Volcano':            [-8.5069,  115.2625], // Ubud
