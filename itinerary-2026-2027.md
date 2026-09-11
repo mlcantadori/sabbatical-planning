@@ -169,6 +169,10 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 - Stays Göreme Sep 21–24 booked ✅
 - Sep 24, 22:50: fly Kayseri (ASR) → Izmir (ADB), bought ✅
 
+**Izmir — transit night (Sep 24)**
+- Land ADB 22:50 from Kayseri, airport hotel
+- Pick up the rental car in the morning
+
 **Alaçatı — 2 nights (Sep 25–26)**
 - Pick up the rental car at ADB on Sep 25 (landed 22:50 the night before) — about an hour west
 - Relax, recover, explore Alaçatı / Çeşme / Ilıca
@@ -775,7 +779,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (23 chapters) | 26,460 | 27% |
+| Lodging (23 chapters) | 26,530 | 27% |
 | Food (23 chapters) | 20,080 | 21% |
 | Activities & diving | 20,130 | 21% |
 | Inter-chapter flights | 10,070 | 10% |
@@ -795,7 +799,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 3 | São Paulo | 7 | 124 | 870 | Airbnb R$1,400 actual (~$270) · metro/Uber + farewell dinner |
 | 4 | Toronto | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
 | 5 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
-| 6 | Türkiye | 21 | 235 | 4,925 | Stays mixed ~$85/n · balloon ~$480 · car 8d ~$450 · internal flights ~$190 |
+| 6 | Türkiye | 21 | 238 | 4,995 | Göreme 3n + ADB transit + Alaçatı 2n + Şirince/Kaş/Akyaka + Istanbul 10n |
 | 7 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 8 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
 | 9 | Nepal | 20 | 135 | 2,690 | Trek $2,000 locked · KTM/Pokhara hotels + food off-trek |
@@ -814,7 +818,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$77,240** · 360 days.
+Chapters subtotal: **$77,310** · 360 days.
 
 ### Inter-chapter flights (couple)
 
@@ -835,7 +839,7 @@ Chapters subtotal: **$77,240** · 360 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,460 + 8% contingency $7,157 = **~$97,000**.
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,530 + 8% contingency $7,162 = **~$97,000**.
 
 ### Assumptions & levers
 

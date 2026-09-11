@@ -158,6 +158,8 @@ window.TRIP = (function () {
       places: [
         { name: 'Cappadocia — Göreme', days: 3, query: 'Göreme, Cappadocia, Turkey',
           highlights: ['Sep 21 arrival in Göreme from Athens via IST — single Turkish ticket, bought ✅','Explore the valleys: Rose Valley, Love Valley, Göreme Open Air Museum','Hot air balloon flight — Sep 22 or 23, booked ✅','Underground cities: Derinkuyu, Kaymakli','Stays Göreme Sep 21–24 booked ✅','Sep 24, 22:50: fly Kayseri (ASR) → Izmir (ADB), bought ✅'] },
+        { name: 'Izmir — transit night', days: 1, query: 'Izmir Adnan Menderes Airport',
+          highlights: ['Land ADB 22:50 from Kayseri — airport hotel, early night','Pick up the rental car in the morning'] },
         { name: 'Alaçatı', days: 2, query: 'Alaçatı, Çeşme, Turkey',
           highlights: ['Pick up the rental car at ADB on Sep 25 (landed 22:50 the night before) — ~1h drive west','Relax, recover, explore Alaçatı / Çeşme / Ilıca','Kitesurfing window on the Çeşme peninsula','Restored stone-house village, windmills, Aegean coastline'] },
         { name: 'Şirince', days: 1, query: 'Şirince, Selçuk, Turkey',
@@ -562,7 +564,7 @@ window.TRIP = (function () {
       { id: 'saopaulo', days: 7, lodging: 270, food: 350, transport: 150, activities: 100, fees: 0, note: 'Airbnb R$1,400 actual (~$270, Aug 19–26) · metro/Uber + farewell dinner' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
-      { id: 'turkey', days: 21, lodging: 1765, food: 1470, transport: 790, activities: 780, fees: 120, note: 'Göreme 3n + Alaçatı 2n + Şirince/Kaş/Akyaka + Istanbul 10n · balloon ~$480 · car 8d ~$450 · e-visa' },
+      { id: 'turkey', days: 21, lodging: 1835, food: 1470, transport: 790, activities: 780, fees: 120, note: 'Göreme 3n + ADB transit + Alaçatı 2n + Şirince/Kaş/Akyaka + Istanbul 10n · balloon ~$480 · car 8d ~$450 · e-visa' },
       { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
       { id: 'india', days: 6, lodging: 270, food: 270, transport: 190, activities: 120, fees: 55, note: 'Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg' },
       { id: 'nepal', days: 20, lodging: 245, food: 245, transport: 100, activities: 2000, fees: 100, note: 'Trek $2,000 locked · KTM/Pokhara hotels + food off-trek · 30d visa' },
