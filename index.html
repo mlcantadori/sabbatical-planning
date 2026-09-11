@@ -26,17 +26,19 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 
-<script src="itinerary-data.js"></script>
-<script src="itinerary-geo.js"></script>
-<script src="itinerary-store.js"></script>
-<script src="itinerary-photos.js"></script>
+<!-- Local scripts carry ?v= so browsers fetch fresh copies after deploys.
+     Bump the version whenever data or app code changes. -->
+<script src="itinerary-data.js?v=3"></script>
+<script src="itinerary-geo.js?v=3"></script>
+<script src="itinerary-store.js?v=3"></script>
+<script src="itinerary-photos.js?v=3"></script>
 
 <!-- Pre-compiled from JSX — no Babel needed in the browser -->
-<script src="dist/shared.js"></script>
-<script src="dist/map-view.js"></script>
-<script src="dist/globe-view.js"></script>
-<script src="dist/panels.js"></script>
-<script src="dist/app.js"></script>
+<script src="dist/shared.js?v=3"></script>
+<script src="dist/map-view.js?v=3"></script>
+<script src="dist/globe-view.js?v=3"></script>
+<script src="dist/panels.js?v=3"></script>
+<script src="dist/app.js?v=3"></script>
 
 <script>
 ReactDOM.createRoot(document.getElementById('root')).render(
