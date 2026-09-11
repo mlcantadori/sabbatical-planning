@@ -10,7 +10,11 @@
   const {
     dayCounter
   } = helpers;
-  const TODAY = new Date('2026-09-15');
+  // Real current date (UTC-normalized so the day never flips with timezones).
+  const TODAY = (() => {
+    const n = new Date();
+    return new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()));
+  })();
 
   // Track viewport width for mobile layout switch
   function useIsMobile(bp = 880) {

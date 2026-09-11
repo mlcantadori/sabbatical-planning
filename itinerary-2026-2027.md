@@ -169,8 +169,8 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 - Stays Göreme Sep 21–24 booked ✅
 - Sep 24, 22:50: fly Kayseri (ASR) → Izmir (ADB), bought ✅
 
-**Alaçatı — 2 nights (Sep 25–26)**
-- Pick up the rental car at ADB on Sep 25 (landed 22:50 the night before) — about an hour west
+**Alaçatı — 3 nights (Sep 24–26)**
+- Land ADB 22:50 Sep 24, drive ~1h around 1am — room booked from Sep 24 for the late arrival
 - Relax, recover, explore Alaçatı / Çeşme / Ilıca
 - Kitesurfing window on the Çeşme peninsula
 - Restored stone-house village, windmills, Aegean coastline
@@ -775,14 +775,14 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (23 chapters) | 26,460 | 27% |
+| Lodging (23 chapters) | 26,560 | 27% |
 | Food (23 chapters) | 20,080 | 21% |
 | Activities & diving | 20,130 | 21% |
 | Inter-chapter flights | 10,070 | 10% |
 | Local transport | 10,185 | 11% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 385 | <1% |
-| Contingency (8%) | 7,157 | 7% |
+| Contingency (8%) | 7,165 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -795,7 +795,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 3 | São Paulo | 7 | 124 | 870 | Airbnb R$1,400 actual (~$270) · metro/Uber + farewell dinner |
 | 4 | Toronto | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
 | 5 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
-| 6 | Türkiye | 21 | 235 | 4,925 | Stays mixed ~$85/n · balloon ~$480 · car 8d ~$450 · internal flights ~$190 |
+| 6 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n (from Sep 24) + Şirince/Kaş/Akyaka + Istanbul 10n |
 | 7 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 8 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
 | 9 | Nepal | 20 | 135 | 2,690 | Trek $2,000 locked · KTM/Pokhara hotels + food off-trek |
@@ -814,7 +814,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 22 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 23 | China Block 2 | 20 | 186 | 3,710 | BKK→Guilin flight ~$400 · 4 rail legs ~$430 · Zhangjiajie/Tianmen ~$180 |
 
-Chapters subtotal: **$77,240** · 360 days.
+Chapters subtotal: **$77,340** · 360 days.
 
 ### Inter-chapter flights (couple)
 
@@ -838,7 +838,7 @@ Chapters subtotal: **$77,240** · 360 days.
 | Kota Kinabalu → Singapore | 200 | Estimate, AirAsia |
 | Xi'an → São Paulo (home) | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,460 + 8% contingency $7,157 = **~$97,000**.
+Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,560 + 8% contingency $7,165 = **~$97,000**.
 
 ### Assumptions & levers
 
@@ -858,7 +858,7 @@ Flights subtotal: **$10,070**. Plus health insurance $1,800 ($150/mo) + eSIMs/su
 | Sipadan permits | By Nov 2026 | 120 permits/day cap — only if adding Sipadan to Borneo chapter |
 | Cappadocia balloon | Booked ✅ | Sep 22 or 23 — Royal Balloon / Butterfly Balloons |
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
-| Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 25–26 · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
+| Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna permits | On arrival in Nepal | ACAP permit + TIMS card available in Kathmandu |
 | Kinabatangan river lodge | By Feb 2027 | Book 2–3 months ahead; good lodges fill in dry season |
 
