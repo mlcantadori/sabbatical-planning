@@ -102,13 +102,41 @@
     used.add(id);
     return id;
   }
+  // Display city per chapter for event titles ("Athens - Greece 🇬🇷").
+  // Explicit map — deriving from stops is unreliable for multi-stop chapters.
+  const CITY = {
+    rio: 'Rio de Janeiro',
+    cumbuco: 'Cumbuco',
+    saopaulo: 'São Paulo',
+    toronto: 'Toronto',
+    athens: 'Athens',
+    turkey: 'Istanbul',
+    baku: 'Baku',
+    india: 'Delhi',
+    nepal: 'Kathmandu',
+    'japan-autumn': 'Tokyo',
+    korea: 'Seoul',
+    taiwan: 'Taipei',
+    'china-1': 'Beijing',
+    hk: 'Hong Kong',
+    'japan-winter': 'Hakuba',
+    philippines: 'Coron',
+    'indonesia-1': 'Sorong',
+    'indonesia-2': 'Bali',
+    borneo: 'Kota Kinabalu',
+    singapore: 'Singapore',
+    malaysia: 'Kuala Lumpur',
+    thailand: 'Bangkok',
+    'china-2': 'Guilin'
+  };
   function buildEvents(trip) {
     const events = [];
     const used = new Set();
     trip.chapters.filter(c => c.kind === 'chapter').forEach(c => {
+      const city = CITY[c.id] || c.title;
       events.push({
         id: eid('sabbaticalch', c.id, used),
-        summary: ((c.flag || '') + ' ' + c.title).trim(),
+        summary: (city + ' - ' + c.country + ' ' + (c.flag || '')).trim(),
         description: [c.theme, c.tldr, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
         start: {
           date: c.start
