@@ -20,9 +20,20 @@
   const LS_CLIENT = 'gcal-client-id';
   const SCOPES = 'https://www.googleapis.com/auth/calendar';
 
+  // OAuth Client ID for the trip's Google Cloud project. Client IDs are
+  // public identifiers by design (abuse is contained by the Authorized
+  // JavaScript origins allowlist), so shipping it here is safe and means
+  // nobody has to paste anything. window.SABBATICAL_CALENDAR_CLIENT_ID
+  // still wins if set (e.g. local calendar-config.js override).
+  const DEFAULT_CLIENT_ID = '745260746303-bvf9rc8abdmjssd64cgns1lm4hb91hmp.apps.googleusercontent.com';
+
   function clientId() {
     if (window.SABBATICAL_CALENDAR_CLIENT_ID) return window.SABBATICAL_CALENDAR_CLIENT_ID;
-    try { return localStorage.getItem(LS_CLIENT) || null; } catch { return null; }
+    try {
+      return localStorage.getItem(LS_CLIENT) || DEFAULT_CLIENT_ID;
+    } catch {
+      return DEFAULT_CLIENT_ID;
+    }
   }
 
   function loadScript(src, optional) {
@@ -69,11 +80,14 @@
   }
 
   // Pure function of TRIP data — safe to unit-test without Google.
+  // NOTE: Google event IDs allow lowercase a–z + 0–9 ONLY (hyphens,
+  // underscores etc. fail with "Invalid resource id value"), so IDs are
+  // plain alphanumeric slugs.
   function buildEvents(trip) {
     const events = [];
     trip.chapters.filter((c) => c.kind === 'chapter').forEach((c) => {
       events.push({
-        id: 'sabbatical-ch-' + c.id,
+        id: 'sabbaticalch' + c.id.replace(/[^a-z0-9]/g, ''),
         summary: ((c.flag || '') + ' ' + c.title).trim(),
         description: [c.theme, c.tldr, c.start + ' → ' + c.end + ' · ' + c.days + ' days'].filter(Boolean).join('\n'),
         start: { date: c.start },
@@ -82,9 +96,9 @@
       });
     });
     (trip.budget.flights || []).filter((f) => f.date).forEach((f, i) => {
-      const slug = f.route.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || ('leg-' + i);
+      const slug = f.route.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60) || ('leg' + i);
       events.push({
-        id: 'sabbatical-fl-' + slug,
+        id: 'sabbaticalfl' + slug,
         summary: '✈️ ' + f.route,
         description: ['Date: ' + f.date, f.note, f.cost != null ? 'Budget: USD ' + f.cost + ' for two' : null].filter(Boolean).join('\n'),
         start: { date: f.date },
@@ -143,7 +157,7 @@
       fields: 'items(id,summary)',
     });
     const stale = (res.result.items || []).filter(
-      (it) => it.id && it.id.indexOf('sabbatical-') === 0 && wantedIds.indexOf(it.id) < 0
+      (it) => it.id && it.id.indexOf('sabbatical') === 0 && wantedIds.indexOf(it.id) < 0
     );
     for (const it of stale) {
       try { await window.gapi.client.calendar.events.delete({ calendarId, eventId: it.id }); } catch {}
@@ -184,14 +198,6 @@
     const [busy, setBusy] = React.useState(false);
     const run = async () => {
       if (busy) return;
-      if (!clientId()) {
-        const v = prompt('Paste your Google OAuth Client ID (see calendar-config.example.js):');
-        if (v && v.trim()) {
-          try { localStorage.setItem(LS_CLIENT, v.trim()); } catch {}
-        } else {
-          return;
-        }
-      }
       setBusy(true);
       setLabel('Syncing…');
       try {
