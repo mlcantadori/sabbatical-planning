@@ -269,6 +269,7 @@
       ['fees', 'Visas & park fees'],
     ];
     const titleById = Object.fromEntries(store.getChapters().map((c) => [c.id, c.title]));
+    const datesById = Object.fromEntries(store.getChapters().map((c) => [c.id, dayRange(c.start, c.end)]));
     const rowTotal = (r) => CATS.reduce((s, [k]) => s + (r[k] || 0), 0);
     const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
     const chTotal = budget.chapters.reduce((s, r) => s + rowTotal(r), 0);
@@ -351,7 +352,7 @@
               {sorted.map((r) => (
                 <tr key={r.id} style={{ borderTop: '1px solid rgba(0,0,0,.08)' }} title={r.note}>
                   <td style={{ opacity: 0.55 }}>{r.idx}</td>
-                  <td style={{ padding: '6px 8px 6px 0', whiteSpace: 'nowrap' }}>{r.title}</td>
+                  <td style={{ padding: '6px 8px 6px 0', whiteSpace: 'nowrap' }}>{r.title}<div style={{ opacity: 0.55, fontSize: 11 }}>{datesById[r.id] || ''}</div></td>
                   <td>{r.days}</td>
                   <td>{fmt$(r.perDay).replace('USD ', '$')}</td>
                   <td>{fmt$(r.lodging).replace('USD ', '$')}</td>

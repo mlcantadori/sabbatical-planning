@@ -151,7 +151,7 @@ window.TRIP = (function () {
       country: 'Turkey', flag: '🇹🇷', title: 'Turkey',
       start: '2026-09-21', end: '2026-10-12', days: 21,
       theme: 'Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul',
-      intro: 'Landing from Athens on a single Turkish ticket via IST into Göreme. Three nights in the valleys (balloon booked ✅), then take the Sep 24, 22:50 ASR→ADB flight for a rental-car loop down the Aegean coast: Alaçatı, Şirince (Ephesus), Kaş and Akyaka. Return the car at ADB on Oct 3, fly into Istanbul and stay until the end of the chapter before the Oct 12 flight to Baku.',
+      intro: 'Landing from Athens on a single Turkish ticket via IST into Göreme. Three nights in the valleys (balloon booked ✅), then take the Sep 24, 22:50 ASR→ADB flight for a rental-car loop down the Aegean coast: Alaçatı, Şirince (Ephesus), Kaş and Akyaka. Return the car at ADB on Oct 2, fly ADB → Istanbul 16:45 and stay until the end of the chapter before the Oct 12 flight to Baku.',
       tldr: 'Cappadocia (Göreme) · Alaçatı · Şirince · Kaş · Akyaka · Istanbul',
       weather: { hi: 26, lo: 14, label: 'Early autumn, 26°/14°', emoji: '☀️', rainyDays: 3 },
       photos: ['cappadocia balloons', 'alacati aegean', 'kas harbour', 'istanbul mosque'],
@@ -165,14 +165,12 @@ window.TRIP = (function () {
         { name: 'Kaş', days: 3, query: 'Kaş, Antalya, Turkey',
           highlights: ['Drive ~5h from Şirince/Selçuk','Two full days for Kekova, swimming, Kaputaş, relaxing','Lycian Way treks from town'] },
         { name: 'Akyaka', days: 1, query: 'Akyaka, Muğla, Turkey',
-          highlights: ['Drive ~2.5–3h from Kaş','Azmak River, slow evening','Oct 2: ~2.5h drive to Izmir, night in the city'] },
-        { name: 'Izmir', days: 1, query: 'Izmir, Turkey',
-          highlights: ['Night in Izmir after the coastal loop','Oct 3: return the rental car at ADB, fly ADB → Istanbul (~1h15)'] },
-        { name: 'Istanbul', days: 9, query: 'Sultanahmet, Istanbul',
-          highlights: ['Oct 3 flight ADB → Istanbul (~1h15)','Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet without rushing','Asian side — Kadıköy/Moda ferries and market mornings','Bosphorus ferries — the most beautiful commute on Earth','Princes\' Islands day trip','Oct 12: fly Istanbul (IST) → Baku (GYD), bought ✅'] },
+          highlights: ['Drive ~2.5–3h from Kaş','Azmak River, slow evening','Oct 2: ~2.5h drive to Izmir airport (ADB) — drop the car, fly ADB → Istanbul 19:45'] },
+        { name: 'Istanbul', days: 10, query: 'Sultanahmet, Istanbul',
+          highlights: ['Oct 2, 19:45 flight ADB → Istanbul (~1h15)','Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet without rushing','Asian side — Kadıköy/Moda ferries and market mornings','Bosphorus ferries — the most beautiful commute on Earth','Princes\' Islands day trip','Oct 12: fly Istanbul (IST) → Baku (GYD), bought ✅'] },
       ],
-      booking: ['Balloon Sep 22/23 — booked ✅','IST → GYD Oct 12 + GYD → DEL Oct 14 — bought ✅','Stays Göreme Sep 21–24 booked ✅ — Alaçatı (Sep 24–26, from Sep 24 for 1am arrival), Şirince (27), Kaş (28–30), Akyaka (Oct 1), Izmir (Oct 2) need (re)booking for new dates','Rental car ADB Sep 25 – Oct 3 — collect at ADB (~1am Sep 25), loop Alaçatı→Şirince→Kaş→Akyaka→Izmir, return at ADB','Internal flights ASR→ADB 22:50 Sep 24 + ADB→IST Oct 3 — ASR→ADB bought ✅, ADB→IST to buy','India e-Visa by mid-Sep'],
-      decisions: ['Göreme as the Cappadocia base — valleys, balloon logistics, Open Air Museum','Coastal loop by rental car (Alaçatı + Şirince/Ephesus + Kaş + Akyaka) instead of a Kaş turnaround','Şirince picked for Ephesus access + quiet village night; Akyaka breaks the Kaş→Izmir drive; Izmir night before the Oct 3 flight','Istanbul as 9-night close (Oct 3–12), then Baku stopover Oct 13 to break IST → DEL'],
+      booking: ['Balloon Sep 22/23 — booked ✅','IST → GYD Oct 12 + GYD → DEL Oct 14 — bought ✅','Stays Göreme Sep 21–24 booked ✅ — Alaçatı (Sep 24–26, from Sep 24 for 1am arrival), Şirince (27), Kaş (28–30), Akyaka (Oct 1) need (re)booking for new dates','Rental car ADB Sep 25 – Oct 2 — collect at ADB (~1am Sep 25), loop Alaçatı→Şirince→Kaş→Akyaka, return at ADB Oct 2','Internal flights ASR→ADB 22:50 Sep 24 + ADB→IST Oct 2, 19:45 — ASR→ADB bought ✅, ADB→IST to buy','India e-Visa by mid-Sep'],
+      decisions: ['Göreme as the Cappadocia base — valleys, balloon logistics, Open Air Museum','Coastal loop by rental car (Alaçatı + Şirince/Ephesus + Kaş + Akyaka) instead of a Kaş turnaround','Şirince picked for Ephesus access + quiet village night; Akyaka breaks the Kaş→Izmir drive','Istanbul as 10-night close (Oct 2–12), then Baku stopover Oct 13 to break IST → DEL'],
     },
     {
       id: 'baku', kind: 'chapter', region: 'crossroads',
@@ -503,7 +501,7 @@ window.TRIP = (function () {
     { task: 'Flights: Athens→Chania + Athens→Cappadocia', by: 'Done ✅', critical: false, done: true, notes: 'Sep 5 06h45 to Chania · Sep 21 to Cappadocia via IST, single Turkish ticket' },
     // ── Confirmed — Türkiye + Baku + DEL ✅ ──
     { task: 'Cappadocia balloon — Sep 22 or 23', by: 'Done ✅', critical: false, done: true, notes: 'Royal Balloon / Butterfly Balloons — booked' },
-    { task: 'Flights until DEL — recheck', by: 'Done except ADB→IST', critical: true, done: false, notes: 'ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved Sep 30 eve → Oct 2, TO BUY · IST→GYD Oct 12 · GYD→DEL Oct 14' },
+    { task: 'Flights until DEL — recheck', by: 'Done except ADB→IST', critical: true, done: false, notes: 'ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST Oct 2, 19:45, TO BUY · IST→GYD Oct 12 · GYD→DEL Oct 14' },
     { task: 'Türkiye stays until Izmir — rebook new dates', by: 'ASAP', critical: true, done: false, notes: 'Göreme Sep 21–24 booked ✅ · Alaçatı Sep 25–26 · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1' },
     { task: 'Crete car in Chania — rented', by: 'Done ✅', critical: false, done: true, notes: 'Chania base — Balos, Elafonisi, Therisos Gorge, Falasarna' },
   ];
@@ -551,7 +549,7 @@ window.TRIP = (function () {
       { id: 'saopaulo', days: 7, lodging: 270, food: 350, transport: 150, activities: 100, fees: 0, note: 'Airbnb R$1,400 actual (~$270, Aug 19–26) · metro/Uber + farewell dinner' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
-      { id: 'turkey', days: 21, lodging: 1845, food: 1470, transport: 840, activities: 780, fees: 120, note: 'Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Izmir 1n + Istanbul 9n · balloon ~$480 · car 9d ~$500 · e-visa' },
+      { id: 'turkey', days: 21, lodging: 1865, food: 1470, transport: 790, activities: 780, fees: 120, note: 'Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n · balloon ~$480 · car 8d ~$450 · e-visa' },
       { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
       { id: 'india', days: 6, lodging: 270, food: 270, transport: 190, activities: 120, fees: 55, note: 'Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg' },
       { id: 'nepal', days: 20, lodging: 315, food: 315, transport: 100, activities: 2000, fees: 100, note: 'Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 6n hotels · food off-trek · 30d visa' },
@@ -654,7 +652,7 @@ window.TRIP = (function () {
     { id: 'abctrek', title: 'Annapurna Base Camp trek', start: '2026-10-25', end: '2026-11-04', note: '11-day teahouse trek: Nayapul → ABC (4,130m) → Jhinu hot springs' },
     { id: 'rajaampatdiving', title: 'Raja Ampat Diving (liveaboard)', start: '2027-03-11', end: '2027-03-20', note: '10 days on the water: Wayag, Cape Kri, Manta Sandy' },
     { id: 'chaniacar', title: '🚗 Rental car — Chania', start: '2026-09-05', end: '2026-09-09', note: 'Return 8:30am Sep 9' },
-    { id: 'izmircar', title: '🚗 Rental car — Izmir (ADB)', start: '2026-09-25', end: '2026-10-03', note: 'Pickup ~1am Sep 25' },
+    { id: 'izmircar', title: '🚗 Rental car — Izmir (ADB)', start: '2026-09-25', end: '2026-10-02', note: 'Pickup ~1am Sep 25 · return Oct 2 before 16:45 flight' },
   ];
 
   return {

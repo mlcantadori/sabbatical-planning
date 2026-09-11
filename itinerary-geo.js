@@ -52,7 +52,6 @@ window.TRIP_GEO = {
     'turkey/Şirince':                         [37.9429,   27.3417],
     'turkey/Kaş':                             [36.2018,   29.6377],
     'turkey/Akyaka':                          [37.0545,   28.3269],
-    'turkey/Izmir':                           [38.4237,   27.1428],
     'turkey/Istanbul':                         [41.0082,   28.9784],
     // Baku
     'baku/Baku':                                 [40.4093,   49.8671],
