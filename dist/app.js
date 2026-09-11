@@ -88,7 +88,9 @@
     }), " ", !isMobile && 'Map'), /*#__PURE__*/React.createElement("button", {
       className: view === 'budget' ? 'is-active' : '',
       onClick: () => setView('budget')
-    }, isMobile ? '$' : 'Budget'))), isMobile && /*#__PURE__*/React.createElement("div", {
+    }, isMobile ? '$' : 'Budget'), /*#__PURE__*/React.createElement(window.SyncButton, {
+      compact: isMobile
+    }))), isMobile && /*#__PURE__*/React.createElement("div", {
       className: "app-progress mobile-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
     }, /*#__PURE__*/React.createElement("span", {
