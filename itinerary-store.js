@@ -7,9 +7,10 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  // v9: Indonesia merged into a single chapter — old caches reference
-  // split chapter ids that no longer exist, so force a fresh re-bake.
-  const LS_KEY = 'trip-data-v9';
+  // v10: winter replan — japan-autumn/china-1/japan-winter/china-2 ids
+  // replaced (taiwan/china-e1/hk/korea/china-e2/japan/china-spring),
+  // so force a fresh re-bake.
+  const LS_KEY = 'trip-data-v10';
   const listeners = new Set();
   let chapters;
 
