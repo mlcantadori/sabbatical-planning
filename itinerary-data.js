@@ -63,43 +63,19 @@ window.TRIP = (function () {
   // them from array order on load, so inserting/reordering is renumber-free.
   const chapters = [
     {
-      id: 'rio', kind: 'chapter', region: 'americas',
+      id: 'brasil', kind: 'chapter', region: 'americas',
       country: 'Brasil', flag: '🇧🇷', title: 'Brasil',
-      start: '2026-06-21', end: '2026-07-20', days: 29,
-      theme: 'Home base — mountains and diving certs',
-      intro: 'The trip opens at home. This Rio chapter focused on two things: the Petrópolis–Teresópolis trail and diving certifications (Advanced Open Water + NITROX).',
-      tldr: 'Petrópolis–Teresópolis trail · Advanced Open Water · NITROX',
-      weather: { hi: 27, lo: 18, label: 'Inverno carioca, 27°/18°', emoji: '🌊', rainyDays: 8 },
-      photos: ['rio aerial', 'copacabana beach', 'lapa arches', 'santa teresa rio'],
+      start: '2026-06-21', end: '2026-08-26', days: 66,
+      theme: 'Mountains and diving certs, kite condo, farewell BBQ',
+      intro: 'The trip opens at home: Rio for the Petrópolis–Teresópolis trail and diving certifications (Advanced Open Water + NITROX), then a month in a Cumbuco condo for short kitesurfing sessions and downwinders, closing with friends, family and a farewell BBQ in São Paulo.',
+      tldr: 'Rio de Janeiro · Cumbuco · São Paulo',
+      weather: { hi: 30, lo: 18, label: 'Inverno brasileiro, 18°–30°', emoji: '🏠', rainyDays: 12 },
+      photos: ['rio aerial', 'copacabana beach', 'cumbuco beach kites', 'cumbuco kitesurf', 'masp sao paulo', 'sao paulo skyline'],
       places: [
         { name: 'Rio de Janeiro', days: 29, query: 'Ipanema, Rio de Janeiro',
-          highlights: ['Petrópolis–Teresópolis trail (Serra dos Órgãos)','Diving certifications: Advanced Open Water + NITROX'] },
-      ],
-    },
-    {
-      id: 'cumbuco', kind: 'chapter', region: 'americas',
-      country: 'Brasil', flag: '🇧🇷', title: 'Brasil',
-      start: '2026-07-21', end: '2026-08-19', days: 29,
-      theme: 'Condo base, short kite sessions, downwinders',
-      intro: 'Stayed in a condo and did short kitesurfing sessions from there, with occasional downwinders from the village center.',
-      tldr: 'Condo · short kite sessions · downwinders',
-      weather: { hi: 30, lo: 24, label: 'Nordeste seco, 30°/24°', emoji: '🪁', rainyDays: 3 },
-      photos: ['cumbuco beach kites', 'cumbuco kitesurf', 'cumbuco mural', 'super cumbuco'],
-      places: [
+          highlights: ['Petrópolis–Teresópolis trail (Serra dos Órgãos)','Diving certifications: Advanced Open Water + NITROX','Fly Rio → Fortaleza Jul 20'] },
         { name: 'Cumbuco', days: 29, query: 'Cumbuco, Caucaia, Ceará',
-          highlights: ['Stayed in a condo — home base','Short kitesurfing sessions from the condo','Occasional downwinders from the village center'] },
-      ],
-    },
-    {
-      id: 'saopaulo', kind: 'chapter', region: 'americas',
-      country: 'Brasil', flag: '🇧🇷', title: 'Brasil',
-      start: '2026-08-19', end: '2026-08-26', days: 7,
-      theme: 'Friends & family, farewell BBQ',
-      intro: 'No sightseeing — just time with friends and family in São Paulo before leaving Brazil. Closed the Brazil chapter with a farewell BBQ.',
-      tldr: 'Friends & family · Farewell BBQ',
-      weather: { hi: 24, lo: 14, label: 'Inverno paulistano, 24°/14°', emoji: '☕', rainyDays: 1 },
-      photos: ['masp sao paulo', 'sao paulo skyline', 'ibirapuera park', 'vila madelena art'],
-      places: [
+          highlights: ['Stayed in a condo — home base','Short kitesurfing sessions from the condo','Occasional downwinders from the village center','Fly Fortaleza → São Paulo Aug 19'] },
         { name: 'São Paulo', days: 7, query: 'Avenida Paulista, São Paulo',
           highlights: ['No sightseeing — time with friends and family only','Farewell BBQ before leaving Brazil','Fly São Paulo → Toronto to open the international leg'] },
       ],
@@ -526,9 +502,9 @@ window.TRIP = (function () {
     currency: 'USD',
     basis: 'couple · 356 days · mid-range with strategic splurges',
     fxBRL: 5.2,
-    estimate: 'USD ~95k for two',
-    perDay: '~USD 266/day for two',
-    inBRL: '~R$246k per person at R$5.20',
+    estimate: 'USD ~96k for two',
+    perDay: '~USD 268/day for two',
+    inBRL: '~R$249k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
@@ -545,9 +521,7 @@ window.TRIP = (function () {
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
     chapters: [
-      { id: 'rio', days: 29, lodging: 1350, food: 1200, transport: 300, activities: 1730, fees: 0, note: 'Airbnb R$7,000 actual (~$1,350, Jun 21–Jul 19) · trail R$4,000 + certs R$5,000 actual' },
-      { id: 'cumbuco', days: 29, lodging: 1900, food: 1600, transport: 150, activities: 100, fees: 0, note: 'Airbnb actual $1,900/mo · own kite gear · downwinder support' },
-      { id: 'saopaulo', days: 7, lodging: 270, food: 350, transport: 150, activities: 100, fees: 0, note: 'Airbnb R$1,400 actual (~$270, Aug 19–26) · metro/Uber + farewell dinner' },
+      { id: 'brasil', days: 66, lodging: 3520, food: 3150, transport: 1350, activities: 1930, fees: 0, note: 'Rio Airbnb R$7,000 + Cumbuco $1,900/mo + SP R$1,400 actual · trail + certs actual · internal flights Rio→Fortaleza + Fortaleza→SP ~$750' },
       { id: 'toronto', days: 5, lodging: 0, food: 450, transport: 150, activities: 50, fees: 0, note: "Friend's place · TTC + Islands ferry · mostly home meals" },
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
       { id: 'turkey', days: 21, lodging: 1865, food: 1470, transport: 790, activities: 780, fees: 120, note: 'Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n · balloon ~$480 · car 8d ~$450 · e-visa' },
@@ -572,8 +546,6 @@ window.TRIP = (function () {
     // Every leg carries a `date` (departure day) so the calendar sync can
     // place flight blocks; totals are unchanged by leg splits.
     flights: [
-      { route: 'Rio → Fortaleza', cost: 400, date: '2026-07-20', note: 'Estimate' },
-      { route: 'Fortaleza → São Paulo', cost: 350, date: '2026-08-17', note: 'Estimate' },
       { route: 'São Paulo → Toronto', cost: 900, date: '2026-08-27', note: 'Bought ✅ (locked)' },
       { route: 'Toronto → Athens', cost: 800, date: '2026-08-31', note: 'Bought ✅ (locked), overnight, lands Sep 1' },
       { route: 'Athens → Cappadocia via IST', cost: 500, date: '2026-09-21', note: 'Bought ✅ (est.)' },
@@ -622,9 +594,7 @@ window.TRIP = (function () {
   // months: 1-indexed array of good months. If a chapter's start month falls
   // outside this range, a season warning is shown in the impact preview.
   const optimalWindows = {
-    'rio':          { months: [6, 7, 8, 9],            note: 'Jun–Sep: inverno carioca seco, sem umidade, praias limpas' },
-    'cumbuco':      { months: [7, 8, 9, 10, 11],      note: 'Jul–Nov: pico da temporada de vento no Ceará, Jeri em destaque' },
-    'saopaulo':     { months: [5, 6, 7, 8, 9],        note: 'Mai–Set: inverno paulistano, menos umidade, agradável para cidade' },
+    'brasil':       { months: [6, 7, 8],              note: 'Jun–Ago: inverno seco no Rio, pico do vento no Ceará, inverno ameno em SP' },
     'toronto':      { months: [7, 8, 9],              note: 'Jul–Sep: warm summer, patios open, Lake Ontario swimmable' },
     'athens':       { months: [5, 6, 9, 10],         note: 'May–Jun and Sep–Oct: ideal temps; Aug is peak heat + crowds' },
     'turkey':       { months: [9, 10],               note: 'Sep–Oct: post-summer, ideal weather, balloon season' },

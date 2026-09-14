@@ -10,28 +10,26 @@
 
 | # | Destination | Dates | Days |
 |---|---|---|---|
-| 1 | Brasil | Jun 21 – Jul 20 | 29 |
-| 2 | Brasil | Jul 21 – Aug 17 | 27 |
-| 3 | Brasil | Aug 17 – Aug 26 | 10 |
-| 4 | Canada | Aug 27 – Aug 31 | 5 |
-| 5 | Greece | Sep 1 – Sep 22 | 21 |
-| 6 | Türkiye | Sep 21 – Oct 12 | 21 |
-| 7 | Azerbaijan | Oct 12 – Oct 14 | 2 |
-| 8 | India (compact, via Baku) | Oct 14 – Oct 20 | 6 |
-| 9 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
-| 10 | Taiwan | Nov 11 – Nov 28 | 17 |
-| 11 | China | Nov 28 – Dec 15 | 17 |
-| 12 | Hong Kong | Dec 15 – Dec 20 | 5 |
-| 13 | South Korea | Dec 20 – Jan 7 | 18 |
-| 14 | China | Jan 7 – Jan 25 | 18 |
-| 15 | Japan | Jan 25 – Feb 24 | 30 |
-| 16 | Philippines | Feb 24 – Mar 11 | 15 |
-| 17 | Indonesia | Mar 11 – Apr 18 | 38 |
-| 18 | Malaysia | Apr 18 – Apr 28 | 10 |
-| 19 | Singapore | Apr 28 – May 5 | 7 |
-| 20 | Malaysia | May 5 – May 15 | 10 |
-| 21 | Thailand | May 15 – May 29 | 14 |
-| 22 | China | May 29 – Jun 12 | 14 |
+| 1 | Brasil | Jun 21 – Aug 26 | 66 |
+| 2 | Canada | Aug 27 – Aug 31 | 5 |
+| 3 | Greece | Sep 1 – Sep 22 | 21 |
+| 4 | Türkiye | Sep 21 – Oct 12 | 21 |
+| 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
+| 6 | India (compact, via Baku) | Oct 14 – Oct 20 | 6 |
+| 7 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
+| 8 | Taiwan | Nov 11 – Nov 28 | 17 |
+| 9 | China | Nov 28 – Dec 15 | 17 |
+| 10 | Hong Kong | Dec 15 – Dec 20 | 5 |
+| 11 | South Korea | Dec 20 – Jan 7 | 18 |
+| 12 | China | Jan 7 – Jan 25 | 18 |
+| 13 | Japan | Jan 25 – Feb 24 | 30 |
+| 14 | Philippines | Feb 24 – Mar 11 | 15 |
+| 15 | Indonesia | Mar 11 – Apr 18 | 38 |
+| 16 | Malaysia | Apr 18 – Apr 28 | 10 |
+| 17 | Singapore | Apr 28 – May 5 | 7 |
+| 18 | Malaysia | May 5 – May 15 | 10 |
+| 19 | Thailand | May 15 – May 29 | 14 |
+| 20 | China | May 29 – Jun 12 | 14 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
 **China total:** 49 days in-country (E1 17 + E2 18 + spring 14), each entry far inside the 30d visa-free limit ✓
@@ -45,41 +43,23 @@
 ---
 
 ## Chapter 1 — BRASIL
-### Jun 21 – Jul 20 · 29 days
-*Theme: Home base — mountains and diving certs*
+### Jun 21 – Aug 26 · 66 days
+*Theme: Mountains and diving certs, kite condo, farewell BBQ*
 
-The trip opens at home. This Rio chapter focused on two things: the Petrópolis–Teresópolis trail and diving certifications (Advanced Open Water + NITROX).
+The trip opens at home: Rio for the Petrópolis–Teresópolis trail and diving certifications (Advanced Open Water + NITROX), then a month in a Cumbuco condo for short kitesurfing sessions and downwinders, closing with friends, family and a farewell BBQ in São Paulo.
 
-**Rio de Janeiro — 29 days**
+**Rio de Janeiro — 29 days (Jun 21 – Jul 20)**
 - Petrópolis–Teresópolis trail (Serra dos Órgãos)
 - Diving certifications: Advanced Open Water + NITROX
+- Fly Rio → Fortaleza Jul 20
 
-**Fly Rio → Toronto Jul 20** (or fly direct Rio → Athens with Toronto layover)
-
----
-
-## Chapter 2 — BRASIL
-### Jul 21 – Aug 17 · 27 days
-*Theme: Condo base, short kite sessions, downwinders*
-
-Stayed in a condo and did short kitesurfing sessions from there, with occasional downwinders from the village center.
-
-**Cumbuco — 27 days**
+**Cumbuco — 29 days (Jul 21 – Aug 19)**
 - Stayed in a condo — home base
 - Short kitesurfing sessions from the condo
 - Occasional downwinders from the village center
+- Fly Fortaleza → São Paulo Aug 19
 
-**Fly Fortaleza → São Paulo Aug 17**
-
----
-
-## Chapter 3 — BRASIL
-### Aug 17 – Aug 26 · 10 days
-*Theme: Friends & family, farewell BBQ*
-
-No sightseeing — just time with friends and family in São Paulo before leaving Brazil. Closed the Brazil chapter with a farewell BBQ.
-
-**São Paulo — 10 days**
+**São Paulo — 7 days (Aug 19 – Aug 26)**
 - No sightseeing — time with friends and family only
 - Farewell BBQ before leaving Brazil
 
@@ -87,7 +67,7 @@ No sightseeing — just time with friends and family in São Paulo before leavin
 
 ---
 
-## Chapter 4 — CANADA
+## Chapter 2 — CANADA
 ### Aug 27 – Aug 31 · 5 days
 *Theme: Friends & family send-off before Europe*
 
@@ -102,7 +82,7 @@ Five days in Toronto before crossing the Atlantic — mostly to meet friends and
 
 ---
 
-## Chapter 5 — GREECE
+## Chapter 3 — GREECE
 ### Sep 1 – Sep 22 · 21 days
 *Theme: Ancient Mediterranean, Peloponnese road trip, island-hopping south*
 
@@ -156,7 +136,7 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 
 ---
 
-## Chapter 6 — TÜRKIYE
+## Chapter 4 — TÜRKIYE
 ### Sep 21 – Oct 12 · 21 days
 *Theme: Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
 
@@ -200,7 +180,7 @@ Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme fir
 
 ---
 
-## Chapter 7 — AZERBAIJAN
+## Chapter 5 — AZERBAIJAN
 ### Oct 12 – Oct 14 · 2 days
 *Theme: Caspian layover between Istanbul and Delhi*
 
@@ -217,7 +197,7 @@ One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DE
 
 ---
 
-## Chapter 8 — INDIA
+## Chapter 6 — INDIA
 ### Oct 14 – Oct 20 · 6 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
@@ -241,7 +221,7 @@ A tight, intentional India: land in Delhi Oct 14 from Baku, straight to the Taj 
 
 ---
 
-## Chapter 9 — NEPAL
+## Chapter 7 — NEPAL
 ### Oct 21 – Nov 10 · 20 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 
@@ -272,7 +252,7 @@ Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchh
 
 ---
 
-## Chapter 10 — TAIWAN
+## Chapter 8 — TAIWAN
 ### Nov 11 – Nov 28 · 17 days
 *Theme: Post-typhoon island, north to south in the best window*
 
@@ -301,7 +281,7 @@ Mid-November is Taiwan at its finest — typhoon season over, Taipei at 23°, th
 
 ---
 
-## Chapter 11 — CHINA
+## Chapter 9 — CHINA
 ### Nov 28 – Dec 15 · 17 days
 *Theme: Cantonese south + Sichuan fire, closing with friends in Shenzhen*
 
@@ -343,7 +323,7 @@ First mainland entry — 17 counted days, deep inside the 30-day visa-free limit
 
 ---
 
-## Chapter 12 — HONG KONG
+## Chapter 10 — HONG KONG
 ### Dec 15 – Dec 20 · 5 days
 *Theme: Neon city + dim sum + visa reset, priced before Christmas week*
 
@@ -361,7 +341,7 @@ Five pre-Christmas days in one of the world's great cities. Dry 20° air, early 
 
 ---
 
-## Chapter 13 — SOUTH KOREA
+## Chapter 11 — SOUTH KOREA
 ### Dec 20 – Jan 7 · 18 days
 *Theme: Christmas + NYE in Seoul, palace snow, winter food loop*
 
@@ -369,7 +349,7 @@ Eighteen festive days: land Dec 20 into Christmas markets and palace snow, loop 
 
 **Seoul — 4 days (Dec 20–24)**
 - Gyeongbokgung + Changdeokgung in snow-dusted winter light
-- Christmas markets in Myeongdong, Dongdaemun Design Plaza
+- Christmas markets in Myeongdong + Dongdaemun Design Plaza
 - Gwangjang Market: bindaetteok, mayak gimbap
 - Bukchon Hanok Village
 - KTX south to Busan Dec 24
@@ -404,7 +384,7 @@ Eighteen festive days: land Dec 20 into Christmas markets and palace snow, loop 
 
 ---
 
-## Chapter 14 — CHINA
+## Chapter 12 — CHINA
 ### Jan 7 – Jan 25 · 18 days
 *Theme: Empty snow-dusted Wall, indoor Warriors, Shanghai café winter*
 
@@ -441,7 +421,7 @@ Second mainland entry — 18 counted days, again deep inside the limit with the 
 
 ---
 
-## Chapter 15 — JAPAN
+## Chapter 13 — JAPAN
 ### Jan 25 – Feb 24 · 30 days
 *Theme: Empty temples + early plum, then a post-CNY powder week*
 
@@ -484,7 +464,7 @@ Bus/train Hakuba → Tokyo. Fly Tokyo → Manila — Philippines begins Feb 24.
 
 ---
 
-## Chapter 16 — PHILIPPINES
+## Chapter 14 — PHILIPPINES
 ### Feb 24 – Mar 11 · 15 days
 *Theme: Manila staging, WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
@@ -519,7 +499,7 @@ Fly in two days early for rest and dive-gear prep in Manila, then the express ru
 
 ---
 
-## Chapter 17 — INDONESIA
+## Chapter 15 — INDONESIA
 ### Mar 11 – Apr 18 · 38 days
 *Theme: The best diving on Earth, then slow islands — liveaboard, cliffs, dragons, volcano*
 
@@ -572,7 +552,7 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 
 ---
 
-## Chapter 18 — MALAYSIA
+## Chapter 16 — MALAYSIA
 ### Apr 18 – Apr 28 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -603,7 +583,7 @@ Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d e
 
 ---
 
-## Chapter 19 — SINGAPORE
+## Chapter 17 — SINGAPORE
 ### Apr 28 – May 5 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -616,7 +596,7 @@ Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d e
 
 ---
 
-## Chapter 20 — MALAYSIA
+## Chapter 18 — MALAYSIA
 ### May 5 – May 15 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
@@ -639,7 +619,7 @@ KL for the city spectacle and food, Penang for the most rewarding slow chapter i
 
 ---
 
-## Chapter 21 — THAILAND
+## Chapter 19 — THAILAND
 ### May 15 – May 29 · 14 days
 *Theme: Islands, reef diving, urban intensity, street food*
 
@@ -666,7 +646,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Ban
 
 ---
 
-## Chapter 22 — CHINA
+## Chapter 20 — CHINA
 ### May 29 – Jun 12 · 14 days
 *Theme: Karst mirrors, avatar pillars, riverside old town — spring finale*
 
@@ -785,20 +765,20 @@ VOA Day 1 ~Mar 11 (Sorong arrival). A single 30-day window no longer covers the 
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 95,000 for two · ~USD 266/day · 356 days** (~R$246k per person at R$5.20)
+**Grand total: ~USD 96,000 for two · ~USD 268/day · 356 days** (~R$249k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,100 / ~R$21,300 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,100 / ~R$21,200 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (22 chapters) | 25,570 | 27% |
-| Food (22 chapters) | 20,015 | 21% |
+| Lodging (20 chapters) | 25,570 | 27% |
+| Food (20 chapters) | 20,015 | 21% |
 | Activities & diving | 20,210 | 21% |
-| Inter-chapter flights | 9,620 | 10% |
-| Local transport | 10,495 | 11% |
+| Inter-chapter flights | 8,870 | 9% |
+| Local transport | 11,245 | 12% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 445 | <1% |
-| Contingency (8%) | 7,089 | 7% |
+| Contingency (8%) | 7,080 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -806,37 +786,33 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 
 | # | Chapter | Days | $/day | Total | Key drivers |
 |---|---|---|---|---|---|
-| 1 | Brasil | 29 | 158 | 4,580 | Airbnb R$7,000 actual (~$1,350) · trail R$4,000 + certs R$5,000 actual |
-| 2 | Brasil | 29 | 129 | 3,750 | Airbnb actual $1,900/mo · own kite gear |
-| 3 | Brasil | 7 | 124 | 870 | Airbnb R$1,400 actual (~$270) · metro/Uber + farewell dinner |
-| 4 | Canada | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
-| 5 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
-| 6 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n |
-| 7 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
-| 8 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
-| 9 | Nepal | 20 | 142 | 2,830 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 6n |
-| 10 | Taiwan | 17 | 180 | 3,055 | ~$95/n · Hualien + Alishan rails · south slow days |
-| 11 | China | 17 | 206 | 3,495 | CAN→CTU + CKG→SZX flights ~$460 · CTU→CKG HSR ~$120 · pandas + Dazu |
-| 12 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
-| 13 | South Korea | 18 | 234 | 4,210 | ~$125/n · KTX loop + DMZ tour · Christmas/NYE week premium |
-| 14 | China | 18 | 208 | 3,750 | PEK→XIY + XIY→SHA ~$500 · Wall + Warriors + Suzhou day trip |
-| 15 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
-| 16 | Philippines | 15 | 209 | 3,135 | Manila 3n staging + gear prep · Coron 4 dive-days · sardines (Malapascua dropped) |
-| 17 | Indonesia | 38 | 378 | 14,360 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · Komodo boat + dives · Batur |
-| 18 | Malaysia | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
-| 19 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
-| 20 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
-| 21 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
-| 22 | China | 14 | 209 | 2,920 | BKK→Guilin flight ~$400 · Guilin→Longji→Zhangjiajie→Fenghuang rails/buses ~$400 · karst + pillars tickets |
+| 1 | Brasil | 66 | 151 | 9,950 | Rio Airbnb R$7,000 + Cumbuco $1,900/mo + SP R$1,400 actual · trail + certs actual · internal flights ~$750 |
+| 2 | Canada | 5 | 130 | 650 | Friend's place · TTC + Islands ferry |
+| 3 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
+| 4 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n |
+| 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
+| 6 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
+| 7 | Nepal | 20 | 142 | 2,830 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 6n |
+| 8 | Taiwan | 17 | 180 | 3,055 | ~$95/n · Hualien + Alishan rails · south slow days |
+| 9 | China | 17 | 206 | 3,495 | CAN→CTU + CKG→SZX flights ~$460 · CTU→CKG HSR ~$120 · pandas + Dazu |
+| 10 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
+| 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · KTX loop + DMZ tour · Christmas/NYE week premium |
+| 12 | China | 18 | 208 | 3,750 | PEK→XIY + XIY→SHA ~$500 · Wall + Warriors + Suzhou day trip |
+| 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
+| 14 | Philippines | 15 | 209 | 3,135 | Manila 3n staging + gear prep · Coron 4 dive-days · sardines (Malapascua dropped) |
+| 15 | Indonesia | 38 | 378 | 14,360 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · Komodo boat + dives · Batur |
+| 16 | Malaysia | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
+| 17 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
+| 18 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
+| 19 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
+| 20 | China | 14 | 209 | 2,920 | BKK→Guilin flight ~$400 · Guilin→Longji→Zhangjiajie→Fenghuang rails/buses ~$400 · karst + pillars tickets |
 
-Chapters subtotal: **$76,735** · 352 days.
+Chapters subtotal: **$77,485** · 353 days.
 
 ### Inter-chapter flights (couple)
 
 | Route | Date | USD | Status |
 |---|---|---|---|
-| Rio → Fortaleza | Jul 20 | 400 | Estimate |
-| Fortaleza → São Paulo | Aug 17 | 350 | Estimate |
 | São Paulo → Toronto | Aug 27 | 900 | Bought ✅ |
 | Toronto → Athens | Aug 31 | 800 | Bought ✅ (overnight) |
 | Athens → Cappadocia via IST | Sep 21 | 500 | Bought ✅ (est.) |
@@ -853,7 +829,7 @@ Chapters subtotal: **$76,735** · 352 days.
 | Kota Kinabalu → Singapore | Apr 28 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 12 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$9,620**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $88,505 + 8% contingency $7,080 = **~$95,600**.
+Flights subtotal: **$8,870**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $88,505 + 8% contingency $7,080 = **~$95,600**.
 
 ### Assumptions & levers
 
@@ -871,11 +847,11 @@ Flights subtotal: **$9,620**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 |---|---|---|
 | Raja Ampat liveaboard | **By Oct 2025** | Papua Diving / Meridian Adventure — Mar 11–20 dates (MOVED — reconfirm!), book 6+ months ahead |
 | Sipadan permits | By Nov 2026 | 120 permits/day cap — only if adding Sipadan to Borneo chapter |
-| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→TPE Nov 11 · TPE→CAN Nov 28 · HKG→ICN Dec 20 · ICN→PEK Jan 7 · SHA→KIX Jan 25 · TYO→MNL Feb 24 · domestic: CAN→CTU, CKG→SZX, PEK→XIY, XIY→SHA |
 | Cappadocia balloon | Booked ✅ | Sep 22 or 23 — Royal Balloon / Butterfly Balloons |
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna permits | On arrival in Nepal | ACAP permit + TIMS card available in Kathmandu |
+| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→TPE Nov 11 · TPE→CAN Nov 28 · HKG→ICN Dec 20 · ICN→PEK Jan 7 · SHA→KIX Jan 25 · TYO→MNL Feb 24 · domestic: CAN→CTU, CKG→SZX, PEK→XIY, XIY→SHA |
 | Kinabatangan river lodge | By Feb 2027 | Book 2–3 months ahead; good lodges fill in dry season |
 
 ---

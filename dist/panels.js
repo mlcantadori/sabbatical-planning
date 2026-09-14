@@ -478,7 +478,7 @@
         borderCollapse: 'collapse',
         fontSize: 12
       }
-    }, /*#__PURE__*/React.createElement("tbody", null, [['Chapters subtotal (23 chapters)', chTotal, chTotal], ['+ Inter-chapter flights (14 legs)', flightsTotal, chTotal + flightsTotal], ['+ Insurance & extras', extrasTotal, subtotal]].map(([label, amount, running], i) => /*#__PURE__*/React.createElement("tr", {
+    }, /*#__PURE__*/React.createElement("tbody", null, [[`Chapters subtotal (${budget.chapters.length} chapters)`, chTotal, chTotal], [`+ Inter-chapter flights (${budget.flights.length} legs)`, flightsTotal, chTotal + flightsTotal], ['+ Insurance & extras', extrasTotal, subtotal]].map(([label, amount, running], i) => /*#__PURE__*/React.createElement("tr", {
       key: i,
       style: {
         borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)'
