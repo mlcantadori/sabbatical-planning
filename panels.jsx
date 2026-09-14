@@ -379,8 +379,8 @@
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
             <tbody>
               {[
-                ['Chapters subtotal (23 chapters)', chTotal, chTotal],
-                ['+ Inter-chapter flights (14 legs)', flightsTotal, chTotal + flightsTotal],
+                [`Chapters subtotal (${budget.chapters.length} chapters)`, chTotal, chTotal],
+                [`+ Inter-chapter flights (${budget.flights.length} legs)`, flightsTotal, chTotal + flightsTotal],
                 ['+ Insurance & extras', extrasTotal, subtotal],
               ].map(([label, amount, running], i) => (
                 <tr key={i} style={{ borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)' }}>
