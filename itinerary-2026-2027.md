@@ -16,9 +16,9 @@
 | 4 | Türkiye | Sep 21 – Oct 12 | 21 |
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 6 | India (compact, via Baku) | Oct 14 – Oct 20 | 6 |
-| 7 | Nepal (reduced) | Oct 21 – Nov 10 | 20 |
-| 8 | Taiwan | Nov 11 – Nov 25 | 14 |
-| 9 | China | Nov 25 – Dec 2 | 7 |
+| 7 | Nepal (reduced) | Oct 21 – Nov 9 | 19 |
+| 8 | Taiwan | Nov 10 – Nov 24 | 14 |
+| 9 | China | Nov 24 – Dec 2 | 8 |
 | 10 | Hong Kong | Dec 2 – Dec 7 | 5 |
 | 11 | China | Dec 7 – Dec 20 | 13 |
 | 12 | South Korea | Dec 20 – Jan 7 | 18 |
@@ -33,7 +33,7 @@
 | 21 | China | May 29 – Jun 17 | 19 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
-**China total:** 57 days in-country (E1a 7 + E1b 13 + E2 18 + spring 19), each entry far inside the 30d visa-free limit ✓
+**China total:** 58 days in-country (E1a 8 + E1b 13 + E2 18 + spring 19), each entry far inside the 30d visa-free limit ✓
 **HK reset:** Shenzhen → Hong Kong by HSR Dec 15 restarts the 30-day clock for E2 ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
 **Indonesia visa:** Mar 11 entry +30d extension in Bali → Apr 18 exit ✓
@@ -223,7 +223,7 @@ A tight, intentional India: land in Delhi Oct 14 from Baku, straight to the Taj 
 ---
 
 ## Chapter 7 — NEPAL
-### Oct 21 – Nov 10 · 20 days
+### Oct 21 – Nov 9 · 19 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 
 Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude.
@@ -244,51 +244,51 @@ Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchh
 - Rhododendron forests, glacial moraines, 360° Annapurna amphitheater at the top
 - Return via Jhinu hot springs
 
-**Pokhara recovery — 5 days (Nov 5–9)**
+**Pokhara recovery — 4 days (Nov 5–8)**
 - Lakeside slow meals, massage, reflection
-- Optional paragliding over Phewa Lake
+- Optional paragliding over Phewa Lake (weather buffer built in)
 - Sārangkot sunrise over the Himalayas
 
-**Fly Pokhara → Tokyo Nov 10**
+**Fly Pokhara → Taipei Nov 9**
 
 ---
 
 ## Chapter 8 — TAIWAN
-### Nov 11 – Nov 25 · 14 days
+### Nov 10 – Nov 24 · 14 days
 *Theme: Post-typhoon island, north to south in the best window*
 
 Mid-November is Taiwan at its finest — typhoon season over, Taipei at 23°, the south still summery. No NYE countdown this time (moved to Seoul). Instead the island as pure slow travel: coffee streets, the marble gorge, then south to the food capital.
 
-**Taipei — 5 days (Nov 11–16)**
+**Taipei — 5 days (Nov 10–15)**
 - Da'an specialty coffee + bookshops
 - Jiufen: clifftop mining town, lantern-lit teahouses
 - Shilin Night Market
 - Elephant Mountain sunset hike
 - National Palace Museum
 
-**Hualien + Taroko Gorge — 2 days (Nov 16–18)**
+**Hualien + Taroko Gorge — 2 days (Nov 15–17)**
 - Train along Pacific coast (one of the most scenic rail journeys in Asia)
 - Marble canyon, jade river, suspension bridges through the cliff
 - Qingshui Cliffs: Pacific walls dropping into the ocean
 
-**Tainan + south — 7 days (Nov 18–25)**
+**Tainan + south — 7 days (Nov 17–24)**
 - Tainan: temples, old streets, night markets, oyster omelettes and beef noodle soup
 - Anping old fort + treehouse
 - Kaohsiung harbor + Liuhe night market
 - Alishan day-trip option (or skip for slow days)
 - Return to Taipei
 
-**Fly Taipei → Guangzhou Nov 25**
+**Fly Taipei → Guangzhou Nov 24**
 
 ---
 
 ## Chapter 9 — CHINA
-### Nov 25 – Dec 2 · 7 days
+### Nov 24 – Dec 2 · 8 days
 *Theme: Cantonese immersion + friends in Shenzhen*
 
-First mainland entry — 7 counted days, deep inside the 30-day visa-free limit. Fly in from Taipei to Guangzhou for a Cantonese food blitz, then four days alongside friends in Shenzhen before the 15-minute HSR slide into Hong Kong.
+First mainland entry — 8 counted days, deep inside the 30-day visa-free limit. Fly in from Taipei to Guangzhou for a Cantonese food blitz with a Kaiping day trip, then four days alongside friends in Shenzhen before the 15-minute HSR slide into Hong Kong.
 
-**Guangzhou — 3 days (Nov 25–28)**
+**Guangzhou — 4 days (Nov 24–28)**
 - Cantonese food deep-dive — dim sum where it was born
 - Shamian Island colonial arcades
 - Chen Clan Academy — Lingnan craft at its finest
@@ -306,7 +306,7 @@ First mainland entry — 7 counted days, deep inside the 30-day visa-free limit.
 
 **HSR Shenzhen → Hong Kong Dec 2 (15 min, West Kowloon immigration)**
 
-*China E1a: 7 days. Guangzhou (3) + Shenzhen (4) ✓*
+*China E1a: 8 days. Guangzhou (4) + Shenzhen (4) ✓*
 
 ---
 
@@ -726,7 +726,7 @@ Nineteen days: the northern capitals moved here for late-May perfection, then th
 **Buffer — 1 day (Jun 16–17)**
 Travel to Changsha. **Fly home Jun 17, 2027.**
 
-*China total: E1a (7d PRD) + E1b (13d Sichuan + Zhangjiajie) + E2 (18d Jiangnan) + spring (19d north + karst) = 57 days in-country. ✓*
+*China total: E1a (8d PRD) + E1b (13d Sichuan + Zhangjiajie) + E2 (18d Jiangnan) + spring (19d north + karst) = 58 days in-country. ✓*
 
 ---
 
@@ -753,8 +753,8 @@ Travel to Changsha. **Fly home Jun 17, 2027.**
 | Azerbaijan | Oct 12–14 | Transit — IST → GYD Oct 12, full day Oct 13, GYD → DEL Oct 14, bought ✅ |
 | India | Oct 14–20 | Good — post-monsoon clear, Taj + Varanasi in 6d |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
-| Taiwan | Nov 11–28 | Excellent — post-typhoon, 23° Taipei, summery south; best island window |
-| China E1a (PRD) | Nov 25–Dec 2 | Excellent — mild delta, Cantonese food, 4 days with friends in Shenzhen |
+| Taiwan | Nov 10–24 | Excellent — post-typhoon, 23° Taipei, summery south; best island window |
+| China E1a (PRD) | Nov 24–Dec 2 | Excellent — mild delta, Cantonese food, 4 days with friends in Shenzhen |
 | China E1b (Sichuan + Zhangjiajie) | Dec 7–20 | Good — hotpot season; Zhangjiajie a fog gamble with snow upside |
 | Hong Kong | Dec 15–20 | Excellent — dry 20°, pre-Christmas shoulder prices, visa reset |
 | South Korea | Dec 20–Jan 7 | Excellent — Christmas markets + NYE bell, palace snow |
@@ -827,11 +827,11 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (21 chapters) | 26,005 | 27% |
-| Food (21 chapters) | 20,305 | 21% |
+| Lodging (21 chapters) | 26,060 | 27% |
+| Food (21 chapters) | 20,345 | 21% |
 | Activities & diving | 20,380 | 21% |
 | Inter-chapter flights | 9,170 | 9% |
-| Local transport | 11,585 | 12% |
+| Local transport | 11,625 | 12% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 445 | <1% |
 | Contingency (8%) | 7,203 | 7% |
@@ -848,9 +848,9 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 4 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n |
 | 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 6 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
-| 7 | Nepal | 20 | 142 | 2,830 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 6n |
+| 7 | Nepal | 19 | 146 | 2,780 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 5n |
 | 8 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days |
-| 9 | China | 7 | 169 | 1,185 | CAN→SZX HSR + SZX→HK exit · Canton Tower + Chen Clan |
+| 9 | China | 8 | 171 | 1,370 | CAN→SZX HSR + SZX→HK exit · Canton Tower + Chen Clan + Kaiping day trip |
 | 10 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
 | 11 | China | 13 | 227 | 2,945 | CTU→CKG HSR ~$120 · CKG→ZJJ + ZJJ→PVG ~$400 · pandas + Dazu + ZJJ/Tianmen |
 | 12 | South Korea | 18 | 234 | 4,210 | ~$125/n · KTX loop + DMZ tour · Christmas/NYE week premium |
@@ -864,7 +864,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 20 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 21 | China | 19 | 208 | 3,945 | BKK→PEK ~$450 + PEK→XIY HSR ~$150 + XIY→KWL ~$250 · Wall + Warriors + karst tickets |
 
-Chapters subtotal: **$78,720** · 358 days.
+Chapters subtotal: **$78,855** · 358 days.
 
 ### Inter-chapter flights (couple)
 
@@ -876,8 +876,8 @@ Chapters subtotal: **$78,720** · 358 days.
 | Istanbul → Baku | Oct 12 | 450 | Bought ✅ (est.) |
 | Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
 | Varanasi → Kathmandu (direct) | Oct 20 | 360 | ~$180pp Buddha Air |
-| Kathmandu/Pokhara → Taipei | Nov 11 | 950 | Estimate ~$475pp, via Bangkok/KL |
-| Taipei → Guangzhou | Nov 25 | 300 | Estimate, cross-strait hop |
+| Kathmandu/Pokhara → Taipei | Nov 9 | 950 | Estimate ~$475pp, via Bangkok/KL |
+| Taipei → Guangzhou | Nov 24 | 300 | Estimate, cross-strait hop |
 | Hong Kong → Chengdu | Dec 7 | 350 | Estimate |
 | Shanghai → Seoul | Dec 20 | 300 | Estimate |
 | Seoul → Shanghai | Jan 7 | 400 | Estimate |
@@ -887,7 +887,7 @@ Chapters subtotal: **$78,720** · 358 days.
 | Kota Kinabalu → Singapore | Apr 28 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$9,170**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $90,040 + 8% contingency $7,203 = **~$97,000**.
+Flights subtotal: **$9,170**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $90,075 + 8% contingency $7,206 = **~$97,000**.
 
 ### Assumptions & levers
 
@@ -909,7 +909,7 @@ Flights subtotal: **$9,170**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna permits | On arrival in Nepal | ACAP permit + TIMS card available in Kathmandu |
-| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→TPE Nov 11 · TPE→CAN Nov 25 · HKG→CTU Dec 7 · PVG→ICN Dec 20 · ICN→SHA Jan 7 · SHA→KIX Jan 25 · TYO→MNL Feb 24 · domestic HSR/flights: CAN→SZX, CTU→CKG, CKG→ZJJ, ZJJ→PVG |
+| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→TPE Nov 9 · TPE→CAN Nov 24 · HKG→CTU Dec 7 · PVG→ICN Dec 20 · ICN→SHA Jan 7 · SHA→KIX Jan 25 · TYO→MNL Feb 24 · domestic HSR/flights: CAN→SZX, CTU→CKG, CKG→ZJJ, ZJJ→PVG |
 | Kinabatangan river lodge | By Feb 2027 | Book 2–3 months ahead; good lodges fill in dry season |
 
 ---
