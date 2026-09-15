@@ -268,8 +268,9 @@ Mid-November is Taiwan at its finest — typhoon season over, Taipei at 23°, th
 
 **Hualien + Taroko Gorge — 2 days (Nov 15–17)**
 - Train along Pacific coast (one of the most scenic rail journeys in Asia)
-- Marble canyon, jade river, suspension bridges through the cliff
+- Marble canyon viewpoints + visitor center (check park status ~1 week ahead — some front-country trails still closed post-2024 quake)
 - Qingshui Cliffs: Pacific walls dropping into the ocean
+- Plan B: Qixingtan Beach + Liyu Lake + Highway 11 coast drive south
 
 **Tainan + south — 7 days (Nov 17–24)**
 - Tainan: temples, old streets, night markets, oyster omelettes and beef noodle soup
@@ -429,9 +430,10 @@ Second mainland entry — 18 counted days, again deep inside the limit with the 
 **Huangshan — 3 days (Jan 13–16)**
 - Yellow Mountain: snow-dusted pines + sea of clouds (January is prime rime season)
 - Bright Summit sunrise above the cloud sea
-- Xihai Grand Canyon loop — cliff paths and precipices
+- Lion Peak → Beihai → Cloud-Dispersing Pavilion loop (West Sea Canyon closed Dec–Mar)
 - Hot springs at the mountain foot
 - Windproof shell essential at the summit; cheap traction spikes in Tangkou if icy
+- Winter cable cars end ~16:30 — front-load days; book summit hotel ~3 days ahead
 - HSR Huangshan → Hangzhou Jan 16
 
 **Hangzhou — 3 days (Jan 16–19)**
