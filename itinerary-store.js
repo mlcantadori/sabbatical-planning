@@ -7,11 +7,10 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  // v11: Brasil merged into a single chapter (rio/cumbuco/saopaulo gone)
-  // + winter replan (japan-autumn/china-1/japan-winter/china-2 ids replaced
-  // by taiwan/china-e1/hk/korea/china-e2/japan/china-spring) — old caches
-  // reference ids that no longer exist, so force a fresh re-bake.
-  const LS_KEY = 'trip-data-v11';
+  // v12: winter replan (taiwan/china-e1/hk/korea/china-e2/japan/china-spring ids)
+  // + Indonesia split (indonesia-a/indonesia-b with Borneo between) — old
+  // caches reference ids/order that no longer exist, so force a fresh re-bake.
+  const LS_KEY = 'trip-data-v12';
   const listeners = new Set();
   let chapters;
 

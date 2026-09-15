@@ -25,18 +25,19 @@
 | 13 | China | Jan 7 – Jan 25 | 18 |
 | 14 | Japan | Jan 25 – Feb 24 | 30 |
 | 15 | Philippines | Feb 24 – Mar 11 | 15 |
-| 16 | Indonesia | Mar 11 – Apr 18 | 38 |
-| 17 | Malaysia | Apr 18 – Apr 28 | 10 |
-| 18 | Singapore | Apr 28 – May 5 | 7 |
-| 19 | Malaysia | May 5 – May 15 | 10 |
-| 20 | Thailand | May 15 – May 29 | 14 |
-| 21 | China | May 29 – Jun 17 | 19 |
+| 16 | Indonesia | Mar 11 – Apr 1 | 21 |
+| 17 | Malaysia | Apr 1 – Apr 11 | 10 |
+| 18 | Indonesia | Apr 11 – Apr 28 | 17 |
+| 19 | Singapore | Apr 28 – May 5 | 7 |
+| 20 | Malaysia | May 5 – May 15 | 10 |
+| 21 | Thailand | May 15 – May 29 | 14 |
+| 22 | China | May 29 – Jun 17 | 19 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
 **China total:** 58 days in-country (E1a 8 + E1b 13 + E2 18 + spring 19), each entry far inside the 30d visa-free limit ✓
 **HK reset:** Shenzhen → Hong Kong by HSR Dec 15 restarts the 30-day clock for E2 ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
-**Indonesia visa:** Mar 11 entry +30d extension in Bali → Apr 18 exit ✓
+**Indonesia visa:** two free 30-day entries (Mar 11–Apr 1 + Apr 11–28) with Borneo in between — no extension needed ✓
 **NYE:** Seoul Dec 31 (Bosingak bell) ✓ — moved from Taipei 101
 **Christmas:** Seoul arrival week + Christmas Day in Busan ✓
 **Raja Ampat:** Mar 11–20 ✓
@@ -534,15 +535,15 @@ Fly in two days early for rest and dive-gear prep in Manila, then the express ru
 
 **Transfer to Sorong — 2 days (Mar 9–11)**
 - Cebu → Manado or Manila → Sorong
-- Indonesia visa on arrival — Day 1 ~Mar 11 (extend +30d in Bali to cover Apr 18 exit)
+- Indonesia visa-free entry — Day 1 ~Mar 11 (exit to Borneo Apr 1 restarts the clock, no extension needed)
 
 ---
 
 ## Chapter 16 — INDONESIA
-### Mar 11 – Apr 18 · 38 days
-*Theme: The best diving on Earth, then slow islands — liveaboard, cliffs, dragons, volcano*
+### Mar 11 – Apr 1 · 21 days
+*Theme: The best diving on Earth, then a slow recovery week*
 
-Raja Ampat contains the highest marine biodiversity on the planet. More fish species in one bay than in the entire Caribbean. Board on arrival day, 10 days on the water Mar 11–20, then slow down: ten days in Ubud, Nusa Penida mantas, Komodo dragons and drift dives, Bali rice terraces and a volcano at 3am. NOTE: VOA Day 1 ~Mar 11 — extend +30d in Bali (~$60) to cover the Apr 18 exit.
+First stay — 21 days, inside the free 30-day visa-free limit, no extension needed. Board on arrival day: 10 days on the water Mar 11–20 in the highest marine biodiversity on the planet, then slow down with ten days in Ubud. Fly out to Borneo Apr 1 — the exit restarts the clock for the second stay.
 
 **Raja Ampat Liveaboard — 10 days (Mar 11–20)**
 - Wayag: postcard karst islands seen from above (kayak + hike viewpoint)
@@ -564,15 +565,57 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 - Slow mornings, warungs, massages — no agenda
 - Day trip: Tirta Empul water temple
 
-**Nusa Penida — 4 days (Apr 1–5)**
+**Fly Bali → Kota Kinabalu Apr 1 — exit resets the visa clock ✓**
+
+---
+
+## Chapter 17 — MALAYSIA
+### Apr 1 – Apr 11 · 10 days
+*Theme: Indonesia visa reset + wildlife chapter*
+
+Fly in from Bali Apr 1 — the exit reset Indonesia's clock, and Kinabatangan is one of SE Asia's finest wildlife corridors. Early April is prime dry season here.
+
+**Kota Kinabalu — 2 days (Apr 1–3)**
+- Arrival from Bali, waterfront sunset over offshore islands
+- Filipino Night Market, rest
+
+**Sepilok + Sandakan — 1 day (Apr 3–4)**
+- Sepilok Orangutan Rehabilitation Centre: morning feeding platform — one of the most moving wildlife encounters anywhere
+- Bornean Sun Bear Conservation Centre (adjacent)
+- Transfer to Kinabatangan same day
+
+**Kinabatangan River — 5 days (Apr 4–9)**
+- Proboscis monkeys (endemic to Borneo, bizarre bulbous noses)
+- Pygmy elephants bathing at dawn — unmissable
+- Hornbills, kingfishers, monitor lizards, crocodiles
+- Fireflies illuminating the riverbank at night
+- Jungle lodges — wake to gibbons calling
+
+**Kota Kinabalu — 2 days (Apr 9–11)**
+- Tunku Abdul Rahman Marine Park snorkel day trip
+- Waterfront goodbye meal
+- Fly back to Bali Apr 11 — fresh 30-day entry for the second stay
+
+*Note: Optional Sipadan diving (3 extra days, world-class) would extend this chapter. Book permits by Nov 2026 — 120/day limit.*
+
+---
+
+## Chapter 18 — INDONESIA
+### Apr 11 – Apr 28 · 17 days
+*Theme: Cliffs, dragons, drift dives, volcano — second stay*
+
+Second stay — 17 days on a fresh visa-free entry, no extension needed. Pick up where the first stay left off: Nusa Penida mantas, Komodo dragons and drift dives, then Bali rice terraces and a volcano at 3am before the hop to Singapore.
+
+**Nusa Penida — 4 days (Apr 11–15)**
+- Apr 11: fast boat Sanur → Penida
 - Kelingking Beach: the T-Rex cliff, most photographed in the Bali region
 - Angel's Billabong + Broken Beach: natural infinity pool carved into clifftop
 - Crystal Bay: reef manta cleaning station, year-round sightings (early morning dive)
 - Atuh Beach: remote east coast, dramatic
 - Scooter rental for full freedom
 
-**Komodo — 7 days (Apr 5–12)**
-- Fly Bali → Labuan Bajo: dramatic harbor, wooden phinisi boats
+**Komodo — 7 days (Apr 15–22)**
+- Apr 15: fly Bali → Labuan Bajo — dramatic harbor, wooden phinisi boats
 - Manta Point: oceanic mantas (3–6m) in strong current
 - Crystal Rock + Castle Rock: world-class drift dives
 - Pink Beach: crushed red coral, excellent snorkeling
@@ -580,49 +623,17 @@ Raja Ampat contains the highest marine biodiversity on the planet. More fish spe
 - Komodo Island or Rinca Island: Komodo dragons with ranger
 - Padar Island: sunrise hike — three colored bays stretching below
 
-**Bali + Volcano — 6 days (Apr 12–18)**
-- Ubud: Tegallalang rice terraces, sacred monkey forest
+**Bali + Volcano — 6 days (Apr 22–28)**
+- Apr 22: fly Labuan Bajo → Bali
 - Tanah Lot sunset temple on a sea rock
 - Seminyak / Canggu beach club final evening
 - Balinese cooking class
 - Mount Batur: 3am departure, 2-hour hike to crater rim at 1,717m
-- Sunrise over the caldera and crater lake — exits via KK Apr 18 on extended VOA ✓
-- **Fly Bali → Kota Kinabalu**
+- Sunrise over the caldera and crater lake — fly Bali → Singapore Apr 28 ✓
 
 ---
 
-## Chapter 17 — MALAYSIA
-### Apr 18 – Apr 28 · 10 days
-*Theme: Indonesia visa reset + wildlife chapter*
-
-Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d extension. Kinabatangan is one of SE Asia's finest wildlife corridors.
-
-**Kota Kinabalu — 2 days (Apr 18–20)**
-- Arrival, waterfront sunset over offshore islands
-- Filipino Night Market, rest
-
-**Sepilok + Sandakan — 1 day (Apr 20–21)**
-- Sepilok Orangutan Rehabilitation Centre: morning feeding platform — one of the most moving wildlife encounters anywhere
-- Bornean Sun Bear Conservation Centre (adjacent)
-- Transfer to Kinabatangan same day
-
-**Kinabatangan River — 5 days (Apr 21–26)**
-- Proboscis monkeys (endemic to Borneo, bizarre bulbous noses)
-- Pygmy elephants bathing at dawn — unmissable
-- Hornbills, kingfishers, monitor lizards, crocodiles
-- Fireflies illuminating the riverbank at night
-- Jungle lodges — wake to gibbons calling
-
-**Kota Kinabalu — 2 days (Apr 26–28)**
-- Tunku Abdul Rahman Marine Park snorkel day trip
-- Waterfront goodbye meal
-- Fly KK → Singapore to open the SE Asia final block
-
-*Note: Optional Sipadan diving (3 extra days, world-class) would extend this chapter. Book permits by Nov 2026 — 120/day limit.*
-
----
-
-## Chapter 18 — SINGAPORE
+## Chapter 19 — SINGAPORE
 ### Apr 28 – May 5 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -635,7 +646,7 @@ Bali → KK flight exits Indonesia on the extended VOA — timed with the +30d e
 
 ---
 
-## Chapter 19 — MALAYSIA
+## Chapter 20 — MALAYSIA
 ### May 5 – May 15 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
@@ -658,7 +669,7 @@ KL for the city spectacle and food, Penang for the most rewarding slow chapter i
 
 ---
 
-## Chapter 20 — THAILAND
+## Chapter 21 — THAILAND
 ### May 15 – May 29 · 14 days
 *Theme: Islands, reef diving, urban intensity, street food*
 
@@ -685,7 +696,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Ban
 
 ---
 
-## Chapter 21 — CHINA
+## Chapter 22 — CHINA
 ### May 29 – Jun 17 · 19 days
 *Theme: Ancient capital in perfect weather, then karst + old towns finale*
 
@@ -738,8 +749,8 @@ Travel to Changsha. **Fly home Jun 17, 2027.**
 | Coron — WWII Wrecks | Feb 27 – Mar 4 | 5d | Japanese warships — world's best wreck diving |
 | Cebu / Moalboal | Mar 7–9 | 2d | Sardine run (Malapascua dropped for schedule) |
 | Raja Ampat | Mar 11–20 | 10d liveaboard | Mid-season; moved dates, confirm with operator |
-| Nusa Penida — Crystal Bay | Apr 1–5 | 4d | Reef mantas, year-round |
-| Komodo | Apr 7–12 | ~5d | Manta Point, drift dives, peak dry building |
+| Nusa Penida — Crystal Bay | Apr 11–15 | 4d | Reef mantas, year-round |
+| Komodo | Apr 15–22 | 7d | Manta Point, drift dives, dry season building |
 | Koh Tao | May 15–20 | 5d | Value diving, whale sharks at Sail Rock |
 | Sipadan (optional) | Apr 24–27 | 3d | 120 permits/day — book Nov 2026 |
 
@@ -763,10 +774,10 @@ Travel to Changsha. **Fly home Jun 17, 2027.**
 | Japan (fused winter) | Jan 25–Feb 24 | Excellent — empty temples + early plum; Hakuba post-CNY powder |
 | Philippines | Feb–Mar | Optimal — Coron + El Nido dry season; Cebu sardine run |
 | Raja Ampat | Mar 11–20 | Excellent — mid-season within Oct–Apr window ✓ |
-| Nusa Penida | Apr 1–5 | Good — transition, mantas year-round |
-| Komodo | late Mar–Apr | Good — dry season building, visibility improving |
-| Bali + Volcano | Apr 2–8 | Good — warm, transition season |
-| Borneo | Apr 18–28 | Good — dry season, wildlife active |
+| Nusa Penida | Apr 11–15 | Good — transition, mantas year-round |
+| Komodo | mid-Apr | Good — dry season building, visibility improving |
+| Bali + Volcano | Apr 22–28 | Good — warm, transition season |
+| Borneo | Apr 1–11 | Good — dry season, wildlife active |
 | Koh Tao / Gulf Thailand | May 15–22 | Optimal — firmly Gulf dry season |
 | Penang | Apr–May | Good — warm, café culture unaffected |
 | China (spring: Xi'an + landscapes) | May–Jun | Excellent — Xi'an in perfect weather, Zhangjiajie peak season, karst mist-green |
@@ -789,19 +800,21 @@ Travel to Changsha. **Fly home Jun 17, 2027.**
 
 ---
 
-## Indonesia Visa Block (30-day VOA + 30-day extension)
+## Indonesia Visa Block (two free 30-day entries + Borneo reset)
 
-VOA Day 1 ~Mar 11 (Sorong arrival). A single 30-day window no longer covers the Apr 18 exit — extend +30d in Bali (~$60 for two, immigration office or agent).
+Brazilian passports enter visa-free for 30 days (non-extendable) — so the 38-day block splits into two stays with Borneo in between. No extension paperwork, no fees; each entry gets a fresh 30 days. Carry onward tickets inside each window, and budget the Bali tourist levy (~$10pp per entry).
 
-| Segment | Dates | Days in visa |
+| Segment | Dates | Days in stay |
 |---|---|---|
-| Transit Cebu → Sorong | Mar 9–11 | Entry Day 1 ~Mar 11 |
-| Raja Ampat liveaboard | Mar 11–20 | Days 1–10 |
-| Transit Sorong → Bali + Ubud | Mar 21 – Apr 1 | Days 11–22 |
-| Nusa Penida | Apr 1–5 | Extension window |
-| Komodo | Apr 5–12 | Extension window |
-| Bali + Volcano | Apr 12–18 | Extension window |
-| **Exit to Borneo** | **Apr 18** | **Extended VOA ✓** |
+| Transit Cebu → Sorong | Mar 9–11 | Entry 1 Day 1 ~Mar 11 |
+| Raja Ampat liveaboard | Mar 11–20 | Entry 1: days 1–10 |
+| Transit Sorong → Bali + Ubud | Mar 21 – Apr 1 | Entry 1: days 11–22 |
+| **Exit to Borneo (visa reset)** | **Apr 1** | **Clock restarts ✓** |
+| Borneo wildlife | Apr 1–11 | Outside Indonesia |
+| Nusa Penida | Apr 11–15 | Entry 2: days 1–5 |
+| Komodo | Apr 15–22 | Entry 2: days 5–12 |
+| Bali + Volcano | Apr 22–28 | Entry 2: days 12–18 |
+| **Exit to Singapore** | **Apr 28** | **Fresh entry, 18 days used ✓** |
 
 ---
 
@@ -822,20 +835,20 @@ VOA Day 1 ~Mar 11 (Sorong arrival). A single 30-day window no longer covers the 
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 96,000 for two · ~USD 267/day · 361 days** (~R$251k per person at R$5.20)
+**Grand total: ~USD 97,500 for two · ~USD 270/day · 361 days** (~R$254k per person at R$5.20)
 
 **Monthly run-rate: ~USD 4,100 / ~R$21,300 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (21 chapters) | 25,925 | 27% |
-| Food (21 chapters) | 20,345 | 21% |
+| Lodging (22 chapters) | 25,925 | 27% |
+| Food (22 chapters) | 20,345 | 21% |
 | Activities & diving | 20,370 | 21% |
-| Inter-chapter flights | 9,170 | 9% |
+| Inter-chapter flights | 9,500 | 10% |
 | Local transport | 11,665 | 12% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
-| Visas & park fees | 445 | <1% |
-| Contingency (8%) | 7,206 | 7% |
+| Visas & park fees | 345 | <1% |
+| Contingency (8%) | 7,224 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -858,14 +871,15 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 13 | China | 18 | 212 | 3,810 | Shanghai 9n + Huangshan/Hangzhou/Suzhou HSR star ~$480 · gardens + Huangshan park ~$250 |
 | 14 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
 | 15 | Philippines | 15 | 209 | 3,135 | Manila 3n staging + gear prep · Coron 4 dive-days · sardines (Malapascua dropped) |
-| 16 | Indonesia | 38 | 378 | 14,360 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · Komodo boat + dives · Batur |
+| 16 | Indonesia | 21 | 519 | 10,900 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · visa-free, no extension |
 | 17 | Malaysia | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
-| 18 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
-| 19 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
-| 20 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
-| 21 | China | 19 | 200 | 3,795 | BKK→XIY ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets |
+| 18 | Indonesia | 17 | 198 | 3,360 | BKI→LBJ/DPS hops + boats · Penida + Komodo dives · Batur · Bali levies |
+| 19 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
+| 20 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
+| 21 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
+| 22 | China | 19 | 200 | 3,795 | BKK→XIY ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets |
 
-Chapters subtotal: **$78,750** · 358 days.
+Chapters subtotal: **$78,650** · 358 days.
 
 ### Inter-chapter flights (couple)
 
@@ -885,10 +899,12 @@ Chapters subtotal: **$78,750** · 358 days.
 | Shanghai → Osaka | Jan 25 | 450 | Estimate |
 | Tokyo → Manila | Feb 24 | 560 | Estimate |
 | Manila/Cebu → Sorong | Mar 9 | 700 | Estimate |
-| Kota Kinabalu → Singapore | Apr 28 | 200 | Estimate, AirAsia |
+| Bali → Kota Kinabalu | Apr 1 | 150 | Estimate, AirAsia — visa reset hop |
+| Kota Kinabalu → Bali | Apr 11 | 180 | Estimate, via DPS or direct to Labuan Bajo |
+| Bali → Singapore | Apr 28 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$9,170**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $90,070 + 8% contingency $7,206 = **~$97,000**.
+Flights subtotal: **$9,500**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $90,300 + 8% contingency $7,224 = **~$97,500**.
 
 ### Assumptions & levers
 
