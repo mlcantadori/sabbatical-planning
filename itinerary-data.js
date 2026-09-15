@@ -3,7 +3,7 @@
 
 window.TRIP = (function () {
   const START = new Date('2026-06-21');
-  const END = new Date('2027-06-12');
+  const END = new Date('2027-06-21');
   const MS = 86400000;
   const totalDays = Math.round((END - START) / MS);
 
@@ -235,7 +235,7 @@ window.TRIP = (function () {
         { name: 'Chongqing', days: 5, query: 'Chongqing, China',
           highlights: ['The most cyberpunk city on Earth — 34M people, bridges everywhere','Hongyadong stilted riverfront lit at night','Cable car across the Yangtze River','Hotpot capital — mandatory multiple visits','Dazu rock carvings or Wulong karst day trip','Fly Chongqing → Shenzhen Dec 10'] },
         { name: 'Shenzhen', days: 5, query: 'Shekou, Shenzhen',
-          highlights: ['Five full days with friends (in town Nov 22 – Dec 22 ✓)','Huaqiangbei Electronics Market — world\'s largest, floors of components','OCT-LOFT Contemporary Art District','Dafen Oil Painting Village','Dapeng Peninsula coastal hike','HSR Shenzhen → Hong Kong Dec 15 (15 min, West Kowloon immigration)'] },
+          highlights: ['Five full days with friends (in town Nov 22 – Dec 22 ✓)','Huaqiangbei Electronics Market — world\'s largest, floors of components','OCT-LOFT Contemporary Art District','Dafen Oil Painting Village','Dapeng Peninsula coastal hike','Macau ferry day-trip option (egg tarts, historic centre)','HSR Shenzhen → Hong Kong Dec 15 (15 min, West Kowloon immigration)'] },
       ],
     },
     {
@@ -271,25 +271,29 @@ window.TRIP = (function () {
         { name: 'Jeonju', days: 2, query: 'Jeonju Hanok Village',
           highlights: ['Bibimbap in a traditional courtyard — the origin city','800+ inhabited hanok houses','Makgeolli bars + traditional markets','KTX to Seoul Dec 31, midday — in position for midnight'] },
         { name: 'Seoul finale', days: 7, query: 'Myeongdong, Seoul',
-          highlights: ['NYE Dec 31: Bosingak bell + citywide countdown ✓','DMZ day trip (check Jan holiday schedule)','Hongdae, Insadong, specialty coffee deep-dive','Final Korean meals — galbi, naengmyeon, soju','Buy Uniqlo thermals before Beijing','Fly Seoul → Beijing Jan 7'] },
+          highlights: ['NYE Dec 31: Bosingak bell + citywide countdown ✓','DMZ day trip (check Jan holiday schedule)','Hongdae, Insadong, specialty coffee deep-dive','Final Korean meals — galbi, naengmyeon, soju','Buy Uniqlo thermals + windproof shell for Huangshan','Fly Seoul → Shanghai Jan 7'] },
       ],
     },
     {
       id: 'china-e2', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China',
       start: '2027-01-07', end: '2027-01-25', days: 18,
-      theme: 'Empty snow-dusted Wall, indoor Warriors, Shanghai café winter',
-      intro: 'Second mainland entry (18 counted days — again deep inside the limit, clock reset in Hong Kong). Beijing in January is empty and sometimes snow-dusted; Xi\'an\'s Warriors are weather-proof; Shanghai closes the entry in cozy café season before the hop to Osaka.',
-      tldr: 'Beijing · Xi\'an · Shanghai',
-      weather: { hi: 4, lo: -6, label: 'Northern deep winter, 4°/-6°', emoji: '🧣', rainyDays: 3 },
-      photos: ['great wall snow', 'xian terracotta warriors', 'shanghai bund night', 'shanghai french concession'],
+      theme: 'Jiangnan winter: canals, gardens, snow pines',
+      intro: 'Second mainland entry (18 counted days — again deep inside the limit, clock reset in Hong Kong). Skip the northern deep-freeze for the Lower Yangtze in winter: Shanghai as cosmopolitan base, Suzhou and Hangzhou gardens in frosty quiet, and Huangshan snow-dusted pines above a sea of clouds. All linked by bullet train, all temperate.',
+      tldr: 'Shanghai · Huangshan · Hangzhou · Suzhou',
+      weather: { hi: 8, lo: 1, label: 'Jiangnan winter, 8°/1°', emoji: '❄️', rainyDays: 5 },
+      photos: ['shanghai bund night', 'shanghai french concession'],
       places: [
-        { name: 'Beijing', days: 7, query: 'Mutianyu Great Wall, Beijing',
-          highlights: ['Great Wall (Mutianyu) — empty + snow-dusted, windproof shell required','Forbidden City in crisp winter light','Temple of Heaven','798 Art District','Hutong + Drum/Bell Towers','Peking duck','Summer Palace — ice on Kunming Lake','HSR/flight Beijing → Xi\'an Jan 14'] },
-        { name: 'Xi\'an', days: 4, query: 'Terracotta Warriors, Xi\'an',
-          highlights: ['Terracotta Warriors — indoor museum, crowd-free in January','Cycle the Xi\'an city walls (bracing, quick)','Muslim Quarter — lamb soup season, biangbiang noodles','Giant Wild Goose Pagoda','Fly Xi\'an → Shanghai Jan 18'] },
-        { name: 'Shanghai', days: 7, query: 'The Bund, Shanghai',
-          highlights: ['French Concession — plane-tree boulevards, best café season (pick heated modern hotels — no central heating in old lanes!)','The Bund — skyline across the Huangpu, best at night','Yu Garden — classical garden in winter quiet','Suzhou day trip (30min bullet): classical gardens in mist','Tianzifang arts + crafts alleys','Hangzhou/West Lake day trip option','Fly Shanghai → Osaka Jan 25'] },
+        { name: 'Shanghai', days: 6, query: 'The Bund, Shanghai',
+          highlights: ['Fly in from Seoul Jan 7 — French Concession café season (pick heated modern hotels — no central heating in old lanes!)','The Bund — skyline across the Huangpu, best at night','Yu Garden — classical garden in winter quiet','Tianzifang arts + crafts alleys','Xintiandi, M50 art district','HSR Shanghai → Huangshan (~2.5h) Jan 13'] },
+        { name: 'Huangshan', days: 3, query: 'Huangshan, Anhui',
+          highlights: ['Yellow Mountain — snow-dusted pines + sea of clouds (January is prime rime season)','Bright Summit sunrise above the cloud sea','Xihai Grand Canyon loop — cliff paths and precipices','Hot springs at the mountain foot','Windproof shell essential at the summit; cheap traction spikes in Tangkou if icy','HSR Huangshan → Hangzhou Jan 16'] },
+        { name: 'Hangzhou', days: 3, query: 'West Lake, Hangzhou',
+          highlights: ['West Lake in winter mist — Broken Bridge, Su Causeway, nearly empty','Lingyin Temple in cedar quiet','Meijiawu tea village — Longjing terraces, quiet season tastings','Hefang Street old town','HSR Hangzhou → Suzhou (~1.5h) Jan 19'] },
+        { name: 'Suzhou', days: 3, query: 'Humble Administrator\'s Garden, Suzhou',
+          highlights: ['Humble Administrator\'s Garden + Lion Grove in frost — classical gardens at their most atmospheric','Tongli water town day trip — misty canals, empty bridges','Silk museum + Pingjiang Road canals at dusk','HSR Suzhou → Shanghai (~30min) Jan 22'] },
+        { name: 'Shanghai buffer', days: 3, query: 'Jing\'an, Shanghai',
+          highlights: ['Final meals, laundry, trip planning','Last look at the Bund in winter light','Slow final days — fly Shanghai → Osaka Jan 25'] },
       ],
     },
     {
@@ -437,21 +441,27 @@ window.TRIP = (function () {
     {
       id: 'china-spring', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China',
-      start: '2027-05-29', end: '2027-06-12', days: 14,
-      theme: 'Karst mirrors, avatar pillars, riverside old town — spring finale',
-      intro: 'Fourteen focused days: the Sichuan and imperial legs moved to the winter entries, leaving pure spring landscapes. June floods the Longji terraces into mirrors, mist hangs in the karst, and Fenghuang closes the trip on lantern light before the flight home.',
-      tldr: 'Guilin · Longji Terraces · Zhangjiajie · Fenghuang',
-      weather: { hi: 27, lo: 18, label: 'Early summer green, 27°/18°', emoji: '🐉', rainyDays: 6 },
-      photos: ['guilin karst li river', 'zhangjiajie avatar pillars'],
+      start: '2027-05-29', end: '2027-06-21', days: 23,
+      theme: 'Imperial north in perfect weather, then spring landscapes finale',
+      intro: 'Twenty-three days: the northern capitals moved here for late-May perfection, then the southern landscapes at their greenest. Beijing at 24° instead of −8°, wall cycling in sunshine, lotus beginning on Kunming Lake — then mist in the karst, mirror terraces, and lantern light to close the trip.',
+      tldr: 'Beijing · Xi\'an · Guilin · Longji · Zhangjiajie · Fenghuang · Furong',
+      weather: { hi: 28, lo: 18, label: 'Early summer, 28°/18°', emoji: '🐉', rainyDays: 9 },
+      photos: ['xian terracotta warriors', 'guilin karst li river', 'zhangjiajie avatar pillars'],
       places: [
+        { name: 'Beijing', days: 5, query: 'Mutianyu Great Wall, Beijing',
+          highlights: ['Arrive Bangkok → Beijing May 29 — 24° and blue skies','Great Wall (Mutianyu) — lush green, cable car up, toboggan down','Forbidden City without the winter bite','Temple of Heaven at dawn with the locals','798 Art District','Hutong + Drum/Bell Towers','Peking duck at Quanjude','Summer Palace — lotus beginning, boating on Kunming Lake','HSR Beijing → Xi\'an (~4.5h) Jun 3'] },
+        { name: 'Xi\'an', days: 4, query: 'Terracotta Warriors, Xi\'an',
+          highlights: ['Terracotta Warriors — indoor museum, astounding at any time of year','Cycle the Xi\'an city walls in perfect weather','Muslim Quarter — lamb skewers, biangbiang noodles, pomegranate juice','Giant Wild Goose Pagoda','Huashan day-trip option — iron chains and 2,000m drops','Fly Xi\'an → Guilin Jun 7'] },
         { name: 'Guilin / Yangshuo', days: 4, query: 'Yangshuo, China',
-          highlights: ['Li River karst — spring mist between limestone towers at dawn','Bamboo raft on the Li River','Cycling through rice paddies and karst peaks','Arrive from Bangkok May 29'] },
+          highlights: ['Li River karst — mist between limestone towers at dawn','Bamboo raft on the Li River','Cycling through rice paddies and karst peaks','22–26°C, green and misty — best season'] },
         { name: 'Longji Terraces', days: 2, query: 'Longji Rice Terraces, China',
           highlights: ['Dragon\'s Backbone terraces flooded in June — mirror season','Ping\'an + Dazhai viewpoints at sunrise','Zhuang minority villages overnight'] },
         { name: 'Zhangjiajie + Tianmen', days: 4, query: 'Zhangjiajie National Park',
           highlights: ['Avatar Mountains — floating sandstone pillars in spring sea of clouds','Tianmen Stairway to Heaven (999 steps)','Glass Bridge + Glass Cliff Walk','Spring green fills the valleys between pillars'] },
-        { name: 'Fenghuang', days: 4, query: 'Fenghuang Ancient Town, China',
-          highlights: ['Riverside Miao/Tujia old town — lanterns over the Tuo River','Hong Bridge + stilted diaojiaolou houses','Slow final days — travel to Changsha','Fly home Jun 12, 2027 ✓'] },
+        { name: 'Fenghuang + Furong', days: 3, query: 'Fenghuang Ancient Town, China',
+          highlights: ['Furong waterfall town en route — river pouring through the town center, Tujia stilt houses','Fenghuang riverside old town — lanterns over the Tuo River','Hong Bridge + diaojiaolou houses at dusk','Slow final full days'] },
+        { name: 'Buffer', days: 1, query: 'Changsha, China',
+          highlights: ['Travel to Changsha','Fly home Jun 21, 2027 ✓'] },
       ],
     },
   ];
@@ -500,11 +510,11 @@ window.TRIP = (function () {
   // (BudgetView) from these parts — never hardcoded — so edits stay consistent.
   const budget = {
     currency: 'USD',
-    basis: 'couple · 356 days · mid-range with strategic splurges',
+    basis: 'couple · 365 days · mid-range with strategic splurges',
     fxBRL: 5.2,
-    estimate: 'USD ~96k for two',
-    perDay: '~USD 268/day for two',
-    inBRL: '~R$249k per person at R$5.20',
+    estimate: 'USD ~97.5k for two',
+    perDay: '~USD 267/day for two',
+    inBRL: '~R$254k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
@@ -532,7 +542,7 @@ window.TRIP = (function () {
       { id: 'china-e1', days: 17, lodging: 1360, food: 1105, transport: 730, activities: 300, fees: 0, note: 'CAN→CTU + CKG→SZX flights ~$460 · CTU→CKG HSR ~$120 · pandas + Dazu' },
       { id: 'hk', days: 5, lodging: 750, food: 450, transport: 120, activities: 0, fees: 0, note: '~$150/n · Peak tram + ferries + Lamma · free gardens/markets' },
       { id: 'korea', days: 18, lodging: 2250, food: 1260, transport: 450, activities: 250, fees: 0, note: '~$125/n · KTX loop + DMZ tour · Christmas/NYE week premium' },
-      { id: 'china-e2', days: 18, lodging: 1530, food: 1170, transport: 650, activities: 400, fees: 0, note: 'PEK→XIY + XIY→SHA ~$500 · Wall + Warriors + Suzhou day trip' },
+      { id: 'china-e2', days: 18, lodging: 1590, food: 1170, transport: 650, activities: 400, fees: 0, note: 'Shanghai 9n + Huangshan/Hangzhou/Suzhou HSR star ~$480 · gardens + Huangshan park ~$250' },
       { id: 'japan', days: 30, lodging: 3900, food: 2850, transport: 800, activities: 1800, fees: 0, note: 'Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses' },
       { id: 'philippines', days: 15, lodging: 835, food: 740, transport: 510, activities: 1050, fees: 0, note: 'Manila 3n staging + gear prep · Coron 4 dive-days ~$760 · sardines · Malapascua dropped' },
       { id: 'indonesia', days: 38, lodging: 1360, food: 1470, transport: 1800, activities: 9610, fees: 120, note: 'Liveaboard $8,400 locked · Sorong flights ~$1,200 · Ubud slow 10n · Komodo boat + dives · Batur · VOA + extension' },
@@ -540,7 +550,7 @@ window.TRIP = (function () {
       { id: 'singapore', days: 7, lodging: 980, food: 385, transport: 105, activities: 100, fees: 0, note: '~$140/n · hawker-first food · Gardens domes' },
       { id: 'malaysia', days: 10, lodging: 550, food: 400, transport: 170, activities: 60, fees: 0, note: 'KL + Penang guesthouses · SG→KL bus + ETS rail · Penang Hill + mansions' },
       { id: 'thailand', days: 14, lodging: 770, food: 700, transport: 420, activities: 610, fees: 0, note: 'Koh Tao 3 local dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi' },
-      { id: 'china-spring', days: 14, lodging: 980, food: 770, transport: 800, activities: 370, fees: 0, note: 'BKK→Guilin flight ~$400 · Guilin→Longji→Zhangjiajie→Fenghuang rails/buses ~$400 · karst + pillars tickets' },
+      { id: 'china-spring', days: 23, lodging: 1700, food: 1265, transport: 1230, activities: 470, fees: 0, note: 'BKK→PEK ~$450 + PEK→XIY HSR ~$150 + XIY→KWL ~$250 · Wall + Warriors + karst/pillars tickets' },
     ],
     // Between-chapter flights for two (in-chapter transport stays above).
     // Every leg carries a `date` (departure day) so the calendar sync can
@@ -555,12 +565,12 @@ window.TRIP = (function () {
       { route: 'Kathmandu/Pokhara → Taipei', cost: 950, date: '2026-11-11', note: 'Estimate ~$475pp, via Bangkok/KL' },
       { route: 'Taipei → Guangzhou', cost: 300, date: '2026-11-28', note: 'Estimate, cross-strait hop' },
       { route: 'Hong Kong → Seoul', cost: 350, date: '2026-12-20', note: 'Estimate' },
-      { route: 'Seoul → Beijing', cost: 400, date: '2027-01-07', note: 'Estimate' },
+      { route: 'Seoul → Shanghai', cost: 400, date: '2027-01-07', note: 'Estimate' },
       { route: 'Shanghai → Osaka', cost: 450, date: '2027-01-25', note: 'Estimate' },
       { route: 'Tokyo → Manila', cost: 560, date: '2027-02-24', note: 'Estimate' },
       { route: 'Manila/Cebu → Sorong', cost: 700, date: '2027-03-09', note: 'Estimate' },
       { route: 'Kota Kinabalu → Singapore', cost: 200, date: '2027-04-28', note: 'Estimate, AirAsia' },
-      { route: 'Changsha → São Paulo (home)', cost: 1400, date: '2027-06-12', note: 'Estimate ~$700pp' },
+      { route: 'Changsha → São Paulo (home)', cost: 1400, date: '2027-06-21', note: 'Estimate ~$700pp' },
     ],
     extras: [
       { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },
@@ -605,7 +615,7 @@ window.TRIP = (function () {
     'china-e1':     { months: [11, 12],           note: 'Nov–Dec: mild PRD, Sichuan hotpot season, friends in Shenzhen' },
     'hk':           { months: [1, 2, 3, 10, 11, 12], note: 'Oct–Mar: cool dry season; mid-Dec pre-Christmas shoulder' },
     'korea':        { months: [12, 1],              note: 'Dec–Jan: festive Seoul, palace snow, KTX loop' },
-    'china-e2':     { months: [1],                  note: 'Jan: empty snow-dusted Wall, indoor Warriors, Shanghai café season' },
+    'china-e2':     { months: [1],                  note: 'Jan: Shanghai café season; Huangshan snow pines; Suzhou/Hangzhou gardens in frost' },
     'japan':        { months: [1, 2],               note: 'Jan–Feb: empty Kyoto temples + early plum; Hakuba powder post-CNY' },
     'philippines':  { months: [2, 3, 4],             note: 'Feb–Apr: Coron + El Nido dry season; Cebu sardine run Mar' },
     'indonesia':     { months: [3, 4, 5, 6, 7, 8],   note: 'Mar–Aug: Raja mid-season; Nusa mantas year-round; Komodo + Bali dry season building' },
@@ -613,7 +623,7 @@ window.TRIP = (function () {
     'singapore':    { months: [2, 3, 4, 5, 6, 7, 8], note: 'Feb–Aug: relatively drier, pleasant' },
     'malaysia':     { months: [1, 2, 3, 4, 5, 11, 12], note: 'Nov–May: KL and Penang drier side of the year' },
     'thailand':     { months: [4, 5, 6, 7, 8, 9],   note: 'Apr–Sep: dry Gulf coast (Koh Tao); Bangkok manageable in May' },
-    'china-spring': { months: [5, 6],             note: 'May–Jun: karst mist-green, Longji mirror terraces, pre-summer crowds' },
+    'china-spring': { months: [5, 6],             note: 'May–Jun: Beijing + Xi\'an in perfect weather; karst mist-green, Longji mirrors' },
   };
 
   // Hand-authored calendar highlights: key attractions + car rentals.

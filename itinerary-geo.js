@@ -15,7 +15,7 @@ window.TRIP_GEO = {
     'taiwan':       [25.0330,  121.5654], // Taipei
     'china-e1':     [23.1291,  113.2644], // Guangzhou (entry point)
     'korea':        [37.5665,  126.9780], // Seoul
-    'china-e2':     [39.9042,  116.4074], // Beijing
+    'china-e2':     [31.2304,  121.4737], // Shanghai (entry + most nights)
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
     'philippines':  [11.9964,  119.4192], // Coron
@@ -24,7 +24,7 @@ window.TRIP_GEO = {
     'singapore':    [ 1.2834,  103.8607], // Marina Bay
     'malaysia':     [ 3.1579,  101.7117], // KL
     'thailand':     [10.0956,   99.8377], // Koh Tao
-    'china-spring':  [24.7783,  110.4933], // Guilin
+    'china-spring':  [39.9042,  116.4074], // Beijing (entry point)
   },
   // Place-level (drilldown) coords. Key is "chapterId/placeName".
   places: {
@@ -110,14 +110,19 @@ window.TRIP_GEO = {
     'china-e1/Chengdu':                       [30.5728,  104.0668],
     'china-e1/Chongqing':                     [29.4316,  106.9123],
     'china-e1/Shenzhen':                      [22.5431,  114.0579],
-    // China E2 (north + Shanghai)
-    'china-e2/Beijing':                       [39.9042,  116.4074],
-    'china-e2/Xi\'an':                        [34.3416,  108.9398],
+    // China E2 (Jiangnan winter loop)
     'china-e2/Shanghai':                      [31.2304,  121.4737],
-    // China spring (landscapes finale)
+    'china-e2/Huangshan':                     [30.1300,  118.1700],
+    'china-e2/Hangzhou':                      [30.2741,  120.1551],
+    'china-e2/Suzhou':                        [31.2989,  120.5853],
+    'china-e2/Shanghai buffer':               [31.2304,  121.4737],
+    // China spring (north in perfect weather + landscapes finale)
+    'china-spring/Beijing':                   [39.9042,  116.4074],
+    'china-spring/Xi\'an':                    [34.3416,  108.9398],
     'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
     'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
     'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
-    'china-spring/Fenghuang':                 [27.9538,  109.5991],
+    'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
+    'china-spring/Buffer':                    [28.2282,  112.9388], // Changsha
   },
 };
