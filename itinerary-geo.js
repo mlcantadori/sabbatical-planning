@@ -13,7 +13,8 @@ window.TRIP_GEO = {
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
     'taiwan':       [25.0330,  121.5654], // Taipei
-    'china-e1':     [23.1291,  113.2644], // Guangzhou (entry point)
+    'china-e1a':    [23.1291,  113.2644], // Guangzhou (entry point)
+    'china-e1b':    [30.5728,  104.0668], // Chengdu (entry point)
     'korea':        [37.5665,  126.9780], // Seoul
     'china-e2':     [31.2304,  121.4737], // Shanghai (entry + most nights)
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
@@ -105,11 +106,14 @@ window.TRIP_GEO = {
     'thailand/Koh Tao':                       [10.0956,   99.8377],
     'thailand/Koh Samui':                     [ 9.5018,  100.0140],
     'thailand/Bangkok':                       [13.7460,  100.5018],
-    // China E1 (south + Sichuan, ends Shenzhen)
-    'china-e1/Guangzhou':                     [23.1291,  113.2644],
-    'china-e1/Chengdu':                       [30.5728,  104.0668],
-    'china-e1/Chongqing':                     [29.4316,  106.9123],
-    'china-e1/Shenzhen':                      [22.5431,  114.0579],
+    // China E1a (PRD: Guangzhou + Shenzhen)
+    'china-e1a/Guangzhou':                    [23.1291,  113.2644],
+    'china-e1a/Shenzhen':                     [22.5431,  114.0579],
+    // China E1b (Sichuan + Zhangjiajie)
+    'china-e1b/Chengdu':                      [30.5728,  104.0668],
+    'china-e1b/Chongqing':                    [29.4316,  106.9123],
+    'china-e1b/Zhangjiajie':                  [29.1170,  110.4790],
+    'china-e1b/Departure':                    [31.2304,  121.4737], // via Shanghai
     // China E2 (Jiangnan winter loop)
     'china-e2/Shanghai':                      [31.2304,  121.4737],
     'china-e2/Huangshan':                     [30.1300,  118.1700],
@@ -121,7 +125,6 @@ window.TRIP_GEO = {
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
     'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
     'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
-    'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
     'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
     'china-spring/Buffer':                    [28.2282,  112.9388], // Changsha
   },
