@@ -93,6 +93,7 @@ window.PHOTO_IDS = {
   'shanghai bund night':         'photo-1538428494232-9c0d8a3ab403', // ✓
   'shanghai french concession':  'photo-1545569341-9eb8b30979d9',    // ✓
   'shenzhen night skyline':      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Shenzhen_Skyline_At_Night_%28214551663%29.jpeg/1920px-Shenzhen_Skyline_At_Night_%28214551663%29.jpeg',
+  'guangzhou canton tower':       'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Canton_Tower_20241027.jpg/1920px-Canton_Tower_20241027.jpg',
 
   // ── Hong Kong ─────────────────────────────────────────────────────────────
   'hong kong skyline':           'https://upload.wikimedia.org/wikipedia/commons/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg',
