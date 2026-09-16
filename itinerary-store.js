@@ -7,10 +7,10 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  // v12: winter replan (taiwan/china-e1/hk/korea/china-e2/japan/china-spring ids)
-  // + Indonesia split (indonesia-a/indonesia-b with Borneo between) — old
-  // caches reference ids/order that no longer exist, so force a fresh re-bake.
-  const LS_KEY = 'trip-data-v12';
+  // v13: E2/Taiwan position swap (Nov Jiangnan ↔ Jan Taiwan) + E1a Shenzhen-first
+  // + Korea Busan-first reorder — old caches reference ids/order that no
+  // longer exist, so force a fresh re-bake.
+  const LS_KEY = 'trip-data-v13';
   const listeners = new Set();
   let chapters;
 
