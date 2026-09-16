@@ -7,10 +7,10 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  // v13: E2/Taiwan position swap (Nov Jiangnan ↔ Jan Taiwan) + E1a Shenzhen-first
-  // + Korea Busan-first reorder — old caches reference ids/order that no
+  // v14: E1a+E2 consolidated into a single china-e1 chapter (26d, one stay);
+  // old E1b renamed china-e2 — old caches reference ids/order that no
   // longer exist, so force a fresh re-bake.
-  const LS_KEY = 'trip-data-v13';
+  const LS_KEY = 'trip-data-v14';
   const listeners = new Set();
   let chapters;
 

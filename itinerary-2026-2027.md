@@ -2,7 +2,7 @@
 
 **Duration:** June 21, 2026 – June 17, 2027 (361 days / ~12 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
-**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Baku → Ásia do Sul → China E2 (Jiangnan, outono) → China E1a (Shenzhen, amigos) → Hong Kong (visa reset + visto Taiwan) → China E1b (Beijing + Sichuan) → Coreia (Natal em Busan + NYE Seoul) → Taiwan (inverno ameno) → Japão (inverno fundido) → Filipinas → Indonésia → Ásia do Sudeste → China (primavera, norte + paisagens) → home
+**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Baku → Ásia do Sul → China E1 (Jiangnan + Shenzhen, amigos) → Hong Kong (visa reset + visto Taiwan) → China E2 (Beijing + Sichuan) → Coreia (Natal em Busan + NYE Seoul) → Taiwan (inverno ameno) → Japão (inverno fundido) → Filipinas → Indonésia → Ásia do Sudeste → China (primavera, norte + paisagens) → home
 
 ---
 
@@ -17,25 +17,24 @@
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 6 | India (compact, via Baku) | Oct 14 – Oct 20 | 6 |
 | 7 | Nepal (reduced) | Oct 21 – Nov 9 | 19 |
-| 8 | China | Nov 10 – Nov 28 | 18 |
-| 9 | China | Nov 28 – Dec 6 | 8 |
-| 10 | Hong Kong | Dec 6 – Dec 11 | 5 |
-| 11 | China | Dec 11 – Dec 24 | 13 |
-| 12 | South Korea | Dec 24 – Jan 11 | 18 |
-| 13 | Taiwan | Jan 11 – Jan 25 | 14 |
-| 14 | Japan | Jan 25 – Feb 24 | 30 |
-| 15 | Philippines | Feb 24 – Mar 11 | 15 |
-| 16 | Indonesia | Mar 11 – Apr 1 | 21 |
-| 17 | Malaysia | Apr 1 – Apr 11 | 10 |
-| 18 | Indonesia | Apr 11 – Apr 28 | 17 |
-| 19 | Singapore | Apr 28 – May 5 | 7 |
-| 20 | Malaysia | May 5 – May 15 | 10 |
-| 21 | Thailand | May 15 – May 29 | 14 |
-| 22 | China | May 29 – Jun 17 | 19 |
+| 8 | China (E1: Jiangnan + PRD, one stay) | Nov 10 – Dec 6 | 26 |
+| 9 | Hong Kong | Dec 6 – Dec 11 | 5 |
+| 10 | China (E2: Beijing + Sichuan) | Dec 11 – Dec 24 | 13 |
+| 11 | South Korea | Dec 24 – Jan 11 | 18 |
+| 12 | Taiwan | Jan 11 – Jan 25 | 14 |
+| 13 | Japan | Jan 25 – Feb 24 | 30 |
+| 14 | Philippines | Feb 24 – Mar 11 | 15 |
+| 15 | Indonesia | Mar 11 – Apr 1 | 21 |
+| 16 | Malaysia | Apr 1 – Apr 11 | 10 |
+| 17 | Indonesia | Apr 11 – Apr 28 | 17 |
+| 18 | Singapore | Apr 28 – May 5 | 7 |
+| 19 | Malaysia | May 5 – May 15 | 10 |
+| 20 | Thailand | May 15 – May 29 | 14 |
+| 21 | China | May 29 – Jun 17 | 19 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
-**China total:** 58 days in-country (E2 18 + E1a 8 + E1b 13 + spring 19), entries of 26 + 13 days, each inside the 30d visa-free limit ✓
-**HK reset:** Guangzhou → Hong Kong by HSR Dec 6 restarts the 30-day clock for E1b ✓
+**China total:** 58 days in-country (E1 26 + E2 13 + spring 19), each entry inside the 30d visa-free limit ✓
+**HK reset:** Guangzhou → Hong Kong by HSR Dec 6 restarts the 30-day clock for E2 ✓
 **Taiwan visa:** filed at TECO Hong Kong Dec 7 (pickup Dec 8–9), 30d grant requested for the Jan 11–25 stay ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
 **Indonesia visa:** two free 30-day entries (Mar 11–Apr 1 + Apr 11–28) with Borneo in between — no extension needed ✓
@@ -256,10 +255,10 @@ Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchh
 ---
 
 ## Chapter 8 — CHINA
-### Nov 10 – Nov 28 · 18 days
-*Theme: Jiangnan autumn: foliage canals, open ridges, slow cities*
+### Nov 10 – Dec 6 · 26 days
+*Theme: First entry: Jiangnan autumn + PRD friends finale, one 26-day stay*
 
-First mainland entry opens in Jiangnan autumn — 18 days that begin a 26-day continuous stay with the PRD leg (deep inside the 30-day limit, no reset needed between them). Shanghai as slow post-trek landing, Suzhou and Hangzhou gardens at foliage peak, and Huangshan with West Sea Canyon still open before its December closure. All linked by bullet train, all mild.
+The first mainland admission runs 26 straight days — Jiangnan autumn into the Pearl River Delta, deep inside the 30-day limit with no reset needed. Shanghai as slow post-trek landing, Suzhou and Hangzhou gardens at foliage peak, Huangshan with West Sea Canyon still open — then south for friends' finale in Shenzhen and the Cantonese blitz in Guangzhou before Hong Kong.
 
 **Shanghai — 6 days (Nov 10–16)**
 - French Concession: plane-tree boulevards in autumn color, café season, no heating worries
@@ -294,22 +293,9 @@ First mainland entry opens in Jiangnan autumn — 18 days that begin a 26-day co
 **Shanghai buffer — 3 days (Nov 25–28)**
 - Final meals, laundry, trip planning
 - Last look at the Bund in autumn light
-- Slow final days
-
-**Fly Shanghai → Shenzhen Nov 28**
-
-*China E2: 18 days. Shanghai (6+3) + Huangshan (3) + Hangzhou (3) + Suzhou (3) ✓*
-
----
-
-## Chapter 9 — CHINA
-### Nov 28 – Dec 6 · 8 days
-*Theme: Cantonese immersion + friends in Shenzhen*
-
-Second leg of the 26-day continuous stay — 8 counted days, same admission as Jiangnan, no reset needed. Land in Shenzhen for friends' finale, then Guangzhou for the Cantonese blitz before the HSR slide into Hong Kong.
+- Slow days — fly Shanghai → Shenzhen Nov 28 (in-chapter hop)
 
 **Shenzhen — 4 days (Nov 28 – Dec 2)**
-- Fly PVG → Shenzhen Nov 28
 - Four full days with friends (in town Nov 23 – Dec 2 ✓ — catch their finale!)
 - Huaqiangbei Electronics Market: world's largest, floors of components
 - OCT-LOFT Contemporary Art District
@@ -325,11 +311,11 @@ Second leg of the 26-day continuous stay — 8 counted days, same admission as J
 - Kaiping Diaolou day trip option (UNESCO watchtowers)
 - HSR Guangzhou → Hong Kong Dec 6 (West Kowloon immigration)
 
-*China E1a: 8 days. Shenzhen (4) + Guangzhou (4) ✓*
+*China E1: 26 days. Shanghai (6+3) + Huangshan (3) + Hangzhou (3) + Suzhou (3) + Shenzhen (4) + Guangzhou (4) ✓*
 
 ---
 
-## Chapter 10 — HONG KONG
+## Chapter 9 — HONG KONG
 ### Dec 6 – Dec 11 · 5 days
 *Theme: Neon city + dim sum + visa reset, priced before Christmas week*
 
@@ -348,7 +334,7 @@ Five early-December days in one of the world's great cities. Dry 20° air, early
 
 ---
 
-## Chapter 11 — CHINA
+## Chapter 10 — CHINA
 ### Dec 11 – Dec 24 · 13 days
 *Theme: Great Wall first, then Sichuan fire*
 
@@ -384,11 +370,11 @@ Second mainland entry — 13 counted days, clock reset in Hong Kong. The most im
 **Departure — 1 day (Dec 23–24)**
 Fly Chongqing → Shanghai Dec 23. Overnight buffer, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early).
 
-*China E1b: 13 days. Beijing (5) + Chengdu (4) + Chongqing (3) + departure (1) ✓*
+*China E2: 13 days. Beijing (5) + Chengdu (4) + Chongqing (3) + departure (1) ✓*
 
 ---
 
-## Chapter 12 — SOUTH KOREA
+## Chapter 11 — SOUTH KOREA
 ### Dec 24 – Jan 11 · 18 days
 *Theme: Christmas in Busan, NYE in Seoul, palace snow*
 
@@ -428,7 +414,7 @@ Eighteen days flipped south-first: Christmas by the sea in Busan, frost temples 
 
 ---
 
-## Chapter 13 — TAIWAN
+## Chapter 12 — TAIWAN
 ### Jan 11 – Jan 25 · 14 days
 *Theme: Winter island: gray north, mild south, slow food week*
 
@@ -457,7 +443,7 @@ Fourteen January days as post-Korea thaw: Taipei cool and drizzly (tilt indoor �
 
 ---
 
-## Chapter 14 — JAPAN
+## Chapter 13 — JAPAN
 ### Jan 25 – Feb 24 · 30 days
 *Theme: Empty temples + early plum, then a post-CNY powder week*
 
@@ -500,7 +486,7 @@ Bus/train Hakuba → Tokyo. Fly Tokyo → Manila — Philippines begins Feb 24.
 
 ---
 
-## Chapter 15 — PHILIPPINES
+## Chapter 14 — PHILIPPINES
 ### Feb 24 – Mar 11 · 15 days
 *Theme: Manila staging, WWII wreck diving, limestone islands, warm-up for Raja Ampat*
 
@@ -535,7 +521,7 @@ Fly in two days early for rest and dive-gear prep in Manila, then the express ru
 
 ---
 
-## Chapter 16 — INDONESIA
+## Chapter 15 — INDONESIA
 ### Mar 11 – Apr 1 · 21 days
 *Theme: The best diving on Earth, then a slow recovery week*
 
@@ -565,7 +551,7 @@ First stay — 21 days, inside the free 30-day visa-free limit, no extension nee
 
 ---
 
-## Chapter 17 — MALAYSIA
+## Chapter 16 — MALAYSIA
 ### Apr 1 – Apr 11 · 10 days
 *Theme: Indonesia visa reset + wildlife chapter*
 
@@ -596,7 +582,7 @@ Fly in from Bali Apr 1 — the exit reset Indonesia's clock, and Kinabatangan is
 
 ---
 
-## Chapter 18 — INDONESIA
+## Chapter 17 — INDONESIA
 ### Apr 11 – Apr 28 · 17 days
 *Theme: Cliffs, dragons, drift dives, volcano — second stay*
 
@@ -629,7 +615,7 @@ Second stay — 17 days on a fresh visa-free entry, no extension needed. Pick up
 
 ---
 
-## Chapter 19 — SINGAPORE
+## Chapter 18 — SINGAPORE
 ### Apr 28 – May 5 · 7 days
 *Theme: World-class food, modern wonder, city recharge*
 
@@ -642,7 +628,7 @@ Second stay — 17 days on a fresh visa-free entry, no extension needed. Pick up
 
 ---
 
-## Chapter 20 — MALAYSIA
+## Chapter 19 — MALAYSIA
 ### May 5 – May 15 · 10 days
 *Theme: Urban intensity, street food capital, colonial slow life*
 
@@ -665,7 +651,7 @@ KL for the city spectacle and food, Penang for the most rewarding slow chapter i
 
 ---
 
-## Chapter 21 — THAILAND
+## Chapter 20 — THAILAND
 ### May 15 – May 29 · 14 days
 *Theme: Islands, reef diving, urban intensity, street food*
 
@@ -692,7 +678,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Then Ban
 
 ---
 
-## Chapter 22 — CHINA
+## Chapter 21 — CHINA
 ### May 29 – Jun 17 · 19 days
 *Theme: Ancient capital in perfect weather, then karst + old towns finale*
 
@@ -734,7 +720,7 @@ Nineteen days: Xi'an in late-May perfection, then the southern karst at its gree
 **Buffer — 2 days (Jun 15–17)**
 Travel to Changsha. **Fly home Jun 17, 2027.**
 
-*China total: E1a (8d PRD) + E1b (13d Sichuan + Zhangjiajie) + E2 (18d Jiangnan) + spring (19d north + karst) = 58 days in-country. ✓*
+*China total: E1 (26d Jiangnan + PRD) + E2 (13d Beijing + Sichuan) + spring (19d north + karst) = 58 days in-country. ✓*
 
 ---
 
@@ -762,9 +748,8 @@ Travel to Changsha. **Fly home Jun 17, 2027.**
 | India | Oct 14–20 | Good — post-monsoon clear, Taj + Varanasi in 6d |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Taiwan | Jan 11–25 | Good — cool drizzly north (tilt indoor), mild dry south; post-Korea thaw |
-| China E2 (Jiangnan) | Nov 10–28 | Excellent — foliage peak, West Sea Canyon open, mild cities; best Jiangnan window |
-| China E1a (PRD) | Nov 28–Dec 6 | Excellent — mild delta, Cantonese food, 4 days with friends in Shenzhen (finale) |
-| China E1b (Beijing + Sichuan) | Dec 11–24 | Excellent — empty snow-dusted Wall, hotpot season |
+| China E1 (Jiangnan + PRD, one stay) | Nov 10–Dec 6 | Excellent — foliage peak, West Sea Canyon open, Cantonese food, 4 days with friends in Shenzhen |
+| China E2 (Beijing + Sichuan) | Dec 11–24 | Excellent — empty snow-dusted Wall, hotpot season |
 | Hong Kong | Dec 6–11 | Excellent — dry 20°, pre-Christmas shoulder prices, visa reset + Taiwan-visa filing |
 | South Korea | Dec 24–Jan 11 | Excellent — Busan Christmas + NYE bell, palace snow |
 | Japan (fused winter) | Jan 25–Feb 24 | Excellent — empty temples + early plum; Hakuba post-CNY powder |
@@ -841,7 +826,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | Food (22 chapters) | 20,345 | 21% |
 | Activities & diving | 20,370 | 21% |
 | Inter-chapter flights | 8,945 | 9% |
-| Local transport | 11,665 | 12% |
+| Local transport | 11,885 | 12% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 345 | <1% |
 | Contingency (8%) | 7,180 | 7% |
@@ -859,23 +844,22 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 6 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
 | 7 | Nepal | 19 | 146 | 2,780 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 5n |
-| 8 | China | 18 | 212 | 3,810 | Shanghai 9n + Huangshan/Hangzhou/Suzhou HSR star ~$480 · West Sea Canyon open · autumn gardens |
-| 9 | China | 8 | 171 | 1,370 | PVG→SZX fly-in + SZX→CAN→HK HSR exits · Canton Tower + Chen Clan + Kaiping day trip |
-| 10 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
-| 11 | China | 13 | 230 | 2,990 | PEK→CTU ~$350 + CTU→CKG HSR ~$120 + CKG→PVG ~$240 · Wall + pandas + hotpot slow day |
-| 12 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
-| 13 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days · January tilt |
-| 14 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
-| 15 | Philippines | 15 | 209 | 3,135 | Manila 3n staging + gear prep · Coron 4 dive-days · sardines (Malapascua dropped) |
-| 16 | Indonesia | 21 | 519 | 10,900 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · visa-free, no extension |
-| 17 | Malaysia | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
-| 18 | Indonesia | 17 | 198 | 3,360 | BKI→LBJ/DPS hops + boats · Penida + Komodo dives · Batur · Bali levies |
-| 19 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
-| 20 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
-| 21 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
-| 22 | China | 19 | 200 | 3,795 | BKK→XIY ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets |
+| 8 | China | 26 | 208 | 5,400 | Shanghai 9n + HSR star + Shenzhen friends finale + Cantonese blitz · PVG→SZX hop in-chapter |
+| 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
+| 10 | China | 13 | 230 | 2,990 | PEK→CTU ~$350 + CTU→CKG HSR ~$120 + CKG→PVG ~$240 · Wall + pandas + hotpot slow day |
+| 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
+| 12 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days · January tilt |
+| 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
+| 14 | Philippines | 15 | 209 | 3,135 | Manila 3n staging + gear prep · Coron 4 dive-days · sardines (Malapascua dropped) |
+| 15 | Indonesia | 21 | 519 | 10,900 | Liveaboard $8,400 locked (Mar 11–20) · Ubud slow 10n · visa-free, no extension |
+| 16 | Malaysia | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) |
+| 17 | Indonesia | 17 | 198 | 3,360 | BKI→LBJ/DPS hops + boats · Penida + Komodo dives · Batur · Bali levies |
+| 18 | Singapore | 7 | 224 | 1,570 | ~$140/n · hawker-first food · Gardens domes |
+| 19 | Malaysia | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
+| 20 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
+| 21 | China | 19 | 200 | 3,795 | BKK→XIY ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets |
 
-Chapters subtotal: **$78,650** · 358 days.
+Chapters subtotal: **$78,870** · 358 days.
 
 ### Inter-chapter flights (couple)
 
@@ -888,7 +872,6 @@ Chapters subtotal: **$78,650** · 358 days.
 | Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
 | Varanasi → Kathmandu (direct) | Oct 20 | 360 | ~$180pp Buddha Air |
 | Kathmandu/Pokhara → Shanghai | Nov 9 | 550 | Estimate ~$275pp, 1-stop via Chengdu |
-| Shanghai → Shenzhen | Nov 28 | 220 | Estimate, domestic trunk Saturday |
 | Hong Kong → Beijing | Dec 11 | 350 | Estimate |
 | Shanghai → Seoul | Dec 24 | 350 | Estimate — Christmas Eve premium risk, buy early |
 | Seoul → Taipei | Jan 11 | 275 | Estimate, LCC Monday |
@@ -900,7 +883,7 @@ Chapters subtotal: **$78,650** · 358 days.
 | Bali → Singapore | Apr 28 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$8,945**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,745 + 8% contingency $7,180 = **~$97,000**.
+Flights subtotal: **$8,725**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,745 + 8% contingency $7,180 = **~$97,000**.
 
 ### Assumptions & levers
 
