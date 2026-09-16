@@ -309,7 +309,7 @@ The first mainland admission runs 26 straight days — Jiangnan autumn into the 
 - Chen Clan Academy — Lingnan craft at its finest
 - Canton Tower at night
 - Kaiping Diaolou day trip option (UNESCO watchtowers)
-- HSR Guangzhou → Hong Kong Dec 6 (West Kowloon immigration)
+- HSR Guangzhou → Hong Kong Dec 6 (morning train + 1h buffer — Sunday-evening returnee vector)
 
 *China E1: 26 days. Shanghai (6+3) + Huangshan (3) + Hangzhou (3) + Suzhou (3) + Shenzhen (4) + Guangzhou (4) ✓*
 
@@ -367,8 +367,8 @@ Second mainland entry — 13 counted days, clock reset in Hong Kong. The most im
 - Hotpot capital — mandatory multiple visits
 - Travel to Shanghai Dec 23
 
-**Departure — 1 day (Dec 23–24)**
-Fly Chongqing → Shanghai Dec 23. Overnight buffer, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early).
+**Shanghai buffer — 1 day (Dec 23–24)**
+Fly Chongqing → Shanghai Dec 23 (morning — protects the Xmas Eve exit). Overnight buffer, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early).
 
 *China E2: 13 days. Beijing (5) + Chengdu (4) + Chongqing (3) + departure (1) ✓*
 
@@ -383,9 +383,9 @@ Eighteen days flipped south-first: Christmas by the sea in Busan, frost temples 
 **Busan — 3 days (Dec 24–27)**
 - Land ICN Dec 24, hop straight to Busan (flight or KTX)
 - Christmas Day by the sea — Gamcheon hillside in winter light
-- Jagalchi Fish Market: winter king crab season
+- Jagalchi Fish Market: winter king crab season (open Xmas Day)
 - Haedong Yonggungsa seaside temple
-- Gwangalli Bridge lit at night
+- Gwangalli Bridge lit at night (drone show Sat Dec 26, 19:00/21:00 — verify dates)
 - Train to Gyeongju Dec 27
 
 **Gyeongju — 2 days (Dec 27–29)**
@@ -393,7 +393,7 @@ Eighteen days flipped south-first: Christmas by the sea in Busan, frost temples 
 - Bulguksa (UNESCO), Seokguram Grotto — crowd-free
 - Tumuli Park burial mounds in frost
 - Anapji Pond at dusk
-- Bus/train to Jeonju Dec 29 — transit half-day, nothing else scheduled
+- Direct bus to Jeonju Dec 29 (11:20, arrive by 15:00) — keep the day otherwise empty
 
 **Jeonju — 1 day (Dec 29–30)**
 - Bibimbap in a traditional courtyard — the origin city (compressed to one full day)
@@ -406,6 +406,7 @@ Eighteen days flipped south-first: Christmas by the sea in Busan, frost temples 
 - Gyeongbokgung + Changdeokgung in snow-dusted winter light
 - Hongdae, Insadong, specialty coffee deep-dive
 - DMZ day trip Jan 5/6 (Tue/Wed — book ahead, closed Mon Jan 4)
+- Suwon Hwaseong day trip option (Jan 7 — best amid the soft Jan 7–8 stretch)
 - Gwangjang Market: bindaetteok, mayak gimbap
 - Bukchon Hanok Village (mornings, voices down)
 - Recovery day Jan 9: jjimjilbang + laundry + pack for Taipei

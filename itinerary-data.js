@@ -223,7 +223,7 @@ window.TRIP = (function () {
         { name: 'Shenzhen', days: 4, query: 'Shekou, Shenzhen',
           highlights: ['Four full days with friends (in town Nov 23 – Dec 2 ✓ — catch their finale!)','Huaqiangbei Electronics Market — world\'s largest, floors of components','OCT-LOFT Contemporary Art District','Dapeng Peninsula coastal hike','Dafen Oil Painting Village (pass-through only)','HSR Shenzhen → Guangzhou (~1h) Dec 2'] },
         { name: 'Guangzhou', days: 4, query: 'Shamian Island, Guangzhou',
-          highlights: ['Cantonese food deep-dive — dim sum where it was born','Shamian Island colonial arcades','Chen Clan Academy — Lingnan craft at its finest','Canton Tower at night','Kaiping Diaolou day trip option (UNESCO watchtowers)','HSR Guangzhou → Hong Kong Dec 6 (West Kowloon immigration)'] },
+          highlights: ['Cantonese food deep-dive — dim sum where it was born','Shamian Island colonial arcades','Chen Clan Academy — Lingnan craft at its finest','Canton Tower at night','Kaiping Diaolou day trip option (UNESCO watchtowers)','HSR Guangzhou → Hong Kong Dec 6 (morning train + 1h buffer — Sunday-evening returnee vector)'] },
       ],
     },
     {
@@ -256,8 +256,8 @@ window.TRIP = (function () {
           highlights: ['Giant panda base — crisp winter morning, active bears','Jinli Ancient Street (90-min evening only), Kuanzhai Alley','People\'s Park teahouse + Wenshu Monastery slow day','Teahouses + mapo tofu, dan dan noodles','Leshan Giant Buddha day trip option (boat-first, skip the stair queues)','Hotpot round one — winter is the season','HSR Chengdu → Chongqing (~1h) Dec 20'] },
         { name: 'Chongqing', days: 3, query: 'Chongqing, China',
           highlights: ['The most cyberpunk city on Earth — 34M people, bridges everywhere','Hongyadong stilted riverfront — view from Qiansimen Bridge at night, don\'t queue inside','Cable car across the Yangtze River','Hotpot capital — mandatory multiple visits','Travel to Shanghai Dec 23'] },
-        { name: 'Departure', days: 1, query: 'Shanghai Pudong Airport',
-          highlights: ['Fly Chongqing → Shanghai Dec 23','Overnight buffer before Korea','Fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early)'] },
+        { name: 'Shanghai buffer', days: 1, query: 'Shanghai Pudong Airport',
+          highlights: ['Fly Chongqing → Shanghai Dec 23 (morning — protects the Xmas Eve exit)','Overnight buffer before Korea','Fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early)'] },
       ],
     },
     {
@@ -271,13 +271,13 @@ window.TRIP = (function () {
       photos: ['seoul palace winter', 'busan gamcheon', 'gyeongju temple', 'jeonju hanok', 'korean street food'],
       places: [
         { name: 'Busan', days: 3, query: 'Gamcheon Culture Village, Busan',
-          highlights: ['Land ICN Dec 24, hop straight to Busan (flight or KTX)','Christmas Day by the sea — Gamcheon hillside in winter light','Jagalchi Fish Market — winter king crab season','Haedong Yonggungsa seaside temple','Gwangalli Bridge lit up at night','Train to Gyeongju Dec 27'] },
+          highlights: ['Land ICN Dec 24, hop straight to Busan (flight or KTX)','Christmas Day by the sea — Gamcheon hillside in winter light','Jagalchi Fish Market — winter king crab season (open Xmas Day)','Haedong Yonggungsa seaside temple','Gwangalli Bridge lit up at night (drone show Sat Dec 26, 19:00/21:00 — verify dates)','Train to Gyeongju Dec 27'] },
         { name: 'Gyeongju', days: 2, query: 'Bulguksa Temple, Gyeongju',
-          highlights: ['Bulguksa (UNESCO) + Seokguram Grotto, crowd-free','Tumuli Park burial mounds in frost','Anapji Pond at dusk','Bus/train to Jeonju Dec 29 — transit half-day, nothing else scheduled'] },
+          highlights: ['Bulguksa (UNESCO) + Seokguram Grotto, crowd-free','Tumuli Park burial mounds in frost','Anapji Pond at dusk','Direct bus to Jeonju Dec 29 (11:20, arrive by 15:00) — keep the day otherwise empty'] },
         { name: 'Jeonju', days: 1, query: 'Jeonju Hanok Village',
           highlights: ['Bibimbap in a traditional courtyard — the origin city (compressed to one full day)','800+ inhabited hanok houses','Makgeolli bars + traditional markets','KTX to Seoul Dec 30, midday — in position for NYE'] },
         { name: 'Seoul', days: 12, query: 'Myeongdong, Seoul',
-          highlights: ['NYE Dec 31: Bosingak bell + citywide countdown ✓','Gyeongbokgung + Changdeokgung in snow-dusted winter light','Hongdae, Insadong, specialty coffee deep-dive','DMZ day trip Jan 5/6 (Tue/Wed — book ahead, closed Mon Jan 4)','Gwangjang Market — bindaetteok, mayak gimbap','Bukchon Hanok Village (mornings, voices down)','Recovery day Jan 9: jjimjilbang + laundry + pack for Taipei','Thermals bought in Beijing — Seoul top-up if needed','Fly Seoul → Taipei Jan 11'] },
+          highlights: ['NYE Dec 31: Bosingak bell + citywide countdown ✓','Gyeongbokgung + Changdeokgung in snow-dusted winter light','Hongdae, Insadong, specialty coffee deep-dive','DMZ day trip Jan 5/6 (Tue/Wed — book ahead, closed Mon Jan 4)','Suwon Hwaseong day trip option (Jan 7 — best amid the soft Jan 7–8 stretch)','Gwangjang Market — bindaetteok, mayak gimbap','Bukchon Hanok Village (mornings, voices down)','Recovery day Jan 9: jjimjilbang + laundry + pack for Taipei','Thermals bought in Beijing — Seoul top-up if needed','Fly Seoul → Taipei Jan 11'] },
       ],
     },
     {
@@ -287,7 +287,7 @@ window.TRIP = (function () {
       theme: 'Winter island: gray north, mild south, slow food week',
       intro: 'Fourteen January days as post-Korea thaw: Taipei cool and drizzly (tilt indoor — full NPM day, coffee streets, Beitou option), a Taroko coast day, then Tainan\'s mild dry slow week before Japan. No NYE countdown here (Seoul keeps it) — the island as winter slow travel.',
       tldr: 'Taipei · Jiufen · Taroko Gorge · Tainan + south',
-      weather: { hi: 18, lo: 13, label: 'Cool north, mild south, 18°/13°', emoji: '🏮', rainyDays: 10 },
+      weather: { hi: 18, lo: 13, label: 'Cool north, mild south, 18°/13°', emoji: '🏮', rainyDays: 14 },
       photos: ['taipei 101 night', 'jiufen old street', 'taroko gorge marble', 'taiwan night market'],
       places: [
         { name: 'Taipei', days: 5, query: 'Da\'an District, Taipei',
