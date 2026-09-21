@@ -18,8 +18,8 @@ window.TRIP_GEO = {
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
-    'philippines':  [11.9964,  119.4192], // Coron
-    'indonesia-a':    [-8.5069,  115.2625], // Ubud (recovery base, most nights)
+    'philippines':  [14.5995,  120.9842], // Manila (entry point)
+    'indonesia-a':    [ -6.2088,  106.8456], // Jakarta (entry point)
     'indonesia-b':    [-8.4889,  119.8825], // Labuan Bajo (Komodo base)
     'borneo':       [ 5.9804,  116.0735], // Kota Kinabalu
     'singapore':    [ 1.2834,  103.8607], // Marina Bay
@@ -84,11 +84,13 @@ window.TRIP_GEO = {
     'philippines/Coron':                      [11.9964,  119.4192],
     'philippines/El Nido':                    [11.1949,  119.4013],
     'philippines/Cebu / Moalboal':            [10.2720,  123.4220],
-    'philippines/Transfer to Sorong':         [-0.8917,  131.2500],
-    // Indonesia A — Raja Ampat + Ubud (first stay)
-    'indonesia-a/Raja Ampat Liveaboard':        [-0.5897,  130.1053], // Wayag
-    'indonesia-a/Transit Sorong → Bali':        [-8.6500,  115.2167], // Denpasar
+    'philippines/Transfer to Bali':            [-8.6500,  115.2167], // Denpasar
+    // Indonesia A — Java + Bali staging + Raja (first stay)
+    'indonesia-a/Jakarta':                      [ -6.2088,  106.8456],
+    'indonesia-a/Yogyakarta':                   [ -7.7956,  110.3695], // Borobudur ~40km NW
     'indonesia-a/Ubud':                         [-8.5069,  115.2625],
+    'indonesia-a/Transfer to Sorong':           [-0.8917,  131.2500], // Sorong
+    'indonesia-a/Raja Ampat Liveaboard':        [-0.5897,  130.1053], // Wayag
     // Indonesia B — Penida + Komodo + Batur (second stay)
     'indonesia-b/Nusa Penida':                  [-8.7270,  115.5444],
     'indonesia-b/Komodo':                       [-8.4889,  119.8825], // Labuan Bajo
