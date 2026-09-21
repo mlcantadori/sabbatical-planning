@@ -15,7 +15,7 @@
 | 3 | Greece | Sep 1 – Sep 22 | 21 |
 | 4 | Türkiye | Sep 21 – Oct 12 | 21 |
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
-| 6 | India (compact, via Baku) | Oct 14 – Oct 20 | 6 |
+| 6 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
 | 7 | Nepal (reduced) | Oct 21 – Nov 9 | 19 |
 | 8 | China (E1: Jiangnan + PRD, one stay) | Nov 10 – Dec 6 | 26 |
 | 9 | Hong Kong | Dec 6 – Dec 11 | 5 |
@@ -200,26 +200,25 @@ One full day on the ground (Oct 13) between flights: leave IST Oct 12, arrive DE
 ---
 
 ## Chapter 6 — INDIA
-### Oct 14 – Oct 20 · 6 days
+### Oct 14 – Oct 21 · 7 days
 *Theme: Sacred intensity, iconic monuments, Himalayan slow life*
 
-A tight, intentional India: land in Delhi Oct 14 from Baku, straight to the Taj with three unhurried days around Delhi and Agra, then Varanasi Oct 17–20 at full spiritual intensity before flying direct to Kathmandu on Oct 20.
+A tight, intentional India: land in Delhi Oct 14 from Baku, day trip to the Taj on Oct 15, train to Varanasi Oct 17 at 06:00 (booked ✅), then Varanasi Oct 17–21 at full spiritual intensity before flying direct to Kathmandu on Oct 21.
 
 **Delhi + Agra — 3 days (Oct 14–17)**
-- Land in Delhi from Baku (IST → GYD Oct 12 → DEL Oct 14), express train to Agra
-- Taj Mahal at sunrise — arrive 6am, golden light
-- Agra Fort
-- Mehtab Bagh (sunset Taj view across the river)
+- Land in Delhi from Baku (IST → GYD Oct 12 → DEL Oct 14)
+- Oct 15: day trip Delhi → Agra — Taj Mahal at sunrise, Agra Fort, Mehtab Bagh sunset
 - Old Delhi — Jama Masjid + Chandni Chowk food walk
+- Oct 17, 06:00: train to Varanasi — booked ✅
 
-**Varanasi — 3 days (Oct 17–20)**
+**Varanasi — 4 days (Oct 17–21)**
 - Arrive Oct 17 — Ghats at dawn: rowing on the Ganges in morning mist
 - Ganga Aarti at dusk: fire, flowers, bells, priests
 - Manikarnika cremation ghats
 - Sarnath — where Buddha first taught, 10km out
 - Chai, silk, narrow alleys
 
-**Fly Varanasi → Kathmandu Oct 20 (direct, ~1h)**
+**Fly Varanasi → Kathmandu Oct 21, 08:30 (direct, ~1h) — booked ✅ ($343 for two)**
 
 ---
 
@@ -230,6 +229,7 @@ A tight, intentional India: land in Delhi Oct 14 from Baku, straight to the Taj 
 Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude.
 
 **Kathmandu — 3 days (Oct 21–24)**
+- Arrive Oct 21 from Varanasi (08:30 direct — booked ✅)
 - Boudhanath Stupa — one of the largest stupas on Earth
 - Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati
 - Swayambhunath (Monkey Temple)
@@ -746,7 +746,7 @@ Travel to Changsha. **Fly home Jun 17, 2027.**
 | Greece | Sep 1–22 | Optimal — September Aegean: warm sea, thinning crowds |
 | Türkiye | Sep 21 – Oct 12 | Optimal — best window (balloons, coast, Istanbul) |
 | Azerbaijan | Oct 12–14 | Transit — IST → GYD Oct 12, full day Oct 13, GYD → DEL Oct 14, bought ✅ |
-| India | Oct 14–20 | Good — post-monsoon clear, Taj + Varanasi in 6d |
+| India | Oct 14–21 | Good — post-monsoon clear, Taj day trip Oct 15 + Varanasi in 7d (Oct 21 shared transit day with Nepal) |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Taiwan | Jan 11–25 | Good — cool drizzly north (tilt indoor), mild dry south; post-Korea thaw |
 | China E1 (Jiangnan + PRD, one stay) | Nov 10–Dec 6 | Excellent — foliage peak, West Sea Canyon open, Cantonese food, 4 days with friends in Shenzhen |
@@ -871,7 +871,7 @@ Chapters subtotal: **$78,870** · 358 days.
 | Athens → Cappadocia via IST | Sep 21 | 500 | Bought ✅ (est.) |
 | Istanbul → Baku | Oct 12 | 450 | Bought ✅ (est.) |
 | Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
-| Varanasi → Kathmandu (direct) | Oct 20 | 360 | ~$180pp Buddha Air |
+| Varanasi → Kathmandu (direct) | Oct 21, 08:30 | 343 | Bought ✅ ($343 for two) |
 | Kathmandu/Pokhara → Shanghai | Nov 9 | 550 | Estimate ~$275pp, 1-stop via Chengdu |
 | Hong Kong → Beijing | Dec 11 | 350 | Estimate |
 | Shanghai → Seoul | Dec 24 | 350 | Estimate — Christmas Eve premium risk, buy early |
@@ -884,7 +884,7 @@ Chapters subtotal: **$78,870** · 358 days.
 | Bali → Singapore | Apr 28 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$8,725**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,745 + 8% contingency $7,180 = **~$97,000**.
+Flights subtotal: **$8,708**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,728 + 8% contingency $7,178 = **~$96,900**.
 
 ### Assumptions & levers
 

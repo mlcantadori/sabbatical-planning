@@ -118,7 +118,7 @@ window.TRIP_GEO = {
     'china-e2/Beijing':                        [39.9042,  116.4074],
     'china-e2/Chengdu':                        [30.5728,  104.0668],
     'china-e2/Chongqing':                      [29.4316,  106.9123],
-    'china-e2/Departure':                      [31.2304,  121.4737], // via Shanghai
+    'china-e2/Shanghai buffer':               [31.2304,  121.4737], // overnight before Seoul
     // China spring (Xi'an + south in peak season)
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
     'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
