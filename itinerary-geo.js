@@ -56,7 +56,7 @@ window.TRIP_GEO = {
     'nepal/Kathmandu':                        [27.7172,   85.3240],
     'nepal/Pokhara':                          [28.2096,   83.9856],
     'nepal/Annapurna Base Camp Trek':         [28.5306,   83.8783],
-    'nepal/Pokhara recovery':                 [28.2096,   83.9856],
+    'nepal/Kathmandu recovery':              [27.7172,   85.3240],
     // India
     'india/Delhi + Agra':                     [27.1751,   78.0421], // Agra
     'india/Rishikesh':                        [30.0869,   78.2676],

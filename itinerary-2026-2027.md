@@ -225,32 +225,41 @@ A tight, intentional India: land in Delhi Oct 14 from Baku, day trip to the Taj 
 ## Chapter 7 — NEPAL
 ### Oct 21 – Nov 9 · 19 days
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
+*Operator: Discovery World Trekking, Thamel — 11-day ABC package $720pp ($1,440 for two; $144 advance paid ✅, $1,296 balance due at KTM office Oct 24)*
 
-Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude.
+Late October into November — post-monsoon clarity holds, skies still crystalline, Himalayan views unobstructed 360°. Slightly cooler than October, meaning fewer crowds on the trail and sharper air at altitude. Trek route runs via Poon Hill (not Ghandruk direct) — sunrise over Annapurna/Dhaulagiri, then into the sanctuary.
 
-**Kathmandu — 3 days (Oct 21–24)**
+**Kathmandu — 4 days (Oct 21–24)**
 - Arrive Oct 21 from Varanasi (08:30 direct — booked ✅)
 - Boudhanath Stupa — one of the largest stupas on Earth
 - Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati
 - Swayambhunath (Monkey Temple)
-- Altitude acclimatization, gear check, ACAP + TIMS permits
+- Oct 24: DWT office, Thamel — pay $1,296 balance, gear check, pre-trek briefing, meet guide + porter
+- ACAP + TIMS permits via agency (confirm at office); KTM hotels/meals at own cost (excluded from package)
 
-**Pokhara — 1 day (Oct 24)**
-- Phewa Lake calm before the trek — staging night
-- Annapurna range at dawn from the lakeside
+**Annapurna Base Camp Trek — 11 days (Oct 25 – Nov 4, with Discovery World)**
+Route: Pokhara → Ulleri → Ghorepani → Poon Hill → Tadapani → Chomrong → Himalaya → ABC (4,130m) → Bamboo → Jhinu → Pokhara
+- Oct 25: tourist bus Kathmandu → Pokhara (205km, 6–7h, early departure) — flight upgrade optional at extra cost; lakeside evening briefing
+- Oct 26: private drive Pokhara → Tikhedhunga, trek to Ulleri (7km, first stone-stair challenge)
+- Oct 27: Ulleri → Ghorepani (10km, rhododendron forest)
+- Oct 28: 4am Poon Hill sunrise (3,210m) → trek to Tadapani (11.5km)
+- Oct 29: Tadapani → Chomrong, gateway to the sanctuary (10km)
+- Oct 30: Chomrong → Himalaya via Sinuwa + Bamboo (12km, longest day)
+- Oct 31: Himalaya → ABC via MBC (12.5km) — 360° amphitheater, the apex day
+- Nov 1: ABC → Bamboo (14km descent)
+- Nov 2: Bamboo → Jhinu Danda hot springs (8.5km, short day)
+- Nov 3: private drive Jhinu → Pokhara — farewell gathering (Silver Oaks Inn night included)
+- Nov 4: tourist bus Pokhara → Kathmandu with agency (included) — arrive afternoon, back to Thamel
+- Included: guide + porter per 2 (9kg pp limit — store the rest free at DWT KTM office), full-board on trail (9B/9L/8D), teahouses, all listed transport, oximeter + med kit, sleeping bag + down jacket loan, duffle bag
+- Carry cash for: tips (~$150), snacks/bottled water/tea, showers/WiFi/charging, Nepal visa $50pp on arrival, insurance with heli-evac (mandatory, not in package)
 
-**Annapurna Base Camp Trek — 11 days (Oct 25 – Nov 4)**
-Route: Nayapul → Ghandruk → Chhomrong → Bamboo → Deurali → Machhapuchhre Base Camp → ABC (4,130m)
-- Teahouse circuit — no camping gear needed
-- Rhododendron forests, glacial moraines, 360° Annapurna amphitheater at the top
-- Return via Jhinu hot springs
+**Kathmandu recovery — 4 days (Nov 5–8)**
+- Slow Thamel days: rest, massage, laundry + repack for China
+- Return loaned sleeping bag + down jacket at DWT office
+- Boudhanath dawn kora farewell, Patan Durbar Square slow afternoon option
+- Farewell dinner before the China leg
 
-**Pokhara recovery — 4 days (Nov 5–8)**
-- Lakeside slow meals, massage, reflection
-- Optional paragliding over Phewa Lake (weather buffer built in)
-- Sārangkot sunrise over the Himalayas
-
-**Fly Pokhara → Taipei Nov 9**
+**Fly onward Nov 9 (KTM → Shanghai)**
 
 ---
 
@@ -817,22 +826,22 @@ Brazilian passports enter visa-free for 30 days (non-extendable) — so the 38-d
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 97,000 for two · ~USD 269/day · 361 days** (~R$252k per person at R$5.20)
+**Grand total: ~USD 96,400 for two · ~USD 267/day · 361 days** (~R$251k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,100 / ~R$21,200 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,050 / ~R$21,100 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (22 chapters) | 25,925 | 27% |
-| Food (22 chapters) | 20,345 | 21% |
-| Activities & diving | 20,370 | 21% |
-| Inter-chapter flights | 8,945 | 9% |
+| Lodging (22 chapters) | 25,970 | 29% |
+| Food (22 chapters) | 20,390 | 23% |
+| Activities & diving | 19,810 | 22% |
+| Inter-chapter flights | 8,708 | 10% |
 | Local transport | 11,885 | 12% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 345 | <1% |
-| Contingency (8%) | 7,180 | 7% |
+| Contingency (8%) | 7,141 | 7% |
 
-**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek all-in $2,000 · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
+**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek $1,440 Discovery World ($720pp, $144 advance paid ✅, $1,296 due Oct 24) · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
 ### Per-chapter breakdown (couple)
 
@@ -843,8 +852,8 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 3 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
 | 4 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n |
 | 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
-| 6 | India | 6 | 151 | 905 | Agra + Delhi trains ~$90 · Taj + forts + boats ~$110 · no Rishikesh leg |
-| 7 | Nepal | 19 | 146 | 2,780 | Trek $2,000 locked (11d Oct 25–Nov 4) · KTM 3n + Pokhara 5n |
+| 6 | India | 7 | 142 | 995 | Agra day trip Oct 15 · train to Varanasi Oct 17 06:00 booked ✅ · VNS→KTM Oct 21 08:30 booked ✅ ($343) |
+| 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
 | 8 | China | 26 | 208 | 5,400 | Shanghai 9n + HSR star + Shenzhen friends finale + Cantonese blitz · PVG→SZX hop in-chapter |
 | 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
 | 10 | China | 13 | 230 | 2,990 | PEK→CTU ~$350 + CTU→CKG HSR ~$120 + CKG→PVG ~$240 · Wall + pandas + hotpot slow day |
@@ -860,7 +869,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 20 | Thailand | 14 | 179 | 2,500 | Koh Tao 3 dive-days ~$360 + Sail Rock ~$190 · Penang→Koh Tao + Samui transfer · Kanchanaburi |
 | 21 | China | 19 | 200 | 3,795 | BKK→XIY ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets |
 
-Chapters subtotal: **$78,870** · 358 days.
+Chapters subtotal: **$78,400** · 359 days.
 
 ### Inter-chapter flights (couple)
 
@@ -884,7 +893,7 @@ Chapters subtotal: **$78,870** · 358 days.
 | Bali → Singapore | Apr 28 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$8,708**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,728 + 8% contingency $7,178 = **~$96,900**.
+Flights subtotal: **$8,708**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $89,258 + 8% contingency $7,141 = **~$96,400**.
 
 ### Assumptions & levers
 
@@ -905,7 +914,7 @@ Flights subtotal: **$8,708**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 | Cappadocia balloon | Booked ✅ | Sep 22 or 23 — Royal Balloon / Butterfly Balloons |
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
-| Annapurna permits | On arrival in Nepal | ACAP permit + TIMS card available in Kathmandu |
+| Annapurna trek (DWT) | Booked ✅ ($144 advance paid) | $1,296 balance + gear check + briefing at DWT office, Thamel, Oct 24 · ACAP/TIMS via agency (confirm) · 9kg pp porter limit |
 | Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→PVG Nov 9 · PVG→SZX Nov 28 · SZX→CAN HSR Dec 2 · CAN→HK HSR Dec 6 · HKG→PEK Dec 11 · PEK→CTU Dec 12 · CKG→PVG Dec 23 · PVG→ICN Dec 24 (+ICN→PUS hop) · ICN→TPE Jan 11 · TPE→KIX Jan 25 · domestic HSR: CTU→CKG |
 | Taiwan visitor visa (2 pax) | File TECO Hong Kong Dec 7 | Morning errand, pickup Dec 8–9; request 30d grant for Jan 11–25 stay; fallback Seoul filing; do not ticket ICN→TPE until answered |
 | Korea K-ETA (2 pax) | By mid-Dec 2026 | File online from Shanghai ≥1 week before Dec 24; Brazil visa-free but not K-ETA-exempt |
