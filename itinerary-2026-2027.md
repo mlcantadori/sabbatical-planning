@@ -2,7 +2,7 @@
 
 **Duration:** June 21, 2026 – June 17, 2027 (361 days / ~12 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
-**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Baku → Ásia do Sul → China E1 (Jiangnan + Shenzhen, amigos) → Hong Kong (visa reset + visto Taiwan) → China E2 (Beijing + Sichuan) → Coreia (Natal em Busan + NYE Seoul) → Taiwan (inverno ameno) → Japão (inverno fundido) → Indonésia (Java + Bali + Raja Ampat) → Bornéu → Filipinas (pós-Páscoa) → Komodo + Bali → Singapura → Malásia → Tailândia → China (primavera, norte + paisagens) → home
+**Arc:** Brasil → Américas → Mediterrâneo → Turquia → Baku → Ásia do Sul → China E1 (Beijing → Jiangnan → Shenzhen, amigos) → Hong Kong (visa reset + visto Taiwan) → China E2 (Sichuan + Shanghai) → Coreia (Natal em Busan + NYE Seoul) → Taiwan (inverno ameno) → Japão (inverno fundido) → Indonésia (Java + Bali + Raja Ampat) → Bornéu → Filipinas (pós-Páscoa) → Komodo + Bali → Singapura → Malásia → Tailândia → China (primavera, norte + paisagens) → home
 
 ---
 
@@ -17,9 +17,9 @@
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 6 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
 | 7 | Nepal (reduced) | Oct 21 – Nov 9 | 19 |
-| 8 | China (E1: Jiangnan + PRD, one stay) | Nov 10 – Dec 6 | 26 |
-| 9 | Hong Kong | Dec 6 – Dec 11 | 5 |
-| 10 | China (E2: Beijing + Sichuan) | Dec 11 – Dec 24 | 13 |
+| 8 | China (E1: Beijing → Jiangnan → Shenzhen) | Nov 10 – Dec 2 | 22 |
+| 9 | Hong Kong | Dec 2 – Dec 7 | 5 |
+| 10 | China (E2: Sichuan + Shanghai) | Dec 7 – Dec 24 | 17 |
 | 11 | South Korea | Dec 24 – Jan 11 | 18 |
 | 12 | Taiwan | Jan 11 – Jan 25 | 14 |
 | 13 | Japan | Jan 25 – Feb 24 | 30 |
@@ -33,9 +33,9 @@
 | 21 | China (Xi'an + karst finale) | May 30 – Jun 17 | 19 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
-**China total:** 58 days in-country (E1 26 + E2 13 + spring 19), each entry inside the 30d visa-free limit ✓
-**HK reset:** Guangzhou → Hong Kong by HSR Dec 6 restarts the 30-day clock for E2 ✓
-**Taiwan visa:** filed at TECO Hong Kong Dec 7 (pickup Dec 8–9), 30d grant requested for the Jan 11–25 stay ✓
+**China total:** 58 days in-country (E1 22 + E2 17 + spring 19), each entry inside the 25d comfort limit ✓
+**HK reset:** Guangzhou → Hong Kong by HSR Dec 2 restarts the 30-day clock for E2 ✓
+**Taiwan visa:** filed at TECO Hong Kong Dec 3 (pickup Dec 4–5), 30d grant requested for the Jan 11–25 stay ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
 **Indonesia visa:** two free 30-day entries — Entry 1 Feb 24–Mar 21 (Java + Bali + Raja, ~26 days used, 4d buffer) + Entry 2 Apr 14–30 (Penida + Komodo, 17d), with Borneo + Philippines in between — no extension needed ✓
 **NYE:** Seoul Dec 31 (Bosingak bell) ✓ — moved from Taipei 101
@@ -264,122 +264,122 @@ Route: Pokhara → Ulleri → Ghorepani → Poon Hill → Tadapani → Chomrong 
 ---
 
 ## Chapter 8 — CHINA
-### Nov 10 – Dec 6 · 26 days
-*Theme: First entry: Jiangnan autumn + PRD friends finale, one 26-day stay*
+### Nov 10 – Dec 2 · 22 days
+*Theme: First entry: Beijing first, then south — canyon, gardens, friends finale*
 
-The first mainland admission runs 26 straight days — Jiangnan autumn into the Pearl River Delta, deep inside the 30-day limit with no reset needed. Shanghai as slow post-trek landing, Suzhou and Hangzhou gardens at foliage peak, Huangshan with West Sea Canyon still open — then south for friends' finale in Shenzhen and the Cantonese blitz in Guangzhou before Hong Kong.
+The first mainland admission runs 22 days north-to-south, inside the 25-day comfort limit. Beijing first while winter light is crisp (empty Wall), Xi'an, Huangshan with West Sea Canyon still open, Jiangnan gardens at foliage peak, then south for friends' finale in Shenzhen and the Cantonese blitz in Guangzhou before Hong Kong.
 
-**Shanghai — 6 days (Nov 10–16)**
-- French Concession: plane-tree boulevards in autumn color, café season, no heating worries
-- The Bund at night
-- Yu Garden in autumn quiet
-- Tianzifang arts + crafts alleys
-- Xintiandi, M50 art district
-- HSR Shanghai → Huangshan (~2.5h) Nov 16
+**Beijing — 5 days (Nov 10–15)**
+- Fly in from Kathmandu Nov 9 (via Chengdu) — Entry 1 starts Nov 10
+- Great Wall (Mutianyu): empty, pick the bluest morning
+- Forbidden City in crisp winter light (closed Mondays — Nov 16 out)
+- Temple of Heaven + 798 Art District
+- Hutong + Drum/Bell Towers, Peking duck
+- Down/fleece bought in Kathmandu Thamel — Guangzhou trick no longer works
+- HSR Beijing → Xi'an (~5h) Nov 15
 
-**Huangshan — 3 days (Nov 16–19)**
+**Xi'an — 3 days (Nov 15–18)**
+- Terracotta Warriors: indoor museum, astounding at any time of year
+- Cycle the city walls, Muslim Quarter lamb skewers + biangbiang noodles
+- Giant Wild Goose Pagoda
+- Fly Xi'an → Hangzhou (~2h) Nov 18, bus to Tangkou
+
+**Huangshan — 3 days (Nov 18–21)**
 - Yellow Mountain: autumn foliage + early rime, sea of clouds
-- West Sea Canyon OPEN (closes Dec–Mar) — the canyon loop the winter plan missed
+- West Sea Canyon OPEN (closes Dec–Mar) — November timing is the whole point
 - Bright Summit sunrise above the cloud sea
-- Hot springs at the mountain foot
 - Windproof shell + traction spikes in Tangkou if icy
-- Cable cars: autumn schedule, front-load days; book summit hotel ~3 days ahead
-- HSR Huangshan → Hangzhou Nov 19
+- Book summit hotel ~3 days ahead; front-load the canyon days
+- Bus to Hangzhou Nov 21
 
-**Hangzhou — 3 days (Nov 19–22)**
+**Hangzhou — 2 days (Nov 21–23)**
 - West Lake in autumn color — Broken Bridge, Su Causeway, golden gingkoes
-- Lingyin Temple in cedar quiet
-- Meijiawu tea village — post-harvest calm, unhurried tastings
+- Lingyin Temple in cedar quiet, Meijiawu tea village
 - Hefang Street old town
-- HSR Hangzhou → Suzhou (~1.5h) Nov 22
+- HSR Hangzhou → Suzhou (~1.5h) Nov 23
 
-**Suzhou — 3 days (Nov 22–25)**
+**Suzhou — 3 days (Nov 23–26)**
 - Humble Administrator's Garden + Lion Grove in autumn color — peak week
-- Tongli water town day trip — misty canals, empty bridges
+- Tongli water town slow day — misty canals, empty bridges
 - Pingjiang Road canals at dusk (skip the Silk Museum for lived-in lanes)
-- HSR Suzhou → Shanghai (~30min) Nov 25
+- Via Shanghai airports Nov 26 — fly to Shenzhen (in-chapter hop)
 
-**Shanghai buffer — 3 days (Nov 25–28)**
-- Final meals, laundry, trip planning
-- Last look at the Bund in autumn light
-- Slow days — fly Shanghai → Shenzhen Nov 28 (in-chapter hop)
-
-**Shenzhen — 4 days (Nov 28 – Dec 2)**
-- Four full days with friends (in town Nov 23 – Dec 2 ✓ — catch their finale!)
+**Shenzhen — 4 days (Nov 26–30)**
+- Four full days with friends (Nov 26–30 ✓ — inside the Nov 24–Dec 1 window!)
 - Huaqiangbei Electronics Market: world's largest, floors of components
 - OCT-LOFT Contemporary Art District
-- Dapeng Peninsula coastal hike
+- Dapeng Peninsula coastal hike (optional)
 - Dafen Oil Painting Village (pass-through only)
-- HSR Shenzhen → Guangzhou (~1h) Dec 2
+- HSR Shenzhen → Guangzhou (~1h) Nov 30
 
-**Guangzhou — 4 days (Dec 2–6)**
-- Cantonese food deep-dive — dim sum where it was born
-- Shamian Island colonial arcades
-- Chen Clan Academy — Lingnan craft at its finest
+**Guangzhou — 2 days (Nov 30 – Dec 2)**
+- Cantonese food deep-dive — dim sum where it was born (Kaiping cut)
+- Shamian Island colonial arcades, Chen Clan Academy
 - Canton Tower at night
-- Kaiping Diaolou day trip option (UNESCO watchtowers)
-- HSR Guangzhou → Hong Kong Dec 6 (morning train + 1h buffer — Sunday-evening returnee vector)
+- HSR Guangzhou → Hong Kong Dec 2 (morning train + 1h buffer)
 
-*China E1: 26 days. Shanghai (6+3) + Huangshan (3) + Hangzhou (3) + Suzhou (3) + Shenzhen (4) + Guangzhou (4) ✓*
+*China E1: 22 days. Beijing (5) + Xi'an (3) + Huangshan (3) + Hangzhou (2) + Suzhou (3) + Shenzhen (4) + Guangzhou (2) ✓*
 
 ---
 
 ## Chapter 9 — HONG KONG
-### Dec 6 – Dec 11 · 5 days
+### Dec 2 – Dec 7 · 5 days
 *Theme: Neon city + dim sum + visa reset, priced before Christmas week*
 
-Five early-December days in one of the world's great cities. Dry 20° air, early WinterFest lights, normal hotel prices — the 30-day visa clock resets for the northern entry, and a Monday-morning errand files the Taiwan visitor visas for January. Not just a transit — a proper chapter.
+Five early-December days in one of the world's great cities. Dry 20° air, early WinterFest lights, normal hotel prices — the 30-day visa clock resets for the Sichuan leg, and a Thursday-morning errand files the Taiwan visitor visas for January. Not just a transit — a proper chapter.
 
 - Victoria Peak: harbor panorama at dusk, city grid below
 - Star Ferry crossing: Kowloon → Central at night
 - Dim sum yum cha: Tim Ho Wan, Lin Heung, One Dim Sum
-- Taiwan visitor-visa filing at TECO Dec 7 (morning errand — pickup Dec 8–9)
+- Taiwan visitor-visa filing at TECO Dec 3 (morning errand — pickup Dec 4–5)
 - Temple Street Night Market: jade, fortune tellers, street food
 - Nan Lian Garden + Chi Lin Nunnery (free, stunning)
 - Lamma Island day trip: seafood lunch, car-free village walk
 - Rest, laundry, planning
 
-**Fly HK → Beijing Dec 11**
+**Fly HK → Chengdu Dec 7 (direct, 5+/day)**
 
 ---
 
 ## Chapter 10 — CHINA
-### Dec 11 – Dec 24 · 13 days
-*Theme: Great Wall first, then Sichuan fire*
+### Dec 7 – Dec 24 · 17 days
+*Theme: Sichuan fire, Wulong karst, Shanghai slow finish*
 
-Second mainland entry — 13 counted days, clock reset in Hong Kong. The most important sight goes first while winter light is crisp: an empty, possibly snow-dusted Great Wall. Then west for panda mornings and hotpot nights, closing in cyberpunk Chongqing before exiting via Shanghai to Seoul.
+Second mainland entry — 16 counted days, clock reset in Hong Kong, huge buffer. Panda mornings and hotpot nights, a 2-day Wulong karst overnight (winter-empty bridges, possible Fairy Mountain snow), then a trimmed 5-day Shanghai slow finish with heated modern hotels before Korea.
 
-**Beijing — 5 days (Dec 11–16)**
-- Fly HK → Beijing Dec 11
-- Great Wall (Mutianyu): empty + snow-dusted, pick the bluest morning
-- Forbidden City in crisp winter light (closed Mondays — Dec 14 out)
-- Temple of Heaven
-- 798 Art District
-- Hutong + Drum/Bell Towers
-- Peking duck
-- Down layers from Guangzhou Uniqlo
-- Fly Beijing → Chengdu Dec 16
-
-**Chengdu — 4 days (Dec 16–20)**
+**Chengdu — 6 days (Dec 7–13)**
+- Fly HK → Chengdu Dec 7 (direct, 5+/day)
 - Giant panda base: crisp winter morning, active bears
+- Sanxingdui day trip: bronze masks, 18-min HSR + taxi (~50min door-to-door)
+- TICKETS: WeChat mini-program, 20:00 five days out, NO walk-up — book Dec 2 from HK!
 - Jinli Ancient Street (90-min evening only), Kuanzhai Alley
 - People's Park teahouse + Wenshu Monastery slow day
-- Teahouses, mapo tofu, dan dan noodles
 - Leshan Giant Buddha day trip option (boat-first, skip the stair queues)
-- Hotpot round one — winter is the season
-- HSR Chengdu → Chongqing (~1h) Dec 20
+- Hotpot ×4 — winter is the season
+- HSR Chengdu → Chongqing (~1h) Dec 13
 
-**Chongqing — 3 days (Dec 20–23)**
+**Chongqing — 2 days (Dec 13–15)**
 - The most cyberpunk city on Earth: 34M people, bridges everywhere
 - Hongyadong stilted riverfront — view from Qiansimen Bridge at night, don't queue inside
-- Cable car across the Yangtze River
+- Cable car across the Yangtze River, Ciqikou old town slow half-day
 - Hotpot capital — mandatory multiple visits
-- Travel to Shanghai Dec 23
+- HSR Chongqing East → Wulong South (~34min) Dec 15 morning
 
-**Shanghai buffer — 1 day (Dec 23–24)**
-Fly Chongqing → Shanghai Dec 23 (morning — protects the Xmas Eve exit). Overnight buffer, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early).
+**Wulong — 2 days (Dec 15–17)**
+- Overnight in Xiannvshan Town — winter-emptiest UNESCO karst (low-season ¥210 combined ticket)
+- Day 1: Three Natural Bridges (2.5–4h) + Longshuixia Gorge (2h)
+- Day 2: Fairy Mountain — possible snow; back to Chongqing by afternoon
+- Non-slip shoes (walkways can ice); fog lifts ~10–11am
+- HSR back to Chongqing, fly CKG → PVG Dec 17 (morning)
 
-*China E2: 13 days. Beijing (5) + Chengdu (4) + Chongqing (3) + departure (1) ✓*
+**Shanghai — 5 days (Dec 17–22)**
+- French Concession café season — heated MODERN hotels only (no lane houses, no central heating)
+- The Bund at night, Yu Garden, Tianzifang, M50 art district
+- Wuzhen water-town day trip option (or second slow day)
+- Laundry, trip planning, Korea prep
+- Dec 22–23: protected buffer — no bonus day trips, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early)
+
+*China E2: 17 days. Chengdu (6) + Chongqing (2) + Wulong (2) + Shanghai (5) + buffer (2) ✓*
 
 ---
 
@@ -774,9 +774,9 @@ Travel to Changsha Jun 16. **Fly home Jun 17, 2027.** (Thin buffer — the one p
 | India | Oct 14–21 | Good — post-monsoon clear, Taj day trip Oct 15 + Varanasi in 7d (Oct 21 shared transit day with Nepal) |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Taiwan | Jan 11–25 | Good — cool drizzly north (tilt indoor), mild dry south; post-Korea thaw |
-| China E1 (Jiangnan + PRD, one stay) | Nov 10–Dec 6 | Excellent — foliage peak, West Sea Canyon open, Cantonese food, 4 days with friends in Shenzhen |
-| China E2 (Beijing + Sichuan) | Dec 11–24 | Excellent — empty snow-dusted Wall, hotpot season |
-| Hong Kong | Dec 6–11 | Excellent — dry 20°, pre-Christmas shoulder prices, visa reset + Taiwan-visa filing |
+| China E1 (Beijing → Jiangnan → Shenzhen) | Nov 10–Dec 2 | Excellent — empty Wall first, canyon safe in Nov, foliage peak, 4 days with friends in Shenzhen |
+| China E2 (Sichuan + Shanghai) | Dec 7–23 | Excellent — panda mornings, winter-empty Wulong karst, hotpot season, slow Shanghai finish |
+| Hong Kong | Dec 2–7 | Excellent — dry 20°, pre-Christmas shoulder prices, visa reset + Taiwan-visa filing |
 | South Korea | Dec 24–Jan 11 | Excellent — Busan Christmas + NYE bell, palace snow |
 | Japan (fused winter) | Jan 25–Feb 24 | Excellent — empty temples + early plum; Hakuba post-CNY powder |
 | Philippines (post-Easter) | Mar 31–Apr 14 | Excellent — post-Holy Week lull: flat seas, 20m+ vis, crowds gone; hottest month, plan for heat |
@@ -798,7 +798,7 @@ Travel to Changsha Jun 16. **Fly home Jun 17, 2027.** (Thin buffer — the one p
 |---|---|---|
 | Kyoto (winter) | 8d | Empty temples, early plum, slow mornings |
 | Tokyo | 8d | City rhythm, cafés, neighborhoods, CNY week |
-| Shanghai | 9d | Autumn lanes, two-part base, café season |
+| Shanghai | 5d | French Concession café season, heated modern hotels, Wuzhen option |
 | Suzhou | 3d | Gardens in autumn color, canal quiet |
 | Beijing | 5d | Hutong routine, winter wall, Peking duck |
 | Shenzhen | 4d | Friends finale, markets, coastal hikes |
@@ -833,9 +833,9 @@ Brazilian passports enter visa-free for 30 days (non-extendable, onward ticket r
 
 - **Base kit:** carry-on + 30L backpack only throughout
 - **Japan winter:** buy light thermal base layers in Seoul. Rent ALL snowboard gear in Hakuba.
-- **Beijing Wall day (Dec):** windproof shell + insulated boots over Uniqlo layers bought in Guangzhou (wind chill −15° on the Wall); pick the bluest morning
+- **Beijing Wall day (mid-Nov):** windproof shell + insulated boots over down/fleece bought in Kathmandu Thamel (sub-zero wind chill on the Wall); pick the bluest morning
 - **Huangshan summit:** windproof shell + insulated boots (rime/foliage season, not deep winter); cheap traction spikes in Tangkou if icy
-- **Shanghai in January:** pick heated modern hotels — no central heating in old lane houses
+- **Shanghai in December:** pick heated modern hotels — no central heating in old lane houses
 - **Diving:** personal mask and computer worth bringing; BCD, regulator, wetsuit rented per site
 - **Java in Ramadan (Feb 24–Mar 8):** earplugs (3am sahur drums), daytime food via malls/hotels, Borobudur sunrise book 2+ weeks ahead, Java trains 60+ days ahead, settled in Bali by Mar 5 (mudik exodus after)
 - **Nusa Penida:** reef-safe sunscreen, rash guard, water shoes (rocky entries)
@@ -847,20 +847,20 @@ Brazilian passports enter visa-free for 30 days (non-extendable, onward ticket r
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 95,700 for two · ~USD 265/day · 361 days** (~R$248k per person at R$5.20)
+**Grand total: ~USD 95,300 for two · ~USD 264/day · 361 days** (~R$248k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,000 / ~R$21,000 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,000 / ~R$20,900 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (22 chapters) | 25,970 | 29% |
-| Food (22 chapters) | 20,430 | 23% |
-| Activities & diving | 19,830 | 22% |
+| Lodging (22 chapters) | 25,875 | 29% |
+| Food (22 chapters) | 20,445 | 23% |
+| Activities & diving | 19,900 | 23% |
 | Inter-chapter flights | 8,818 | 10% |
-| Local transport | 11,040 | 12% |
+| Local transport | 10,680 | 12% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 345 | <1% |
-| Contingency (8%) | 7,087 | 7% |
+| Contingency (8%) | 7,057 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek $1,440 Discovery World ($720pp, $144 advance paid ✅, $1,296 due Oct 24) · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -875,9 +875,9 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 6 | India | 7 | 142 | 995 | Agra day trip Oct 15 · train to Varanasi Oct 17 06:00 booked ✅ · VNS→KTM Oct 21 08:30 booked ✅ ($343) |
 | 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
-| 8 | China | 26 | 208 | 5,400 | Shanghai 9n + HSR star + Shenzhen friends finale + Cantonese blitz · PVG→SZX hop in-chapter |
-| 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · free gardens/markets |
-| 10 | China | 13 | 230 | 2,990 | PEK→CTU ~$350 + CTU→CKG HSR ~$120 + CKG→PVG ~$240 · Wall + pandas + hotpot slow day |
+| 8 | China | 22 | 211 | 4,650 | Beijing 5n + Xi'an 3n + Huangshan 3n + HGH 2n + SUZ 3n + Shenzhen friends 4n + CAN 2n · HSR + hops |
+| 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · TECO filing Dec 3 · free gardens/markets |
+| 10 | China | 17 | 198 | 3,370 | Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 5n · Sanxingdui + karst tickets · CKG→PVG Dec 17 |
 | 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
 | 12 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days · January tilt |
 | 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
@@ -890,7 +890,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 20 | Thailand | 14 | 186 | 2,600 | Koh Tao 6d + Sail Rock buffer · Samui transit night · PEN→Tao May 16 · Kanchanaburi |
 | 21 | China | 19 | 200 | 3,795 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · 1d Changsha buffer |
 
-Chapters subtotal: **$77,615** · 361 days.
+Chapters subtotal: **$77,245** · 361 days.
 
 ### Inter-chapter flights (couple)
 
@@ -903,7 +903,7 @@ Chapters subtotal: **$77,615** · 361 days.
 | Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
 | Varanasi → Kathmandu (direct) | Oct 21, 08:30 | 343 | Bought ✅ ($343 for two) |
 | Kathmandu/Pokhara → Shanghai | Nov 9 | 550 | Estimate ~$275pp, 1-stop via Chengdu |
-| Hong Kong → Beijing | Dec 11 | 350 | Estimate |
+| Hong Kong → Chengdu (direct) | Dec 7 | 350 | Estimate — 5+ directs/day |
 | Shanghai → Seoul | Dec 24 | 350 | Estimate — Christmas Eve premium risk, buy early |
 | Seoul → Taipei | Jan 11 | 275 | Estimate, LCC Monday |
 | Taipei → Osaka | Jan 25 | 450 | Estimate |
@@ -915,7 +915,7 @@ Chapters subtotal: **$77,615** · 361 days.
 | Bali → Singapore | May 1 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
 
-Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $88,583 + 8% contingency $7,087 = **~$95,700**.
+Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $88,213 + 8% contingency $7,057 = **~$95,300**.
 
 ### Assumptions & levers
 
@@ -937,8 +937,8 @@ Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna trek (DWT) | Booked ✅ ($144 advance paid) | $1,296 balance + gear check + briefing at DWT office, Thamel, Oct 24 · ACAP/TIMS via agency (confirm) · 9kg pp porter limit |
-| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→PVG Nov 9 · PVG→SZX Nov 28 · SZX→CAN HSR Dec 2 · CAN→HK HSR Dec 6 · HKG→PEK Dec 11 · PEK→CTU Dec 12 · CKG→PVG Dec 23 · PVG→ICN Dec 24 (+ICN→PUS hop) · ICN→TPE Jan 11 · TPE→KIX Jan 25 · domestic HSR: CTU→CKG |
-| Taiwan visitor visa (2 pax) | File TECO Hong Kong Dec 7 | Morning errand, pickup Dec 8–9; request 30d grant for Jan 11–25 stay; fallback Seoul filing; do not ticket ICN→TPE until answered |
+| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→PEK Nov 9 · SHA/PVG→SZX Nov 26 · SZX→CAN HSR Nov 30 · CAN→HK HSR Dec 2 · HKG→CTU Dec 7 · CKG→PVG Dec 17 (morning) · PVG→ICN Dec 24 (+ICN→PUS hop) · ICN→TPE Jan 11 · TPE→KIX Jan 25 · domestic HSR: PEK→XIY, CTU→CKG |
+| Taiwan visitor visa (2 pax) | File TECO Hong Kong Dec 3 | Morning errand, pickup Dec 4–5; request 30d grant for Jan 11–25 stay; fallback Seoul filing; do not ticket ICN→TPE until answered |
 | Korea K-ETA (2 pax) | By mid-Dec 2026 | File online from Shanghai ≥1 week before Dec 24; Brazil visa-free but not K-ETA-exempt |
 | Kinabatangan river lodge | By Jan 2027 | Book 2–3 months ahead (Mar 21–30 window); Good Friday Mar 26 — lodges normal, KK↔SDK flights early |
 | Java trains + Borobudur sunrise | 60+ / 14+ days ahead | KAI intercity sells out (mudik) · Borobudur sunrise slots · settled in Bali by Mar 5 |

@@ -13,8 +13,8 @@ window.TRIP_GEO = {
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
     'taiwan':       [25.0330,  121.5654], // Taipei
-    'china-e1':    [31.2304,  121.4737], // Shanghai (entry + most nights)
-    'china-e2':    [39.9042,  116.4074], // Beijing (entry point)
+    'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
+    'china-e2':    [30.5728,  104.0668], // Chengdu (entry point)
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
@@ -108,19 +108,19 @@ window.TRIP_GEO = {
     'thailand/Koh Tao':                       [10.0956,   99.8377],
     'thailand/Koh Samui':                     [ 9.5018,  100.0140],
     'thailand/Bangkok':                       [13.7460,  100.5018],
-    // China E1 (Jiangnan autumn + PRD friends finale, one 26-day stay)
-    'china-e1/Shanghai':                       [31.2304,  121.4737],
+    // China E1 (Beijing first, then south to Shenzhen)
+    'china-e1/Beijing':                       [39.9042,  116.4074],
+    'china-e1/Xi\'an':                        [34.3416,  108.9398],
     'china-e1/Huangshan':                      [30.1300,  118.1700],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
     'china-e1/Suzhou':                         [31.2989,  120.5853],
-    'china-e1/Shanghai buffer':                [31.2304,  121.4737],
     'china-e1/Shenzhen':                       [22.5431,  114.0579],
     'china-e1/Guangzhou':                      [23.1291,  113.2644],
-    // China E2 (Beijing first, then Sichuan)
-    'china-e2/Beijing':                        [39.9042,  116.4074],
+    // China E2 (Sichuan + Wulong + Shanghai finish)
     'china-e2/Chengdu':                        [30.5728,  104.0668],
     'china-e2/Chongqing':                      [29.4316,  106.9123],
-    'china-e2/Shanghai buffer':               [31.2304,  121.4737], // overnight before Seoul
+    'china-e2/Wulong':                         [29.3237,  107.7621], // Xiannvshan Town
+    'china-e2/Shanghai':                       [31.2304,  121.4737],
     // China spring (Xi'an + south in peak season)
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
     'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],

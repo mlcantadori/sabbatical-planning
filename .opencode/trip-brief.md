@@ -20,8 +20,8 @@
 ## Philosophy (what "good" looks like)
 
 - Cinematic life chapter: emotionally well-paced, seasonally optimized, immersive, not rushed.
-- Temporary-life slow chapters are structural, not inefficiency: Shanghai (9d),
-  Kyoto (8d), Tokyo (8d), Tainan (7d block, ~6 slow days), Beijing (5d), Shenzhen (5d), Penang (5d),
+- Temporary-life slow chapters are structural, not inefficiency: Shanghai (5d),
+  Kyoto (8d), Tokyo (8d), Tainan (7d block, ~6 slow days), Beijing (5d), Shenzhen (4d), Penang (6d),
   Hakuba (9d, activity days don't count), Suzhou (3d). Protect their slowness.
 - China is mentally exhausting — decompression must follow each China block.
 - Geographic efficiency is a hard constraint: no regional backtracking; every hop
@@ -55,9 +55,9 @@
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
 | 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
-| 8 | china-e1 | 2026-11-10 → 2026-12-06 | SCOPE (26d single stay: Jiangnan autumn + Shenzhen friends finale Nov 28–Dec 2) |
-| 9 | hk | 2026-12-06 → 2026-12-11 | SCOPE (visa reset + Taiwan-visa filing Dec 7) |
-| 10 | china-e2 | 2026-12-11 → 2026-12-24 | SCOPE |
+| 8 | china-e1 | 2026-11-10 → 2026-12-02 | SCOPE (22d Beijing-first run: Wall → Xi'an → Huangshan canyon → HGH/SUZ → Shenzhen friends Nov 26–30 → CAN → HK) |
+| 9 | hk | 2026-12-02 → 2026-12-07 | SCOPE (visa reset + Taiwan-visa filing Dec 3) |
+| 10 | china-e2 | 2026-12-07 → 2026-12-24 | SCOPE (17d: Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 5n + buffer) |
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
 | 12 | taiwan | 2027-01-11 → 2027-01-25 | SCOPE (14d post-Korea thaw) |
 | 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Hakuba week LOCKED inside) |
@@ -80,13 +80,13 @@
   Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two).
 - India e-Visa required before Oct 14 Delhi arrival.
 - To-buy / estimates (routable in principle, but chained — flag ripple effects):
-  KTM→PVG Nov 9 · PVG→SZX Nov 28 · SZX→CAN HSR Dec 2 · CAN→HK HSR Dec 6 ·
-  HKG→PEK Dec 11 · PEK→CTU Dec 12 · CKG→PVG Dec 23 · PVG→ICN Dec 24 (+ICN→PUS hop) ·
+  KTM→PEK Nov 9 · SHA/PVG→SZX Nov 26 · SZX→CAN HSR Nov 30 · CAN→HK HSR Dec 2 ·
+  HKG→CTU Dec 7 · CKG→PVG Dec 17 (morning) · PVG→ICN Dec 24 (+ICN→PUS hop) ·
   ICN→TPE Jan 11 · TPE→KIX Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
   PEN→USM May 16 · BKK→XIY May 30 · CSX→GRU home Jun 17.
 - Paperwork gates (verified by review team, re-verify before travel): Taiwan visitor
-  visa filed TECO Hong Kong Dec 7 (fallback Seoul); Korea K-ETA filed ≥1 week before
+  visa filed TECO Hong Kong Dec 3 (fallback Seoul); Korea K-ETA filed ≥1 week before
   Dec 24; China L visa for spring entry (May 30) unless the waiver renews.
 - Visa facts baked into the plan (re-verify before travel, don't redesign around
   without cause): China 30-day visa-free per entry (E1 = 26d single stay, E2 = 13d;
