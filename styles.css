@@ -295,10 +295,10 @@ button {
 .map-container {
   width: 100%;
   height: 100%;
-  background: #ece6d6;
+  background: #0a141c;
 }
 .leaflet-container {
-  background: #ece6d6;
+  background: #0a141c;
   font-family: var(--f-sans);
 }
 /* Force tiles visible — Leaflet's fade animation occasionally leaves
@@ -336,6 +336,11 @@ button {
 .route-line {
   animation: route-ants 6s linear infinite;
 }
+/* Transportation overlay post-processing: mute Esri's baked road colors
+   (loud yellows/reds) so roads sit quieter on satellite imagery. */
+.transport-tiles {
+  filter: saturate(.55) brightness(1.12) contrast(.92);
+}
 @media (prefers-reduced-motion: reduce) {
   .route-line { animation: none; }
 }
@@ -364,13 +369,15 @@ button {
   overflow: hidden;
   pointer-events: none;
 }
-.eq-pin-wrap {
+.eq-pin-wrap,
+.eq-city-wrap {
   position: absolute;
   width: 0;
   height: 0;
 }
 .eq-pin-wrap .map-pin,
-.eq-pin-wrap .map-place {
+.eq-pin-wrap .map-place,
+.eq-city-wrap .map-place {
   width: 0;
   height: 0;
   pointer-events: auto;
