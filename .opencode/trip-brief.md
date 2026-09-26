@@ -55,9 +55,9 @@
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
 | 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
-| 8 | china-e1 | 2026-11-10 → 2026-12-09 | SCOPE (29d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ → Shenzhen friends Nov 25–30 → CAN → Shanghai 7n → HK; 30d visa-free, 1d buffer) |
-| 9 | hk | 2026-12-09 → 2026-12-14 | SCOPE (visa reset + Taiwan-visa filing ~Dec 10) |
-| 10 | china-e2 | 2026-12-14 → 2026-12-24 | SCOPE (10d: Chengdu 5n + CQ 3n + Wulong 2d/1n; CKG→ICN Dec 24 verified) |
+| 8 | china-e1 | 2026-11-10 → 2026-11-23 | SCOPE (13d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
+| 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset + Taiwan-visa filing Nov 24) |
+| 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: Shenzhen 5n (rendezvous tail) + CAN 2n + Shanghai 7n + Chengdu 5n + CQ 2n + Wulong 2d/1n + CQ buffer 3n; CKG→ICN Dec 24 verified) |
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
 | 12 | taiwan | 2027-01-11 → 2027-01-25 | SCOPE (14d post-Korea thaw) |
 | 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Hakuba week LOCKED inside) |
