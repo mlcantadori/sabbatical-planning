@@ -30,10 +30,10 @@
 | 18 | Singapore | May 1 – May 6 | 5 |
 | 19 | Malaysia (KL + Penang) | May 6 – May 16 | 10 |
 | 20 | Thailand | May 16 – May 30 | 14 |
-| 21 | China (Xi'an + karst finale) | May 30 – Jun 17 | 19 |
+| 21 | China (Xi'an + karst finale) | May 30 – Jun 16 | 17 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
-**China total:** 57 days in-country (E1 13 + E2 26 + spring 18), both inside the 30d visa-free, HK reset between ✓
+**China total:** 56 days in-country (E1 13 + E2 26 + spring 17), both inside the 30d visa-free, HK reset between ✓
 **HK reset:** Suzhou → Hong Kong Nov 23 restarts the 30-day clock for E2 ✓
 **Taiwan visa:** filed at TECO Hong Kong Nov 24 (pickup Nov 25–26), 30d grant requested for the Jan 11–25 stay ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
@@ -703,7 +703,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Koh Tao 
 ---
 
 ## Chapter 21 — CHINA
-### May 30 – Jun 17 · 19 days (Jun 16–17 shared buffer, thin — no slack before the home flight)
+### May 30 – Jun 16 · 17 days
 *Theme: Ancient capital in perfect weather, then karst + old towns finale*
 
 Nineteen days: arrive Xi'an May 30 on the red-eye (tired first day — walls + Muslim Quarter only, Terracotta from Jun 1), then the southern karst at its greenest — including Zhangjiajie at peak season, when the pillars float above seas of cloud. Mist in the karst, mirror terraces, and lantern light to close the trip.
@@ -740,11 +740,9 @@ Nineteen days: arrive Xi'an May 30 on the red-eye (tired first day — walls + M
 - Fenghuang riverside old town: lanterns over the Tuo River
 - Hong Bridge + diaojiaolou houses at dusk
 - Slow final full days
+- Jun 16: transit to Changsha airport — fly home
 
-**Buffer — 1 day (Jun 16–17)**
-Travel to Changsha Jun 16. **Fly home Jun 17, 2027.** (Thin buffer — the one place with no slack; protect it.)
-
-*China total: E1 (13d Beijing → Suzhou) + E2 (26d South + West) + spring (18d north + karst) = 57 days in-country. ✓*
+*China total: E1 (13d Beijing → Suzhou) + E2 (26d South + West) + spring (17d north + karst) = 56 days in-country. ✓*
 
 ---
 
@@ -787,7 +785,7 @@ Travel to Changsha Jun 16. **Fly home Jun 17, 2027.** (Thin buffer — the one p
 | Borneo | Mar 21–30 | Excellent — Mar–Apr prime window, wildlife active; Good Friday Mar 26 (lodges normal) |
 | Koh Tao / Gulf Thailand | May 16–23 | Optimal — firmly Gulf dry season (+1 buffer day) |
 | Penang | May | Good — warm, café culture unaffected; mini-rain onset, mornings out |
-| China (spring: Xi'an + landscapes) | May 30–Jun 17 | Excellent — Zhangjiajie peak cloud-seas; Xi'an warmer than May; karst mist-green; 1d Changsha buffer (thin) |
+| China (spring: Xi'an + landscapes) | May 30–Jun 16 | Excellent — Zhangjiajie peak cloud-seas; Xi'an warmer than May; karst mist-green; out via Changsha, no buffer |
 
 ---
 
@@ -887,7 +885,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 18 | Singapore | 5 | 229 | 1,145 | ~$140/n · hawker-first food · Gardens domes |
 | 19 | Malaysia (KL 4n + Penang 6n) | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
 | 20 | Thailand | 14 | 186 | 2,600 | Koh Tao 6d + Sail Rock buffer · Samui transit night · PEN→Tao May 16 · Kanchanaburi |
-| 21 | China | 19 | 200 | 3,795 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · 1d Changsha buffer |
+| 21 | China | 17 | 208 | 3,545 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · no buffer — out via Changsha Jun 16 |
 
 Chapters subtotal: **$77,245** · 361 days.
 
@@ -911,7 +909,7 @@ Chapters subtotal: **$77,245** · 361 days.
 | Kota Kinabalu → Manila (via KUL) | Mar 31 | 250 | Estimate, AirAsia |
 | Cebu → Denpasar (via MNL/SIN) | Apr 14 | 300 | Estimate — daily, easy; Entry 2 starts |
 | Bali → Singapore | May 1 | 200 | Estimate, AirAsia |
-| Changsha → São Paulo (home) | Jun 17 | 1,400 | Estimate ~$700pp |
+| Changsha → São Paulo (home) | Jun 16 | 1,400 | Estimate ~$700pp, via Fenghuang transit day |
 
 Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $88,213 + 8% contingency $7,057 = **~$95,300**.
 

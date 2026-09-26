@@ -12,7 +12,7 @@
 - 2 Brazilians (couple), carry-on + ~30L backpacks only. No checked-luggage logistics anywhere.
 - Mid-range comfort: good value, local charm. No luxury, no hardcore-backpacker
   suffering ("perrengue"), no moving every 2 days, no insane logistics for checklist completion.
-- Trip: Jun 21 2026 → Jun 17 2027, 361 days. Budget model: **~USD 97.5k for two
+- Trip: Jun 21 2026 → Jun 16 2027, 360 days. Budget model: **~USD 97.5k for two
   (~USD 270/day, ~R$254k per person at R$5.20)**, all figures USD for a couple.
 - Strategic splurges (locked, do not re-litigate): Raja Ampat liveaboard, Hakuba
   snowboard week (rentals), Cappadocia balloon + cave hotel, one ryokan night.
@@ -68,7 +68,7 @@
 | 18 | singapore | 2027-05-01 → 2027-05-06 | SCOPE (5d) |
 | 19 | malaysia | 2027-05-06 → 2027-05-16 | SCOPE (KL 4n + Penang 6n) |
 | 20 | thailand | 2027-05-16 → 2027-05-30 | SCOPE (Tao 6d, Samui transit) |
-| 21 | china-spring | 2027-05-30 → 2027-06-17 | SCOPE (fly home Jun 17; Changsha buffer 1d — thin) |
+| 21 | china-spring | 2027-05-30 → 2027-06-16 | SCOPE (fly home Jun 16; no buffer — out via Changsha transit) |
 
 ## Locked bookings & flights (never contradict)
 
@@ -84,7 +84,7 @@
   SHA→HKG Dec 9 · HK→CTU Dec 14 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop ·
   ICN→TPE Jan 11 · TPE→KIX Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
-  PEN→USM May 16 · BKK→XIY May 30 · CSX→GRU home Jun 17.
+  PEN→USM May 16 · BKK→XIY May 30 · CSX→GRU home Jun 16.
 - Paperwork gates (verified by review team, re-verify before travel): Taiwan visitor
   visa filed TECO Hong Kong Dec 3 (fallback Seoul); Korea K-ETA filed ≥1 week before
   Dec 24; China L visa for spring entry (May 30) unless the waiver renews.

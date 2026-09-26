@@ -507,7 +507,7 @@ window.TRIP = (function () {
     {
       id: 'china-spring', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China',
-      start: '2027-05-30', end: '2027-06-17', days: 19,
+      start: '2027-05-30', end: '2027-06-16', days: 17,
       theme: 'Ancient capital in perfect weather, then karst + old towns finale',
       intro: 'Nineteen days: Xi\'an in late-May perfection, then the southern karst at its greenest — including Zhangjiajie at peak season, when the pillars float above seas of cloud. Mist in the karst, mirror terraces, and lantern light to close the trip.',
       tldr: 'Xi\'an · Guilin · Longji · Zhangjiajie · Fenghuang · Furong',
@@ -523,9 +523,7 @@ window.TRIP = (function () {
         { name: 'Zhangjiajie + Tianmen', days: 4, query: 'Zhangjiajie National Park',
           highlights: ['Avatar Mountains — floating sandstone pillars in peak-season sea of clouds','Tianmen Stairway to Heaven (999 steps)','Glass Bridge + Glass Cliff Walk','Green valleys between the pillars','Travel to Fenghuang Jun 13 (Furong en route)'] },
         { name: 'Fenghuang + Furong', days: 3, query: 'Fenghuang Ancient Town, China',
-          highlights: ['Furong waterfall town — river pouring through the town center, Tujia stilt houses','Fenghuang riverside old town — lanterns over the Tuo River','Hong Bridge + diaojiaolou houses at dusk','Slow final full days'] },
-        { name: 'Buffer', days: 2, query: 'Changsha, China',
-          highlights: ['Travel to Changsha','Fly home Jun 17, 2027 ✓'] },
+          highlights: ['Furong waterfall town — river pouring through the town center, Tujia stilt houses','Fenghuang riverside old town — lanterns over the Tuo River','Hong Bridge + diaojiaolou houses at dusk','Slow final full days','Jun 16: transit to Changsha airport — fly home'] },
       ],
     },
   ];
@@ -618,7 +616,7 @@ window.TRIP = (function () {
       { id: 'singapore', days: 5, lodging: 700, food: 275, transport: 90, activities: 80, fees: 0, note: '~$140/n · hawker-first food · Gardens domes' },
       { id: 'malaysia', days: 10, lodging: 550, food: 400, transport: 170, activities: 60, fees: 0, note: 'KL 4n + Penang 6n guesthouses · SG→KL bus + ETS rail · Penang Hill + mansions' },
       { id: 'thailand', days: 14, lodging: 800, food: 700, transport: 450, activities: 650, fees: 0, note: 'Koh Tao 6d (+Sail Rock buffer) ~$450 · Samui transit night · PEN→Tao May 16 · Kanchanaburi' },
-      { id: 'china-spring', days: 19, lodging: 1320, food: 1045, transport: 1030, activities: 400, fees: 0, note: 'BKK→XIY May 30 red-eye ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets · Changsha buffer 1d' },
+      { id: 'china-spring', days: 17, lodging: 1180, food: 935, transport: 1030, activities: 400, fees: 0, note: 'BKK→XIY May 30 red-eye ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars tickets · no buffer — out via Changsha Jun 16' },
     ],
     // Between-chapter flights for two (in-chapter transport stays above).
     // Every leg carries a `date` (departure day) so the calendar sync can
@@ -641,7 +639,7 @@ window.TRIP = (function () {
       { route: 'Kota Kinabalu → Manila (via KUL)', cost: 250, date: '2027-03-31', note: 'Estimate, AirAsia' },
       { route: 'Cebu → Denpasar (via MNL/SIN)', cost: 300, date: '2027-04-14', note: 'Estimate — daily, easy; Entry 2 starts' },
       { route: 'Bali → Singapore', cost: 200, date: '2027-05-01', note: 'Estimate, AirAsia' },
-      { route: 'Changsha → São Paulo (home)', cost: 1400, date: '2027-06-17', note: 'Estimate ~$700pp' },
+      { route: 'Changsha → São Paulo (home)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp, via Fenghuang transit day' },
     ],
     extras: [
       { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },
