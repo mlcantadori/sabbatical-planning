@@ -69,6 +69,10 @@ button {
   display: grid;
   grid-template-rows: 60px 1fr;
   height: 100vh;
+  /* Dynamic viewport: mobile browser chrome (address bar) shrinks the
+     visible area, so 100vh alone pushes bottom content (map controls,
+     last list rows) out of reach. dvh tracks the visible height. */
+  height: 100dvh;
   background: var(--paper);
 }
 
@@ -1910,7 +1914,7 @@ button {
   .binder-tab { padding: 6px 10px; font-size: 9.5px; }
   .booking-grid, .diving-grid, .budget-grid { grid-template-columns: 1fr; }
 
-  .modal { max-width: 100%; max-height: 100vh; height: 100vh; border-radius: 0; }
+  .modal { max-width: 100%; max-height: 100vh; max-height: 100dvh; height: 100vh; height: 100dvh; border-radius: 0; }
   .modal-grid { grid-template-columns: 1fr; }
 }
 
