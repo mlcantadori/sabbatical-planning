@@ -55,7 +55,7 @@ window.TODO_ITEMS = [
   { id: 'turkey-6', ch: 'turkey', place: null, cat: 'transport', title: 'Izmir→Istanbul Oct 2 19:45', note: 'Moved to Oct 2 — bought', due: '2026-09-28', done: true },
   { id: 'turkey-7', ch: 'turkey', place: null, cat: 'transport', title: 'Istanbul→Baku Oct 12 + Baku→Delhi Oct 14', note: 'Bought (same ticket via Baku)', due: '2026-09-01', done: true },
   { id: 'turkey-8', ch: 'turkey', place: null, cat: 'visa', title: 'India e-Visa', note: 'Done — issued for the Oct 14 entry', due: '2026-09-15', done: true },
-  { id: 'turkey-9', ch: 'turkey', place: 'Istanbul', cat: 'stay', title: 'Istanbul stay Oct 2–12 (10n)', note: 'Chapter close — book now, currently in Turkey', due: '2026-09-28', done: false },
+  { id: 'turkey-9', ch: 'turkey', place: 'Istanbul', cat: 'stay', title: 'Istanbul stay Oct 2–12 (10n)', note: 'Chapter close — booked', due: '2026-09-28', done: true },
 
   // ── baku ──────────────────────────────────────────────────────────
   { id: 'baku-1', ch: 'baku', place: null, cat: 'visa', title: 'Azerbaijan ASAN e-Visa', note: 'Done — issued', due: '2026-10-05', done: true },
@@ -64,7 +64,7 @@ window.TODO_ITEMS = [
   { id: 'india-1', ch: 'india', place: 'Agra + Delhi + Varanasi', cat: 'transport', title: 'Agra–Delhi round trip + Delhi–Varanasi trains', note: 'Booked via IRCTC', due: '2026-09-01', done: true },
   { id: 'india-2', ch: 'india', place: 'Agra', cat: 'attraction', title: 'Taj Mahal sunrise tickets (Oct 15 day trip)', note: 'Buy online the day before; arrive 6am', due: '2026-10-13', done: false },
   { id: 'india-3', ch: 'india', place: 'Varanasi → Kathmandu', cat: 'transport', title: 'Varanasi→Kathmandu Oct 21 08:30 direct', note: 'Booked ✅ ($343 for two)', due: '2026-09-15', done: true },
-  { id: 'india-4', ch: 'india', place: 'Delhi', cat: 'stay', title: 'Delhi stay Oct 14–17', note: 'Agra as Oct 15 day trip', due: '2026-10-01', done: false },
+  { id: 'india-4', ch: 'india', place: 'Delhi', cat: 'stay', title: 'Delhi stay Oct 14–17', note: 'Agra as Oct 15 day trip — booked', due: '2026-10-01', done: true },
   { id: 'india-5', ch: 'india', place: 'Varanasi', cat: 'stay', title: 'Varanasi stay Oct 17–21 (4n)', note: 'Near the ghats for dawn boat + evening Aarti', due: '2026-10-01', done: false },
 
   // ── nepal ─────────────────────────────────────────────────────────
