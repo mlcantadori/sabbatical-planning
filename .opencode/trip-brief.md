@@ -61,7 +61,7 @@
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
 | 12 | taiwan | 2027-01-11 → 2027-01-25 | SCOPE (14d post-Korea thaw) |
 | 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Hakuba week LOCKED inside) |
-| 14 | indonesia-a | 2027-02-24 → 2027-03-20 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
+| 14 | indonesia-a | 2027-02-24 → 2027-03-21 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
 | 15 | borneo | 2027-03-21 → 2027-03-31 | SCOPE (Mar 31 shared transit; Sipadan permits undecided, decide by Nov 2026) |
 | 16 | philippines | 2027-03-31 → 2027-04-14 | SCOPE (post-Easter window) |
 | 17 | indonesia-b | 2027-04-14 → 2027-04-30 | SCOPE (Entry 2 Apr 14–30) |

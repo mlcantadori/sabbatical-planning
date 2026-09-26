@@ -1,6 +1,6 @@
 # Asia Sabbatical — Itinerary 2026–2027
 
-**Duration:** June 21, 2026 – June 17, 2027 (361 days / ~12 months)
+**Duration:** June 21, 2026 – June 16, 2027 (360 days / ~12 months)
 **Travelers:** 2 Brazilians, carry-on + 30L backpack only
 **Arc:** Brasil → Américas → Mediterrâneo → Turquia → Baku → Ásia do Sul → China E1 (Beijing → Suzhou) → Hong Kong (visa reset + visto Taiwan) → China E2 (Sul + Oeste, amigos) → Coreia (Natal em Busan + NYE Seoul) → Taiwan (inverno ameno) → Japão (inverno fundido) → Indonésia (Java + Bali + Raja Ampat) → Bornéu → Filipinas (pós-Páscoa) → Komodo + Bali → Singapura → Malásia → Tailândia → China (primavera, norte + paisagens) → home
 
@@ -11,8 +11,8 @@
 | # | Destination | Dates | Days |
 |---|---|---|---|
 | 1 | Brasil | Jun 21 – Aug 26 | 66 |
-| 2 | Canada | Aug 27 – Aug 31 | 5 |
-| 3 | Greece | Sep 1 – Sep 22 | 21 |
+| 2 | Canada | Aug 27 – Sep 1 | 5 |
+| 3 | Greece | Sep 1 – Sep 21 | 20 |
 | 4 | Türkiye | Sep 21 – Oct 12 | 21 |
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 6 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
@@ -23,10 +23,10 @@
 | 11 | South Korea | Dec 24 – Jan 11 | 18 |
 | 12 | Taiwan | Jan 11 – Jan 25 | 14 |
 | 13 | Japan | Jan 25 – Feb 24 | 30 |
-| 14 | Indonesia (Java + Bali + Raja) | Feb 24 – Mar 20 | 25 |
-| 15 | Malaysia (Borneo) | Mar 21 – Mar 30 | 10 |
-| 16 | Philippines (post-Easter) | Mar 31 – Apr 14 | 15 |
-| 17 | Indonesia (Penida + Komodo + Bali) | Apr 14 – Apr 30 | 17 |
+| 14 | Indonesia (Java + Bali + Raja) | Feb 24 – Mar 21 | 25 |
+| 15 | Malaysia (Borneo) | Mar 21 – Mar 31 | 10 |
+| 16 | Philippines (post-Easter) | Mar 31 – Apr 14 | 14 |
+| 17 | Indonesia (Penida + Komodo + Bali) | Apr 14 – May 1 | 17 |
 | 18 | Singapore | May 1 – May 6 | 5 |
 | 19 | Malaysia (KL + Penang) | May 6 – May 16 | 10 |
 | 20 | Thailand | May 16 – May 30 | 14 |
@@ -70,7 +70,7 @@ The trip opens at home: Rio for the Petrópolis–Teresópolis trail and diving 
 ---
 
 ## Chapter 2 — CANADA
-### Aug 27 – Aug 31 · 5 days
+### Aug 27 – Sep 1 · 5 days
 *Theme: Friends & family send-off before Europe*
 
 Five days in Toronto before crossing the Atlantic — mostly to meet friends and family. Stayed at a friend's place, played with their kids, warm evenings and slow time together. Overnight flight out Aug 31, landing in Athens Sep 1.
@@ -85,7 +85,7 @@ Five days in Toronto before crossing the Atlantic — mostly to meet friends and
 ---
 
 ## Chapter 3 — GREECE
-### Sep 1 – Sep 22 · 21 days
+### Sep 1 – Sep 21 · 20 days
 *Theme: Ancient Mediterranean, Peloponnese road trip, island-hopping south*
 
 Three weeks arcing south through Greece in September — crowds thinning, sea at its warmest. Athens and the Acropolis, a Peloponnese road trip, then the islands: two caldera nights on Santorini, five days out of Chania, and closing slow on Milos.
@@ -497,7 +497,7 @@ Bus/train Hakuba → Tokyo. Fly Tokyo → Jakarta — Indonesia begins Feb 24 (d
 ---
 
 ## Chapter 14 — INDONESIA
-### Feb 24 – Mar 20 · 25 days
+### Feb 24 – Mar 21 · 25 days
 *Theme: Java temples in Ramadan calm, Bali staging, then the best diving on Earth*
 
 Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). Ramadan-quiet Java — Borobudur without crowds, night markets after dark — then a Nyepi silent day in Ubud and a domestic hop to Sorong Mar 10. Board the $8,400 liveaboard Mar 11 with zero international stress.
@@ -572,7 +572,7 @@ Fly in from Sorong Mar 21 — straight from the apex into one of SE Asia's fines
 ---
 
 ## Chapter 16 — PHILIPPINES
-### Mar 31 – Apr 14 · 15 days (Mar 31 shared transit day with Borneo)
+### Mar 31 – Apr 14 · 14 days (Mar 31 shared transit day with Borneo)
 *Theme: Post-Easter Palawan — wrecks at peak vis, glassy lagoons, sardines*
 
 Arrive from Borneo Mar 31 into the post-Holy Week lull — the single best Palawan window: flat seas, 20m+ visibility, crowds gone. Coron wrecks first (nitrogen-correct: check-dive, then deep), El Nido lagoons with a bonus second day, Moalboal sardines, then hop to Bali Apr 14. Fifteen days inside the 30-day visa-free.
@@ -601,17 +601,17 @@ Arrive from Borneo Mar 31 into the post-Holy Week lull — the single best Palaw
 - Malapascua thresher dropped — Raja already delivered the apex
 - Kawasan Falls canyoneering (if time)
 
-**Transfer to Bali — 2 days (Apr 13–14)**
+**Transfer to Bali — 1 day (Apr 13–14)**
 - Apr 14: CEB → DPS via MNL/SIN (daily, easy)
 - Indonesia Entry 2 starts ~Apr 14 (onward DPS→SIN May 1 ticket in hand)
 
 ---
 
 ## Chapter 17 — INDONESIA
-### Apr 14 – Apr 30 · 17 days
+### Apr 14 – May 1 · 17 days
 *Theme: Cliffs, dragons, drift dives, volcano — second stay*
 
-Second stay — 17 days on a fresh visa-free entry (Apr 14–30), no extension needed. Nusa Penida mantas, Komodo dragons and drift dives, then Bali rice terraces and a volcano at 3am before the hop to Singapore May 1.
+Second stay — 17 days on a fresh visa-free entry (Apr 14–May 1), no extension needed. Nusa Penida mantas, Komodo dragons and drift dives, then Bali rice terraces and a volcano at 3am before the hop to Singapore May 1.
 
 **Nusa Penida — 4 days (Apr 14–18)**
 - Apr 14: land DPS from Cebu (Entry 2 starts); Apr 15: fast boat Sanur → Penida
@@ -844,20 +844,20 @@ Brazilian passports enter visa-free for 30 days (non-extendable, onward ticket r
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 95,300 for two · ~USD 264/day · 361 days** (~R$248k per person at R$5.20)
+**Grand total: ~USD 93,600 for two · ~USD 260/day · 360 days** (~R$243k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,000 / ~R$20,900 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 4,000 / ~R$20,600 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (22 chapters) | 25,875 | 29% |
-| Food (22 chapters) | 20,445 | 23% |
-| Activities & diving | 19,900 | 23% |
-| Inter-chapter flights | 8,818 | 10% |
-| Local transport | 10,680 | 12% |
+| Lodging (21 chapters) | 25,880 | 28% |
+| Food (21 chapters) | 20,285 | 22% |
+| Activities & diving | 19,270 | 21% |
+| Inter-chapter flights | 8,498 | 9% |
+| Local transport | 10,280 | 11% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 345 | <1% |
-| Contingency (8%) | 7,057 | 7% |
+| Contingency (8%) | 6,937 | 7% |
 
 **Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek $1,440 Discovery World ($720pp, $144 advance paid ✅, $1,296 due Oct 24) · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
 
@@ -880,14 +880,14 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
 | 14 | Indonesia (Java + Bali + Raja) | 25 | 420 | 10,500 | Liveaboard $8,400 locked (Mar 11–20) · JKT→JOG→DPS ~$260 + DPS→SOQ ~$250 · Entry 1 Feb 24–Mar 21 (26d) |
 | 15 | Malaysia (Borneo) | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) · in from SOQ Mar 21 |
-| 16 | Philippines (post-Easter) | 15 | 205 | 3,075 | Manila 2n + Coron 5d + El Nido 4d peak vis · sardines (Malapascua dropped) |
+| 16 | Philippines (post-Easter) | 14 | 212 | 2,970 | Manila 2n + Coron 5d + El Nido 4d peak vis · sardines (Malapascua dropped) |
 | 17 | Indonesia (Penida + Komodo) | 17 | 198 | 3,360 | CEB→DPS in flights · Penida + Komodo dives Apr 15–25 · Batur · Entry 2 Apr 14–30 (17d) |
 | 18 | Singapore | 5 | 229 | 1,145 | ~$140/n · hawker-first food · Gardens domes |
 | 19 | Malaysia (KL 4n + Penang 6n) | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
 | 20 | Thailand | 14 | 186 | 2,600 | Koh Tao 6d + Sail Rock buffer · Samui transit night · PEN→Tao May 16 · Kanchanaburi |
 | 21 | China | 17 | 208 | 3,545 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · no buffer — out via Changsha Jun 16 |
 
-Chapters subtotal: **$77,245** · 361 days.
+Chapters subtotal: **$76,060** · 360 days.
 
 ### Inter-chapter flights (couple)
 
