@@ -76,19 +76,17 @@ window.TODO_ITEMS = [
   { id: 'nepal-7', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'Nepal visa — apply + pay online', note: 'Pre-pay online to skip the cash-only queue on arrival', due: '2026-10-15', done: false },
 
   // ── china-e1 ──────────────────────────────────────────────────────
-  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (5n)', note: 'Nov 10–15', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-xian', ch: 'china-e1', place: 'Xi\'an', cat: 'stay', title: 'Xi\'an stay (3n)', note: 'Nov 15–18', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 18–21, Tangkou base + summit night', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 21–23', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (3n)', note: 'Nov 23–26', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (4n)', note: 'Nov 26–30 — friends at another hotel, book own stay', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (6n)', note: 'Nov 10–16, incl. hutong slow day', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 16–19, Tangkou base + summit night', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 19–21', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (4n)', note: 'Nov 21–25, incl. Tongli slow day', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (5n)', note: 'Nov 25–30 — friends at another hotel, book own stay', due: '2026-10-01', done: false },
   { id: 'china-e1-1-guangzhou', ch: 'china-e1', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Nov 30 – Dec 2', due: '2026-10-01', done: false },
   { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Both E1/E2 entries pre-Dec-31-2026; otherwise +~$300 for two visas', due: '2026-10-20', done: false },
-  { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Xi\'an', cat: 'transport', title: 'Beijing–Xi\'an HSR Nov 15 (~5h)', note: 'Buy a few days ahead on Trip.com', due: '2026-11-10', done: false },
-  { id: 'china-e1-4', ch: 'china-e1', place: 'Xi\'an → Hangzhou', cat: 'transport', title: 'Xi\'an–Hangzhou flight Nov 18 (~2h)', note: 'Then bus to Tangkou', due: '2026-10-20', done: false },
-  { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays (Nov 16 out); reservation-only — book ~1 week ahead', due: '2026-11-05', done: false },
+  { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Huangshan', cat: 'transport', title: 'Beijing–Huangshan flight Nov 16 (~2.5h)', note: 'Into Tunxi; replaces the cut Xi\'an legs', due: '2026-10-20', done: false },
+  { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays — Nov 16 is a Monday, plan Tue–Sun; reservation-only, book ~1 week ahead', due: '2026-11-05', done: false },
   { id: 'china-e1-6', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan summit hotel', note: 'Book ~3 days ahead; front-load the canyon days (West Sea Canyon closes Dec–Mar)', due: '2026-11-15', done: false },
-  { id: 'china-e1-7', ch: 'china-e1', place: 'Suzhou → Shenzhen', cat: 'transport', title: 'Suzhou–Shenzhen flight Nov 26', note: 'Via Shanghai airports; friends rendezvous Nov 26–30', due: '2026-10-25', done: false },
+  { id: 'china-e1-7', ch: 'china-e1', place: 'Suzhou → Shenzhen', cat: 'transport', title: 'Suzhou–Shenzhen flight Nov 25', note: 'Via Shanghai airports; friends rendezvous Nov 25–30', due: '2026-10-25', done: false },
   { id: 'china-e1-8', ch: 'china-e1', place: 'Guangzhou → Hong Kong', cat: 'transport', title: 'Guangzhou–Hong Kong HSR Dec 2', note: 'Morning train + 1h West Kowloon buffer; prebook seats', due: '2026-11-27', done: false },
 
   // ── hk ────────────────────────────────────────────────────────────

@@ -90,6 +90,7 @@ window.PHOTO_IDS = {
 
   // ── China Block 1 ─────────────────────────────────────────────────────────
   'great wall snow':             'photo-1508804185872-d7badad00f7d', // ✓
+  'huangshan sea of clouds':     'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Sea_of_clouds_viewed_from_the_top_of_Huangshan.jpg/1920px-Sea_of_clouds_viewed_from_the_top_of_Huangshan.jpg',
   'shanghai bund night':         'photo-1538428494232-9c0d8a3ab403', // ✓
   'shanghai french concession':  'photo-1545569341-9eb8b30979d9',    // ✓
   'shenzhen night skyline':      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Shenzhen_Skyline_At_Night_%28214551663%29.jpeg/1920px-Shenzhen_Skyline_At_Night_%28214551663%29.jpeg',
