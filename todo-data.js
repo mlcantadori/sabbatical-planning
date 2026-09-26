@@ -11,8 +11,8 @@
 //   done  — status IN THIS FILE (the durable record). Ticks in the UI are
 //           kept in the browser too; use the page's Export button to copy
 //           current states back here and commit them.
-// done:true is only set where a source confirms it (✅ / locked / actual).
-// Everything else defaults to false for the traveler to confirm.
+// done:true is only set where a source confirms it (✅ / locked / actual /
+// traveler-confirmed). Everything else defaults to false to confirm.
 
 window.TODO_ITEMS = [
   // ── before you leave ──────────────────────────────────────────────
@@ -23,14 +23,21 @@ window.TODO_ITEMS = [
   // ── brasil (past) ─────────────────────────────────────────────────
   { id: 'brasil-1', ch: 'brasil', place: null, cat: 'transport', title: 'GRU–YYZ–ATH flights', note: '$1,700 for two, locked', due: '2026-05-01', done: true },
   { id: 'brasil-2', ch: 'brasil', place: null, cat: 'transport', title: 'Internal flights Rio→Fortaleza + Fortaleza→SP', note: '~$750 for two, actual', due: '2026-06-01', done: true },
-  { id: 'brasil-3', ch: 'brasil', place: 'Rio + Cumbuco + SP', cat: 'stay', title: 'Rio + Cumbuco + São Paulo stays', note: 'Rio Airbnb R$7,000 · Cumbuco $1,900/mo · SP R$1,400', due: '2026-06-01', done: true },
+  { id: 'brasil-3-rio', ch: 'brasil', place: 'Rio', cat: 'stay', title: 'Rio Airbnb', note: 'R$7,000', due: '2026-06-01', done: true },
+  { id: 'brasil-3-cumbuco', ch: 'brasil', place: 'Cumbuco', cat: 'stay', title: 'Cumbuco monthly rental', note: '$1,900/mo', due: '2026-06-01', done: true },
+  { id: 'brasil-3-sp', ch: 'brasil', place: 'São Paulo', cat: 'stay', title: 'São Paulo Airbnb', note: 'R$1,400', due: '2026-06-01', done: true },
   { id: 'brasil-4', ch: 'brasil', place: 'Petrópolis', cat: 'attraction', title: 'Petrópolis–Teresópolis trail booking', note: 'R$4,000, locked', due: '2026-06-01', done: true },
 
   // ── toronto (past) ────────────────────────────────────────────────
   { id: 'toronto-1', ch: 'toronto', place: null, cat: 'stay', title: "Friend's place", note: 'Lodging free; confirm arrival day', due: '2026-08-20', done: true },
 
   // ── athens (past) ─────────────────────────────────────────────────
-  { id: 'athens-1', ch: 'athens', place: null, cat: 'stay', title: 'All Greece stays', note: 'Avg ~$85/n, booked', due: '2026-08-01', done: true },
+  { id: 'athens-1-athens', ch: 'athens', place: 'Athens', cat: 'stay', title: 'Athens stays Sep 1–5 + buffer Oct 20–21', note: 'Booked', due: '2026-08-01', done: true },
+  { id: 'athens-1-chania', ch: 'athens', place: 'Chania', cat: 'stay', title: 'Chania stay Sep 5–9', note: 'Booked', due: '2026-08-01', done: true },
+  { id: 'athens-1-rethymno', ch: 'athens', place: 'Rethymno', cat: 'stay', title: 'Rethymno stay Sep 9–12', note: 'Booked', due: '2026-08-01', done: true },
+  { id: 'athens-1-santorini', ch: 'athens', place: 'Santorini', cat: 'stay', title: 'Santorini stay Sep 12–14', note: 'Booked', due: '2026-08-01', done: true },
+  { id: 'athens-1-folegandros', ch: 'athens', place: 'Folegandros', cat: 'stay', title: 'Folegandros stay Sep 14–16', note: 'Booked', due: '2026-08-01', done: true },
+  { id: 'athens-1-milos', ch: 'athens', place: 'Milos', cat: 'stay', title: 'Milos stay Sep 16–20', note: 'Booked (checkout adjusted 22→20)', due: '2026-08-01', done: true },
   { id: 'athens-2', ch: 'athens', place: null, cat: 'transport', title: '4 inter-island ferries', note: '€685 actual', due: '2026-08-15', done: true },
   { id: 'athens-3', ch: 'athens', place: 'Chania', cat: 'car', title: 'Chania rental car', note: '~$240, rented', due: '2026-08-20', done: true },
   { id: 'athens-4', ch: 'athens', place: 'Milos', cat: 'attraction', title: 'Kleftiko boat', note: 'Booked — €140 pp', due: '2026-09-08', done: true },
@@ -38,101 +45,152 @@ window.TODO_ITEMS = [
   // ── turkey (current) ──────────────────────────────────────────────
   { id: 'turkey-1', ch: 'turkey', place: 'Göreme', cat: 'attraction', title: 'Hot-air balloon Sep 22/23 — cancelled (weather), refunded', note: 'Royal / Butterfly Balloons — full refund received', due: '2026-09-01', done: true },
   { id: 'turkey-2', ch: 'turkey', place: 'Göreme', cat: 'stay', title: 'Göreme stay Sep 21–24', note: 'Booked', due: '2026-08-15', done: true },
-  { id: 'turkey-3', ch: 'turkey', place: 'Alaçatı + Şirince + Kaş + Akyaka', cat: 'stay', title: 'Coastal stays (re)book for new dates', note: 'Alaçatı Sep 24–26 (room from Sep 24 for 1am arrival) · Şirince 27 · Kaş 28–30 · Akyaka Oct 1 — all booked', due: '2026-09-27', done: true },
+  { id: 'turkey-3-alacati', ch: 'turkey', place: 'Alaçatı', cat: 'stay', title: 'Alaçatı stay Sep 24–26', note: 'Room from Sep 24 for the 1am arrival — booked', due: '2026-09-27', done: true },
+  { id: 'turkey-3-sirince', ch: 'turkey', place: 'Şirince', cat: 'stay', title: 'Şirince stay Sep 27', note: 'Booked', due: '2026-09-27', done: true },
+  { id: 'turkey-3-kas', ch: 'turkey', place: 'Kaş', cat: 'stay', title: 'Kaş stay Sep 28–30', note: 'Booked', due: '2026-09-27', done: true },
+  { id: 'turkey-3-akyaka', ch: 'turkey', place: 'Akyaka', cat: 'stay', title: 'Akyaka stay Oct 1', note: 'Booked', due: '2026-09-27', done: true },
   { id: 'turkey-4', ch: 'turkey', place: 'Izmir (ADB)', cat: 'car', title: 'ADB rental car Sep 25 – Oct 2', note: 'Collect ~1am Sep 25; loop Alaçatı→Şirince→Kaş→Akyaka; return Oct 2 — rented, €220', due: '2026-09-20', done: true },
   { id: 'turkey-5', ch: 'turkey', place: null, cat: 'transport', title: 'ASR→ADB Sep 24 22:50', note: 'Bought', due: '2026-09-01', done: true },
   { id: 'turkey-6', ch: 'turkey', place: null, cat: 'transport', title: 'ADB→IST Oct 2 19:45', note: 'Moved to Oct 2 — bought', due: '2026-09-28', done: true },
   { id: 'turkey-7', ch: 'turkey', place: null, cat: 'transport', title: 'IST→GYD Oct 12 + GYD→DEL Oct 14', note: 'Bought', due: '2026-09-01', done: true },
   { id: 'turkey-8', ch: 'turkey', place: null, cat: 'visa', title: 'India e-Visa', note: 'Done — issued for the Oct 14 entry', due: '2026-09-15', done: true },
+  { id: 'turkey-9', ch: 'turkey', place: 'Istanbul', cat: 'stay', title: 'Istanbul stay Oct 2–12 (10n)', note: 'Chapter close — book now, currently in Turkey', due: '2026-09-28', done: false },
 
   // ── baku ──────────────────────────────────────────────────────────
   { id: 'baku-1', ch: 'baku', place: null, cat: 'visa', title: 'Azerbaijan ASAN e-Visa', note: 'Done — issued', due: '2026-10-05', done: true },
 
   // ── india ─────────────────────────────────────────────────────────
   { id: 'india-1', ch: 'india', place: 'Agra + Delhi + Varanasi', cat: 'transport', title: 'Agra–Delhi round trip + Delhi–Varanasi trains', note: 'Booked via IRCTC', due: '2026-09-01', done: true },
-  { id: 'india-2', ch: 'india', place: 'Agra', cat: 'attraction', title: 'Taj Mahal sunrise tickets', note: 'Buy online the day before; arrive 6am', due: '2026-10-12', done: false },
+  { id: 'india-2', ch: 'india', place: 'Agra', cat: 'attraction', title: 'Taj Mahal sunrise tickets (Oct 15 day trip)', note: 'Buy online the day before; arrive 6am', due: '2026-10-13', done: false },
+  { id: 'india-3', ch: 'india', place: 'Varanasi → Kathmandu', cat: 'transport', title: 'VNS→KTM Oct 21 08:30 direct', note: 'Booked ✅ ($343 for two)', due: '2026-09-15', done: true },
+  { id: 'india-4', ch: 'india', place: 'Delhi', cat: 'stay', title: 'Delhi stay Oct 14–17', note: 'Agra as Oct 15 day trip', due: '2026-10-01', done: false },
+  { id: 'india-5', ch: 'india', place: 'Varanasi', cat: 'stay', title: 'Varanasi stay Oct 17–21 (4n)', note: 'Near the ghats for dawn boat + evening Aarti', due: '2026-10-01', done: false },
 
   // ── nepal ─────────────────────────────────────────────────────────
-  { id: 'nepal-1', ch: 'nepal', place: null, cat: 'transport', title: 'DEL→KTM flight Oct 21', note: 'Positioning for the Nepal entry', due: '2026-09-15', done: false },
-  { id: 'nepal-2', ch: 'nepal', place: 'Annapurna', cat: 'attraction', title: 'ABC trek Oct 25 – Nov 4', note: '$2,000 all-in, locked', due: '2026-09-01', done: true },
-  { id: 'nepal-3', ch: 'nepal', place: 'Kathmandu + Pokhara', cat: 'stay', title: 'KTM 3n + Pokhara 6n hotels', note: 'Off-trek nights around the Oct 25 – Nov 4 trek', due: '2026-10-01', done: false },
-  { id: 'nepal-4', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'ACAP permit + TIMS card', note: 'Issued on arrival in Kathmandu — no advance booking', due: '2026-10-21', done: false },
-  { id: 'nepal-5', ch: 'nepal', place: null, cat: 'admin', title: 'SafetyWing plan before Nepal', note: 'Credit-card insurance covers 60 days only — start SafetyWing ahead of the Oct 21 chapter', due: '2026-10-15', done: false },
+  { id: 'nepal-2', ch: 'nepal', place: 'Annapurna', cat: 'attraction', title: 'ABC trek Oct 25 – Nov 4', note: 'Discovery World $1,440 for two ($144 paid, $1,296 balance due Oct 24 at KTM office)', due: '2026-09-01', done: true },
+  { id: 'nepal-3', ch: 'nepal', place: 'Kathmandu', cat: 'stay', title: 'KTM hotels (pre/post-trek)', note: 'Oct 21–24 + Nov 5–8 Thamel nights; Pokhara transit covered by the trek', due: '2026-10-01', done: false },
+  { id: 'nepal-4', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'ACAP permit + TIMS card', note: 'Via agency — confirm Oct 24 at DWT office', due: '2026-10-21', done: false },
+  { id: 'nepal-5', ch: 'nepal', place: null, cat: 'admin', title: 'SafetyWing plan before Nepal', note: 'Credit-card insurance covers 60 days only — start SafetyWing ahead of the Oct 21 chapter; must cover heli-evac for the trek', due: '2026-10-15', done: false },
+  { id: 'nepal-6', ch: 'nepal', place: null, cat: 'transport', title: 'KTM→China flight Nov 9 (via Chengdu)', note: 'Entry leg for China E1 — book in the Sep batch', due: '2026-09-30', done: false },
 
-  // ── japan-autumn ──────────────────────────────────────────────────
-  { id: 'japan-autumn-1', ch: 'japan-autumn', place: null, cat: 'transport', title: 'KTM→Tokyo flight Nov 10', note: 'Entry leg for the autumn chapter', due: '2026-09-20', done: false },
-  { id: 'japan-autumn-2', ch: 'japan-autumn', place: null, cat: 'transport', title: 'JR Pass exchange order', note: 'Must be purchased BEFORE entering Japan', due: '2026-10-15', done: false },
-  { id: 'japan-autumn-3', ch: 'japan-autumn', place: 'Tokyo + Osaka + Kyoto', cat: 'stay', title: 'Business hotels ~$125/n', note: 'Tokyo–Osaka–Kyoto bases', due: '2026-10-01', done: false },
-
-  // ── korea ─────────────────────────────────────────────────────────
-  { id: 'korea-1', ch: 'korea', place: null, cat: 'transport', title: 'Japan→ICN flight Nov 30', note: 'Entry leg for the Korea chapter', due: '2026-10-15', done: false },
-  { id: 'korea-2', ch: 'korea', place: null, cat: 'stay', title: 'Korea hotels ~$125/n', note: 'Seoul + Busan + Gyeongju/Jeonju nights', due: '2026-10-15', done: false },
-  { id: 'korea-3', ch: 'korea', place: 'Busan', cat: 'transport', title: 'ICN→PUS flight Dec 24', note: 'Xmas-Eve hop — book in the Sep batch, not day-of', due: '2026-09-30', done: false },
-  { id: 'korea-4', ch: 'korea', place: 'Seoul', cat: 'attraction', title: 'DMZ tour', note: 'Needs passport details days ahead — no same-day booking', due: '2026-12-10', done: false },
-  { id: 'korea-5', ch: 'korea', place: 'Jeonju → Seoul', cat: 'transport', title: 'KTX Dec 30', note: 'Korail ~30-day window opens ~Nov 30 — reserve then, not earlier', due: '2026-11-30', done: false },
-
-  // ── taiwan ────────────────────────────────────────────────────────
-  { id: 'taiwan-1', ch: 'taiwan', place: null, cat: 'transport', title: 'ICN→TPE flight Dec 24', note: 'Xmas-day entry leg', due: '2026-10-30', done: false },
-  { id: 'taiwan-2', ch: 'taiwan', place: 'Hualien', cat: 'transport', title: 'Taipei→Hualien express', note: 'TRA 28-day window, reserved seats', due: '2026-12-08', done: false },
-  { id: 'taiwan-3', ch: 'taiwan', place: 'Hualien → Tainan', cat: 'transport', title: 'Hualien→Tainan direct TRA', note: 'Train 324 daily; 28-day window; recheck Hwy-8 status ~Jan 4 first', due: '2026-12-10', done: false },
-  { id: 'taiwan-4', ch: 'taiwan', place: 'Alishan', cat: 'stay', title: 'Alishan overnight', note: 'Sunrise unreachable as a day trip — overnight or skip', due: '2026-12-15', done: false },
-  { id: 'taiwan-5', ch: 'taiwan', place: 'Tainan → Taipei', cat: 'transport', title: 'HSR Tainan→Taipei', note: '1h45m; book a few days ahead', due: '2027-01-08', done: false },
-
-  // ── china-1 ───────────────────────────────────────────────────────
-  { id: 'china-1-1', ch: 'china-1', place: null, cat: 'transport', title: 'Flight into China Jan 12', note: 'Entry leg (TPE→China in current order)', due: '2026-11-15', done: false },
-  { id: 'china-1-2', ch: 'china-1', place: null, cat: 'stay', title: 'China-1 stays ~$85/n', note: 'Beijing + Jiangnan bases', due: '2026-12-01', done: false },
-  { id: 'china-1-3', ch: 'china-1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Both entries pre-Dec-31-2026; otherwise +~$300 for two visas', due: '2026-12-15', done: false },
-  { id: 'china-1-4', ch: 'china-1', place: 'Beijing → Shanghai', cat: 'transport', title: 'Beijing–Shanghai bullet', note: '~$535 for both bullet legs together; buy ~2 weeks ahead on Trip.com', due: '2027-01-15', done: false },
-  { id: 'china-1-5', ch: 'china-1', place: 'Shanghai → Shenzhen', cat: 'transport', title: 'Shanghai–Shenzhen bullet', note: 'Buy ~2 weeks ahead on Trip.com', due: '2027-01-25', done: false },
+  // ── china-e1 ──────────────────────────────────────────────────────
+  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (5n)', note: 'Nov 10–15', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-xian', ch: 'china-e1', place: 'Xi\'an', cat: 'stay', title: 'Xi\'an stay (3n)', note: 'Nov 15–18', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 18–21, Tangkou base + summit night', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 21–23', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (3n)', note: 'Nov 23–26', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (4n)', note: 'Nov 26–30 — confirm: with friends or book?', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-guangzhou', ch: 'china-e1', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Nov 30 – Dec 2', due: '2026-10-01', done: false },
+  { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Both E1/E2 entries pre-Dec-31-2026; otherwise +~$300 for two visas', due: '2026-10-20', done: false },
+  { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Xi\'an', cat: 'transport', title: 'Beijing–Xi\'an HSR Nov 15 (~5h)', note: 'Buy a few days ahead on Trip.com', due: '2026-11-10', done: false },
+  { id: 'china-e1-4', ch: 'china-e1', place: 'Xi\'an → Hangzhou', cat: 'transport', title: 'Xi\'an–Hangzhou flight Nov 18 (~2h)', note: 'Then bus to Tangkou', due: '2026-10-20', done: false },
+  { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays (Nov 16 out); reservation-only — book ~1 week ahead', due: '2026-11-05', done: false },
+  { id: 'china-e1-6', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan summit hotel', note: 'Book ~3 days ahead; front-load the canyon days (West Sea Canyon closes Dec–Mar)', due: '2026-11-15', done: false },
+  { id: 'china-e1-7', ch: 'china-e1', place: 'Suzhou → Shenzhen', cat: 'transport', title: 'Suzhou–Shenzhen flight Nov 26', note: 'Via Shanghai airports; friends rendezvous Nov 26–30', due: '2026-10-25', done: false },
+  { id: 'china-e1-8', ch: 'china-e1', place: 'Guangzhou → Hong Kong', cat: 'transport', title: 'Guangzhou–Hong Kong HSR Dec 2', note: 'Morning train + 1h West Kowloon buffer; prebook seats', due: '2026-11-27', done: false },
 
   // ── hk ────────────────────────────────────────────────────────────
-  { id: 'hk-1', ch: 'hk', place: null, cat: 'stay', title: 'Hong Kong stay ~$150/n', note: '5 nights Feb 11–16', due: '2027-01-15', done: false },
-  { id: 'hk-2', ch: 'hk', place: null, cat: 'transport', title: 'Shenzhen→HK HSR', note: 'Guangzhou South→West Kowloon pattern: ~60 trains/day; take a morning train, prebook seats', due: '2027-02-09', done: false },
+  { id: 'hk-1', ch: 'hk', place: null, cat: 'stay', title: 'Hong Kong stay', note: '5 nights Dec 2–7 (cheapest hotel week of the season)', due: '2026-11-01', done: false },
+  { id: 'hk-2', ch: 'hk', place: null, cat: 'visa', title: 'Taiwan visitor visas — TECO filing Dec 3', note: 'Thursday-morning errand for 2 pax; pickup Dec 4–5; request 30d grant for Jan 11–25; do not ticket Seoul→Taipei until answered', due: '2026-12-03', done: false },
+  { id: 'hk-3', ch: 'hk', place: null, cat: 'transport', title: 'HK→Chengdu flight Dec 7', note: 'Direct, 5+ per day', due: '2026-11-01', done: false },
 
-  // ── japan-winter ──────────────────────────────────────────────────
-  { id: 'japan-winter-1', ch: 'japan-winter', place: null, cat: 'transport', title: 'HK→Japan flight Feb 16', note: 'Entry leg for the powder chapter', due: '2026-12-01', done: false },
-  { id: 'japan-winter-2', ch: 'japan-winter', place: 'Hakuba', cat: 'stay', title: 'Hakuba stay', note: 'Powder-week base Feb 16–26', due: '2027-01-01', done: false },
-  { id: 'japan-winter-3', ch: 'japan-winter', place: 'Hakuba', cat: 'attraction', title: 'Hakuba Valley 7-day pass', note: '~$930 for two — reserve ahead', due: '2027-01-15', done: false },
-  { id: 'japan-winter-4', ch: 'japan-winter', place: 'Hakuba', cat: 'attraction', title: 'Snowboard rental (full kit)', note: '~$950 for two; mask + dive computer owned, snowboard kit rented', due: '2027-01-20', done: false },
-  { id: 'japan-winter-5', ch: 'japan-winter', place: 'Osaka → Hakuba', cat: 'transport', title: 'Osaka–Hakuba buses', note: 'Reserve seats ahead', due: '2027-02-01', done: false },
+  // ── china-e2 ──────────────────────────────────────────────────────
+  { id: 'china-e2-1-chengdu', ch: 'china-e2', place: 'Chengdu', cat: 'stay', title: 'Chengdu stay (6n)', note: 'Dec 7–13', due: '2026-11-01', done: false },
+  { id: 'china-e2-1-chongqing', ch: 'china-e2', place: 'Chongqing', cat: 'stay', title: 'Chongqing stay (2n + Wulong transit)', note: 'Dec 13–15 + Dec 16 night', due: '2026-11-01', done: false },
+  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (5n)', note: 'Dec 17–22 — heated MODERN hotel (no lane houses, no central heating)', due: '2026-11-01', done: false },
+  { id: 'china-e2-2', ch: 'china-e2', place: 'Chengdu', cat: 'attraction', title: 'Sanxingdui tickets', note: 'WeChat mini-program, 20:00 five days out, NO walk-up — book Dec 2 from HK!', due: '2026-12-02', done: false },
+  { id: 'china-e2-3', ch: 'china-e2', place: 'Chengdu → Chongqing', cat: 'transport', title: 'Chengdu–Chongqing HSR Dec 13 (~1h)', note: 'Buy a few days ahead', due: '2026-12-08', done: false },
+  { id: 'china-e2-4', ch: 'china-e2', place: 'Chongqing → Shanghai', cat: 'transport', title: 'CKG→PVG Dec 17 morning flight', note: 'Back to Chongqing first, then fly', due: '2026-11-10', done: false },
+  { id: 'china-e2-5', ch: 'china-e2', place: 'Shanghai → Seoul', cat: 'transport', title: 'Shanghai–Seoul flight Dec 24', note: 'Christmas-Eve leg — book early', due: '2026-10-15', done: false },
+  { id: 'china-e2-6', ch: 'china-e2', place: null, cat: 'visa', title: 'Korea K-ETA (2 pax)', note: 'File online ≥1 week before Dec 24; BR visa-free but not K-ETA-exempt', due: '2026-12-15', done: false },
 
-  // ── philippines ───────────────────────────────────────────────────
-  { id: 'philippines-1', ch: 'philippines', place: null, cat: 'transport', title: 'Japan→Philippines flight Feb 26', note: 'Entry leg', due: '2026-12-15', done: false },
-  { id: 'philippines-2', ch: 'philippines', place: null, cat: 'stay', title: 'Coron + El Nido + Cebu stays', note: 'Coron 5n · El Nido 3n · Moalboal 2n pattern', due: '2027-01-15', done: false },
-  { id: 'philippines-3', ch: 'philippines', place: 'Coron', cat: 'attraction', title: 'Coron wreck dive package (4 dive-days)', note: '~$760; book the dive shop ahead', due: '2027-02-01', done: false },
-  { id: 'philippines-4', ch: 'philippines', place: 'Cebu → Manado', cat: 'transport', title: 'CEB→MDC Mar 9 (1-stop, pre-dawn start)', note: 'No nonstops — weakest link in the chain; Moalboal→CEB airport is ~3h', due: '2027-01-15', done: false },
-  { id: 'philippines-5', ch: 'philippines', place: 'Manado → Sorong', cat: 'transport', title: 'MDC→SOQ Mar 10, TransNusa 08:00', note: 'The humane choice over Lion 03:45; liveaboard boards Mar 11', due: '2027-01-15', done: false },
+  // ── korea ─────────────────────────────────────────────────────────
+  { id: 'korea-2-busan', ch: 'korea', place: 'Busan', cat: 'stay', title: 'Busan stay (3n)', note: 'Dec 24–27, Christmas by the sea', due: '2026-11-01', done: false },
+  { id: 'korea-2-gyeongju', ch: 'korea', place: 'Gyeongju', cat: 'stay', title: 'Gyeongju stay (2n)', note: 'Dec 27–29', due: '2026-11-01', done: false },
+  { id: 'korea-2-jeonju', ch: 'korea', place: 'Jeonju', cat: 'stay', title: 'Jeonju stay (1n)', note: 'Dec 29–30', due: '2026-11-01', done: false },
+  { id: 'korea-2-seoul', ch: 'korea', place: 'Seoul', cat: 'stay', title: 'Seoul stay (12n)', note: 'Dec 30 – Jan 11, NYE at Bosingak', due: '2026-11-01', done: false },
+  { id: 'korea-3', ch: 'korea', place: 'ICN → Busan', cat: 'transport', title: 'ICN→Busan hop Dec 24 (flight or KTX)', note: 'Land Dec 24, straight to Busan for Christmas — lock the hop ahead', due: '2026-10-31', done: false },
+  { id: 'korea-4', ch: 'korea', place: 'Seoul', cat: 'attraction', title: 'DMZ tour Jan 5/6', note: 'Tue/Wed only (closed Mon Jan 4); needs passport details days ahead', due: '2026-12-20', done: false },
+  { id: 'korea-5', ch: 'korea', place: 'Jeonju → Seoul', cat: 'transport', title: 'KTX Dec 30 midday', note: 'Korail ~30-day window opens ~Nov 30 — reserve then, not earlier', due: '2026-11-30', done: false },
+  { id: 'korea-6', ch: 'korea', place: 'Seoul → Taipei', cat: 'transport', title: 'Seoul–Taipei flight Jan 11', note: 'Entry leg for Taiwan — do not ticket until the TECO visa is answered', due: '2026-11-20', done: false },
 
-  // ── indonesia ─────────────────────────────────────────────────────
-  { id: 'indonesia-1', ch: 'indonesia', place: 'Raja Ampat', cat: 'attraction', title: 'Liveaboard Mar 11–20', note: 'Papua Diving / Meridian Adventure — $8,400 locked; MOVED dates, reconfirm with operator', due: '2025-10-01', done: true },
-  { id: 'indonesia-2', ch: 'indonesia', place: null, cat: 'visa', title: 'Indonesia VOA + 30-day extension', note: 'VOA on Mar 11 entry; extend in Bali (~$60 for two) to cover the Apr 18 exit', due: '2027-03-11', done: false },
-  { id: 'indonesia-3', ch: 'indonesia', place: 'Sorong', cat: 'transport', title: 'Sorong flights ~$1,200', note: 'MDC→SOQ + SOQ→DPS chain', due: '2027-01-15', done: false },
-  { id: 'indonesia-4', ch: 'indonesia', place: 'Ubud', cat: 'stay', title: 'Ubud slow 10n stay', note: 'Recovery base after the liveaboard', due: '2027-02-01', done: false },
-  { id: 'indonesia-5', ch: 'indonesia', place: 'Komodo', cat: 'attraction', title: 'Komodo boat + dives', note: 'Book the boat operator ahead', due: '2027-02-15', done: false },
+  // ── taiwan ────────────────────────────────────────────────────────
+  { id: 'taiwan-2', ch: 'taiwan', place: 'Taipei → Hualien', cat: 'transport', title: 'Taipei→Hualien express', note: 'TRA 28-day window, reserved seats; Pacific-coast rail journey', due: '2026-12-18', done: false },
+  { id: 'taiwan-3', ch: 'taiwan', place: 'Hualien → Tainan', cat: 'transport', title: 'Hualien→Tainan direct TRA', note: 'Train 324 daily; 28-day window; recheck Hwy-8 status ~Jan 4 first', due: '2026-12-20', done: false },
+  { id: 'taiwan-5', ch: 'taiwan', place: 'Tainan → Taoyuan', cat: 'transport', title: 'HSR Tainan→Taoyuan Jan 25', note: '+ MRT; fly onward to Osaka the same day', due: '2027-01-20', done: false },
+  { id: 'taiwan-6', ch: 'taiwan', place: 'Taipei → Osaka', cat: 'transport', title: 'TPE→KIX flight Jan 25', note: 'Entry leg for Japan', due: '2026-12-01', done: false },
+  { id: 'taiwan-7', ch: 'taiwan', place: 'Taipei', cat: 'stay', title: 'Taipei stay (5n)', note: 'Jan 11–16, Da\'an base', due: '2026-12-10', done: false },
+  { id: 'taiwan-8', ch: 'taiwan', place: 'Hualien', cat: 'stay', title: 'Hualien stay (2n)', note: 'Taroko coast days', due: '2026-12-10', done: false },
+  { id: 'taiwan-9', ch: 'taiwan', place: 'Tainan', cat: 'stay', title: 'Tainan stay (7n)', note: 'Slow southern week + Kaohsiung day', due: '2026-12-10', done: false },
+
+  // ── japan ─────────────────────────────────────────────────────────
+  { id: 'japan-1-kyoto', ch: 'japan', place: 'Kyoto', cat: 'stay', title: 'Kyoto stay (8n)', note: 'Jan 25 – Feb 2, empty temples + early plum', due: '2026-12-01', done: false },
+  { id: 'japan-1-osaka', ch: 'japan', place: 'Osaka', cat: 'stay', title: 'Osaka stay (4n)', note: 'Feb 2–6, crab season + Nara day trip', due: '2026-12-01', done: false },
+  { id: 'japan-1-tokyo', ch: 'japan', place: 'Tokyo', cat: 'stay', title: 'Tokyo stay (8n)', note: 'Feb 6–14, CNY week in the big city', due: '2026-12-01', done: false },
+  { id: 'japan-1-hakuba', ch: 'japan', place: 'Hakuba', cat: 'stay', title: 'Hakuba stay (9n)', note: 'Feb 14–23, powder week (post-CNY, deep base)', due: '2026-12-01', done: false },
+  { id: 'japan-2', ch: 'japan', place: null, cat: 'transport', title: 'JR Pass 21-day exchange order', note: 'Must be purchased BEFORE entering Japan (Jan 25); evaluate vs KIX→Kyoto→Osaka→Tokyo→Hakuba legs', due: '2027-01-10', done: false },
+  { id: 'japan-3', ch: 'japan', place: 'Tokyo ↔ Hakuba', cat: 'transport', title: 'Tokyo→Hakuba Feb 14 + return seats', note: 'Reserve both ways ahead', due: '2027-02-01', done: false },
+  { id: 'japan-4', ch: 'japan', place: 'Hakuba', cat: 'attraction', title: 'Snowboard equipment rental (full kit)', note: 'Rent ALL gear locally — boots, board, jacket, helmet; reserve ahead', due: '2027-01-15', done: false },
+  { id: 'japan-5', ch: 'japan', place: 'Tokyo → Jakarta', cat: 'transport', title: 'Tokyo–Jakarta flight Feb 24', note: 'Direct; 30-day free entry on arrival', due: '2027-01-10', done: false },
+
+  // ── indonesia-a ───────────────────────────────────────────────────
+  { id: 'indonesia-a-1', ch: 'indonesia-a', place: 'Raja Ampat', cat: 'attraction', title: 'Liveaboard Mar 11–20', note: 'Papua Diving / Meridian Adventure — $8,400 locked; reconfirm dates with operator', due: '2025-10-01', done: true },
+  { id: 'indonesia-a-2', ch: 'indonesia-a', place: 'Borobudur', cat: 'attraction', title: 'Borobudur sunrise', note: 'Ramadan-quiet — book 2+ weeks ahead', due: '2027-02-10', done: false },
+  { id: 'indonesia-a-3', ch: 'indonesia-a', place: 'Java', cat: 'transport', title: 'Java trains + JOG→DPS by Mar 2', note: 'Executive train or 1h flight; book 60+/14+ days ahead (mudik)', due: '2027-01-10', done: false },
+  { id: 'indonesia-a-4', ch: 'indonesia-a', place: 'Bali → Sorong', cat: 'transport', title: 'DPS→SOQ Mar 10 via Makassar', note: 'Book 6–8 weeks ahead (Lebaran surge)', due: '2027-01-20', done: false },
+  { id: 'indonesia-a-5', ch: 'indonesia-a', place: 'Ubud', cat: 'stay', title: 'Ubud slow 8n stay (Mar 2–9)', note: 'Staging before the liveaboard; Nyepi silent day Mar 8 (hotel-only)', due: '2027-02-01', done: false },
+  { id: 'indonesia-a-7', ch: 'indonesia-a', place: 'Jakarta', cat: 'stay', title: 'Jakarta stay (2n)', note: 'Feb 24–26, Ramadan-evening markets', due: '2027-01-15', done: false },
+  { id: 'indonesia-a-8', ch: 'indonesia-a', place: 'Yogyakarta', cat: 'stay', title: 'Yogyakarta stay (4n)', note: 'Borobudur + Prambanan base', due: '2027-01-15', done: false },
+  { id: 'indonesia-a-6', ch: 'indonesia-a', place: 'Sorong → Borneo', cat: 'transport', title: 'SOQ→BKI Mar 21 exit', note: 'Entry 1 uses ~26 of 30 free days — onward ticket in hand; starts the Borneo chapter', due: '2027-02-01', done: false },
 
   // ── borneo ────────────────────────────────────────────────────────
-  { id: 'borneo-1', ch: 'borneo', place: null, cat: 'transport', title: 'Flight into Borneo ~Apr 18', note: 'Entry leg (DPS→KK pattern)', due: '2027-02-15', done: false },
-  { id: 'borneo-2', ch: 'borneo', place: 'Kinabatangan', cat: 'stay', title: 'Kinabatangan river lodge', note: '3D2N ~$600 full board; book 2–3 months ahead — dry-season lodges fill', due: '2027-02-01', done: false },
+  { id: 'borneo-2', ch: 'borneo', place: 'Kinabatangan', cat: 'stay', title: 'Kinabatangan river lodge', note: 'Mar 21–31 chapter; book 2–3 months ahead — Mar 26 Good Friday (Sabah holiday), lodges operate', due: '2027-01-31', done: false },
   { id: 'borneo-3', ch: 'borneo', place: 'Sipadan', cat: 'attraction', title: 'Sipadan permits (only if adding 3 days)', note: '120 permits/day cap — book by Nov 2026', due: '2026-11-30', done: false },
+  { id: 'borneo-4', ch: 'borneo', place: 'KK → Manila', cat: 'transport', title: 'BKI→Manila Mar 31 via KUL', note: 'Entry leg for the Philippines', due: '2027-02-15', done: false },
+  { id: 'borneo-5', ch: 'borneo', place: 'Kota Kinabalu', cat: 'stay', title: 'KK stays (Mar 21–22 + 29–31)', note: 'Waterfront nights bracketing Sepilok + Kinabatangan', due: '2027-02-15', done: false },
+
+  // ── philippines ───────────────────────────────────────────────────
+  { id: 'philippines-2-manila', ch: 'philippines', place: 'Manila', cat: 'stay', title: 'Manila stay (2n)', note: 'Mar 31 – Apr 2, rest + dive-gear prep', due: '2027-03-01', done: false },
+  { id: 'philippines-2-coron', ch: 'philippines', place: 'Coron', cat: 'stay', title: 'Coron stay (5n)', note: 'Wreck week base', due: '2027-03-01', done: false },
+  { id: 'philippines-2-elnido', ch: 'philippines', place: 'El Nido', cat: 'stay', title: 'El Nido stay (4n)', note: 'Lagoon days', due: '2027-03-01', done: false },
+  { id: 'philippines-2-cebu', ch: 'philippines', place: 'Cebu / Moalboal', cat: 'stay', title: 'Cebu/Moalboal stay (2n)', note: 'Sardine-run finale', due: '2027-03-01', done: false },
+  { id: 'philippines-3', ch: 'philippines', place: 'Coron', cat: 'attraction', title: 'Coron wreck dive package (Apr 4–8 window)', note: 'Check-dive first, deep wrecks after; book the dive shop ahead', due: '2027-03-10', done: false },
+  { id: 'philippines-6', ch: 'philippines', place: 'Cebu → Bali', cat: 'transport', title: 'CEB→DPS Apr 14 via MNL/SIN', note: 'Entry 2 starts; onward ticket to Singapore May 1 in hand', due: '2027-03-01', done: false },
+
+  // ── indonesia-b ───────────────────────────────────────────────────
+  { id: 'indonesia-b-1-penida', ch: 'indonesia-b', place: 'Nusa Penida', cat: 'stay', title: 'Penida stay (4n)', note: 'Apr 14–18, scooter freedom', due: '2027-04-01', done: false },
+  { id: 'indonesia-b-1-komodo', ch: 'indonesia-b', place: 'Labuan Bajo', cat: 'stay', title: 'Labuan Bajo stay (7n)', note: 'Apr 18–25, phinisi-harbor base', due: '2027-04-01', done: false },
+  { id: 'indonesia-b-1-bali', ch: 'indonesia-b', place: 'Bali', cat: 'stay', title: 'Bali stay (6n)', note: 'Apr 25–30, temples + volcano finish', due: '2027-04-01', done: false },
+  { id: 'indonesia-b-2', ch: 'indonesia-b', place: 'Bali → Labuan Bajo', cat: 'transport', title: 'Bali–Labuan Bajo flight Apr 18', note: 'Into Komodo', due: '2027-03-15', done: false },
+  { id: 'indonesia-b-3', ch: 'indonesia-b', place: 'Komodo', cat: 'attraction', title: 'Komodo boat + dives', note: 'Manta Point + drift dives + dragons with ranger; book the operator ahead', due: '2027-03-20', done: false },
+  { id: 'indonesia-b-4', ch: 'indonesia-b', place: 'Labuan Bajo → Bali', cat: 'transport', title: 'Labuan Bajo–Bali flight Apr 25', note: 'Back for the Bali + volcano finish', due: '2027-03-20', done: false },
+  { id: 'indonesia-b-5', ch: 'indonesia-b', place: 'Bali → Singapore', cat: 'transport', title: 'Bali–Singapore flight May 1', note: 'Hop to the Singapore chapter', due: '2027-03-15', done: false },
 
   // ── singapore ─────────────────────────────────────────────────────
-  { id: 'singapore-1', ch: 'singapore', place: null, cat: 'transport', title: 'Flight into Singapore ~Apr 28', note: 'Entry leg (KK→SG pattern)', due: '2027-03-01', done: false },
-  { id: 'singapore-2', ch: 'singapore', place: null, cat: 'stay', title: 'Singapore stay ~$140/n', note: '7 nights Apr 28 – May 5', due: '2027-03-15', done: false },
+  { id: 'singapore-2', ch: 'singapore', place: null, cat: 'stay', title: 'Singapore stay', note: '5 nights May 1–6', due: '2027-04-01', done: false },
 
   // ── malaysia ──────────────────────────────────────────────────────
-  { id: 'malaysia-1', ch: 'malaysia', place: null, cat: 'stay', title: 'KL + Penang guesthouses', note: '10 nights May 5–15', due: '2027-04-01', done: false },
-  { id: 'malaysia-2', ch: 'malaysia', place: 'Singapore → KL', cat: 'transport', title: 'SG→KL bus', note: 'Book a few days ahead', due: '2027-04-20', done: false },
-  { id: 'malaysia-3', ch: 'malaysia', place: 'KL → Penang', cat: 'transport', title: 'ETS rail KL→Penang', note: 'Book seats ahead; Penang Hill + mansions at the other end', due: '2027-04-25', done: false },
+  { id: 'malaysia-1-kl', ch: 'malaysia', place: 'Kuala Lumpur', cat: 'stay', title: 'KL stay (4n)', note: 'May 6–10', due: '2027-04-02', done: false },
+  { id: 'malaysia-1-penang', ch: 'malaysia', place: 'Penang', cat: 'stay', title: 'Penang stay (6n)', note: 'May 10–16, Georgetown slow chapter', due: '2027-04-02', done: false },
+  { id: 'malaysia-2', ch: 'malaysia', place: 'Singapore → KL', cat: 'transport', title: 'SG→KL bus', note: 'Book a few days ahead', due: '2027-04-21', done: false },
+  { id: 'malaysia-3', ch: 'malaysia', place: 'KL → Penang', cat: 'transport', title: 'ETS rail KL→Penang', note: 'Book seats ahead; Penang Hill + mansions at the other end', due: '2027-04-26', done: false },
 
   // ── thailand ──────────────────────────────────────────────────────
-  { id: 'thailand-1', ch: 'thailand', place: null, cat: 'stay', title: 'Thailand stays', note: 'Koh Tao + Samui + Kanchanaburi nights', due: '2027-04-15', done: false },
-  { id: 'thailand-2', ch: 'thailand', place: 'Penang → Koh Tao', cat: 'transport', title: 'Penang→Koh Tao transfer', note: 'Cross-border bus + ferry combo', due: '2027-05-01', done: false },
-  { id: 'thailand-3', ch: 'thailand', place: 'Koh Tao', cat: 'attraction', title: 'Koh Tao dive package + Sail Rock', note: '3 local dive-days ~$360 + Sail Rock ~$190; reserve the shop ahead', due: '2027-05-05', done: false },
-  { id: 'thailand-4', ch: 'thailand', place: 'Bangkok → Guilin', cat: 'transport', title: 'BKK→XIY flight May 29', note: 'Spring 9C6294 dep 02:55 — leave Bangkok the night of May 28; ~$400 for two', due: '2027-04-01', done: false },
+  { id: 'thailand-1-kohtao', ch: 'thailand', place: 'Koh Tao', cat: 'stay', title: 'Koh Tao stay (6n)', note: 'Dive-week base', due: '2027-04-16', done: false },
+  { id: 'thailand-1-samui', ch: 'thailand', place: 'Koh Samui', cat: 'stay', title: 'Samui transit night (1n)', note: 'Sleep near the ferry pier', due: '2027-04-16', done: false },
+  { id: 'thailand-1-bangkok', ch: 'thailand', place: 'Bangkok', cat: 'stay', title: 'Bangkok stay (7n)', note: 'City finish', due: '2027-04-16', done: false },
+  { id: 'thailand-2', ch: 'thailand', place: 'Penang → Koh Tao', cat: 'transport', title: 'Penang→Koh Tao transfer', note: 'Cross-border bus + ferry combo', due: '2027-05-02', done: false },
+  { id: 'thailand-3', ch: 'thailand', place: 'Koh Tao', cat: 'attraction', title: 'Koh Tao dive package + Sail Rock', note: 'Value diving + whale-shark territory; reserve the shop ahead (Sail Rock = weather buffer day)', due: '2027-05-06', done: false },
+  { id: 'thailand-4', ch: 'thailand', place: 'Bangkok → Xi\'an', cat: 'transport', title: 'BKK→XIY May 30 (red-eye / DMK Sunday options)', note: "Arrive Xi'an May 30 — tired day: walls + Muslim Quarter only", due: '2027-04-15', done: false },
 
-  // ── china-2 ───────────────────────────────────────────────────────
-  { id: 'china-2-1', ch: 'china-2', place: null, cat: 'stay', title: 'Guilin + Zhangjiajie stays', note: '20 nights May 29 – Jun 18', due: '2027-05-01', done: false },
-  { id: 'china-2-2', ch: 'china-2', place: "Xi'an → Guilin", cat: 'transport', title: 'XIY→KWL flight Jun 2', note: '~2h trunk; LCC ~$80–140 pp', due: '2027-04-15', done: false },
-  { id: 'china-2-3', ch: 'china-2', place: 'Zhangjiajie', cat: 'attraction', title: 'Zhangjiajie entrance tickets', note: 'Real-name booking ~1 week ahead in June peak', due: '2027-06-01', done: false },
-  { id: 'china-2-4', ch: 'china-2', place: 'Zhangjiajie', cat: 'attraction', title: 'Tianmen Mountain tickets', note: 'Cableway slots sell out — book with Zhangjiajie', due: '2027-06-03', done: false },
+  // ── china-spring ──────────────────────────────────────────────────
+  { id: 'china-spring-1-xian', ch: 'china-spring', place: 'Xi\'an', cat: 'stay', title: 'Xi\'an stay (4n)', note: 'May 30 – Jun 3', due: '2027-05-01', done: false },
+  { id: 'china-spring-1-guilin', ch: 'china-spring', place: 'Guilin / Yangshuo', cat: 'stay', title: 'Guilin/Yangshuo stay (4n)', note: 'Li River karst', due: '2027-05-01', done: false },
+  { id: 'china-spring-1-longji', ch: 'china-spring', place: 'Longji', cat: 'stay', title: 'Longji stay (2n)', note: 'Zhuang village overnight, mirror terraces', due: '2027-05-01', done: false },
+  { id: 'china-spring-1-zhangjiajie', ch: 'china-spring', place: 'Zhangjiajie', cat: 'stay', title: 'Zhangjiajie stay (4n)', note: 'Avatar pillars base', due: '2027-05-01', done: false },
+  { id: 'china-spring-1-fenghuang', ch: 'china-spring', place: 'Fenghuang', cat: 'stay', title: 'Fenghuang stay (3n)', note: 'Furong en route; lantern finale', due: '2027-05-01', done: false },
+  { id: 'china-spring-1-changsha', ch: 'china-spring', place: 'Changsha', cat: 'stay', title: 'Changsha buffer stay (2n)', note: 'Fly home Jun 17', due: '2027-05-01', done: false },
+  { id: 'china-spring-2', ch: 'china-spring', place: 'Xi\'an → Guilin', cat: 'transport', title: 'XIY→KWL Jun 3 flight', note: '~2h trunk', due: '2027-04-20', done: false },
+  { id: 'china-spring-3', ch: 'china-spring', place: 'Zhangjiajie', cat: 'attraction', title: 'Zhangjiajie entrance tickets', note: 'Peak-season sea of clouds; real-name booking ~1 week ahead', due: '2027-06-01', done: false },
+  { id: 'china-spring-4', ch: 'china-spring', place: 'Zhangjiajie', cat: 'attraction', title: 'Tianmen Mountain tickets', note: 'Cableway slots sell out — book with Zhangjiajie', due: '2027-06-03', done: false },
 ];
