@@ -55,13 +55,13 @@
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
 | 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
-| 8 | china-e1 | 2026-11-10 → 2026-12-02 | SCOPE (22d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ → Shenzhen friends Nov 25–30 → CAN → HK; Xi'an cut — spring only) |
+| 8 | china-e1 | 2026-11-10 → 2026-12-02 | SCOPE (22d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ → Shenzhen friends Nov 25–29 + Macau 1n Nov 29–30 → CAN → HK; Xi'an cut — spring only) |
 | 9 | hk | 2026-12-02 → 2026-12-07 | SCOPE (visa reset + Taiwan-visa filing Dec 3) |
 | 10 | china-e2 | 2026-12-07 → 2026-12-24 | SCOPE (17d: Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 5n + buffer) |
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
 | 12 | taiwan | 2027-01-11 → 2027-01-25 | SCOPE (14d post-Korea thaw) |
 | 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Hakuba week LOCKED inside) |
-| 14 | indonesia-a | 2027-02-24 → 2027-03-20 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
+| 14 | indonesia-a | 2027-02-24 → 2027-03-21 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
 | 15 | borneo | 2027-03-21 → 2027-03-31 | SCOPE (Mar 31 shared transit; Sipadan permits undecided, decide by Nov 2026) |
 | 16 | philippines | 2027-03-31 → 2027-04-14 | SCOPE (post-Easter window) |
 | 17 | indonesia-b | 2027-04-14 → 2027-04-30 | SCOPE (Entry 2 Apr 14–30) |
