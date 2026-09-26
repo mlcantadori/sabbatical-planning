@@ -77,17 +77,18 @@ window.TODO_ITEMS = [
   { id: 'nepal-8', ch: 'nepal', place: 'Kathmandu', cat: 'admin', title: 'Buy trekking gear in Thamel', note: 'Layers + essentials for ABC; bag + down jacket loaned by DWT — 9kg pp porter limit', due: '2026-10-22', done: false },
 
   // ── china-e1 ──────────────────────────────────────────────────────
-  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (5n)', note: 'Nov 10–15', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 15–18, Tangkou base + summit night', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 18–20', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (3n)', note: 'Nov 20–23', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (7n)', note: 'Nov 23–30 — friends at another hotel, book own stay; incl. possible Macau trip', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (6n)', note: 'Nov 10–16, incl. hutong slow day', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 16–19, Tangkou base + summit night', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 19–21', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (4n)', note: 'Nov 21–25, incl. Tongli slow day', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (4n)', note: 'Nov 25–29 — friends at another hotel, book own stay', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-macau', ch: 'china-e1', place: 'Macau', cat: 'stay', title: 'Macau stay (1n)', note: 'Nov 29–30; exit Nov 30 via Zhuhai → Guangzhou HSR', due: '2026-10-01', done: false },
   { id: 'china-e1-1-guangzhou', ch: 'china-e1', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Nov 30 – Dec 2', due: '2026-10-01', done: false },
   { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Both E1/E2 entries pre-Dec-31-2026; otherwise +~$300 for two visas', due: '2026-10-20', done: false },
-  { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Huangshan', cat: 'transport', title: 'Beijing–Huangshan flight Nov 15 (~2.5h)', note: 'Into Tunxi; replaces the cut Xi\'an legs', due: '2026-10-20', done: false },
-  { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays; reservation-only — book ~1 week ahead', due: '2026-11-05', done: false },
+  { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Huangshan', cat: 'transport', title: 'Beijing–Huangshan flight Nov 16 (~2.5h)', note: 'Into Tunxi; replaces the cut Xi\'an legs', due: '2026-10-20', done: false },
+  { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays — Nov 16 is a Monday, plan Tue–Sun; reservation-only, book ~1 week ahead', due: '2026-11-05', done: false },
   { id: 'china-e1-6', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan summit hotel', note: 'Book ~3 days ahead; front-load the canyon days (West Sea Canyon closes Dec–Mar)', due: '2026-11-15', done: false },
-  { id: 'china-e1-7', ch: 'china-e1', place: 'Suzhou → Shenzhen', cat: 'transport', title: 'Suzhou–Shenzhen flight Nov 23', note: 'Via Shanghai airports; friends rendezvous Nov 23–30', due: '2026-10-25', done: false },
+  { id: 'china-e1-7', ch: 'china-e1', place: 'Suzhou → Shenzhen', cat: 'transport', title: 'Suzhou–Shenzhen flight Nov 25', note: 'Via Shanghai airports; friends rendezvous Nov 25–30', due: '2026-10-25', done: false },
   { id: 'china-e1-8', ch: 'china-e1', place: 'Guangzhou → Hong Kong', cat: 'transport', title: 'Guangzhou–Hong Kong HSR Dec 2', note: 'Morning train + 1h West Kowloon buffer; prebook seats', due: '2026-11-27', done: false },
 
   // ── hk ────────────────────────────────────────────────────────────
@@ -98,7 +99,7 @@ window.TODO_ITEMS = [
   // ── china-e2 ──────────────────────────────────────────────────────
   { id: 'china-e2-1-chengdu', ch: 'china-e2', place: 'Chengdu', cat: 'stay', title: 'Chengdu stay (6n)', note: 'Dec 7–13', due: '2026-11-01', done: false },
   { id: 'china-e2-1-chongqing', ch: 'china-e2', place: 'Chongqing', cat: 'stay', title: 'Chongqing stay (2n + Wulong transit)', note: 'Dec 13–15 + Dec 16 night', due: '2026-11-01', done: false },
-  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (5n + 2n buffer)', note: 'Dec 17–24 — extend same hotel through the Dec 22–23 buffer; heated MODERN hotel (no lane houses, no central heating)', due: '2026-11-01', done: false },
+  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (7n)', note: 'Dec 17–24, incl. Dec 22–23 protected buffer — heated MODERN hotel (no lane houses, no central heating)', due: '2026-11-01', done: false },
   { id: 'china-e2-2', ch: 'china-e2', place: 'Chengdu', cat: 'attraction', title: 'Sanxingdui tickets', note: 'WeChat mini-program, 20:00 five days out, NO walk-up — book Dec 2 from HK!', due: '2026-12-02', done: false },
   { id: 'china-e2-3', ch: 'china-e2', place: 'Chengdu → Chongqing', cat: 'transport', title: 'Chengdu–Chongqing HSR Dec 13 (~1h)', note: 'Buy a few days ahead', due: '2026-12-08', done: false },
   { id: 'china-e2-4', ch: 'china-e2', place: 'Chongqing → Shanghai', cat: 'transport', title: 'Chongqing→Shanghai Dec 17 morning flight', note: 'Back to Chongqing first, then fly', due: '2026-11-10', done: false },
