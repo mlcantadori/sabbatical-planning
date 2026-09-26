@@ -870,7 +870,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
 | 8 | China | 13 | 218 | 2,830 | Beijing 6n + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset) |
 | 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · TECO filing Nov 24 · free gardens/markets |
-| 10 | China | 26 | 185 | 4,800 | Shenzhen 5n + CAN 2n + Shanghai 7n + Chengdu 5n + CQ 2n + Wulong 2d/1n + CQ buffer 3n · SZX→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets · CKG→ICN exit |
+| 10 | China | 26 | 185 | 4,800 | Shenzhen 5n + CAN 2n + Shanghai 7n + Chengdu 5n + CQ 5n (split stay around Wulong) + Wulong 2d/1n · SZX→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets · CKG→ICN exit |
 | 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
 | 12 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days · January tilt |
 | 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
