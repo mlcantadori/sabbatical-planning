@@ -22,7 +22,8 @@ window.TODO_ITEMS = [
 
   // ── brasil (past) ─────────────────────────────────────────────────
   { id: 'brasil-1', ch: 'brasil', place: null, cat: 'transport', title: 'GRU–YYZ–ATH flights', note: '$1,700 for two, locked', due: '2026-05-01', done: true },
-  { id: 'brasil-2', ch: 'brasil', place: null, cat: 'transport', title: 'Internal flights Rio→Fortaleza + Fortaleza→SP', note: '~$750 for two, actual', due: '2026-06-01', done: true },
+  { id: 'brasil-2-rio-fortaleza', ch: 'brasil', place: null, cat: 'transport', title: 'Flight Rio→Fortaleza', note: '~$750 for both internal flights, actual', due: '2026-06-01', done: true },
+  { id: 'brasil-2-fortaleza-sp', ch: 'brasil', place: null, cat: 'transport', title: 'Flight Fortaleza→SP', note: '~$750 for both internal flights, actual', due: '2026-06-01', done: true },
   { id: 'brasil-3-rio', ch: 'brasil', place: 'Rio', cat: 'stay', title: 'Rio Airbnb', note: 'R$7,000', due: '2026-06-01', done: true },
   { id: 'brasil-3-cumbuco', ch: 'brasil', place: 'Cumbuco', cat: 'stay', title: 'Cumbuco monthly rental', note: '$1,900/mo', due: '2026-06-01', done: true },
   { id: 'brasil-3-sp', ch: 'brasil', place: 'São Paulo', cat: 'stay', title: 'São Paulo Airbnb', note: 'R$1,400', due: '2026-06-01', done: true },
@@ -79,7 +80,7 @@ window.TODO_ITEMS = [
   { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 18–21, Tangkou base + summit night', due: '2026-10-01', done: false },
   { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 21–23', due: '2026-10-01', done: false },
   { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (3n)', note: 'Nov 23–26', due: '2026-10-01', done: false },
-  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (4n)', note: 'Nov 26–30 — confirm: with friends or book?', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-shenzhen', ch: 'china-e1', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (4n)', note: 'Nov 26–30 — friends at another hotel, book own stay', due: '2026-10-01', done: false },
   { id: 'china-e1-1-guangzhou', ch: 'china-e1', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Nov 30 – Dec 2', due: '2026-10-01', done: false },
   { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Both E1/E2 entries pre-Dec-31-2026; otherwise +~$300 for two visas', due: '2026-10-20', done: false },
   { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Xi\'an', cat: 'transport', title: 'Beijing–Xi\'an HSR Nov 15 (~5h)', note: 'Buy a few days ahead on Trip.com', due: '2026-11-10', done: false },
@@ -136,7 +137,8 @@ window.TODO_ITEMS = [
   // ── indonesia-a ───────────────────────────────────────────────────
   { id: 'indonesia-a-1', ch: 'indonesia-a', place: 'Raja Ampat', cat: 'attraction', title: 'Liveaboard Mar 11–20', note: 'Papua Diving / Meridian Adventure — $8,400 locked; reconfirm dates with operator', due: '2025-10-01', done: true },
   { id: 'indonesia-a-2', ch: 'indonesia-a', place: 'Borobudur', cat: 'attraction', title: 'Borobudur sunrise', note: 'Ramadan-quiet — book 2+ weeks ahead', due: '2027-02-10', done: false },
-  { id: 'indonesia-a-3', ch: 'indonesia-a', place: 'Java', cat: 'transport', title: 'Java trains + JOG→DPS by Mar 2', note: 'Executive train or 1h flight; book 60+/14+ days ahead (mudik)', due: '2027-01-10', done: false },
+  { id: 'indonesia-a-3', ch: 'indonesia-a', place: 'Java', cat: 'transport', title: 'Java executive trains', note: 'Book 60+ days ahead (mudik)', due: '2027-01-10', done: false },
+  { id: 'indonesia-a-9', ch: 'indonesia-a', place: 'Yogyakarta → Bali', cat: 'transport', title: 'JOG→DPS flight by Mar 2', note: '1h flight, pre-mudik; book 14+ days ahead', due: '2027-02-10', done: false },
   { id: 'indonesia-a-4', ch: 'indonesia-a', place: 'Bali → Sorong', cat: 'transport', title: 'DPS→SOQ Mar 10 via Makassar', note: 'Book 6–8 weeks ahead (Lebaran surge)', due: '2027-01-20', done: false },
   { id: 'indonesia-a-5', ch: 'indonesia-a', place: 'Ubud', cat: 'stay', title: 'Ubud slow 8n stay (Mar 2–9)', note: 'Staging before the liveaboard; Nyepi silent day Mar 8 (hotel-only)', due: '2027-02-01', done: false },
   { id: 'indonesia-a-7', ch: 'indonesia-a', place: 'Jakarta', cat: 'stay', title: 'Jakarta stay (2n)', note: 'Feb 24–26, Ramadan-evening markets', due: '2027-01-15', done: false },
@@ -155,7 +157,7 @@ window.TODO_ITEMS = [
   { id: 'philippines-2-elnido', ch: 'philippines', place: 'El Nido', cat: 'stay', title: 'El Nido stay (4n)', note: 'Lagoon days', due: '2027-03-01', done: false },
   { id: 'philippines-2-cebu', ch: 'philippines', place: 'Cebu / Moalboal', cat: 'stay', title: 'Cebu/Moalboal stay (2n)', note: 'Sardine-run finale', due: '2027-03-01', done: false },
   { id: 'philippines-3', ch: 'philippines', place: 'Coron', cat: 'attraction', title: 'Coron wreck dive package (Apr 4–8 window)', note: 'Check-dive first, deep wrecks after; book the dive shop ahead', due: '2027-03-10', done: false },
-  { id: 'philippines-6', ch: 'philippines', place: 'Cebu → Bali', cat: 'transport', title: 'CEB→DPS Apr 14 via MNL/SIN', note: 'Entry 2 starts; onward ticket to Singapore May 1 in hand', due: '2027-03-01', done: false },
+  { id: 'philippines-6', ch: 'philippines', place: 'Cebu → Bali', cat: 'transport', title: 'CEB→DPS Apr 14 (routing TBD)', note: 'Via MNL or SIN — decide routing, then ticket; Entry 2 starts; onward ticket to Singapore May 1 in hand', due: '2027-03-01', done: false },
 
   // ── indonesia-b ───────────────────────────────────────────────────
   { id: 'indonesia-b-1-penida', ch: 'indonesia-b', place: 'Nusa Penida', cat: 'stay', title: 'Penida stay (4n)', note: 'Apr 14–18, scooter freedom', due: '2027-04-01', done: false },
