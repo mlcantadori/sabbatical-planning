@@ -14,6 +14,9 @@
     lng: 15,
     r: 3.3
   };
+  // Base tube radius (world units, at the home distance) — the tick loop
+  // thins tubes as you zoom in so the on-screen line weight stays ~constant.
+  const ARC_R = 0.0014;
   const TEX_URL = 'https://unpkg.com/three-globe@2.31.0/example/img/earth-blue-marble.jpg';
 
   // [name, lng, lat] — major countries + trip-relevant places
@@ -131,7 +134,7 @@
       controls.enableDamping = true;
       controls.dampingFactor = 0.06;
       controls.enablePan = false;
-      controls.minDistance = 1.45;
+      controls.minDistance = 2.0;
       controls.maxDistance = 9;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.55;
@@ -175,7 +178,9 @@
         raf: 0,
         tween: null,
         world: true,
-        spinOff: false
+        spinOff: false,
+        arcMats: [],
+        noMotion: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
       };
       const home = llv(HOME.lat, HOME.lng, HOME.r);
       camera.position.copy(home);
@@ -198,6 +203,19 @@
         s.raf = requestAnimationFrame(tick);
         stepTween();
         s.controls.update();
+        if (!s.noMotion) {
+          const t = performance.now() * 0.001;
+          for (let i = 0; i < s.arcMats.length; i++) s.arcMats[i].uniforms.uTime.value = t;
+        }
+        // Zoom-compensated line weight: thin the tubes as the camera moves
+        // in so their on-screen width stays ~constant; never thicken past
+        // the base radius when zoomed out (keeps the world view airy).
+        const dist = s.camera.position.length();
+        const shrink = ARC_R * (1 - Math.max(0.3, Math.min(1, dist / HOME.r)));
+        if (Math.abs(shrink - (s.lastShrink || 0)) > 1e-5) {
+          s.lastShrink = shrink;
+          for (let i = 0; i < s.arcMats.length; i++) s.arcMats[i].uniforms.uShrink.value = shrink;
+        }
         updateOverlay();
         s.renderer.render(s.scene, s.camera);
       };
@@ -234,7 +252,7 @@
       if (!s) return;
       s.spinOff = true;
       s.controls.autoRotate = false;
-      const len = Math.max(1.45, Math.min(9, s.camera.position.length() * f));
+      const len = Math.max(2.0, Math.min(9, s.camera.position.length() * f));
       s.camera.position.setLength(len);
     }
     function size() {
@@ -279,29 +297,63 @@
       s.controls.autoRotate = false;
     }
     function arcBetween(a, b) {
-      // Great-circle slerp lifted above the surface (Flighty-style arcs)
+      // Great-circle slerp lifted above the surface (Flighty-style arcs),
+      // rendered as a real 3D tube with an animated dashed glow shader.
+      // (THREE.Line is always 1px in WebGL — thin, aliased, no glow —
+      // which is why the old LineDashedMaterial looked fuzzy.)
       const va = llv(a[0], a[1], 1).normalize();
       const vb = llv(b[0], b[1], 1).normalize();
       const angle = va.angleTo(vb);
-      const lift = 0.03 + 0.22 * Math.min(1, angle / Math.PI);
+      const lift = 0.008 + 0.10 * Math.min(1, angle / Math.PI);
       const pts = [];
       for (let i = 0; i <= 48; i++) {
         const t = i / 48;
         const v = va.clone().lerp(vb, t).normalize().multiplyScalar(1.005 + lift * Math.sin(Math.PI * t));
         pts.push(v);
       }
-      const g = new THREE.BufferGeometry().setFromPoints(pts);
-      const m = new THREE.LineDashedMaterial({
-        color: 0xe8823f,
-        dashSize: 0.025,
-        gapSize: 0.016,
+      const curve = new THREE.CatmullRomCurve3(pts);
+      const len = curve.getLength();
+      // Keep world-space dash period ~0.014: short duty + tight spacing
+      // reads as a dotted series.
+      const dashCount = Math.max(4, Math.round(len / 0.014));
+      const geo = new THREE.TubeGeometry(curve, 64, ARC_R, 6, false);
+      const mat = new THREE.ShaderMaterial({
+        uniforms: {
+          uColor: {
+            value: new THREE.Color(0xe8823f)
+          },
+          uTime: {
+            value: 0
+          },
+          uDashCount: {
+            value: dashCount
+          },
+          uOpacity: {
+            value: 0.95
+          },
+          uShrink: {
+            value: 0
+          }
+        },
+        // uShrink slides verts inward along the tube normals to thin the
+        // line without rebuilding geometry (driven by zoom in tick()).
+        vertexShader: 'varying vec2 vUv; uniform float uShrink; void main(){ vUv = uv; vec3 p = position - normal * uShrink; gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0); }',
+        fragmentShader: ['varying vec2 vUv;', 'uniform vec3 uColor;', 'uniform float uTime;', 'uniform float uDashCount;', 'uniform float uOpacity;', 'void main(){',
+        // Flow toward the destination (vUv.x = 0 at origin, 1 at dest).
+        '  float x = fract(vUv.x * uDashCount - uTime * 1.2);',
+        // Dot-like dash: short duty with soft edges (~20% of each cell).
+        '  float dash = smoothstep(0.0, 0.05, x) * (1.0 - smoothstep(0.15, 0.20, x));',
+        // Fade the tube ends so dashes dissolve into the city dots.
+        '  float ends = smoothstep(0.0, 0.03, vUv.x) * (1.0 - smoothstep(0.97, 1.0, vUv.x));', '  float a = dash * ends * uOpacity;', '  if (a < 0.003) discard;', '  gl_FragColor = vec4(uColor, a);', '}'].join('\n'),
         transparent: true,
-        opacity: 0.95,
-        depthWrite: false
+        depthWrite: false,
+        depthTest: true,
+        blending: THREE.AdditiveBlending
       });
-      const line = new THREE.Line(g, m);
-      line.computeLineDistances();
-      return line;
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.renderOrder = 3;
+      mesh.userData.arcMat = mat;
+      return mesh;
     }
     function updateOverlay() {
       const s = st.current;
@@ -410,8 +462,11 @@
         l.geometry.dispose();
         l.material.dispose();
       }
+      s.arcMats.length = 0;
       for (let i = 0; i + 1 < stops.length; i++) {
-        s.arcs.add(arcBetween(stops[i], stops[i + 1]));
+        const arc = arcBetween(stops[i], stops[i + 1]);
+        s.arcs.add(arc);
+        if (arc.userData.arcMat) s.arcMats.push(arc.userData.arcMat);
       }
       void onSelectChapter;
       refreshSelection();
