@@ -242,19 +242,20 @@
   // ══════════════════════════════════════════════════════════════════════
   // BINDER (Budget)
   // ══════════════════════════════════════════════════════════════════════
-  function Binder({ onClose }) {
+  function Binder({ view, onClose }) {
+    const isTodo = view === 'todo';
     return (
       <div className="binder">
         <div className="binder-head">
           <div className="binder-tabs">
-            <span className="kicker">Budget</span>
+            <span className="kicker">{isTodo ? 'Checklist' : 'Budget'}</span>
           </div>
           <button className="icon-btn" onClick={onClose} title="Close binder">
             <window.Icon.close size={16} />
           </button>
         </div>
         <div className="binder-body">
-          <BudgetView />
+          {isTodo ? <window.TodoView /> : <BudgetView />}
         </div>
       </div>
     );
