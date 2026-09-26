@@ -143,18 +143,9 @@
                 );
               })}
 
-              {ch.booking && ch.booking.length > 0 && (
-                <>
-                  <SectionHead num="02" title="Book in advance" small />
-                  <ul className="alert-list">
-                    {ch.booking.map((b, i) => <li key={i}>{b}</li>)}
-                  </ul>
-                </>
-              )}
-
               {ch.diving && (
                 <>
-                  <SectionHead num="03" title="Diving" small />
+                  <SectionHead num="02" title="Diving" small />
                   <div className="diving-inline">
                     <div><strong>{ch.diving.sites}</strong> sites · {ch.diving.type}</div>
                     <div className="muted">{ch.diving.operators}</div>
@@ -164,7 +155,7 @@
 
               {ch.decisions && ch.decisions.length > 0 && (
                 <>
-                  <SectionHead num="04" title="Route decisions" small />
+                  <SectionHead num="03" title="Route decisions" small />
                   <ul className="alert-list">
                     {ch.decisions.map((d, i) => <li key={i}>{d}</li>)}
                   </ul>
