@@ -560,6 +560,18 @@
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [focusKey]);
+
+    // CDN guard — render a message instead of a blank globe when the
+    // Three.js scripts failed to load. (Placed after all hooks.)
+    if (!window.THREE) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "map-container is-globe"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "map-fallback"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "kicker"
+      }, "3D globe unavailable"), /*#__PURE__*/React.createElement("p", null, "Three.js failed to load. Check your connection and retry.")));
+    }
     return /*#__PURE__*/React.createElement("div", {
       ref: ref,
       className: "map-container is-globe",

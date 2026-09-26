@@ -69,6 +69,10 @@ button {
   display: grid;
   grid-template-rows: 60px 1fr;
   height: 100vh;
+  /* Dynamic viewport: mobile browser chrome (address bar) shrinks the
+     visible area, so 100vh alone pushes bottom content (map controls,
+     last list rows) out of reach. dvh tracks the visible height. */
+  height: 100dvh;
   background: var(--paper);
 }
 
@@ -1846,10 +1850,13 @@ button {
   .app-nav button { padding: 5px 8px; font-size: 9px; gap: 3px; }
 
   /* Single-column on mobile — chapter list OR map fills the space.
-     DOM order matches visual order, so default auto-placement is correct. */
+     Pin .app-main to the last track: the map/list toggle row only renders
+     in map view, so auto-placement would drop .app-main into the auto row
+     on budget/todo views and collapse it to zero height (blank page). */
   .app-main, .app-main.no-detail {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    grid-row: 4;
     position: relative;
   }
   .chapter-list {
@@ -1907,7 +1914,7 @@ button {
   .binder-tab { padding: 6px 10px; font-size: 9.5px; }
   .booking-grid, .diving-grid, .budget-grid { grid-template-columns: 1fr; }
 
-  .modal { max-width: 100%; max-height: 100vh; height: 100vh; border-radius: 0; }
+  .modal { max-width: 100%; max-height: 100vh; max-height: 100dvh; height: 100vh; height: 100dvh; border-radius: 0; }
   .modal-grid { grid-template-columns: 1fr; }
 }
 
@@ -2245,4 +2252,44 @@ button {
   padding: 1px 6px;
   border-radius: 3px;
   white-space: nowrap;
+}
+
+/* Map failure fallback (error boundary / CDN guard) — keeps the header
+   and tabs usable when a map view can't mount. */
+.map-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px;
+  background: #0a141c;
+  color: var(--paper);
+  z-index: 600;
+}
+.map-fallback p {
+  margin: 0;
+  max-width: 420px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(244, 239, 230, 0.7);
+  word-break: break-word;
+}
+.map-fallback-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.map-fallback-actions .pill-btn {
+  color: var(--paper);
+  border-color: rgba(244, 239, 230, 0.3);
+}
+.map-fallback-actions .pill-btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
 }

@@ -67,6 +67,7 @@
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusKey, setFocusKey] = React.useState(0);
+    const [mapRetry, setMapRetry] = React.useState(0);
     const [mapMode, setMapMode] = React.useState(() => {
       if (urlParams.map) return urlParams.map;
       try {
@@ -113,6 +114,30 @@
       setFocusKey(k => k + 1);
     };
     const showDetail = view === 'map' && selectedId;
+
+    // If a map view crashes (e.g. its CDN failed), the boundary keeps the
+    // header + tabs alive and offers a way out instead of a blank page.
+    const setMapModeAndSave = m => {
+      setMapMode(m);
+      try {
+        localStorage.setItem('map-mode', m);
+      } catch {}
+    };
+    const mapFallback = err => /*#__PURE__*/React.createElement("div", {
+      className: "map-container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "map-fallback"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "kicker"
+    }, "Map failed to load"), /*#__PURE__*/React.createElement("p", null, String(err && err.message || err || 'Unknown error')), /*#__PURE__*/React.createElement("div", {
+      className: "map-fallback-actions"
+    }, /*#__PURE__*/React.createElement("button", {
+      className: "pill-btn",
+      onClick: () => setMapRetry(k => k + 1)
+    }, "Try again"), /*#__PURE__*/React.createElement("button", {
+      className: "pill-btn",
+      onClick: () => setMapModeAndSave(mapMode === 'map' ? 'globe' : 'map')
+    }, "Switch to ", mapMode === 'map' ? '3D globe' : '2D map'))));
     return /*#__PURE__*/React.createElement("div", {
       className: `app ${isMobile ? 'is-mobile' : ''}`
     }, /*#__PURE__*/React.createElement("header", {
@@ -183,6 +208,9 @@
       onSelect: onSelectChapter
     }), (!isMobile || mobileMode === 'map') && /*#__PURE__*/React.createElement("div", {
       className: "map-stage"
+    }, /*#__PURE__*/React.createElement(window.ErrorBoundary, {
+      key: `${mapMode}:${mapRetry}`,
+      fallback: mapFallback
     }, mapMode === 'globe' ? /*#__PURE__*/React.createElement(window.GlobeView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
@@ -195,7 +223,7 @@
       onSelectChapter: onSelectChapter,
       onSelectPlace: onSelectPlace,
       focusKey: focusKey === 0 ? null : 'world'
-    }), /*#__PURE__*/React.createElement("div", {
+    })), /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode-toggle eq-mode"
     }, /*#__PURE__*/React.createElement("button", {
       className: mapMode === 'map' ? 'is-active' : '',
