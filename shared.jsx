@@ -173,4 +173,26 @@ const Icon = {
   edit: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>,
 };
 
-Object.assign(window, { Photo, getDayN, openMaps, openMapsLatLng, Icon, useStore, Editable, ActionMenu });
+// Error boundary — isolates a crashing subtree (e.g. a map view whose CDN
+// failed to load) so the rest of the app keeps working. Remount via key.
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+  componentDidCatch(error, info) {
+    try { console.error('[boundary]', error, info && info.componentStack); } catch {}
+  }
+  render() {
+    if (this.state.error) {
+      const fb = this.props.fallback;
+      return typeof fb === 'function' ? fb(this.state.error) : (fb || null);
+    }
+    return this.props.children;
+  }
+}
+
+Object.assign(window, { Photo, getDayN, openMaps, openMapsLatLng, Icon, useStore, Editable, ActionMenu, ErrorBoundary });

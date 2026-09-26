@@ -100,7 +100,7 @@
 
     // Build map once
     React.useEffect(() => {
-      if (mapRef.current) return;
+      if (mapRef.current || !window.L) return;
       const L = window.L;
       const map = L.map(ref.current, {
         center: [25, 105],
@@ -327,6 +327,12 @@
         });
       }
     }, [focusKey]);
+
+    // CDN guard — render a message instead of crashing the whole app when
+    // the Leaflet script failed to load. (Placed after all hooks.)
+    if (!window.L) {
+      return <div className="map-container"><div className="map-fallback"><div className="kicker">2D map unavailable</div><p>Leaflet failed to load. Check your connection and retry.</p></div></div>;
+    }
 
     return <div ref={ref} className="map-container" style={{ width: '100%', height: '100%' }} />;
   }

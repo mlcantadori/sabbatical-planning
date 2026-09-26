@@ -411,6 +411,34 @@ const Icon = {
     d: "M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"
   }))
 };
+
+// Error boundary — isolates a crashing subtree (e.g. a map view whose CDN
+// failed to load) so the rest of the app keeps working. Remount via key.
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null
+    };
+  }
+  static getDerivedStateFromError(error) {
+    return {
+      error
+    };
+  }
+  componentDidCatch(error, info) {
+    try {
+      console.error('[boundary]', error, info && info.componentStack);
+    } catch {}
+  }
+  render() {
+    if (this.state.error) {
+      const fb = this.props.fallback;
+      return typeof fb === 'function' ? fb(this.state.error) : fb || null;
+    }
+    return this.props.children;
+  }
+}
 Object.assign(window, {
   Photo,
   getDayN,
@@ -419,5 +447,6 @@ Object.assign(window, {
   Icon,
   useStore,
   Editable,
-  ActionMenu
+  ActionMenu,
+  ErrorBoundary
 });

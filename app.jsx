@@ -50,6 +50,7 @@
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusKey, setFocusKey] = React.useState(0);
+    const [mapRetry, setMapRetry] = React.useState(0);
     const [mapMode, setMapMode] = React.useState(() => {
       if (urlParams.map) return urlParams.map;
       try { return localStorage.getItem('map-mode') || 'globe'; } catch { return 'globe'; }
@@ -96,6 +97,27 @@
     };
 
     const showDetail = view === 'map' && selectedId;
+
+    // If a map view crashes (e.g. its CDN failed), the boundary keeps the
+    // header + tabs alive and offers a way out instead of a blank page.
+    const setMapModeAndSave = (m) => {
+      setMapMode(m);
+      try { localStorage.setItem('map-mode', m); } catch {}
+    };
+    const mapFallback = (err) => (
+      <div className="map-container">
+        <div className="map-fallback">
+          <div className="kicker">Map failed to load</div>
+          <p>{String((err && err.message) || err || 'Unknown error')}</p>
+          <div className="map-fallback-actions">
+            <button className="pill-btn" onClick={() => setMapRetry((k) => k + 1)}>Try again</button>
+            <button className="pill-btn" onClick={() => setMapModeAndSave(mapMode === 'map' ? 'globe' : 'map')}>
+              Switch to {mapMode === 'map' ? '3D globe' : '2D map'}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
 
     return (
       <div className={`app ${isMobile ? 'is-mobile' : ''}`}>
@@ -159,6 +181,7 @@
 
           {(!isMobile || mobileMode === 'map') && (
             <div className="map-stage">
+              <window.ErrorBoundary key={`${mapMode}:${mapRetry}`} fallback={mapFallback}>
               {mapMode === 'globe' ? (
                 <window.GlobeView
                   selectedId={selectedId}
@@ -176,6 +199,7 @@
                   focusKey={focusKey === 0 ? null : 'world'}
                 />
               )}
+              </window.ErrorBoundary>
               <div className="mobile-mode-toggle eq-mode">
                 <button
                   className={mapMode === 'map' ? 'is-active' : ''}

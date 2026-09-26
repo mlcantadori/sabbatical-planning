@@ -2246,3 +2246,43 @@ button {
   border-radius: 3px;
   white-space: nowrap;
 }
+
+/* Map failure fallback (error boundary / CDN guard) — keeps the header
+   and tabs usable when a map view can't mount. */
+.map-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px;
+  background: #0a141c;
+  color: var(--paper);
+  z-index: 600;
+}
+.map-fallback p {
+  margin: 0;
+  max-width: 420px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(244, 239, 230, 0.7);
+  word-break: break-word;
+}
+.map-fallback-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.map-fallback-actions .pill-btn {
+  color: var(--paper);
+  border-color: rgba(244, 239, 230, 0.3);
+}
+.map-fallback-actions .pill-btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
