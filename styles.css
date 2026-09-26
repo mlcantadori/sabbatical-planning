@@ -1846,10 +1846,13 @@ button {
   .app-nav button { padding: 5px 8px; font-size: 9px; gap: 3px; }
 
   /* Single-column on mobile — chapter list OR map fills the space.
-     DOM order matches visual order, so default auto-placement is correct. */
+     Pin .app-main to the last track: the map/list toggle row only renders
+     in map view, so auto-placement would drop .app-main into the auto row
+     on budget/todo views and collapse it to zero height (blank page). */
   .app-main, .app-main.no-detail {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    grid-row: 4;
     position: relative;
   }
   .chapter-list {
