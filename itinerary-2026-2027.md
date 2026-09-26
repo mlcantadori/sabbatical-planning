@@ -140,14 +140,14 @@ Three weeks arcing south through Greece in September — crowds thinning, sea at
 
 ## Chapter 4 — TÜRKIYE
 ### Sep 21 – Oct 12 · 21 days
-*Theme: Cappadocia balloons, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
+*Theme: Cappadocia valleys, Aegean kitesurfing, Lycian coast, unhurried Istanbul*
 
-Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys and a balloon flight (booked ✅), then take the Sep 24, 22:50 flight from Kayseri to Izmir for a rental-car loop down the Aegean coast: Alaçatı, Şirince (Ephesus), Kaş and Akyaka, returning the car at ADB on Oct 2 for the 19:45 flight into Istanbul, where we stay until the end of the chapter. Stays Göreme booked ✅; coastal stays need (re)booking for the new dates.
+Arriving from Greece on Sep 21 — still the best window for Turkey. Göreme first for the valleys (balloon flight Sep 22/23 cancelled — bad weather, fully refunded ✅), then take the Sep 24, 22:50 flight from Kayseri to Izmir for a rental-car loop down the Aegean coast: Alaçatı, Şirince (Ephesus), Kaş and Akyaka, returning the car at ADB on Oct 2 for the 19:45 flight into Istanbul, where we stay until the end of the chapter. Stays Göreme booked ✅; coastal stays need (re)booking for the new dates.
 
 **Cappadocia (Göreme) — 3 nights (Sep 21–24)**
 - Arrive Göreme Sep 21 from Athens via IST — single Turkish ticket, bought ✅
 - Valleys: Rose Valley, Love Valley, Göreme Open Air Museum
-- Hot air balloon flight — Sep 22 or 23, booked ✅
+- Hot air balloon flight — Sep 22/23 cancelled (bad weather), full refund ✅
 - Underground cities: Derinkuyu, Kaymakli
 - Stays Göreme Sep 21–24 booked ✅
 - Sep 24, 22:50: fly Kayseri (ASR) → Izmir (ADB), bought ✅
@@ -933,7 +933,7 @@ Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 |---|---|---|
 | Raja Ampat liveaboard | **By Oct 2025** | Papua Diving / Meridian Adventure — Mar 11–20 (reconfirm!), book 6+ months ahead · domestic DPS→SOQ inbound, no sprint |
 | Sipadan permits | By Nov 2026 | 120 permits/day cap — only if adding Sipadan to Borneo chapter |
-| Cappadocia balloon | Booked ✅ | Sep 22 or 23 — Royal Balloon / Butterfly Balloons |
+| Cappadocia balloon | Cancelled — weather, refunded ✅ | Sep 22/23 — Royal Balloon / Butterfly Balloons, full refund received |
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna trek (DWT) | Booked ✅ ($144 advance paid) | $1,296 balance + gear check + briefing at DWT office, Thamel, Oct 24 · ACAP/TIMS via agency (confirm) · 9kg pp porter limit |

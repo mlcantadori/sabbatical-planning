@@ -51,7 +51,7 @@
 | 1 | brasil | 2026-06-21 → 2026-08-26 | LOCKED |
 | 2 | toronto | 2026-08-27 → 2026-09-01 | LOCKED (flights bought) |
 | 3 | athens (Greece) | 2026-09-01 → 2026-09-21 | LOCKED (7 stays + 4 ferries booked) |
-| 4 | turkey | 2026-09-21 → 2026-10-12 | LOCKED (balloon Sep 22/23 booked) |
+| 4 | turkey | 2026-09-21 → 2026-10-12 | LOCKED (balloon Sep 22/23 cancelled — weather, refunded) |
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
 | 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
@@ -75,7 +75,7 @@
 - Annapurna Base Camp trek: Oct 25–Nov 4 (11d, Discovery World Trekking, $720pp = $1,440 for two; $144 advance paid ✅, $1,296 balance due at KTM office Oct 24; Poon Hill route via Ulleri/Ghorepani/Tadapani/Chomrong; 9kg pp porter limit; visa/insurance/tips excluded).
 - Raja Ampat liveaboard: Mar 11–20 (Papua Diving / Meridian — reconfirm dates with operator).
 - Hakuba snowboard week inside `japan` chapter (lift 7d + full rental).
-- Bought ✅: GRU→YYZ→ATH long-haul; Greece stays + 4 ferries; Cappadocia balloon;
+- Bought ✅: GRU→YYZ→ATH long-haul; Greece stays + 4 ferries; Cappadocia balloon (cancelled — weather, full refund ✅);
   ASR→ADB Sep 24; Athens→Chania + Athens→Cappadocia flights; train to Varanasi
   Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two).
 - India e-Visa required before Oct 14 Delhi arrival.
