@@ -12,19 +12,20 @@ window.TRIP_GEO = {
     'baku':         [40.4093,   49.8671], // Baku
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
-    'japan-autumn': [35.6762,  139.6503], // Tokyo
-    'korea':        [37.5665,  126.9780], // Seoul
     'taiwan':       [25.0330,  121.5654], // Taipei
-    'japan-winter': [36.6953,  137.8378], // Hakuba
-    'china-1':      [39.9042,  116.4074], // Beijing
+    'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
+    'china-e2':    [30.5728,  104.0668], // Chengdu (entry point)
+    'korea':        [37.5665,  126.9780], // Seoul
+    'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
-    'philippines':  [11.9964,  119.4192], // Coron
-    'indonesia':      [-8.5069,  115.2625], // Ubud, Bali (most nights)
+    'philippines':  [14.5995,  120.9842], // Manila (entry point)
+    'indonesia-a':    [ -6.2088,  106.8456], // Jakarta (entry point)
+    'indonesia-b':    [-8.4889,  119.8825], // Labuan Bajo (Komodo base)
     'borneo':       [ 5.9804,  116.0735], // Kota Kinabalu
     'singapore':    [ 1.2834,  103.8607], // Marina Bay
     'malaysia':     [ 3.1579,  101.7117], // KL
     'thailand':     [10.0956,   99.8377], // Koh Tao
-    'china-2':      [24.7783,  110.4933], // Guilin
+    'china-spring':  [34.3416,  108.9398], // Xi'an (entry point)
   },
   // Place-level (drilldown) coords. Key is "chapterId/placeName".
   places: {
@@ -55,33 +56,27 @@ window.TRIP_GEO = {
     'nepal/Kathmandu':                        [27.7172,   85.3240],
     'nepal/Pokhara':                          [28.2096,   83.9856],
     'nepal/Annapurna Base Camp Trek':         [28.5306,   83.8783],
-    'nepal/Pokhara recovery':                 [28.2096,   83.9856],
+    'nepal/Kathmandu recovery':              [27.7172,   85.3240],
     // India
     'india/Delhi + Agra':                     [27.1751,   78.0421], // Agra
     'india/Rishikesh':                        [30.0869,   78.2676],
     'india/Varanasi':                         [25.3176,   82.9739],
-    // Japan Autumn
-    'japan-autumn/Tokyo':                     [35.6762,  139.6503],
-    'japan-autumn/Osaka':                     [34.6937,  135.5023],
-    'japan-autumn/Kyoto':                     [35.0116,  135.7681],
+    // Japan (fused winter chapter)
+    'japan/Kyoto':                          [35.0116,  135.7681],
+    'japan/Osaka':                          [34.6937,  135.5023],
+    'japan/Tokyo':                          [35.6762,  139.6503],
+    'japan/Hakuba Valley':                  [36.6953,  137.8378],
+    'japan/Departure':                      [35.6762,  139.6503], // Tokyo
     // Korea
     'korea/Seoul':                            [37.5665,  126.9780],
     'korea/Busan':                            [35.1796,  129.0756],
     'korea/Gyeongju':                         [35.8562,  129.2247],
     'korea/Jeonju':                           [35.8242,  127.1480],
-    'korea/Seoul / Incheon':                  [37.4563,  126.7052],
+    'korea/Seoul finale':                      [37.5665,  126.9780],
     // Taiwan
     'taiwan/Taipei':                          [25.0330,  121.5654],
     'taiwan/Hualien + Taroko Gorge':          [24.1908,  121.6202],
-    // Japan Winter
-    'japan-winter/Osaka':                     [34.6937,  135.5023],
-    'japan-winter/Hakuba Valley':             [36.6953,  137.8378],
-    'japan-winter/Departure':                 [35.1815,  136.9066], // Nagoya
-    // China 1 (metropolises)
-    'china-1/Beijing':                        [39.9042,  116.4074],
-    'china-1/Shanghai':                       [31.2304,  121.4737],
-    'china-1/Shenzhen':                       [22.5431,  114.0579],
-    'china-1/Buffer':                         [22.5431,  114.0579],
+    'taiwan/Tainan + south':                  [22.9997,  120.2270], // Tainan
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines
@@ -89,15 +84,17 @@ window.TRIP_GEO = {
     'philippines/Coron':                      [11.9964,  119.4192],
     'philippines/El Nido':                    [11.1949,  119.4013],
     'philippines/Cebu / Moalboal':            [10.2720,  123.4220],
-    'philippines/Transfer to Sorong':         [-0.8917,  131.2500],
-    // Indonesia Block 1 — Raja Ampat
-    // Indonesia (single chapter)
-    'indonesia/Raja Ampat Liveaboard':          [-0.5897,  130.1053], // Wayag
-    'indonesia/Transit Sorong → Bali':          [-8.6500,  115.2167], // Denpasar
-    'indonesia/Ubud':                           [-8.5069,  115.2625],
-    'indonesia/Nusa Penida':                    [-8.7270,  115.5444],
-    'indonesia/Komodo':                         [-8.4889,  119.8825], // Labuan Bajo
-    'indonesia/Bali + Volcano':                 [-8.5069,  115.2625], // Ubud
+    'philippines/Transfer to Bali':            [-8.6500,  115.2167], // Denpasar
+    // Indonesia A — Java + Bali staging + Raja (first stay)
+    'indonesia-a/Jakarta':                      [ -6.2088,  106.8456],
+    'indonesia-a/Yogyakarta':                   [ -7.7956,  110.3695], // Borobudur ~40km NW
+    'indonesia-a/Ubud':                         [-8.5069,  115.2625],
+    'indonesia-a/Transfer to Sorong':           [-0.8917,  131.2500], // Sorong
+    'indonesia-a/Raja Ampat Liveaboard':        [-0.5897,  130.1053], // Wayag
+    // Indonesia B — Penida + Komodo + Batur (second stay)
+    'indonesia-b/Nusa Penida':                  [-8.7270,  115.5444],
+    'indonesia-b/Komodo':                       [-8.4889,  119.8825], // Labuan Bajo
+    'indonesia-b/Bali + Volcano':               [-8.5069,  115.2625], // Ubud
     // Borneo
     'borneo/Kota Kinabalu':                   [ 5.9804,  116.0735],
     'borneo/Sepilok + Sandakan':              [ 5.8754,  117.9472],
@@ -111,12 +108,25 @@ window.TRIP_GEO = {
     'thailand/Koh Tao':                       [10.0956,   99.8377],
     'thailand/Koh Samui':                     [ 9.5018,  100.0140],
     'thailand/Bangkok':                       [13.7460,  100.5018],
-    // China 2 (landscapes)
-    'china-2/Guilin / Yangshuo':              [24.7783,  110.4933],
-    'china-2/Zhangjiajie + Tianmen':          [29.1170,  110.4790],
-    'china-2/Chongqing':                      [29.4316,  106.9123],
-    'china-2/Chengdu':                        [30.5728,  104.0668],
-    'china-2/Xi\'an':                         [34.3416,  108.9398],
-    'china-2/Buffer':                         [34.3416,  108.9398],
+    // China E1 (Beijing first, then south to Shenzhen)
+    'china-e1/Beijing':                       [39.9042,  116.4074],
+    'china-e1/Xi\'an':                        [34.3416,  108.9398],
+    'china-e1/Huangshan':                      [30.1300,  118.1700],
+    'china-e1/Hangzhou':                       [30.2741,  120.1551],
+    'china-e1/Suzhou':                         [31.2989,  120.5853],
+    'china-e1/Shenzhen':                       [22.5431,  114.0579],
+    'china-e1/Guangzhou':                      [23.1291,  113.2644],
+    // China E2 (Sichuan + Wulong + Shanghai finish)
+    'china-e2/Chengdu':                        [30.5728,  104.0668],
+    'china-e2/Chongqing':                      [29.4316,  106.9123],
+    'china-e2/Wulong':                         [29.3237,  107.7621], // Xiannvshan Town
+    'china-e2/Shanghai':                       [31.2304,  121.4737],
+    // China spring (Xi'an + south in peak season)
+    'china-spring/Xi\'an':                    [34.3416,  108.9398],
+    'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
+    'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
+    'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
+    'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
+    'china-spring/Buffer':                    [28.2282,  112.9388], // Changsha
   },
 };

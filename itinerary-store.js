@@ -7,10 +7,10 @@
 // TRIP/TRIP_GEO.
 
 window.STORE = (function () {
-  // v10: Brasil merged into a single chapter — old caches reference
-  // split chapter ids (rio/cumbuco/saopaulo) that no longer exist,
-  // so force a fresh re-bake.
-  const LS_KEY = 'trip-data-v10';
+  // v14: E1a+E2 consolidated into a single china-e1 chapter (26d, one stay);
+  // old E1b renamed china-e2 — old caches reference ids/order that no
+  // longer exist, so force a fresh re-bake.
+  const LS_KEY = 'trip-data-v14';
   const listeners = new Set();
   let chapters;
 
