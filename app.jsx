@@ -20,12 +20,14 @@
     return m;
   }
 
-  // Deep-link params (?map=2d|3d&chapter=<id>&place=<idx>): read once
-  // on load, then reflected back via replaceState so any view is
+  // Deep-link params (?view=budget|todo&map=2d|3d&chapter=<id>&place=<idx>):
+  // read once on load, then reflected back via replaceState so any view is
   // shareable. Invalid values fall back to defaults (never crash).
   function readUrlParams() {
     try {
       const q = new URLSearchParams(window.location.search);
+      const viewRaw = (q.get('view') || '').toLowerCase();
+      const view = viewRaw === 'budget' || viewRaw === 'todo' ? viewRaw : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
       const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe'
         : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
@@ -36,15 +38,15 @@
         const n = parseInt(q.get('place'), 10);
         if (Number.isInteger(n) && n >= 0 && ch.places && n < ch.places.length) place = n;
       }
-      return { map, chapterId: ch ? ch.id : null, placeIdx: place };
-    } catch { return { map: null, chapterId: null, placeIdx: null }; }
+      return { view, map, chapterId: ch ? ch.id : null, placeIdx: place };
+    } catch { return { view: null, map: null, chapterId: null, placeIdx: null }; }
   }
 
   function App() {
     const store = window.useStore();
-    const [view, setView] = React.useState('map');
-    const [mobileMode, setMobileMode] = React.useState('map'); // 'map' | 'list'
     const [urlParams] = React.useState(readUrlParams);
+    const [view, setView] = React.useState(urlParams.view || 'map');
+    const [mobileMode, setMobileMode] = React.useState('map'); // 'map' | 'list'
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusKey, setFocusKey] = React.useState(0);
@@ -56,11 +58,12 @@
 
     // Reflect the current view back into the URL (replaceState: no
     // history spam, no reload) so links reproduce exactly what's on
-    // screen. Defaults stay clean: globe (the default view) is omitted,
-    // so a fresh load shows no parameters at all.
+    // screen. Defaults stay clean: map page + globe (the default views)
+    // are omitted, so a fresh load shows no parameters at all.
     React.useEffect(() => {
       try {
         const q = new URLSearchParams(window.location.search);
+        if (view === 'map') q.delete('view'); else q.set('view', view);
         if (mapMode === 'globe') q.delete('map'); else q.set('map', '2d');
         if (selectedId) q.set('chapter', selectedId); else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));
@@ -71,7 +74,7 @@
           window.history.replaceState(null, '', next);
         }
       } catch {}
-    }, [mapMode, selectedId, selectedPlaceIdx]);
+    }, [view, mapMode, selectedId, selectedPlaceIdx]);
 
     const today = dayCounter(TODAY);
     const isBinder = view !== 'map';
