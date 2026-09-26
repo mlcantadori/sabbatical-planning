@@ -150,5 +150,6 @@ window.PHOTO_IDS = {
   'zhangjiajie avatar pillars':  'photo-1513415277900-a62401e19be4', // ✓
   'chongqing cyberpunk night':   'photo-1601921004897-b7d582836990', // ✓
   'chengdu panda':               'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/3840px-Grosser_Panda.JPG',
+  'wulong three bridges':        'https://upload.wikimedia.org/wikipedia/commons/3/33/Wulongtianshengsanqiao.JPG',
   'xian terracotta warriors':    'photo-1598935898639-81586f7d2129', // ✓
 };
