@@ -113,6 +113,7 @@
               <window.Icon.map size={12} /> {!isMobile && 'Map'}
             </button>
             <button className={view === 'budget' ? 'is-active' : ''} onClick={() => setView('budget')}>{isMobile ? '$' : 'Budget'}</button>
+            <button className={view === 'todo' ? 'is-active' : ''} onClick={() => setView('todo')}>{isMobile ? '✓' : 'To-do'}</button>
             <window.SyncButton compact={isMobile} />
           </div>
         </header>
@@ -205,7 +206,7 @@
           )}
 
           {isBinder && (
-            <window.Binder onClose={() => setView('map')} />
+            <window.Binder view={view} onClose={() => setView('map')} />
           )}
         </div>
       </div>

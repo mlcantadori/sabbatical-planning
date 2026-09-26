@@ -141,7 +141,10 @@
     }), " ", !isMobile && 'Map'), /*#__PURE__*/React.createElement("button", {
       className: view === 'budget' ? 'is-active' : '',
       onClick: () => setView('budget')
-    }, isMobile ? '$' : 'Budget'), /*#__PURE__*/React.createElement(window.SyncButton, {
+    }, isMobile ? '$' : 'Budget'), /*#__PURE__*/React.createElement("button", {
+      className: view === 'todo' ? 'is-active' : '',
+      onClick: () => setView('todo')
+    }, isMobile ? '✓' : 'To-do'), /*#__PURE__*/React.createElement(window.SyncButton, {
       compact: isMobile
     }))), isMobile && /*#__PURE__*/React.createElement("div", {
       className: "app-progress mobile-progress",
@@ -215,6 +218,7 @@
       onSelectPlace: onSelectPlace,
       onClose: onCloseDetail
     }), isBinder && /*#__PURE__*/React.createElement(window.Binder, {
+      view: view,
       onClose: () => setView('map')
     })));
   }
