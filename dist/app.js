@@ -66,20 +66,21 @@
     const [mapMode, setMapMode] = React.useState(() => {
       if (urlParams.map) return urlParams.map;
       try {
-        return localStorage.getItem('map-mode') || '2d';
+        return localStorage.getItem('map-mode') || 'globe';
       } catch {
-        return '2d';
+        return 'globe';
       }
     });
     const isMobile = useIsMobile();
 
     // Reflect the current view back into the URL (replaceState: no
-    // history spam, no reload) so links like ?map=3d&chapter=japan&place=2
-    // always reproduce exactly what's on screen.
+    // history spam, no reload) so links reproduce exactly what's on
+    // screen. Defaults stay clean: globe (the default view) is omitted,
+    // so a fresh load shows no parameters at all.
     React.useEffect(() => {
       try {
         const q = new URLSearchParams(window.location.search);
-        q.set('map', mapMode === 'globe' ? '3d' : '2d');
+        if (mapMode === 'globe') q.delete('map');else q.set('map', '2d');
         if (selectedId) q.set('chapter', selectedId);else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));else q.delete('place');
         const next = `${window.location.pathname}?${q.toString()}`;
