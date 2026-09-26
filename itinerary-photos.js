@@ -7,9 +7,6 @@ window.PHOTO_IDS = {
   'rio aerial':                  'extra-pictures/brasil/rio-aerial.jpg',
   'copacabana beach':            'extra-pictures/brasil/copacabana-beach.jpg',
   'cumbuco beach kites':         'extra-pictures/cumbuco/20231014_154930.jpg',
-  'cumbuco kitesurf':            'extra-pictures/cumbuco/PXL_20240921_142226699.jpg',
-  'cumbuco mural':               'extra-pictures/cumbuco/PXL_20241103_003746700.jpg',
-  'super cumbuco':               'extra-pictures/cumbuco/super-cumbuco.jpg',
   'masp sao paulo':              'extra-pictures/brasil/masp-sao-paulo.jpg',
   // ── Toronto ───────────────────────────────────────────────────────
   'toronto cn tower':            'extra-pictures/toronto/toronto-cn-tower.jpg',
