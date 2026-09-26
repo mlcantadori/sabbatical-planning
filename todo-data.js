@@ -98,7 +98,7 @@ window.TODO_ITEMS = [
   // ── china-e2 ──────────────────────────────────────────────────────
   { id: 'china-e2-1-chengdu', ch: 'china-e2', place: 'Chengdu', cat: 'stay', title: 'Chengdu stay (6n)', note: 'Dec 7–13', due: '2026-11-01', done: false },
   { id: 'china-e2-1-chongqing', ch: 'china-e2', place: 'Chongqing', cat: 'stay', title: 'Chongqing stay (2n + Wulong transit)', note: 'Dec 13–15 + Dec 16 night', due: '2026-11-01', done: false },
-  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (5n)', note: 'Dec 17–22 — heated MODERN hotel (no lane houses, no central heating)', due: '2026-11-01', done: false },
+  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (7n)', note: 'Dec 17–24, incl. Dec 22–23 protected buffer — heated MODERN hotel (no lane houses, no central heating)', due: '2026-11-01', done: false },
   { id: 'china-e2-2', ch: 'china-e2', place: 'Chengdu', cat: 'attraction', title: 'Sanxingdui tickets', note: 'WeChat mini-program, 20:00 five days out, NO walk-up — book Dec 2 from HK!', due: '2026-12-02', done: false },
   { id: 'china-e2-3', ch: 'china-e2', place: 'Chengdu → Chongqing', cat: 'transport', title: 'Chengdu–Chongqing HSR Dec 13 (~1h)', note: 'Buy a few days ahead', due: '2026-12-08', done: false },
   { id: 'china-e2-4', ch: 'china-e2', place: 'Chongqing → Shanghai', cat: 'transport', title: 'Chongqing→Shanghai Dec 17 morning flight', note: 'Back to Chongqing first, then fly', due: '2026-11-10', done: false },
@@ -191,7 +191,7 @@ window.TODO_ITEMS = [
   { id: 'china-spring-1-longji', ch: 'china-spring', place: 'Longji', cat: 'stay', title: 'Longji stay (2n)', note: 'Zhuang village overnight, mirror terraces', due: '2027-05-01', done: false },
   { id: 'china-spring-1-zhangjiajie', ch: 'china-spring', place: 'Zhangjiajie', cat: 'stay', title: 'Zhangjiajie stay (4n)', note: 'Avatar pillars base', due: '2027-05-01', done: false },
   { id: 'china-spring-1-fenghuang', ch: 'china-spring', place: 'Fenghuang', cat: 'stay', title: 'Fenghuang stay (3n)', note: 'Furong en route; lantern finale', due: '2027-05-01', done: false },
-  { id: 'china-spring-1-changsha', ch: 'china-spring', place: 'Changsha', cat: 'stay', title: 'Changsha buffer stay (2n)', note: 'Fly home Jun 17', due: '2027-05-01', done: false },
+  { id: 'china-spring-1-changsha', ch: 'china-spring', place: 'Changsha', cat: 'stay', title: 'Changsha buffer stay (1n)', note: 'Fly home Jun 17 — thin buffer, no slack', due: '2027-05-01', done: false },
   { id: 'china-spring-2', ch: 'china-spring', place: 'Xi\'an → Guilin', cat: 'transport', title: 'Xi\'an→Guilin Jun 3 flight', note: '~2h trunk', due: '2027-04-20', done: false },
   { id: 'china-spring-3', ch: 'china-spring', place: 'Zhangjiajie', cat: 'attraction', title: 'Zhangjiajie entrance tickets', note: 'Peak-season sea of clouds; real-name booking ~1 week ahead', due: '2027-06-01', done: false },
   { id: 'china-spring-4', ch: 'china-spring', place: 'Zhangjiajie', cat: 'attraction', title: 'Tianmen Mountain tickets', note: 'Cableway slots sell out — book with Zhangjiajie', due: '2027-06-03', done: false },

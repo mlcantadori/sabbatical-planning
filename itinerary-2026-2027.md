@@ -11,8 +11,8 @@
 | # | Destination | Dates | Days |
 |---|---|---|---|
 | 1 | Brasil | Jun 21 – Aug 26 | 66 |
-| 2 | Canada | Aug 27 – Aug 31 | 5 |
-| 3 | Greece | Sep 1 – Sep 22 | 21 |
+| 2 | Canada | Aug 27 – Sep 1 | 5 |
+| 3 | Greece | Sep 1 – Sep 21 | 20 |
 | 4 | Türkiye | Sep 21 – Oct 12 | 21 |
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 6 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
@@ -23,17 +23,17 @@
 | 11 | South Korea | Dec 24 – Jan 11 | 18 |
 | 12 | Taiwan | Jan 11 – Jan 25 | 14 |
 | 13 | Japan | Jan 25 – Feb 24 | 30 |
-| 14 | Indonesia (Java + Bali + Raja) | Feb 24 – Mar 20 | 25 |
-| 15 | Malaysia (Borneo) | Mar 21 – Mar 30 | 10 |
-| 16 | Philippines (post-Easter) | Mar 31 – Apr 14 | 15 |
-| 17 | Indonesia (Penida + Komodo + Bali) | Apr 14 – Apr 30 | 17 |
+| 14 | Indonesia (Java + Bali + Raja) | Feb 24 – Mar 21 | 25 |
+| 15 | Malaysia (Borneo) | Mar 21 – Mar 31 | 10 |
+| 16 | Philippines (post-Easter) | Mar 31 – Apr 14 | 14 |
+| 17 | Indonesia (Penida + Komodo + Bali) | Apr 14 – May 1 | 17 |
 | 18 | Singapore | May 1 – May 6 | 5 |
 | 19 | Malaysia (KL + Penang) | May 6 – May 16 | 10 |
 | 20 | Thailand | May 16 – May 30 | 14 |
-| 21 | China (Xi'an + karst finale) | May 30 – Jun 17 | 19 |
+| 21 | China (Xi'an + karst finale) | May 30 – Jun 17 | 18 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
-**China total:** 58 days in-country (E1 22 + E2 17 + spring 19), each entry inside the 25d comfort limit ✓
+**China total:** 57 days in-country (E1 22 + E2 17 + spring 18), each entry inside the 25d comfort limit ✓
 **HK reset:** Guangzhou → Hong Kong by HSR Dec 2 restarts the 30-day clock for E2 ✓
 **Taiwan visa:** filed at TECO Hong Kong Dec 3 (pickup Dec 4–5), 30d grant requested for the Jan 11–25 stay ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
@@ -70,7 +70,7 @@ The trip opens at home: Rio for the Petrópolis–Teresópolis trail and diving 
 ---
 
 ## Chapter 2 — CANADA
-### Aug 27 – Aug 31 · 5 days
+### Aug 27 – Sep 1 · 5 days
 *Theme: Friends & family send-off before Europe*
 
 Five days in Toronto before crossing the Atlantic — mostly to meet friends and family. Stayed at a friend's place, played with their kids, warm evenings and slow time together. Overnight flight out Aug 31, landing in Athens Sep 1.
@@ -85,7 +85,7 @@ Five days in Toronto before crossing the Atlantic — mostly to meet friends and
 ---
 
 ## Chapter 3 — GREECE
-### Sep 1 – Sep 22 · 21 days
+### Sep 1 – Sep 21 · 20 days
 *Theme: Ancient Mediterranean, Peloponnese road trip, island-hopping south*
 
 Three weeks arcing south through Greece in September — crowds thinning, sea at its warmest. Athens and the Acropolis, a Peloponnese road trip, then the islands: two caldera nights on Santorini, five days out of Chania, and closing slow on Milos.
@@ -367,14 +367,14 @@ Second mainland entry — 16 counted days, clock reset in Hong Kong, huge buffer
 - Non-slip shoes (walkways can ice); fog lifts ~10–11am
 - HSR back to Chongqing, fly CKG → PVG Dec 17 (morning)
 
-**Shanghai — 5 days (Dec 17–22)**
+**Shanghai — 7 days (Dec 17–24)**
 - French Concession café season — heated MODERN hotels only (no lane houses, no central heating)
 - The Bund at night, Yu Garden, Tianzifang, M50 art district
 - Wuzhen water-town day trip option (or second slow day)
 - Laundry, trip planning, Korea prep
 - Dec 22–23: protected buffer — no bonus day trips, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early)
 
-*China E2: 17 days. Chengdu (6) + Chongqing (2) + Wulong (2) + Shanghai (5) + buffer (2) ✓*
+*China E2: 17 days. Chengdu (6) + Chongqing (2) + Wulong (2) + Shanghai (7, incl. Dec 22–23 buffer) ✓*
 
 ---
 
@@ -492,7 +492,7 @@ Bus/train Hakuba → Tokyo. Fly Tokyo → Jakarta — Indonesia begins Feb 24 (d
 ---
 
 ## Chapter 14 — INDONESIA
-### Feb 24 – Mar 20 · 25 days
+### Feb 24 – Mar 21 · 25 days
 *Theme: Java temples in Ramadan calm, Bali staging, then the best diving on Earth*
 
 Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). Ramadan-quiet Java — Borobudur without crowds, night markets after dark — then a Nyepi silent day in Ubud and a domestic hop to Sorong Mar 10. Board the $8,400 liveaboard Mar 11 with zero international stress.
@@ -567,7 +567,7 @@ Fly in from Sorong Mar 21 — straight from the apex into one of SE Asia's fines
 ---
 
 ## Chapter 16 — PHILIPPINES
-### Mar 31 – Apr 14 · 15 days (Mar 31 shared transit day with Borneo)
+### Mar 31 – Apr 14 · 14 days (Mar 31 shared transit day with Borneo)
 *Theme: Post-Easter Palawan — wrecks at peak vis, glassy lagoons, sardines*
 
 Arrive from Borneo Mar 31 into the post-Holy Week lull — the single best Palawan window: flat seas, 20m+ visibility, crowds gone. Coron wrecks first (nitrogen-correct: check-dive, then deep), El Nido lagoons with a bonus second day, Moalboal sardines, then hop to Bali Apr 14. Fifteen days inside the 30-day visa-free.
@@ -596,17 +596,17 @@ Arrive from Borneo Mar 31 into the post-Holy Week lull — the single best Palaw
 - Malapascua thresher dropped — Raja already delivered the apex
 - Kawasan Falls canyoneering (if time)
 
-**Transfer to Bali — 2 days (Apr 13–14)**
+**Transfer to Bali — 1 day (Apr 13–14)**
 - Apr 14: CEB → DPS via MNL/SIN (daily, easy)
 - Indonesia Entry 2 starts ~Apr 14 (onward DPS→SIN May 1 ticket in hand)
 
 ---
 
 ## Chapter 17 — INDONESIA
-### Apr 14 – Apr 30 · 17 days
+### Apr 14 – May 1 · 17 days
 *Theme: Cliffs, dragons, drift dives, volcano — second stay*
 
-Second stay — 17 days on a fresh visa-free entry (Apr 14–30), no extension needed. Nusa Penida mantas, Komodo dragons and drift dives, then Bali rice terraces and a volcano at 3am before the hop to Singapore May 1.
+Second stay — 17 days on a fresh visa-free entry (Apr 14–May 1), no extension needed. Nusa Penida mantas, Komodo dragons and drift dives, then Bali rice terraces and a volcano at 3am before the hop to Singapore May 1.
 
 **Nusa Penida — 4 days (Apr 14–18)**
 - Apr 14: land DPS from Cebu (Entry 2 starts); Apr 15: fast boat Sanur → Penida
@@ -698,7 +698,7 @@ Gulf coast dry season — clear water, calm seas, 30°C in the islands. Koh Tao 
 ---
 
 ## Chapter 21 — CHINA
-### May 30 – Jun 17 · 19 days (Jun 16–17 shared buffer, thin — no slack before the home flight)
+### May 30 – Jun 17 · 18 days (Jun 16 buffer, thin — no slack before the home flight)
 *Theme: Ancient capital in perfect weather, then karst + old towns finale*
 
 Nineteen days: arrive Xi'an May 30 on the red-eye (tired first day — walls + Muslim Quarter only, Terracotta from Jun 1), then the southern karst at its greenest — including Zhangjiajie at peak season, when the pillars float above seas of cloud. Mist in the karst, mirror terraces, and lantern light to close the trip.
@@ -871,18 +871,18 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
 | 8 | China | 22 | 201 | 4,420 | Beijing 6n + Huangshan 3n + HGH 2n + SUZ 4n + Shenzhen friends 5n + CAN 2n · PEK→TXN + SUZ→SZX hops (Xi'an cut — spring only) |
 | 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · TECO filing Dec 3 · free gardens/markets |
-| 10 | China | 17 | 198 | 3,370 | Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 5n · Sanxingdui + karst tickets · CKG→PVG Dec 17 |
+| 10 | China | 17 | 211 | 3,590 | Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 7n (incl. buffer) · Sanxingdui + karst tickets · CKG→PVG Dec 17 |
 | 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
 | 12 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days · January tilt |
 | 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
 | 14 | Indonesia (Java + Bali + Raja) | 25 | 420 | 10,500 | Liveaboard $8,400 locked (Mar 11–20) · JKT→JOG→DPS ~$260 + DPS→SOQ ~$250 · Entry 1 Feb 24–Mar 21 (26d) |
 | 15 | Malaysia (Borneo) | 10 | 180 | 1,800 | Kinabatangan 3D2N ~$600 + 2 lodge nights (full board) · in from SOQ Mar 21 |
-| 16 | Philippines (post-Easter) | 15 | 205 | 3,075 | Manila 2n + Coron 5d + El Nido 4d peak vis · sardines (Malapascua dropped) |
+| 16 | Philippines (post-Easter) | 14 | 212 | 2,970 | Manila 2n + Coron 5d + El Nido 4d peak vis · sardines (Malapascua dropped) |
 | 17 | Indonesia (Penida + Komodo) | 17 | 198 | 3,360 | CEB→DPS in flights · Penida + Komodo dives Apr 15–25 · Batur · Entry 2 Apr 14–30 (17d) |
 | 18 | Singapore | 5 | 229 | 1,145 | ~$140/n · hawker-first food · Gardens domes |
 | 19 | Malaysia (KL 4n + Penang 6n) | 10 | 118 | 1,180 | KL + Penang guesthouses · SG→KL bus + ETS rail |
 | 20 | Thailand | 14 | 186 | 2,600 | Koh Tao 6d + Sail Rock buffer · Samui transit night · PEN→Tao May 16 · Kanchanaburi |
-| 21 | China | 19 | 200 | 3,795 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · 1d Changsha buffer |
+| 21 | China | 18 | 204 | 3,670 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · 1d Changsha buffer |
 
 Chapters subtotal: **$77,245** · 361 days.
 
