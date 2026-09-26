@@ -48,6 +48,13 @@ window.STORE = (function () {
         // so curated photo edits propagate without a cache bump or Reset.
         const src = srcById.get(c.id);
         if (src && Array.isArray(src.photos)) c.photos = src.photos.slice();
+        // per-place photos likewise (matched by name; renamed places keep theirs).
+        if (src && Array.isArray(src.places)) {
+          const photoByName = {};
+          src.places.forEach((p) => { photoByName[p.name] = p.photo || null; });
+          c.places.forEach((p) => { if (!p.photo && photoByName[p.name]) p.photo = photoByName[p.name]; });
+        }
+        return;
       });
       return;
     }
@@ -76,6 +83,7 @@ window.STORE = (function () {
         name: p.name,
         days: p.days,
         query: p.query,
+        photo: p.photo || null,
         coords: (window.TRIP_GEO.places[`${c.id}/${p.name}`] || null),
         highlights: p.highlights.slice(),
       })),
@@ -151,6 +159,7 @@ window.STORE = (function () {
         name: partial.name || 'New stop',
         days: partial.days || 1,
         query: partial.query || partial.name || 'New stop',
+        photo: partial.photo || null,
         coords: partial.coords || c.anchor.slice(),
         highlights: partial.highlights || [],
       };

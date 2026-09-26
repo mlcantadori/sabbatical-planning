@@ -65,6 +65,42 @@
   // ══════════════════════════════════════════════════════════════════════
   // DETAIL PANEL — full chapter detail. Read-only.
   // ══════════════════════════════════════════════════════════════════════
+  // Photo carousel — chapter header + one photo per stop with a photo.
+  // Arrows, dots, counter, swipe. Remount per chapter via key.
+  function PhotoCarousel({ items }) {
+    const [idx, setIdx] = React.useState(0);
+    const n = items.length;
+    const touchX = React.useRef(null);
+    if (!n) return null;
+    const go = (d) => setIdx((i) => (i + d + n) % n);
+    const cur = items[idx];
+    return (
+      <div className="detail-hero carousel"
+        onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          if (touchX.current == null) return;
+          const dx = e.changedTouches[0].clientX - touchX.current;
+          touchX.current = null;
+          if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+        }}>
+        <window.Photo key={cur.keyword} keyword={cur.keyword} ratio="auto"
+          style={{ width: '100%', height: '100%', aspectRatio: 'unset' }} caption={cur.caption} />
+        {n > 1 && (
+          <>
+            <button className="carousel-arrow is-left" onClick={() => go(-1)} aria-label="Previous photo">‹</button>
+            <button className="carousel-arrow is-right" onClick={() => go(1)} aria-label="Next photo">›</button>
+            <div className="carousel-count">{idx + 1} / {n}</div>
+            <div className="carousel-dots">
+              {items.map((it, i) => (
+                <button key={i} className={`carousel-dot${i === idx ? ' is-active' : ''}`} onClick={() => setIdx(i)} aria-label={`Photo ${i + 1}: ${it.caption}`} />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    );
+  }
+
   function DetailPanel({ chapterId, onClose, onSelectPlace, selectedPlaceIdx }) {
     const store = window.useStore();
     const ch = store.getChapter(chapterId);
@@ -92,14 +128,10 @@
         </div>
 
         <div className="detail-body">
-          <div className="detail-hero">
-            <window.Photo
-              keyword={ch.photos[0]}
-              ratio="auto"
-              style={{ width: '100%', height: '100%', aspectRatio: 'unset' }}
-              caption={`${ch.country.toUpperCase()} · ${fmt(ch.start)}`}
-            />
-          </div>
+          <PhotoCarousel key={ch.id} items={[
+            { keyword: ch.photos[0], caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}` },
+            ...ch.places.map((p, i) => (p.photo ? { keyword: p.photo, caption: `${i + 1}. ${p.name}` } : null)).filter(Boolean),
+          ]} />
 
           <h1 className="detail-title">{ch.title}</h1>
           {ch.theme && <div className="detail-theme">{ch.theme}.</div>}
@@ -114,15 +146,7 @@
 
           {ch.intro && <div className="detail-intro">{ch.intro}</div>}
 
-          {ch.photos.length > 1 && (
-                <div className="photo-strip">
-                  {ch.photos.slice(1, 4).map((k, i) => (
-                    <window.Photo key={i} keyword={k} ratio="3/4" />
-                  ))}
-                </div>
-              )}
-
-              <SectionHead num="01" title={`Itinerary · ${ch.places.length} stop${ch.places.length === 1 ? '' : 's'}`} />
+          <SectionHead num="01" title={`Itinerary · ${ch.places.length} stop${ch.places.length === 1 ? '' : 's'}`} />
               {ch.places.map((p, i) => {
                 const offsetDays = ch.places.slice(0, i).reduce((s, x) => s + x.days, 0);
                 const startDate = new Date(new Date(ch.start).getTime() + offsetDays * 86400000);
@@ -143,18 +167,9 @@
                 );
               })}
 
-              {ch.booking && ch.booking.length > 0 && (
-                <>
-                  <SectionHead num="02" title="Book in advance" small />
-                  <ul className="alert-list">
-                    {ch.booking.map((b, i) => <li key={i}>{b}</li>)}
-                  </ul>
-                </>
-              )}
-
               {ch.diving && (
                 <>
-                  <SectionHead num="03" title="Diving" small />
+                  <SectionHead num="02" title="Diving" small />
                   <div className="diving-inline">
                     <div><strong>{ch.diving.sites}</strong> sites · {ch.diving.type}</div>
                     <div className="muted">{ch.diving.operators}</div>
@@ -164,7 +179,7 @@
 
               {ch.decisions && ch.decisions.length > 0 && (
                 <>
-                  <SectionHead num="04" title="Route decisions" small />
+                  <SectionHead num="03" title="Route decisions" small />
                   <ul className="alert-list">
                     {ch.decisions.map((d, i) => <li key={i}>{d}</li>)}
                   </ul>

@@ -1,155 +1,122 @@
-// Curated photo sources keyed by chapter photo keyword.
-// Values are either:
-//   • an Unsplash photo ID string ("photo-XXXX") → loaded from images.unsplash.com
-//   • a full URL (Wikipedia Commons, etc.)       → loaded directly
-// Any keyword not found here falls back to loremflickr.com (real Flickr photos
-// matching the keyword). See shared.jsx Photo component.
+// Chapter + place photos — ALL LOCAL (extra-pictures/). No hotlinking,
+// no external fetches at runtime. Keywords map 1:1 to files.
+// Chapters use photos[0] as the header; places carry their own `photo`.
 
 window.PHOTO_IDS = {
-  // ── Brasil — Rio de Janeiro ────────────────────────────────────────────────
-  'rio aerial':                  'photo-1483729558449-99ef09a8c325', // aerial bay + Cristo ✓
-  'copacabana beach':            'photo-1516306580123-e6e52b1b7b5f', // Copacabana arc ✓
-  'lapa arches':                 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Centro_do_Rio_de_Janeiro_by_Diego_Baravelli.jpg',
-  'santa teresa rio':            'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bondinho_de_Santa_Teresa_na_Esta%C3%A7%C3%A3o_Carioca_02.jpg/1920px-Bondinho_de_Santa_Teresa_na_Esta%C3%A7%C3%A3o_Carioca_02.jpg',
-
-  // ── Brasil — São Paulo ─────────────────────────────────────────────────────
-  'masp sao paulo':              'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/MASP_Brazil.jpg/1920px-MASP_Brazil.jpg',
-  'sao paulo skyline':           'photo-1539037116277-4db20889f2d4', // ✓
-  'vila madelena art':           'https://upload.wikimedia.org/wikipedia/commons/e/eb/Por-do-Sol_%28P%C3%B3s-Chuva%29_-_Vila_Madalena_S%C3%A3o_Paulo_-_SP_-_Flickr_-_Rodrigo_Paoletti.jpg',
-  'ibirapuera park':             'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Parque_Ibirapuera_e_Obelisco_2017.jpg/1920px-Parque_Ibirapuera_e_Obelisco_2017.jpg',
-  // Local photos from the trip — see extra-pictures/cumbuco/
+  // ── Brasil ────────────────────────────────────────────────────────
+  'rio aerial':                  'extra-pictures/brasil/rio-aerial.jpg',
+  'copacabana beach':            'extra-pictures/brasil/copacabana-beach.jpg',
   'cumbuco beach kites':         'extra-pictures/cumbuco/20231014_154930.jpg',
   'cumbuco kitesurf':            'extra-pictures/cumbuco/PXL_20240921_142226699.jpg',
   'cumbuco mural':               'extra-pictures/cumbuco/PXL_20241103_003746700.jpg',
-  'super cumbuco':               'extra-pictures/cumbuco/Screenshot%202026-06-29%20at%2021.05.25.png',
-
-  // ── Toronto ───────────────────────────────────────────────────────────────
-  'toronto cn tower':            'photo-1517935706615-2717063c2225', // ✓
-  'toronto distillery':          'photo-1495567720989-cebdbdd97913', // ✓
-  'niagara falls':               'https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg',
-
-  // ── Greece ────────────────────────────────────────────────────────────────
-  'athens acropolis':            'photo-1555993539-1732b0258235',    // Parthenon ✓
-  'athens monastiraki':          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Monastiraki_Square_and_in_the_distance_the_Acropolis.jpg/1920px-Monastiraki_Square_and_in_the_distance_the_Acropolis.jpg',
-  'hydra island greece':         'photo-1533105079780-92b9be482077', // ✓
-  'cape sounion':                'https://upload.wikimedia.org/wikipedia/commons/c/c2/Cape_Sounion_AC.JPG',
-  'santorini oia':               'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Oia%2C_Santorini_sunset.jpg/1920px-Oia%2C_Santorini_sunset.jpg',
-  'folegandros chora':           'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Chora%2C_Folegandros%2C_Greece.jpg/1920px-Chora%2C_Folegandros%2C_Greece.jpg',
-  'chania old town':             'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Chania%2C_old_harbour_2019a.jpg/1920px-Chania%2C_old_harbour_2019a.jpg',
-  'milos sarakiniko':            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Sarakiniko_Beach_on_Milos_Island%2C_Greece_with_a_view_of_the_Aegean_Sea.jpg/1920px-Sarakiniko_Beach_on_Milos_Island%2C_Greece_with_a_view_of_the_Aegean_Sea.jpg',
-
-  // ── Turkey ────────────────────────────────────────────────────────────────
-  'istanbul mosque':             'photo-1524231757912-21f4fe3a7200', // ✓
-  'alacati aegean':              'https://upload.wikimedia.org/wikipedia/commons/2/23/Alacati_Streets.jpg',
-  'cappadocia balloons':         'photo-1527838832700-5059252407fa', // ✓
-  'kas harbour':                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ka%C5%9F%2C_Andifli%2C_07580_Ka%C5%9F-Antalya%2C_Turkey_-_panoramio.jpg/1920px-Ka%C5%9F%2C_Andifli%2C_07580_Ka%C5%9F-Antalya%2C_Turkey_-_panoramio.jpg',
-  'pamukkale terraces':          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/The_Travertine_terraces_of_Pamukkale.jpg/1920px-The_Travertine_terraces_of_Pamukkale.jpg',
-  'ephesus library':             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ephesus_-_Celsus_Library.jpg/1920px-Ephesus_-_Celsus_Library.jpg',
-
-  // ── Baku (vendored locally — see extra-pictures/baku/) ────────────────────
-  'baku flame towers':             'extra-pictures/baku/flame-towers-day.jpg',
-  'baku old city':                 'extra-pictures/baku/old-city.jpg',
-
-  // ── India ─────────────────────────────────────────────────────────────────
-  'taj mahal sunrise':           'photo-1524492412937-b28074a5d7da', // ✓
-  'varanasi ghats':              'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Boats_at_sunrise_Ganges_River_Varanasi_Uttar_Pradesh_Schwiki.jpg/1920px-Boats_at_sunrise_Ganges_River_Varanasi_Uttar_Pradesh_Schwiki.jpg',
-  'jaipur palace':               'photo-1599661046289-e31897846e41', // ✓
-  'rishikesh yoga':              'photo-1506905925346-21bda4d32df4', // ✓
-
-  // ── Nepal ─────────────────────────────────────────────────────────────────
-  'kathmandu boudhanath stupa':  'photo-1605640840605-14ac1855827b', // ✓
-  'annapurna himalaya':          'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/The_Annapurna_range_from_Pokhara.jpg/1920px-The_Annapurna_range_from_Pokhara.jpg',
-  'pokhara phewa lake':          'https://upload.wikimedia.org/wikipedia/commons/0/0c/Phewa_Lake_of_Pokhara_city.jpg',
-  'everest prayer flags':        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Mt.Everest%2C_Nupche_with_Prayer_flags.jpg/1920px-Mt.Everest%2C_Nupche_with_Prayer_flags.jpg',
-
-  // ── Japan – Autumn ────────────────────────────────────────────────────────
-  'kyoto autumn maple':          'https://upload.wikimedia.org/wikipedia/commons/0/0e/Eikando_Zenrinji-temple_Tahoto.JPG',
-  'tokyo shimokitazawa':         'photo-1540959733332-eab4deabeeaf', // ✓
-  'fushimi inari':               'photo-1493976040374-85c8e12f0c0e', // ✓
-  'osaka dotonbori':             'photo-1589452271712-64b8a66c7b71', // ✓
-  'arashiyama bamboo':           'photo-1524413840807-0c3cb6fa808d', // ✓
-
-  // ── South Korea ───────────────────────────────────────────────────────────
-  'seoul palace winter':         'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg/3840px-%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg',
-  'busan gamcheon':              'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg/1920px-Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg',
-  'gyeongju temple':             'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Geungnakjeon%2C_Bulguksa_01.jpg/1920px-Geungnakjeon%2C_Bulguksa_01.jpg',
-  'jeonju hanok':                'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Jeonju_Hanok_Village_20230408_006.jpg/1920px-Jeonju_Hanok_Village_20230408_006.jpg',
-  'korean street food':          'photo-1583623025817-d180a2221d0a', // ✓
-
-  // ── Taiwan ────────────────────────────────────────────────────────────────
-  'taipei 101 night':            'https://upload.wikimedia.org/wikipedia/commons/d/d9/Taipei_101_Night_View.jpg',
-  'jiufen old street':           'https://upload.wikimedia.org/wikipedia/commons/a/ad/A-Zhu_Peanut_Ice_Cream_Roll%2C_Jiufen_Old_Street%2C_2024.jpg',
-  'taroko gorge marble':         'photo-1563245372-f21724e3856d',    // ✓
-  'taiwan night market':         'photo-1513622470522-26c3c8a854bc', // ✓
-
-  // ── Japan – Winter ────────────────────────────────────────────────────────
-  'hakuba snowboarding':         'photo-1551698618-1dfe5d97d256',    // ✓
-  'kanazawa kenrokuen snow':     'photo-1528360983277-13d401cdc186', // ✓
-  'matsumoto castle winter':     'https://upload.wikimedia.org/wikipedia/commons/4/4d/Matsumoto_Castle_and_Reflection.jpg',
-  'japan onsen snow':            'photo-1542224566-6e85f2e6772f',    // ✓
-
-  // ── China Block 1 ─────────────────────────────────────────────────────────
-  'great wall snow':             'photo-1508804185872-d7badad00f7d', // ✓
-  'huangshan sea of clouds':     'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Sea_of_clouds_viewed_from_the_top_of_Huangshan.jpg/1920px-Sea_of_clouds_viewed_from_the_top_of_Huangshan.jpg',
-  'shanghai bund night':         'photo-1538428494232-9c0d8a3ab403', // ✓
-  'shanghai french concession':  'photo-1545569341-9eb8b30979d9',    // ✓
-  'shenzhen night skyline':      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Shenzhen_Skyline_At_Night_%28214551663%29.jpeg/1920px-Shenzhen_Skyline_At_Night_%28214551663%29.jpeg',
-  'guangzhou canton tower':       'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Canton_Tower_20241027.jpg/1920px-Canton_Tower_20241027.jpg',
-
-  // ── Hong Kong ─────────────────────────────────────────────────────────────
-  'hong kong skyline':           'https://upload.wikimedia.org/wikipedia/commons/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg',
-  'kowloon neon':                'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mong_Kok_Neon_Signs_Night_%2848127904386%29.jpg/1920px-Mong_Kok_Neon_Signs_Night_%2848127904386%29.jpg',
-  'hong kong dim sum':           'photo-1496116218417-1a781b1c416c', // ✓
-
-  // ── Philippines ───────────────────────────────────────────────────────────
-  'el nido lagoon':              'https://upload.wikimedia.org/wikipedia/commons/4/4f/Island_lagoon_in_Bacuit_Bay%2C_El_Nido%2C_Palawan%2C_Philippines.jpg',
-  'coron kayangan lake':         'photo-1537996194471-e657df975ab4', // ✓
-  'moalboal sardine run':        'https://upload.wikimedia.org/wikipedia/commons/a/af/Sardine_run_over_seafloor_in_Moalboal_04.jpg',
-  'intramuros manila':           'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Manila%2C_Fort_Santiago%2C_Walled_city_of_Intramuros%2C_Philippines.jpg/1920px-Manila%2C_Fort_Santiago%2C_Walled_city_of_Intramuros%2C_Philippines.jpg',
-
-  // ── Indonesia – Raja Ampat ────────────────────────────────────────────────
-  'raja ampat aerial wayag':     'photo-1544551763-46a013bb70d5',    // ✓
-  'manta ray cleaning station':  'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Reef_manta_ray_%28Manta_alfredi%29_-_49877611423.jpg/1920px-Reef_manta_ray_%28Manta_alfredi%29_-_49877611423.jpg',
-  'coral reef indonesia':        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Coral_in_Raja_Ampat.jpg/1920px-Coral_in_Raja_Ampat.jpg',
-  'pygmy seahorse':              'photo-1546026423-cc4642628d2b',    // ✓
-  'reef sharks':                 'https://upload.wikimedia.org/wikipedia/commons/5/59/Caribbean_reef_shark.jpg',
-
-  // ── Indonesia – Block 2 ───────────────────────────────────────────────────
-  'kelingking beach trex':       'photo-1573790387438-4da905039392', // ✓
-  'padar island viewpoint':      'photo-1518548419970-58e3b4079ab2', // ✓
-  'komodo dragon':               'photo-1583212292454-1fe6229603b7', // ✓
-  'bali ubud rice terrace':      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Tegallalang_Rice_Terraces_Bali.jpg/1920px-Tegallalang_Rice_Terraces_Bali.jpg',
-  'mount batur sunrise':         'photo-1539367628448-4bc5c9d171c8', // ✓
-
-  // ── Borneo ────────────────────────────────────────────────────────────────
-  'borneo orangutan':            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bornean_Orangutan_%28Pongo_pygmaeus%29_%2814562544106%29.jpg/1920px-Bornean_Orangutan_%28Pongo_pygmaeus%29_%2814562544106%29.jpg',
-  'kinabatangan river':          'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kinabatangan_River_%2814154417142%29.jpg/1920px-Kinabatangan_River_%2814154417142%29.jpg',
-  'proboscis monkey':            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/3840px-Proboscis_Monkey_in_Borneo.jpg',
-  'sepilok':                     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-07.jpg/1920px-Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-07.jpg',
-
-  // ── Singapore ─────────────────────────────────────────────────────────────
-  'gardens by the bay supertree':'photo-1525625293386-3f8f99389edd', // ✓
-  'marina bay sands night':      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Singapore_Marina_Bay_Dusk_2018-02-27.jpg/1920px-Singapore_Marina_Bay_Dusk_2018-02-27.jpg',
-  'singapore hawker food':       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Lunch_time_at_Maxwell_Food_Centre.JPG/1920px-Lunch_time_at_Maxwell_Food_Centre.JPG',
-  'changi airport waterfall':    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rain_Vortex_Jewel_Changi_Airport.jpg/1920px-Rain_Vortex_Jewel_Changi_Airport.jpg',
-
-  // ── Malaysia ──────────────────────────────────────────────────────────────
-  'petronas towers night':       'photo-1596422846543-75c6fc197f07', // ✓
-  'batu caves rainbow steps':    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Batu_Caves_stairs_2022-05.jpg/3840px-Batu_Caves_stairs_2022-05.jpg',
-  'penang street art':           'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Penang_-_Little_Children_on_a_Bicycle.JPG/1920px-Penang_-_Little_Children_on_a_Bicycle.JPG',
-  'penang hawker':               'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Penang_Char_Kuey_Teow_%28Stir_fried_flat_rice_noodle%29.jpg/1920px-Penang_Char_Kuey_Teow_%28Stir_fried_flat_rice_noodle%29.jpg',
-
-  // ── Thailand ──────────────────────────────────────────────────────────────
-  'koh samui beach':             'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Koh_Samui%2C_Beach%2C_Thailand.jpg/1920px-Koh_Samui%2C_Beach%2C_Thailand.jpg',
-  'bangkok wat arun':            'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_30.jpg/1920px-Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_30.jpg',
-  'bangkok street food':         'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2814%29.jpg/1920px-2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2814%29.jpg',
-  'koh tao diving':              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Koh_tao_1.jpg/1920px-Koh_tao_1.jpg',
-
-  // ── China Block 2 ─────────────────────────────────────────────────────────
-  'guilin karst li river':       'photo-1547981609-4b6bfe67ca0b',    // ✓
-  'zhangjiajie avatar pillars':  'photo-1513415277900-a62401e19be4', // ✓
-  'chongqing cyberpunk night':   'photo-1601921004897-b7d582836990', // ✓
-  'chengdu panda':               'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/3840px-Grosser_Panda.JPG',
-  'wulong three bridges':        'https://upload.wikimedia.org/wikipedia/commons/3/33/Wulongtianshengsanqiao.JPG',
-  'xian terracotta warriors':    'photo-1598935898639-81586f7d2129', // ✓
+  'super cumbuco':               'extra-pictures/cumbuco/super-cumbuco.jpg',
+  'masp sao paulo':              'extra-pictures/brasil/masp-sao-paulo.jpg',
+  // ── Toronto ───────────────────────────────────────────────────────
+  'toronto cn tower':            'extra-pictures/toronto/toronto-cn-tower.jpg',
+  'toronto distillery':          'extra-pictures/toronto/toronto-distillery.jpg',
+  // ── Greece ────────────────────────────────────────────────────────
+  'athens acropolis':            'extra-pictures/athens/athens-acropolis.jpg',
+  'athens monastiraki':          'extra-pictures/athens/athens-monastiraki.jpg',
+  'chania old town':             'extra-pictures/athens/chania-old-town.jpg',
+  'rethymno old town':           'extra-pictures/athens/rethymno-old-town.jpg',
+  'santorini oia':               'extra-pictures/athens/santorini-oia.jpg',
+  'folegandros chora':           'extra-pictures/athens/folegandros-chora.jpg',
+  'milos sarakiniko':            'extra-pictures/athens/milos-sarakiniko.jpg',
+  'cape sounion':                'extra-pictures/athens/cape-sounion.jpg',
+  // ── Turkey ────────────────────────────────────────────────────────
+  'cappadocia balloons':         'extra-pictures/turkey/cappadocia-balloons.jpg',
+  'goreme valley':               'extra-pictures/turkey/goreme-valley.jpg',
+  'alacati aegean':              'extra-pictures/turkey/alacati-aegean.jpg',
+  'ephesus library':             'extra-pictures/turkey/ephesus-library.jpg',
+  'kas harbour':                 'extra-pictures/turkey/kas-harbour.jpg',
+  'akyaka azmak':                'extra-pictures/turkey/akyaka-azmak.jpg',
+  'istanbul mosque':             'extra-pictures/turkey/istanbul-mosque.jpg',
+  // ── Baku (local) ──────────────────────────────────────────────────
+  'baku flame towers':           'extra-pictures/baku/flame-towers-day.jpg',
+  'baku old city':               'extra-pictures/baku/old-city.jpg',
+  // ── India ─────────────────────────────────────────────────────────
+  'taj mahal sunrise':           'extra-pictures/india/taj-mahal-sunrise.jpg',
+  'old delhi jama masjid':       'extra-pictures/india/old-delhi-jama-masjid.jpg',
+  'varanasi ghats':              'extra-pictures/india/varanasi-ghats.jpg',
+  // ── Nepal ─────────────────────────────────────────────────────────
+  'annapurna himalaya':          'extra-pictures/nepal/annapurna-himalaya.jpg',
+  'kathmandu boudhanath stupa':  'extra-pictures/nepal/kathmandu-boudhanath-stupa.jpg',
+  'everest prayer flags':        'extra-pictures/nepal/everest-prayer-flags.jpg',
+  'patan durbar':                'extra-pictures/nepal/patan-durbar.jpg',
+  // ── China E1 ──────────────────────────────────────────────────────
+  'great wall snow':             'extra-pictures/china-e1/great-wall-snow.jpg',
+  'forbidden city':              'extra-pictures/china-e1/forbidden-city.jpg',
+  'huangshan sea of clouds':     'extra-pictures/china-e1/huangshan-sea-of-clouds.jpg',
+  'west lake':                   'extra-pictures/china-e1/west-lake.jpg',
+  'suzhou garden':               'extra-pictures/china-e1/suzhou-garden.jpg',
+  // ── Hong Kong ─────────────────────────────────────────────────────
+  'hong kong skyline':           'extra-pictures/hk/hong-kong-skyline.jpg',
+  'kowloon neon':                'extra-pictures/hk/kowloon-neon.jpg',
+  // ── China E2 ──────────────────────────────────────────────────────
+  'shenzhen night skyline':      'extra-pictures/china-e2/shenzhen-night-skyline.jpg',
+  'huaqiangbei':                 'extra-pictures/china-e2/huaqiangbei.jpg',
+  'macau st paul':               'extra-pictures/china-e2/macau-st-paul.jpg',
+  'guangzhou canton tower':      'extra-pictures/china-e2/guangzhou-canton-tower.jpg',
+  'shanghai bund night':         'extra-pictures/china-e2/shanghai-bund-night.jpg',
+  'chengdu panda':               'extra-pictures/china-e2/chengdu-panda.jpg',
+  'chongqing cyberpunk night':   'extra-pictures/china-e2/chongqing-cyberpunk-night.jpg',
+  'wulong three bridges':        'extra-pictures/china-e2/wulong-three-bridges.jpg',
+  // ── Korea ─────────────────────────────────────────────────────────
+  'seoul palace winter':         'extra-pictures/korea/seoul-palace-winter.jpg',
+  'busan gamcheon':              'extra-pictures/korea/busan-gamcheon.jpg',
+  'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
+  'jeonju hanok':                'extra-pictures/korea/jeonju-hanok.jpg',
+  'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
+  // ── Taiwan ────────────────────────────────────────────────────────
+  'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
+  'taiwan night market':         'extra-pictures/taiwan/taiwan-night-market.jpg',
+  'taroko gorge marble':         'extra-pictures/taiwan/taroko-gorge-marble.jpg',
+  'anping fort':                 'extra-pictures/taiwan/anping-fort.jpg',
+  // ── Japan ─────────────────────────────────────────────────────────
+  'fushimi inari':               'extra-pictures/japan/fushimi-inari.jpg',
+  'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',
+  'osaka dotonbori':             'extra-pictures/japan/osaka-dotonbori.jpg',
+  'tokyo shimokitazawa':         'extra-pictures/japan/tokyo-shimokitazawa.jpg',
+  'hakuba snowboarding':         'extra-pictures/japan/hakuba-snowboarding.png',
+  // ── Indonesia A ───────────────────────────────────────────────────
+  'raja ampat aerial wayag':     'extra-pictures/indonesia-a/raja-ampat-aerial-wayag.jpg',
+  'jakarta monas':               'extra-pictures/indonesia-a/jakarta-monas.jpg',
+  'borobudur sunrise':           'extra-pictures/indonesia-a/borobudur-sunrise.jpg',
+  'bali ubud rice terrace':      'extra-pictures/indonesia-a/bali-ubud-rice-terrace.jpg',
+  'manta ray cleaning station':  'extra-pictures/indonesia-a/manta-ray-cleaning-station.jpg',
+  // ── Borneo ────────────────────────────────────────────────────────
+  'borneo orangutan':            'extra-pictures/borneo/borneo-orangutan.jpg',
+  'kk city mosque':              'extra-pictures/borneo/kk-city-mosque.jpg',
+  'sepilok':                     'extra-pictures/borneo/sepilok.jpg',
+  'kinabatangan river':          'extra-pictures/borneo/kinabatangan-river.jpg',
+  // ── Philippines ───────────────────────────────────────────────────
+  'el nido lagoon':              'extra-pictures/philippines/el-nido-lagoon.jpg',
+  'intramuros manila':           'extra-pictures/philippines/intramuros-manila.jpg',
+  'coron kayangan lake':         'extra-pictures/philippines/coron-kayangan-lake.jpg',
+  'el nido big lagoon':          'extra-pictures/philippines/el-nido-big-lagoon.jpg',
+  'moalboal sardine run':        'extra-pictures/philippines/moalboal-sardine-run.jpg',
+  // ── Indonesia B ───────────────────────────────────────────────────
+  'kelingking beach trex':       'extra-pictures/indonesia-b/kelingking-beach-trex.jpg',
+  'broken beach':                'extra-pictures/indonesia-b/broken-beach.jpg',
+  'komodo dragon':               'extra-pictures/indonesia-b/komodo-dragon.jpg',
+  'mount batur sunrise':         'extra-pictures/indonesia-b/mount-batur-sunrise.jpg',
+  // ── Singapore ─────────────────────────────────────────────────────
+  'gardens by the bay supertree': 'extra-pictures/singapore/gardens-by-the-bay-supertree.jpg',
+  'marina bay sands night':      'extra-pictures/singapore/marina-bay-sands-night.jpg',
+  // ── Malaysia ──────────────────────────────────────────────────────
+  'petronas towers night':       'extra-pictures/malaysia/petronas-towers-night.jpg',
+  'batu caves rainbow steps':    'extra-pictures/malaysia/batu-caves-rainbow-steps.jpg',
+  'penang street art':           'extra-pictures/malaysia/penang-street-art.jpg',
+  // ── Thailand ──────────────────────────────────────────────────────
+  'koh tao diving':              'extra-pictures/thailand/koh-tao-diving.jpg',
+  'koh tao sail rock':           'extra-pictures/thailand/koh-tao-sail-rock.jpg',
+  'koh samui beach':             'extra-pictures/thailand/koh-samui-beach.jpg',
+  'bangkok wat arun':            'extra-pictures/thailand/bangkok-wat-arun.jpg',
+  // ── China Spring ──────────────────────────────────────────────────
+  'xian terracotta warriors':    'extra-pictures/china-spring/xian-terracotta-warriors.jpg',
+  'xian city wall':              'extra-pictures/china-spring/xian-city-wall.jpg',
+  'guilin karst li river':       'extra-pictures/china-spring/guilin-karst-li-river.jpg',
+  'longji terraces':             'extra-pictures/china-spring/longji-terraces.jpg',
+  'zhangjiajie avatar pillars':  'extra-pictures/china-spring/zhangjiajie-avatar-pillars.jpg',
+  'fenghuang riverside':         'extra-pictures/china-spring/fenghuang-riverside.jpg',
 };

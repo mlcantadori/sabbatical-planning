@@ -80,6 +80,57 @@
   // ══════════════════════════════════════════════════════════════════════
   // DETAIL PANEL — full chapter detail. Read-only.
   // ══════════════════════════════════════════════════════════════════════
+  // Photo carousel — chapter header + one photo per stop with a photo.
+  // Arrows, dots, counter, swipe. Remount per chapter via key.
+  function PhotoCarousel({
+    items
+  }) {
+    const [idx, setIdx] = React.useState(0);
+    const n = items.length;
+    const touchX = React.useRef(null);
+    if (!n) return null;
+    const go = d => setIdx(i => (i + d + n) % n);
+    const cur = items[idx];
+    return /*#__PURE__*/React.createElement("div", {
+      className: "detail-hero carousel",
+      onTouchStart: e => {
+        touchX.current = e.touches[0].clientX;
+      },
+      onTouchEnd: e => {
+        if (touchX.current == null) return;
+        const dx = e.changedTouches[0].clientX - touchX.current;
+        touchX.current = null;
+        if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+      }
+    }, /*#__PURE__*/React.createElement(window.Photo, {
+      key: cur.keyword,
+      keyword: cur.keyword,
+      ratio: "auto",
+      style: {
+        width: '100%',
+        height: '100%',
+        aspectRatio: 'unset'
+      },
+      caption: cur.caption
+    }), n > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+      className: "carousel-arrow is-left",
+      onClick: () => go(-1),
+      "aria-label": "Previous photo"
+    }, "\u2039"), /*#__PURE__*/React.createElement("button", {
+      className: "carousel-arrow is-right",
+      onClick: () => go(1),
+      "aria-label": "Next photo"
+    }, "\u203A"), /*#__PURE__*/React.createElement("div", {
+      className: "carousel-count"
+    }, idx + 1, " / ", n), /*#__PURE__*/React.createElement("div", {
+      className: "carousel-dots"
+    }, items.map((it, i) => /*#__PURE__*/React.createElement("button", {
+      key: i,
+      className: `carousel-dot${i === idx ? ' is-active' : ''}`,
+      onClick: () => setIdx(i),
+      "aria-label": `Photo ${i + 1}: ${it.caption}`
+    })))));
+  }
   function DetailPanel({
     chapterId,
     onClose,
@@ -120,18 +171,16 @@
       size: 16
     })))), /*#__PURE__*/React.createElement("div", {
       className: "detail-body"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "detail-hero"
-    }, /*#__PURE__*/React.createElement(window.Photo, {
-      keyword: ch.photos[0],
-      ratio: "auto",
-      style: {
-        width: '100%',
-        height: '100%',
-        aspectRatio: 'unset'
-      },
-      caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}`
-    })), /*#__PURE__*/React.createElement("h1", {
+    }, /*#__PURE__*/React.createElement(PhotoCarousel, {
+      key: ch.id,
+      items: [{
+        keyword: ch.photos[0],
+        caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}`
+      }, ...ch.places.map((p, i) => p.photo ? {
+        keyword: p.photo,
+        caption: `${i + 1}. ${p.name}`
+      } : null).filter(Boolean)]
+    }), /*#__PURE__*/React.createElement("h1", {
       className: "detail-title"
     }, ch.title), ch.theme && /*#__PURE__*/React.createElement("div", {
       className: "detail-theme"
@@ -159,13 +208,7 @@
       sub: "rainy days"
     })), ch.intro && /*#__PURE__*/React.createElement("div", {
       className: "detail-intro"
-    }, ch.intro), ch.photos.length > 1 && /*#__PURE__*/React.createElement("div", {
-      className: "photo-strip"
-    }, ch.photos.slice(1, 4).map((k, i) => /*#__PURE__*/React.createElement(window.Photo, {
-      key: i,
-      keyword: k,
-      ratio: "3/4"
-    }))), /*#__PURE__*/React.createElement(SectionHead, {
+    }, ch.intro), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
       title: `Itinerary · ${ch.places.length} stop${ch.places.length === 1 ? '' : 's'}`
     }), ch.places.map((p, i) => {
@@ -184,16 +227,8 @@
         isActive: selectedPlaceIdx === i,
         onSelect: () => onSelectPlace(i)
       });
-    }), ch.booking && ch.booking.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
+    }), ch.diving && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
       num: "02",
-      title: "Book in advance",
-      small: true
-    }), /*#__PURE__*/React.createElement("ul", {
-      className: "alert-list"
-    }, ch.booking.map((b, i) => /*#__PURE__*/React.createElement("li", {
-      key: i
-    }, b)))), ch.diving && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
-      num: "03",
       title: "Diving",
       small: true
     }), /*#__PURE__*/React.createElement("div", {
@@ -201,7 +236,7 @@
     }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, ch.diving.sites), " sites \xB7 ", ch.diving.type), /*#__PURE__*/React.createElement("div", {
       className: "muted"
     }, ch.diving.operators))), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
-      num: "04",
+      num: "03",
       title: "Route decisions",
       small: true
     }), /*#__PURE__*/React.createElement("ul", {
