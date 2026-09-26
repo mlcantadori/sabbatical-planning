@@ -97,7 +97,7 @@ window.TODO_ITEMS = [
   { id: 'china-e2-1-guangzhou', ch: 'china-e2', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Dec 3–5', due: '2026-10-15', done: false },
   { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (7n)', note: 'Dec 5–12 — heated MODERN hotel (no lane houses, no central heating)', due: '2026-10-15', done: false },
   { id: 'china-e2-1-chengdu', ch: 'china-e2', place: 'Chengdu', cat: 'stay', title: 'Chengdu stay (5n)', note: 'Dec 12–17', due: '2026-11-01', done: false },
-  { id: 'china-e2-1-chongqing', ch: 'china-e2', place: 'Chongqing', cat: 'stay', title: 'Chongqing stays (Dec 17–19 + Dec 21–24 buffer)', note: 'City nights bracketing Wulong; heated hotel', due: '2026-11-01', done: false },
+  { id: 'china-e2-1-chongqing', ch: 'china-e2', place: 'Chongqing', cat: 'stay', title: 'Chongqing stays (Dec 17–19 + Dec 21–24)', note: 'Split stay around Wulong; heated hotel; last nights before Korea', due: '2026-11-01', done: false },
   { id: 'china-e2-1-wulong', ch: 'china-e2', place: 'Wulong', cat: 'stay', title: 'Xiannvshan Town stay (2n)', note: 'Dec 19–21, karst overnight', due: '2026-11-01', done: false },
   { id: 'china-e2-2', ch: 'china-e2', place: 'Chengdu', cat: 'attraction', title: 'Sanxingdui tickets', note: 'WeChat mini-program, 20:00 five days out, NO walk-up — book Dec 7 from Shanghai!', due: '2026-12-07', done: false },
   { id: 'china-e2-7', ch: 'china-e2', place: 'Shenzhen → Guangzhou', cat: 'transport', title: 'Shenzhen–Guangzhou HSR Dec 3 (~1h)', note: 'Buy days ahead', due: '2026-11-25', done: false },

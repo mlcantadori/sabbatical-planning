@@ -357,12 +357,14 @@ Second mainland entry — a 26-day southern + western run inside the 30-day visa
 - Hotpot ×3 — winter is the season
 - HSR Chengdu → Chongqing (~1h) Dec 17
 
-**Chongqing — 2 days (Dec 17–19)**
+**Chongqing — 5 days (Dec 17–19 + Dec 21–24)**
 - The most cyberpunk city on Earth: 34M people, bridges everywhere
 - Hongyadong stilted riverfront — view from Qiansimen Bridge at night, don't queue inside
 - Cable car across the Yangtze River, Ciqikou old town slow half-day
 - Hotpot capital — mandatory multiple visits
 - HSR Chongqing East → Wulong South (~34min) Dec 19 morning
+- Dec 21–24: back from Wulong — slow days, laundry, Korea prep, hotpot farewell
+- Dec 24: fly Chongqing → Seoul (CA439 morning / Asiana redeye, verified routable) — Korea begins
 
 **Wulong — 2 days (Dec 19–21)**
 - Overnight in Xiannvshan Town — winter-emptiest UNESCO karst (low-season ¥210 combined ticket)
@@ -371,11 +373,7 @@ Second mainland entry — a 26-day southern + western run inside the 30-day visa
 - Non-slip shoes (walkways can ice); fog lifts ~10–11am
 - Dec 21: HSR back to Chongqing
 
-**Buffer — 3 days (Dec 21–24)**
-- Slow days in Chongqing — laundry, Korea prep, hotpot farewell
-- Dec 24: fly Chongqing → Seoul (CA439 morning / Asiana redeye, verified routable) — Korea begins
-
-*China E2: 26 days. Shenzhen (5) + Guangzhou (2) + Shanghai (7) + Chengdu (5) + Chongqing (2) + Wulong (2) + buffer (3) ✓*
+*China E2: 26 days. Shenzhen (5) + Guangzhou (2) + Shanghai (7) + Chengdu (5) + Chongqing (5) + Wulong (2) ✓*
 
 ---
 
