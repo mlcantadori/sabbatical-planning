@@ -55,7 +55,7 @@
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
 | 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
-| 8 | china-e1 | 2026-11-10 → 2026-12-02 | SCOPE (22d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ → Shenzhen friends Nov 25–30 → CAN → HK; Xi'an cut — spring only) |
+| 8 | china-e1 | 2026-11-10 → 2026-12-02 | SCOPE (22d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ → Shenzhen friends Nov 23–30 + Macau option → CAN → HK; Xi'an cut — spring only) |
 | 9 | hk | 2026-12-02 → 2026-12-07 | SCOPE (visa reset + Taiwan-visa filing Dec 3) |
 | 10 | china-e2 | 2026-12-07 → 2026-12-24 | SCOPE (17d: Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 5n + buffer) |
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |

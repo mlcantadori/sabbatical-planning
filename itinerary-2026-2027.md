@@ -269,40 +269,40 @@ Route: Pokhara → Ulleri → Ghorepani → Poon Hill → Tadapani → Chomrong 
 
 The first mainland admission runs 22 days north-to-south, inside the 25-day comfort limit. Beijing first while winter light is crisp (empty Wall) plus a slow hutong day, then straight south to Huangshan with West Sea Canyon still open, Jiangnan gardens at foliage peak, then south for friends' finale in Shenzhen and the Cantonese blitz in Guangzhou before Hong Kong.
 
-**Beijing — 6 days (Nov 10–16)**
+**Beijing — 5 days (Nov 10–15)**
 - Fly in from Kathmandu Nov 9 (via Chengdu) — Entry 1 starts Nov 10
 - Great Wall (Mutianyu): empty, pick the bluest morning
-- Forbidden City in crisp winter light (closed Mondays — Nov 16 is a Monday, plan Tue–Sun)
+- Forbidden City in crisp winter light (closed Mondays; reservation-only — book ~1 week ahead)
 - Temple of Heaven + 798 Art District
-- Hutong slow day + Drum/Bell Towers, Peking duck
+- Hutong + Drum/Bell Towers, Peking duck
 - Down/fleece bought in Kathmandu Thamel — Guangzhou trick no longer works
-- Fly Beijing → Huangshan (Tunxi) Nov 16 (~2.5h)
+- Fly Beijing → Huangshan (Tunxi) Nov 15 (~2.5h)
 
-**Huangshan — 3 days (Nov 16–19)**
+**Huangshan — 3 days (Nov 15–18)**
 - Yellow Mountain: autumn foliage + early rime, sea of clouds
 - West Sea Canyon OPEN (closes Dec–Mar) — November timing is the whole point
 - Bright Summit sunrise above the cloud sea
 - Windproof shell + traction spikes in Tangkou if icy
 - Book summit hotel ~3 days ahead; front-load the canyon days
-- Bus to Hangzhou Nov 19
+- Bus to Hangzhou Nov 18
 
-**Hangzhou — 2 days (Nov 19–21)**
+**Hangzhou — 2 days (Nov 18–20)**
 - West Lake in autumn color — Broken Bridge, Su Causeway, golden gingkoes
 - Lingyin Temple in cedar quiet, Meijiawu tea village
 - Hefang Street old town
-- HSR Hangzhou → Suzhou (~1.5h) Nov 21
+- HSR Hangzhou → Suzhou (~1.5h) Nov 20
 
-**Suzhou — 4 days (Nov 21–25)**
+**Suzhou — 3 days (Nov 20–23)**
 - Humble Administrator's Garden + Lion Grove in autumn color — peak week
 - Tongli water town slow day — misty canals, empty bridges
-- Extra garden morning (freed Xi'an night): Master of the Nets + museum
 - Pingjiang Road canals at dusk (skip the Silk Museum for lived-in lanes)
-- Via Shanghai airports Nov 25 — fly to Shenzhen (in-chapter hop)
+- Via Shanghai airports Nov 23 — fly to Shenzhen (in-chapter hop)
 
-**Shenzhen — 5 days (Nov 25–30)**
-- Five days with friends (Nov 25–30 ✓ — inside the Nov 24–Dec 1 window!)
+**Shenzhen — 7 days (Nov 23–30)**
+- Seven days with friends (Nov 23–30 ✓ — inside the Nov 24–Dec 1 window!)
 - Huaqiangbei Electronics Market: world's largest, floors of components
 - OCT-LOFT Contemporary Art District
+- Macau day trip (Shekou ferry) or 1n — tentative
 - Dapeng Peninsula coastal hike (optional)
 - Dafen Oil Painting Village (pass-through only)
 - HSR Shenzhen → Guangzhou (~1h) Nov 30
@@ -313,7 +313,7 @@ The first mainland admission runs 22 days north-to-south, inside the 25-day comf
 - Canton Tower at night
 - HSR Guangzhou → Hong Kong Dec 2 (morning train + 1h buffer)
 
-*China E1: 22 days. Beijing (6) + Huangshan (3) + Hangzhou (2) + Suzhou (4) + Shenzhen (5) + Guangzhou (2) ✓*
+*China E1: 22 days. Beijing (5) + Huangshan (3) + Hangzhou (2) + Suzhou (3) + Shenzhen (7) + Guangzhou (2) ✓*
 
 ---
 
@@ -367,14 +367,17 @@ Second mainland entry — 16 counted days, clock reset in Hong Kong, huge buffer
 - Non-slip shoes (walkways can ice); fog lifts ~10–11am
 - HSR back to Chongqing, fly CKG → PVG Dec 17 (morning)
 
-**Shanghai — 7 days (Dec 17–24)**
+**Shanghai — 5 days (Dec 17–22)**
 - French Concession café season — heated MODERN hotels only (no lane houses, no central heating)
 - The Bund at night, Yu Garden, Tianzifang, M50 art district
 - Wuzhen water-town day trip option (or second slow day)
-- Laundry, trip planning, Korea prep
-- Dec 22–23: protected buffer — no bonus day trips, then fly Shanghai → Seoul Dec 24 — Korea begins (Christmas Eve flight, booked early)
 
-*China E2: 17 days. Chengdu (6) + Chongqing (2) + Wulong (2) + Shanghai (7, incl. Dec 22–23 buffer) ✓*
+**Buffer — 2 days (Dec 22–24)**
+- Protected buffer in Shanghai — no bonus day trips
+- Laundry, trip planning, Korea prep
+- Dec 24: fly Shanghai → Seoul — Korea begins (Christmas Eve flight, booked early)
+
+*China E2: 17 days. Chengdu (6) + Chongqing (2) + Wulong (2) + Shanghai (5) + buffer (2) ✓*
 
 ---
 
@@ -869,7 +872,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
 | 6 | India | 7 | 142 | 995 | Agra day trip Oct 15 · train to Varanasi Oct 17 06:00 booked ✅ · VNS→KTM Oct 21 08:30 booked ✅ ($343) |
 | 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
-| 8 | China | 22 | 201 | 4,420 | Beijing 6n + Huangshan 3n + HGH 2n + SUZ 4n + Shenzhen friends 5n + CAN 2n · PEK→TXN + SUZ→SZX hops (Xi'an cut — spring only) |
+| 8 | China | 22 | 200 | 4,410 | Beijing 5n + Huangshan 3n + HGH 2n + SUZ 3n + Shenzhen friends 7n (incl. Macau?) + CAN 2n · PEK→TXN + SUZ→SZX hops (Xi'an cut — spring only) |
 | 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · TECO filing Dec 3 · free gardens/markets |
 | 10 | China | 17 | 211 | 3,590 | Chengdu 6n + CQ 2n + Wulong 2d/1n + Shanghai 7n (incl. buffer) · Sanxingdui + karst tickets · CKG→PVG Dec 17 |
 | 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
