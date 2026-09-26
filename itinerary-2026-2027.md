@@ -512,7 +512,7 @@ Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). 
 
 **Ubud — 8 days (Mar 1–9)**
 - Slow staging before the liveaboard — Tegallalang rice terraces at dawn, Tirta Empul water temple
-- Cooking class + Monkey Forest, massages — no agenda
+- Monkey Forest, massages — no agenda
 - Mar 8: Nyepi silent day — hotel-only rest day, airport closed, no traffic
 - Gear check; Mar 10: fly DPS → Sorong via Makassar (book 6–8 weeks ahead, Lebaran surge)
 
@@ -629,7 +629,6 @@ Second stay — 17 days on a fresh visa-free entry (Apr 14–30), no extension n
 - Apr 25: fly Labuan Bajo → Bali
 - Tanah Lot sunset temple on a sea rock
 - Seminyak / Canggu beach club final evening
-- Balinese cooking class
 - Mount Batur: 3am departure, 2-hour hike to crater rim at 1,717m
 - Sunrise over the caldera and crater lake — fly Bali → Singapore May 1 ✓
 
