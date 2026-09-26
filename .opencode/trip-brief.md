@@ -57,7 +57,7 @@
 | 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
 | 8 | china-e1 | 2026-11-10 → 2026-11-23 | SCOPE (13d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
 | 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset + Taiwan-visa filing Nov 24) |
-| 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: Shenzhen 5n (rendezvous tail) + CAN 2n + Shanghai 7n + Chengdu 5n + CQ 5n (split around Wulong) + Wulong 2d/1n; CKG→ICN Dec 24 verified) |
+| 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: Shenzhen 5n (rendezvous tail) + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split around Wulong) + Wulong 2d/1n; CKG→ICN Dec 24 verified) |
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
 | 12 | taiwan | 2027-01-11 → 2027-01-25 | SCOPE (14d post-Korea thaw) |
 | 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Hakuba week LOCKED inside) |
@@ -80,7 +80,7 @@
   Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two).
 - India e-Visa required before Oct 14 Delhi arrival.
 - To-buy / estimates (routable in principle, but chained — flag ripple effects):
-  KTM→PEK Nov 9 · PEK→TXN Nov 16 · SUZ→SZX Nov 25 · SZX→CAN HSR Nov 30 · GZ→SHA Dec 2 ·
+  KTM→PEK Nov 9 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 ·
   SHA→HKG Dec 9 · HK→CTU Dec 14 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop ·
   ICN→TPE Jan 11 · TPE→KIX Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·

@@ -332,15 +332,21 @@ Second mainland entry — a 26-day southern + western run inside the 30-day visa
 - OCT-LOFT Contemporary Art District
 - Dapeng Peninsula coastal hike (optional)
 - Dafen Oil Painting Village (pass-through only)
-- HSR Shenzhen → Guangzhou (~1h) Dec 3
+- Ferry Shekou → Macau (~1h) Dec 3
 
-**Guangzhou — 2 days (Dec 3–5)**
+**Macau — 2 days (Dec 3–5)**
+- Ruins of St. Paul's, Senado Square, A-Ma Temple
+- Egg tarts + Macanese dinner
+- Cotai lights evening option
+- Dec 5: cross to Zhuhai (Gongbei border), HSR Zhuhai → Guangzhou (~1h)
+
+**Guangzhou — 2 days (Dec 5–7)**
 - Cantonese food deep-dive — dim sum where it was born (Kaiping cut)
 - Shamian Island colonial arcades, Chen Clan Academy
 - Canton Tower at night
-- Fly Guangzhou → Shanghai Dec 5 (~2.5h, dense trunk)
+- Fly Guangzhou → Shanghai Dec 7 (~2.5h, dense trunk)
 
-**Shanghai — 7 days (Dec 5–12)**
+**Shanghai — 5 days (Dec 7–12)**
 - French Concession café season — heated MODERN hotels only (no lane houses, no central heating)
 - The Bund at night, Yu Garden, Tianzifang, M50 art district
 - Wuzhen water-town day trip option (or second slow day)
@@ -373,7 +379,7 @@ Second mainland entry — a 26-day southern + western run inside the 30-day visa
 - Non-slip shoes (walkways can ice); fog lifts ~10–11am
 - Dec 21: HSR back to Chongqing
 
-*China E2: 26 days. Shenzhen (5) + Guangzhou (2) + Shanghai (7) + Chengdu (5) + Chongqing (5) + Wulong (2) ✓*
+*China E2: 26 days. Shenzhen (5) + Macau (2) + Guangzhou (2) + Shanghai (5) + Chengdu (5) + Chongqing (5) + Wulong (2) ✓*
 
 ---
 
@@ -870,7 +876,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
 | 8 | China | 13 | 218 | 2,830 | Beijing 6n + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset) |
 | 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · TECO filing Nov 24 · free gardens/markets |
-| 10 | China | 26 | 185 | 4,800 | Shenzhen 5n + CAN 2n + Shanghai 7n + Chengdu 5n + CQ 5n (split stay around Wulong) + Wulong 2d/1n · SZX→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets · CKG→ICN exit |
+| 10 | China | 26 | 186 | 4,840 | Shenzhen 5n + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split) + Wulong 2d/1n · ferry + ZHU→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets · CKG→ICN exit |
 | 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
 | 12 | Taiwan | 14 | 184 | 2,570 | ~$95/n · Hualien rails · south slow days · January tilt |
 | 13 | Japan | 30 | 312 | 9,350 | Cities 21n ~$125/n · Hakuba 9n · lift 7d + full rental · Tokyo–Hakuba buses |
@@ -929,7 +935,7 @@ Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna trek (DWT) | Booked ✅ ($144 advance paid) | $1,296 balance + gear check + briefing at DWT office, Thamel, Oct 24 · ACAP/TIMS via agency (confirm) · 9kg pp porter limit |
-| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→PEK Nov 9 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→CAN HSR Dec 3 · GZ→SHA Dec 5 · SHA→CTU Dec 12 · CTU→CKG HSR Dec 17 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop · ICN→TPE Jan 11 · TPE→KIX Jan 25 |
+| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→PEK Nov 9 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 · SHA→CTU Dec 12 · CTU→CKG HSR Dec 17 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop · ICN→TPE Jan 11 · TPE→KIX Jan 25 |
 | Taiwan visitor visa (2 pax) | File TECO Hong Kong Nov 24 | Morning errand, pickup Nov 25–26; request 30d grant for Jan 11–25 stay; fallback Seoul filing; do not ticket Seoul→Taipei until answered |
 | Korea K-ETA (2 pax) | By mid-Dec 2026 | File online from Shanghai ≥1 week before Dec 24; Brazil visa-free but not K-ETA-exempt |
 | Kinabatangan river lodge | By Jan 2027 | Book 2–3 months ahead (Mar 21–30 window); Good Friday Mar 26 — lodges normal, KK↔SDK flights early |
