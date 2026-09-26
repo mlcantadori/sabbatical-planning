@@ -56,54 +56,6 @@ window.TRIP = (function () {
     rainforest:   { name: 'Rainforest',     accent: '#3d6e4f' },
   };
 
-  // ── Trip-progression color: a single ember hue, light at the start ──
-  // (Brasil) deepening to dark roast by the end (spring China). Chapters
-  // read as one journey; position along the ramp shows time, not identity.
-  const CHAPTER_COLORS = {
-    'brasil':       '#e4833a',
-    'toronto':      '#e27e33',
-    'athens':       '#e1792e',
-    'turkey':       '#df7428',
-    'baku':         '#dd6f22',
-    'india':        '#d66b21',
-    'nepal':        '#cf6721',
-    'china-e1':     '#c76321',
-    'hk':           '#c05f20',
-    'china-e2':     '#b95b20',
-    'korea':        '#b2571f',
-    'taiwan':       '#ab541f',
-    'japan':        '#a4501e',
-    'indonesia-a':  '#9d4c1e',
-    'borneo':       '#96491d',
-    'philippines':  '#8f451c',
-    'indonesia-b':  '#88421b',
-    'singapore':    '#813e1b',
-    'malaysia':     '#7a3b1a',
-    'thailand':     '#733719',
-    'china-spring': '#6d3418',
-  };
-
-  // Chapter identity color — falls back to the region accent for ids
-  // added later without a palette entry.
-  function chapterColor(ch) {
-    if (ch && CHAPTER_COLORS[ch.id]) return CHAPTER_COLORS[ch.id];
-    const region = ch && REGIONS[ch.region];
-    return (region && region.accent) || '#c2693a';
-  }
-
-  // Readable text over a chapter color: ink on the light end of the
-  // ramp, white everywhere else (the detail pill uses this).
-  function contrastText(hex) {
-    const m = /^#?([0-9a-f]{6})$/i.exec(hex || '');
-    if (!m) return '#fff';
-    const v = [0, 2, 4].map((i) => {
-      const c = parseInt(m[1].substr(i, 2), 16) / 255;
-      return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-    });
-    const lum = 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
-    return lum > 0.3 ? '#2a2118' : '#fff';
-  }
-
   // ── Chapters ──
   // Each entry: id, kind, country, flag, title, dates, days, theme,
   // intro (poetic), tldr (condensed), weather, region, places[]
@@ -718,9 +670,7 @@ window.TRIP = (function () {
     bookings, diving, budget, packing,
     calendarEvents,
     REGIONS,
-    CHAPTER_COLORS,
-    chapterColor,
     optimalWindows,
-    helpers: { dayCounter, mapsUrl, photoUrl, fmt, dayRange, contrastText },
+    helpers: { dayCounter, mapsUrl, photoUrl, fmt, dayRange },
   };
 })();

@@ -5,7 +5,7 @@
 
 (function () {
   const {
-    chapterColor
+    REGIONS
   } = window.TRIP;
 
   // Great-circle interpolation between two [lat,lng] points — the actual
@@ -70,58 +70,6 @@
       selectedIdRef.current = selectedId;
     }, [selectedId]);
 
-    // Ordered city stops across the whole itinerary: every place with
-    // coords, in chapter/place order. Chapters with no place coords fall
-    // back to their anchor so they still appear on the route.
-    const getStops = () => {
-      const stops = [];
-      ROUTE_CHAPTERS.forEach(c => {
-        const withCoords = (c.places || []).map((p, i) => ({
-          ch: c,
-          place: p,
-          idx: i
-        })).filter(s => s.place.coords);
-        if (withCoords.length) stops.push(...withCoords);else if (c.anchor) stops.push({
-          ch: c,
-          place: null,
-          idx: null
-        });
-      });
-      return stops;
-    };
-    const stopCoords = s => s.place ? s.place.coords : s.ch.anchor;
-
-    // Frame all city stops edge-to-edge (unconditional).
-    const fitWorld = () => {
-      const map = mapRef.current;
-      if (!map || selectedIdRef.current) return;
-      const pts = getStops().map(stopCoords).filter(Boolean);
-      if (pts.length < 2) return;
-      map.invalidateSize();
-      map.fitBounds(pts, {
-        padding: [24, 24],
-        animate: false
-      });
-    };
-
-    // Never rests more zoomed out than the fit requires (repairs a
-    // premature fit computed while the layout/fonts were still
-    // settling); never touches a manual zoom-in.
-    const ensureWorldFit = () => {
-      const map = mapRef.current;
-      if (!map || selectedIdRef.current) return;
-      const pts = getStops().map(stopCoords).filter(Boolean);
-      if (pts.length < 2) return;
-      map.invalidateSize();
-      const need = map.getBoundsZoom(pts, false, [24, 24]);
-      if (map.getZoom() < need) {
-        map.fitBounds(pts, {
-          padding: [24, 24],
-          animate: false
-        });
-      }
-    };
-
     // Build map once
     React.useEffect(() => {
       if (mapRef.current) return;
@@ -130,7 +78,7 @@
         center: [25, 105],
         zoom: 4,
         minZoom: 2,
-        maxZoom: 19,
+        maxZoom: 12,
         zoomControl: false,
         scrollWheelZoom: true,
         worldCopyJump: true,
@@ -139,58 +87,21 @@
       });
       mapRef.current = map;
       window._map = map;
-
-      // Esri World Imagery (satellite) + reference overlay for city names,
-      // boundaries and water labels. Note the {z}/{y}/{x} order.
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
         attribution: ''
       }).addTo(map);
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19,
-        attribution: '',
-        opacity: 0.7,
-        zIndex: 3
-      }).addTo(map);
-      // Roads overlay only at country level and deeper (z7+) — at world
-      // view it's visual noise. Toggled on zoomend (fitBounds/setView
-      // fire it too, so programmatic fits stay in sync).
-      const transport = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19,
-        attribution: '',
-        opacity: 0.5,
-        zIndex: 2,
-        className: 'transport-tiles'
-      });
-      const TRANSPORT_MIN_ZOOM = 7;
-      const syncTransport = () => {
-        const show = map.getZoom() >= TRANSPORT_MIN_ZOOM;
-        const has = map.hasLayer(transport);
-        if (show && !has) transport.addTo(map);else if (!show && has) map.removeLayer(transport);
-      };
-      map.on('zoomend', syncTransport);
-      syncTransport();
       L.control.zoom({
         position: 'bottomright'
       }).addTo(map);
       L.control.attribution({
         position: 'bottomleft',
         prefix: false
-      }).addAttribution('Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community').addTo(map);
-      const onResize = () => {
-        if (mapRef.current) mapRef.current.invalidateSize();
-        clearTimeout(onResize._t);
-        onResize._t = setTimeout(() => ensureWorldFit(), 250);
-      };
+      }).addAttribution('Tiles © Esri — Source: Esri, HERE, Garmin, OpenStreetMap contributors').addTo(map);
+      const onResize = () => map.invalidateSize();
       window.addEventListener('resize', onResize);
-      // Late layout shifts (webfonts, images) don't fire resize — refit
-      // once they're settled so the initial frame isn't stuck too wide.
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => ensureWorldFit());
-      }
       return () => {
         window.removeEventListener('resize', onResize);
-        clearTimeout(onResize._t);
         map.remove();
         mapRef.current = null;
       };
@@ -211,15 +122,14 @@
         layersRef.current.route = null;
       }
 
-      // Route polyline through the city stops in travel order
-      const stops = getStops();
-      const routePoints = stops.map(stopCoords).filter(Boolean);
+      // Route polyline
+      const routePoints = ROUTE_CHAPTERS.map(c => c.anchor).filter(Boolean);
       if (routePoints.length > 1) {
         const route = L.polyline(curvedRoute(routePoints), {
           className: 'route-line',
           color: '#8a8272',
           weight: 1.8,
-          opacity: 0.9,
+          opacity: 0.6,
           dashArray: '4, 6',
           lineCap: 'round',
           lineJoin: 'round'
@@ -227,64 +137,33 @@
         layersRef.current.route = route;
       }
 
-      // City dots (one per place); anchor fallback pins for chapters
-      // without place coords. Clicking a dot selects its chapter + place.
-      stops.forEach(s => {
-        const c = s.ch;
-        const accent = chapterColor(c);
-        if (s.place) {
-          const p = s.place,
-            i = s.idx;
-          const html = `
-            <div class="map-place" data-chapter="${c.id}" data-idx="${i}">
-              <div class="map-place-dot" style="--pin-c: ${accent}"></div>
-              <div class="map-place-label">${i + 1}. ${p.name}</div>
-            </div>`;
-          const icon = L.divIcon({
-            html,
-            className: 'map-place-wrap',
-            iconSize: [14, 14],
-            iconAnchor: [7, 7]
-          });
-          const m = L.marker(p.coords, {
-            icon,
-            riseOnHover: true
-          });
-          m.on('click', () => {
-            if (onSelectChapter) onSelectChapter(c.id);
-            if (onSelectPlace) onSelectPlace(i);
-          });
-          m.addTo(map);
-          layersRef.current.chapters.push({
-            id: c.id,
-            idx: i,
-            marker: m
-          });
-        } else {
-          const num = c.num == null ? '' : c.num.toString();
-          const html = `
-            <div class="map-pin" data-chapter="${c.id}">
-              <div class="map-pin-num" style="--pin-c: ${accent};">${num}</div>
-              <div class="map-pin-label">${c.title}</div>
-            </div>`;
-          const icon = L.divIcon({
-            html,
-            className: 'map-pin-wrap',
-            iconSize: [30, 30],
-            iconAnchor: [15, 15]
-          });
-          const m = L.marker(c.anchor, {
-            icon,
-            riseOnHover: true
-          });
-          m.on('click', () => onSelectChapter && onSelectChapter(c.id));
-          m.addTo(map);
-          layersRef.current.chapters.push({
-            id: c.id,
-            idx: null,
-            marker: m
-          });
-        }
+      // Chapter pins
+      ROUTE_CHAPTERS.forEach(c => {
+        const region = REGIONS[c.region] || {
+          accent: '#c2693a'
+        };
+        const num = c.kind === 'transit' ? '·' : c.num == null ? '' : c.num.toString();
+        const html = `
+          <div class="map-pin" data-chapter="${c.id}">
+            <div class="map-pin-num" style="--pin-c: ${region.accent};">${num}</div>
+            <div class="map-pin-label">${c.title}</div>
+          </div>`;
+        const icon = L.divIcon({
+          html,
+          className: 'map-pin-wrap',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15]
+        });
+        const m = L.marker(c.anchor, {
+          icon,
+          riseOnHover: true
+        });
+        m.on('click', () => onSelectChapter && onSelectChapter(c.id));
+        m.addTo(map);
+        layersRef.current.chapters.push({
+          id: c.id,
+          marker: m
+        });
       });
 
       // Apply active state to the pin matching selectedId
@@ -294,41 +173,39 @@
       }) => {
         const el = marker.getElement();
         if (!el) return;
-        const pin = el.querySelector('.map-pin, .map-place');
+        const pin = el.querySelector('.map-pin');
         if (pin) pin.classList.toggle('is-active', id === selectedIdRef.current);
       });
 
       // If no chapter selected, do an initial fit so new chapters get
-      // included in the framing. The map lives in its own grid column
-      // (no overlaid sidebar), so small symmetric padding frames the
-      // dots tightly. ensureWorldFit also repairs it after late layout
-      // shifts and window resizes (see the build-once effect above).
+      // included in the framing.
       if (!selectedIdRef.current && routePoints.length) {
-        setTimeout(() => fitWorld(), 100);
+        setTimeout(() => {
+          if (selectedIdRef.current) return;
+          map.invalidateSize();
+          map.fitBounds(routePoints, {
+            paddingTopLeft: [230, 60],
+            paddingBottomRight: [40, 40],
+            animate: false
+          });
+        }, 100);
       }
-      // Deps: chapter ids + anchors + place coords (any add/remove/edit re-runs)
-    }, [chapters.map(c => c.id + ':' + (c.anchor || []).join(',') + ':' + (c.places || []).map(p => (p.coords || []).join(',')).join(';')).join('|')]);
+      // Deps: chapter ids + anchors (any add/remove/anchor-edit re-runs)
+    }, [chapters.map(c => c.id + ':' + (c.anchor || []).join(',')).join('|')]);
 
     // Reflect selected chapter — swap places, frame view, highlight pin
     React.useEffect(() => {
       const map = mapRef.current;
       if (!map) return;
       const L = window.L;
-
-      // Hide whole-route dots of the selected chapter (re-rendered below
-      // with popups) to avoid duplicates; restore everything on deselect.
       layersRef.current.chapters.forEach(({
         id,
         marker
       }) => {
-        if (id === selectedId) {
-          if (map.hasLayer(marker)) marker.remove();
-        } else {
-          if (!map.hasLayer(marker)) marker.addTo(map);
-          const el = marker.getElement();
-          const pin = el && el.querySelector('.map-pin, .map-place');
-          if (pin) pin.classList.toggle('is-active', false);
-        }
+        const el = marker.getElement();
+        if (!el) return;
+        const pin = el.querySelector('.map-pin');
+        if (pin) pin.classList.toggle('is-active', id === selectedId);
       });
       layersRef.current.places.forEach(m => m.remove());
       layersRef.current.places = [];
@@ -348,14 +225,16 @@
       const ch = chapters.find(c => c.id === selectedId);
       if (!ch) return;
       const placeCoords = [];
-      const accent = chapterColor(ch);
       ch.places.forEach((p, i) => {
         if (!p.coords) return;
         placeCoords.push(p.coords);
+        const region = REGIONS[ch.region] || {
+          accent: '#c2693a'
+        };
         const isActive = i === selectedPlaceIdx;
         const html = `
           <div class="map-place ${isActive ? 'is-active' : ''}" data-idx="${i}">
-            <div class="map-place-dot" style="--pin-c: ${accent}"></div>
+            <div class="map-place-dot" style="--pin-c: ${region.accent}"></div>
             <div class="map-place-label">${i + 1}. ${p.name}</div>
           </div>`;
         const icon = L.divIcon({
@@ -390,19 +269,17 @@
       const doFit = () => {
         map.invalidateSize();
         if (placeCoords.length > 1) {
-          // maxZoom 14 lets tightly-clustered places frame at
-          // neighbourhood/street level instead of capping at region level.
           map.fitBounds(placeCoords, {
             padding: [40, 40],
-            maxZoom: 14,
+            maxZoom: 9,
             animate: false
           });
         } else if (placeCoords.length === 1) {
-          map.setView(placeCoords[0], 12, {
+          map.setView(placeCoords[0], 8, {
             animate: false
           });
         } else if (ch.anchor) {
-          map.setView(ch.anchor, 9, {
+          map.setView(ch.anchor, 7, {
             animate: false
           });
         }
@@ -414,10 +291,11 @@
     // External "focus world" trigger
     React.useEffect(() => {
       if (focusKey === 'world' && mapRef.current) {
-        const pts = getStops().map(stopCoords).filter(Boolean);
+        const pts = ROUTE_CHAPTERS.map(c => c.anchor).filter(Boolean);
         mapRef.current.invalidateSize();
         mapRef.current.fitBounds(pts, {
-          padding: [24, 24],
+          paddingTopLeft: [230, 60],
+          paddingBottomRight: [40, 40],
           animate: false
         });
       }

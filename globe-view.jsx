@@ -4,7 +4,7 @@
 // onSelectPlace / focusKey.
 
 (function () {
-  const { chapterColor } = window.TRIP;
+  const { REGIONS } = window.TRIP;
 
   const HOME = { lat: 18, lng: 15, r: 3.3 };
   const TEX_URL = 'https://unpkg.com/three-globe@2.31.0/example/img/earth-blue-marble.jpg';
@@ -305,10 +305,6 @@
       const kids = s.overlay.children;
       for (let i = 0; i < kids.length; i++) {
         const el = kids[i];
-        if (el._hidden) {
-          el.style.display = 'none';
-          continue;
-        }
         const a = el._anchor;
         if (!a) continue;
         const wp = llv(a[0], a[1], 1);
@@ -339,37 +335,18 @@
     }
 
     function pinEl(c) {
-      const accent = chapterColor(c);
+      const region = REGIONS[c.region] || { accent: '#c2693a' };
       const wrap = document.createElement('div');
       wrap.className = 'eq-pin-wrap';
       wrap._anchor = c.anchor;
       wrap._id = c.id;
-      wrap._chId = c.id;
       wrap.innerHTML = `<div class="map-pin" data-chapter="${c.id}">`
-        + `<div class="map-pin-num" style="--pin-c: ${accent};">${c.num == null ? '' : c.num}</div>`
+        + `<div class="map-pin-num" style="--pin-c: ${region.accent};">${c.num == null ? '' : c.num}</div>`
         + `<div class="map-pin-label">${c.title}</div></div>`;
       wrap.querySelector('.map-pin').addEventListener('click', (e) => {
         e.stopPropagation();
         const cb = propsRef.current.onSelectChapter;
         if (cb) cb(c.id);
-      });
-      return wrap;
-    }
-
-    function cityEl(c, p, i) {
-      const accent = chapterColor(c);
-      const wrap = document.createElement('div');
-      wrap.className = 'eq-pin-wrap eq-city-wrap';
-      wrap._anchor = p.coords;
-      wrap._chId = c.id;
-      wrap.innerHTML = `<div class="map-place" data-chapter="${c.id}" data-idx="${i}">`
-        + `<div class="map-place-dot" style="--pin-c: ${accent}"></div>`
-        + `<div class="map-place-label">${i + 1}. ${p.name}</div></div>`;
-      wrap.querySelector('.map-place').addEventListener('click', (e) => {
-        e.stopPropagation();
-        const pr = propsRef.current;
-        if (pr.onSelectChapter) pr.onSelectChapter(c.id);
-        if (pr.onSelectPlace) pr.onSelectPlace(i);
       });
       return wrap;
     }
@@ -389,30 +366,19 @@
       s.overlay.innerHTML = '';
       COUNTRIES.forEach(([name, lng, lat]) => s.overlay.appendChild(countryEl(name, lng, lat)));
       const list = propsRef.current.chapters.filter((c) => c.kind !== 'transit' && c.anchor);
-      // City dots in itinerary order; anchor fallback pins for chapters
-      // without place coords.
-      list.forEach((c) => {
-        const withCoords = (c.places || [])
-          .map((p, i) => ({ p, i }))
-          .filter((s) => s.p.coords);
-        if (withCoords.length) withCoords.forEach(({ p, i }) => s.overlay.appendChild(cityEl(c, p, i)));
-        else s.overlay.appendChild(pinEl(c));
-      });
-      // route arcs through the city stops in travel order
-      const stops = [];
-      list.forEach((c) => {
-        const withCoords = (c.places || []).filter((p) => p.coords);
-        if (withCoords.length) withCoords.forEach((p) => stops.push(p.coords));
-        else if (c.anchor) stops.push(c.anchor);
-      });
+      // countries under pins
+      list.forEach((c) => s.overlay.appendChild(pinEl(c)));
+      // route arcs
       while (s.arcs.children.length) {
         const l = s.arcs.children.pop();
         s.arcs.remove(l);
         l.geometry.dispose();
         l.material.dispose();
       }
-      for (let i = 0; i + 1 < stops.length; i++) {
-        s.arcs.add(arcBetween(stops[i], stops[i + 1]));
+      for (let i = 0; i + 1 < list.length; i++) {
+        if (list[i].anchor && list[i + 1].anchor) {
+          s.arcs.add(arcBetween(list[i].anchor, list[i + 1].anchor));
+        }
       }
       void onSelectChapter;
       refreshSelection();
@@ -425,37 +391,22 @@
         const pin = el.querySelector('.map-pin');
         if (pin) pin.classList.toggle('is-active', el._id === selectedId);
       });
-      // Hide whole-route city dots of the selected chapter (re-rendered
-      // below with popups) to avoid duplicates; updateOverlay honors _hidden.
-      [...s.overlay.children].forEach((el) => {
-        if (el.classList && el.classList.contains('eq-city-wrap')) {
-          el._hidden = el._chId === selectedId;
-        }
-      });
       [...s.overlay.querySelectorAll('.eq-place-wrap')].forEach((el) => el.remove());
       s.popupEl.style.display = 'none';
       s.popupEl._anchor = null;
       s.controls.autoRotate = !selectedId && !s.spinOff;
 
-      if (!selectedId) {
-        // Panel just closed: make sure the orbit target is back at the
-        // globe center (and cancel any interrupted fly-to) so rotate/pan
-        // behaves normally again instead of orbiting a surface point.
-        s.tween = null;
-        s.controls.enabled = true;
-        if (s.controls.target.length() > 1e-6) s.controls.target.set(0, 0, 0);
-        return;
-      }
+      if (!selectedId) return;
       const ch = chapters.find((c) => c.id === selectedId);
       if (!ch) return;
-      const accent = chapterColor(ch);
+      const region = REGIONS[ch.region] || { accent: '#c2693a' };
       ch.places.forEach((p, i) => {
         if (!p.coords) return;
         const wrap = document.createElement('div');
         wrap.className = 'eq-pin-wrap eq-place-wrap';
         wrap._anchor = p.coords;
         wrap.innerHTML = `<div class="map-place${i === selectedPlaceIdx ? ' is-active' : ''}">`
-          + `<div class="map-place-dot" style="--pin-c: ${accent}"></div>`
+          + `<div class="map-place-dot" style="--pin-c: ${region.accent}"></div>`
           + `<div class="map-place-label">${i + 1}. ${p.name}</div></div>`;
         wrap.querySelector('.map-place').addEventListener('click', (e) => {
           e.stopPropagation();
@@ -475,18 +426,16 @@
         s.popupEl.style.display = 'block';
       }
 
-      // Fly the camera to face the chapter. The orbit target stays at the
-      // globe center — targeting a surface point would leave OrbitControls
-      // orbiting off-center after the panel closes, making pan/zoom feel
-      // broken until the next "back to whole route".
+      // Fly the camera to face the chapter
       if (ch.anchor) {
+        const target = llv(ch.anchor[0], ch.anchor[1], 1);
         const camPos = llv(ch.anchor[0], ch.anchor[1], 2.35);
-        flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
+        flyTo(target, camPos, 1100);
       }
     }
 
     // ── rebuild pins + route when chapters change ─────────────────────────
-    const chapKey = chapters.map((c) => c.id + ':' + (c.anchor || []).join(',') + ':' + (c.places || []).map((p) => (p.coords || []).join(',')).join(';')).join('|');
+    const chapKey = chapters.map((c) => c.id + ':' + (c.anchor || []).join(',')).join('|');
     React.useEffect(() => {
       if (st.current) rebuildAll();
       // eslint-disable-next-line react-hooks/exhaustive-deps

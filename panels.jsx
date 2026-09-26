@@ -2,7 +2,7 @@
 // mobile full-screen) and binder overlay. Read-only: no editing UI.
 
 (function () {
-  const { totalDays, REGIONS, chapterColor, helpers, budget } = window.TRIP;
+  const { totalDays, REGIONS, helpers, budget } = window.TRIP;
   const { fmt, dayRange, dayCounter } = helpers;
 
   // ══════════════════════════════════════════════════════════════════════
@@ -37,19 +37,19 @@
   }
 
   function ChapterRow({ ch, isActive, onSelect }) {
-    const accent = chapterColor(ch);
+    const region = REGIONS[ch.region] || { accent: '#c2693a', name: '' };
     return (
       <div
         className={`chapter-row ${isActive ? 'is-active' : ''}`}
         onClick={onSelect}>
-        <span className="chapter-row-marker" style={{ background: isActive ? accent : 'transparent' }} />
+        <span className="chapter-row-marker" style={{ background: isActive ? region.accent : 'transparent' }} />
         <span className="chapter-row-num">
           {ch.kind === 'chapter' ? (ch.num || '').toString().padStart(2, '0') : '··'}
         </span>
         <span className="chapter-row-body">
           <span className="chapter-row-title">{ch.title}</span>
           <span className="chapter-row-dates">
-            <span className="chapter-row-region-dot" style={{ background: accent }} />
+            <span className="chapter-row-region-dot" style={{ background: region.accent }} />
             {fmt(ch.start)} – {fmt(ch.end)} · {ch.days}d
           </span>
           {ch.weather && (
@@ -71,7 +71,6 @@
 
     if (!ch) return null;
     const region = REGIONS[ch.region] || { accent: '#c2693a', name: '' };
-    const accent = chapterColor(ch);
     const today = dayCounter(ch.start);
     const todayEnd = dayCounter(ch.end);
 
@@ -79,7 +78,7 @@
       <div className="detail-panel">
         <div className="detail-head">
           <div className="detail-head-meta">
-            <span className="detail-pill" style={{ background: accent, color: helpers.contrastText(accent) }}>
+            <span className="detail-pill" style={{ background: region.accent, color: '#fff' }}>
               {ch.kind === 'chapter' ? `Chapter ${(ch.num || '').toString().padStart(2, '0')}` : ch.kind.toUpperCase()}
             </span>
             <span className="kicker">{region.name} · {ch.country} {ch.flag}</span>
@@ -136,7 +135,6 @@
                   startDate={startDate}
                   endDate={endDate}
                   region={region}
-                  accent={accent}
                   isActive={selectedPlaceIdx === i}
                   onSelect={() => onSelectPlace(i)}
                 />
@@ -193,7 +191,7 @@
     );
   }
 
-  function PlaceRow({ chapterId, place, idx, startDate, endDate, region, accent, isActive, onSelect }) {
+  function PlaceRow({ chapterId, place, idx, startDate, endDate, region, isActive, onSelect }) {
     const coords = place.coords;
     const sameDay = startDate.getTime() === endDate.getTime();
     const sameMonth = !sameDay
@@ -219,7 +217,7 @@
           </span>
           <ul className="place-row-list">
             {place.highlights.map((h, j) => (
-              <li key={j} style={{ '--bullet': accent }}>
+              <li key={j} style={{ '--bullet': region.accent }}>
                 {h}
               </li>
             ))}

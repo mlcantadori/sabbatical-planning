@@ -7,7 +7,6 @@
   const {
     totalDays,
     REGIONS,
-    chapterColor,
     helpers,
     budget
   } = window.TRIP;
@@ -50,14 +49,17 @@
     isActive,
     onSelect
   }) {
-    const accent = chapterColor(ch);
+    const region = REGIONS[ch.region] || {
+      accent: '#c2693a',
+      name: ''
+    };
     return /*#__PURE__*/React.createElement("div", {
       className: `chapter-row ${isActive ? 'is-active' : ''}`,
       onClick: onSelect
     }, /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-marker",
       style: {
-        background: isActive ? accent : 'transparent'
+        background: isActive ? region.accent : 'transparent'
       }
     }), /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-num"
@@ -70,7 +72,7 @@
     }, /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-region-dot",
       style: {
-        background: accent
+        background: region.accent
       }
     }), fmt(ch.start), " \u2013 ", fmt(ch.end), " \xB7 ", ch.days, "d"), ch.weather && /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-weather"
@@ -93,7 +95,6 @@
       accent: '#c2693a',
       name: ''
     };
-    const accent = chapterColor(ch);
     const today = dayCounter(ch.start);
     const todayEnd = dayCounter(ch.end);
     return /*#__PURE__*/React.createElement("div", {
@@ -105,8 +106,8 @@
     }, /*#__PURE__*/React.createElement("span", {
       className: "detail-pill",
       style: {
-        background: accent,
-        color: helpers.contrastText(accent)
+        background: region.accent,
+        color: '#fff'
       }
     }, ch.kind === 'chapter' ? `Chapter ${(ch.num || '').toString().padStart(2, '0')}` : ch.kind.toUpperCase()), /*#__PURE__*/React.createElement("span", {
       className: "kicker"
@@ -180,7 +181,6 @@
         startDate: startDate,
         endDate: endDate,
         region: region,
-        accent: accent,
         isActive: selectedPlaceIdx === i,
         onSelect: () => onSelectPlace(i)
       });
@@ -245,7 +245,6 @@
     startDate,
     endDate,
     region,
-    accent,
     isActive,
     onSelect
   }) {
@@ -274,7 +273,7 @@
     }, place.highlights.map((h, j) => /*#__PURE__*/React.createElement("li", {
       key: j,
       style: {
-        '--bullet': accent
+        '--bullet': region.accent
       }
     }, h)))), /*#__PURE__*/React.createElement("div", {
       className: "place-row-actions"
