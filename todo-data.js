@@ -16,7 +16,7 @@
 
 window.TODO_ITEMS = [
   // ── before you leave ──────────────────────────────────────────────
-  { id: 'prep-1', ch: 'prep', place: null, cat: 'admin', title: 'Travel insurance for the full trip', note: 'Covers trek + diving; carry the policy PDF offline', due: '2026-06-01', done: true },
+  { id: 'prep-1', ch: 'prep', place: null, cat: 'admin', title: 'Credit-card travel insurance (60-day cover)', note: 'Covers the first 60 days only — SafetyWing takes over before Nepal', due: '2026-06-01', done: true },
   { id: 'prep-2', ch: 'prep', place: null, cat: 'admin', title: 'Passports valid 6+ months past Jun 2027', note: 'BR passports; needed for every visa-on-arrival', due: '2026-06-01', done: true },
   { id: 'prep-3', ch: 'prep', place: null, cat: 'car', title: 'International Driving Permit', note: 'Needed for Greece, Turkey + Malaysia rentals', due: '2026-08-15', done: true },
 
@@ -33,23 +33,23 @@ window.TODO_ITEMS = [
   { id: 'athens-1', ch: 'athens', place: null, cat: 'stay', title: 'All Greece stays', note: 'Avg ~$85/n, booked', due: '2026-08-01', done: true },
   { id: 'athens-2', ch: 'athens', place: null, cat: 'transport', title: '4 inter-island ferries', note: '€685 actual', due: '2026-08-15', done: true },
   { id: 'athens-3', ch: 'athens', place: 'Chania', cat: 'car', title: 'Chania rental car', note: '~$240, rented', due: '2026-08-20', done: true },
-  { id: 'athens-4', ch: 'athens', place: 'Milos', cat: 'attraction', title: 'Kleftiko boat', note: 'Book 1–2 days ahead', due: '2026-09-08', done: false },
+  { id: 'athens-4', ch: 'athens', place: 'Milos', cat: 'attraction', title: 'Kleftiko boat', note: 'Booked — €140 pp', due: '2026-09-08', done: true },
 
   // ── turkey (current) ──────────────────────────────────────────────
-  { id: 'turkey-1', ch: 'turkey', place: 'Göreme', cat: 'attraction', title: 'Hot-air balloon Sep 22/23', note: 'Royal / Butterfly Balloons', due: '2026-09-01', done: true },
+  { id: 'turkey-1', ch: 'turkey', place: 'Göreme', cat: 'attraction', title: 'Hot-air balloon Sep 22/23 — cancelled (weather), refunded', note: 'Royal / Butterfly Balloons — full refund received', due: '2026-09-01', done: true },
   { id: 'turkey-2', ch: 'turkey', place: 'Göreme', cat: 'stay', title: 'Göreme stay Sep 21–24', note: 'Booked', due: '2026-08-15', done: true },
-  { id: 'turkey-3', ch: 'turkey', place: 'Alaçatı + Şirince + Kaş + Akyaka', cat: 'stay', title: 'Coastal stays (re)book for new dates', note: 'Alaçatı Sep 24–26 (room from Sep 24 for 1am arrival) · Şirince 27 · Kaş 28–30 · Akyaka Oct 1', due: '2026-09-27', done: false },
-  { id: 'turkey-4', ch: 'turkey', place: 'Izmir (ADB)', cat: 'car', title: 'ADB rental car Sep 25 – Oct 2', note: 'Collect ~1am Sep 25; loop Alaçatı→Şirince→Kaş→Akyaka; return Oct 2', due: '2026-09-20', done: false },
+  { id: 'turkey-3', ch: 'turkey', place: 'Alaçatı + Şirince + Kaş + Akyaka', cat: 'stay', title: 'Coastal stays (re)book for new dates', note: 'Alaçatı Sep 24–26 (room from Sep 24 for 1am arrival) · Şirince 27 · Kaş 28–30 · Akyaka Oct 1 — all booked', due: '2026-09-27', done: true },
+  { id: 'turkey-4', ch: 'turkey', place: 'Izmir (ADB)', cat: 'car', title: 'ADB rental car Sep 25 – Oct 2', note: 'Collect ~1am Sep 25; loop Alaçatı→Şirince→Kaş→Akyaka; return Oct 2 — rented, €220', due: '2026-09-20', done: true },
   { id: 'turkey-5', ch: 'turkey', place: null, cat: 'transport', title: 'ASR→ADB Sep 24 22:50', note: 'Bought', due: '2026-09-01', done: true },
-  { id: 'turkey-6', ch: 'turkey', place: null, cat: 'transport', title: 'ADB→IST Oct 2 19:45', note: 'Moved to Oct 2 — TO BUY', due: '2026-09-28', done: false },
+  { id: 'turkey-6', ch: 'turkey', place: null, cat: 'transport', title: 'ADB→IST Oct 2 19:45', note: 'Moved to Oct 2 — bought', due: '2026-09-28', done: true },
   { id: 'turkey-7', ch: 'turkey', place: null, cat: 'transport', title: 'IST→GYD Oct 12 + GYD→DEL Oct 14', note: 'Bought', due: '2026-09-01', done: true },
-  { id: 'turkey-8', ch: 'turkey', place: null, cat: 'visa', title: 'India e-Visa', note: 'Apply by mid-Sep for the Oct 14 entry', due: '2026-09-15', done: false },
+  { id: 'turkey-8', ch: 'turkey', place: null, cat: 'visa', title: 'India e-Visa', note: 'Done — issued for the Oct 14 entry', due: '2026-09-15', done: true },
 
   // ── baku ──────────────────────────────────────────────────────────
-  { id: 'baku-1', ch: 'baku', place: null, cat: 'visa', title: 'Azerbaijan ASAN e-Visa', note: 'Online, ~3-day processing; ~$50 for two in budget', due: '2026-10-05', done: false },
+  { id: 'baku-1', ch: 'baku', place: null, cat: 'visa', title: 'Azerbaijan ASAN e-Visa', note: 'Done — issued', due: '2026-10-05', done: true },
 
   // ── india ─────────────────────────────────────────────────────────
-  { id: 'india-1', ch: 'india', place: 'Agra + Delhi', cat: 'transport', title: 'Agra–Delhi trains via IRCTC', note: '~$90 for two; 60-day window — book early for sleeper/AC classes', due: '2026-09-01', done: false },
+  { id: 'india-1', ch: 'india', place: 'Agra + Delhi + Varanasi', cat: 'transport', title: 'Agra–Delhi round trip + Delhi–Varanasi trains', note: 'Booked via IRCTC', due: '2026-09-01', done: true },
   { id: 'india-2', ch: 'india', place: 'Agra', cat: 'attraction', title: 'Taj Mahal sunrise tickets', note: 'Buy online the day before; arrive 6am', due: '2026-10-12', done: false },
 
   // ── nepal ─────────────────────────────────────────────────────────
@@ -57,6 +57,7 @@ window.TODO_ITEMS = [
   { id: 'nepal-2', ch: 'nepal', place: 'Annapurna', cat: 'attraction', title: 'ABC trek Oct 25 – Nov 4', note: '$2,000 all-in, locked', due: '2026-09-01', done: true },
   { id: 'nepal-3', ch: 'nepal', place: 'Kathmandu + Pokhara', cat: 'stay', title: 'KTM 3n + Pokhara 6n hotels', note: 'Off-trek nights around the Oct 25 – Nov 4 trek', due: '2026-10-01', done: false },
   { id: 'nepal-4', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'ACAP permit + TIMS card', note: 'Issued on arrival in Kathmandu — no advance booking', due: '2026-10-21', done: false },
+  { id: 'nepal-5', ch: 'nepal', place: null, cat: 'admin', title: 'SafetyWing plan before Nepal', note: 'Credit-card insurance covers 60 days only — start SafetyWing ahead of the Oct 21 chapter', due: '2026-10-15', done: false },
 
   // ── japan-autumn ──────────────────────────────────────────────────
   { id: 'japan-autumn-1', ch: 'japan-autumn', place: null, cat: 'transport', title: 'KTM→Tokyo flight Nov 10', note: 'Entry leg for the autumn chapter', due: '2026-09-20', done: false },
