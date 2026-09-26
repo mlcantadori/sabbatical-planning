@@ -65,7 +65,8 @@
         if (selectedId) q.set('chapter', selectedId); else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));
         else q.delete('place');
-        const next = `${window.location.pathname}?${q.toString()}`;
+        const qs = q.toString();
+        const next = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
         if (next !== window.location.pathname + window.location.search) {
           window.history.replaceState(null, '', next);
         }
