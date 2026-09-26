@@ -87,7 +87,11 @@
     }, [items, chapters]);
 
     const isPast = (ch) => !!ch && ch.end && ch.end < today;
-    const isOpen = (g) => explicitOpen[g.key] !== undefined ? explicitOpen[g.key] : !isPast(g.ch);
+    // Chapters: open unless fully in the past. The dateless prep group
+    // (and any orphans) open unless every item is done.
+    const autoOpen = (g) => g.ch ? !isPast(g.ch)
+      : !(g.items.length > 0 && g.items.every((t) => t.done));
+    const isOpen = (g) => explicitOpen[g.key] !== undefined ? explicitOpen[g.key] : autoOpen(g);
     const setGroup = (key, v) => setExplicitOpen((p) => ({ ...p, [key]: v }));
     const expandAll = () => setExplicitOpen(Object.fromEntries(groups.map((g) => [g.key, true])));
     const collapseAll = () => setExplicitOpen(Object.fromEntries(groups.map((g) => [g.key, false])));
