@@ -2231,3 +2231,18 @@ button {
   color: var(--stamp);
   font-weight: 600;
 }
+
+.todo-due.is-soon {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+.todo-row-group {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent-2);
+  background: rgba(194, 105, 58, 0.1);
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}

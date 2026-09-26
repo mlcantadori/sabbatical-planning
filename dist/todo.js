@@ -20,6 +20,19 @@
     const n = new Date();
     return n.toISOString().slice(0, 10);
   };
+  const plusDaysStr = (iso, n) => {
+    const d = new Date(iso + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  };
+  // "3d overdue" / "due today" / "in 5d" — UTC day math, no TZ drift.
+  const relDue = (due, today) => {
+    const ms = new Date(due + 'T00:00:00Z') - new Date(today + 'T00:00:00Z');
+    const n = Math.round(ms / 86400000);
+    if (n < 0) return `${-n}d overdue`;
+    if (n === 0) return 'due today';
+    return `in ${n}d`;
+  };
   function loadOverrides() {
     try {
       return JSON.parse(localStorage.getItem(LS_KEY) || '{}');
@@ -35,6 +48,7 @@
     const [overrides, setOverrides] = React.useState(loadOverrides);
     const [catFilter, setCatFilter] = React.useState('all');
     const [hideDone, setHideDone] = React.useState(false);
+    const [groupBy, setGroupBy] = React.useState('chapter'); // 'chapter' | 'due'
     const [explicitOpen, setExplicitOpen] = React.useState({});
     const [showExport, setShowExport] = React.useState(false);
     const items = React.useMemo(() => (window.TODO_ITEMS || []).map(t => ({
@@ -96,6 +110,7 @@
     const collapseAll = () => setExplicitOpen(Object.fromEntries(groups.map(g => [g.key, false])));
     const open = items.filter(t => !t.done);
     const overdue = open.filter(t => t.due && t.due < today);
+    const dueSoon = open.filter(t => t.due && t.due <= plusDaysStr(today, 14)).filter(t => catFilter === 'all' || t.cat === catFilter).slice().sort((a, b) => a.due < b.due ? -1 : a.due > b.due ? 1 : 0);
     const exportText = React.useMemo(() => '// Paste each line into the matching item in todo-data.js (done: …),\n' + '// then rebuild. Generated from current checklist state.\n' + items.map(t => `${t.id}: ${t.done ? 'true' : 'false'},`).join('\n'), [items]);
     const copyExport = () => {
       try {
@@ -103,6 +118,41 @@
       } catch {}
     };
     const visibleItems = list => list.filter(t => (catFilter === 'all' || t.cat === catFilter) && !(hideDone && t.done));
+    const groupTag = t => {
+      if (t.ch === 'prep') return 'Before you leave';
+      const c = byId[t.ch];
+      if (!c) return t.ch;
+      return `${c.num != null ? String(c.num).padStart(2, '0') + ' · ' : ''}${c.flag || ''} ${c.title}`;
+    };
+    const renderItem = (t, showGroup) => {
+      const od = !t.done && t.due && t.due < today;
+      const soon = !t.done && !od && t.due && t.due <= plusDaysStr(today, 14);
+      return /*#__PURE__*/React.createElement("div", {
+        key: t.id,
+        className: `todo-row${t.done ? ' is-done' : ''}`
+      }, /*#__PURE__*/React.createElement("button", {
+        className: `booking-check${t.done ? ' is-done' : ''}`,
+        onClick: () => toggle(t.id),
+        title: t.done ? 'Mark open' : 'Mark done'
+      }, t.done ? '✓' : ''), /*#__PURE__*/React.createElement("div", {
+        className: "todo-row-body"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "todo-row-title"
+      }, t.title), /*#__PURE__*/React.createElement("div", {
+        className: "todo-row-meta"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "kicker"
+      }, CAT_LABEL[t.cat] || t.cat), showGroup && /*#__PURE__*/React.createElement("span", {
+        className: "todo-row-group"
+      }, groupTag(t)), t.place && /*#__PURE__*/React.createElement("span", {
+        className: "todo-row-place"
+      }, t.place), t.note && /*#__PURE__*/React.createElement("span", {
+        className: "todo-row-note"
+      }, t.note))), /*#__PURE__*/React.createElement("div", {
+        className: `todo-due${od ? ' is-overdue' : soon ? ' is-soon' : ''}`,
+        title: `Book by ${t.due}`
+      }, t.done ? t.due ? fmt(t.due) : '—' : `${relDue(t.due, today)} · ${fmt(t.due)}`));
+    };
     return /*#__PURE__*/React.createElement("div", {
       className: "binder-pane"
     }, /*#__PURE__*/React.createElement("div", {
@@ -145,6 +195,14 @@
     }, /*#__PURE__*/React.createElement("div", {
       className: "seg"
     }, /*#__PURE__*/React.createElement("button", {
+      className: groupBy === 'chapter' ? 'is-active' : '',
+      onClick: () => setGroupBy('chapter')
+    }, "By chapter"), /*#__PURE__*/React.createElement("button", {
+      className: groupBy === 'due' ? 'is-active' : '',
+      onClick: () => setGroupBy('due')
+    }, "Due soon", dueSoon.length ? ` (${dueSoon.length})` : '')), /*#__PURE__*/React.createElement("div", {
+      className: "seg"
+    }, /*#__PURE__*/React.createElement("button", {
       className: catFilter === 'all' ? 'is-active' : '',
       onClick: () => setCatFilter('all')
     }, "All"), CATS.map(([k, label]) => /*#__PURE__*/React.createElement("button", {
@@ -159,7 +217,7 @@
       type: "checkbox",
       checked: hideDone,
       onChange: e => setHideDone(e.target.checked)
-    }), " Hide done"), /*#__PURE__*/React.createElement("span", {
+    }), " Hide done"), groupBy === 'chapter' && /*#__PURE__*/React.createElement("span", {
       className: "todo-expand-links"
     }, /*#__PURE__*/React.createElement("button", {
       className: "pill-btn",
@@ -167,7 +225,11 @@
     }, "Expand all"), " ", /*#__PURE__*/React.createElement("button", {
       className: "pill-btn",
       onClick: collapseAll
-    }, "Collapse all")))), groups.map(g => {
+    }, "Collapse all")))), groupBy === 'due' ? /*#__PURE__*/React.createElement("div", {
+      className: "todo-list"
+    }, dueSoon.length === 0 && /*#__PURE__*/React.createElement("div", {
+      className: "todo-empty"
+    }, "Nothing overdue or due in the next 14 days. \uD83C\uDF89"), dueSoon.map(t => renderItem(t, true))) : groups.map(g => {
       const list = visibleItems(g.items);
       const doneN = g.items.filter(t => t.done).length;
       const openN = g.items.length - doneN;
@@ -195,32 +257,7 @@
         className: "todo-list"
       }, list.length === 0 && /*#__PURE__*/React.createElement("div", {
         className: "todo-empty"
-      }, "Nothing here \u2014 try another filter."), list.map(t => {
-        const od = !t.done && t.due && t.due < today;
-        return /*#__PURE__*/React.createElement("div", {
-          key: t.id,
-          className: `todo-row${t.done ? ' is-done' : ''}`
-        }, /*#__PURE__*/React.createElement("button", {
-          className: `booking-check${t.done ? ' is-done' : ''}`,
-          onClick: () => toggle(t.id),
-          title: t.done ? 'Mark open' : 'Mark done'
-        }, t.done ? '✓' : ''), /*#__PURE__*/React.createElement("div", {
-          className: "todo-row-body"
-        }, /*#__PURE__*/React.createElement("div", {
-          className: "todo-row-title"
-        }, t.title), /*#__PURE__*/React.createElement("div", {
-          className: "todo-row-meta"
-        }, /*#__PURE__*/React.createElement("span", {
-          className: "kicker"
-        }, CAT_LABEL[t.cat] || t.cat), t.place && /*#__PURE__*/React.createElement("span", {
-          className: "todo-row-place"
-        }, t.place), t.note && /*#__PURE__*/React.createElement("span", {
-          className: "todo-row-note"
-        }, t.note))), /*#__PURE__*/React.createElement("div", {
-          className: `todo-due${od ? ' is-overdue' : ''}`,
-          title: `Book by ${t.due}`
-        }, od ? 'overdue · ' : '', t.due ? fmt(t.due) : '—'));
-      })));
+      }, "Nothing here \u2014 try another filter."), list.map(t => renderItem(t, false))));
     }));
   }
   window.TodoView = TodoView;

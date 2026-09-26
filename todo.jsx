@@ -22,6 +22,19 @@
     const n = new Date();
     return n.toISOString().slice(0, 10);
   };
+  const plusDaysStr = (iso, n) => {
+    const d = new Date(iso + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  };
+  // "3d overdue" / "due today" / "in 5d" — UTC day math, no TZ drift.
+  const relDue = (due, today) => {
+    const ms = new Date(due + 'T00:00:00Z') - new Date(today + 'T00:00:00Z');
+    const n = Math.round(ms / 86400000);
+    if (n < 0) return `${-n}d overdue`;
+    if (n === 0) return 'due today';
+    return `in ${n}d`;
+  };
 
   function loadOverrides() {
     try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { return {}; }
@@ -36,6 +49,7 @@
     const [overrides, setOverrides] = React.useState(loadOverrides);
     const [catFilter, setCatFilter] = React.useState('all');
     const [hideDone, setHideDone] = React.useState(false);
+    const [groupBy, setGroupBy] = React.useState('chapter'); // 'chapter' | 'due'
     const [explicitOpen, setExplicitOpen] = React.useState({});
     const [showExport, setShowExport] = React.useState(false);
 
@@ -80,6 +94,10 @@
 
     const open = items.filter((t) => !t.done);
     const overdue = open.filter((t) => t.due && t.due < today);
+    const dueSoon = open
+      .filter((t) => t.due && t.due <= plusDaysStr(today, 14))
+      .filter((t) => catFilter === 'all' || t.cat === catFilter)
+      .slice().sort((a, b) => (a.due < b.due ? -1 : a.due > b.due ? 1 : 0));
     const exportText = React.useMemo(() => (
       '// Paste each line into the matching item in todo-data.js (done: …),\n'
       + '// then rebuild. Generated from current checklist state.\n'
@@ -93,6 +111,37 @@
 
     const visibleItems = (list) => list.filter((t) =>
       (catFilter === 'all' || t.cat === catFilter) && !(hideDone && t.done));
+
+    const groupTag = (t) => {
+      if (t.ch === 'prep') return 'Before you leave';
+      const c = byId[t.ch];
+      if (!c) return t.ch;
+      return `${c.num != null ? String(c.num).padStart(2, '0') + ' · ' : ''}${c.flag || ''} ${c.title}`;
+    };
+
+    const renderItem = (t, showGroup) => {
+      const od = !t.done && t.due && t.due < today;
+      const soon = !t.done && !od && t.due && t.due <= plusDaysStr(today, 14);
+      return (
+        <div key={t.id} className={`todo-row${t.done ? ' is-done' : ''}`}>
+          <button className={`booking-check${t.done ? ' is-done' : ''}`} onClick={() => toggle(t.id)} title={t.done ? 'Mark open' : 'Mark done'}>
+            {t.done ? '✓' : ''}
+          </button>
+          <div className="todo-row-body">
+            <div className="todo-row-title">{t.title}</div>
+            <div className="todo-row-meta">
+              <span className="kicker">{CAT_LABEL[t.cat] || t.cat}</span>
+              {showGroup && <span className="todo-row-group">{groupTag(t)}</span>}
+              {t.place && <span className="todo-row-place">{t.place}</span>}
+              {t.note && <span className="todo-row-note">{t.note}</span>}
+            </div>
+          </div>
+          <div className={`todo-due${od ? ' is-overdue' : soon ? ' is-soon' : ''}`} title={`Book by ${t.due}`}>
+            {t.done ? (t.due ? fmt(t.due) : '—') : `${relDue(t.due, today)} · ${fmt(t.due)}`}
+          </div>
+        </div>
+      );
+    };
 
     return (
       <div className="binder-pane">
@@ -122,6 +171,10 @@
 
         <div className="todo-filters">
           <div className="seg">
+            <button className={groupBy === 'chapter' ? 'is-active' : ''} onClick={() => setGroupBy('chapter')}>By chapter</button>
+            <button className={groupBy === 'due' ? 'is-active' : ''} onClick={() => setGroupBy('due')}>Due soon{dueSoon.length ? ` (${dueSoon.length})` : ''}</button>
+          </div>
+          <div className="seg">
             <button className={catFilter === 'all' ? 'is-active' : ''} onClick={() => setCatFilter('all')}>All</button>
             {CATS.map(([k, label]) => (
               <button key={k} className={catFilter === k ? 'is-active' : ''} onClick={() => setCatFilter(k)}>{label}</button>
@@ -129,11 +182,19 @@
           </div>
           <div className="todo-filter-row">
             <label className="todo-check-label"><input type="checkbox" checked={hideDone} onChange={(e) => setHideDone(e.target.checked)} /> Hide done</label>
-            <span className="todo-expand-links"><button className="pill-btn" onClick={expandAll}>Expand all</button> <button className="pill-btn" onClick={collapseAll}>Collapse all</button></span>
+            {groupBy === 'chapter' && (
+              <span className="todo-expand-links"><button className="pill-btn" onClick={expandAll}>Expand all</button> <button className="pill-btn" onClick={collapseAll}>Collapse all</button></span>
+            )}
           </div>
         </div>
 
-        {groups.map((g) => {
+        {groupBy === 'due' ? (
+          <div className="todo-list">
+            {dueSoon.length === 0 && <div className="todo-empty">Nothing overdue or due in the next 14 days. 🎉</div>}
+            {dueSoon.map((t) => renderItem(t, true))}
+          </div>
+        ) : (
+        groups.map((g) => {
           const list = visibleItems(g.items);
           const doneN = g.items.filter((t) => t.done).length;
           const openN = g.items.length - doneN;
@@ -153,32 +214,13 @@
               {openState && (
                 <div className="todo-list">
                   {list.length === 0 && <div className="todo-empty">Nothing here — try another filter.</div>}
-                  {list.map((t) => {
-                    const od = !t.done && t.due && t.due < today;
-                    return (
-                      <div key={t.id} className={`todo-row${t.done ? ' is-done' : ''}`}>
-                        <button className={`booking-check${t.done ? ' is-done' : ''}`} onClick={() => toggle(t.id)} title={t.done ? 'Mark open' : 'Mark done'}>
-                          {t.done ? '✓' : ''}
-                        </button>
-                        <div className="todo-row-body">
-                          <div className="todo-row-title">{t.title}</div>
-                          <div className="todo-row-meta">
-                            <span className="kicker">{CAT_LABEL[t.cat] || t.cat}</span>
-                            {t.place && <span className="todo-row-place">{t.place}</span>}
-                            {t.note && <span className="todo-row-note">{t.note}</span>}
-                          </div>
-                        </div>
-                        <div className={`todo-due${od ? ' is-overdue' : ''}`} title={`Book by ${t.due}`}>
-                          {od ? 'overdue · ' : ''}{t.due ? fmt(t.due) : '—'}
-                        </div>
-                      </div>
-                    );
-                  })}
+                  {list.map((t) => renderItem(t, false))}
                 </div>
               )}
             </div>
           );
-        })}
+        })
+        )}
       </div>
     );
   }
