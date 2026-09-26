@@ -26,14 +26,45 @@
     }, [bp]);
     return m;
   }
+
+  // Deep-link params (?map=2d|3d&chapter=<id>&place=<idx>): read once
+  // on load, then reflected back via replaceState so any view is
+  // shareable. Invalid values fall back to defaults (never crash).
+  function readUrlParams() {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const mapRaw = (q.get('map') || '').toLowerCase();
+      const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe' : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
+      const chId = q.get('chapter');
+      const ch = chId && window.STORE ? window.STORE.getChapter(chId) : null;
+      let place = null;
+      if (ch) {
+        const n = parseInt(q.get('place'), 10);
+        if (Number.isInteger(n) && n >= 0 && ch.places && n < ch.places.length) place = n;
+      }
+      return {
+        map,
+        chapterId: ch ? ch.id : null,
+        placeIdx: place
+      };
+    } catch {
+      return {
+        map: null,
+        chapterId: null,
+        placeIdx: null
+      };
+    }
+  }
   function App() {
     const store = window.useStore();
     const [view, setView] = React.useState('map');
     const [mobileMode, setMobileMode] = React.useState('map'); // 'map' | 'list'
-    const [selectedId, setSelectedId] = React.useState(null);
-    const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(null);
+    const [urlParams] = React.useState(readUrlParams);
+    const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
+    const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapMode, setMapMode] = React.useState(() => {
+      if (urlParams.map) return urlParams.map;
       try {
         return localStorage.getItem('map-mode') || '2d';
       } catch {
@@ -41,6 +72,22 @@
       }
     });
     const isMobile = useIsMobile();
+
+    // Reflect the current view back into the URL (replaceState: no
+    // history spam, no reload) so links like ?map=3d&chapter=japan&place=2
+    // always reproduce exactly what's on screen.
+    React.useEffect(() => {
+      try {
+        const q = new URLSearchParams(window.location.search);
+        q.set('map', mapMode === 'globe' ? '3d' : '2d');
+        if (selectedId) q.set('chapter', selectedId);else q.delete('chapter');
+        if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));else q.delete('place');
+        const next = `${window.location.pathname}?${q.toString()}`;
+        if (next !== window.location.pathname + window.location.search) {
+          window.history.replaceState(null, '', next);
+        }
+      } catch {}
+    }, [mapMode, selectedId, selectedPlaceIdx]);
     const today = dayCounter(TODAY);
     const isBinder = view !== 'map';
     const onSelectChapter = id => {
