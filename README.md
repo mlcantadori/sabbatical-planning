@@ -1,12 +1,12 @@
 # 🧭 Asia Sabbatical · 2026–2027
 
-*One year. Two travelers. 21 chapters. A carry-on each.*
+*One year. Two travelers. 21 chapters. A carry-on and a backpack each.*
 
 ![The app: 3D globe with the full route, chapter rail, and trip progress](screenshot.png)
 
 This is the interactive companion to a year-long sabbatical across Asia — part
 travel journal, part mission control. It holds the whole arc (Brasil → Canada →
-Greece → Türkiye → Baku → India → Nepal → China → Hong Kong → Korea → Taiwan →
+Greece → Türkiye → Azerbaijan → India → Nepal → China → Hong Kong → Korea → Taiwan →
 Japan → Indonesia → Borneo → Philippines → Singapore → Malaysia → Thailand →
 China, then home), all **359 days** of it, in one page you can spin, click,
 budget, and check off.
@@ -101,5 +101,5 @@ pre-compilation via `build.sh` · zero backend — it's a page, not a platform.
 
 ---
 
-*Built for two Brazilians with carry-ons and strong opinions about sunsets.*
+*Built for two Brazilians with carry-ons, backpacks, and strong opinions about sunsets.*
 *If you're reading this from a night train somewhere in Asia: it worked.* 🚂
