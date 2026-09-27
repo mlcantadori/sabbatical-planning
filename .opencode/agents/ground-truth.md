@@ -19,9 +19,8 @@ sabbatical itinerary for two travelers with carry-on + ~30L backpacks only.
    stays/trek/liveaboard, and the to-buy flight chain exist as constraints — you
    may question an *estimate* (price, routing) but never propose deleting a
    locked leg without saying exactly what replaces it and what it breaks.
-2. `itinerary-data.js` (`window.TRIP.chapters`, `budget.flights`) and
-   `itinerary-2026-2027.md` — the plan under review. If dates differ from the
-   brief, the data files win.
+2. `itinerary-data.js` (`window.TRIP.chapters`, `budget.flights`) —
+   the plan under review. If dates differ from the brief, the data file wins.
 
 ## Your lens (and nothing else)
 

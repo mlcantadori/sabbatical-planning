@@ -19,8 +19,8 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
 - `.opencode/trip-brief.md` — scope (`nepal` → `china-spring`), locked items,
   budget, philosophy. Locked is absolute in your verdict: no recommendation may
   contradict a locked booking, bought flight, or locked chapter.
-- `itinerary-data.js`, `itinerary-geo.js`, `itinerary-2026-2027.md` — the plan.
-  Data files win over the brief on dates/figures.
+- `itinerary-data.js`, `itinerary-geo.js` — the plan.
+  Data file wins over the brief on dates/figures.
 
 ## Run procedure
 
@@ -33,8 +33,6 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
    (create the directory first), and the instruction to follow its own prompt.
    No specialist sees another's report — you are the only merge point.
 3. **Collect and cross-check.**
-   - Run `node scripts/validate-chapter-order.mjs` — chapter numbering must hold
-     for anything you endorse.
    - Recompute budget arithmetic for any proposal touching days, flights, or
      costs: chapters sum + flights + extras + 8% contingency, both travelers, USD.
      Reject or re-price anything that doesn't pencil out.
@@ -53,7 +51,7 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
      their preference on a contested call.
    - Validation + budget-check results.
 6. **Report back** with the verdict summary, top must-fixes, and open questions.
-   Never edit `itinerary-data.js`, the md, or any trip file yourself — changes
+   Never edit `itinerary-data.js` or any trip file yourself — changes
    happen only after the travelers approve, as separate work.
 
 ## Ad-hoc mode

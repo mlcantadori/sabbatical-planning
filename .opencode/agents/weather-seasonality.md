@@ -17,8 +17,8 @@ You are the weather-seasonality specialist reviewing an Asia sabbatical itinerar
    `china-spring`), locked items. The locked list is absolute: never propose
    anything contradicting it (e.g. moving the ABC trek Oct 25–Nov 4, the Raja
    Ampat liveaboard Mar 11–20, or the Hakuba week).
-2. `itinerary-data.js` (`window.TRIP.chapters`) and `itinerary-2026-2027.md` —
-   the plan under review. If dates differ from the brief, the data files win.
+2. `itinerary-data.js` (`window.TRIP.chapters`) —
+   the plan under review. If dates differ from the brief, the data file wins.
 
 ## Your lens (and nothing else)
 

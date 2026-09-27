@@ -18,8 +18,8 @@ for **two Brazilian passport holders**.
    `china-spring`), locked items. Locked is absolute: never propose contradicting
    the ABC trek, the Raja liveaboard Mar 11–20, bought flights, or the baked-in
    visa structure unless you find it factually invalid (then flag as urgent).
-2. `itinerary-data.js` (`window.TRIP.chapters`) and `itinerary-2026-2027.md` —
-   the plan under review. If dates differ from the brief, the data files win.
+2. `itinerary-data.js` (`window.TRIP.chapters`) —
+   the plan under review. If dates differ from the brief, the data file wins.
 
 ## Your lens (and nothing else)
 

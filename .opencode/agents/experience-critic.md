@@ -19,9 +19,8 @@ travelers' taste and energy advocate — and their devil's advocate.
    chapters, no perrengue). Locked is absolute: booked blocks (ABC trek, Raja
    liveaboard Mar 11–20, Hakuba week) are fixed points — critique around them,
    never against them.
-2. `itinerary-data.js` (`window.TRIP.chapters`, places + highlights) and
-   `itinerary-2026-2027.md` — the plan under review. If content differs from the
-   brief, the data files win.
+2. `itinerary-data.js` (`window.TRIP.chapters`, places + highlights) —
+   the plan under review. If content differs from the brief, the data file wins.
 
 ## Your lens (and nothing else)
 
