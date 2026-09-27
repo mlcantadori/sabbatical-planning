@@ -488,10 +488,10 @@ One fused winter chapter (30 days max): Kyoto first for empty temples and early 
 - 2 onsen rest days, mountain restaurants
 - Izakaya nights, ramen, star-filled mountain sky
 
-**Departure — 1 day (Feb 23–24)**
+**Tokyo (transit) — 1 day (Feb 23–24)**
 Bus/train Hakuba → Tokyo. Fly Tokyo → Jakarta — Indonesia begins Feb 24 (direct, 30-day free entry).
 
-*Japan total: 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1). Zero repeats. ✓*
+*Japan total: 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + Tokyo transit 1). Zero repeats. ✓*
 
 ---
 
@@ -520,7 +520,7 @@ Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). 
 - Mar 8: Nyepi silent day — hotel-only rest day, airport closed, no traffic
 - Gear check; Mar 10: fly DPS → Sorong via Makassar (book 6–8 weeks ahead, Lebaran surge)
 
-**Transfer to Sorong — 1 day (Mar 10)**
+**Sorong (transit) — 1 day (Mar 10)**
 - DPS → SOQ domestic via UPG — already in-country, no immigration stress
 - Buffer night in Sorong before boarding
 
@@ -600,7 +600,7 @@ Arrive from Borneo Mar 31 into the post-Holy Week lull — the single best Palaw
 - Malapascua thresher dropped — Raja already delivered the apex
 - Kawasan Falls canyoneering (if time)
 
-**Transfer to Bali — 1 day (Apr 13–14)**
+**Denpasar (transit) — 1 day (Apr 13–14)**
 - Apr 14: CEB → DPS via MNL/SIN (daily, easy)
 - Indonesia Entry 2 starts ~Apr 14 (onward DPS→SIN May 1 ticket in hand)
 

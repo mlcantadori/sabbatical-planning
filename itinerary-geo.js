@@ -66,7 +66,6 @@ window.TRIP_GEO = {
     'japan/Osaka':                          [34.6937,  135.5023],
     'japan/Tokyo':                          [35.6762,  139.6503],
     'japan/Hakuba Valley':                  [36.6953,  137.8378],
-    'japan/Departure':                      [35.6762,  139.6503], // Tokyo
     // Korea
     'korea/Seoul':                            [37.5665,  126.9780],
     'korea/Busan':                            [35.1796,  129.0756],
@@ -84,12 +83,12 @@ window.TRIP_GEO = {
     'philippines/Coron':                      [11.9964,  119.4192],
     'philippines/El Nido':                    [11.1949,  119.4013],
     'philippines/Cebu / Moalboal':            [10.2720,  123.4220],
-    'philippines/Transfer to Bali':            [-8.6500,  115.2167], // Denpasar
+    'philippines/Denpasar':                    [-8.6500,  115.2167], // Ngurah Rai Airport
     // Indonesia A — Java + Bali staging + Raja (first stay)
     'indonesia-a/Jakarta':                      [ -6.2088,  106.8456],
     'indonesia-a/Yogyakarta':                   [ -7.7956,  110.3695], // Borobudur ~40km NW
     'indonesia-a/Ubud':                         [-8.5069,  115.2625],
-    'indonesia-a/Transfer to Sorong':           [-0.8917,  131.2500], // Sorong
+    'indonesia-a/Sorong':                      [-0.8917,  131.2500],
     'indonesia-a/Raja Ampat Liveaboard':        [-0.5897,  130.1053], // Wayag
     // Indonesia B — Penida + Komodo + Batur (second stay)
     'indonesia-b/Nusa Penida':                  [-8.7270,  115.5444],
