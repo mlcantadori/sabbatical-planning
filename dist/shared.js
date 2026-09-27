@@ -86,14 +86,8 @@ function Photo({
     }
   }, caption));
 }
-function getDayN(date) {
-  return window.TRIP.helpers.dayCounter(date);
-}
 function openMaps(query) {
   window.open(window.TRIP.helpers.mapsUrl(query), '_blank', 'noopener,noreferrer');
-}
-function openMapsLatLng(lat, lng, label) {
-  window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`, '_blank', 'noopener,noreferrer');
 }
 
 // Subscribe to the store and trigger re-render on any mutation.
@@ -102,148 +96,7 @@ function useStore() {
   React.useEffect(() => window.STORE.subscribe(force), []);
   return window.STORE;
 }
-
-// Small contentEditable wrapper — commits on blur or Enter, reverts on Esc.
-function Editable({
-  value,
-  onCommit,
-  className = '',
-  placeholder = '',
-  as = 'span',
-  style = {}
-}) {
-  const Tag = as;
-  const ref = React.useRef(null);
-  // Sync external value into the DOM when not focused. While focused, leave
-  // the user's edits alone so the caret doesn't jump.
-  React.useEffect(() => {
-    if (ref.current && document.activeElement !== ref.current) {
-      ref.current.textContent = value || '';
-    }
-  }, [value]);
-  return /*#__PURE__*/React.createElement(Tag, {
-    ref: ref,
-    contentEditable: true,
-    suppressContentEditableWarning: true,
-    className: `editable ${className}`,
-    "data-placeholder": placeholder,
-    onBlur: e => {
-      const v = e.currentTarget.textContent.trim();
-      if (v !== (value || '')) onCommit(v);
-    },
-    onKeyDown: e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        e.currentTarget.blur();
-      }
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        e.currentTarget.textContent = value || '';
-        e.currentTarget.blur();
-      }
-    },
-    onClick: e => e.stopPropagation(),
-    style: style
-  }, value || '');
-}
-
-// Hover-revealed action menu (⋯).
-function ActionMenu({
-  items,
-  className = '',
-  stop = true
-}) {
-  const [open, setOpen] = React.useState(false);
-  const ref = React.useRef(null);
-  React.useEffect(() => {
-    if (!open) return;
-    const off = e => {
-      if (!ref.current?.contains(e.target)) setOpen(false);
-    };
-    document.addEventListener('pointerdown', off, true);
-    return () => document.removeEventListener('pointerdown', off, true);
-  }, [open]);
-  return /*#__PURE__*/React.createElement("div", {
-    ref: ref,
-    className: `action-menu ${className}`,
-    onClick: stop ? e => e.stopPropagation() : undefined
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "action-menu-trigger",
-    onClick: e => {
-      e.stopPropagation();
-      setOpen(o => !o);
-    },
-    title: "Actions"
-  }, /*#__PURE__*/React.createElement("svg", {
-    width: "12",
-    height: "12",
-    viewBox: "0 0 12 12",
-    fill: "currentColor"
-  }, /*#__PURE__*/React.createElement("circle", {
-    cx: "2.5",
-    cy: "6",
-    r: "1.1"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "6",
-    cy: "6",
-    r: "1.1"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "9.5",
-    cy: "6",
-    r: "1.1"
-  }))), open && /*#__PURE__*/React.createElement("div", {
-    className: "action-menu-list"
-  }, items.map((it, i) => /*#__PURE__*/React.createElement("button", {
-    key: i,
-    className: `action-menu-item ${it.danger ? 'is-danger' : ''}`,
-    onClick: e => {
-      e.stopPropagation();
-      setOpen(false);
-      it.onClick();
-    }
-  }, it.label))));
-}
 const Icon = {
-  pin: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "12",
-    cy: "10",
-    r: "3"
-  })),
-  arrowRight: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M5 12h14M13 6l6 6-6 6"
-  })),
-  arrowLeft: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M19 12H5M11 6L5 12l6 6"
-  })),
   external: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
     width: p.size || 12,
@@ -272,18 +125,6 @@ const Icon = {
     rx: "2"
   }), /*#__PURE__*/React.createElement("path", {
     d: "M16 2v4M8 2v4M3 10h18"
-  })),
-  check: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M20 6L9 17l-5-5"
   })),
   close: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
@@ -356,59 +197,6 @@ const Icon = {
     y1: "18",
     x2: "3.01",
     y2: "18"
-  })),
-  diving: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6"
-  }, /*#__PURE__*/React.createElement("circle", {
-    cx: "12",
-    cy: "12",
-    r: "9"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "12",
-    cy: "12",
-    r: "3"
-  })),
-  plus: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M12 5v14M5 12h14"
-  })),
-  trash: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"
-  })),
-  edit: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"
   }))
 };
 
@@ -441,12 +229,8 @@ class ErrorBoundary extends React.Component {
 }
 Object.assign(window, {
   Photo,
-  getDayN,
   openMaps,
-  openMapsLatLng,
   Icon,
   useStore,
-  Editable,
-  ActionMenu,
   ErrorBoundary
 });

@@ -383,7 +383,6 @@ window.TRIP = (function () {
         { name: 'Raja Ampat Liveaboard', photo: 'manta ray cleaning station', days: 10, query: 'Wayag, Raja Ampat',
           highlights: ['Mar 11–20: Wayag — postcard karst islands, kayak + hike viewpoint','Cape Kri — world record fish count dive site','Manta Sandy — manta ray cleaning station','Melissa\'s Garden — pristine hard coral','Pianemo — smaller Wayag, equally dramatic, fewer boats','Blue Water Mantas — oceanic, 6m wingspan','Wobbegongs, walking sharks, pygmy seahorses, nudibranchs'] },
       ],
-      diving: { sites: 30, type: 'Liveaboard', operators: 'Papua Diving / Meridian Adventure (Raja)' },
     },
     {
       id: 'borneo', kind: 'chapter', region: 'rainforest',
@@ -426,8 +425,6 @@ window.TRIP = (function () {
         { name: 'Denpasar', days: 1, query: 'Ngurah Rai Airport, Bali',
           highlights: ['Transit day: Apr 14 Cebu → Denpasar (daily, easy)','Indonesia Entry 2 starts ~Apr 14 — onward ticket to Singapore May 1 in hand'] },
       ],
-      diving: { sites: 14, type: 'Day boats + shore dives', operators: 'Coron: multiple wreck operators; Moalboal: OceanBay / Savedra' },
-      booking: [],
     },
     {
       id: 'indonesia-b', kind: 'chapter', region: 'archipelago',
@@ -446,8 +443,6 @@ window.TRIP = (function () {
         { name: 'Bali + Volcano', photo: 'mount batur sunrise', days: 6, query: 'Ubud, Bali',
           highlights: ['Apr 25: fly Labuan Bajo → Bali','Tanah Lot sunset temple on a sea rock','Seminyak / Canggu beach club final evening','Mount Batur: 3am departure, 2h hike to crater rim at 1,717m','Sunrise over the caldera and crater lake — fly Bali → Singapore May 1'] },
       ],
-      diving: { sites: 12, type: 'Day boats', operators: 'Crystal Bay Dive (Penida); Labuan Bajo operators (Komodo)' },
-      booking: [],
     },
     {
       id: 'singapore', kind: 'chapter', region: 'isthmus',
@@ -496,7 +491,6 @@ window.TRIP = (function () {
         { name: 'Bangkok', photo: 'bangkok wat arun', days: 7, query: 'Wat Pho, Bangkok',
           highlights: ['Wat Pho — reclining Buddha + massage school','Grand Palace + Wat Phra Kaew','Khlong canal boat commute through the city','Chatuchak Weekend Market (Sat–Sun)','Yaowarat (Chinatown) at night','Kanchanaburi day trip — Erawan Falls, Death Railway, River Kwai','Fly Bangkok → Xi\'an May 30 (red-eye)'] },
       ],
-      diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on Koh Tao' },
     },
     {
       id: 'china-spring', kind: 'chapter', region: 'middle',
@@ -522,9 +516,6 @@ window.TRIP = (function () {
     },
   ];
 
-  // Compute total chapter count for headers
-  const chapterCount = chapters.filter(c => c.kind === 'chapter').length;
-
   // Bookings (flat list pulled from chapters + a few overall).
   // done: true → already confirmed (rendered pre-checked; can't be lost to a
   // localStorage wipe because it lives in the data).
@@ -549,18 +540,6 @@ window.TRIP = (function () {
     { task: 'Flights until DEL — recheck', by: 'Done except ADB→IST', critical: true, done: false, notes: 'ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST Oct 2, 19:45, TO BUY · IST→GYD Oct 12 · GYD→DEL Oct 14' },
     { task: 'Türkiye stays until Izmir — rebook new dates', by: 'ASAP', critical: true, done: false, notes: 'Göreme Sep 21–24 booked ✅ · Alaçatı Sep 25–26 · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1' },
     { task: 'Crete car in Chania — rented', by: 'Done ✅', critical: false, done: true, notes: 'Chania base — Balos, Elafonisi, Therisos Gorge, Falasarna' },
-  ];
-
-  // Diving log
-  const diving = [
-    { where: 'Coron — WWII Wrecks',      dates: 'Apr 4–8',      days: 5, notes: 'Japanese warships sunk 1944 — post-Easter peak visibility' },
-    { where: 'El Nido lagoons',          dates: 'Apr 8–12',     days: 4, notes: 'Glassy-seas bonus day in peak season' },
-    { where: 'Cebu / Moalboal',          dates: 'Apr 12–14',    days: 2, notes: 'Sardine run at Pescador, thresher sharks at Malapascua (dropped)' },
-    { where: 'Raja Ampat',               dates: 'Mar 11–20',    days: 10, notes: 'Mid-season liveaboard — book by Oct 2025' },
-    { where: 'Nusa Penida — Crystal Bay',dates: 'Apr 15–18',    days: 4, notes: 'Reef mantas year-round' },
-    { where: 'Komodo',                   dates: 'Apr 18–25',    days: 7, notes: 'Manta Point + drift dives, dry season building' },
-    { where: 'Koh Tao',                  dates: 'May 16–21',    days: 5, notes: 'Value diving, Sail Rock weather buffer (+1 day)' },
-    { where: 'Sipadan (optional)',       dates: 'Mar 24–27',    days: 3, notes: '120 permits/day — book by Nov 2026' },
   ];
 
   // Budget — full-trip model, USD for two travelers (couple).
@@ -667,33 +646,6 @@ window.TRIP = (function () {
     { layer: 'Nepal trek', items: 'Rent trekking poles + sleeping bag liner in Kathmandu' },
   ];
 
-  // Optimal travel windows per chapter — used by the consequence engine.
-  // months: 1-indexed array of good months. If a chapter's start month falls
-  // outside this range, a season warning is shown in the impact preview.
-  const optimalWindows = {
-    'brasil':       { months: [6, 7, 8],              note: 'Jun–Ago: inverno seco no Rio, pico do vento no Ceará, inverno ameno em SP' },
-    'toronto':      { months: [7, 8, 9],              note: 'Jul–Sep: warm summer, patios open, Lake Ontario swimmable' },
-    'athens':       { months: [5, 6, 9, 10],         note: 'May–Jun and Sep–Oct: ideal temps; Aug is peak heat + crowds' },
-    'turkey':       { months: [9, 10],               note: 'Sep–Oct: post-summer, ideal weather, balloon season' },
-    'baku':         { months: [10],                  note: 'Oct: mild Caspian autumn, good stopover weather' },
-    'nepal':        { months: [10, 11],              note: 'Oct–Nov: post-monsoon, crystalline skies, best trekking' },
-    'india':        { months: [10, 11, 12],          note: 'Oct–Dec: post-monsoon, clear skies, India circuit' },
-    'taiwan':       { months: [1],              note: 'Jan: cool drizzly north, mild dry south, post-holiday calm' },
-    'china-e1':    { months: [11, 12],           note: 'Nov: Beijing first, then south — canyon safe in Nov, gardens at peak (south moved to E2)' },
-    'china-e2':     { months: [11, 12],             note: 'Nov–Dec: friends rendezvous tail, Cantonese blitz, Shanghai slowdown, Sichuan fire + winter-empty karst' },
-    'hk':           { months: [1, 2, 3, 10, 11, 12], note: 'Oct–Mar: cool dry season; mid-Dec pre-Christmas shoulder' },
-    'korea':        { months: [12, 1],              note: 'Dec–Jan: festive Seoul, palace snow, KTX loop' },
-    'japan':        { months: [1, 2],               note: 'Jan–Feb: empty Kyoto temples + early plum; Hakuba powder post-CNY' },
-    'philippines':  { months: [3, 4],             note: 'Mar–Apr: post-Easter lull — flat seas, peak vis; hottest month' },
-    'indonesia-a':   { months: [2, 3],                note: 'Feb–Mar: Java wet-tail + Ramadan calm; Raja mid-season; Bali staging' },
-    'indonesia-b':   { months: [4],                   note: 'Apr: Penida mantas year-round; Komodo + Bali dry season building' },
-    'borneo':       { months: [3, 4, 5, 6, 7, 8],   note: 'Mar–Aug: dry season, wildlife most active at rivers' },
-    'singapore':    { months: [2, 3, 4, 5, 6, 7, 8], note: 'Feb–Aug: relatively drier, pleasant' },
-    'malaysia':     { months: [1, 2, 3, 4, 5, 11, 12], note: 'Nov–May: KL and Penang drier side of the year' },
-    'thailand':     { months: [4, 5, 6, 7, 8, 9],   note: 'Apr–Sep: dry Gulf coast (Koh Tao); Bangkok manageable in May' },
-    'china-spring': { months: [5, 6],             note: 'May–Jun: Xi\'an in perfect weather; Zhangjiajie peak season; karst mist-green, Longji mirrors' },
-  };
-
   // Hand-authored calendar highlights: key attractions + car rentals.
   // Synced by the calendar integration alongside chapters + flights.
   // `end` is the inclusive last day.
@@ -707,14 +659,12 @@ window.TRIP = (function () {
   return {
     start: START, end: END, totalDays,
     travelers: 2,
-    chapterCount,
     chapters,
-    bookings, diving, budget, packing,
+    bookings, budget, packing,
     calendarEvents,
     REGIONS,
     CHAPTER_COLORS,
     chapterColor,
-    optimalWindows,
     helpers: { dayCounter, mapsUrl, photoUrl, fmt, dayRange, contrastText },
   };
 })();
