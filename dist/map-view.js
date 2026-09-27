@@ -217,10 +217,10 @@
       if (routePoints.length > 1) {
         const route = L.polyline(curvedRoute(routePoints), {
           className: 'route-line',
-          color: '#8a8272',
-          weight: 1.8,
-          opacity: 0.9,
-          dashArray: '4, 6',
+          color: '#e8823f',
+          weight: 2.5,
+          opacity: 0.95,
+          dashArray: '0.5, 7',
           lineCap: 'round',
           lineJoin: 'round'
         }).addTo(map);
