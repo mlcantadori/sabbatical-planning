@@ -383,7 +383,6 @@ window.TRIP = (function () {
         { name: 'Raja Ampat Liveaboard', photo: 'manta ray cleaning station', days: 10, query: 'Wayag, Raja Ampat',
           highlights: ['Mar 11–20: Wayag — postcard karst islands, kayak + hike viewpoint','Cape Kri — world record fish count dive site','Manta Sandy — manta ray cleaning station','Melissa\'s Garden — pristine hard coral','Pianemo — smaller Wayag, equally dramatic, fewer boats','Blue Water Mantas — oceanic, 6m wingspan','Wobbegongs, walking sharks, pygmy seahorses, nudibranchs'] },
       ],
-      diving: { sites: 30, type: 'Liveaboard', operators: 'Papua Diving / Meridian Adventure (Raja)' },
     },
     {
       id: 'borneo', kind: 'chapter', region: 'rainforest',
@@ -426,7 +425,6 @@ window.TRIP = (function () {
         { name: 'Denpasar', days: 1, query: 'Ngurah Rai Airport, Bali',
           highlights: ['Transit day: Apr 14 Cebu → Denpasar (daily, easy)','Indonesia Entry 2 starts ~Apr 14 — onward ticket to Singapore May 1 in hand'] },
       ],
-      diving: { sites: 14, type: 'Day boats + shore dives', operators: 'Coron: multiple wreck operators; Moalboal: OceanBay / Savedra' },
       booking: [],
     },
     {
@@ -446,7 +444,6 @@ window.TRIP = (function () {
         { name: 'Bali + Volcano', photo: 'mount batur sunrise', days: 6, query: 'Ubud, Bali',
           highlights: ['Apr 25: fly Labuan Bajo → Bali','Tanah Lot sunset temple on a sea rock','Seminyak / Canggu beach club final evening','Mount Batur: 3am departure, 2h hike to crater rim at 1,717m','Sunrise over the caldera and crater lake — fly Bali → Singapore May 1'] },
       ],
-      diving: { sites: 12, type: 'Day boats', operators: 'Crystal Bay Dive (Penida); Labuan Bajo operators (Komodo)' },
       booking: [],
     },
     {
@@ -496,7 +493,6 @@ window.TRIP = (function () {
         { name: 'Bangkok', photo: 'bangkok wat arun', days: 7, query: 'Wat Pho, Bangkok',
           highlights: ['Wat Pho — reclining Buddha + massage school','Grand Palace + Wat Phra Kaew','Khlong canal boat commute through the city','Chatuchak Weekend Market (Sat–Sun)','Yaowarat (Chinatown) at night','Kanchanaburi day trip — Erawan Falls, Death Railway, River Kwai','Fly Bangkok → Xi\'an May 30 (red-eye)'] },
       ],
-      diving: { sites: 8, type: 'Day boats', operators: 'Several solid shops on Koh Tao' },
     },
     {
       id: 'china-spring', kind: 'chapter', region: 'middle',
@@ -549,18 +545,6 @@ window.TRIP = (function () {
     { task: 'Flights until DEL — recheck', by: 'Done except ADB→IST', critical: true, done: false, notes: 'ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST Oct 2, 19:45, TO BUY · IST→GYD Oct 12 · GYD→DEL Oct 14' },
     { task: 'Türkiye stays until Izmir — rebook new dates', by: 'ASAP', critical: true, done: false, notes: 'Göreme Sep 21–24 booked ✅ · Alaçatı Sep 25–26 · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1' },
     { task: 'Crete car in Chania — rented', by: 'Done ✅', critical: false, done: true, notes: 'Chania base — Balos, Elafonisi, Therisos Gorge, Falasarna' },
-  ];
-
-  // Diving log
-  const diving = [
-    { where: 'Coron — WWII Wrecks',      dates: 'Apr 4–8',      days: 5, notes: 'Japanese warships sunk 1944 — post-Easter peak visibility' },
-    { where: 'El Nido lagoons',          dates: 'Apr 8–12',     days: 4, notes: 'Glassy-seas bonus day in peak season' },
-    { where: 'Cebu / Moalboal',          dates: 'Apr 12–14',    days: 2, notes: 'Sardine run at Pescador, thresher sharks at Malapascua (dropped)' },
-    { where: 'Raja Ampat',               dates: 'Mar 11–20',    days: 10, notes: 'Mid-season liveaboard — book by Oct 2025' },
-    { where: 'Nusa Penida — Crystal Bay',dates: 'Apr 15–18',    days: 4, notes: 'Reef mantas year-round' },
-    { where: 'Komodo',                   dates: 'Apr 18–25',    days: 7, notes: 'Manta Point + drift dives, dry season building' },
-    { where: 'Koh Tao',                  dates: 'May 16–21',    days: 5, notes: 'Value diving, Sail Rock weather buffer (+1 day)' },
-    { where: 'Sipadan (optional)',       dates: 'Mar 24–27',    days: 3, notes: '120 permits/day — book by Nov 2026' },
   ];
 
   // Budget — full-trip model, USD for two travelers (couple).
@@ -709,7 +693,7 @@ window.TRIP = (function () {
     travelers: 2,
     chapterCount,
     chapters,
-    bookings, diving, budget, packing,
+    bookings, budget, packing,
     calendarEvents,
     REGIONS,
     CHAPTER_COLORS,

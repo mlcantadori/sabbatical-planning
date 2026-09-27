@@ -71,7 +71,6 @@ window.TRIP_GEO = {
     'korea/Busan':                            [35.1796,  129.0756],
     'korea/Gyeongju':                         [35.8562,  129.2247],
     'korea/Jeonju':                           [35.8242,  127.1480],
-    'korea/Seoul finale':                      [37.5665,  126.9780],
     // Taiwan
     'taiwan/Taipei':                          [25.0330,  121.5654],
     'taiwan/Hualien + Taroko Gorge':          [24.1908,  121.6202],

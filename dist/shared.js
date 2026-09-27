@@ -204,46 +204,6 @@ function ActionMenu({
   }, it.label))));
 }
 const Icon = {
-  pin: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "12",
-    cy: "10",
-    r: "3"
-  })),
-  arrowRight: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M5 12h14M13 6l6 6-6 6"
-  })),
-  arrowLeft: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M19 12H5M11 6L5 12l6 6"
-  })),
   external: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
     width: p.size || 12,
@@ -272,18 +232,6 @@ const Icon = {
     rx: "2"
   }), /*#__PURE__*/React.createElement("path", {
     d: "M16 2v4M8 2v4M3 10h18"
-  })),
-  check: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M20 6L9 17l-5-5"
   })),
   close: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
@@ -356,59 +304,6 @@ const Icon = {
     y1: "18",
     x2: "3.01",
     y2: "18"
-  })),
-  diving: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6"
-  }, /*#__PURE__*/React.createElement("circle", {
-    cx: "12",
-    cy: "12",
-    r: "9"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "12",
-    cy: "12",
-    r: "3"
-  })),
-  plus: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M12 5v14M5 12h14"
-  })),
-  trash: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"
-  })),
-  edit: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"
   }))
 };
 

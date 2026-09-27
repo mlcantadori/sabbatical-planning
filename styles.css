@@ -1074,19 +1074,6 @@ button {
   flex-shrink: 0;
 }
 
-.diving-inline {
-  font-family: var(--f-serif);
-  font-size: 14.5px;
-  color: var(--ink-2);
-  line-height: 1.5;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--rule-2);
-}
-.diving-inline strong {
-  color: var(--ocean);
-  font-weight: 600;
-}
-
 .journal-input {
   width: 100%;
   min-height: 140px;
@@ -1110,7 +1097,7 @@ button {
 }
 
 /* ════════════════════════════════════════════════════════════════════════
-   BINDER (Bookings / Diving / Budget / Packing overlay)
+   BINDER (Bookings / Budget / Packing overlay)
 ════════════════════════════════════════════════════════════════════════ */
 
 .binder {
@@ -1282,58 +1269,6 @@ button {
   transform: rotate(-2deg);
   border-radius: 1px;
   font-weight: 600;
-}
-
-/* Diving */
-.diving-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.diving-card {
-  background: var(--paper);
-  border: 1.5px solid rgba(28,74,94,.4);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.diving-photo {
-  height: 160px;
-  overflow: hidden;
-}
-.diving-body {
-  padding: 14px 16px;
-}
-.diving-name {
-  font-family: var(--f-serif);
-  font-size: 17px;
-  color: var(--ocean);
-  letter-spacing: -0.2px;
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-.diving-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--f-mono);
-  font-size: 10px;
-  color: var(--ink-2);
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
-}
-.diving-dot {
-  width: 4px; height: 4px;
-  border-radius: 2px;
-  background: var(--ocean);
-}
-.diving-notes {
-  font-family: var(--f-serif);
-  font-size: 13px;
-  color: var(--ink-2);
-  font-style: italic;
-  line-height: 1.45;
-  text-wrap: pretty;
 }
 
 /* Budget */
@@ -1912,7 +1847,7 @@ button {
   .binder-pane-counter-big { font-size: 36px; }
   .binder-tabs { flex-wrap: wrap; gap: 2px; }
   .binder-tab { padding: 6px 10px; font-size: 9.5px; }
-  .booking-grid, .diving-grid, .budget-grid { grid-template-columns: 1fr; }
+  .booking-grid, .budget-grid { grid-template-columns: 1fr; }
 
   .modal { max-width: 100%; max-height: 100vh; max-height: 100dvh; height: 100vh; height: 100dvh; border-radius: 0; }
   .modal-grid { grid-template-columns: 1fr; }

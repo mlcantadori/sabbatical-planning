@@ -77,7 +77,6 @@ window.STORE = (function () {
       photos: c.photos.slice(),
       anchor: (window.TRIP_GEO.chapters[c.id] || [0, 0]).slice(),
       booking: c.booking ? c.booking.slice() : null,
-      diving: c.diving ? { ...c.diving } : null,
       decisions: c.decisions ? c.decisions.slice() : null,
       places: c.places.map((p) => ({
         name: p.name,
@@ -125,7 +124,6 @@ window.STORE = (function () {
         photos: partial.photos || [partial.title || 'travel landscape'],
         anchor: partial.anchor || [0, 0],
         booking: null,
-        diving: null,
         places: [],
       };
       recomputeDays(c);
