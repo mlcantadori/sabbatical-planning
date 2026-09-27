@@ -96,6 +96,109 @@ function useStore() {
   React.useEffect(() => window.STORE.subscribe(force), []);
   return window.STORE;
 }
+const Icon = {
+  external: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 12,
+    height: p.size || 12,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M15 3h6v6M10 14L21 3M21 14v7H3V3h7"
+  })),
+  calendar: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "4",
+    width: "18",
+    height: "18",
+    rx: "2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M16 2v4M8 2v4M3 10h18"
+  })),
+  close: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18M6 6l12 12"
+  })),
+  map: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "8",
+    y1: "2",
+    x2: "8",
+    y2: "18"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "16",
+    y1: "6",
+    x2: "16",
+    y2: "22"
+  })),
+  list: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("line", {
+    x1: "8",
+    y1: "6",
+    x2: "21",
+    y2: "6"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "8",
+    y1: "12",
+    x2: "21",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "8",
+    y1: "18",
+    x2: "21",
+    y2: "18"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "6",
+    x2: "3.01",
+    y2: "6"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "12",
+    x2: "3.01",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "18",
+    x2: "3.01",
+    y2: "18"
+  }))
+};
 
 // Error boundary — isolates a crashing subtree (e.g. a map view whose CDN
 // failed to load) so the rest of the app keeps working. Remount via key.
