@@ -338,7 +338,7 @@ button {
 }
 
 .route-line {
-  animation: route-ants 6s linear infinite;
+  animation: route-ants 4s linear infinite;
 }
 /* Transportation overlay post-processing: mute Esri's baked road colors
    (loud yellows/reds) so roads sit quieter on satellite imagery. */
@@ -524,10 +524,10 @@ button {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 12px; height: 12px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--pin-c, #c2693a);
-  box-shadow: 0 0 0 2px #fff, 0 1px 3px rgba(0,0,0,.3);
+  box-shadow: 0 0 0 1.5px #fff, 0 1px 3px rgba(0,0,0,.3);
 }
 .map-place.is-active .map-place-dot {
   background: var(--ink);
@@ -537,7 +537,7 @@ button {
 .map-place-label {
   position: absolute;
   top: 50%;
-  left: calc(50% + 10px);
+  left: calc(50% + 8px);
   transform: translateY(-50%);
   font-family: var(--f-mono);
   font-size: 10px;
@@ -1409,6 +1409,13 @@ button {
 .mobile-mode-toggle button.is-active {
   background: var(--ink);
   color: var(--paper);
+}
+/* Map overlay variant: opaque pill so both labels stay readable over dark
+   map/globe imagery. (Needs the combined selector: the translucent track
+   background above would otherwise win over .eq-mode's paper.) */
+.mobile-mode-toggle.eq-mode {
+  background: var(--paper);
+  box-shadow: var(--shadow-1);
 }
 
 /* ════════════════════════════════════════════════════════════════════════
