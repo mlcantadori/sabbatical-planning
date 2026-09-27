@@ -12,8 +12,8 @@
 - 2 Brazilians (couple), carry-on + ~30L backpacks only. No checked-luggage logistics anywhere.
 - Mid-range comfort: good value, local charm. No luxury, no hardcore-backpacker
   suffering ("perrengue"), no moving every 2 days, no insane logistics for checklist completion.
-- Trip: Jun 21 2026 → Jun 16 2027, 360 days. Budget model: **~USD 97.5k for two
-  (~USD 270/day, ~R$254k per person at R$5.20)**, all figures USD for a couple.
+- Trip: Jun 21 2026 → Jun 16 2027, 360 days. Budget model: **~USD 94k for two
+  (~USD 261/day, ~R$245k per person at R$5.20)**, all figures USD for a couple.
 - Strategic splurges (locked, do not re-litigate): Raja Ampat liveaboard, Hakuba
   snowboard week (rentals), Cappadocia balloon + cave hotel, one ryokan night.
 
@@ -21,7 +21,7 @@
 
 - Cinematic life chapter: emotionally well-paced, seasonally optimized, immersive, not rushed.
 - Temporary-life slow chapters are structural, not inefficiency: Shanghai (5d),
-  Kyoto (8d), Tokyo (8d), Tainan (7d block, ~6 slow days), Beijing (5d), Shenzhen (4d), Penang (6d),
+  Kyoto (8d), Tokyo (8d), Tainan (7d block, ~6 slow days), Beijing (9n), Shenzhen (4d), Penang (6d),
   Hakuba (9d, activity days don't count), Suzhou (3d). Protect their slowness.
 - China is mentally exhausting — decompression must follow each China block.
 - Geographic efficiency is a hard constraint: no regional backtracking; every hop
@@ -54,8 +54,8 @@
 | 4 | turkey | 2026-09-21 → 2026-10-12 | LOCKED (balloon Sep 22/23 cancelled — weather, refunded) |
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
-| 7 | nepal | 2026-10-21 → 2026-11-09 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside) |
-| 8 | china-e1 | 2026-11-10 → 2026-11-23 | SCOPE (13d Beijing-first run: Wall → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
+| 7 | nepal | 2026-10-21 → 2026-11-07 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside; KTM→PEK Nov 7 11:45–23:15 booked ✅ $477) |
+| 8 | china-e1 | 2026-11-07 → 2026-11-23 | SCOPE (16d slow-Beijing start: 9n Beijing incl. trek recovery → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
 | 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset + Taiwan-visa filing Nov 24) |
 | 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: Shenzhen 5n (rendezvous tail) + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split around Wulong) + Wulong 2d/1n; CKG→ICN Dec 24 verified) |
 | 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
@@ -77,10 +77,11 @@
 - Hakuba snowboard week inside `japan` chapter (lift 7d + full rental).
 - Bought ✅: GRU→YYZ→ATH long-haul; Greece stays + 4 ferries; Cappadocia balloon (cancelled — weather, full refund ✅);
   ASR→ADB Sep 24; Athens→Chania + Athens→Cappadocia flights; train to Varanasi
-  Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two).
+  Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two); Varanasi Airbnb R$1,081 ✅;
+  KTM→PEK Nov 7 11:45–23:15 ($477 for two) ✅.
 - India e-Visa required before Oct 14 Delhi arrival.
 - To-buy / estimates (routable in principle, but chained — flag ripple effects):
-  KTM→PEK Nov 9 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 ·
+  KTM→PEK Nov 7 11:45–23:15 bought ✅ ($477) · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 ·
   SHA→HKG Dec 9 · HK→CTU Dec 14 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop ·
   ICN→TPE Jan 11 · TPE→KIX Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
@@ -89,6 +90,6 @@
   visa filed TECO Hong Kong Dec 3 (fallback Seoul); Korea K-ETA filed ≥1 week before
   Dec 24; China L visa for spring entry (May 30) unless the waiver renews.
 - Visa facts baked into the plan (re-verify before travel, don't redesign around
-  without cause): China 30-day visa-free per entry (E1 = 26d single stay, E2 = 13d;
+  without cause): China 30-day visa-free per entry (E1 = 16d, E2 = 26d;
   all pre-Dec-31-2026, no visa needed); Indonesia two
   sub-30d visa-free stays (21d + 17d) with Borneo reset between; Nepal 30d visa.

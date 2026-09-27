@@ -16,8 +16,8 @@
 | 4 | Türkiye | Sep 21 – Oct 12 | 21 |
 | 5 | Azerbaijan | Oct 12 – Oct 14 | 2 |
 | 6 | India (compact, via Baku) | Oct 14 – Oct 21 | 7 |
-| 7 | Nepal (reduced) | Oct 21 – Nov 9 | 19 |
-| 8 | China (E1: Beijing → Suzhou) | Nov 10 – Nov 23 | 13 |
+| 7 | Nepal (reduced) | Oct 21 – Nov 7 | 17 |
+| 8 | China (E1: Beijing → Suzhou) | Nov 7 – Nov 23 | 16 |
 | 9 | Hong Kong | Nov 23 – Nov 28 | 5 |
 | 10 | China (E2: South + West) | Nov 28 – Dec 24 | 26 |
 | 11 | South Korea | Dec 24 – Jan 11 | 18 |
@@ -33,7 +33,7 @@
 | 21 | China (Xi'an + karst finale) | May 30 – Jun 16 | 17 |
 
 **Japan total:** 30 days fused (Kyoto 8 + Osaka 4 + Tokyo 8 + Hakuba 9 + departure 1) — zero repeats, post-CNY powder ✓
-**China total:** 56 days in-country (E1 13 + E2 26 + spring 17), both inside the 30d visa-free, HK reset between ✓
+**China total:** 59 days in-country (E1 16 + E2 26 + spring 17), each inside the 30d visa-free, HK reset between ✓
 **HK reset:** Suzhou → Hong Kong Nov 23 restarts the 30-day clock for E2 ✓
 **Taiwan visa:** filed at TECO Hong Kong Nov 24 (pickup Nov 25–26), 30d grant requested for the Jan 11–25 stay ✓
 **IST → Baku → DEL:** leave IST Oct 12, Baku stopover Oct 13, arrive DEL Oct 14 — flights bought ✅
@@ -217,13 +217,14 @@ A tight, intentional India: land in Delhi Oct 14 from Baku, day trip to the Taj 
 - Manikarnika cremation ghats
 - Sarnath — where Buddha first taught, 10km out
 - Chai, silk, narrow alleys
+- Airbnb booked ✅ (R$1,081 for 4n)
 
 **Fly Varanasi → Kathmandu Oct 21, 08:30 (direct, ~1h) — booked ✅ ($343 for two)**
 
 ---
 
 ## Chapter 7 — NEPAL
-### Oct 21 – Nov 9 · 19 days
+### Oct 21 – Nov 7 · 17 days (Nov 7 shared transit day with China)
 *Theme: Sacred roof of the world, physical peak, elemental beauty*
 *Operator: Discovery World Trekking, Thamel — 11-day ABC package $720pp ($1,440 for two; $144 advance paid ✅, $1,296 balance due at KTM office Oct 24)*
 
@@ -253,28 +254,28 @@ Route: Pokhara → Ulleri → Ghorepani → Poon Hill → Tadapani → Chomrong 
 - Included: guide + porter per 2 (9kg pp limit — store the rest free at DWT KTM office), full-board on trail (9B/9L/8D), teahouses, all listed transport, oximeter + med kit, sleeping bag + down jacket loan, duffle bag
 - Carry cash for: tips (~$150), snacks/bottled water/tea, showers/WiFi/charging, Nepal visa $50pp on arrival, insurance with heli-evac (mandatory, not in package)
 
-**Kathmandu recovery — 4 days (Nov 5–8)**
-- Slow Thamel days: rest, massage, laundry + repack for China
-- Return loaned sleeping bag + down jacket at DWT office
-- Boudhanath dawn kora farewell, Patan Durbar Square slow afternoon option
-- Farewell dinner before the China leg
+**Kathmandu recovery — 2 days (Nov 5–6)**
+- Slow Thamel days: rest, massage, express laundry + repack for China
+- Nov 5: return loaned sleeping bag + down jacket at DWT office, buy down/fleece in Thamel
+- Nov 6: Boudhanath dawn kora farewell, Patan Durbar Square slow afternoon option, farewell dinner, pack for early departure
 
-**Fly onward Nov 9 (KTM → Shanghai)**
+**Fly KTM → Beijing Nov 7, 11:45–23:15 — booked ✅ ($477 for two)**
 
 ---
 
 ## Chapter 8 — CHINA
-### Nov 10 – Nov 23 · 13 days
-*Theme: First entry: Beijing first, then Jiangnan — canyon, gardens, Suzhou sendoff*
+### Nov 7 – Nov 23 · 16 days
+*Theme: First entry: slow Beijing start (trek recovery), then Jiangnan — canyon, gardens, Suzhou sendoff*
 
-The first mainland admission is a tight 13-day north-to-Jiangnan run. Beijing first while winter light is crisp (empty Wall) plus a slow hutong day, straight south to Huangshan with West Sea Canyon still open, then Jiangnan gardens at foliage peak — ending in Suzhou, with Hong Kong next for the visa reset.
+The first mainland admission is a 16-day north-to-Jiangnan run. Land Beijing Nov 7 late night and open slow — two extra hutong days absorb the post-trek fatigue while winter light is crisp (empty Wall, three weather picks instead of one) — then straight south to Huangshan with West Sea Canyon still open, Jiangnan gardens at foliage peak, ending in Suzhou, with Hong Kong next for the visa reset.
 
-**Beijing — 6 days (Nov 10–16)**
-- Fly in from Kathmandu Nov 9 (via Chengdu) — Entry 1 starts Nov 10
+**Beijing — 9 nights (Nov 7–16)**
+- Fly in KTM → Beijing Nov 7, 11:45–23:15 — booked ✅ ($477 for two); Entry 1 starts Nov 7
+- Nov 8: sleep in, hutong slow day + Drum/Bell Towers, Peking duck — trek-recovery day
+- Nov 9 (Mon): Summer Palace + Lama Temple + Jingshan — Forbidden City closed Mondays (Nov 9 + Nov 16)
 - Great Wall (Mutianyu): empty, pick the bluest morning
-- Forbidden City in crisp winter light (closed Mondays — Nov 16 is a Monday, plan Tue–Sun)
+- Forbidden City in crisp winter light (closed Mondays — plan Tue–Sun)
 - Temple of Heaven + 798 Art District
-- Hutong slow day + Drum/Bell Towers, Peking duck
 - Down/fleece bought in Kathmandu Thamel — Guangzhou trick no longer works
 - Fly Beijing → Huangshan (Tunxi) Nov 16 (~2.5h)
 
@@ -297,7 +298,7 @@ The first mainland admission is a tight 13-day north-to-Jiangnan run. Beijing fi
 - Pingjiang Road canals at dusk (skip the Silk Museum for lived-in lanes)
 - Nov 23: to Shanghai airports — fly to Hong Kong (visa reset)
 
-*China E1: 13 days. Beijing (6) + Huangshan (3) + Hangzhou (2) + Suzhou (2) ✓*
+*China E1: 16 days. Beijing (9n) + Huangshan (3) + Hangzhou (2) + Suzhou (2) ✓*
 
 ---
 
@@ -771,7 +772,7 @@ Nineteen days: arrive Xi'an May 30 on the red-eye (tired first day — walls + M
 | India | Oct 14–21 | Good — post-monsoon clear, Taj day trip Oct 15 + Varanasi in 7d (Oct 21 shared transit day with Nepal) |
 | Nepal ABC trek | late Oct–Nov | Good — post-monsoon clarity holds, fewer crowds, sharper air |
 | Taiwan | Jan 11–25 | Good — cool drizzly north (tilt indoor), mild dry south; post-Korea thaw |
-| China E1 (Beijing → Suzhou) | Nov 10–23 | Excellent — empty Wall first, canyon safe in Nov, foliage peak, Suzhou sendoff |
+| China E1 (Beijing → Suzhou) | Nov 7–23 | Excellent — slow Beijing start, empty Wall first, canyon safe in Nov, foliage peak, Suzhou sendoff |
 | China E2 (South + West) | Nov 28–Dec 23 | Excellent — friends rendezvous tail, Cantonese blitz, heated Shanghai slowdown, panda mornings, winter-empty Wulong karst, verified CKG→ICN exit |
 | Hong Kong | Dec 2–7 | Excellent — dry 20°, pre-Christmas shoulder prices, visa reset + Taiwan-visa filing |
 | South Korea | Dec 24–Jan 11 | Excellent — Busan Christmas + NYE bell, palace snow |
@@ -797,7 +798,7 @@ Nineteen days: arrive Xi'an May 30 on the red-eye (tired first day — walls + M
 | Tokyo | 8d | City rhythm, cafés, neighborhoods, CNY week |
 | Shanghai | 5d | French Concession café season, heated modern hotels, Wuzhen option |
 | Suzhou | 3d | Gardens in autumn color, canal quiet |
-| Beijing | 5d | Hutong routine, winter wall, Peking duck |
+| Beijing | 9n | Hutong routine, winter wall, Peking duck, trek-recovery slow start |
 | Shenzhen | 4d | Friends finale, markets, coastal hikes |
 | Tainan | 6d | Food streets, temples, morning markets |
 | Penang | 5d | Street food, morning walks, editorial pace |
@@ -844,22 +845,22 @@ Brazilian passports enter visa-free for 30 days (non-extendable, onward ticket r
 
 All figures **USD for two travelers (couple), mid-range with strategic splurges**, researched at Oct 2026 prices. The app's Budget tab computes its totals from the same per-chapter lines — these tables mirror that model.
 
-**Grand total: ~USD 93,600 for two · ~USD 260/day · 360 days** (~R$243k per person at R$5.20)
+**Grand total: ~USD 94,000 for two · ~USD 261/day · 360 days** (~R$245k per person at R$5.20)
 
-**Monthly run-rate: ~USD 4,000 / ~R$20,600 per person/month** (30.44-day months, all-in)
+**Monthly run-rate: ~USD 3,900 / ~R$20,400 per person/month** (30.44-day months, all-in)
 
 | Bucket | USD | Share |
 |---|---|---|
-| Lodging (21 chapters) | 25,880 | 28% |
-| Food (21 chapters) | 20,285 | 22% |
-| Activities & diving | 19,270 | 21% |
-| Inter-chapter flights | 8,498 | 9% |
+| Lodging (21 chapters) | 26,110 | 28% |
+| Food (21 chapters) | 20,450 | 22% |
+| Activities & diving | 19,320 | 21% |
+| Inter-chapter flights | 8,425 | 9% |
 | Local transport | 10,280 | 11% |
 | Insurance + eSIMs/sundries | 2,150 | 2% |
 | Visas & park fees | 345 | <1% |
-| Contingency (8%) | 6,937 | 7% |
+| Contingency (8%) | 6,966 | 7% |
 
-**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek $1,440 Discovery World ($720pp, $144 advance paid ✅, $1,296 due Oct 24) · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400.
+**Locked costs (confirmed, do not re-estimate):** GRU–YYZ–ATH flights $1,700 ✅ · Raja Ampat liveaboard $8,400 · Annapurna trek $1,440 Discovery World ($720pp, $144 advance paid ✅, $1,296 due Oct 24) · Cumbuco Airbnb $1,900 · Greece ferries €685 ✅ · Petrópolis–Teresópolis trail R$4,000 · diving certs R$5,000 · Rio Airbnb R$7,000 · São Paulo Airbnb R$1,400 · Varanasi Airbnb R$1,081 ✅ · KTM→Beijing Nov 7 $477 ✅.
 
 ### Per-chapter breakdown (couple)
 
@@ -870,9 +871,9 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 3 | Greece | 20 | 260 | 5,200 | Stays ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260 |
 | 4 | Türkiye | 21 | 239 | 5,025 | Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n |
 | 5 | Azerbaijan | 2 | 140 | 280 | Stopover program — lodging free · ASAN e-visa |
-| 6 | India | 7 | 142 | 995 | Agra day trip Oct 15 · train to Varanasi Oct 17 06:00 booked ✅ · VNS→KTM Oct 21 08:30 booked ✅ ($343) |
-| 7 | Nepal | 19 | 117 | 2,220 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 8n (pre + recovery) · no positioning flight · tips/visa cash |
-| 8 | China | 13 | 218 | 2,830 | Beijing 6n + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset) |
+| 6 | India | 7 | 142 | 995 | Agra day trip Oct 15 · train to Varanasi Oct 17 06:00 booked ✅ · Varanasi Airbnb R$1,081 booked ✅ · VNS→KTM Oct 21 08:30 booked ✅ ($343) |
+| 7 | Nepal | 17 | 127 | 2,160 | Trek $1,440 locked w/ Discovery World ($720pp, $1,296 balance due Oct 24) · KTM 6n (pre 4n + recovery 2n) · KTM→PEK Nov 7 $477 booked ✅ · tips/visa cash |
+| 8 | China | 16 | 208 | 3,335 | Beijing 9n (slow start) + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset) |
 | 9 | Hong Kong | 5 | 264 | 1,320 | ~$150/n · Peak tram + ferries · TECO filing Nov 24 · free gardens/markets |
 | 10 | China | 26 | 186 | 4,840 | Shenzhen 5n + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split) + Wulong 2d/1n · ferry + ZHU→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets · CKG→ICN exit |
 | 11 | South Korea | 18 | 234 | 4,210 | ~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop |
@@ -887,7 +888,7 @@ All figures **USD for two travelers (couple), mid-range with strategic splurges*
 | 20 | Thailand | 14 | 186 | 2,600 | Koh Tao 6d + Sail Rock buffer · Samui transit night · PEN→Tao May 16 · Kanchanaburi |
 | 21 | China | 17 | 208 | 3,545 | BKK→XIY May 30 ~$400 + XIY→KWL ~$250 · Warriors + karst/pillars · no buffer — out via Changsha Jun 16 |
 
-Chapters subtotal: **$76,060** · 360 days.
+Chapters subtotal: **$76,505** · 360 days (Nov 7 shared KTM→PEK transit day).
 
 ### Inter-chapter flights (couple)
 
@@ -899,7 +900,7 @@ Chapters subtotal: **$76,060** · 360 days.
 | Istanbul → Baku | Oct 12 | 450 | Bought ✅ (est.) |
 | Baku → Delhi | Oct 14 | 550 | Bought ✅ (est.) |
 | Varanasi → Kathmandu (direct) | Oct 21, 08:30 | 343 | Bought ✅ ($343 for two) |
-| Kathmandu/Pokhara → Shanghai | Nov 9 | 550 | Estimate ~$275pp, 1-stop via Chengdu |
+| Kathmandu → Beijing | Nov 7, 11:45–23:15 | 477 | Bought ✅ ($477 for two, Entry 1 starts Nov 7) |
 | Chongqing → Seoul (direct) | Dec 24 | 350 | Estimate — CA439 mornings + Asiana redeye verified; Christmas Eve premium risk, buy early |
 | Seoul → Taipei | Jan 11 | 275 | Estimate, LCC Monday |
 | Taipei → Osaka | Jan 25 | 450 | Estimate |
@@ -911,11 +912,11 @@ Chapters subtotal: **$76,060** · 360 days.
 | Bali → Singapore | May 1 | 200 | Estimate, AirAsia |
 | Changsha → São Paulo (home) | Jun 16 | 1,400 | Estimate ~$700pp, via Fenghuang transit day |
 
-Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $88,213 + 8% contingency $7,057 = **~$95,300**.
+Flights subtotal: **$8,425**. Plus health insurance $1,800 ($150/mo) + eSIMs/sundries $350. Subtotal $87,080 + 8% contingency $6,966 = **~$94,000**.
 
 ### Assumptions & levers
 
-- China entries are 26 + 13 days (each inside the 30-day visa-free limit, HK reset between, all pre-Dec-31-2026) — no visa needed; spring entry (May 30) needs one L visa (~$300 for two) unless the waiver renews.
+- China entries are 16 + 26 days (each inside the 30-day visa-free limit, HK reset between, all pre-Dec-31-2026) — no visa needed; spring entry (May 30) needs one L visa (~$300 for two) unless the waiver renews.
 - Own kite gear in Cumbuco; mask + dive computer owned; snowboard kit rented in Hakuba.
 - Lodging is paid everywhere except Toronto (friend's place); monthly Airbnb rates in Rio/Cumbuco beat nightly prices.
 - Diving is ~$12k of the total — fewer Coron/Komodo/Tao dive days saves $1,500+ fast.
@@ -933,7 +934,7 @@ Flights subtotal: **$8,818**. Plus health insurance $1,800 ($150/mo) + eSIMs/sun
 | Flights until DEL | Partly — ADB→IST to buy | Athens→Chania, ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST moved to Oct 2, TO BUY · IST→GYD Oct 12, GYD→DEL Oct 14 + Greece ferries |
 | Stays until Izmir | Rebook new dates | Göreme Sep 21–24 booked ✅ · Alaçatı Sep 24–26 (from Sep 24 for 1am arrival) · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1 (+ all Greece stays) |
 | Annapurna trek (DWT) | Booked ✅ ($144 advance paid) | $1,296 balance + gear check + briefing at DWT office, Thamel, Oct 24 · ACAP/TIMS via agency (confirm) · 9kg pp porter limit |
-| Flights Nov–Jan + China domestic hops | By Sep 2026 | KTM→PEK Nov 9 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 · SHA→CTU Dec 12 · CTU→CKG HSR Dec 17 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop · ICN→TPE Jan 11 · TPE→KIX Jan 25 |
+| Flights Nov–Jan + China domestic hops | KTM→PEK done ✅, rest by Sep 2026 | KTM→PEK Nov 7 11:45–23:15 bought ✅ ($477) · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 · SHA→CTU Dec 12 · CTU→CKG HSR Dec 17 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop · ICN→TPE Jan 11 · TPE→KIX Jan 25 |
 | Taiwan visitor visa (2 pax) | File TECO Hong Kong Nov 24 | Morning errand, pickup Nov 25–26; request 30d grant for Jan 11–25 stay; fallback Seoul filing; do not ticket Seoul→Taipei until answered |
 | Korea K-ETA (2 pax) | By mid-Dec 2026 | File online from Shanghai ≥1 week before Dec 24; Brazil visa-free but not K-ETA-exempt |
 | Kinabatangan river lodge | By Jan 2027 | Book 2–3 months ahead (Mar 21–30 window); Good Friday Mar 26 — lodges normal, KK↔SDK flights early |
