@@ -227,16 +227,8 @@
         isActive: selectedPlaceIdx === i,
         onSelect: () => onSelectPlace(i)
       });
-    }), ch.diving && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
+    }), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
       num: "02",
-      title: "Diving",
-      small: true
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "diving-inline"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, ch.diving.sites), " sites \xB7 ", ch.diving.type), /*#__PURE__*/React.createElement("div", {
-      className: "muted"
-    }, ch.diving.operators))), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
-      num: "03",
       title: "Route decisions",
       small: true
     }), /*#__PURE__*/React.createElement("ul", {

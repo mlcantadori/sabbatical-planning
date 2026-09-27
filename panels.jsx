@@ -167,19 +167,9 @@
                 );
               })}
 
-              {ch.diving && (
-                <>
-                  <SectionHead num="02" title="Diving" small />
-                  <div className="diving-inline">
-                    <div><strong>{ch.diving.sites}</strong> sites · {ch.diving.type}</div>
-                    <div className="muted">{ch.diving.operators}</div>
-                  </div>
-                </>
-              )}
-
               {ch.decisions && ch.decisions.length > 0 && (
                 <>
-                  <SectionHead num="03" title="Route decisions" small />
+                  <SectionHead num="02" title="Route decisions" small />
                   <ul className="alert-list">
                     {ch.decisions.map((d, i) => <li key={i}>{d}</li>)}
                   </ul>
