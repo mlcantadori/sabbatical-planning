@@ -239,7 +239,7 @@ window.TRIP = (function () {
         { name: 'Annapurna Base Camp Trek', photo: 'everest prayer flags', days: 11, query: 'Annapurna Base Camp, Nepal',
           highlights: ['Oct 25 – Nov 4 with Discovery World Trekking','Oct 25: tourist bus Kathmandu → Pokhara (6–7h); lakeside evening briefing','Oct 26: drive to Tikhedhunga, trek to Ulleri (7km, stone-stair challenge)','Oct 27: Ulleri → Ghorepani (10km, rhododendron forest)','Oct 28: 4am Poon Hill sunrise (3,210m) → Tadapani (11.5km)','Oct 29: Tadapani → Chomrong, sanctuary gateway (10km)','Oct 30: Chomrong → Himalaya via Sinuwa + Bamboo (12km)','Oct 31: Himalaya → ABC (4,130m) via MBC — apex day','Nov 1: ABC → Bamboo descent (14km)','Nov 2: Bamboo → Jhinu Danda hot springs (8.5km)','Nov 3: drive Jhinu → Pokhara, farewell gathering','Nov 4: tourist bus Pokhara → Kathmandu — back to Thamel','Guide + porter per 2 (9kg pp limit — store rest free at DWT office); full-board on trail; bag + down jacket loan','Cash: tips ~$150, snacks/water, showers/WiFi, visa $50pp, heli-evac insurance (mandatory)'] },
         { name: 'Kathmandu recovery', photo: 'patan durbar', days: 2, query: 'Thamel, Kathmandu',
-          highlights: ['Nov 5–6: slow Thamel days — rest, massage, express laundry + repack for China','Nov 5: return loaned sleeping bag + down jacket at DWT office, buy down/fleece in Thamel','Nov 6: Boudhanath dawn kora farewell, Patan Durbar Square slow afternoon option, farewell dinner, pack for early departure','Nov 7: fly KTM → Beijing 11:45–23:15 — booked ✅ ($477 for two)'] },
+          highlights: ['Nov 5–6: slow Thamel days — rest, massage, express laundry + repack for China','Nov 5: return loaned sleeping bag + down jacket at DWT office, buy down/fleece in Thamel','Nov 6: Boudhanath dawn kora farewell, Patan Durbar Square slow afternoon option, farewell dinner, pack for early departure','Nov 7: fly KTM → Beijing (late-night arrival)'] },
       ],
     },
     {
@@ -253,7 +253,7 @@ window.TRIP = (function () {
       photos: ['great wall snow'],
       places: [
         { name: 'Beijing', photo: 'forbidden city', days: 9, query: 'Mutianyu Great Wall, Beijing',
-          highlights: ['Fly in KTM → Beijing Nov 7, 11:45–23:15 — booked ✅ ($477 for two); Entry 1 starts Nov 7','Nov 8: sleep in, hutong slow day + Drum/Bell Towers, Peking duck — trek-recovery day','Nov 9 (Mon): Summer Palace + Lama Temple + Jingshan — Forbidden City closed Mondays (Nov 9 + Nov 16)','Great Wall (Mutianyu) — empty, pick the bluest morning','Forbidden City in crisp winter light (closed Mondays — plan Tue–Sun)','Temple of Heaven + 798 Art District','Down/fleece from Kathmandu Thamel','Fly Beijing → Huangshan (Tunxi) Nov 16 (~2.5h)'] },
+          highlights: ['Arrive Beijing Nov 7, late night — Entry 1 starts Nov 7','Nov 8: sleep in, hutong slow day + Drum/Bell Towers, Peking duck — trek-recovery day','Nov 9 (Mon): Summer Palace + Lama Temple + Jingshan — Forbidden City closed Mondays (Nov 9 + Nov 16)','Great Wall (Mutianyu) — empty, pick the bluest morning','Forbidden City in crisp winter light (closed Mondays — plan Tue–Sun)','Temple of Heaven + 798 Art District','Down/fleece from Kathmandu Thamel','Fly Beijing → Huangshan (Tunxi) Nov 16 (~2.5h)'] },
         { name: 'Huangshan', photo: 'huangshan sea of clouds', days: 3, query: 'Huangshan, Anhui',
           highlights: ['Yellow Mountain — autumn foliage + early rime, sea of clouds','West Sea Canyon OPEN (closes Dec–Mar) — November timing is the whole point','Bright Summit sunrise above the cloud sea','Windproof shell + traction spikes in Tangkou if icy','Summit hotel; front-load the canyon days','Bus to Hangzhou Nov 19'] },
         { name: 'Hangzhou', photo: 'west lake', days: 2, query: 'West Lake, Hangzhou',
@@ -535,7 +535,7 @@ window.TRIP = (function () {
     // ── Pending — rest of the trip ──
     { task: 'Raja Ampat liveaboard',     by: 'By Oct 2025', critical: true,  notes: 'Papua Diving / Meridian Adventure — Mar 11–20 (MOVED — reconfirm!); books out 6+ months ahead' },
     { task: 'Sipadan permits',           by: 'By Nov 2026', critical: true,  notes: '120 permits/day cap — if adding Sipadan to Borneo chapter' },
-    { task: 'Flights Nov–Jan + China domestic hops', by: 'KTM→PEK done ✅, rest by Sep 2026', critical: true, notes: 'KTM→PEK Nov 7 11:45–23:15 bought ✅ ($477 for two) · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 · SHA→CTU Dec 12 · CTU→CKG HSR Dec 17 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop · ICN→TPE Jan 11 · TPE→KIX Jan 25' },
+    { task: 'Flights Nov–Jan + China domestic hops', by: 'By Sep 2026', critical: true, notes: 'KTM→PEK Nov 7 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 · SHA→CTU Dec 12 · CTU→CKG HSR Dec 17 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop · ICN→TPE Jan 11 · TPE→KIX Jan 25' },
     { task: 'Taiwan visitor visa (2 pax)', by: 'File TECO Hong Kong Dec 3', critical: true, notes: 'Morning errand, pickup Dec 4–5; request 30d grant for Jan 11–25 stay; fallback Seoul filing; do not ticket ICN→TPE until answered' },
     { task: 'Korea K-ETA (2 pax)', by: 'By mid-Dec 2026', critical: true, notes: 'File online from Shanghai ≥1 week before Dec 24; Brazil visa-free but not K-ETA-exempt' },
     { task: 'Annapurna trek balance + briefing', by: 'Oct 24 at DWT office, Thamel', critical: true, notes: 'Pay $1,296 balance, gear check, meet guide/porter; ACAP/TIMS via agency — confirm; 9kg pp porter limit' },
@@ -586,8 +586,8 @@ window.TRIP = (function () {
       { item: 'Diving certs AOW + Nitrox (2 pax)', cost: 960, note: 'Actual — R$5,000' },
       { item: 'Rio Airbnb, Jun 21–Jul 19', cost: 1350, note: 'Actual — R$7,000' },
       { item: 'São Paulo Airbnb, Aug 19–26', cost: 270, note: 'Actual — R$1,400' },
-      { item: 'Varanasi Airbnb, Oct 17–21 (4n)', cost: 208, note: 'Booked ✅ — R$1,081 actual (~$208 at R$5.20)' },
-      { item: 'Kathmandu → Beijing flight Nov 7 (2 pax)', cost: 477, note: 'Bought ✅ — 11:45–23:15, Entry 1 starts Nov 7' },
+      { item: 'Varanasi Airbnb, Oct 17–21 (4n)', cost: 208, note: 'Actual — R$1,081 (~$208 at R$5.20)' },
+      { item: 'Kathmandu → Beijing flight Nov 7 (2 pax)', cost: 477, note: 'Actual — $477 for two' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
@@ -597,8 +597,8 @@ window.TRIP = (function () {
       { id: 'athens', days: 20, lodging: 1700, food: 1700, transport: 1230, activities: 570, fees: 0, note: 'Booked stays avg ~$85/n · 4 ferries €685 actual (~$770) · Chania car ~$240 · Kleftiko ~$260' },
       { id: 'turkey', days: 21, lodging: 1865, food: 1470, transport: 790, activities: 300, fees: 120, note: 'Göreme 3n + Alaçatı 3n + Şirince/Kaş/Akyaka + Istanbul 10n · balloon Sep 22/23 cancelled (weather), $480 refunded · car 8d ~$450 · e-visa' },
       { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
-      { id: 'india', days: 7, lodging: 315, food: 315, transport: 190, activities: 120, fees: 55, note: 'Agra day trip Oct 15 · Varanasi train Oct 17 booked ✅ · Varanasi Airbnb R$1,081 booked ✅ · VNS→KTM $343 booked ✅ · Taj + forts + boats' },
-      { id: 'nepal', days: 17, lodging: 260, food: 260, transport: 100, activities: 1440, fees: 100, note: 'Trek $1,440 locked w/ Discovery World ($720pp; $144 paid, $1,296 due Oct 24) · KTM 6n (pre 4n + recovery 2n) · KTM→PEK Nov 7 $477 booked ✅ · tips/visa cash' },
+      { id: 'india', days: 7, lodging: 315, food: 315, transport: 190, activities: 120, fees: 55, note: 'Agra day trip Oct 15 · Varanasi train Oct 17 booked ✅ · Varanasi Airbnb R$1,081 · VNS→KTM $343 booked ✅ · Taj + forts + boats' },
+      { id: 'nepal', days: 17, lodging: 260, food: 260, transport: 100, activities: 1440, fees: 100, note: 'Trek $1,440 locked w/ Discovery World ($720pp; $144 paid, $1,296 due Oct 24) · KTM 6n (pre 4n + recovery 2n) · KTM→PEK Nov 7 ($477) · tips/visa cash' },
       { id: 'china-e1', days: 16, lodging: 1390, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 9n (slow start) + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset)' },
       { id: 'hk', days: 5, lodging: 750, food: 450, transport: 120, activities: 0, fees: 0, note: '~$150/n · Peak tram + ferries + Lamma · TECO filing Nov 24 · free gardens/markets' },
       { id: 'china-e2', days: 26, lodging: 2190, food: 1700, transport: 500, activities: 450, fees: 0, note: 'Shenzhen 5n + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split stay) + Wulong 2d/1n · ferry + ZHU→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets' },
@@ -624,7 +624,7 @@ window.TRIP = (function () {
       { route: 'Istanbul → Baku', cost: 450, date: '2026-10-12', note: 'Bought ✅ (est.)' },
       { route: 'Baku → Delhi', cost: 550, date: '2026-10-14', note: 'Bought ✅ (est.)' },
       { route: 'Varanasi → Kathmandu (direct)', cost: 343, date: '2026-10-21', note: 'Bought ✅ ($343 for two), 08:30 direct' },
-      { route: 'Kathmandu → Beijing', cost: 477, date: '2026-11-07', note: 'Bought ✅ ($477 for two), 11:45–23:15; Entry 1 starts Nov 7' },
+      { route: 'Kathmandu → Beijing', cost: 477, date: '2026-11-07', note: 'Late-night arrival; Entry 1 starts Nov 7' },
       { route: 'Hong Kong → Shenzhen (HSR)', cost: 30, date: '2026-11-28', note: 'Estimate — Futian/Lok Ma Chau, ~15min; Entry 2 starts' },
       { route: 'Chongqing → Seoul (direct)', cost: 350, date: '2026-12-24', note: 'Estimate — CA439 mornings + Asiana redeye verified routable; Christmas Eve premium risk, buy early' },
       { route: 'Seoul → Taipei', cost: 275, date: '2027-01-11', note: 'Estimate, LCC Monday' },

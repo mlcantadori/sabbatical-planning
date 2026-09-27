@@ -54,7 +54,7 @@
 | 4 | turkey | 2026-09-21 → 2026-10-12 | LOCKED (balloon Sep 22/23 cancelled — weather, refunded) |
 | 5 | baku | 2026-10-12 → 2026-10-14 | LOCKED (stopover program) |
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
-| 7 | nepal | 2026-10-21 → 2026-11-07 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside; KTM→PEK Nov 7 11:45–23:15 booked ✅ $477) |
+| 7 | nepal | 2026-10-21 → 2026-11-07 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside; KTM→PEK Nov 7 late arrival) |
 | 8 | china-e1 | 2026-11-07 → 2026-11-23 | SCOPE (16d slow-Beijing start: 9n Beijing incl. trek recovery → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
 | 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset + Taiwan-visa filing Nov 24) |
 | 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: Shenzhen 5n (rendezvous tail) + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split around Wulong) + Wulong 2d/1n; CKG→ICN Dec 24 verified) |
@@ -77,11 +77,11 @@
 - Hakuba snowboard week inside `japan` chapter (lift 7d + full rental).
 - Bought ✅: GRU→YYZ→ATH long-haul; Greece stays + 4 ferries; Cappadocia balloon (cancelled — weather, full refund ✅);
   ASR→ADB Sep 24; Athens→Chania + Athens→Cappadocia flights; train to Varanasi
-  Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two); Varanasi Airbnb R$1,081 ✅;
-  KTM→PEK Nov 7 11:45–23:15 ($477 for two) ✅.
+  Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two); Varanasi Airbnb R$1,081;
+  KTM→PEK Nov 7 ($477 for two).
 - India e-Visa required before Oct 14 Delhi arrival.
 - To-buy / estimates (routable in principle, but chained — flag ripple effects):
-  KTM→PEK Nov 7 11:45–23:15 bought ✅ ($477) · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 ·
+  KTM→PEK Nov 7 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→SZX HSR Nov 28 · SZX→Macau ferry Dec 3 · ZHU→CAN HSR Dec 5 · GZ→SHA Dec 7 ·
   SHA→HKG Dec 9 · HK→CTU Dec 14 · CKG→ICN Dec 24 (CA mornings/redeye, verified) + ICN→PUS hop ·
   ICN→TPE Jan 11 · TPE→KIX Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
