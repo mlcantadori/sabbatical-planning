@@ -2,8 +2,7 @@
 
 > **Precedence:** if this brief disagrees with `itinerary-data.js`
 > on dates, figures, or chapter content, **the data file wins**. This brief defines traveler preferences, review scope, and
-> locked constraints. Do NOT use `master-prompt.md` — it is a historical
-> document that contradicts the current plan in several places.
+> locked constraints.
 > Dates below are a snapshot as of 2026-09-15; always confirm against the data files.
 
 ## Travelers & style
