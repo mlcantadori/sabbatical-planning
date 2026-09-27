@@ -86,14 +86,8 @@ function Photo({
     }
   }, caption));
 }
-function getDayN(date) {
-  return window.TRIP.helpers.dayCounter(date);
-}
 function openMaps(query) {
   window.open(window.TRIP.helpers.mapsUrl(query), '_blank', 'noopener,noreferrer');
-}
-function openMapsLatLng(lat, lng, label) {
-  window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`, '_blank', 'noopener,noreferrer');
 }
 
 // Subscribe to the store and trigger re-render on any mutation.
@@ -102,210 +96,6 @@ function useStore() {
   React.useEffect(() => window.STORE.subscribe(force), []);
   return window.STORE;
 }
-
-// Small contentEditable wrapper — commits on blur or Enter, reverts on Esc.
-function Editable({
-  value,
-  onCommit,
-  className = '',
-  placeholder = '',
-  as = 'span',
-  style = {}
-}) {
-  const Tag = as;
-  const ref = React.useRef(null);
-  // Sync external value into the DOM when not focused. While focused, leave
-  // the user's edits alone so the caret doesn't jump.
-  React.useEffect(() => {
-    if (ref.current && document.activeElement !== ref.current) {
-      ref.current.textContent = value || '';
-    }
-  }, [value]);
-  return /*#__PURE__*/React.createElement(Tag, {
-    ref: ref,
-    contentEditable: true,
-    suppressContentEditableWarning: true,
-    className: `editable ${className}`,
-    "data-placeholder": placeholder,
-    onBlur: e => {
-      const v = e.currentTarget.textContent.trim();
-      if (v !== (value || '')) onCommit(v);
-    },
-    onKeyDown: e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        e.currentTarget.blur();
-      }
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        e.currentTarget.textContent = value || '';
-        e.currentTarget.blur();
-      }
-    },
-    onClick: e => e.stopPropagation(),
-    style: style
-  }, value || '');
-}
-
-// Hover-revealed action menu (⋯).
-function ActionMenu({
-  items,
-  className = '',
-  stop = true
-}) {
-  const [open, setOpen] = React.useState(false);
-  const ref = React.useRef(null);
-  React.useEffect(() => {
-    if (!open) return;
-    const off = e => {
-      if (!ref.current?.contains(e.target)) setOpen(false);
-    };
-    document.addEventListener('pointerdown', off, true);
-    return () => document.removeEventListener('pointerdown', off, true);
-  }, [open]);
-  return /*#__PURE__*/React.createElement("div", {
-    ref: ref,
-    className: `action-menu ${className}`,
-    onClick: stop ? e => e.stopPropagation() : undefined
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "action-menu-trigger",
-    onClick: e => {
-      e.stopPropagation();
-      setOpen(o => !o);
-    },
-    title: "Actions"
-  }, /*#__PURE__*/React.createElement("svg", {
-    width: "12",
-    height: "12",
-    viewBox: "0 0 12 12",
-    fill: "currentColor"
-  }, /*#__PURE__*/React.createElement("circle", {
-    cx: "2.5",
-    cy: "6",
-    r: "1.1"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "6",
-    cy: "6",
-    r: "1.1"
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "9.5",
-    cy: "6",
-    r: "1.1"
-  }))), open && /*#__PURE__*/React.createElement("div", {
-    className: "action-menu-list"
-  }, items.map((it, i) => /*#__PURE__*/React.createElement("button", {
-    key: i,
-    className: `action-menu-item ${it.danger ? 'is-danger' : ''}`,
-    onClick: e => {
-      e.stopPropagation();
-      setOpen(false);
-      it.onClick();
-    }
-  }, it.label))));
-}
-const Icon = {
-  external: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 12,
-    height: p.size || 12,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.8",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M15 3h6v6M10 14L21 3M21 14v7H3V3h7"
-  })),
-  calendar: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round"
-  }, /*#__PURE__*/React.createElement("rect", {
-    x: "3",
-    y: "4",
-    width: "18",
-    height: "18",
-    rx: "2"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M16 2v4M8 2v4M3 10h18"
-  })),
-  close: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M18 6L6 18M6 6l12 12"
-  })),
-  map: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("polygon", {
-    points: "1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "8",
-    y1: "2",
-    x2: "8",
-    y2: "18"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "16",
-    y1: "6",
-    x2: "16",
-    y2: "22"
-  })),
-  list: p => /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 24 24",
-    width: p.size || 14,
-    height: p.size || 14,
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "1.6",
-    strokeLinecap: "round"
-  }, /*#__PURE__*/React.createElement("line", {
-    x1: "8",
-    y1: "6",
-    x2: "21",
-    y2: "6"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "8",
-    y1: "12",
-    x2: "21",
-    y2: "12"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "8",
-    y1: "18",
-    x2: "21",
-    y2: "18"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "3",
-    y1: "6",
-    x2: "3.01",
-    y2: "6"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "3",
-    y1: "12",
-    x2: "3.01",
-    y2: "12"
-  }), /*#__PURE__*/React.createElement("line", {
-    x1: "3",
-    y1: "18",
-    x2: "3.01",
-    y2: "18"
-  }))
-};
 
 // Error boundary — isolates a crashing subtree (e.g. a map view whose CDN
 // failed to load) so the rest of the app keeps working. Remount via key.
@@ -336,12 +126,8 @@ class ErrorBoundary extends React.Component {
 }
 Object.assign(window, {
   Photo,
-  getDayN,
   openMaps,
-  openMapsLatLng,
   Icon,
   useStore,
-  Editable,
-  ActionMenu,
   ErrorBoundary
 });
