@@ -42,7 +42,7 @@ window.TRIP_GEO = {
     'athens/Santorini':                       [36.4166,   25.4335], // Fira
     'athens/Folegandros':                     [36.6167,   24.9167], // Chora
     'athens/Milos':                           [36.7397,   24.4265], // Plaka
-    'athens/Athens — buffer':                 [37.9838,   23.7275],
+    'athens/Athens':                          [37.9838,   23.7275],
     // Turkey
     'turkey/Cappadocia — Göreme':             [38.6431,   34.8289],
     'turkey/Alaçatı':                         [38.2822,   26.3747],
