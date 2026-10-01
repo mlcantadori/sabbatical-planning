@@ -20,14 +20,14 @@
     return m;
   }
 
-  // Deep-link params (?view=budget|todo&map=2d|3d&chapter=<id>&place=<idx>):
+  // Deep-link params (?view=budget|todo|photos&map=2d|3d&chapter=<id>&place=<idx>):
   // read once on load, then reflected back via replaceState so any view is
   // shareable. Invalid values fall back to defaults (never crash).
   function readUrlParams() {
     try {
       const q = new URLSearchParams(window.location.search);
       const viewRaw = (q.get('view') || '').toLowerCase();
-      const view = viewRaw === 'budget' || viewRaw === 'todo' ? viewRaw : null;
+      const view = viewRaw === 'budget' || viewRaw === 'todo' || viewRaw === 'photos' ? viewRaw : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
       const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe'
         : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
@@ -139,6 +139,7 @@
             </button>
             <button className={view === 'budget' ? 'is-active' : ''} onClick={() => setView('budget')}>{isMobile ? '$' : 'Budget'}</button>
             <button className={view === 'todo' ? 'is-active' : ''} onClick={() => setView('todo')}>{isMobile ? '✓' : 'To-do'}</button>
+            <button className={view === 'photos' ? 'is-active' : ''} onClick={() => setView('photos')}>{isMobile ? '▦' : 'Photos'}</button>
             <window.SyncButton compact={isMobile} />
           </div>
         </header>

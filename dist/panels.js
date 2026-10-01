@@ -325,6 +325,7 @@
     onClose
   }) {
     const isTodo = view === 'todo';
+    const isPhotos = view === 'photos';
     return /*#__PURE__*/React.createElement("div", {
       className: "binder"
     }, /*#__PURE__*/React.createElement("div", {
@@ -333,7 +334,7 @@
       className: "binder-tabs"
     }, /*#__PURE__*/React.createElement("span", {
       className: "kicker"
-    }, isTodo ? 'Checklist' : 'Budget')), /*#__PURE__*/React.createElement("button", {
+    }, isTodo ? 'Checklist' : isPhotos ? 'Google Photos' : 'Budget')), /*#__PURE__*/React.createElement("button", {
       className: "icon-btn",
       onClick: onClose,
       title: "Close binder"
@@ -341,7 +342,7 @@
       size: 16
     }))), /*#__PURE__*/React.createElement("div", {
       className: "binder-body"
-    }, isTodo ? /*#__PURE__*/React.createElement(window.TodoView, null) : /*#__PURE__*/React.createElement(BudgetView, null)));
+    }, isTodo ? /*#__PURE__*/React.createElement(window.TodoView, null) : isPhotos ? /*#__PURE__*/React.createElement(window.PhotosView, null) : /*#__PURE__*/React.createElement(BudgetView, null)));
   }
   function BudgetView() {
     const store = useStore();

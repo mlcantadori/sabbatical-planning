@@ -249,18 +249,19 @@
   // ══════════════════════════════════════════════════════════════════════
   function Binder({ view, onClose }) {
     const isTodo = view === 'todo';
+    const isPhotos = view === 'photos';
     return (
       <div className="binder">
         <div className="binder-head">
           <div className="binder-tabs">
-            <span className="kicker">{isTodo ? 'Checklist' : 'Budget'}</span>
+            <span className="kicker">{isTodo ? 'Checklist' : isPhotos ? 'Google Photos' : 'Budget'}</span>
           </div>
           <button className="icon-btn" onClick={onClose} title="Close binder">
             <window.Icon.close size={16} />
           </button>
         </div>
         <div className="binder-body">
-          {isTodo ? <window.TodoView /> : <BudgetView />}
+          {isTodo ? <window.TodoView /> : isPhotos ? <window.PhotosView /> : <BudgetView />}
         </div>
       </div>
     );
