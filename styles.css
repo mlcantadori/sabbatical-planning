@@ -1692,6 +1692,235 @@ button {
   white-space: nowrap;
 }
 
+/* ════════════════════════════════════════════════════════════════════════
+   PHOTOS — Google Photos picker (binder view)
+   ════════════════════════════════════════════════════════════════════════ */
+
+.photos .picker-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.photos .btn-primary {
+  border: none;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all .14s ease;
+}
+.photos .btn-primary:hover:not(:disabled) { background: var(--accent); }
+.photos .btn-primary:disabled { opacity: 0.35; cursor: default; }
+.photos .btn-primary.btn-big { padding: 10px 22px; font-size: 11px; }
+.photos .picker-status {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 10px 14px;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.photos .picker-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.photos .picker-favs {
+  align-self: start;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  padding-bottom: 8px;
+}
+.photos .picker-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+.photos .picker-section-head h2 {
+  font-family: var(--f-disp);
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+.photos .picker-count {
+  margin-left: auto;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+.photos .chapter-block {
+  margin-bottom: 20px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.photos .chapter-block-head {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--rule-2);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.photos .chapter-block-flag { font-size: 18px; }
+.photos .chapter-block-title {
+  font-family: var(--f-disp);
+  font-size: 18px;
+}
+.photos .chapter-block-dates {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.photos .slot-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px dashed var(--rule);
+  align-items: center;
+  cursor: pointer;
+}
+.photos .slot-row:last-child { border-bottom: none; }
+.photos .slot-row.is-filled { background: rgba(93,110,74,.08); }
+.photos .slot-row.is-selected {
+  background: rgba(194,105,58,.12);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.photos .slot-kicker {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.photos .slot-name {
+  font-family: var(--f-serif);
+  font-size: 16px;
+  color: var(--ink);
+  margin: 2px 0;
+}
+.photos .slot-dates {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--ink-3);
+}
+.photos .slot-pick {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  color: var(--ink-2);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.photos .slot-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+.photos .slot-thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  display: block;
+}
+.photos .fav-grid {
+  columns: 3;
+  column-gap: 14px;
+  margin-top: 12px;
+}
+.photos .fav-card {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 14px;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.photos .fav-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--paper-2);
+}
+.photos .fav-card.is-assigned { border-color: var(--sage); }
+.photos .fav-body {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.photos .fav-date {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+}
+.photos .fav-assign { display: flex; gap: 6px; }
+.photos .fav-assign .btn-primary { flex: 1; }
+.photos .export-card {
+  margin-top: 28px;
+  border: 1.5px solid rgba(31,24,18,.35);
+  background: var(--paper);
+  padding: 18px 20px;
+}
+.photos .export-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.photos .conn-pill {
+  margin-left: auto;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  color: var(--ink-3);
+}
+.photos .conn-pill.is-on {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+@media (max-width: 880px) {
+  .photos .fav-grid { columns: 2; }
+  .photos .picker-favs {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .photos .picker-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .photos .fav-grid { columns: 1; }
+}
+
 /* Map failure fallback (error boundary / CDN guard) — keeps the header
    and tabs usable when a map view can't mount. */
 .map-fallback {
