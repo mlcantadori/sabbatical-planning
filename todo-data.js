@@ -69,7 +69,7 @@ window.TODO_ITEMS = [
 
   // ── nepal ─────────────────────────────────────────────────────────
   { id: 'nepal-2', ch: 'nepal', place: 'Annapurna', cat: 'attraction', title: 'ABC trek Oct 25 – Nov 4', note: 'Discovery World $1,440 for two ($144 paid, $1,296 balance due Oct 24 at Kathmandu office)', due: '2026-09-01', done: true },
-  { id: 'nepal-3', ch: 'nepal', place: 'Kathmandu', cat: 'stay', title: 'Kathmandu hotels (pre/post-trek)', note: 'Oct 21–24 + Nov 5–6 Thamel nights (recovery cut to 2n — early KTM→PEK Nov 7); Pokhara transit covered by the trek', due: '2026-10-01', done: false },
+  { id: 'nepal-3', ch: 'nepal', place: 'Kathmandu', cat: 'stay', title: 'Kathmandu hotels (pre/post-trek)', note: 'Pre-trek Oct 21–25 booked ✅ ($171) + post-trek Nov 4–7 booked ✅ ($129); Pokhara transit covered by the trek', due: '2026-10-01', done: true },
   { id: 'nepal-4', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'ACAP permit + TIMS card', note: 'Via agency — confirm Oct 24 at DWT office', due: '2026-10-21', done: false },
   { id: 'nepal-5', ch: 'nepal', place: null, cat: 'admin', title: 'SafetyWing plan before Nepal', note: 'Credit-card insurance covers 60 days only — start SafetyWing ahead of the Oct 21 chapter; must cover heli-evac for the trek', due: '2026-10-15', done: false },
   { id: 'nepal-6', ch: 'nepal', place: null, cat: 'transport', title: 'Kathmandu→Beijing flight Nov 7 11:45–23:15', note: 'Booked ✅ ($477 for two) — Entry 1 starts Nov 7', due: '2026-09-30', done: true },
