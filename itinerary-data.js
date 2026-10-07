@@ -569,6 +569,7 @@ window.TRIP = (function () {
       { item: 'Kathmandu → Beijing flight Nov 7 (2 pax)', cost: 477, note: 'Actual — $477 for two' },
       { item: 'Kathmandu hotel, Oct 21–25 (4n)', cost: 171, note: 'Booked ✅ — $171 pre-trek' },
       { item: 'Kathmandu hotel, Nov 4–7 (3n)', cost: 129, note: 'Booked ✅ — $129 post-trek' },
+      { item: 'Beijing stay, Nov 7–16 (9n)', cost: 528, note: 'Booked ✅ — $528' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
@@ -580,7 +581,7 @@ window.TRIP = (function () {
       { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
       { id: 'india', days: 7, lodging: 315, food: 315, transport: 190, activities: 120, fees: 55, note: 'Agra day trip Oct 15 · Varanasi train Oct 17 booked ✅ · Varanasi Airbnb R$1,081 · VNS→KTM $343 booked ✅ · Taj + forts + boats' },
       { id: 'nepal', days: 17, lodging: 300, food: 260, transport: 100, activities: 1440, fees: 100, note: 'Trek $1,440 locked w/ Discovery World ($720pp; $144 paid, $1,296 due Oct 24) · KTM 7n (pre 4n Oct 21–25 booked ✅ $171 + post 3n Nov 4–7 booked ✅ $129) · KTM→PEK Nov 7 ($477) · tips/visa cash' },
-      { id: 'china-e1', days: 16, lodging: 1390, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 9n (slow start) + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset)' },
+      { id: 'china-e1', days: 16, lodging: 1390, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 9n Nov 7–16 booked ✅ $528 (slow start) + Huangshan 3n + HGH 2n + SUZ 2n · PEK→TXN + SUZ→HKG hops (south moved to E2 after HK reset)' },
       { id: 'hk', days: 5, lodging: 750, food: 450, transport: 120, activities: 0, fees: 0, note: '~$150/n · Peak tram + ferries + Lamma · TECO filing Nov 24 · free gardens/markets' },
       { id: 'china-e2', days: 26, lodging: 2190, food: 1700, transport: 500, activities: 450, fees: 0, note: 'Shenzhen 5n + Macau 2n + CAN 2n + Shanghai 5n + Chengdu 5n + CQ 5n (split stay) + Wulong 2d/1n · ferry + ZHU→CAN + CAN→PVG + PVG→CTU + CTU→CKG hops · Sanxingdui + karst tickets' },
       { id: 'korea', days: 18, lodging: 2250, food: 1260, transport: 450, activities: 250, fees: 0, note: '~$125/n · Busan Xmas + NYE Seoul · DMZ tour · ICN→PUS hop' },

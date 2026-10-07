@@ -77,7 +77,7 @@ window.TODO_ITEMS = [
   { id: 'nepal-8', ch: 'nepal', place: 'Kathmandu', cat: 'admin', title: 'Buy trekking gear in Thamel', note: 'Layers + essentials for ABC; bag + down jacket loaned by DWT — 9kg pp porter limit', due: '2026-10-22', done: false },
 
   // ── china-e1 ──────────────────────────────────────────────────────
-  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (9n)', note: 'Nov 7–16, incl. 2 slow hutong days upfront (trek recovery)', due: '2026-10-01', done: false },
+  { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (9n)', note: 'Nov 7–16 booked ✅ ($528), incl. 2 slow hutong days upfront (trek recovery)', due: '2026-10-01', done: true },
   { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 16–19, Tangkou base + summit night', due: '2026-10-01', done: false },
   { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 19–21', due: '2026-10-01', done: false },
   { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (2n)', note: 'Nov 21–23, gardens express', due: '2026-10-01', done: false },
