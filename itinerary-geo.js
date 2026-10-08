@@ -54,12 +54,10 @@ window.TRIP_GEO = {
     'baku/Baku':                                 [40.4093,   49.8671],
     // Nepal
     'nepal/Kathmandu':                        [27.7172,   85.3240],
-    'nepal/Pokhara':                          [28.2096,   83.9856],
     'nepal/Annapurna Base Camp Trek':         [28.5306,   83.8783],
     'nepal/Kathmandu recovery':              [27.7172,   85.3240],
     // India
     'india/Delhi + Agra':                     [27.1751,   78.0421], // Agra
-    'india/Rishikesh':                        [30.0869,   78.2676],
     'india/Varanasi':                         [25.3176,   82.9739],
     // Japan (fused winter chapter)
     'japan/Kyoto':                          [35.0116,  135.7681],
@@ -106,15 +104,15 @@ window.TRIP_GEO = {
     'thailand/Koh Tao':                       [10.0956,   99.8377],
     'thailand/Koh Samui':                     [ 9.5018,  100.0140],
     'thailand/Bangkok':                       [13.7460,  100.5018],
-    // China E1 (Beijing first, then south to Shenzhen)
+    // China E1 (Beijing first, then Huangshan + Jiangnan)
     'china-e1/Beijing':                       [39.9042,  116.4074],
-    'china-e1/Xi\'an':                        [34.3416,  108.9398],
     'china-e1/Huangshan':                      [30.1300,  118.1700],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
     'china-e1/Suzhou':                         [31.2989,  120.5853],
-    'china-e1/Shenzhen':                       [22.5431,  114.0579],
-    'china-e1/Guangzhou':                      [23.1291,  113.2644],
-    // China E2 (Sichuan + Wulong + Shanghai finish)
+    // China E2 (Pearl Delta → Shanghai → Sichuan + Wulong)
+    'china-e2/Shenzhen':                       [22.5431,  114.0579],
+    'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
+    'china-e2/Guangzhou':                      [23.1291,  113.2644],
     'china-e2/Chengdu':                        [30.5728,  104.0668],
     'china-e2/Chongqing':                      [29.4316,  106.9123],
     'china-e2/Wulong':                         [29.3237,  107.7621], // Xiannvshan Town
@@ -125,6 +123,5 @@ window.TRIP_GEO = {
     'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
     'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
     'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
-    'china-spring/Buffer':                    [28.2282,  112.9388], // Changsha
   },
 };
