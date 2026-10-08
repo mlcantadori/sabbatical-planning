@@ -57,7 +57,6 @@ window.PHOTO_IDS = {
   'shanghai bund night':         'extra-pictures/china-e2/shanghai-bund-night.jpg',
   'chengdu panda':               'extra-pictures/china-e2/chengdu-panda.jpg',
   'chongqing cyberpunk night':   'extra-pictures/china-e2/chongqing-cyberpunk-night.jpg',
-  'wulong three bridges':        'extra-pictures/china-e2/wulong-three-bridges.jpg',
   // ── Korea ─────────────────────────────────────────────────────────
   'seoul palace winter':         'extra-pictures/korea/seoul-palace-winter.jpg',
   'busan gamcheon':              'extra-pictures/korea/busan-gamcheon.jpg',
