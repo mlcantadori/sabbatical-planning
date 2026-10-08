@@ -109,13 +109,12 @@ window.TRIP_GEO = {
     'china-e1/Huangshan':                      [30.1300,  118.1700],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
     'china-e1/Suzhou':                         [31.2989,  120.5853],
-    // China E2 (Pearl Delta → Shanghai → Sichuan + Wulong)
+    // China E2 (Pearl Delta → Sichuan → Shanghai finale)
     'china-e2/Shenzhen':                       [22.5431,  114.0579],
     'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
     'china-e2/Guangzhou':                      [23.1291,  113.2644],
     'china-e2/Chengdu':                        [30.5728,  104.0668],
     'china-e2/Chongqing':                      [29.4316,  106.9123],
-    'china-e2/Wulong':                         [29.3237,  107.7621], // Xiannvshan Town
     'china-e2/Shanghai':                       [31.2304,  121.4737],
     // China spring (Xi'an + south in peak season)
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
