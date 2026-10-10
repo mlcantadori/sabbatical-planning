@@ -20,7 +20,8 @@
 // overwritten back on the next sync; titles you add yourself that collide
 // with a checklist title may get adopted — keep yours distinct.
 // Checklist ticks in the app are NOT read — sync from Export-committed
-// todo-data.js states (done:true → completed in Google Tasks).
+// todo-data.js states (done:true → completed in Google Tasks). Chapter
+// parents carry the earliest child due as their deadline.
 
 (function () {
   const LIST_NAME = 'Sabbatical';
@@ -191,15 +192,11 @@
         title = base + ' #' + n;
       }
       usedParent.add(title);
-      // Parent deadline: chapter end; groups without a chapter (prep)
-      // inherit their latest child due instead.
-      let due = null;
-      if (c && c.end) {
-        due = c.end + 'T00:00:00.000Z';
-      } else {
-        const kidDues = items.filter(i => i.ch === ch && i.due).map(i => i.due);
-        if (kidDues.length) due = kidDues.sort().pop();
-      }
+      // Parent deadline: earliest child due — the day this chapter first
+      // needs action. (Chapter end would surface after every booking
+      // deadline in it has already passed.)
+      const kidDues = items.filter(i => i.ch === ch && i.due).map(i => i.due);
+      const due = kidDues.length ? kidDues.sort()[0] : null;
       return {
         key: 'ch:' + ch,
         title,
