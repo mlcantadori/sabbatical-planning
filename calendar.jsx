@@ -267,39 +267,61 @@
   function SyncButton({ compact }) {
     const [label, setLabel] = React.useState(() => {
       try {
-        return localStorage.getItem(LS_LAST) ? 'Synced ✓' : 'Sync';
+        return (localStorage.getItem(LS_LAST) || localStorage.getItem('gtasks-last-sync')) ? 'Synced ✓' : 'Sync';
       } catch {
         return 'Sync';
       }
     });
     const [busy, setBusy] = React.useState(false);
-    const run = async () => {
+    const [open, setOpen] = React.useState(false);
+    const run = async (kind) => {
+      setOpen(false);
       if (busy) return;
+      const mod = kind === 'tasks' ? window.TasksSync : window.CalendarSync;
+      const noun = kind === 'tasks' ? 'Tasks' : 'Calendar';
+      const tag = kind === 'tasks' ? 'Tasks' : 'Cal';
+      if (!mod) {
+        alert(noun + ' sync module failed to load. Check your connection and retry.');
+        return;
+      }
       setBusy(true);
-      setLabel('Syncing…');
+      setLabel(kind === 'tasks' ? 'Tasks…' : 'Syncing…');
       try {
-        const r = await syncAll();
+        const r = await mod.syncAll((m) => setLabel(m));
         const d = new Date(r.at);
         const hh = String(d.getHours()).padStart(2, '0');
         const mm = String(d.getMinutes()).padStart(2, '0');
         if (r.failed.length === 0) {
-          setLabel('Synced ✓ ' + hh + ':' + mm);
+          setLabel(tag + ' ✓ ' + hh + ':' + mm);
         } else {
-          setLabel('Synced ' + r.synced + '/' + (r.synced + r.failed.length) + ' — retry');
-          alert('Calendar sync: ' + r.synced + ' ok, ' + r.failed.length + ' failed:\n'
-            + r.failed.map((f) => '• ' + f.summary + ' [' + f.id + ']: ' + f.error).join('\n'));
+          setLabel(tag + ' ' + r.synced + '/' + (r.synced + r.failed.length) + ' — retry');
+          alert(noun + ' sync: ' + r.synced + ' ok, ' + r.failed.length + ' failed:\n'
+            + r.failed.map((f) => '• ' + (f.summary || f.title) + ' [' + (f.id || '') + ']: ' + f.error).join('\n'));
         }
       } catch (e) {
-        setLabel('Sync failed — retry');
-        alert('Calendar sync failed: ' + ((e && (e.message || (e.result && e.result.error && e.result.error.message))) || e));
+        setLabel(noun + ' failed — retry');
+        alert(noun + ' sync failed: ' + ((e && (e.message || (e.result && e.result.error && e.result.error.message))) || e));
       } finally {
         setBusy(false);
       }
     };
     return (
-      <button onClick={run} title="Push chapter dates + flight blocks to your Google Calendar">
-        <window.Icon.calendar size={12} /> {!compact && label}
-      </button>
+      <span className="sync-wrap">
+        <button onClick={() => { if (!busy) setOpen((o) => !o); }} title="Push to Google Calendar or Google Tasks" aria-haspopup="menu" aria-expanded={open}>
+          <window.Icon.calendar size={12} /> {!compact && label} {!compact && ' ▾'}
+        </button>
+        {open && <span className="sync-backdrop" onClick={() => setOpen(false)} />}
+        {open && (
+          <span className="sync-menu" role="menu">
+            <button role="menuitem" disabled={busy} onClick={() => run('calendar')} title="Push chapter dates + flight blocks to your Google Calendar">
+              <window.Icon.calendar size={12} /> Calendar
+            </button>
+            <button role="menuitem" disabled={busy} onClick={() => run('tasks')} title="Push the to-do checklist to a Sabbatical list in Google Tasks">
+              <window.Icon.list size={12} /> Tasks
+            </button>
+          </span>
+        )}
+      </span>
     );
   }
 

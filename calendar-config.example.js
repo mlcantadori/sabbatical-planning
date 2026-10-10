@@ -6,5 +6,8 @@
 // Authorized JavaScript origins on the Client ID must include:
 //   https://mlcantadori.github.io
 //   http://localhost:8000   (local testing)
+//
+// The same Client ID also powers the Tasks sync (Sync ▾ → Tasks) once the
+// Google Tasks API is enabled on the same Cloud project.
 
 window.SABBATICAL_CALENDAR_CLIENT_ID = 'YOUR_CLIENT_ID.apps.googleusercontent.com';

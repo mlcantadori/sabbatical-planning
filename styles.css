@@ -83,7 +83,11 @@ button {
   padding: 0 18px;
   border-bottom: 1px solid var(--rule);
   background: var(--paper);
-  z-index: 5;
+  /* Positioned so the z-index takes effect: the header (and the sync
+     dropdown overflowing from it) must paint above Leaflet controls
+     (z-1000) and the 2D/3D toggle + globe widgets (z-500/600). */
+  position: relative;
+  z-index: 1100;
   min-width: 0;
 }
 
@@ -170,6 +174,54 @@ button {
 .app-nav button.is-active {
   background: var(--ink);
   color: var(--paper);
+}
+
+/* Header sync dropdown (Calendar + Tasks menu) */
+.sync-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.sync-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+.sync-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  min-width: 148px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: var(--shadow-1);
+  padding: 4px;
+}
+.sync-menu button {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  font-family: var(--f-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+}
+.sync-menu button:hover:not(:disabled) {
+  background: rgba(31,24,18,.06);
+}
+.sync-menu button:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .app-main {

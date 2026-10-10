@@ -28,8 +28,9 @@ budget, and check off.
 - ✅ **A pre-trip checklist** — every flight, stay, visa, and permit that must
   be secured ahead, with book-by dates, overdue highlighting, and an export
   button to commit ticked states back to the file.
-- 📅 **Google Calendar sync** — one click pushes chapter date ranges and flight
-  blocks to your calendar.
+- 📅 **Google Calendar + Tasks sync** — the header Sync ▾ menu pushes chapter
+  date ranges and flight blocks to your calendar, and the to-do checklist
+  (with book-by dates and done states) to a "Sabbatical" list in Google Tasks.
 - 🔗 **Shareable views** — every state is a URL
   (`?view=budget&chapter=japan&place=2`), so "look at this" always works.
 - 📱 **A real mobile layout** — map/list toggle, bottom-sheet details, thumbable
@@ -87,7 +88,8 @@ Practical notes:
 | `app.jsx` | Header, progress bar, deep-linking, mobile switch |
 | `map-view.jsx` / `globe-view.jsx` | 2D Leaflet map / 3D Three.js globe |
 | `panels.jsx` | Chapter list, detail panel, budget binder |
-| `calendar.jsx` | Google Calendar sync (`SyncButton`) |
+| `calendar.jsx` | Google Calendar sync (`SyncButton` dropdown) |
+| `tasks.jsx` | Google Tasks sync (checklist → "Sabbatical" list) |
 | `todo.jsx` / `todo-data.js` | Checklist view / its data |
 | `extra-pictures/` | All photography, stored locally |
 | `dist/` | Pre-compiled JS (checked in so static hosting just works) |
