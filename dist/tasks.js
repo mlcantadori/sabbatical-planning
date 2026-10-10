@@ -21,7 +21,7 @@
 // with a checklist title may get adopted — keep yours distinct.
 // Checklist ticks in the app are NOT read — sync from Export-committed
 // todo-data.js states (done:true → completed in Google Tasks). Chapter
-// parents carry the earliest child due as their deadline.
+// parents carry the earliest uncompleted child due as their deadline.
 
 (function () {
   const LIST_NAME = 'Sabbatical';
@@ -192,10 +192,10 @@
         title = base + ' #' + n;
       }
       usedParent.add(title);
-      // Parent deadline: earliest child due — the day this chapter first
-      // needs action. (Chapter end would surface after every booking
-      // deadline in it has already passed.)
-      const kidDues = items.filter(i => i.ch === ch && i.due).map(i => i.due);
+      // Parent deadline: earliest *uncompleted* child due — the next day
+      // this chapter needs action. Done bookings don't count, and a fully
+      // booked chapter carries no date at all.
+      const kidDues = items.filter(i => i.ch === ch && i.due && i.status !== 'completed').map(i => i.due);
       const due = kidDues.length ? kidDues.sort()[0] : null;
       return {
         key: 'ch:' + ch,
