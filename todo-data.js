@@ -81,11 +81,13 @@ window.TODO_ITEMS = [
   { id: 'china-e1-1-huangshan', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan stay (3n)', note: 'Nov 16–19, Tangkou base + summit night', due: '2026-10-26', done: false },
   { id: 'china-e1-1-hangzhou', ch: 'china-e1', place: 'Hangzhou', cat: 'stay', title: 'Hangzhou stay (2n)', note: 'Nov 19–21', due: '2026-10-29', done: false },
   { id: 'china-e1-1-suzhou', ch: 'china-e1', place: 'Suzhou', cat: 'stay', title: 'Suzhou stay (2n)', note: 'Nov 21–23, gardens express', due: '2026-10-31', done: false },
-  { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Both E1/E2 entries pre-Dec-31-2026; otherwise +~$300 for two visas', due: '2026-10-20', done: false },
+  { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Confirmed ✅ — Brazil on the 30-day list through Dec 31, 2026; covers both E1/E2 entries', due: '2026-10-20', done: true },
   { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Huangshan', cat: 'transport', title: 'Beijing–Huangshan flight Nov 16 (~2.5h)', note: 'Into Tunxi; replaces the cut Xi\'an legs', due: '2026-10-20', done: false },
   { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays — Nov 9 + Nov 16 are Mondays, plan Tue–Sun; reservation-only, book ~1 week ahead', due: '2026-11-05', done: false },
   { id: 'china-e1-6', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan summit hotel', note: 'Book ~3 days ahead; front-load the canyon days (West Sea Canyon closes Dec–Mar)', due: '2026-10-27', done: false },
   { id: 'china-e1-4', ch: 'china-e1', place: 'Suzhou → Hong Kong', cat: 'transport', title: 'Suzhou–Hong Kong Nov 23 (via Shanghai airports)', note: 'To PVG/SHA then fly; HK visa reset next', due: '2026-10-25', done: false },
+  { id: 'china-e1-7', ch: 'china-e1', place: 'Huangshan → Hangzhou', cat: 'transport', title: 'Huangshan–Hangzhou bus Nov 19 (~4h)', note: 'Buy the day before in Tangkou/Tunxi', due: '2026-11-18', done: false },
+  { id: 'china-e1-8', ch: 'china-e1', place: 'Hangzhou → Suzhou', cat: 'transport', title: 'Hangzhou–Suzhou HSR Nov 21 (~1.5h)', note: '12306 releases ~15 days out — grab seats from Nov 6; frequent departures', due: '2026-11-06', done: false },
 
   // ── hk ────────────────────────────────────────────────────────────
   { id: 'hk-1', ch: 'hk', place: null, cat: 'stay', title: 'Hong Kong stay', note: '5 nights Nov 23–28 (shoulder-season prices)', due: '2026-11-02', done: false },
