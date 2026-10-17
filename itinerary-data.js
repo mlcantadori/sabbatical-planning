@@ -190,7 +190,7 @@ window.TRIP = (function () {
         { name: 'Akyaka', photo: 'akyaka azmak', days: 1, query: 'Akyaka, Muğla, Turkey',
           highlights: ['Drive ~2.5–3h from Kaş','Azmak River, slow evening','Oct 2: drive to Izmir (~2.5h), drop the car, fly to Istanbul'] },
         { name: 'Istanbul', photo: 'istanbul mosque', days: 10, query: 'Sultanahmet, Istanbul',
-          highlights: ['Oct 2: fly Izmir → Istanbul','Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet without rushing','Asian side — Kadıköy/Moda ferries and market mornings','Bosphorus ferries — the most beautiful commute on Earth','Princes\' Islands day trip','Oct 12: fly Istanbul → Baku'] },
+          highlights: ['Oct 2: fly Izmir → Istanbul','Historic peninsula: Hagia Sophia, Topkapi, Sultanahmet without rushing','Asian side — Kadıköy/Moda ferries and market mornings','Bosphorus ferries — the most beautiful commute on Earth','No Princes\' Islands day trip','Oct 12: fly Istanbul → Baku'] },
       ],
       decisions: ['Göreme as the Cappadocia base — valleys, balloon logistics, Open Air Museum','Coastal loop by rental car (Alaçatı + Şirince/Ephesus + Kaş + Akyaka) instead of a Kaş turnaround','Şirince picked for Ephesus access + quiet village night; Akyaka breaks the Kaş→Izmir drive','Istanbul as 10-night close (Oct 2–12), then Baku stopover Oct 13 to break IST → DEL'],
     },
@@ -219,7 +219,7 @@ window.TRIP = (function () {
       photos: ['taj mahal sunrise'],
       places: [
         { name: 'Delhi + Agra', photo: 'old delhi jama masjid', days: 3, query: 'Taj Mahal, Agra',
-          highlights: ['Land in Delhi Oct 14 from Baku','Oct 15: day trip Delhi → Agra — Taj Mahal at sunrise, Agra Fort, Mehtab Bagh sunset','Old Delhi — Jama Masjid + Chandni Chowk food walk','Oct 17: early train to Varanasi'] },
+          highlights: ['Land in Delhi Oct 14 from Baku','Oct 15: day trip Delhi → Agra — Taj Mahal at sunrise, Agra Fort, Mehtab Bagh sunset','No Old Delhi — based in the Greater Kailash 1 neighborhood','Oct 17: early train to Varanasi'] },
         { name: 'Varanasi', photo: 'varanasi ghats', days: 4, query: 'Varanasi ghats, India',
           highlights: ['Arrive Oct 17 — Ghats at dawn: rowing on the Ganges in morning mist','Ganga Aarti at dusk — fire, flowers, bells, priests','Manikarnika cremation ghats','Sarnath — where Buddha first taught, 10km out','Chai, silk, wandering the narrow alleys','Oct 21: fly Varanasi → Kathmandu (direct)'] },
       ],

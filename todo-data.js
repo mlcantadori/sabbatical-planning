@@ -62,9 +62,9 @@ window.TODO_ITEMS = [
 
   // ── india ─────────────────────────────────────────────────────────
   { id: 'india-1', ch: 'india', place: 'Agra + Delhi + Varanasi', cat: 'transport', title: 'Agra–Delhi round trip + Delhi–Varanasi trains', note: 'Booked via IRCTC', due: '2026-09-01', done: true },
-  { id: 'india-2', ch: 'india', place: 'Agra', cat: 'attraction', title: 'Taj Mahal sunrise tickets (Oct 15 day trip)', note: 'Buy online the day before; arrive 6am', due: '2026-10-13', done: false },
+  { id: 'india-2', ch: 'india', place: 'Agra', cat: 'attraction', title: 'Taj Mahal sunrise tickets (Oct 15 day trip)', note: 'Bought online — done', due: '2026-10-13', done: true },
   { id: 'india-3', ch: 'india', place: 'Varanasi → Kathmandu', cat: 'transport', title: 'Varanasi→Kathmandu Oct 21 08:30 direct', note: 'Booked ✅ ($343 for two)', due: '2026-09-15', done: true },
-  { id: 'india-4', ch: 'india', place: 'Delhi', cat: 'stay', title: 'Delhi stay Oct 14–17', note: 'Agra as Oct 15 day trip — booked', due: '2026-09-23', done: true },
+  { id: 'india-4', ch: 'india', place: 'Delhi', cat: 'stay', title: 'Delhi stay Oct 14–17', note: 'Agra as Oct 15 day trip — booked; Greater Kailash 1 base', due: '2026-09-23', done: true },
   { id: 'india-5', ch: 'india', place: 'Varanasi', cat: 'stay', title: 'Varanasi stay Oct 17–21 (4n)', note: 'Booked ✅ — Airbnb R$1,081, near the ghats for dawn boat + evening Aarti', due: '2026-09-26', done: true },
 
   // ── nepal ─────────────────────────────────────────────────────────
