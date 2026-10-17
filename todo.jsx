@@ -1,7 +1,8 @@
-// To-do checklist — advance bookings grouped by chapter. Past chapters
-// (ended before today) start collapsed to avoid crowding; everything else
-// starts open. Done states seed from todo-data.js and persist per-browser
-// in localStorage; Export copies the current states back into file format.
+// To-do checklist — advance bookings grouped by chapter. Chapters that are
+// past (ended before today) or fully completed start collapsed to avoid
+// crowding; everything else starts open. Done states seed from todo-data.js
+// and persist per-browser in localStorage; Export copies the current states
+// back into file format.
 
 (function () {
   const { helpers } = window.TRIP;
@@ -87,10 +88,11 @@
     }, [items, chapters]);
 
     const isPast = (ch) => !!ch && ch.end && ch.end < today;
-    // Chapters: open unless fully in the past. The dateless prep group
-    // (and any orphans) open unless every item is done.
-    const autoOpen = (g) => g.ch ? !isPast(g.ch)
-      : !(g.items.length > 0 && g.items.every((t) => t.done));
+    // Chapters collapse when the trip is past OR every booking is done — a
+    // finished country folds away even while the trip is still underway.
+    // The dateless prep group (and any orphans) collapse when all items done.
+    const allDone = (g) => g.items.length > 0 && g.items.every((t) => t.done);
+    const autoOpen = (g) => g.ch ? (!isPast(g.ch) && !allDone(g)) : !allDone(g);
     const isOpen = (g) => explicitOpen[g.key] !== undefined ? explicitOpen[g.key] : autoOpen(g);
     const setGroup = (key, v) => setExplicitOpen((p) => ({ ...p, [key]: v }));
     const expandAll = () => setExplicitOpen(Object.fromEntries(groups.map((g) => [g.key, true])));
