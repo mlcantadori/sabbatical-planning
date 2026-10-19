@@ -1,5 +1,6 @@
-// Google Calendar sync — pushes chapter date ranges + flight blocks to the
-// signed-in user's Google Calendar. Client-side only (static hosting works).
+// Google Calendar sync — pushes chapter stops, flights, trains, buses and
+// ferries to the signed-in user's Google Calendar. Client-side only (static
+// hosting works).
 //
 // ONE-TIME SETUP (trip owner, ~10 min):
 //   1. https://console.cloud.google.com → new project → enable Google Calendar API
@@ -103,6 +104,17 @@
   function isSkippableStop(name) {
     return /^(buffer|transfer|transit)\b/i.test(String(name).trim());
   }
+  // All-day travel legs: pick an icon from the explicit mode, else sniff the
+  // route text (the flights list also carries the HK→Guangzhou HSR leg).
+  const MODE_ICONS = { train: '🚆', bus: '🚌', ferry: '⛴️', flight: '✈️' };
+  function travelIcon(route, mode) {
+    if (mode && MODE_ICONS[mode]) return MODE_ICONS[mode];
+    const r = String(route || '');
+    if (/ferry|boat|catamaran/i.test(r)) return '⛴️';
+    if (/\bbus\b|coach/i.test(r)) return '🚌';
+    if (/hsr|high[- ]speed|shinkansen|ktx|\btrain\b|\brail\b/i.test(r)) return '🚆';
+    return '✈️';
+  }
   function buildEvents(trip) {
     const events = [];
     const used = new Set();
@@ -134,10 +146,22 @@
       const slug = f.route.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60) || ('leg' + i);
       events.push({
         id: eid('sabbaticalfl', slug, used),
-        summary: '✈️ ' + f.route,
+        summary: travelIcon(f.route) + ' ' + f.route,
         description: ['Date: ' + f.date, f.note, f.cost != null ? 'Budget: USD ' + f.cost + ' for two' : null].filter(Boolean).join('\n'),
         start: { date: f.date },
         end: { date: addDays(f.date, 1) },
+        extendedProperties: { private: { sabbatical: '1' } },
+      });
+    });
+    // Ground + sea legs (trains, buses, ferries) from trip.transports.
+    (trip.transports || []).filter((t) => t && t.date).forEach((t, i) => {
+      const slug = String(t.route || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60) || ('leg' + i);
+      events.push({
+        id: eid('sabbaticaltr', slug, used),
+        summary: travelIcon(t.route, t.mode) + ' ' + t.route,
+        description: ['Date: ' + t.date, t.mode ? 'Mode: ' + t.mode : null, t.note].filter(Boolean).join('\n'),
+        start: { date: t.date },
+        end: { date: addDays(t.date, 1) },
         extendedProperties: { private: { sabbatical: '1' } },
       });
     });
@@ -313,7 +337,7 @@
         {open && <span className="sync-backdrop" onClick={() => setOpen(false)} />}
         {open && (
           <span className="sync-menu" role="menu">
-            <button role="menuitem" disabled={busy} onClick={() => run('calendar')} title="Push chapter dates + flight blocks to your Google Calendar">
+            <button role="menuitem" disabled={busy} onClick={() => run('calendar')} title="Push chapter stops, flights, trains, buses and ferries to your Google Calendar">
               <window.Icon.calendar size={12} /> Calendar
             </button>
             <button role="menuitem" disabled={busy} onClick={() => run('tasks')} title="Push the to-do checklist to a Sabbatical list in Google Tasks">

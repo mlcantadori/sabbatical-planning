@@ -658,12 +658,66 @@ window.TRIP = (function () {
     { id: 'izmircar', title: '🚗 Rental car — Izmir (ADB)', start: '2026-09-25', end: '2026-10-02', note: 'Pickup ~1am Sep 25 · return Oct 2 before 16:45 flight' },
   ];
 
+  // Ground + sea legs for the calendar sync. `date` is the departure day;
+  // all-day events (end is exclusive, computed by calendar.jsx). Flights stay
+  // in budget.flights; this list is trains, buses and ferries only.
+  const transports = [
+    // Greece — ferries
+    { mode: 'ferry', route: 'Rethymno → Santorini', date: '2026-09-12', note: 'Seasonal fast ferry (~2h)' },
+    { mode: 'ferry', route: 'Santorini → Folegandros', date: '2026-09-14', note: 'Inter-island ferry' },
+    { mode: 'ferry', route: 'Folegandros → Milos', date: '2026-09-16', note: 'Inter-island ferry' },
+    { mode: 'ferry', route: 'Milos → Athens (Piraeus)', date: '2026-09-20', note: 'Ferry + buffer night before the Sep 21 flight' },
+    // Nepal — tourist buses
+    { mode: 'bus', route: 'Kathmandu → Pokhara', date: '2026-10-25', note: 'Tourist bus, 6–7h; lakeside briefing on arrival' },
+    { mode: 'bus', route: 'Pokhara → Kathmandu', date: '2026-11-04', note: 'Tourist bus, 6–7h — back to Thamel' },
+    // India
+    { mode: 'train', route: 'Delhi → Varanasi', date: '2026-10-17', note: 'Early train (06:00) — booked ✅' },
+    // China E1
+    { mode: 'train', route: 'Beijing South → Huangshanbei', date: '2026-11-16', note: 'HSR ~5–5.5h (weather-proof alternative to the Tunxi flight)' },
+    { mode: 'train', route: 'Huangshanbei → Hangzhou East', date: '2026-11-19', note: 'HSR ~1.5h' },
+    { mode: 'train', route: 'Hangzhou → Suzhou', date: '2026-11-21', note: 'HSR ~1.5h' },
+    { mode: 'train', route: 'Suzhou → Shanghai Hongqiao', date: '2026-11-23', note: 'HSR ~25min direct into the SHA terminal, then flight to HK' },
+    // China E2
+    { mode: 'train', route: 'Guangzhou → Shenzhen', date: '2026-11-30', note: 'HSR ~30min' },
+    { mode: 'ferry', route: 'Shenzhen (Shekou) → Macau', date: '2026-12-04', note: 'Ferry ~1h — Mainland exit' },
+    { mode: 'train', route: 'Chongqing → Chengdu', date: '2026-12-12', note: 'HSR ~1h' },
+    // Korea
+    { mode: 'train', route: 'Busan → Gyeongju', date: '2026-12-27', note: 'KTX/train' },
+    { mode: 'bus', route: 'Gyeongju → Jeonju', date: '2026-12-29', note: 'Direct intercity bus ~3.5h (morning)' },
+    { mode: 'train', route: 'Jeonju → Seoul', date: '2026-12-30', note: 'KTX midday (~1h40)' },
+    // Taiwan
+    { mode: 'train', route: 'Taipei → Chiayi → Alishan', date: '2027-01-13', note: 'HSR to Chiayi + Alishan Forest Railway/bus transfer' },
+    { mode: 'train', route: 'Chiayi → Tainan', date: '2027-01-15', note: 'Short TRA ride after descending Alishan' },
+    { mode: 'train', route: 'Tainan → Kaohsiung', date: '2027-01-20', note: 'TRA ~35min' },
+    // Japan
+    { mode: 'train', route: 'Kyoto → Osaka', date: '2027-02-02', note: 'Local/rapid train ~30min' },
+    { mode: 'train', route: 'Osaka → Tokyo', date: '2027-02-06', note: 'Tokaido Shinkansen ~2.5h' },
+    { mode: 'train', route: 'Tokyo → Myoko Kogen', date: '2027-02-14', note: 'Hokuriku Shinkansen + local transfer ~2.5h' },
+    { mode: 'train', route: 'Myoko Kogen → Tokyo', date: '2027-02-23', note: 'Hokuriku Shinkansen + local transfer' },
+    // Indonesia A
+    { mode: 'train', route: 'Jakarta → Yogyakarta', date: '2027-02-26', note: 'Executive train (or 1h flight)' },
+    // Indonesia B
+    { mode: 'ferry', route: 'Sanur → Nusa Penida', date: '2027-04-15', note: 'Fast boat ~45min' },
+    // Malaysia
+    { mode: 'bus', route: 'Singapore → Kuala Lumpur', date: '2027-05-06', note: 'Cross-border coach' },
+    { mode: 'train', route: 'Kuala Lumpur → Penang', date: '2027-05-10', note: 'ETS rail (book ahead)' },
+    // Thailand
+    { mode: 'bus', route: 'Penang → Koh Tao', date: '2027-05-16', note: 'Cross-border bus + ferry combo' },
+    { mode: 'ferry', route: 'Koh Tao → Koh Samui', date: '2027-05-22', note: 'Ferry — transit night near the pier' },
+    { mode: 'ferry', route: 'Koh Samui → Surat Thani + Bangkok', date: '2027-05-23', note: 'Ferry + bus/flight to Bangkok' },
+    // China Spring
+    { mode: 'bus', route: 'Guilin → Longji Terraces', date: '2027-06-07', note: 'Bus to Ping\'an / Dazhai' },
+    { mode: 'bus', route: 'Longji → Zhangjiajie', date: '2027-06-09', note: 'Long road day via Guilin' },
+    { mode: 'bus', route: 'Zhangjiajie → Fenghuang (via Furong)', date: '2027-06-13', note: 'Bus with the Furong waterfall-town stop en route' },
+    { mode: 'bus', route: 'Fenghuang → Changsha Airport', date: '2027-06-16', note: 'Transit day for the flight home' },
+  ];
+
   return {
     start: START, end: END, totalDays,
     travelers: 2,
     chapters,
     bookings, budget, packing,
-    calendarEvents,
+    calendarEvents, transports,
     REGIONS,
     CHAPTER_COLORS,
     chapterColor,
