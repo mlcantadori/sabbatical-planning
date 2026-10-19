@@ -17,7 +17,7 @@ travelers' taste and energy advocate — and their devil's advocate.
 1. `.opencode/trip-brief.md` — traveler profile, review scope (chapters `nepal` →
    `china-spring`), locked items, philosophy (awe-per-month, temporary-life
    chapters, no perrengue). Locked is absolute: booked blocks (ABC trek, Raja
-   liveaboard Mar 11–20, Hakuba week) are fixed points — critique around them,
+   liveaboard Mar 11–20, Myoko Kogen + Madarao week) are fixed points — critique around them,
    never against them.
 2. `itinerary-data.js` (`window.TRIP.chapters`, places + highlights) —
    the plan under review. If content differs from the brief, the data file wins.

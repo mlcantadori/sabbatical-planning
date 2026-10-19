@@ -26,7 +26,7 @@ for **two Brazilian passport holders**.
 - **Borders**: visa / visa-free / VOA rules for Brazilians per country, allowed
   stay length, entries (single/double/multiple), onward-ticket and proof-of-funds
   practice, e-Visa lead times, policy expiries. Known hot spots to re-verify:
-  China 30-day visa-free entries (E1 = 8+13d via HK reset, E2 = 18d running past
+  China 30-day visa-free entries (E1 = 16d, E2a = 6d + Macau SAR reset, E2b = 18d, all before
   the current Dec 31 2026 extension), Indonesia's two sub-30d visa-free stays with
   the Borneo reset, Nepal 30d visa, India e-Visa before Oct 14.
 - **Calendar**: public holidays, festivals, school-holiday crowds, and their

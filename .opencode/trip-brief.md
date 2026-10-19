@@ -12,15 +12,15 @@
   suffering ("perrengue"), no moving every 2 days, no insane logistics for checklist completion.
 - Trip: Jun 21 2026 → Jun 16 2027, 360 days. Budget model: **~USD 94k for two
   (~USD 261/day, ~R$245k per person at R$5.20)**, all figures USD for a couple.
-- Strategic splurges (locked, do not re-litigate): Raja Ampat liveaboard, Hakuba
-  snowboard week (rentals), Cappadocia balloon + cave hotel, one ryokan night.
+- Strategic splurges (locked, do not re-litigate): Raja Ampat liveaboard, Myoko Kogen
+  + Madarao snowboard week (rentals + lessons), Cappadocia balloon + cave hotel, one ryokan night.
 
 ## Philosophy (what "good" looks like)
 
 - Cinematic life chapter: emotionally well-paced, seasonally optimized, immersive, not rushed.
-- Temporary-life slow chapters are structural, not inefficiency: Shanghai (5d),
-  Kyoto (8d), Tokyo (8d), Tainan (7d block, ~6 slow days), Beijing (9n), Shenzhen (4d), Penang (6d),
-  Hakuba (9d, activity days don't count), Suzhou (3d). Protect their slowness.
+- Temporary-life slow chapters are structural, not inefficiency: Shanghai (6d),
+  Kyoto (8d), Tokyo (8d), Tainan (5d block, ~4 slow days), Beijing (9n), Shenzhen (4d), Penang (6d),
+  Myoko Kogen (9d, activity days don't count), Suzhou (3d). Protect their slowness.
 - China is mentally exhausting — decompression must follow each China block.
 - Geographic efficiency is a hard constraint: no regional backtracking; every hop
   moves forward along the arc unless a seasonal reason justifies it explicitly.
@@ -29,7 +29,7 @@
 ## Sports (bounded lens — breadth first)
 
 - Both travelers: AOW + Nitrox certified, own mask + dive computer (rent the rest).
-- Snowboard: one booked Hakuba week (Jan/Feb, full local rental). Kite: gear owned,
+- Snowboard: one booked Myoko Kogen + Madarao week (Feb, full local rental + English lessons). Kite: gear owned,
   used in Cumbuco (locked Brasil chapter).
 - Rule: booked sports blocks are fixed. Elsewhere, only flag a 1–3 day
   dive/kite/ride window where it fits an existing stop naturally — never reshape
@@ -72,21 +72,22 @@
 
 - Annapurna Base Camp trek: Oct 25–Nov 4 (11d, Discovery World Trekking, $720pp = $1,440 for two; $144 advance paid ✅, $1,296 balance due at KTM office Oct 24; Poon Hill route via Ulleri/Ghorepani/Tadapani/Chomrong; 9kg pp porter limit; visa/insurance/tips excluded).
 - Raja Ampat liveaboard: Mar 11–20 (Papua Diving / Meridian — reconfirm dates with operator).
-- Hakuba snowboard week inside `japan` chapter (lift 7d + full rental).
+- Myoko Kogen + Madarao snowboard week inside `japan` chapter (lift 7d + full rental + lessons).
 - Bought ✅: GRU→YYZ→ATH long-haul; Greece stays + 4 ferries; Cappadocia balloon (cancelled — weather, full refund ✅);
   ASR→ADB Sep 24; Athens→Chania + Athens→Cappadocia flights; train to Varanasi
   Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two); Varanasi Airbnb R$1,081;
   KTM→PEK Nov 7 ($477 for two).
 - India e-Visa required before Oct 14 Delhi arrival.
 - To-buy / estimates (routable in principle, but chained — flag ripple effects):
-  KTM→PEK Nov 7 · PEK→TXN Nov 16 · SUZ→HKG Nov 23 (via Shanghai) · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · CAN→CKG flight Dec 6 · CKG→CTU HSR Dec 12 · CTU→SHA flight Dec 19 · SHA→ICN Dec 24 + ICN→PUS hop ·
-  ICN→TPE Jan 11 · TPE→KIX Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
+  KTM→PEK Nov 7 · PEK→Huangshan (HSR or TXN flight) Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA (Hongqiao)→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→CKG direct flight Dec 6 · CKG→CTU HSR Dec 12 · CTU→SHA flight Dec 18 · PVG→PUS direct flight Dec 24 ·
+  ICN→TPE Jan 8 · KHH→KIX direct flight Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
   PEN→USM May 16 · BKK→XIY May 30 · CSX→GRU home Jun 16.
 - Paperwork gates (verified by review team, re-verify before travel): Taiwan visitor
-  visa filed TECO Hong Kong Dec 3 (fallback Seoul); Korea K-ETA filed ≥1 week before
+  visa filed TECO Hong Kong Nov 24, pickup Nov 25–26 (fallback TECO Seoul Jan 4–8); Korea K-ETA filed ≥1 week before
   Dec 24; China L visa for spring entry (May 30) unless the waiver renews.
 - Visa facts baked into the plan (re-verify before travel, don't redesign around
-  without cause): China 30-day visa-free per entry (E1 = 16d, E2 = 26d;
-  all pre-Dec-31-2026, no visa needed); Indonesia two
-  sub-30d visa-free stays (21d + 17d) with Borneo reset between; Nepal 30d visa.
+  without cause): China 30-day visa-free per entry (E1 = 16d, E2a = 6d, Macau reset,
+  E2b = 18d; all pre-Dec-31-2026, no visa needed); Indonesia two
+  sub-30d visa-free stays (21d + 17d) with Borneo reset between; Japan 90d visa-free
+  (BR IC ePassport); Nepal 30d visa.
