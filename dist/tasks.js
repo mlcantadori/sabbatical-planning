@@ -314,7 +314,7 @@
   // calls with backoff. (Batching would not help — Google counts each
   // batched sub-request against quota the same as a single call.)
   const WRITE_GAP_MS = 350;
-  const MAX_ATTEMPTS = 4;
+  const MAX_ATTEMPTS = 2;
   function sleep(ms) {
     return new Promise(res => setTimeout(res, ms));
   }
