@@ -55,10 +55,10 @@
 | 7 | nepal | 2026-10-21 → 2026-11-07 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside; KTM→PEK Nov 7 late arrival) |
 | 8 | china-e1 | 2026-11-07 → 2026-11-23 | SCOPE (16d slow-Beijing start: 9n Beijing incl. trek recovery → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
 | 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset + Taiwan-visa filing Nov 24) |
-| 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: CAN 2n + Shenzhen 4n (rendezvous tail) + Macau 2n + CQ 6n + Chengdu 7n + Shanghai 5n; SHA→ICN Dec 24) |
-| 11 | korea | 2026-12-24 → 2027-01-11 | SCOPE (Busan Christmas + NYE Seoul) |
-| 12 | taiwan | 2027-01-11 → 2027-01-25 | SCOPE (14d post-Korea thaw) |
-| 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Hakuba week LOCKED inside) |
+| 10 | china-e2 | 2026-11-28 → 2026-12-24 | SCOPE (26d: CAN 2n + Shenzhen 4n (rendezvous tail) + Macau 2n + CQ 6n + Chengdu 6n + Shanghai 6n; PVG→PUS direct Dec 24) |
+| 11 | korea | 2026-12-24 → 2027-01-08 | SCOPE (15d: Busan Christmas + Gyeongju + Jeonju + NYE Seoul 9n) |
+| 12 | taiwan | 2027-01-08 → 2027-01-25 | SCOPE (17d post-Korea thaw: Taipei 5n + Alishan 2n + Tainan 5n + Kaohsiung/Xiaoliuqiu 5n; KHH→KIX direct Jan 25) |
+| 13 | japan | 2027-01-25 → 2027-02-24 | SCOPE (Myoko Kogen + Madarao snowboard week Feb 14–23 inside) |
 | 14 | indonesia-a | 2027-02-24 → 2027-03-21 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
 | 15 | borneo | 2027-03-21 → 2027-03-31 | SCOPE (Mar 31 shared transit; Sipadan permits undecided, decide by Nov 2026) |
 | 16 | philippines | 2027-03-31 → 2027-04-14 | SCOPE (post-Easter window) |

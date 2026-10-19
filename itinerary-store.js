@@ -4,10 +4,10 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
-  // v14: E1a+E2 consolidated into a single china-e1 chapter (26d, one stay);
-  // old E1b renamed china-e2 — old caches reference ids/order that no
-  // longer exist, so force a fresh re-bake.
-  const LS_KEY = 'trip-data-v14';
+  // v15: Korea trimmed to 15d (+3d shifted to Taiwan 17d: Taipei, Alishan,
+  // Tainan, Kaohsiung+Xiaoliuqiu); Japan snowboard week moved to Myoko Kogen
+  // + Madarao; China E1/E2 transport + Chengdu/Shanghai 6n/6n balance updated.
+  const LS_KEY = 'trip-data-v15';
   const listeners = new Set();
   let chapters;
 
