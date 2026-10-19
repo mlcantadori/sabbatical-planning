@@ -83,10 +83,12 @@
   // Identity without visible markers: entries are matched by remembered
   // Google ID first, then by exact title (unique per level) for browsers
   // whose localStorage was wiped. Titles double as the prune guard below.
+  // Maps are prototype-free so a title like "constructor" can never resolve
+  // to an Object property instead of an actual task.
   function buildIndex(existing) {
-    const byId = {};
-    const byTitleTop = {};
-    const byTitleChild = {};
+    const byId = Object.create(null);
+    const byTitleTop = Object.create(null);
+    const byTitleChild = Object.create(null);
     (existing || []).forEach((t) => {
       if (!t || !t.id) return;
       byId[t.id] = t;
@@ -106,7 +108,7 @@
   // Map shape is { key: { id, title } }. Older runs stored bare ID
   // strings — adopt them, recording the current title as the prune guard.
   function normalizeMap(raw, idx) {
-    const map = {};
+    const map = Object.create(null);
     Object.keys(raw || {}).forEach((key) => {
       const v = raw[key];
       if (typeof v === 'string') {
@@ -130,10 +132,14 @@
   // Pure function of (todos, chapters) — safe to unit-test without Google.
   // Returns { parents, items }; titles are unique within their level so
   // title-matching works as a fallback when localStorage was wiped.
+  // Every entry gets a stable local key even if the todo lacks an `id`:
+  // a missing key would collide in the ID map and send `undefined` to the
+  // Tasks API on the next run.
   function buildTasks(todos, chapters) {
-    const chById = {};
+    const chById = Object.create(null);
     (chapters || []).forEach((c) => { chById[c.id] = c; });
     const usedChild = new Set();
+    const usedKeys = new Set();
     const items = (todos || []).map((t) => {
       const chTitle = chById[t.ch] ? chById[t.ch].title : 'Pre-trip prep';
       let title = String(t.title || 'Untitled');
@@ -144,9 +150,21 @@
         title = base + (t.place ? ' · ' + t.place : '') + ' #' + n;
       }
       usedChild.add(title);
+      // Stable local key: the todo id when present, else a slug of
+      // chapter+title (stable across reorders), with a numeric suffix if
+      // two entries collide. Never leaves the key blank.
+      let key = t.id != null ? String(t.id).trim() : '';
+      if (!key) {
+        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
+        key = 'auto:' + String(t.ch || 'prep') + ':' + slug;
+      }
+      let dup = 0;
+      const keyBase = key;
+      while (usedKeys.has(key)) { dup += 1; key = keyBase + '#' + dup; }
+      usedKeys.add(key);
       const meta = [chTitle, t.cat, t.place].filter(Boolean).join(' · ');
       return {
-        key: String(t.id),
+        key,
         ch: t.ch,
         title,
         notes: [t.note, meta].filter(Boolean).join('\n'),
@@ -299,18 +317,33 @@
       && sameDay(existing.due, want.due);
   }
 
+  // Google's update path requires a real task id; a stale or blank id yields
+  // "Missing required parameter: task". Treat that as a create instead of
+  // failing the entry.
+  function isMissingTaskError(msg) {
+    return /missing required parameter.*task|invalid.*task id|task not found/i.test(String(msg || ''));
+  }
+
+  function insertedId(value) {
+    if (!value) return null;
+    const task = value.result || value;
+    return task && task.id ? String(task.id) : null;
+  }
+
   async function upsert(listId, existing, want, extra) {
+    const existingId = existing && existing.id ? String(existing.id) : '';
     // Already in sync server-side — no write, no quota spent.
-    if (unchanged(existing, want)) {
-      return { ok: true, id: existing.id, created: false, skipped: true };
+    if (existingId && unchanged(existing, want)) {
+      return { ok: true, id: existingId, created: false, skipped: true };
     }
     const resource = { title: want.title, notes: want.notes, status: want.status };
     if (want.due) resource.due = want.due;
-    if (existing) {
-      const r = await withRetry('update', () => window.gapi.client.tasks.tasks.update({ tasklist: listId, task: existing.id, resource }));
+    if (existingId) {
+      const r = await withRetry('update', () => window.gapi.client.tasks.tasks.update({ tasklist: listId, task: existingId, resource }));
       await sleep(WRITE_GAP_MS);
-      if (!r.ok) return { ok: false, title: want.title, error: r.error };
-      return { ok: true, id: existing.id, created: false };
+      if (r.ok) return { ok: true, id: existingId, created: false };
+      // Missing/invalid id: recover by creating a fresh task.
+      if (!isMissingTaskError(r.error)) return { ok: false, title: want.title, error: r.error };
     }
     const r = await withRetry('insert', () => window.gapi.client.tasks.tasks.insert({
       tasklist: listId,
@@ -320,7 +353,9 @@
     }));
     await sleep(WRITE_GAP_MS);
     if (!r.ok) return { ok: false, title: want.title, error: r.error };
-    return { ok: true, id: r.value.result.id, created: true };
+    const id = insertedId(r.value);
+    if (!id) return { ok: false, title: want.title, error: 'insert returned no task id' };
+    return { ok: true, id, created: true };
   }
 
   async function syncAll(onStatus) {
@@ -341,12 +376,16 @@
     let skipped = 0;
     const total = built.parents.length + built.items.length;
     const tick = (r, want) => {
-      if (r.ok) {
+      if (r.ok && r.id) {
         n++;
         if (r.skipped) skipped++;
         map[want.key] = { id: r.id, title: want.title };
         if (n % 5 === 0 || n === total) say('Syncing ' + n + '/' + total + '…');
-      } else failed.push(r);
+      } else if (r.ok) {
+        failed.push({ title: want.title, error: 'no task id returned' });
+      } else {
+        failed.push(r);
+      }
     };
 
     // Parents first (chapters, in trip order), chained to keep order.
@@ -386,7 +425,7 @@
       for (const key of Object.keys(map)) {
         if (wanted.has(key)) continue;
         const entry = map[key];
-        const cur = entry && idx.byId[entry.id];
+        const cur = entry && entry.id ? idx.byId[entry.id] : null;
         if (cur && entry.title != null && cur.title === entry.title) {
           const r = await withRetry('delete', () => window.gapi.client.tasks.tasks.delete({ tasklist: listId, task: cur.id }));
           await sleep(WRITE_GAP_MS);
@@ -406,5 +445,5 @@
     return { synced: n, skipped, failed, pruned, at: stamp };
   }
 
-  Object.assign(window, { TasksSync: { buildTasks, syncAll, LIST_NAME, _test: { sameDay, unchanged, retryableStatus, withRetry, sleep, buildIndex, resolveKey, normalizeMap } } });
+  Object.assign(window, { TasksSync: { buildTasks, syncAll, LIST_NAME, _test: { sameDay, unchanged, retryableStatus, withRetry, sleep, buildIndex, resolveKey, normalizeMap, isMissingTaskError, insertedId, upsert } } });
 })();
