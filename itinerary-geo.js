@@ -62,7 +62,7 @@ window.TRIP_GEO = {
     'japan/Kyoto':                          [35.0116,  135.7681],
     'japan/Osaka':                          [34.6937,  135.5023],
     'japan/Tokyo':                          [35.6762,  139.6503],
-    'japan/Hakuba Valley':                  [36.6953,  137.8378],
+    'japan/Myoko Kogen + Madarao':          [36.8722,  138.1772], // Akakura Onsen, Myoko
     // Korea
     'korea/Seoul':                            [37.5665,  126.9780],
     'korea/Busan':                            [35.1796,  129.0756],
@@ -70,8 +70,9 @@ window.TRIP_GEO = {
     'korea/Jeonju':                           [35.8242,  127.1480],
     // Taiwan
     'taiwan/Taipei':                          [25.0330,  121.5654],
-    'taiwan/Hualien + Taroko Gorge':          [24.1908,  121.6202],
-    'taiwan/Tainan + south':                  [22.9997,  120.2270], // Tainan
+    'taiwan/Alishan':                         [23.5103,  120.8025],
+    'taiwan/Tainan':                          [22.9997,  120.2270],
+    'taiwan/Kaohsiung + Xiaoliuqiu':          [22.6273,  120.3014], // Kaohsiung / Xiaoliuqiu
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines

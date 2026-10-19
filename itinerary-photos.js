@@ -66,7 +66,6 @@ window.PHOTO_IDS = {
   // ── Taiwan ────────────────────────────────────────────────────────
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
   'taiwan night market':         'extra-pictures/taiwan/taiwan-night-market.jpg',
-  'taroko gorge marble':         'extra-pictures/taiwan/taroko-gorge-marble.jpg',
   'anping fort':                 'extra-pictures/taiwan/anping-fort.jpg',
   // ── Japan ─────────────────────────────────────────────────────────
   'fushimi inari':               'extra-pictures/japan/fushimi-inari.jpg',
