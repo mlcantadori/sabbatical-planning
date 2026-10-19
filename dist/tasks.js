@@ -299,7 +299,7 @@
         pageToken: page || undefined,
         showCompleted: true,
         showDeleted: false,
-        fields: 'items(id,title,notes,parent,status,due),nextPageToken'
+        fields: 'items(id,title,notes,parent,status,due,hidden),nextPageToken'
       });
       all.push(...((res.result || {}).items || []));
       page = (res.result || {}).nextPageToken;
@@ -333,7 +333,9 @@
   }
   async function withRetry(label, fn) {
     let last = null;
+    let used = 0;
     for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      used = attempt;
       try {
         return {
           ok: true,
@@ -347,7 +349,7 @@
     }
     return {
       ok: false,
-      error: errText(last) + ' [' + label + ', ' + MAX_ATTEMPTS + ' attempts]'
+      error: errText(last) + ' [' + label + ', ' + used + (used === 1 ? ' attempt' : ' attempts') + ']'
     };
   }
   function sameDay(a, b) {
@@ -359,11 +361,12 @@
     return !!existing && String(existing.title || '') === String(want.title || '') && String(existing.notes || '') === String(want.notes || '') && String(existing.status || '') === String(want.status || '') && sameDay(existing.due, want.due);
   }
 
-  // Google's update path requires a real task id; a stale or blank id yields
-  // "Missing required parameter: task". Treat that as a create instead of
-  // failing the entry.
+  // Google's Tasks API returns "Missing task ID" for a full `update` whose
+  // body doesn't carry the id, and "Invalid task id" when a stale/hidden
+  // parent or previous id is referenced. `patch` avoids the first; the
+  // callers below validate references to avoid the second.
   function isMissingTaskError(msg) {
-    return /missing required parameter.*task|invalid.*task id|task not found/i.test(String(msg || ''));
+    return /missing task id|missing required parameter.*task|invalid task id|task not found/i.test(String(msg || ''));
   }
   function insertedId(value) {
     if (!value) return null;
@@ -381,14 +384,19 @@
         skipped: true
       };
     }
-    const resource = {
+    const base = {
       title: want.title,
       notes: want.notes,
       status: want.status
     };
-    if (want.due) resource.due = want.due;
     if (existingId) {
-      const r = await withRetry('update', () => window.gapi.client.tasks.tasks.update({
+      // patch = partial update; notably, `due: null` clears a stale deadline
+      // (full `update` is rejected by the Tasks API without an embedded id).
+      const resource = {
+        ...base,
+        due: want.due || null
+      };
+      const r = await withRetry('update', () => window.gapi.client.tasks.tasks.patch({
         tasklist: listId,
         task: existingId,
         resource
@@ -397,22 +405,43 @@
       if (r.ok) return {
         ok: true,
         id: existingId,
-        created: false
+        created: false,
+        parent: existing && existing.parent || null
       };
-      // Missing/invalid id: recover by creating a fresh task.
+      // Missing/invalid/deleted id: recover by creating a fresh task.
       if (!isMissingTaskError(r.error)) return {
         ok: false,
         title: want.title,
         error: r.error
       };
     }
-    const r = await withRetry('insert', () => window.gapi.client.tasks.tasks.insert({
+    const resource = {
+      ...base
+    };
+    if (want.due) resource.due = want.due;
+    const insert = refs => withRetry('insert', () => window.gapi.client.tasks.tasks.insert({
       tasklist: listId,
-      parent: extra && extra.parent,
-      previous: extra && extra.previous,
+      parent: refs && refs.parent,
+      previous: refs && refs.previous,
       resource
     }));
+    let usedRefs = extra || null;
+    let r = await insert(usedRefs);
     await sleep(WRITE_GAP_MS);
+    // A stale parent/previous id can make a valid task uninsertable; keep the
+    // parent but drop the ordering ref, then fall back to the top level.
+    if (!r.ok && /invalid task id/i.test(r.error)) {
+      usedRefs = extra && extra.parent ? {
+        parent: extra.parent
+      } : null;
+      r = await insert(usedRefs);
+      await sleep(WRITE_GAP_MS);
+      if (!r.ok && /invalid task id/i.test(r.error)) {
+        usedRefs = null;
+        r = await insert(null);
+        await sleep(WRITE_GAP_MS);
+      }
+    }
     if (!r.ok) return {
       ok: false,
       title: want.title,
@@ -427,7 +456,8 @@
     return {
       ok: true,
       id,
-      created: true
+      created: true,
+      parent: usedRefs && usedRefs.parent || null
     };
   }
   async function syncAll(onStatus) {
@@ -447,6 +477,19 @@
     const existing = await listAll(listId);
     const idx = buildIndex(existing);
     const map = normalizeMap(loadMap(), idx);
+    // Only reference IDs that exist in this list and aren't hidden (completed
+    // tasks disappear from the UI when the list is cleared; Google rejects
+    // them as parent/previous with "Invalid task id").
+    const liveIds = new Set(Object.keys(idx.byId));
+    const hiddenIds = new Set(Object.keys(idx.byId).filter(id => idx.byId[id].hidden));
+    const refParent = new Map(Object.keys(idx.byId).map(id => [id, idx.byId[id].parent || null]));
+    const validRef = id => id && liveIds.has(id) && !hiddenIds.has(id) ? id : undefined;
+    // Ordering refs must be siblings under the same (or no) parent.
+    const validSibling = (id, parentId) => {
+      const ref = validRef(id);
+      if (!ref) return undefined;
+      return (refParent.get(ref) || null) === (parentId || null) ? ref : undefined;
+    };
     const failed = [];
     let n = 0;
     let skipped = 0;
@@ -455,6 +498,7 @@
       if (r.ok && r.id) {
         n++;
         if (r.skipped) skipped++;
+        liveIds.add(r.id);
         map[want.key] = {
           id: r.id,
           title: want.title
@@ -485,23 +529,28 @@
         status: allDone ? 'completed' : 'needsAction'
       };
       const r = await upsert(listId, resolveKey(map, idx, p.key, p.title, true), want, {
-        previous: prevParent
+        previous: validRef(prevParent)
       });
       tick(r, want);
-      if (r.ok) {
+      if (r.ok && r.id) {
         parentIds[p.key] = r.id;
         prevParent = r.id;
+        refParent.set(r.id, null);
       }
     }
     // Children under their chapter parent, chained to keep file order.
     const prevByParent = {};
     for (const it of built.items) {
+      const parentId = validRef(parentIds['ch:' + it.ch]);
       const r = await upsert(listId, resolveKey(map, idx, it.key, it.title, false), it, {
-        parent: parentIds['ch:' + it.ch],
-        previous: prevByParent[it.ch]
+        parent: parentId,
+        previous: validSibling(prevByParent[it.ch], parentId)
       });
       tick(r, it);
-      if (r.ok) prevByParent[it.ch] = r.id;
+      if (r.ok && r.id) {
+        prevByParent[it.ch] = r.id;
+        refParent.set(r.id, r.parent || null);
+      }
     }
     // Prune remembered entries that no longer exist — but only when they
     // still carry the last-synced title. A renamed/repurposed entry is
