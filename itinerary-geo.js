@@ -12,9 +12,10 @@ window.TRIP_GEO = {
     'baku':         [40.4093,   49.8671], // Baku
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
-    'taiwan':       [25.0330,  121.5654], // Taipei
     'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
     'china-e2':    [30.5728,  104.0668], // Chengdu (entry point)
+    'vietnam':     [10.7769,  106.7009], // Ho Chi Minh City (entry point)
+    'thailand':    [13.7563,  100.5018], // Bangkok
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
@@ -24,7 +25,6 @@ window.TRIP_GEO = {
     'borneo':       [ 5.9804,  116.0735], // Kota Kinabalu
     'singapore':    [ 1.2834,  103.8607], // Marina Bay
     'malaysia':     [ 3.1579,  101.7117], // KL
-    'thailand':     [10.0956,   99.8377], // Koh Tao
     'china-spring':  [34.3416,  108.9398], // Xi'an (entry point)
   },
   // Place-level (drilldown) coords. Key is "chapterId/placeName".
@@ -67,12 +67,17 @@ window.TRIP_GEO = {
     'korea/Seoul':                            [37.5665,  126.9780],
     'korea/Busan':                            [35.1796,  129.0756],
     'korea/Gyeongju':                         [35.8562,  129.2247],
-    'korea/Jeonju':                           [35.8242,  127.1480],
-    // Taiwan
-    'taiwan/Taipei':                          [25.0330,  121.5654],
-    'taiwan/Alishan':                         [23.5103,  120.8025],
-    'taiwan/Tainan':                          [22.9997,  120.2270],
-    'taiwan/Kaohsiung + Xiaoliuqiu':          [22.6273,  120.3014], // Kaohsiung / Xiaoliuqiu
+    'korea/Jeju':                             [33.4996,  126.5312],
+    // Vietnam — warm winter
+    'vietnam/Ho Chi Minh City':               [10.7769,  106.7009],
+    'vietnam/Mekong Delta':                   [10.0341,  105.7880], // Can Tho
+    'vietnam/Phu Quoc':                       [10.2270,  103.9640],
+    'vietnam/Ho Chi Minh City (return)':      [10.7769,  106.7009],
+    // Thailand — Andaman coast
+    'thailand/Bangkok':                       [13.7563,  100.5018],
+    'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
+    'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
+    'thailand/Bangkok (return)':              [13.7563,  100.5018],
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines
@@ -100,10 +105,6 @@ window.TRIP_GEO = {
     // Malaysia — KL + Penang
     'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
     'malaysia/Penang':                        [ 5.4141,  100.3288],
-    // Thailand
-    'thailand/Koh Tao':                       [10.0956,   99.8377],
-    'thailand/Koh Samui':                     [ 9.5018,  100.0140],
-    'thailand/Bangkok':                       [13.7460,  100.5018],
     // China E1 (Beijing first, then Huangshan + Jiangnan)
     'china-e1/Beijing':                       [39.9042,  116.4074],
     'china-e1/Huangshan':                      [30.1300,  118.1700],

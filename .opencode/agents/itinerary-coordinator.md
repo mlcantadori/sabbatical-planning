@@ -25,7 +25,7 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
 ## Run procedure
 
 1. **Scope the run.** Default: all 15 in-scope chapters. The user may narrow it
-   (e.g. "just Taiwan" for a dry run, or a chapter range) — pass the narrowed
+   (e.g. "just Vietnam" for a dry run, or a chapter range) — pass the narrowed
    scope to every specialist.
 2. **Fan out in parallel** via the Task tool to `weather-seasonality`,
    `borders-calendar`, `ground-truth`, and `experience-critic` in a single

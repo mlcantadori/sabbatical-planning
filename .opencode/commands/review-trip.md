@@ -7,7 +7,7 @@ subtask: true
 Run the full itinerary review via the coordinator's run procedure.
 
 - Scope: all in-scope chapters (`nepal` → `china-spring`) unless $ARGUMENTS narrows it
-  (e.g. `/review-trip taiwan` dry-runs a single chapter, `/review-trip japan philippines`
+  (e.g. `/review-trip vietnam` dry-runs a single chapter, `/review-trip japan philippines`
   covers a range — pass the narrowed scope to every specialist).
 - Reports go to `reviews/<today's YYYY-MM-DD>/` (create it first): one per specialist
   plus `verdict.md` with the must/should/could change list, tradeoff tables,

@@ -58,15 +58,14 @@ window.PHOTO_IDS = {
   'chengdu panda':               'extra-pictures/china-e2/chengdu-panda.jpg',
   'chongqing cyberpunk night':   'extra-pictures/china-e2/chongqing-cyberpunk-night.jpg',
   // ── Korea ─────────────────────────────────────────────────────────
-  'seoul palace winter':         'extra-pictures/korea/seoul-palace-winter.jpg',
   'busan gamcheon':              'extra-pictures/korea/busan-gamcheon.jpg',
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
-  'jeonju hanok':                'extra-pictures/korea/jeonju-hanok.jpg',
+  'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
-  // ── Taiwan ────────────────────────────────────────────────────────
-  'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
-  'taiwan night market':         'extra-pictures/taiwan/taiwan-night-market.jpg',
-  'anping fort':                 'extra-pictures/taiwan/anping-fort.jpg',
+  // ── Vietnam ───────────────────────────────────────────────────────
+  'ho chi minh skyline':         'extra-pictures/vietnam/ho-chi-minh-skyline.jpg',
+  'can tho floating market':     'extra-pictures/vietnam/can-tho-floating-market.jpg',
+  'phu quoc beach':              'extra-pictures/vietnam/phu-quoc-beach.jpg',
   // ── Japan ─────────────────────────────────────────────────────────
   'fushimi inari':               'extra-pictures/japan/fushimi-inari.jpg',
   'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',
@@ -103,8 +102,7 @@ window.PHOTO_IDS = {
   'batu caves rainbow steps':    'extra-pictures/malaysia/batu-caves-rainbow-steps.jpg',
   'penang street art':           'extra-pictures/malaysia/penang-street-art.jpg',
   // ── Thailand ──────────────────────────────────────────────────────
-  'koh tao diving':              'extra-pictures/thailand/koh-tao-diving.jpg',
-  'koh tao sail rock':           'extra-pictures/thailand/koh-tao-sail-rock.jpg',
+  'railay krabi':                'extra-pictures/thailand/railay-krabi.jpg',
   'koh samui beach':             'extra-pictures/thailand/koh-samui-beach.jpg',
   'bangkok wat arun':            'extra-pictures/thailand/bangkok-wat-arun.jpg',
   // ── China Spring ──────────────────────────────────────────────────

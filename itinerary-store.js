@@ -4,10 +4,9 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
-  // v15: Korea trimmed to 15d (+3d shifted to Taiwan 17d: Taipei, Alishan,
-  // Tainan, Kaohsiung+Xiaoliuqiu); Japan snowboard week moved to Myoko Kogen
-  // + Madarao; China E1/E2 transport + Chengdu/Shanghai 6n/6n balance updated.
-  const LS_KEY = 'trip-data-v15';
+  // v16: Korea + Taiwan replaced by Vietnam + Thailand (Andaman) in the winter
+  // slot; Korea moved to late spring (May 16–30) in the old Thailand slot.
+  const LS_KEY = 'trip-data-v16';
   const listeners = new Set();
   let chapters;
 
