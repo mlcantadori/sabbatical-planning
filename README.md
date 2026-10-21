@@ -51,6 +51,31 @@ python3 -m http.server 8000
 Internet needed on first load (React, Leaflet, Three.js, fonts, map tiles come
 from CDNs). Everything trip-specific lives in local files.
 
+## PR previews
+
+Every **same-repo** pull request is published to:
+
+```
+https://mlcantadori.github.io/sabbatical-planning/PR-<number>/
+```
+
+The workflow in `.github/workflows/pages.yml` keeps a single `gh-pages`
+branch: `main` is the root, and each PR lives in `PR-<number>/`. The preview
+is updated on every push to the PR and removed when the PR closes.
+
+**One-time setup (repo admin):** Settings → Pages → Build and deployment →
+Source: *Deploy from a branch*, Branch: **`gh-pages`**, Folder: **`/(root)`**.
+The workflow creates the branch on its first run (`workflow_dispatch` works
+for a manual bootstrap).
+
+Notes:
+- **Fork PRs are skipped** — the `pull_request` token can't write to the repo.
+  Push branches in the same repo if you want a preview.
+- Previews share the `mlcantadori.github.io` origin with the main site, so
+  `localStorage` (todo ticks, cached trip data, sync IDs) is shared. Use a
+  private window when testing a preview.
+- Assets are relative, so the site needs no base-path configuration.
+
 ## Editing the trip
 
 `itinerary-data.js` is the **single source of truth** — chapters, budget,
