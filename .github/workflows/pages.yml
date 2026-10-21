@@ -1,0 +1,210 @@
+name: Deploy site + PR previews
+
+# Publishes the static site to GitHub Pages:
+#   main        -> https://mlcantadori.github.io/sabbatical-planning/
+#   pull request -> https://mlcantadori.github.io/sabbatical-planning/PR-<number>/
+#
+# The workflow keeps a single `gh-pages` branch: the main site lives at the
+# root, and each same-repo PR gets its own PR-<number>/ directory. Assets in
+# index.html are relative, so the site works unchanged under a subpath.
+#
+# One-time setup (repo admin): Settings -> Pages -> Build and deployment ->
+# Source: "Deploy from a branch", Branch: `gh-pages`, Folder: `/(root)`.
+# Fork PRs are skipped (they don't get a write token); same-repo branches only.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Serialize every publish so main and PR jobs can't race on gh-pages.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy-main:
+    name: Deploy main
+    if: >-
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          path: src
+
+      - name: Checkout gh-pages
+        id: gh
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: deploy
+
+      - name: Bootstrap gh-pages if missing
+        if: steps.gh.outcome == 'failure'
+        run: |
+          rm -rf deploy
+          mkdir -p deploy
+          cd deploy
+          git init -b gh-pages
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Publish main to the Pages root
+        run: |
+          EXCLUDES=(
+            --exclude=.git --exclude=.github --exclude=node_modules --exclude=.npm-cache
+            --exclude=reviews --exclude=.opencode --exclude=scripts --exclude=package.json
+            --exclude=package-lock.json --exclude=build.sh --exclude=README.md
+            --exclude=.gitignore '--exclude=PR-*'
+          )
+          rsync -a --delete "${EXCLUDES[@]}" src/ deploy/
+          touch deploy/.nojekyll
+          cd deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git commit -m "Deploy main @ ${{ github.sha }}"
+          git push origin gh-pages
+
+  deploy-preview:
+    name: Deploy PR preview
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: src
+
+      - name: Checkout gh-pages
+        id: gh
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: deploy
+
+      - name: Bootstrap gh-pages if missing
+        if: steps.gh.outcome == 'failure'
+        run: |
+          rm -rf deploy
+          mkdir -p deploy
+          cd deploy
+          git init -b gh-pages
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Publish PR preview
+        run: |
+          EXCLUDES=(
+            --exclude=.git --exclude=.github --exclude=node_modules --exclude=.npm-cache
+            --exclude=reviews --exclude=.opencode --exclude=scripts --exclude=package.json
+            --exclude=package-lock.json --exclude=build.sh --exclude=README.md
+            --exclude=.gitignore '--exclude=PR-*'
+          )
+          rsync -a --delete "${EXCLUDES[@]}" src/ "deploy/PR-${{ github.event.number }}/"
+          touch "deploy/PR-${{ github.event.number }}/.nojekyll"
+          cd deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git commit -m "Preview PR #${{ github.event.number }}"
+          git push origin gh-pages
+
+      - name: Comment preview URL on the PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const number = context.payload.pull_request.number;
+            const url = `https://${context.repo.owner}.github.io/${context.repo.repo}/PR-${number}/`;
+            const marker = '<!-- pr-preview-link -->';
+            const body = `${marker}\n🔎 **Preview:** ${url}\n\n_Updated ${new Date().toISOString()}_`;
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: number,
+              per_page: 100,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ ...context.repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ ...context.repo, issue_number: number, body });
+            }
+
+  cleanup-preview:
+    name: Remove PR preview
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (for git identity)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: src
+
+      - name: Checkout gh-pages
+        id: gh
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: deploy
+
+      - name: Remove the preview directory
+        if: steps.gh.outcome == 'success'
+        run: |
+          cd deploy
+          rm -rf "PR-${{ github.event.number }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No preview to remove."
+            exit 0
+          fi
+          git commit -m "Remove preview for PR #${{ github.event.number }}"
+          git push origin gh-pages
+
+      - name: Mark the preview as removed
+        if: steps.gh.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const number = context.payload.pull_request.number;
+            const marker = '<!-- pr-preview-link -->';
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: number,
+              per_page: 100,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...context.repo,
+                comment_id: existing.id,
+                body: `${marker}\n🔎 Preview removed (PR closed).`,
+              });
+            }
