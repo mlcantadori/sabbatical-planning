@@ -71,6 +71,9 @@ window.PHOTO_IDS = {
   'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',
   'osaka dotonbori':             'extra-pictures/japan/osaka-dotonbori.jpg',
   'tokyo shimokitazawa':         'extra-pictures/japan/tokyo-shimokitazawa.jpg',
+  'kanazawa kenrokuen snow':     'extra-pictures/japan/kanazawa-kenrokuen-snow.jpg',
+  'shirakawa-go snow':           'extra-pictures/japan/shirakawa-go-snow.jpg',
+  'nozawa onsen snow':           'extra-pictures/japan/nozawa-onsen-snow.jpg',
   'hakuba snowboarding':         'extra-pictures/japan/hakuba-snowboarding.png',
   // ── Indonesia A ───────────────────────────────────────────────────
   'raja ampat aerial wayag':     'extra-pictures/indonesia-a/raja-ampat-aerial-wayag.jpg',
