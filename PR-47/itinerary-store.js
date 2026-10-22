@@ -4,11 +4,12 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
+  // v21: Andaman rebalanced — Koh Lipe 3n, Ko Lanta 7n (Dec 29 arrival before NYE), Railay 4n.
   // v20: Malaysia right-sized to 14n (KL/Penang/Langkawi), Andaman expanded
   // to 18n south-to-north (Koh Lipe -> Ko Lanta -> Railay -> Bangkok 4n),
   // Japan swaps Kanazawa for Hakone/Mt. Fuji, China Spring moves to May 6-28
   // ahead of June plum rains, and Korea closes the trip May 28 - Jun 11.
-  const LS_KEY = 'trip-data-v20';
+  const LS_KEY = 'trip-data-v21';
   const listeners = new Set();
   let chapters;
 
