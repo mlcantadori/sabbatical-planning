@@ -13,7 +13,7 @@ window.TRIP_GEO = {
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
     'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
-    'china-e2':    [30.5728,  104.0668], // Chengdu (entry point)
+    'china-e2':    [23.1291,  113.2644], // Guangzhou (entry point)
     'vietnam':     [10.7769,  106.7009], // Ho Chi Minh City (entry point)
     'thailand':    [13.7563,  100.5018], // Bangkok
     'korea':        [37.5665,  126.9780], // Seoul
@@ -61,7 +61,10 @@ window.TRIP_GEO = {
     // Japan (fused winter chapter)
     'japan/Kyoto':                          [35.0116,  135.7681],
     'japan/Osaka':                          [34.6937,  135.5023],
+    'japan/Kanazawa':                       [36.5613,  136.6562], // Kenrokuen
+    'japan/Takayama + Shirakawa-go':        [36.1461,  137.2522], // Takayama
     'japan/Tokyo':                          [35.6762,  139.6503],
+    'japan/Nozawa Onsen':                   [36.9228,  138.6405],
     'japan/Myoko Kogen + Madarao':          [36.8722,  138.1772], // Akakura Onsen, Myoko
     // Korea
     'korea/Seoul':                            [37.5665,  126.9780],
@@ -110,16 +113,17 @@ window.TRIP_GEO = {
     'china-e1/Huangshan':                      [30.1300,  118.1700],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
     'china-e1/Suzhou':                         [31.2989,  120.5853],
-    // China E2 (Pearl Delta → Sichuan → Shanghai finale)
+    // China E2 (Pearl Delta → Shanghai finale)
     'china-e2/Shenzhen':                       [22.5431,  114.0579],
     'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
     'china-e2/Guangzhou':                      [23.1291,  113.2644],
-    'china-e2/Chengdu':                        [30.5728,  104.0668],
-    'china-e2/Chongqing':                      [29.4316,  106.9123],
     'china-e2/Shanghai':                       [31.2304,  121.4737],
-    // China spring (Xi'an + south in peak season)
+    // China spring (Xi'an + Sichuan + south in peak season)
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
+    'china-spring/Chengdu':                   [30.5728,  104.0668],
+    'china-spring/Chongqing':                 [29.4316,  106.9123],
     'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
+    'china-spring/Guilin (buffer)':           [25.2736,  110.2900], // Guilin city
     'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
     'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
     'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],

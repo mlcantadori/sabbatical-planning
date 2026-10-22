@@ -4,9 +4,10 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
-  // v16: Korea + Taiwan replaced by Vietnam + Thailand (Andaman) in the winter
-  // slot; Korea moved to late spring (May 16–30) in the old Thailand slot.
-  const LS_KEY = 'trip-data-v16';
+  // v17: winter runway reshuffled — shorter Pearl Delta/Shanghai block,
+  // Vietnam + Thailand moved earlier, Japan extended to 42 days with Nozawa,
+  // Sichuan folded into the spring China finale.
+  const LS_KEY = 'trip-data-v17';
   const listeners = new Set();
   let chapters;
 
