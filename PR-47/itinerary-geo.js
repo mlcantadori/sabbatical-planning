@@ -14,8 +14,8 @@ window.TRIP_GEO = {
     'india':        [28.6139,   77.2090], // New Delhi
     'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
     'china-e2':    [23.1291,  113.2644], // Guangzhou (entry point)
-    'vietnam':     [10.7769,  106.7009], // Ho Chi Minh City (entry point)
     'thailand':    [13.7563,  100.5018], // Bangkok
+    'thailand-gulf': [9.5120,  100.0136], // Koh Samui
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
@@ -71,16 +71,18 @@ window.TRIP_GEO = {
     'korea/Busan':                            [35.1796,  129.0756],
     'korea/Gyeongju':                         [35.8562,  129.2247],
     'korea/Jeju':                             [33.4996,  126.5312],
-    // Vietnam — warm winter
-    'vietnam/Ho Chi Minh City':               [10.7769,  106.7009],
-    'vietnam/Mekong Delta':                   [10.0341,  105.7880], // Can Tho
-    'vietnam/Phu Quoc':                       [10.2270,  103.9640],
-    'vietnam/Ho Chi Minh City (return)':      [10.7769,  106.7009],
+    // Malaysia — Dec holiday chapter
+    'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
+    'malaysia/Langkawi':                      [ 6.3500,   99.8000], // Pantai Cenang
+    'malaysia/Penang':                        [ 5.4141,  100.3288],
     // Thailand — Andaman coast
     'thailand/Bangkok':                       [13.7563,  100.5018],
     'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
     'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
     'thailand/Bangkok (return)':              [13.7563,  100.5018],
+    // Thailand — Gulf coast
+    'thailand-gulf/Koh Samui':                [ 9.5120,  100.0136],
+    'thailand-gulf/Koh Tao':                  [10.0956,   99.8400],
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines
@@ -105,9 +107,6 @@ window.TRIP_GEO = {
     'borneo/Kinabatangan River':              [ 5.4500,  118.0500],
     // Singapore
     'singapore/Singapore':                    [ 1.2834,  103.8607],
-    // Malaysia — KL + Penang
-    'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
-    'malaysia/Penang':                        [ 5.4141,  100.3288],
     // China E1 (Beijing first, then Huangshan + Jiangnan)
     'china-e1/Beijing':                       [39.9042,  116.4074],
     'china-e1/Huangshan':                      [30.1300,  118.1700],
