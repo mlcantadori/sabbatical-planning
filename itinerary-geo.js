@@ -14,8 +14,7 @@ window.TRIP_GEO = {
     'india':        [28.6139,   77.2090], // New Delhi
     'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
     'china-e2':    [23.1291,  113.2644], // Guangzhou (entry point)
-    'thailand':    [13.7563,  100.5018], // Bangkok
-    'thailand-gulf': [9.5120,  100.0136], // Koh Samui
+    'thailand':    [ 8.0110,   98.8370], // Railay / Krabi (Andaman coast)
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
@@ -61,28 +60,25 @@ window.TRIP_GEO = {
     // Japan (fused winter chapter)
     'japan/Kyoto':                          [35.0116,  135.7681],
     'japan/Osaka':                          [34.6937,  135.5023],
-    'japan/Kanazawa':                       [36.5613,  136.6562], // Kenrokuen
     'japan/Takayama + Shirakawa-go':        [36.1461,  137.2522], // Takayama
+    'japan/Hakone + Mt. Fuji':              [35.4988,  138.7686], // Lake Kawaguchiko / Mt. Fuji
     'japan/Tokyo':                          [35.6762,  139.6503],
     'japan/Nozawa Onsen':                   [36.9228,  138.6405],
     'japan/Myoko Kogen + Madarao':          [36.8722,  138.1772], // Akakura Onsen, Myoko
     // Korea
-    'korea/Seoul':                            [37.5665,  126.9780],
+    'korea/Jeju':                             [33.4996,  126.5312],
     'korea/Busan':                            [35.1796,  129.0756],
     'korea/Gyeongju':                         [35.8562,  129.2247],
-    'korea/Jeju':                             [33.4996,  126.5312],
-    // Malaysia — Dec holiday chapter
+    'korea/Seoul':                            [37.5665,  126.9780],
+    // Malaysia — Dec west-coast chapter
     'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
-    'malaysia/Langkawi':                      [ 6.3500,   99.8000], // Pantai Cenang
     'malaysia/Penang':                        [ 5.4141,  100.3288],
-    // Thailand — Andaman coast
-    'thailand/Bangkok':                       [13.7563,  100.5018],
-    'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
+    'malaysia/Langkawi':                      [ 6.3500,   99.8000], // Pantai Cenang
+    // Thailand — Andaman coast + Bangkok
+    'thailand/Koh Lipe':                      [ 6.4890,   99.3025],
     'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
-    'thailand/Bangkok (return)':              [13.7563,  100.5018],
-    // Thailand — Gulf coast
-    'thailand-gulf/Koh Samui':                [ 9.5120,  100.0136],
-    'thailand-gulf/Koh Tao':                  [10.0956,   99.8400],
+    'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
+    'thailand/Bangkok':                       [13.7563,  100.5018],
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines
