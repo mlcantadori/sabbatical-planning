@@ -294,7 +294,7 @@
       s.controls.autoRotate = false;
     }
 
-    function arcBetween(a, b) {
+    function arcBetween(a, b, color) {
       // Great-circle slerp lifted above the surface (Flighty-style arcs),
       // rendered as a real 3D tube with an animated dashed glow shader.
       // (THREE.Line is always 1px in WebGL — thin, aliased, no glow —
@@ -318,7 +318,7 @@
       const geo = new THREE.TubeGeometry(curve, 64, ARC_R, 6, false);
       const mat = new THREE.ShaderMaterial({
         uniforms: {
-          uColor: { value: new THREE.Color(0xe8823f) },
+          uColor: { value: new THREE.Color(color || 0xe8823f) },
           uTime: { value: 0 },
           uDashCount: { value: dashCount },
           uOpacity: { value: 0.95 },
@@ -454,12 +454,13 @@
         if (withCoords.length) withCoords.forEach(({ p, i }) => s.overlay.appendChild(cityEl(c, p, i)));
         else s.overlay.appendChild(pinEl(c));
       });
-      // route arcs through the city stops in travel order
+      // route arcs through the city stops in travel order, each painted with
+      // the starting dot's chapter color
       const stops = [];
       list.forEach((c) => {
         const withCoords = (c.places || []).filter((p) => p.coords);
-        if (withCoords.length) withCoords.forEach((p) => stops.push(p.coords));
-        else if (c.anchor) stops.push(c.anchor);
+        if (withCoords.length) withCoords.forEach((p) => stops.push({ coords: p.coords, ch: c }));
+        else if (c.anchor) stops.push({ coords: c.anchor, ch: c });
       });
       while (s.arcs.children.length) {
         const l = s.arcs.children.pop();
@@ -469,7 +470,7 @@
       }
       s.arcMats.length = 0;
       for (let i = 0; i + 1 < stops.length; i++) {
-        const arc = arcBetween(stops[i], stops[i + 1]);
+        const arc = arcBetween(stops[i].coords, stops[i + 1].coords, chapterColor(stops[i].ch));
         s.arcs.add(arc);
         if (arc.userData.arcMat) s.arcMats.push(arc.userData.arcMat);
       }
