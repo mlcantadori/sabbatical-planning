@@ -57,7 +57,7 @@
 | 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset; Taiwan dropped from the route) |
 | 10 | china-e2 | 2026-11-28 → 2026-12-12 | SCOPE (14d: CAN 2n + Shenzhen 4n (rendezvous tail) + Macau 2n + Shanghai 6n; MFM→PVG Dec 6, PVG→KUL Dec 12) |
 | 11 | malaysia | 2026-12-12 → 2026-12-26 | SCOPE (14d west-coast run: KL 4n + Penang 6n pre-Christmas + Langkawi 4n; 90m ferry to Koh Lipe Dec 26) |
-| 12 | thailand | 2026-12-26 → 2027-01-13 | SCOPE (18d Andaman south-to-north + Bangkok: Koh Lipe 4n + Ko Lanta 5n incl. NYE + Railay/Krabi 5n + Bangkok 4n) |
+| 12 | thailand | 2026-12-26 → 2027-01-13 | SCOPE (18d Andaman south-to-north + Bangkok: Koh Lipe 3n + Ko Lanta 7n incl. NYE + Railay/Krabi 4n + Bangkok 4n) |
 | 13 | japan | 2027-01-13 → 2027-02-24 | SCOPE (42d winter: Kyoto 8n + Osaka 4n + Takayama/Shirakawa-go 3n + Hakone/Mt. Fuji 3n + Tokyo 9n incl. CNY + Nozawa 5n + Myoko/Madarao 9n Feb 14–23 + Tokyo 1n) |
 | 14 | indonesia-a | 2027-02-24 → 2027-03-21 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
 | 15 | borneo | 2027-03-21 → 2027-03-31 | SCOPE (Mar 31 shared transit; Sipadan permits undecided, decide by Nov 2026) |
