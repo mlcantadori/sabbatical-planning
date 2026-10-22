@@ -4,10 +4,10 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
-  // v17: winter runway reshuffled — shorter Pearl Delta/Shanghai block,
+  // v18: winter runway reshuffled — shorter Pearl Delta/Shanghai block,
   // Vietnam + Thailand moved earlier, Japan extended to 42 days with Nozawa,
-  // Sichuan folded into the spring China finale.
-  const LS_KEY = 'trip-data-v17';
+  // Sichuan folded into the spring China finale; Guilin/Longji dropped.
+  const LS_KEY = 'trip-data-v18';
   const listeners = new Set();
   let chapters;
 

@@ -122,10 +122,8 @@ window.TRIP_GEO = {
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
     'china-spring/Chengdu':                   [30.5728,  104.0668],
     'china-spring/Chongqing':                 [29.4316,  106.9123],
-    'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
-    'china-spring/Guilin (buffer)':           [25.2736,  110.2900], // Guilin city
-    'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
     'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
     'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
+    'china-spring/Changsha (buffer)':         [28.2282,  112.9388], // Changsha Huanghua gateway
   },
 };

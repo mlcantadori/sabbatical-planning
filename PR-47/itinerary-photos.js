@@ -111,8 +111,6 @@ window.PHOTO_IDS = {
   // ── China Spring ──────────────────────────────────────────────────
   'xian terracotta warriors':    'extra-pictures/china-spring/xian-terracotta-warriors.jpg',
   'xian city wall':              'extra-pictures/china-spring/xian-city-wall.jpg',
-  'guilin karst li river':       'extra-pictures/china-spring/guilin-karst-li-river.jpg',
-  'longji terraces':             'extra-pictures/china-spring/longji-terraces.jpg',
   'zhangjiajie avatar pillars':  'extra-pictures/china-spring/zhangjiajie-avatar-pillars.jpg',
   'fenghuang riverside':         'extra-pictures/china-spring/fenghuang-riverside.jpg',
 };
