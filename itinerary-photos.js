@@ -62,10 +62,6 @@ window.PHOTO_IDS = {
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
   'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
-  // ── Vietnam ───────────────────────────────────────────────────────
-  'ho chi minh skyline':         'extra-pictures/vietnam/ho-chi-minh-skyline.jpg',
-  'can tho floating market':     'extra-pictures/vietnam/can-tho-floating-market.jpg',
-  'phu quoc beach':              'extra-pictures/vietnam/phu-quoc-beach.jpg',
   // ── Japan ─────────────────────────────────────────────────────────
   'fushimi inari':               'extra-pictures/japan/fushimi-inari.jpg',
   'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',
@@ -104,9 +100,12 @@ window.PHOTO_IDS = {
   'petronas towers night':       'extra-pictures/malaysia/petronas-towers-night.jpg',
   'batu caves rainbow steps':    'extra-pictures/malaysia/batu-caves-rainbow-steps.jpg',
   'penang street art':           'extra-pictures/malaysia/penang-street-art.jpg',
+  'langkawi beach':              'extra-pictures/malaysia/langkawi-cenang-beach.jpg',
   // ── Thailand ──────────────────────────────────────────────────────
   'railay krabi':                'extra-pictures/thailand/railay-krabi.jpg',
   'koh samui beach':             'extra-pictures/thailand/koh-samui-beach.jpg',
+  'koh lanta beach':             'extra-pictures/thailand/koh-lanta-beach.jpg',
+  'koh tao diving':              'extra-pictures/thailand/koh-tao-diving.jpg',
   'bangkok wat arun':            'extra-pictures/thailand/bangkok-wat-arun.jpg',
   // ── China Spring ──────────────────────────────────────────────────
   'xian terracotta warriors':    'extra-pictures/china-spring/xian-terracotta-warriors.jpg',

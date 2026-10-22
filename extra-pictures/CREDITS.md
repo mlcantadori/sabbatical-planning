@@ -6,11 +6,11 @@ Trip photos are vendored locally so the site has no hotlinked images.
 
 | File | Author | License |
 |---|---|---|
-| `vietnam/ho-chi-minh-skyline.jpg` | Pimnl | CC0 1.0 |
-| `vietnam/phu-quoc-beach.jpg` | Elmschrat | CC0 1.0 |
 | `korea/jeju-yongmeori.jpg` | Bernard Gagnon | CC0 1.0 |
-| `vietnam/can-tho-floating-market.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
 | `thailand/railay-krabi.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `malaysia/langkawi-cenang-beach.jpg` | Khairil Yusof | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `thailand/koh-lanta-beach.jpg` | Fabio Achilli | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `thailand/koh-tao-diving.jpg` | easy4444 | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) |
 
 All sourced from Wikimedia Commons.
 

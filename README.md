@@ -7,8 +7,8 @@
 This is the interactive companion to a year-long sabbatical across Asia — part
 travel journal, part mission control. It holds the whole arc (Brasil → Canada →
 Greece → Türkiye → Azerbaijan → India → Nepal → China → Hong Kong → China →
-Vietnam → Thailand → Japan → Indonesia → Borneo → Philippines → Indonesia →
-Singapore → Malaysia → Korea → China, then home), all **365 days** of it, in one
+Malaysia → Thailand → Japan → Indonesia → Borneo → Philippines → Indonesia →
+Singapore → Thailand → Korea → China, then home), all **365 days** of it, in one
 page you can spin, click, budget, and check off.
 
 ## What's inside

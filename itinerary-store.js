@@ -4,10 +4,10 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
-  // v18: winter runway reshuffled — shorter Pearl Delta/Shanghai block,
-  // Vietnam + Thailand moved earlier, Japan extended to 42 days with Nozawa,
+  // v19: Malaysia takes the December holiday slot (KL/Langkawi/Penang),
+  // Thailand Andaman follows in January, Japan extended to 42 days with Nozawa,
   // Sichuan folded into the spring China finale; Guilin/Longji dropped.
-  const LS_KEY = 'trip-data-v18';
+  const LS_KEY = 'trip-data-v19';
   const listeners = new Set();
   let chapters;
 

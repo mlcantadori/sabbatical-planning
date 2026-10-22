@@ -97,28 +97,27 @@ window.TODO_ITEMS = [
   { id: 'china-e2-1-shenzhen', ch: 'china-e2', place: 'Shenzhen', cat: 'stay', title: 'Shenzhen stay (4n)', note: 'Nov 30 – Dec 4 — friends at another hotel, book own stay (rendezvous tail)', due: '2026-11-09', done: false },
   { id: 'china-e2-1-macau', ch: 'china-e2', place: 'Macau', cat: 'stay', title: 'Macau stay (2n)', note: 'Dec 4–6; fly Macau (MFM) → Shanghai (PVG) direct Dec 6', due: '2026-11-13', done: false },
   { id: 'china-e2-1-guangzhou', ch: 'china-e2', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Nov 28–30, Cantonese opening straight off the Hong Kong HSR', due: '2026-11-07', done: false },
-  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (6n)', note: 'Dec 6–12 — heated MODERN hotel (no lane houses, no central heating); slow finale before Vietnam', due: '2026-11-15', done: false },
+  { id: 'china-e2-1-shanghai', ch: 'china-e2', place: 'Shanghai', cat: 'stay', title: 'Shanghai stay (6n)', note: 'Dec 6–12 — heated MODERN hotel (no lane houses, no central heating); slow finale before Malaysia', due: '2026-11-15', done: false },
   { id: 'china-e2-7', ch: 'china-e2', place: 'Shenzhen → Macau', cat: 'transport', title: 'Shenzhen–Macau ferry Dec 4 (~1h)', note: 'Shekou departures, book ahead (Mainland exit)', due: '2026-11-24', done: false },
   { id: 'china-e2-10', ch: 'china-e2', place: 'Macau → Shanghai', cat: 'transport', title: 'Macau–Shanghai direct flight Dec 6 (~2.5h)', note: 'Fly MFM → PVG direct (Air Macau) — fresh Mainland entry, skips Zhuhai border', due: '2026-11-01', done: false },
-  { id: 'china-e2-5', ch: 'china-e2', place: 'Shanghai → Ho Chi Minh City', cat: 'transport', title: 'Shanghai–Ho Chi Minh City flight Dec 12 (~4h45)', note: 'PVG → SGN direct — book early for the Christmas run', due: '2026-10-25', done: false },
+  { id: 'china-e2-5', ch: 'china-e2', place: 'Shanghai → Kuala Lumpur', cat: 'transport', title: 'Shanghai–Kuala Lumpur flight Dec 12 (~5h30)', note: 'PVG → KUL direct — book early for the Christmas run', due: '2026-10-25', done: false },
 
-  // ── vietnam ───────────────────────────────────────────────────────
-  { id: 'vietnam-1', ch: 'vietnam', place: null, cat: 'visa', title: 'Vietnam e-visa (2 pax)', note: '90-day e-visa online (~$25–50 pp) — apply by ~Nov 28; print approval + onward ticket', due: '2026-11-28', done: false },
-  { id: 'vietnam-2', ch: 'vietnam', place: 'Ho Chi Minh City', cat: 'stay', title: 'Ho Chi Minh City stay (4n)', note: 'Dec 12–16, District 1/3 — Christmas lights building on Nguyen Hue', due: '2026-11-20', done: false },
-  { id: 'vietnam-3', ch: 'vietnam', place: 'Mekong Delta', cat: 'stay', title: 'Mekong Delta stay/tour (2n)', note: 'Dec 16–18 — Can Tho floating market + homestay; book a small-group or private tour', due: '2026-11-24', done: false },
-  { id: 'vietnam-4', ch: 'vietnam', place: 'Phu Quoc', cat: 'stay', title: 'Phu Quoc stay (8n, incl. Christmas)', note: 'Dec 18–26 — Long Beach/Ong Lang; Christmas books out early, reserve now', due: '2026-11-10', done: false },
-  { id: 'vietnam-5', ch: 'vietnam', place: 'Phu Quoc → Ho Chi Minh City', cat: 'transport', title: 'Phu Quoc→HCMC flight Dec 26 (~1h)', note: 'In-chapter hop; book with the Phu Quoc stay', due: '2026-11-20', done: false },
-  { id: 'vietnam-6', ch: 'vietnam', place: 'Ho Chi Minh City (return)', cat: 'stay', title: 'Saigon buffer stay (3n)', note: 'Dec 26–29 — laundry, e-visa admin, last pho', due: '2026-11-24', done: false },
-  { id: 'vietnam-7', ch: 'vietnam', place: 'Ho Chi Minh City → Bangkok', cat: 'transport', title: 'HCMC→Bangkok flight Dec 29 (~1h30)', note: 'Direct — Thailand next, NYE in Bangkok', due: '2026-11-15', done: false },
+  // ── malaysia (Dec holiday chapter) ────────────────────────────────
+  { id: 'malaysia-dec-1-kl', ch: 'malaysia', place: 'Kuala Lumpur', cat: 'stay', title: 'Kuala Lumpur stay (5n)', note: 'Dec 12–17 — Petronas, Batu Caves, Jalan Alor', due: '2026-11-15', done: false },
+  { id: 'malaysia-dec-1-langkawi', ch: 'malaysia', place: 'Langkawi', cat: 'stay', title: 'Langkawi stay (6n)', note: 'Dec 17–23 — Pantai Cenang/Tengah; dry-season beach before the Christmas rush', due: '2026-11-10', done: false },
+  { id: 'malaysia-dec-1-penang', ch: 'malaysia', place: 'Penang', cat: 'stay', title: 'Penang stay (9n, incl. Christmas + NYE)', note: 'Dec 23 – Jan 1 — Georgetown slow chapter; holiday dinners book early', due: '2026-11-10', done: false },
+  { id: 'malaysia-dec-2-kl-langkawi', ch: 'malaysia', place: 'Kuala Lumpur → Langkawi', cat: 'transport', title: 'KL→Langkawi flight Dec 17 (~1h)', note: 'In-chapter hop; book with the Langkawi stay', due: '2026-11-20', done: false },
+  { id: 'malaysia-dec-2-langkawi-penang', ch: 'malaysia', place: 'Langkawi → Penang', cat: 'transport', title: 'Langkawi→Penang ferry Dec 23 (~2.5–3h)', note: 'Weather-dependent; short flight is the fallback', due: '2026-11-20', done: false },
+  { id: 'malaysia-dec-2-penang-krabi', ch: 'malaysia', place: 'Penang → Krabi', cat: 'transport', title: 'Penang→Krabi flight Jan 1 (via KL/Bangkok)', note: 'Routine connection; Thailand Andaman next', due: '2026-12-01', done: false },
 
   // ── thailand (Andaman) ────────────────────────────────────────────
-  { id: 'thailand-1-bangkok', ch: 'thailand', place: 'Bangkok', cat: 'stay', title: 'Bangkok stay (3n, incl. NYE)', note: 'Dec 29 – Jan 1 — temples, canals, Yaowarat; NYE countdown books out early', due: '2026-11-30', done: false },
-  { id: 'thailand-2', ch: 'thailand', place: 'Bangkok → Krabi', cat: 'transport', title: 'Bangkok→Krabi flight Jan 1 (~1h30)', note: 'In-chapter hop; book ahead for peak season', due: '2026-11-20', done: false },
-  { id: 'thailand-3', ch: 'thailand', place: 'Railay + Krabi', cat: 'stay', title: 'Railay/Krabi stay (4n)', note: 'Jan 1–5 — Railay or Ao Nang; longtail access', due: '2026-12-01', done: false },
-  { id: 'thailand-4', ch: 'thailand', place: 'Krabi → Ko Lanta', cat: 'transport', title: 'Krabi→Ko Lanta transfer Jan 5', note: 'Bus + short ferry ~3–4h; book with the resort', due: '2026-12-15', done: false },
-  { id: 'thailand-5', ch: 'thailand', place: 'Ko Lanta', cat: 'stay', title: 'Ko Lanta stay (6n)', note: 'Jan 5–11 — Long Beach/Klong Nin; quiet Andaman base', due: '2026-12-01', done: false },
-  { id: 'thailand-6', ch: 'thailand', place: 'Ko Lanta → Krabi → Bangkok', cat: 'transport', title: 'Ko Lanta→Krabi→Bangkok Jan 11', note: 'Bus/ferry to Krabi, then flight to Bangkok', due: '2026-12-15', done: false },
-  { id: 'thailand-7', ch: 'thailand', place: 'Bangkok (return)', cat: 'stay', title: 'Bangkok buffer stay (2n)', note: 'Jan 11–13 — laundry, markets, last Thai meal', due: '2026-12-08', done: false },
+  { id: 'thailand-1-bangkok', ch: 'thailand', place: 'Bangkok', cat: 'stay', title: 'Bangkok stay (2n)', note: 'Jan 1–3 — city hub after Malaysia; temples, canals, Yaowarat', due: '2026-11-30', done: false },
+  { id: 'thailand-2', ch: 'thailand', place: 'Bangkok → Krabi', cat: 'transport', title: 'Bangkok→Krabi flight Jan 3 (~1h30)', note: 'In-chapter hop; book ahead for peak season', due: '2026-11-20', done: false },
+  { id: 'thailand-3', ch: 'thailand', place: 'Railay + Krabi', cat: 'stay', title: 'Railay/Krabi stay (4n)', note: 'Jan 3–7 — Railay or Ao Nang; longtail access', due: '2026-12-01', done: false },
+  { id: 'thailand-4', ch: 'thailand', place: 'Krabi → Ko Lanta', cat: 'transport', title: 'Krabi→Ko Lanta transfer Jan 7', note: 'Bus + short ferry ~3–4h; book with the resort', due: '2026-12-15', done: false },
+  { id: 'thailand-5', ch: 'thailand', place: 'Ko Lanta', cat: 'stay', title: 'Ko Lanta stay (5n)', note: 'Jan 7–12 — Long Beach/Klong Nin; quiet Andaman base', due: '2026-12-01', done: false },
+  { id: 'thailand-6', ch: 'thailand', place: 'Ko Lanta → Krabi → Bangkok', cat: 'transport', title: 'Ko Lanta→Krabi→Bangkok Jan 12', note: 'Bus/ferry to Krabi, then flight to Bangkok', due: '2026-12-15', done: false },
+  { id: 'thailand-7', ch: 'thailand', place: 'Bangkok (return)', cat: 'stay', title: 'Bangkok buffer stay (1n)', note: 'Jan 12–13 — laundry, markets, last Thai meal', due: '2026-12-08', done: false },
   { id: 'thailand-8', ch: 'thailand', place: 'Bangkok → Osaka', cat: 'transport', title: 'Bangkok→Osaka flight Jan 13 (~5h30)', note: 'Direct; Japan begins', due: '2026-11-15', done: false },
 
   // ── japan ─────────────────────────────────────────────────────────
@@ -177,11 +176,13 @@ window.TODO_ITEMS = [
   // ── singapore ─────────────────────────────────────────────────────
   { id: 'singapore-2', ch: 'singapore', place: null, cat: 'stay', title: 'Singapore stay', note: '5 nights May 1–6', due: '2027-04-10', done: false },
 
-  // ── malaysia ──────────────────────────────────────────────────────
-  { id: 'malaysia-1-kl', ch: 'malaysia', place: 'Kuala Lumpur', cat: 'stay', title: 'KL stay (4n)', note: 'May 6–10', due: '2027-04-15', done: false },
-  { id: 'malaysia-1-penang', ch: 'malaysia', place: 'Penang', cat: 'stay', title: 'Penang stay (6n)', note: 'May 10–16, Georgetown slow chapter', due: '2027-04-19', done: false },
-  { id: 'malaysia-2', ch: 'malaysia', place: 'Singapore → KL', cat: 'transport', title: 'Singapore→Kuala Lumpur bus', note: 'Book a few days ahead', due: '2027-04-21', done: false },
-  { id: 'malaysia-3', ch: 'malaysia', place: 'KL → Penang', cat: 'transport', title: 'ETS rail KL→Penang', note: 'Book seats ahead; Penang Hill + mansions at the other end', due: '2027-04-26', done: false },
+  // ── thailand-gulf (May) ───────────────────────────────────────────
+  { id: 'thailand-gulf-1-samui', ch: 'thailand-gulf', place: 'Koh Samui', cat: 'stay', title: 'Koh Samui stay (5n)', note: 'May 6–11 — Chaweng/Lamai/Fisherman\'s Village; pick one base', due: '2027-04-10', done: false },
+  { id: 'thailand-gulf-1-tao', ch: 'thailand-gulf', place: 'Koh Tao', cat: 'stay', title: 'Koh Tao stay (5n)', note: 'May 11–16 — dive island base; book the ferry + dive shop together', due: '2027-04-10', done: false },
+  { id: 'thailand-gulf-2-sin-samui', ch: 'thailand-gulf', place: 'Singapore → Koh Samui', cat: 'transport', title: 'Singapore→Koh Samui flight May 6', note: 'Direct Bangkok Airways; book early', due: '2027-03-20', done: false },
+  { id: 'thailand-gulf-3-samui-tao', ch: 'thailand-gulf', place: 'Koh Samui → Koh Tao', cat: 'transport', title: 'Koh Samui→Koh Tao ferry May 11', note: 'Passenger ferry ~1.5–2h; weather-dependent', due: '2027-04-20', done: false },
+  { id: 'thailand-gulf-4-tao-samui', ch: 'thailand-gulf', place: 'Koh Tao → Koh Samui', cat: 'transport', title: 'Koh Tao→Koh Samui ferry May 16', note: 'Ferry back for the Seoul connection; leave a buffer', due: '2027-04-20', done: false },
+  { id: 'thailand-gulf-5-samui-seoul', ch: 'thailand-gulf', place: 'Koh Samui → Seoul', cat: 'transport', title: 'Koh Samui→Seoul flight May 16 (via Bangkok)', note: 'USM–BKK–ICN; book as one ticket if possible', due: '2027-04-01', done: false },
 
   // ── korea (late spring) ───────────────────────────────────────────
   { id: 'korea-1', ch: 'korea', place: null, cat: 'visa', title: 'Korea K-ETA (2 pax)', note: 'File online ~1 week before May 16; BR visa-free but not K-ETA-exempt; 3-year validity', due: '2027-05-08', done: false },
