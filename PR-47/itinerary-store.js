@@ -4,10 +4,11 @@
 // (read-only UI — see git history to restore).
 
 window.STORE = (function () {
-  // v19: Malaysia takes the December holiday slot (KL/Langkawi/Penang),
-  // Thailand Andaman follows in January, Japan extended to 42 days with Nozawa,
-  // Sichuan folded into the spring China finale; Guilin/Longji dropped.
-  const LS_KEY = 'trip-data-v19';
+  // v20: Malaysia right-sized to 14n (KL/Penang/Langkawi), Andaman expanded
+  // to 18n south-to-north (Koh Lipe -> Ko Lanta -> Railay -> Bangkok 4n),
+  // Japan swaps Kanazawa for Hakone/Mt. Fuji, China Spring moves to May 6-28
+  // ahead of June plum rains, and Korea closes the trip May 28 - Jun 11.
+  const LS_KEY = 'trip-data-v20';
   const listeners = new Set();
   let chapters;
 

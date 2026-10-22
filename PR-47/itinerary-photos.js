@@ -67,7 +67,7 @@ window.PHOTO_IDS = {
   'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',
   'osaka dotonbori':             'extra-pictures/japan/osaka-dotonbori.jpg',
   'tokyo shimokitazawa':         'extra-pictures/japan/tokyo-shimokitazawa.jpg',
-  'kanazawa kenrokuen snow':     'extra-pictures/japan/kanazawa-kenrokuen-snow.jpg',
+  'mount fuji winter':           'extra-pictures/japan/mount-fuji-winter.jpg',
   'shirakawa-go snow':           'extra-pictures/japan/shirakawa-go-snow.jpg',
   'nozawa onsen snow':           'extra-pictures/japan/nozawa-onsen-snow.jpg',
   'hakuba snowboarding':         'extra-pictures/japan/hakuba-snowboarding.png',
@@ -102,10 +102,9 @@ window.PHOTO_IDS = {
   'penang street art':           'extra-pictures/malaysia/penang-street-art.jpg',
   'langkawi beach':              'extra-pictures/malaysia/langkawi-cenang-beach.jpg',
   // ── Thailand ──────────────────────────────────────────────────────
+  'koh lipe beach':              'extra-pictures/thailand/koh-lipe-beach.jpg',
   'railay krabi':                'extra-pictures/thailand/railay-krabi.jpg',
-  'koh samui beach':             'extra-pictures/thailand/koh-samui-beach.jpg',
   'koh lanta beach':             'extra-pictures/thailand/koh-lanta-beach.jpg',
-  'koh tao diving':              'extra-pictures/thailand/koh-tao-diving.jpg',
   'bangkok wat arun':            'extra-pictures/thailand/bangkok-wat-arun.jpg',
   // ── China Spring ──────────────────────────────────────────────────
   'xian terracotta warriors':    'extra-pictures/china-spring/xian-terracotta-warriors.jpg',
