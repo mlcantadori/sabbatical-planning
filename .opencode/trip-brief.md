@@ -10,8 +10,8 @@
 - 2 Brazilians (couple), carry-on + ~30L backpacks only. No checked-luggage logistics anywhere.
 - Mid-range comfort: good value, local charm. No luxury, no hardcore-backpacker
   suffering ("perrengue"), no moving every 2 days, no insane logistics for checklist completion.
-- Trip: Jun 21 2026 → Jun 28 2027, 372 days. Budget model: **~USD 96k for two
-  (~USD 259/day, ~R$250k per person at R$5.20)**, all figures USD for a couple.
+- Trip: Jun 21 2026 → Jun 21 2027, 365 days. Budget model: **~USD 95k for two
+  (~USD 260/day, ~R$247k per person at R$5.20)**, all figures USD for a couple.
 - Strategic splurges (locked, do not re-litigate): Raja Ampat liveaboard, Myoko Kogen
   + Madarao snowboard week (rentals + lessons), Cappadocia balloon + cave hotel, one ryokan night.
 
@@ -66,7 +66,7 @@
 | 18 | singapore | 2027-05-01 → 2027-05-06 | SCOPE (5d) |
 | 19 | malaysia | 2027-05-06 → 2027-05-16 | SCOPE (KL 4n + Penang 6n) |
 | 20 | korea | 2027-05-16 → 2027-05-30 | SCOPE (14d late spring: Seoul 6n + Gyeongju 2n + Busan 3n + Jeju 3n) |
-| 21 | china-spring | 2027-05-30 → 2027-06-28 | SCOPE (29d: Xi'an 5n + Chengdu 5n + Chongqing 4n + Zhangjiajie 4n + Fenghuang 3n + Guilin 5n + Longji 2n + Guilin buffer 1n; fly home from Guilin Jun 28) |
+| 21 | china-spring | 2027-05-30 → 2027-06-21 | SCOPE (22d: Xi'an 5n + Chengdu 5n + Chongqing 4n + Zhangjiajie 4n + Fenghuang 3n + Changsha buffer 1n; Guilin/Longji dropped; fly home from Changsha Jun 21) |
 
 ## Locked bookings & flights (never contradict)
 
@@ -82,7 +82,7 @@
   KTM→PEK Nov 7 · PEK→Huangshan (HSR or TXN flight) Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA (Hongqiao)→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→PVG direct flight Dec 6 · PVG→SGN direct flight Dec 12 ·
   SGN→BKK direct Dec 29 · BKK→KIX direct Jan 13 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
-  ICN→XIY May 30 · KWL→GRU home Jun 28.
+  ICN→XIY May 30 · CSX→GRU home Jun 21.
 - Paperwork gates (verified by review team, re-verify before travel): Vietnam e-visa
   by ~Nov 28; Korea K-ETA filed ≥1 week before May 16; China L visa for spring entry
   (May 30) unless the waiver renews. No Taiwan filing.

@@ -3,7 +3,7 @@
 
 window.TRIP = (function () {
   const START = new Date('2026-06-21');
-  const END = new Date('2027-06-28');
+  const END = new Date('2027-06-21');
   const MS = 86400000;
   const totalDays = Math.round((END - START) / MS);
 
@@ -500,11 +500,11 @@ window.TRIP = (function () {
     {
       id: 'china-spring', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China',
-      start: '2027-05-30', end: '2027-06-28', days: 29,
-      theme: 'Ancient capital, Sichuan food + pandas, Avatar pillars, karst finale',
-      intro: 'Twenty-nine days: Xi\'an in late-May perfection, then Chengdu and Chongqing for pandas, Sichuan food and the Yangtze nightscapes — hot and humid, but with far more light than December — before Zhangjiajie\'s pillars, Fenghuang\'s lanterns, and the Guilin/Longji karst at mirror season. The Sichuan block moves here from December, when the basin\'s fog and haze made it the grayest stretch of the trip.',
-      tldr: 'Xi\'an · Chengdu · Chongqing · Zhangjiajie · Fenghuang · Guilin/Longji',
-      weather: { hi: 30, lo: 21, label: 'Early summer, hot + wet south, 30°/21°', emoji: '🐉', rainyDays: 12 },
+      start: '2027-05-30', end: '2027-06-21', days: 22,
+      theme: 'Ancient capital, Sichuan food + pandas, Avatar pillars, lantern finale',
+      intro: 'Twenty-two days: Xi\'an in late-May perfection, then Chengdu and Chongqing for pandas, Sichuan food and the Yangtze nightscapes — hot and humid, but with far more light than December — before Zhangjiajie\'s pillars and Fenghuang\'s lanterns. Guilin and Longji are deliberately out: late June is their wettest, flood- and road-disruption window, and the finale is better spent calm than gambling on a cruise or a mountain road.',
+      tldr: 'Xi\'an · Chengdu · Chongqing · Zhangjiajie · Fenghuang',
+      weather: { hi: 30, lo: 21, label: 'Early summer, hot + wet south, 30°/21°', emoji: '🐉', rainyDays: 10 },
       photos: ['xian terracotta warriors'],
       places: [
         { name: 'Xi\'an', photo: 'xian city wall', days: 5, query: 'Terracotta Warriors, Xi\'an',
@@ -516,15 +516,11 @@ window.TRIP = (function () {
         { name: 'Zhangjiajie + Tianmen', photo: 'zhangjiajie avatar pillars', days: 4, query: 'Zhangjiajie National Park',
           highlights: ['Jun 13–17: Avatar Mountains — floating sandstone pillars in early-summer mist','Tianmen Stairway to Heaven (999 steps)','Glass Bridge + Glass Cliff Walk','Green valleys between the pillars; rain is what makes the sea of clouds','Jun 17: bus to Fenghuang via Furong (~2–3h)'] },
         { name: 'Fenghuang + Furong', photo: 'fenghuang riverside', days: 3, query: 'Fenghuang Ancient Town, China',
-          highlights: ['Jun 17–20: Furong waterfall town — river pouring through the town center, Tujia stilt houses','Fenghuang riverside old town — lanterns over the Tuo River','Hong Bridge + diaojiaolou houses at dusk','Slow full days after the Zhangjiajie stairs','Jun 20: HSR/bus to Guilin (~3–4h via Changsha)'] },
-        { name: 'Guilin / Yangshuo', photo: 'guilin karst li river', days: 5, query: 'Yangshuo, China',
-          highlights: ['Jun 20–25: Li River karst — mist between limestone towers at dawn','Bamboo raft on the Li River; cycling through rice paddies','Yangshuo back lanes, cooking class, riverside cafés','June is the wettest month — keep the Li cruise refundable and a rain-day swap ready','Jun 25: bus to Longji Terraces'] },
-        { name: 'Longji Terraces', photo: 'longji terraces', days: 2, query: 'Longji Rice Terraces, China',
-          highlights: ['Jun 25–27: Dragon\'s Backbone terraces flooded at mirror season','Ping\'an + Dazhai viewpoints at sunrise','Zhuang minority villages overnight','Jun 27: bus back to Guilin — check road status morning-of'] },
-        { name: 'Guilin (buffer)', days: 1, query: 'Guilin, China',
-          highlights: ['Jun 27–28: laundry, pack, last bowl of Guilin rice noodles','Jun 28: fly Guilin (KWL) → home via Guangzhou/Hong Kong — trip ends'] },
+          highlights: ['Jun 17–20: Furong waterfall town — river pouring through the town center, Tujia stilt houses','Fenghuang riverside old town — lanterns over the Tuo River','Hong Bridge + diaojiaolou houses at dusk','Slow full days after the Zhangjiajie stairs','Jun 20: bus/train to Changsha (~5–6h) — no Guilin detour'] },
+        { name: 'Changsha (buffer)', days: 1, query: 'Changsha, China',
+          highlights: ['Jun 20–21: laundry, pack, last Hunan meal','Jun 21: fly Changsha (CSX) → home via Guangzhou/Hong Kong — trip ends'] },
       ],
-      decisions: ['Sichuan moved from December to the spring chapter — December is the basin\'s lowest-sun window (fog, haze, damp cold); early June is hot/humid but far brighter and the food/pandas program works', 'Chongqing sits between Chengdu and Zhangjiajie — the Avatar mountains are a short HSR/flight away, so the geography finally makes sense', 'Guilin/Longji stay at the end for mirror-season terraces; June is the wettest month, so keep the Li cruise refundable and the Longji road buffer', 'Home flight moves from Changsha to Guilin (KWL) — the route now ends in the karst rather than doubling back north'],
+      decisions: ['Sichuan moved from December to the spring chapter — December is the basin\'s lowest-sun window (fog, haze, damp cold); early June is hot/humid but far brighter and the food/pandas program works', 'Chongqing sits between Chengdu and Zhangjiajie — the Avatar mountains are a short HSR/flight away, so the geography finally makes sense', 'Guilin + Longji dropped: late June is the wettest month (flood/cruise-suspension and single-road risk); the trip ends in Zhangjiajie/Fenghuang instead, with a Changsha buffer', 'Home flight from Changsha (CSX) — a bigger, easier hub than Guilin, and the spring chapter now sits comfortably inside the 30-day visa'],
     },
   ];
 
@@ -538,7 +534,7 @@ window.TRIP = (function () {
     // ── Pending — rest of the trip ──
     { task: 'Raja Ampat liveaboard',     by: 'By Oct 2025', critical: true,  notes: 'Papua Diving / Meridian Adventure — Mar 11–20 (MOVED — reconfirm!); books out 6+ months ahead' },
     { task: 'Sipadan permits',           by: 'By Nov 2026', critical: true,  notes: '120 permits/day cap — if adding Sipadan to Borneo chapter' },
-    { task: 'Flights Nov–Jun + China domestic hops', by: 'ASAP — Dec 12 run', critical: true, notes: 'KTM→PEK Nov 7 · PEK→Huangshan HSR/flight Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→PVG flight Dec 6 · PVG→SGN direct Dec 12 · SGN→BKK Dec 29 · BKK→KIX Jan 13 · ICN→XIY May 30 · KWL→home Jun 28' },
+    { task: 'Flights Nov–Jun + China domestic hops', by: 'ASAP — Dec 12 run', critical: true, notes: 'KTM→PEK Nov 7 · PEK→Huangshan HSR/flight Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→PVG flight Dec 6 · PVG→SGN direct Dec 12 · SGN→BKK Dec 29 · BKK→KIX Jan 13 · ICN→XIY May 30 · CSX→home Jun 21' },
     { task: 'Vietnam e-visa (2 pax)', by: 'By ~Nov 28 2026', critical: true, notes: '90-day e-visa online (~$25–50 pp); print approval + onward ticket' },
     { task: 'Korea K-ETA (2 pax)', by: 'By ~May 8 2027', critical: true, notes: 'File online ≥1 week before May 16; Brazil visa-free but not K-ETA-exempt' },
     { task: 'Annapurna trek balance + briefing', by: 'Oct 24 at DWT office, Thamel', critical: true, notes: 'Pay $1,296 balance, gear check, meet guide/porter; ACAP/TIMS via agency — confirm; 9kg pp porter limit' },
@@ -560,11 +556,11 @@ window.TRIP = (function () {
   // (BudgetView) from these parts — never hardcoded — so edits stay consistent.
   const budget = {
     currency: 'USD',
-    basis: 'couple · 372 days · mid-range with strategic splurges',
+    basis: 'couple · 365 days · mid-range with strategic splurges',
     fxBRL: 5.2,
-    estimate: 'USD ~96k for two',
-    perDay: '~USD 259/day for two',
-    inBRL: '~R$250k per person at R$5.20',
+    estimate: 'USD ~95k for two',
+    perDay: '~USD 260/day for two',
+    inBRL: '~R$247k per person at R$5.20',
     contingencyPct: 8,
     // Confirmed figures — do not re-estimate.
     locked: [
@@ -606,7 +602,7 @@ window.TRIP = (function () {
       { id: 'singapore', days: 5, lodging: 700, food: 275, transport: 90, activities: 80, fees: 0, note: '~$140/n · hawker-first food · Gardens domes' },
       { id: 'malaysia', days: 10, lodging: 550, food: 400, transport: 170, activities: 60, fees: 0, note: 'KL 4n + Penang 6n guesthouses · SG→KL bus + ETS rail · Penang Hill + mansions' },
       { id: 'korea', days: 14, lodging: 1750, food: 980, transport: 300, activities: 250, fees: 0, note: 'Seoul 6n + Gyeongju 2n + Busan 3n + Jeju 3n · late spring · KTX + Busan→Jeju flight · DMZ/Suwon' },
-      { id: 'china-spring', days: 29, lodging: 2010, food: 1600, transport: 1530, activities: 650, fees: 0, note: 'ICN→XIY May 30 ~$250 · XIY→CTU + CTU→CKG + CKG→DYG + Fenghuang→Guilin hops · pandas/Sanxingdui + karst/pillars tickets · out via Guilin Jun 28' },
+      { id: 'china-spring', days: 22, lodging: 1530, food: 1215, transport: 1280, activities: 450, fees: 0, note: 'ICN→XIY May 30 ~$250 · XIY→CTU + CTU→CKG + CKG→DYG + Fenghuang→Changsha hops · pandas/Sanxingdui + pillars tickets · out via Changsha Jun 21' },
     ],
     // Between-chapter flights for two (in-chapter transport stays above).
     // Every leg carries a `date` (departure day) so the calendar sync can
@@ -630,7 +626,7 @@ window.TRIP = (function () {
       { route: 'Kota Kinabalu → Manila (via KUL)', cost: 250, date: '2027-03-31', note: 'Estimate, AirAsia' },
       { route: 'Cebu → Denpasar (via MNL/SIN)', cost: 300, date: '2027-04-14', note: 'Estimate — daily, easy; Entry 2 starts' },
       { route: 'Bali → Singapore', cost: 200, date: '2027-05-01', note: 'Estimate, AirAsia' },
-      { route: 'Guilin → São Paulo (home)', cost: 1400, date: '2027-06-28', note: 'Estimate ~$700pp, via Guangzhou/Hong Kong — trip ends in the karst' },
+      { route: 'Changsha → São Paulo (home)', cost: 1400, date: '2027-06-21', note: 'Estimate ~$700pp, via Guangzhou/Hong Kong — trip ends in Changsha' },
     ],
     extras: [
       { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },
@@ -731,9 +727,7 @@ window.TRIP = (function () {
     { mode: 'train', route: 'Chengdu → Chongqing', date: '2027-06-09', note: 'HSR ~1h' },
     { mode: 'train', route: 'Chongqing → Zhangjiajie', date: '2027-06-13', note: 'HSR ~4–5h (or 1h flight)' },
     { mode: 'bus', route: 'Zhangjiajie → Fenghuang (via Furong)', date: '2027-06-17', note: 'Bus with the Furong waterfall-town stop en route' },
-    { mode: 'train', route: 'Fenghuang → Guilin', date: '2027-06-20', note: 'HSR/bus ~3–4h via Changsha' },
-    { mode: 'bus', route: 'Guilin → Longji Terraces', date: '2027-06-25', note: 'Bus to Ping\'an / Dazhai' },
-    { mode: 'bus', route: 'Longji → Guilin', date: '2027-06-27', note: 'Bus down; overnight before the home flight' },
+    { mode: 'bus', route: 'Fenghuang → Changsha', date: '2027-06-20', note: 'Bus/train ~5–6h; overnight near the airport before the home flight' },
   ];
 
   return {
