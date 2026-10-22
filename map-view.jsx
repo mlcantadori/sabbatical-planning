@@ -37,15 +37,6 @@
     return pts;
   }
 
-  function curvedRoute(points) {
-    const full = [];
-    for (let i = 0; i < points.length - 1; i++) {
-      const seg = greatCircleSegment(points[i], points[i + 1]);
-      full.push(...(i === 0 ? seg : seg.slice(1)));
-    }
-    return full;
-  }
-
   function MapView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey }) {
     const store = window.useStore();
     const chapters = store.getChapters();
@@ -53,7 +44,7 @@
 
     const ref = React.useRef(null);
     const mapRef = React.useRef(null);
-    const layersRef = React.useRef({ chapters: [], places: [], route: null });
+    const layersRef = React.useRef({ chapters: [], places: [], routes: [] });
     const selectedIdRef = React.useRef(selectedId);
     React.useEffect(() => { selectedIdRef.current = selectedId; }, [selectedId]);
 
@@ -172,18 +163,23 @@
       // Clear
       layersRef.current.chapters.forEach((m) => m.marker.remove());
       layersRef.current.chapters = [];
-      if (layersRef.current.route) { layersRef.current.route.remove(); layersRef.current.route = null; }
+      layersRef.current.routes.forEach((r) => r.remove());
+      layersRef.current.routes = [];
 
-      // Route polyline through the city stops in travel order
+      // Route polyline through the city stops in travel order. One segment
+      // per leg, painted with the starting dot's chapter color so the route
+      // changes color as the trip moves between chapters.
       const stops = getStops();
       const routePoints = stops.map(stopCoords).filter(Boolean);
-      if (routePoints.length > 1) {
-        const route = L.polyline(curvedRoute(routePoints), {
+      for (let i = 0; i + 1 < stops.length; i++) {
+        const from = stopCoords(stops[i]), to = stopCoords(stops[i + 1]);
+        if (!from || !to) continue;
+        const route = L.polyline(greatCircleSegment(from, to), {
           className: 'route-line',
-          color: '#e8823f', weight: 2.5, opacity: 0.95,
+          color: chapterColor(stops[i].ch), weight: 2.5, opacity: 0.95,
           dashArray: '0.5, 7', lineCap: 'round', lineJoin: 'round',
         }).addTo(map);
-        layersRef.current.route = route;
+        layersRef.current.routes.push(route);
       }
 
       // City dots (one per place); anchor fallback pins for chapters
