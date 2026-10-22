@@ -388,10 +388,10 @@ window.TRIP = (function () {
     },
     {
       id: 'borneo', kind: 'chapter', region: 'rainforest',
-      country: 'Malaysia', flag: '🇲🇾', title: 'Malaysia',
+      country: 'Malaysia', flag: '🇲🇾', title: 'Malaysian Borneo',
       start: '2027-03-21', end: '2027-03-31', days: 10,
-      theme: 'Indonesia visa reset + wildlife chapter',
-      intro: 'Fly in from Sorong Mar 21 — reef→rainforest novelty switch right after the apex, and the exit resets Indonesia\'s clock for the second stay. Proboscis monkeys, pygmy elephants bathing at dawn. Late March sits in the Mar–May prime wildlife window.',
+      theme: 'Sabah wildlife + the Indonesia visa reset',
+      intro: 'The other Malaysia — 2,000 km east and three months after the Penang/Langkawi run. Fly in from Sorong Mar 21: a reef-to-rainforest switch right after the Raja Ampat apex, and the exit resets Indonesia\'s 30-day clock for the second stay. Proboscis monkeys, pygmy elephants bathing at dawn, orangutans at Sepilok. Late March sits in the Mar–May prime wildlife window.',
       tldr: 'KK · Sepilok · Kinabatangan River · Manila next',
       weather: { hi: 32, lo: 24, label: 'Tropical rainforest', emoji: '🦧', rainyDays: 6 },
       photos: ['borneo orangutan'],
