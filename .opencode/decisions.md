@@ -45,6 +45,21 @@ for only ~5 extra Indonesian nights.
 
 ---
 
+## 2026-10-23 — Snow time is protected; expansion comes from Japan's city nights
+
+The travelers care about snowboarding **quality**, not fixed dates. So the snow
+block (Nozawa 5n + Myoko/Madarao 9n) is treated as load-bearing, and any
+*additional* snow time is funded by cutting Japan **city** nights — never by
+taking days from the December warm-weather block.
+
+Crowd rules for the snow block: post-CNY, ride weekdays over weekends, avoid the
+Emperor's Birthday weekend (Feb 23) and Golden Week (Apr 29–May 5).
+
+Consequence for the design space: Japan's 28 city nights are the elastic part of
+the Japan chapter, not the 14 snow nights.
+
+---
+
 ## 2026-10-23 — Malaysia appears twice (Dec + Mar) on purpose
 
 The March `borneo` chapter is the **Indonesia visa reset** (30-day clock) plus
