@@ -83,18 +83,19 @@ wrong — cut a base or add days.
 - **Horizon is elastic.** No hard end date is assumed. If a plan is cramped, add
   days. If a chapter is weak, delete it. Do not defend a number that came from an
   earlier draft.
-- **Hard commitments** (everything else is negotiable): Raja Ampat liveaboard
-  Mar 11–20; Hong Kong Nov 23–28 + the Shenzhen friend visit; Nepal trek
-  Oct 25–Nov 4; already-bought flights (GRU→YYZ→ATH Aug 27, VNS→KTM Oct 21,
-  KTM→PEK Nov 7) and the Beijing stay Nov 7–16. The Myoko snow week is a
-  preferred anchor, not a booked one — confirm before treating it as fixed.
-- **Visas (Brazilian passport) are a routing constraint, not a detail.** The
-  full matrix lives in `.opencode/trip-brief.md` § Visa matrix. The expensive
-  ones are **Taiwan** (visitor visa, TECO filing, 3–5 business days), **India**
-  (e-visa), **Azerbaijan** (e-visa), **South Korea** (K-ETA), and **Nepal**
-  (visa on arrival). China is 30-day visa-free through 2026; a 2027 entry needs
-  an L visa unless the waiver renews. Indonesia's 30 days are non-extendable —
-  a second stay needs an exit and re-entry.
+- **Committed = `done: true` in `todo-data.js`.** That file is the source of
+  truth for what is actually booked, paid, or fixed — flights, stays, permits,
+  cars. **Read it before proposing anything that would move those dates.** Never
+  assume something is flexible just because it isn't described here.
+- **Not in the todo, still fixed:** the Hong Kong / Shenzhen friend visit in late
+  November (a social commitment with no booking record). Everything else is
+  negotiable, including the Myoko snow week and the trip end date.
+- **Travelers hold Brazilian passports.** Do not assume visa-free access and do
+  not trust a stored table — requirements change. Treat every entry as a routing
+  decision with a cost (fees, lead time, rejection risk) and verify the current
+  rule when it matters. A handful of rules are **structural to the current
+  route** — listed in `.opencode/trip-brief.md` § Routing-critical visa facts.
+  Breaking one breaks the itinerary, so confirm rather than assume.
 
 ## Domain guardrails
 
