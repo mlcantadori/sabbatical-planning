@@ -15,8 +15,8 @@ implementation you invented as if it were the request. Open with one line:
 
 **D2 — Enumerate the space, then score it.**
 3–5 variants, varying *where*, *when*, and *how long* independently. Table, then
-score. A single option plus a caveat is a failed answer; anything that belongs in
-"you could also…" belongs in the table.
+score — the table *is* the comparison. A single option plus a caveat is a failed
+answer; anything that belongs in "you could also…" belongs in the table.
 
 **D3 — Score against the ledger.**
 `.opencode/trip-brief.md` § *Preference ledger* is authoritative. Say what each
@@ -67,14 +67,27 @@ Every session should sharpen the next one:
   silently reverse a settled decision; raise it first.
 - Keep this file near 150 lines; merge or delete to make room.
 
+**D11 — Think long, write short.**
+Default to **one screen**. Lead with the answer and its tradeoff: no preamble, no
+recap of the itinerary, no narrating the option table. Spend words on *why* and
+*what it costs*, not on surveying. Long analysis goes in the PR body or
+`decisions.md`, linked. Never cut: the recommendation, its main tradeoff, the cost
+in days and money, and what would change the answer.
+
 ### Answer shape for design questions
 
+Target **one screen**; never more than two. Depth goes into the reasoning, not the
+survey.
+
 1. Interpretation (one line)
-2. Option space (table)
-3. Ledger check (pass / fail per constraint)
+2. Option table — 3–5 rows, one line per cell
+3. Which preferences it trades, and what that buys
 4. Whole-trip audit — only what is off
-5. Recommendation, and what would change it
+5. Recommendation + cost, and what would change it
 6. Offer to implement
+
+Do not narrate the table or restate the itinerary. Detail belongs in the PR body
+or `decisions.md`, linked.
 
 ## Part 2 — Building the app
 
