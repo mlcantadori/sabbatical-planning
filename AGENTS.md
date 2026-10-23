@@ -20,8 +20,8 @@ score. A single option plus a caveat is a failed answer; anything that belongs i
 
 **D3 — Score against the ledger.**
 `.opencode/trip-brief.md` § *Preference ledger* is authoritative. Say what each
-proposal satisfies and what it breaks. **Breaking a hard constraint means
-redesign, not reject.**
+proposal satisfies and what it works against. **Breaking a Must means redesign,
+not reject; departing from a strong preference just needs to be argued.**
 
 **D4 — A self-found objection is a design signal.**
 If the draft says "the downside is X" and X is a ledger constraint, mutate the
@@ -40,8 +40,8 @@ differ from the draft, the space wasn't explored.
 
 **D8 — Time is elastic; stops are not.**
 No fixed trip length, no fixed grand total. A cramped plan gets **more days**, not
-less content. Any stop under 4 nights must justify itself; several 3-nighters in a
-row means the shape is wrong.
+less content. Any stop under 4 nights should justify itself; several 3-nighters in a row
+usually means the shape is wrong, not fatal.
 
 **D9 — Audit the whole trip.**
 A recommendation about one chapter is a claim about all of them. Scan every chapter
