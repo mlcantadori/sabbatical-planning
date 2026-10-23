@@ -37,7 +37,7 @@
 | P3 | **No moving every 2 days** | 4+ nights is the default. **3 nights is a warning; 2 only for a genuinely small place or a transit night.** Several 3-night stops in a row = wrong shape. |
 | P4 | **Thailand coast/islands are a must** | Not tied to a particular month. |
 | P5 | **Few immovable dates** | Raja Ampat Mar 11–20; Hong Kong Nov 23–28 + Shenzhen friend visit; Nepal trek Oct 25–Nov 4; bought flights GRU→ATH Aug 27 / VNS→KTM Oct 21 / KTM→PEK Nov 7; Beijing stay Nov 7–16. *Everything else is negotiable, including the Myoko week (preferred, not booked) and the trip end date.* |
-| P6 | **Japan snowboarding, good conditions, fewer crowds** | Myoko week is the preferred anchor; keep it post-CNY. Movable within Feb–Mar if it buys a better SE Asia shape. |
+| P6 | **Japan snowboarding is a primary objective** | Quality over dates. Target Jan–late Feb powder at Sea-of-Japan resorts (Myoko, Nozawa, Madarao; Hokkaido if added). Wants a **dedicated multi-week block with rest days**, not scattered days. Crowd rules: post-CNY, ride weekdays over weekends, avoid Emperor's Birthday (Feb 23) and Golden Week (Apr 29–May 5) weekends. **Extra snow time comes out of Japan's city nights, never out of the warm-weather block.** |
 | P7 | **No repeat sightseeing** | Bangkok/Chiang Mai, Vietnam, Cambodia, Laos main sights are done. A few Bangkok days are acceptable. |
 | P8 | **Beaches must earn their nights** | A-tier water or exceptional scenery. B-tier sand is not worth peak-season prices when better water comes later in the trip. |
 | P9 | **Forward-only geography** | No needless backtracking; every hop advances the arc unless a season justifies it explicitly. |
