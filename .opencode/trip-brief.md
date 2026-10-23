@@ -54,18 +54,19 @@
 | 6 | india | 2026-10-14 → 2026-10-21 | LOCKED (compact: Agra day trip Oct 15, train to Varanasi Oct 17 06:00 booked ✅, VNS→KTM Oct 21 08:30 booked ✅ $343) |
 | 7 | nepal | 2026-10-21 → 2026-11-07 | SCOPE (ABC trek Oct 25–Nov 4 LOCKED inside; KTM→PEK Nov 7 late arrival) |
 | 8 | china-e1 | 2026-11-07 → 2026-11-23 | SCOPE (16d slow-Beijing start: 9n Beijing incl. trek recovery → Huangshan canyon → HGH/SUZ gardens; south moved to E2 after HK reset) |
-| 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset; Taiwan dropped from the route) |
+| 9 | hk | 2026-11-23 → 2026-11-28 | SCOPE (visa reset + **Taiwan visa filed at TECO HK Nov 24**) |
 | 10 | china-e2 | 2026-11-28 → 2026-12-12 | SCOPE (14d: CAN 2n + Shenzhen 4n (rendezvous tail) + Macau 2n + Shanghai 6n; MFM→PVG Dec 6, PVG→KUL Dec 12) |
-| 11 | malaysia | 2026-12-12 → 2026-12-26 | SCOPE (14d west-coast run: KL 4n + Penang 6n pre-Christmas + Langkawi 4n; 90m ferry to Koh Lipe Dec 26) |
-| 12 | thailand | 2026-12-26 → 2027-01-13 | SCOPE (18d Andaman south-to-north + Bangkok: Koh Lipe 3n + Ko Lanta 7n incl. NYE + Railay/Krabi 4n + Bangkok 4n) |
-| 13 | japan | 2027-01-13 → 2027-02-24 | SCOPE (42d winter: Kyoto 8n + Osaka 4n + Takayama/Shirakawa-go 3n + Hakone/Mt. Fuji 3n + Tokyo 9n incl. CNY + Nozawa 5n + Myoko/Madarao 9n Feb 14–23 + Tokyo 1n) |
-| 14 | indonesia-a | 2027-02-24 → 2027-03-21 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
-| 15 | borneo | 2027-03-21 → 2027-03-31 | SCOPE (Mar 31 shared transit; Sipadan permits undecided, decide by Nov 2026) |
-| 16 | philippines | 2027-03-31 → 2027-04-14 | SCOPE (post-Easter window) |
-| 17 | indonesia-b | 2027-04-14 → 2027-05-01 | SCOPE (Entry 2 Apr 14–May 1) |
-| 18 | singapore | 2027-05-01 → 2027-05-06 | SCOPE (5d — waits out China's May 1–5 Labor Day Golden Week) |
-| 19 | china-spring | 2027-05-06 → 2027-05-28 | SCOPE (22d May sweet spot: Xi'an 5n + Chengdu 5n + Chongqing 4n + Zhangjiajie 4n + Fenghuang 3n + Changsha 1n; pre-plum-rain) |
-| 20 | korea | 2027-05-28 → 2027-06-11 | SCOPE (14d finale south-to-north: Jeju 3n + Busan 3n + Gyeongju 2n + Seoul 6n; fly home from ICN Jun 11) |
+| 11 | malaysia | 2026-12-12 → 2026-12-18 | SCOPE (6d: KL 3n decompression + Langkawi 3n; 90m ferry to Koh Lipe Dec 18. Penang cut to fund Taiwan) |
+| 12 | thailand | 2026-12-18 → 2026-12-29 | SCOPE (11d Andaman south-to-north: Koh Lipe 3n pre-Christmas + Ko Lanta 5n incl. Christmas + Railay/Krabi 3n; Bangkok cut) |
+| 13 | taiwan | 2026-12-29 → 2027-01-13 | SCOPE (15d south-to-north: Kaohsiung 4n incl. NYE + Tainan 4n + Alishan 2n + Taipei 5n; TECO HK visa required) |
+| 14 | japan | 2027-01-13 → 2027-02-24 | SCOPE (42d winter: Kyoto 8n + Osaka 4n + Takayama/Shirakawa-go 3n + Hakone/Mt. Fuji 3n + Tokyo 9n incl. CNY + Nozawa 5n + Myoko/Madarao 9n Feb 14–23 + Tokyo 1n) |
+| 15 | indonesia-a | 2027-02-24 → 2027-03-21 | SCOPE (Java + Bali staging, liveaboard Mar 11–20 LOCKED inside; Entry 1 Feb 24–Mar 21) |
+| 16 | borneo | 2027-03-21 → 2027-03-31 | SCOPE (Mar 31 shared transit; Sipadan permits undecided, decide by Nov 2026) |
+| 17 | philippines | 2027-03-31 → 2027-04-14 | SCOPE (post-Easter window) |
+| 18 | indonesia-b | 2027-04-14 → 2027-05-01 | SCOPE (Entry 2 Apr 14–May 1) |
+| 19 | singapore | 2027-05-01 → 2027-05-06 | SCOPE (5d — waits out China's May 1–5 Labor Day Golden Week) |
+| 20 | china-spring | 2027-05-06 → 2027-05-28 | SCOPE (22d May sweet spot: Xi'an 5n + Chengdu 5n + Chongqing 4n + Zhangjiajie 4n + Fenghuang 3n + Changsha 1n; pre-plum-rain) |
+| 21 | korea | 2027-05-28 → 2027-06-11 | SCOPE (14d finale south-to-north: Jeju 3n + Busan 3n + Gyeongju 2n + Seoul 6n; fly home from ICN Jun 11) |
 
 ## Locked bookings & flights (never contradict)
 
@@ -79,15 +80,18 @@
 - India e-Visa required before Oct 14 Delhi arrival.
 - To-buy / estimates (routable in principle, but chained — flag ripple effects):
   KTM→PEK Nov 7 · PEK→Huangshan (HSR or TXN flight) Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA (Hongqiao)→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→PVG direct flight Dec 6 · PVG→KUL direct flight Dec 12 ·
-  PEN→LGK flight Dec 22 · LGK→Koh Lipe ferry Dec 26 · KBV→BKK Jan 9 · BKK→KIX direct Jan 13 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
+  KUL→LGK Dec 15 · LGK→Koh Lipe ferry Dec 18 · KBV→BKK→KHH Dec 29 · TPE→KIX direct Jan 13 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
   SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
   SIN→XIY May 6 · CSX→CJU/ICN May 28 · ICN→GRU home Jun 11.
-- Paperwork gates (verified by review team, re-verify before travel): Korea K-ETA
-  filed ≥1 week before May 28; China L visa for spring entry (May 6) unless the
-  waiver renews. Malaysia/Thailand visa-free; no Taiwan filing.
+- Paperwork gates (verified by review team, re-verify before travel): **Taiwan
+  visitor visa — Brazil passports need one; file at TECO Hong Kong Nov 24 during
+  the HK stop, 3–5 business days, ~$50–160 pp.** Korea K-ETA filed ≥1 week before
+  May 28; China L visa for spring entry (May 6) unless the waiver renews.
+  Malaysia/Thailand visa-free.
 - Visa facts baked into the plan (re-verify before travel, don't redesign around
   without cause): China 30-day visa-free per entry (E1 = 16d, E2a = 6d, Macau reset,
   E2b = 6d; all pre-Dec-31-2026, no visa needed); spring entry (May 6–28, 22d) needs one
   L visa unless the waiver renews. Indonesia two sub-30d visa-free stays
   (26d + 17d) with Borneo reset between; Japan 90d visa-free (BR IC ePassport);
-  Malaysia 90d visa-free; Thailand 90d visa-free; Nepal 30d visa.
+  Malaysia 90d visa-free; Thailand 90d visa-free; Taiwan requires a visitor visa
+  (BR passports, filed TECO Hong Kong); Nepal 30d visa.

@@ -15,6 +15,7 @@ window.TRIP_GEO = {
     'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
     'china-e2':    [23.1291,  113.2644], // Guangzhou (entry point)
     'thailand':    [ 8.0110,   98.8370], // Railay / Krabi (Andaman coast)
+    'taiwan':      [22.6273,  120.3014], // Kaohsiung (entry point)
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
@@ -79,6 +80,11 @@ window.TRIP_GEO = {
     'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
     'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
     'thailand/Bangkok':                       [13.7563,  100.5018],
+    // Taiwan — south to north
+    'taiwan/Kaohsiung':                       [22.6273,  120.3014],
+    'taiwan/Tainan':                          [22.9932,  120.2125],
+    'taiwan/Alishan':                         [23.5100,  120.8000],
+    'taiwan/Taipei':                          [25.0330,  121.5654],
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines

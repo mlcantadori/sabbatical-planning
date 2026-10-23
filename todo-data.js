@@ -102,23 +102,32 @@ window.TODO_ITEMS = [
   { id: 'china-e2-10', ch: 'china-e2', place: 'Macau → Shanghai', cat: 'transport', title: 'Macau–Shanghai direct flight Dec 6 (~2.5h)', note: 'Fly MFM → PVG direct (Air Macau) — fresh Mainland entry, skips Zhuhai border', due: '2026-11-01', done: false },
   { id: 'china-e2-5', ch: 'china-e2', place: 'Shanghai → Kuala Lumpur', cat: 'transport', title: 'Shanghai–Kuala Lumpur flight Dec 12 (~5h30)', note: 'PVG → KUL direct — book early for the Christmas run', due: '2026-10-25', done: false },
 
-  // ── malaysia (Dec west-coast chapter) ─────────────────────────────
-  { id: 'malaysia-dec-1-kl', ch: 'malaysia', place: 'Kuala Lumpur', cat: 'stay', title: 'Kuala Lumpur stay (4n)', note: 'Dec 12–16 — Petronas, Batu Caves, Jalan Alor', due: '2026-11-15', done: false },
-  { id: 'malaysia-dec-2-kl-penang', ch: 'malaysia', place: 'Kuala Lumpur → Penang', cat: 'transport', title: 'KL→Penang ETS train Dec 16 (~4h)', note: 'Book ETS seats ahead + short Butterworth→George Town ferry', due: '2026-11-20', done: false },
-  { id: 'malaysia-dec-1-penang', ch: 'malaysia', place: 'Penang', cat: 'stay', title: 'Penang stay (6n)', note: 'Dec 16–22 — George Town slow food chapter before the main Christmas rush', due: '2026-11-10', done: false },
-  { id: 'malaysia-dec-2-penang-langkawi', ch: 'malaysia', place: 'Penang → Langkawi', cat: 'transport', title: 'Penang→Langkawi flight Dec 22 (~35min)', note: 'Direct AirAsia/Firefly hop (passenger ferry remains suspended)', due: '2026-11-20', done: false },
-  { id: 'malaysia-dec-1-langkawi', ch: 'malaysia', place: 'Langkawi', cat: 'stay', title: 'Langkawi stay (4n, incl. Christmas)', note: 'Dec 22–26 — Pantai Cenang / Tanjung Rhu; book early for Christmas week', due: '2026-11-10', done: false },
-  { id: 'malaysia-dec-2-langkawi-lipe', ch: 'malaysia', place: 'Langkawi → Koh Lipe', cat: 'transport', title: 'Langkawi→Koh Lipe ferry Dec 26 (~90min)', note: 'Cross-border ferry from Telaga Harbour; Thai immigration on the beach — book ahead for Dec 26', due: '2026-11-15', done: false },
+  // ── taiwan visa (do this in Hong Kong, Nov 24) ────────────────────
+  { id: 'taiwan-0-visa', ch: 'taiwan', place: null, cat: 'visa', title: 'Taiwan visitor visa (2 pax) — TECO Hong Kong', note: 'Brazil passports need a visa: no visa-free, no online TAC. File at TECO HK Nov 24 (you are in HK Nov 23–28); allow 3–5 business days, ~$50–160 pp. Bring itinerary, hotel bookings, financial proof, photos. This is the gating item for the whole Taiwan chapter', due: '2026-11-24', done: false },
 
-  // ── thailand (Andaman south-to-north + Bangkok) ───────────────────
-  { id: 'thailand-1-lipe', ch: 'thailand', place: 'Koh Lipe', cat: 'stay', title: 'Koh Lipe stay (3n)', note: 'Dec 26–29 — Sunrise Beach / Pattaya Beach; peak dry-season clarity, book early. 3n is enough: ~3km² island', due: '2026-11-15', done: false },
-  { id: 'thailand-2-lipe-lanta', ch: 'thailand', place: 'Koh Lipe → Ko Lanta', cat: 'transport', title: 'Koh Lipe→Ko Lanta speedboat Dec 29 (~3h)', note: 'Northbound Andaman speedboat (Satun Pakbara / Bundhaya). Deliberately a day before NYE: if it is weather-cancelled you can still make Dec 30', due: '2026-11-25', done: false },
-  { id: 'thailand-3-lanta', ch: 'thailand', place: 'Ko Lanta', cat: 'stay', title: 'Ko Lanta stay (7n, incl. NYE)', note: 'Dec 29 – Jan 5 — Long Beach / Klong Nin. Ask in writing whether the resort forces a NYE gala dinner; the good beach places sell out by Oct', due: '2026-10-30', done: false },
-  { id: 'thailand-4-lanta-railay', ch: 'thailand', place: 'Ko Lanta → Railay', cat: 'transport', title: 'Ko Lanta→Railay ferry/transfer Jan 5 (~2h)', note: 'Ferry or minivan + longtail to Railay', due: '2026-12-15', done: false },
-  { id: 'thailand-5-railay', ch: 'thailand', place: 'Railay + Krabi', cat: 'stay', title: 'Railay/Krabi stay (4n)', note: 'Jan 5–9 — Railay East for value, or Ao Nang as a cheaper base with longtail access', due: '2026-11-25', done: false },
-  { id: 'thailand-6-krabi-bangkok', ch: 'thailand', place: 'Krabi → Bangkok', cat: 'transport', title: 'Krabi→Bangkok flight Jan 9 (~1h20)', note: 'In-chapter hop to start the 4-night Bangkok stay', due: '2026-12-01', done: false },
-  { id: 'thailand-7-bangkok', ch: 'thailand', place: 'Bangkok', cat: 'stay', title: 'Bangkok stay (4n)', note: 'Jan 9–13 — one consolidated stay: temples, canals, Yaowarat, Chatuchak weekend', due: '2026-12-01', done: false },
-  { id: 'thailand-8', ch: 'thailand', place: 'Bangkok → Osaka', cat: 'transport', title: 'Bangkok→Osaka flight Jan 13 (~5h30)', note: 'Direct; Japan begins', due: '2026-11-15', done: false },
+  // ── malaysia (short west-coast run) ───────────────────────────────
+  { id: 'malaysia-dec-1-kl', ch: 'malaysia', place: 'Kuala Lumpur', cat: 'stay', title: 'Kuala Lumpur stay (3n)', note: 'Dec 12–15 — Petronas, Batu Caves, Jalan Alor; post-Shanghai decompression', due: '2026-11-15', done: false },
+  { id: 'malaysia-dec-2-kl-langkawi', ch: 'malaysia', place: 'Kuala Lumpur → Langkawi', cat: 'transport', title: 'KL→Langkawi flight Dec 15 (~1h)', note: 'In-chapter hop; book with the Langkawi stay', due: '2026-11-20', done: false },
+  { id: 'malaysia-dec-1-langkawi', ch: 'malaysia', place: 'Langkawi', cat: 'stay', title: 'Langkawi stay (3n)', note: 'Dec 15–18 — Pantai Cenang / Tanjung Rhu; pre-Christmas, but book early anyway', due: '2026-11-10', done: false },
+  { id: 'malaysia-dec-2-langkawi-lipe', ch: 'malaysia', place: 'Langkawi → Koh Lipe', cat: 'transport', title: 'Langkawi→Koh Lipe ferry Dec 18 (~90min)', note: 'Cross-border ferry from Telaga Harbour; Thai immigration on the beach. Seasonal and weather-exposed — if cancelled the fallback is Langkawi→Pak Bara→Lipe (+4–5h)', due: '2026-11-15', done: false },
+
+  // ── thailand (Andaman south-to-north) ─────────────────────────────
+  { id: 'thailand-1-lipe', ch: 'thailand', place: 'Koh Lipe', cat: 'stay', title: 'Koh Lipe stay (3n)', note: 'Dec 18–21 — Sunrise Beach, not Pattaya. Deliberately before the Dec 24–26 peak: calmest week of the high season', due: '2026-11-15', done: false },
+  { id: 'thailand-2-lipe-lanta', ch: 'thailand', place: 'Koh Lipe → Ko Lanta', cat: 'transport', title: 'Koh Lipe→Ko Lanta speedboat Dec 21 (~3h)', note: 'Northbound Andaman speedboat (Satun Pakbara / Bundhaya); reserve a few days ahead', due: '2026-11-25', done: false },
+  { id: 'thailand-3-lanta', ch: 'thailand', place: 'Ko Lanta', cat: 'stay', title: 'Ko Lanta stay (5n, incl. Christmas)', note: 'Dec 21–26 — Long Beach / Klong Nin / Kantiang. Christmas here is the quiet holiday', due: '2026-11-10', done: false },
+  { id: 'thailand-4-lanta-railay', ch: 'thailand', place: 'Ko Lanta → Railay', cat: 'transport', title: 'Ko Lanta→Railay ferry/transfer Dec 26 (~2h)', note: 'Ferry or minivan + longtail to Railay', due: '2026-12-01', done: false },
+  { id: 'thailand-5-railay', ch: 'thailand', place: 'Railay + Krabi', cat: 'stay', title: 'Railay/Krabi stay (3n)', note: 'Dec 26–29 — Railay East for value, or Ao Nang as a cheaper base with longtail access', due: '2026-11-25', done: false },
+  { id: 'thailand-8', ch: 'thailand', place: 'Krabi → Kaohsiung', cat: 'transport', title: 'Krabi→Kaohsiung flight Dec 29 (via Bangkok)', note: 'KBV–BKK–KHH; Taiwan begins. Book as one ticket if possible', due: '2026-11-10', done: false },
+
+  // ── taiwan (south to north, NYE in Kaohsiung) ─────────────────────
+  { id: 'taiwan-1-kaohsiung', ch: 'taiwan', place: 'Kaohsiung', cat: 'stay', title: 'Kaohsiung stay (4n, incl. NYE)', note: 'Dec 29 – Jan 2 — harbour-front base. NYE Dec 31 at Dream Mall / Kaohsiung Port; hotels near the harbour go 2–3×, book by Oct', due: '2026-10-30', done: false },
+  { id: 'taiwan-2-kaohsiung-tainan', ch: 'taiwan', place: 'Kaohsiung → Tainan', cat: 'transport', title: 'Kaohsiung→Tainan train Jan 2 (~35min)', note: 'TRA; frequent, no reservation needed', due: '2026-12-01', done: false },
+  { id: 'taiwan-3-tainan', ch: 'taiwan', place: 'Tainan', cat: 'stay', title: 'Tainan stay (4n)', note: 'Jan 2–6 — Guohua Street / Shennong Street base; after the Jan 1–3 domestic travel surge', due: '2026-11-15', done: false },
+  { id: 'taiwan-4-tainan-alishan', ch: 'taiwan', place: 'Tainan → Alishan', cat: 'transport', title: 'Tainan→Chiayi→Alishan Jan 6 (~2.5h)', note: 'TRA to Chiayi + Alishan forest railway or bus; forest railway sells out months ahead in cloud season', due: '2026-10-30', done: false },
+  { id: 'taiwan-5-alishan', ch: 'taiwan', place: 'Alishan', cat: 'stay', title: 'Alishan stay (2n)', note: 'Jan 6–8 — lodge inside the recreation area; book early, January is peak sea-of-clouds season', due: '2026-10-30', done: false },
+  { id: 'taiwan-6-alishan-taipei', ch: 'taiwan', place: 'Alishan → Taipei', cat: 'transport', title: 'Alishan→Chiayi→Taipei Jan 8 (~1h40 HSR)', note: 'Bus down to Chiayi + HSR north; reserve HSR seats', due: '2026-12-01', done: false },
+  { id: 'taiwan-7-taipei', ch: 'taiwan', place: 'Taipei', cat: 'stay', title: 'Taipei stay (5n)', note: 'Jan 8–13 — departure city: museums, Beitou hot springs, Jiufen day trip, night markets', due: '2026-11-15', done: false },
+  { id: 'taiwan-8-taipei-osaka', ch: 'taiwan', place: 'Taipei → Osaka', cat: 'transport', title: 'Taipei→Osaka flight Jan 13 (~2h45)', note: 'Direct; Japan begins', due: '2026-11-10', done: false },
 
   // ── japan ─────────────────────────────────────────────────────────
   { id: 'japan-1-kyoto', ch: 'japan', place: 'Kyoto', cat: 'stay', title: 'Kyoto stay (8n)', note: 'Jan 13–21, empty temples + early plum', due: '2026-12-20', done: false },

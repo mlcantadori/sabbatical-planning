@@ -62,6 +62,11 @@ window.PHOTO_IDS = {
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
   'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
+  // ── Taiwan ────────────────────────────────────────────────────────
+  'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
+  'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',
+  'alishan sea of clouds':       'extra-pictures/taiwan/alishan-sea-of-clouds.jpg',
+  'kaohsiung harbor':            'extra-pictures/taiwan/kaohsiung-harbor.jpg',
   // ── Japan ─────────────────────────────────────────────────────────
   'fushimi inari':               'extra-pictures/japan/fushimi-inari.jpg',
   'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',

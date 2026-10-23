@@ -14,6 +14,17 @@ Trip photos are vendored locally so the site has no hotlinked images.
 
 All sourced from Wikimedia Commons.
 
+## Added Oct 2026 — Taiwan (NYE south variant)
+
+| File | Author | License |
+|---|---|---|
+| `taiwan/taipei-101-night.jpg` | Titoni Thomas | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
+| `taiwan/tainan-chihkan-tower.jpg` | xiquinhosilva | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `taiwan/alishan-sea-of-clouds.jpg` | Huaiwun | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `taiwan/kaohsiung-harbor.jpg` | Yu-Jheng Fang | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) |
+
+All sourced from Wikimedia Commons.
+
 ## Added Oct 2026 — Japan winter extension
 
 | File | Author | License |
