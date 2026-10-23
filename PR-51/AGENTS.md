@@ -69,11 +69,9 @@ When a conversation reveals something durable — a new preference, a correction
 constraint, a rejected option with a reason — amend `AGENTS.md` or the ledger in
 the same turn, and say what changed. Rules for doing it:
 - Encode **durable** lessons only, not one-off logistics or moods.
-- Prefer amending an existing rule over appending a new one; keep this file under
-  ~150 lines and merge or delete when it creeps past that.
-- Never silently reverse a settled decision. If new evidence contradicts the
-  ledger or `decisions.md`, say so before changing it.
-- Substantive decisions go in `.opencode/decisions.md`, not here.
+- Amend before appending. Keep this file near ~150 lines; merge or delete when it
+  creeps past.
+- Never silently reverse a settled decision — say so before changing it.
 
 **D13 — Audit the whole trip before recommending.**
 A recommendation about one chapter is a claim about all of them. Before answering
@@ -86,12 +84,22 @@ any change question, scan every chapter and report only what is actually wrong:
 | Closures | Museums closed Mondays; seasonal ferries, roads, passes, islands; cable cars under maintenance |
 | Logistics | Visa validity and re-entry windows; impossible same-day connections; transfer days that eat a stop; last ferry/flight |
 | Pacing | Stops under 4 nights, runs of 3-nighters, moves per fortnight |
-| Geography | Backtracking; hops that don't advance the arc |
-| Ripple | What moves downstream; recompute the full date chain and the monthly run-rate |
+| Geography & ripple | Backtracking; hops that don't advance the arc; what moves downstream; recompute the date chain and the run-rate |
 | Bookings | Cross-check `todo-data.js` `done: true` before proposing to move a fixed date |
 
 Report the finding and the fix, with the chapter named. No generic checklist
 dumps.
+
+### Where things live
+
+- **D-rules here** — how to reason and what to output.
+- **§ Hard facts here** — interpretive facts: identity, money, horizon, passport, what's fixed.
+- **Preference ledger** — scoreable criteria that decide *which itinerary wins*.
+- **`decisions.md`** — settled calls. **`todo-data.js`** — what's booked. **`itinerary-data.js`** — the plan.
+
+Test: changes *which plan wins* → ledger. Changes *how a request is read* → hard
+fact. Changes *how the model works* → D-rule. No trip taste here; this file loads
+every session and has a size budget.
 
 ### Required output shape for design questions
 
@@ -106,11 +114,10 @@ dumps.
 
 - **Travelers:** 2 Brazilians (couple), carry-on + ~30L backpack each. Mid-range
   comfort; no luxury, no needless suffering.
-- **Budget is a monthly rate, not a total.** ~**R$20k/month per person**
-  (~R$40k/month for the couple ≈ ~$7.7k ≈ **$256/day for two**) — the current
-  model already sits here. Extending the trip is allowed and does **not** require
-  cuts elsewhere; the cost scales with nights. Optimise the monthly run-rate,
-  never a grand total.
+- **Budget is a monthly rate, not a total.** ~**R$20k/month per person** (~R$40k
+  for the couple ≈ ~$7.7k ≈ **$256/day for two**) — the current model already sits
+  here. Extending needs no cuts elsewhere; cost scales with nights. Optimise the
+  run-rate, never a grand total.
 - **Horizon is elastic within 12–18 months.** No exact end date. Adding days to
   fix a cramped chapter is the default move; delete a chapter only if it is weak
   in its own right. Do not defend a number that came from an earlier draft.
