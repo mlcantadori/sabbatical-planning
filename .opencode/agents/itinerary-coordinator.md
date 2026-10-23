@@ -33,6 +33,11 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
    (create the directory first), and the instruction to follow its own prompt.
    No specialist sees another's report — you are the only merge point.
 3. **Collect and cross-check.**
+   - **Option-space audit.** For any "should we change X" question, confirm that
+     at least three materially different shapes were considered — varying
+     *where*, *when*, and *how long*. A single proposal plus a caveat is a failed
+     review. Score each against the **Preference ledger** in the brief and say
+     which hard constraints pass or fail.
    - Recompute budget arithmetic for any proposal touching days, flights, or
      costs: chapters sum + flights + extras + 8% contingency, both travelers, USD.
      Reject or re-price anything that doesn't pencil out.

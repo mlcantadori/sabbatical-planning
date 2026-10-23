@@ -26,6 +26,28 @@
   moves forward along the arc unless a seasonal reason justifies it explicitly.
 - Awe-per-month over destination count. Cut traps, keep wonder.
 
+## Preference ledger (score every proposal against this)
+
+**Hard — breaking one means redesign the proposal, not reject the idea.**
+
+| # | Constraint | Notes |
+|---|---|---|
+| P1 | **No gray / low-sun chapters** | Prefer dry, bright, mild. Reject a place in its gloomiest window even when the destination is good. |
+| P2 | **Avoid holiday crowds** | Christmas/NYE peaks, CNY, China Golden Week, Songkran, Easter, Japan Golden Week, Taiwan New Year, Malaysian school holidays. |
+| P3 | **No moving every 2 days** | Slow chapters are structural. 4+ nights is the default; 2–3 only for genuinely small places. |
+| P4 | **Thailand coast/islands are a must** | Not tied to a particular month. |
+| P5 | **Immovable dates** | Raja Ampat Mar 11–20; Hong Kong Nov 23–28 + the Shenzhen friend visit; Nepal trek Oct 25–Nov 4. |
+| P6 | **Japan snowboarding, good conditions, fewer crowds** | Myoko week is the anchor; keep it post-CNY. |
+| P7 | **No repeat sightseeing** | Bangkok/Chiang Mai, Vietnam, Cambodia, Laos main sights are done. A few Bangkok days are acceptable. |
+| P8 | **Beaches must earn their nights** | A-tier water or exceptional scenery. B-tier sand is not worth peak-season prices when better water comes later in the trip. |
+| P9 | **Forward-only geography** | No needless backtracking; every hop advances the arc unless a season justifies it explicitly. |
+| P10 | **Justify deltas** | Days and budget can flex within reason, but state the cost. |
+
+**Soft**
+- Variety beats a second helping of the same biome.
+- Prefer a new country when the marginal beach night is B-tier.
+- Keep one decompression stop after each China block.
+
 ## Sports (bounded lens — breadth first)
 
 - Both travelers: AOW + Nitrox certified, own mask + dive computer (rent the rest).
