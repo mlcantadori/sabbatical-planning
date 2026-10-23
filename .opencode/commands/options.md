@@ -25,3 +25,7 @@ Follow the design-question protocol in `AGENTS.md`. Do **not** jump to a verdict
    correction (D10), and say what changed.
 
 If a variant only appears as a caveat at the end, promote it into the table.
+
+**Keep it to one screen.** The table is the comparison — do not narrate it, and do
+not restate the itinerary. If the reasoning needs more room than that, write it in
+the PR body or `.opencode/decisions.md` and link it.
