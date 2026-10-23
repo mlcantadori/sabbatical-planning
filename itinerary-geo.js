@@ -12,9 +12,9 @@ window.TRIP_GEO = {
     'baku':         [40.4093,   49.8671], // Baku
     'nepal':        [27.7172,   85.3240], // Kathmandu
     'india':        [28.6139,   77.2090], // New Delhi
-    'taiwan':       [25.0330,  121.5654], // Taipei
     'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
-    'china-e2':    [30.5728,  104.0668], // Chengdu (entry point)
+    'china-e2':    [23.1291,  113.2644], // Guangzhou (entry point)
+    'thailand':    [ 8.0110,   98.8370], // Railay / Krabi (Andaman coast)
     'korea':        [37.5665,  126.9780], // Seoul
     'japan':        [35.0116,  135.7681], // Kyoto (entry point)
     'hk':           [22.3193,  114.1694], // Hong Kong
@@ -24,7 +24,6 @@ window.TRIP_GEO = {
     'borneo':       [ 5.9804,  116.0735], // Kota Kinabalu
     'singapore':    [ 1.2834,  103.8607], // Marina Bay
     'malaysia':     [ 3.1579,  101.7117], // KL
-    'thailand':     [10.0956,   99.8377], // Koh Tao
     'china-spring':  [34.3416,  108.9398], // Xi'an (entry point)
   },
   // Place-level (drilldown) coords. Key is "chapterId/placeName".
@@ -61,18 +60,25 @@ window.TRIP_GEO = {
     // Japan (fused winter chapter)
     'japan/Kyoto':                          [35.0116,  135.7681],
     'japan/Osaka':                          [34.6937,  135.5023],
+    'japan/Takayama + Shirakawa-go':        [36.1461,  137.2522], // Takayama
+    'japan/Hakone + Mt. Fuji':              [35.4988,  138.7686], // Lake Kawaguchiko / Mt. Fuji
     'japan/Tokyo':                          [35.6762,  139.6503],
+    'japan/Nozawa Onsen':                   [36.9228,  138.6405],
     'japan/Myoko Kogen + Madarao':          [36.8722,  138.1772], // Akakura Onsen, Myoko
     // Korea
-    'korea/Seoul':                            [37.5665,  126.9780],
+    'korea/Jeju':                             [33.4996,  126.5312],
     'korea/Busan':                            [35.1796,  129.0756],
     'korea/Gyeongju':                         [35.8562,  129.2247],
-    'korea/Jeonju':                           [35.8242,  127.1480],
-    // Taiwan
-    'taiwan/Taipei':                          [25.0330,  121.5654],
-    'taiwan/Alishan':                         [23.5103,  120.8025],
-    'taiwan/Tainan':                          [22.9997,  120.2270],
-    'taiwan/Kaohsiung + Xiaoliuqiu':          [22.6273,  120.3014], // Kaohsiung / Xiaoliuqiu
+    'korea/Seoul':                            [37.5665,  126.9780],
+    // Malaysia — Dec west-coast chapter
+    'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
+    'malaysia/Penang':                        [ 5.4141,  100.3288],
+    'malaysia/Langkawi':                      [ 6.3500,   99.8000], // Pantai Cenang
+    // Thailand — Andaman coast + Bangkok
+    'thailand/Koh Lipe':                      [ 6.4890,   99.3025],
+    'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
+    'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
+    'thailand/Bangkok':                       [13.7563,  100.5018],
     // HK
     'hk/Hong Kong':                           [22.3193,  114.1694],
     // Philippines
@@ -97,30 +103,22 @@ window.TRIP_GEO = {
     'borneo/Kinabatangan River':              [ 5.4500,  118.0500],
     // Singapore
     'singapore/Singapore':                    [ 1.2834,  103.8607],
-    // Malaysia — KL + Penang
-    'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
-    'malaysia/Penang':                        [ 5.4141,  100.3288],
-    // Thailand
-    'thailand/Koh Tao':                       [10.0956,   99.8377],
-    'thailand/Koh Samui':                     [ 9.5018,  100.0140],
-    'thailand/Bangkok':                       [13.7460,  100.5018],
     // China E1 (Beijing first, then Huangshan + Jiangnan)
     'china-e1/Beijing':                       [39.9042,  116.4074],
     'china-e1/Huangshan':                      [30.1300,  118.1700],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
     'china-e1/Suzhou':                         [31.2989,  120.5853],
-    // China E2 (Pearl Delta → Sichuan → Shanghai finale)
+    // China E2 (Pearl Delta → Shanghai finale)
     'china-e2/Shenzhen':                       [22.5431,  114.0579],
     'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
     'china-e2/Guangzhou':                      [23.1291,  113.2644],
-    'china-e2/Chengdu':                        [30.5728,  104.0668],
-    'china-e2/Chongqing':                      [29.4316,  106.9123],
     'china-e2/Shanghai':                       [31.2304,  121.4737],
-    // China spring (Xi'an + south in peak season)
+    // China spring (Xi'an + Sichuan + south in peak season)
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
-    'china-spring/Guilin / Yangshuo':         [24.7783,  110.4933],
-    'china-spring/Longji Terraces':           [25.9270,  110.0930], // Ping'an
+    'china-spring/Chengdu':                   [30.5728,  104.0668],
+    'china-spring/Chongqing':                 [29.4316,  106.9123],
     'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
     'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
+    'china-spring/Changsha (buffer)':         [28.2282,  112.9388], // Changsha Huanghua gateway
   },
 };
