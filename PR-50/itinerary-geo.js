@@ -1,0 +1,130 @@
+// Coordinates for every chapter (`anchor`) and every place within.
+// Lat/lng pairs — used by the Leaflet map.
+// Anchors are city centroids; places are landmark coords where useful, else
+// city centroid.
+window.TRIP_GEO = {
+  // Chapter anchors (rough "you are here" point per chapter)
+  chapters: {
+    'brasil':       [-22.9068,  -43.1729], // Rio de Janeiro (trip opens here)
+    'toronto':      [ 43.6532,  -79.3832], // CN Tower, Toronto
+    'athens':       [ 37.9838,   23.7275], // Acropolis, Athens
+    'turkey':       [41.0082,   28.9784], // Istanbul
+    'baku':         [40.4093,   49.8671], // Baku
+    'nepal':        [27.7172,   85.3240], // Kathmandu
+    'india':        [28.6139,   77.2090], // New Delhi
+    'china-e1':    [39.9042,  116.4074], // Beijing (entry point)
+    'china-e2':    [23.1291,  113.2644], // Guangzhou (entry point)
+    'thailand':    [ 8.0110,   98.8370], // Railay / Krabi (Andaman coast)
+    'taiwan':      [22.6273,  120.3014], // Kaohsiung (entry point)
+    'korea':        [37.5665,  126.9780], // Seoul
+    'japan':        [35.0116,  135.7681], // Kyoto (entry point)
+    'hk':           [22.3193,  114.1694], // Hong Kong
+    'philippines':  [14.5995,  120.9842], // Manila (entry point)
+    'indonesia-a':    [ -6.2088,  106.8456], // Jakarta (entry point)
+    'indonesia-b':    [-8.4889,  119.8825], // Labuan Bajo (Komodo base)
+    'borneo':       [ 5.9804,  116.0735], // Kota Kinabalu
+    'singapore':    [ 1.2834,  103.8607], // Marina Bay
+    'malaysia':     [ 3.1579,  101.7117], // KL
+    'china-spring':  [34.3416,  108.9398], // Xi'an (entry point)
+  },
+  // Place-level (drilldown) coords. Key is "chapterId/placeName".
+  places: {
+    // Brasil (single chapter)
+    'brasil/Rio de Janeiro':                [-22.9068,  -43.1729],
+    'brasil/Cumbuco':                       [ -3.6267,  -38.7302],
+    'brasil/São Paulo':                     [-23.5505,  -46.6333],
+    // Toronto
+    'toronto/Toronto':                        [ 43.6532,  -79.3832],
+    // Greece
+    'athens/Athens':                          [37.9838,   23.7275],
+    'athens/Crete — Chania':                  [35.5138,   24.0180],
+    'athens/Crete — Rethymno':                [35.3667,   24.4833],
+    'athens/Santorini':                       [36.4166,   25.4335], // Fira
+    'athens/Folegandros':                     [36.6167,   24.9167], // Chora
+    'athens/Milos':                           [36.7397,   24.4265], // Plaka
+    'athens/Athens':                          [37.9838,   23.7275],
+    // Turkey
+    'turkey/Cappadocia — Göreme':             [38.6431,   34.8289],
+    'turkey/Alaçatı':                         [38.2822,   26.3747],
+    'turkey/Şirince':                         [37.9429,   27.3417],
+    'turkey/Kaş':                             [36.2018,   29.6377],
+    'turkey/Akyaka':                          [37.0545,   28.3269],
+    'turkey/Istanbul':                         [41.0082,   28.9784],
+    // Baku
+    'baku/Baku':                                 [40.4093,   49.8671],
+    // Nepal
+    'nepal/Kathmandu':                        [27.7172,   85.3240],
+    'nepal/Annapurna Base Camp Trek':         [28.5306,   83.8783],
+    // India
+    'india/Delhi + Agra':                     [27.1751,   78.0421], // Agra
+    'india/Varanasi':                         [25.3176,   82.9739],
+    // Japan (fused winter chapter)
+    'japan/Kyoto':                          [35.0116,  135.7681],
+    'japan/Osaka':                          [34.6937,  135.5023],
+    'japan/Takayama + Shirakawa-go':        [36.1461,  137.2522], // Takayama
+    'japan/Hakone + Mt. Fuji':              [35.4988,  138.7686], // Lake Kawaguchiko / Mt. Fuji
+    'japan/Tokyo':                          [35.6762,  139.6503],
+    'japan/Nozawa Onsen':                   [36.9228,  138.6405],
+    'japan/Myoko Kogen + Madarao':          [36.8722,  138.1772], // Akakura Onsen, Myoko
+    // Korea
+    'korea/Jeju':                             [33.4996,  126.5312],
+    'korea/Busan':                            [35.1796,  129.0756],
+    'korea/Gyeongju':                         [35.8562,  129.2247],
+    'korea/Seoul':                            [37.5665,  126.9780],
+    // Malaysia — Dec west-coast chapter
+    'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
+    'malaysia/Penang':                        [ 5.4141,  100.3288],
+    'malaysia/Langkawi':                      [ 6.3500,   99.8000], // Pantai Cenang
+    // Thailand — Andaman coast + Bangkok
+    'thailand/Koh Lipe':                      [ 6.4890,   99.3025],
+    'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
+    'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
+    'thailand/Bangkok':                       [13.7563,  100.5018],
+    // Taiwan — south to north
+    'taiwan/Kaohsiung':                       [22.6273,  120.3014],
+    'taiwan/Tainan':                          [22.9932,  120.2125],
+    'taiwan/Alishan':                         [23.5100,  120.8000],
+    'taiwan/Taipei':                          [25.0330,  121.5654],
+    // HK
+    'hk/Hong Kong':                           [22.3193,  114.1694],
+    // Philippines
+    'philippines/Manila':                     [14.5995,  120.9842],
+    'philippines/Coron':                      [11.9964,  119.4192],
+    'philippines/El Nido':                    [11.1949,  119.4013],
+    'philippines/Cebu / Moalboal':            [10.2720,  123.4220],
+    'philippines/Denpasar':                    [-8.6500,  115.2167], // Ngurah Rai Airport
+    // Indonesia A — Java + Bali staging + Raja (first stay)
+    'indonesia-a/Jakarta':                      [ -6.2088,  106.8456],
+    'indonesia-a/Yogyakarta':                   [ -7.7956,  110.3695], // Borobudur ~40km NW
+    'indonesia-a/Ubud':                         [-8.5069,  115.2625],
+    'indonesia-a/Sorong':                      [-0.8917,  131.2500],
+    'indonesia-a/Raja Ampat Liveaboard':        [-0.5897,  130.1053], // Wayag
+    // Indonesia B — Penida + Komodo + Batur (second stay)
+    'indonesia-b/Nusa Penida':                  [-8.7270,  115.5444],
+    'indonesia-b/Komodo':                       [-8.4889,  119.8825], // Labuan Bajo
+    'indonesia-b/Bali + Volcano':               [-8.5069,  115.2625], // Ubud
+    // Borneo
+    'borneo/Kota Kinabalu':                   [ 5.9804,  116.0735],
+    'borneo/Sepilok + Sandakan':              [ 5.8754,  117.9472],
+    'borneo/Kinabatangan River':              [ 5.4500,  118.0500],
+    // Singapore
+    'singapore/Singapore':                    [ 1.2834,  103.8607],
+    // China E1 (Beijing first, then Huangshan + Jiangnan)
+    'china-e1/Beijing':                       [39.9042,  116.4074],
+    'china-e1/Huangshan':                      [30.1300,  118.1700],
+    'china-e1/Hangzhou':                       [30.2741,  120.1551],
+    'china-e1/Suzhou':                         [31.2989,  120.5853],
+    // China E2 (Pearl Delta → Shanghai finale)
+    'china-e2/Shenzhen':                       [22.5431,  114.0579],
+    'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
+    'china-e2/Guangzhou':                      [23.1291,  113.2644],
+    'china-e2/Shanghai':                       [31.2304,  121.4737],
+    // China spring (Xi'an + Sichuan + south in peak season)
+    'china-spring/Xi\'an':                    [34.3416,  108.9398],
+    'china-spring/Chengdu':                   [30.5728,  104.0668],
+    'china-spring/Chongqing':                 [29.4316,  106.9123],
+    'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
+    'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
+    'china-spring/Changsha (buffer)':         [28.2282,  112.9388], // Changsha Huanghua gateway
+  },
+};
