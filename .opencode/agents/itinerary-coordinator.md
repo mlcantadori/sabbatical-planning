@@ -38,6 +38,9 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
      *where*, *when*, and *how long*. A single proposal plus a caveat is a failed
      review. Score each against the **Preference ledger** in the brief and say
      which hard constraints pass or fail.
+   - **Whole-trip scan (D13).** Check every chapter, not just the in-scope ones,
+     for weather season, holidays, closures, impossible connections, pacing, and
+     the downstream ripple of any proposed change.
    - Recompute budget arithmetic for any proposal touching days, flights, or
      costs: chapters sum + flights + extras + 8% contingency, both travelers, USD.
      Reject or re-price anything that doesn't pencil out.
