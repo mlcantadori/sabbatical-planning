@@ -34,19 +34,46 @@
 |---|---|---|
 | P1 | **No gray / low-sun chapters** | Prefer dry, bright, mild. Reject a place in its gloomiest window even when the destination is good. |
 | P2 | **Avoid holiday crowds** | Christmas/NYE peaks, CNY, China Golden Week, Songkran, Easter, Japan Golden Week, Taiwan New Year, Malaysian school holidays. |
-| P3 | **No moving every 2 days** | Slow chapters are structural. 4+ nights is the default; 2–3 only for genuinely small places. |
+| P3 | **No moving every 2 days** | 4+ nights is the default. **3 nights is a warning; 2 only for a genuinely small place or a transit night.** Several 3-night stops in a row = wrong shape. |
 | P4 | **Thailand coast/islands are a must** | Not tied to a particular month. |
-| P5 | **Immovable dates** | Raja Ampat Mar 11–20; Hong Kong Nov 23–28 + the Shenzhen friend visit; Nepal trek Oct 25–Nov 4. |
-| P6 | **Japan snowboarding, good conditions, fewer crowds** | Myoko week is the anchor; keep it post-CNY. |
+| P5 | **Few immovable dates** | Raja Ampat Mar 11–20; Hong Kong Nov 23–28 + Shenzhen friend visit; Nepal trek Oct 25–Nov 4; bought flights GRU→ATH Aug 27 / VNS→KTM Oct 21 / KTM→PEK Nov 7; Beijing stay Nov 7–16. *Everything else is negotiable, including the Myoko week (preferred, not booked) and the trip end date.* |
+| P6 | **Japan snowboarding, good conditions, fewer crowds** | Myoko week is the preferred anchor; keep it post-CNY. Movable within Feb–Mar if it buys a better SE Asia shape. |
 | P7 | **No repeat sightseeing** | Bangkok/Chiang Mai, Vietnam, Cambodia, Laos main sights are done. A few Bangkok days are acceptable. |
 | P8 | **Beaches must earn their nights** | A-tier water or exceptional scenery. B-tier sand is not worth peak-season prices when better water comes later in the trip. |
 | P9 | **Forward-only geography** | No needless backtracking; every hop advances the arc unless a season justifies it explicitly. |
-| P10 | **Justify deltas** | Days and budget can flex within reason, but state the cost. |
+| P10 | **Budget is a monthly rate, not a total** | Working figure ~R$20k/month (confirm per person vs couple). Extending the trip is allowed; state the monthly run-rate impact, not a grand total. |
+| P11 | **Horizon is elastic** | Prefer adding days over cutting places. A cramped chapter is a scheduling bug, not a reason to delete a good stop. |
+| P12 | **Visas are a real cost** | Days, fees, and rejection risk count. Weigh a country's visa burden against what it adds. |
 
 **Soft**
 - Variety beats a second helping of the same biome.
 - Prefer a new country when the marginal beach night is B-tier.
 - Keep one decompression stop after each China block.
+
+## Visa matrix (Brazilian passport — last checked Oct 2026, re-verify before ticketing)
+
+| Country / entry | Requirement | Cost / lead time | Notes |
+|---|---|---|---|
+| Greece (Schengen) | 90/180 visa-free | — | Passport validity 3+ months |
+| Türkiye | 90 days visa-free | — | |
+| Azerbaijan | e-visa (ASAN) | ~$25, ~3 days online | Stopover program can include free hotel |
+| India | **e-visa required** | ~$25–80, apply 4+ days ahead | Print approval |
+| Nepal | Visa on arrival | $30/15d, $50/30d | Bring USD cash + photo |
+| China | 30 days visa-free **through 2026** | — | 2027 entry needs an **L visa** (~$150pp) unless the waiver renews. HK + Macau SAR trips reset the 30-day clock |
+| Hong Kong | 90 days visa-free | — | Separate immigration area |
+| Macau | 90 days visa-free | — | Separate immigration area |
+| Malaysia | 90 days visa-free | — | |
+| Thailand | 60 days visa-free (bilateral; verify) | — | Two entries in the current plans are both fine |
+| **Taiwan** | **Visitor visa required** | ~$50–160pp, 3–5 business days | TECO filing. Brazil is not eligible for the online Travel Authorization Certificate. Can be filed at TECO Hong Kong during the Nov 23–28 stop |
+| Japan | 90 days visa-free | — | BR IC ePassport |
+| Indonesia | 30 days visa-free, **non-extendable** | — | A second stay requires an exit + re-entry (currently via Malaysian Borneo) |
+| Philippines | 30 days visa-free | — | |
+| Singapore | 30 days visa-free | — | |
+| South Korea | 90 days visa-free + **K-ETA** | ~$8pp, ~72h | BR is visa-free but not K-ETA-exempt |
+| Canada | eTA | ~CAD 7 | For the Toronto stop |
+
+Rule of thumb: a visa that costs a filing day plus $100+ is a **P12 cost** — say
+so when it's the only reason to include or exclude a country.
 
 ## Sports (bounded lens — breadth first)
 
