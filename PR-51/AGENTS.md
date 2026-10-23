@@ -80,8 +80,8 @@ any change question, scan every chapter and report only what is actually wrong:
 | Check | Look for |
 |---|---|
 | Weather | Place in its rainy / monsoon / typhoon / gloom season; "dry season" that is really shoulder; heat and humidity mismatches |
-| Holidays | CNY, Golden Week, NYE/Christmas, Songkran, Easter, Japan Golden Week, local school holidays, national and religious holidays |
-| Closures | Museums closed Mondays; seasonal ferries, roads, passes, islands; cable cars under maintenance |
+| Holidays | National, regional, religious and school holiday peaks; long weekends; festival weeks. Check the local calendar per stop — never a memorised list of dates |
+| Closures | Weekly closing days; seasonal closures of ferries, roads, passes, islands; maintenance windows |
 | Logistics | Visa validity and re-entry windows; impossible same-day connections; transfer days that eat a stop; last ferry/flight |
 | Pacing | Stops under 4 nights, runs of 3-nighters, moves per fortnight |
 | Geography & ripple | Backtracking; hops that don't advance the arc; what moves downstream; recompute the date chain and the run-rate |
@@ -131,9 +131,8 @@ every session and has a size budget.
 - **Travelers hold Brazilian passports.** Do not assume visa-free access and do
   not trust a stored table — requirements change. Treat every entry as a routing
   decision with a cost (fees, lead time, rejection risk) and verify the current
-  rule when it matters. A handful of rules are **structural to the current
-  route** — listed in `.opencode/trip-brief.md` § Routing-critical visa facts.
-  Breaking one breaks the itinerary, so confirm rather than assume.
+  rule when it matters. See `.opencode/trip-brief.md` § Visa posture for the two
+  structural consequences already baked into the route.
 
 ## Domain guardrails
 
