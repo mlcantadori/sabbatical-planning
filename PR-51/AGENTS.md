@@ -1,8 +1,12 @@
 # Project instructions — sabbatical planning
 
-Long-horizon travel design for a 355-day, two-person sabbatical. Most requests
-are **design questions** ("what if we…", "is this good?", "should we…") with
-wide latitude, not implementation tickets. Answer them as design questions.
+Long-horizon travel design for a two-person sabbatical out of Brazil. **Length is
+not fixed and the budget is a rate, not a total.** Adding or removing chapters,
+stops, and days is ordinary work here — not a last resort.
+
+Most requests are **design questions** ("what if we…", "is this good?", "should
+we…") with wide latitude, not implementation tickets. Answer them as design
+questions.
 
 ## Design-question protocol
 
@@ -49,6 +53,17 @@ version? If none differ from the draft, the space wasn't explored.
 Every accepted or rejected option goes in `.opencode/decisions.md` with the
 reason. Future sessions must not silently re-collapse a settled question.
 
+**D10 — Time and money are elastic.**
+There is no fixed trip length and no fixed grand total. If a plan feels cramped,
+the default fix is to **add days**, not to cut content. Propose extensions
+explicitly, with the monthly run-rate impact. Never compress a good stop to fit
+an arbitrary number of days.
+
+**D11 — 3 nights is a warning, not a default.**
+Any stop under 4 nights must justify itself (a genuinely tiny place, a ferry
+bridge, or a transit night). If several stops are at 3 nights, the shape is
+wrong — cut a base or add days.
+
 ### Required output shape for design questions
 
 1. Interpretation (one line)
@@ -56,6 +71,30 @@ reason. Future sessions must not silently re-collapse a settled question.
 3. Constraint check (which ledger items pass / fail)
 4. Recommendation, and what evidence would change it
 5. Offer to implement
+
+## Hard facts
+
+- **Travelers:** 2 Brazilians (couple), carry-on + ~30L backpack each. Mid-range
+  comfort; no luxury, no needless suffering.
+- **Budget is a monthly rate, not a total.** Working figure: **~R$20k/month**
+  (confirm whether per person or per couple). Extending the trip is allowed and
+  does not require cuts elsewhere — the model scales with nights. Optimise the
+  monthly run-rate, never a grand total.
+- **Horizon is elastic.** No hard end date is assumed. If a plan is cramped, add
+  days. If a chapter is weak, delete it. Do not defend a number that came from an
+  earlier draft.
+- **Hard commitments** (everything else is negotiable): Raja Ampat liveaboard
+  Mar 11–20; Hong Kong Nov 23–28 + the Shenzhen friend visit; Nepal trek
+  Oct 25–Nov 4; already-bought flights (GRU→YYZ→ATH Aug 27, VNS→KTM Oct 21,
+  KTM→PEK Nov 7) and the Beijing stay Nov 7–16. The Myoko snow week is a
+  preferred anchor, not a booked one — confirm before treating it as fixed.
+- **Visas (Brazilian passport) are a routing constraint, not a detail.** The
+  full matrix lives in `.opencode/trip-brief.md` § Visa matrix. The expensive
+  ones are **Taiwan** (visitor visa, TECO filing, 3–5 business days), **India**
+  (e-visa), **Azerbaijan** (e-visa), **South Korea** (K-ETA), and **Nepal**
+  (visa on arrival). China is 30-day visa-free through 2026; a 2027 entry needs
+  an L visa unless the waiver renews. Indonesia's 30 days are non-extendable —
+  a second stay needs an exit and re-entry.
 
 ## Domain guardrails
 
