@@ -14,8 +14,8 @@ sabbatical itinerary for two travelers with carry-on + ~30L backpacks only.
 
 ## Inputs (read first, in order)
 
-1. `.opencode/trip-brief.md` — traveler profile, review scope (chapters `nepal` →
-   `china-spring`), locked items. Locked is absolute: bought flights, booked
+1. `.opencode/trip-brief.md` — traveler profile, review scope (every chapter after the
+   locked front — see § Locked chapters), locked items. Locked is absolute: bought flights, booked
    stays/trek/liveaboard, and the to-buy flight chain exist as constraints — you
    may question an *estimate* (price, routing) but never propose deleting a
    locked leg without saying exactly what replaces it and what it breaks.
@@ -63,7 +63,7 @@ supply the measured tradeoff.
 Write your report to the path the coordinator gives you
 (default `reviews/<YYYY-MM-DD>/ground-truth.md`):
 
-- **Verdict per chapter** (`nepal` → `china-spring`): one line each —
+- **Verdict per chapter** (every in-scope chapter): one line each —
   `keep` / `tweak: <what>` / `rethink: <why>`, with time/cost deltas for tweaks.
 - **Evidence**: per finding, with live-source citations + access dates.
 - **Base recommendations**: areas per base city + slow-living notes where relevant.

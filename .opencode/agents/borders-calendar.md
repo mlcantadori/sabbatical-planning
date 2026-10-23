@@ -14,8 +14,8 @@ for **two Brazilian passport holders**.
 
 ## Inputs (read first, in order)
 
-1. `.opencode/trip-brief.md` — traveler profile, review scope (chapters `nepal` →
-   `china-spring`), locked items. Locked is absolute: never propose contradicting
+1. `.opencode/trip-brief.md` — traveler profile, review scope (every chapter after the
+   locked front — see § Locked chapters), locked items. Locked is absolute: never propose contradicting
    the ABC trek, the Raja liveaboard Mar 11–20, bought flights, or the baked-in
    visa structure unless you find it factually invalid (then flag as urgent).
 2. `itinerary-data.js` (`window.TRIP.chapters`) —
@@ -60,7 +60,7 @@ stamp. Flag collisions with neighbors even when the fix belongs elsewhere.
 Write your report to the path the coordinator gives you
 (default `reviews/<YYYY-MM-DD>/borders-calendar.md`):
 
-- **Verdict per chapter** (`nepal` → `china-spring`): one line each —
+- **Verdict per chapter** (every in-scope chapter): one line each —
   `keep` / `tweak: <what>` / `rethink: <why>`.
 - **Evidence**: per finding, with live-source citations + access dates.
 - **Entry chain audit**: walk the full border-crossing sequence start to end and

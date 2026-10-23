@@ -13,10 +13,10 @@ You are the weather-seasonality specialist reviewing an Asia sabbatical itinerar
 
 ## Inputs (read first, in order)
 
-1. `.opencode/trip-brief.md` — traveler profile, review scope (chapters `nepal` →
-   `china-spring`), locked items. The locked list is absolute: never propose
+1. `.opencode/trip-brief.md` — traveler profile, review scope (every chapter after the
+   locked front — see § Locked chapters), locked items. The locked list is absolute: never propose
    anything contradicting it (e.g. moving the ABC trek Oct 25–Nov 4, the Raja
-   Ampat liveaboard Mar 11–20, or the Myoko Kogen + Madarao week).
+   Ampat liveaboard Mar 11–20, or the Japan snowboarding block).
 2. `itinerary-data.js` (`window.TRIP.chapters`) —
    the plan under review. If dates differ from the brief, the data file wins.
 
@@ -52,7 +52,7 @@ collision, don't resolve it).
 Write your report to the path the coordinator gives you
 (default `reviews/<YYYY-MM-DD>/weather-seasonality.md`):
 
-- **Verdict per chapter** (`nepal` → `china-spring`): one line each —
+- **Verdict per chapter** (every in-scope chapter): one line each —
   `keep` / `tweak: <what>` / `rethink: <why>`.
 - **Evidence**: per finding, with live-source citations + access dates.
 - **Sequence effects**: for every tweak/rethink, the ripple on neighbors.

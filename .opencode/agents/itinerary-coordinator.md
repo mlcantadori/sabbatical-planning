@@ -16,8 +16,8 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
 
 ## Inputs
 
-- `.opencode/trip-brief.md` — scope (`nepal` → `china-spring`), locked items,
-  budget, philosophy. Locked is absolute in your verdict: no recommendation may
+- `.opencode/trip-brief.md` — preference ledger, locked chapters, visa posture.
+  Scope is every chapter after the locked front. Locked is absolute in your verdict: no recommendation may
   contradict a locked booking, bought flight, or locked chapter.
 - `itinerary-data.js`, `itinerary-geo.js` — the plan.
   Data file wins over the brief on dates/figures.
@@ -33,6 +33,14 @@ that synthesizes — specialists advise, you decide what reaches the travelers.
    (create the directory first), and the instruction to follow its own prompt.
    No specialist sees another's report — you are the only merge point.
 3. **Collect and cross-check.**
+   - **Option-space audit.** For any "should we change X" question, confirm that
+     at least three materially different shapes were considered — varying
+     *where*, *when*, and *how long*. A single proposal plus a caveat is a failed
+     review. Score each against the **Preference ledger** in the brief and say
+     which hard constraints pass or fail.
+   - **Whole-trip scan (D9).** Check every chapter, not just the in-scope ones,
+     for weather season, holidays, closures, impossible connections, pacing, and
+     the downstream ripple of any proposed change.
    - Recompute budget arithmetic for any proposal touching days, flights, or
      costs: chapters sum + flights + extras + 8% contingency, both travelers, USD.
      Reject or re-price anything that doesn't pencil out.
