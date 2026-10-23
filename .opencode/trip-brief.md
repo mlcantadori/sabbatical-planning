@@ -50,30 +50,23 @@
 - Prefer a new country when the marginal beach night is B-tier.
 - Keep one decompression stop after each China block.
 
-## Visa matrix (Brazilian passport — last checked Oct 2026, re-verify before ticketing)
+## Routing-critical visa facts (Brazilian passport)
 
-| Country / entry | Requirement | Cost / lead time | Notes |
-|---|---|---|---|
-| Greece (Schengen) | 90/180 visa-free | — | Passport validity 3+ months |
-| Türkiye | 90 days visa-free | — | |
-| Azerbaijan | e-visa (ASAN) | ~$25, ~3 days online | Stopover program can include free hotel |
-| India | **e-visa required** | ~$25–80, apply 4+ days ahead | Print approval |
-| Nepal | Visa on arrival | $30/15d, $50/30d | Bring USD cash + photo |
-| China | 30 days visa-free **through 2026** | — | 2027 entry needs an **L visa** (~$150pp) unless the waiver renews. HK + Macau SAR trips reset the 30-day clock |
-| Hong Kong | 90 days visa-free | — | Separate immigration area |
-| Macau | 90 days visa-free | — | Separate immigration area |
-| Malaysia | 90 days visa-free | — | |
-| Thailand | 60 days visa-free (bilateral; verify) | — | Two entries in the current plans are both fine |
-| **Taiwan** | **Visitor visa required** | ~$50–160pp, 3–5 business days | TECO filing. Brazil is not eligible for the online Travel Authorization Certificate. Can be filed at TECO Hong Kong during the Nov 23–28 stop |
-| Japan | 90 days visa-free | — | BR IC ePassport |
-| Indonesia | 30 days visa-free, **non-extendable** | — | A second stay requires an exit + re-entry (currently via Malaysian Borneo) |
-| Philippines | 30 days visa-free | — | |
-| Singapore | 30 days visa-free | — | |
-| South Korea | 90 days visa-free + **K-ETA** | ~$8pp, ~72h | BR is visa-free but not K-ETA-exempt |
-| Canada | eTA | ~CAD 7 | For the Toronto stop |
+We do not keep a full visa table — requirements change and a stale table is worse
+than none. **Passport: Brazilian.** Verify the current rule for each entry when it
+matters. Only these are load-bearing for the route:
 
-Rule of thumb: a visa that costs a filing day plus $100+ is a **P12 cost** — say
-so when it's the only reason to include or exclude a country.
+- **Indonesia:** 30 days visa-free, non-extendable. A second stay requires an
+  exit and re-entry — this is why Malaysian Borneo sits between Indonesia A and B.
+- **China:** 30-day visa-free through 2026; a 2027 entry needs an L visa unless
+  the waiver renews. Hong Kong / Macau SAR trips reset the clock, which is why
+  the route has two China entries.
+- **Taiwan:** Brazilian passport needs a visitor visa (TECO filing, days of lead
+  time) — the gate on any Taiwan variant.
+- **South Korea:** visa-free, but **K-ETA required** (~$8pp, file ~1 week ahead).
+
+Everything else: check at planning time, and treat a costly visa as a **P12**
+reason to restructure, not a formality.
 
 ## Sports (bounded lens — breadth first)
 
