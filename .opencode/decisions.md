@@ -17,8 +17,8 @@ Options considered:
 3. **Kaohsiung, Taiwan** — harbour fireworks, 5/10 crowds (~200–400k), 20°C dry. In #50.
 4. **Tainan, Taiwan** — city countdown, 3/10 crowds, 21°C dry.
 
-**Rejected: Taipei 101.** Breaks P1 (gray/rain, fireworks often obscured) and P2
-(the largest crowd in the region). This was the canonical answer and the wrong
+**Rejected: Taipei 101.** Runs against P1 (gray/rain, fireworks often obscured)
+and P2 (the largest crowd in the region), and buys nothing the alternatives do not. This was the canonical answer and the wrong
 one; it should have been eliminated in the first pass, not after a blanket
 rejection of "NYE in Taiwan". Lesson recorded in `AGENTS.md` D5.
 
@@ -71,7 +71,7 @@ wildlife, 2,000 km east and three months after the peninsula chapter. Relabelled
 ## 2026-10-22 — Korea moves to late spring; Taiwan and Guilin/Longji dropped
 
 Winter Korea (sub-zero, dark by late afternoon) and winter Sichuan (lowest-sun
-window of the year) both violated P1. Korea moved to late spring; Sichuan moved
+window of the year) both ran against P1. Korea moved to late spring; Sichuan moved
 to the pre-monsoon sweet spot; Guilin/Longji dropped for flood-season risk.
 Taiwan was dropped at this point for visa bureaucracy — later reconsidered as a
 southern-NYE variant.
