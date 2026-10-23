@@ -47,16 +47,16 @@ for only ~5 extra Indonesian nights.
 
 ## 2026-10-23 — Snow time is protected; expansion comes from Japan's city nights
 
-The travelers care about snowboarding **quality**, not fixed dates. So the snow
-block (Nozawa 5n + Myoko/Madarao 9n) is treated as load-bearing, and any
-*additional* snow time is funded by cutting Japan **city** nights — never by
-taking days from the December warm-weather block.
+The travelers care about snowboarding **quality**, not fixed dates or a particular
+resort region. So the snow block is load-bearing, and any *additional* snow time is
+funded by cutting Japan **city** nights — never by taking days from the December
+warm-weather block.
 
-Crowd rules for the snow block: post-CNY, ride weekdays over weekends, avoid the
-Emperor's Birthday weekend (Feb 23) and Golden Week (Apr 29–May 5).
+Crowd rule: prefer non-holiday, non-weekend riding; shift dates rather than fight a
+peak.
 
-Consequence for the design space: Japan's 28 city nights are the elastic part of
-the Japan chapter, not the 14 snow nights.
+Consequence for the design space: Japan's city nights are the elastic part of the
+Japan chapter, not the snow nights.
 
 ---
 

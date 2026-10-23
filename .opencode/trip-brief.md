@@ -12,15 +12,15 @@
   suffering ("perrengue"), no moving every 2 days, no insane logistics for checklist completion.
 - Trip: Jun 21 2026 → Jun 16 2027, 360 days. Budget model: **~USD 94k for two
   (~USD 261/day, ~R$245k per person at R$5.20)**, all figures USD for a couple.
-- Strategic splurges (locked, do not re-litigate): Raja Ampat liveaboard, Myoko Kogen
-  + Madarao snowboard week (rentals + lessons), Cappadocia balloon + cave hotel, one ryokan night.
+- Strategic splurges (locked, do not re-litigate): the Raja Ampat liveaboard, a
+  Japan snowboarding block (rentals + lessons), the Cappadocia balloon + cave
+  hotel, and one ryokan night.
 
 ## Philosophy (what "good" looks like)
 
 - Cinematic life chapter: emotionally well-paced, seasonally optimized, immersive, not rushed.
-- Temporary-life slow chapters are structural, not inefficiency: Shanghai (6d),
-  Kyoto (8d), Tokyo (8d), Tainan (5d block, ~4 slow days), Beijing (9n), Shenzhen (4d), Penang (6d),
-  Myoko Kogen (9d, activity days don't count), Suzhou (3d). Protect their slowness.
+- Temporary-life slow chapters are structural, not inefficiency. Protect the long
+  stays in `itinerary-data.js` instead of moving every few days.
 - China is mentally exhausting — decompression must follow each China block.
 - Geographic efficiency is a hard constraint: no regional backtracking; every hop
   moves forward along the arc unless a seasonal reason justifies it explicitly.
@@ -33,11 +33,11 @@
 | # | Constraint | Notes |
 |---|---|---|
 | P1 | **No gray / low-sun chapters** | Prefer dry, bright, mild. Reject a place in its gloomiest window even when the destination is good. |
-| P2 | **Avoid holiday crowds** | Christmas/NYE peaks, CNY, China Golden Week, Songkran, Easter, Japan Golden Week, Taiwan New Year, Malaysian school holidays. |
+| P2 | **Avoid holiday crowds** | Treat national, regional, religious and school holiday peaks as no-go. Check the local calendar for each stop and shift dates rather than fight the crowd — long weekends and festival weeks count. |
 | P3 | **No moving every 2 days** | 4+ nights is the default. **3 nights is a warning; 2 only for a genuinely small place or a transit night.** Several 3-night stops in a row = wrong shape. |
 | P4 | **Thailand coast/islands are a must** | Not tied to a particular month. |
-| P5 | **Few immovable dates** | Raja Ampat Mar 11–20; Hong Kong Nov 23–28 + Shenzhen friend visit; Nepal trek Oct 25–Nov 4; bought flights GRU→ATH Aug 27 / VNS→KTM Oct 21 / KTM→PEK Nov 7; Beijing stay Nov 7–16. *Everything else is negotiable, including the Myoko week (preferred, not booked) and the trip end date.* |
-| P6 | **Japan snowboarding is a primary objective** | Quality over dates. Target Jan–late Feb powder at Sea-of-Japan resorts (Myoko, Nozawa, Madarao; Hokkaido if added). Wants a **dedicated multi-week block with rest days**, not scattered days. Crowd rules: post-CNY, ride weekdays over weekends, avoid Emperor's Birthday (Feb 23) and Golden Week (Apr 29–May 5) weekends. **Extra snow time comes out of Japan's city nights, never out of the warm-weather block.** |
+| P5 | **Few immovable dates** | Committed items are whatever is `done: true` in `todo-data.js` — read it, never keep a parallel list. The one fixed thing with no booking record is the Hong Kong / Shenzhen friend visit in late November. Everything else is negotiable, including snow dates and the trip end. |
+| P6 | **Japan snowboarding is a primary objective** | Quality over dates and over location — the resort region is flexible. Wants a **dedicated multi-week block with rest days** on good snow, not scattered days. Prefer fewer crowds: avoid holiday peaks and weekends where practical. **Extra snow time comes out of Japan's city nights, never out of the warm-weather block.** |
 | P7 | **No repeat sightseeing** | Bangkok/Chiang Mai, Vietnam, Cambodia, Laos main sights are done. A few Bangkok days are acceptable. |
 | P8 | **Beaches must earn their nights** | A-tier water or exceptional scenery. B-tier sand is not worth peak-season prices when better water comes later in the trip. |
 | P9 | **Forward-only geography** | No needless backtracking; every hop advances the arc unless a season justifies it explicitly. |
@@ -50,36 +50,32 @@
 - Prefer a new country when the marginal beach night is B-tier.
 - Keep one decompression stop after each China block.
 
-## Routing-critical visa facts (Brazilian passport)
+## Visa posture (Brazilian passport)
 
-We do not keep a full visa table — requirements change and a stale table is worse
-than none. **Passport: Brazilian.** Verify the current rule for each entry when it
-matters. Only these are load-bearing for the route:
+No country-by-country table — requirements change and a stale table is worse than
+none. **Passport: Brazilian.** Verify each entry when it matters, and treat a
+costly visa as a **P12** reason to restructure, not a formality.
 
-- **Indonesia:** 30 days visa-free, non-extendable. A second stay requires an
-  exit and re-entry — this is why Malaysian Borneo sits between Indonesia A and B.
-- **China:** 30-day visa-free through 2026; a 2027 entry needs an L visa unless
-  the waiver renews. Hong Kong / Macau SAR trips reset the clock, which is why
-  the route has two China entries.
-- **Taiwan:** Brazilian passport needs a visitor visa (TECO filing, days of lead
-  time) — the gate on any Taiwan variant.
-- **South Korea:** visa-free, but **K-ETA required** (~$8pp, file ~1 week ahead).
+Two structural facts shape the route, so confirm them rather than assume:
 
-Everything else: check at planning time, and treat a costly visa as a **P12**
-reason to restructure, not a formality.
+- **Indonesia** grants a short, non-extendable visa-free stay. A second stay needs
+  an exit and re-entry — which is why Malaysian Borneo sits between Indonesia A and B.
+- **China's** visa-free window plus its SAR resets (Hong Kong, Macau) are why the
+  route has two mainland entries rather than one continuous stay.
 
 ## Sports (bounded lens — breadth first)
 
 - Both travelers: AOW + Nitrox certified, own mask + dive computer (rent the rest).
-- Snowboard: one booked Myoko Kogen + Madarao week (Feb, full local rental + English lessons). Kite: gear owned,
-  used in Cumbuco (locked Brasil chapter).
+- Snowboard: one dedicated Japan snowboarding block (full local rental + English
+  lessons). Region flexible. Kite: gear owned, used in Cumbuco (locked chapter).
 - Rule: booked sports blocks are fixed. Elsewhere, only flag a 1–3 day
   dive/kite/ride window where it fits an existing stop naturally — never reshape
   a chapter around sports.
 
 ## Review scope
 
-- **In scope (may propose changes):** chapters `nepal` → `china-spring` (15 chapters).
+- **In scope (may propose changes):** every chapter after the last locked one — see
+  the chapter table. Locked is per-chapter, not per-date.
 - **Locked (immutable context, never propose against):** chapters `brasil`,
   `toronto`, `athens`, `turkey`, `baku`, `india` — all booked. Plus locked items
   *inside* scope (see below).
@@ -110,26 +106,11 @@ reason to restructure, not a formality.
 | 20 | thailand | 2027-05-16 → 2027-05-30 | SCOPE (Tao 6d, Samui transit) |
 | 21 | china-spring | 2027-05-30 → 2027-06-16 | SCOPE (fly home Jun 16; no buffer — out via Changsha transit) |
 
-## Locked bookings & flights (never contradict)
+## Committed (never contradict)
 
-- Annapurna Base Camp trek: Oct 25–Nov 4 (11d, Discovery World Trekking, $720pp = $1,440 for two; $144 advance paid ✅, $1,296 balance due at KTM office Oct 24; Poon Hill route via Ulleri/Ghorepani/Tadapani/Chomrong; 9kg pp porter limit; visa/insurance/tips excluded).
-- Raja Ampat liveaboard: Mar 11–20 (Papua Diving / Meridian — reconfirm dates with operator).
-- Myoko Kogen + Madarao snowboard week inside `japan` chapter (lift 7d + full rental + lessons).
-- Bought ✅: GRU→YYZ→ATH long-haul; Greece stays + 4 ferries; Cappadocia balloon (cancelled — weather, full refund ✅);
-  ASR→ADB Sep 24; Athens→Chania + Athens→Cappadocia flights; train to Varanasi
-  Oct 17 06:00; VNS→KTM Oct 21 08:30 ($343 for two); Varanasi Airbnb R$1,081;
-  KTM→PEK Nov 7 ($477 for two).
-- India e-Visa required before Oct 14 Delhi arrival.
-- To-buy / estimates (routable in principle, but chained — flag ripple effects):
-  KTM→PEK Nov 7 · PEK→Huangshan (HSR or TXN flight) Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA (Hongqiao)→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→CKG direct flight Dec 6 · CKG→CTU HSR Dec 12 · CTU→SHA flight Dec 18 · PVG→PUS direct flight Dec 24 ·
-  ICN→TPE Jan 8 · KHH→KIX direct flight Jan 25 · TYO→CGK Feb 24 · DPS→SOQ Mar 10 ·
-  SOQ→BKI Mar 21 · BKI→MNL Mar 31 · CEB→DPS Apr 14 · DPS→SIN May 1 ·
-  PEN→USM May 16 · BKK→XIY May 30 · CSX→GRU home Jun 16.
-- Paperwork gates (verified by review team, re-verify before travel): Taiwan visitor
-  visa filed TECO Hong Kong Nov 24, pickup Nov 25–26 (fallback TECO Seoul Jan 4–8); Korea K-ETA filed ≥1 week before
-  Dec 24; China L visa for spring entry (May 30) unless the waiver renews.
-- Visa facts baked into the plan (re-verify before travel, don't redesign around
-  without cause): China 30-day visa-free per entry (E1 = 16d, E2a = 6d, Macau reset,
-  E2b = 18d; all pre-Dec-31-2026, no visa needed); Indonesia two
-  sub-30d visa-free stays (21d + 17d) with Borneo reset between; Japan 90d visa-free
-  (BR IC ePassport); Nepal 30d visa.
+The authoritative list is **`todo-data.js`**: anything with `done: true` is
+booked, paid, or fixed — flights, stays, permits, cars. Read it directly; this
+section deliberately keeps no copy that could drift.
+
+The only commitment with no booking record is the **Hong Kong / Shenzhen friend
+visit in late November**.
