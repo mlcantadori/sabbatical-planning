@@ -9,35 +9,44 @@
 - Cinematic life chapter: well-paced, seasonally optimised, immersive, not rushed.
 - Slow chapters are structural, not inefficiency. Protect the long stays in
   `itinerary-data.js` instead of moving every few days.
-- China is mentally exhausting — decompression must follow each China block.
-- Geographic efficiency: no regional backtracking; every hop advances the arc
-  unless a season justifies it explicitly.
+- China is mentally exhausting — plan a decompression stop after each China block.
+- Geographic efficiency: prefer forward movement; accept a return leg when it buys
+  a materially better season or protects a booking.
 - Awe-per-month over destination count. Cut traps, keep wonder.
 - Strategic splurges worth protecting: the Raja Ampat liveaboard, a Japan
   snowboarding block, the Cappadocia balloon + cave hotel, one ryokan night.
 
 ## Preference ledger (score every proposal against this)
 
-**Hard — breaking one means redesign the proposal, not reject the idea.**
+Two tiers. **Must** is non-negotiable unless the travelers say otherwise.
+**Strong preferences** are weighed: departing from one is fine as long as the
+proposal says so and explains what it buys. Nothing here is a veto.
+
+### Must
 
 | # | Constraint | Notes |
 |---|---|---|
-| P1 | **No gray / low-sun chapters** | Prefer dry, bright, mild. Reject a place in its gloomiest window even when the destination is good. |
-| P2 | **Avoid holiday crowds** | National, regional, religious and school holiday peaks are no-go. Check each local calendar and shift dates rather than fight the crowd — long weekends and festival weeks count. |
-| P3 | **No moving every 2 days** | 4+ nights is the default. **3 nights is a warning; 2 only for a genuinely small place or a transit night.** A run of 3-nighters means the shape is wrong. |
-| P4 | **Thailand coast/islands are a must** | Not tied to a particular month. |
-| P5 | **Few immovable dates** | Committed = whatever is `done: true` in `todo-data.js` — read it, never keep a parallel list. The only fixed thing with no booking record is the Hong Kong / Shenzhen friend visit in late November. Everything else is negotiable. |
-| P6 | **Japan snowboarding is a primary objective** | Quality over dates and over location — the resort region is flexible. Wants a **dedicated multi-week block with rest days** on good snow, not scattered days. Prefer fewer crowds: avoid holiday peaks and weekends where practical. **Extra snow time comes out of Japan's city nights, never out of the warm-weather block.** |
-| P7 | **No repeat sightseeing** | Bangkok/Chiang Mai, Vietnam, Cambodia, Laos main sights are done. A few Bangkok days are acceptable. |
-| P8 | **Beaches must earn their nights** | A-tier water or exceptional scenery. B-tier sand is not worth peak-season prices when better water comes later in the trip. |
-| P9 | **Forward-only geography** | No needless backtracking; every hop advances the arc unless a season justifies it explicitly. |
-| P10 | **Budget is a monthly rate** | ~R$20k/month **per person** (~R$40k for the couple). Extending is allowed; state the run-rate impact, never a grand total. |
-| P11 | **Horizon is elastic** | 12–18 months. Prefer adding days over cutting places; a cramped chapter is a scheduling bug. |
-| P12 | **Visas are a real cost** | Days, fees, and rejection risk count. Weigh a country's visa burden against what it adds. |
+| P4 | **Thailand coast/islands** | A stated must. Not tied to a particular month. |
+| P5 | **Committed dates** | Whatever is `done: true` in `todo-data.js` — read it, never keep a parallel list. The only fixed thing with no booking record is the Hong Kong / Shenzhen friend visit in late November. |
+
+### Strong preferences
+
+| # | Preference | Notes |
+|---|---|---|
+| P1 | **Dry, bright, mild weather** | The biggest single quality factor, but not a veto. Some gray or rainy days are fine when the stop earns them — a city with indoor life, a rest chapter, a mountain you came to for the clouds. Avoid a place's *gloomiest* window when an easy alternative exists. |
+| P2 | **Few crowds** | Prefer avoiding national, regional, religious and school holiday peaks, and check each local calendar. Some overlap is fine: big cities absorb holiday weeks, and a festival can be the reason to be there. Avoid the worst crush and the dates that break logistics. |
+| P3 | **Slow pacing** | 4+ nights is the default. 3 is usually too short unless the place is genuinely small or it is a transit night; a run of 3-nighters usually means the shape is wrong. |
+| P6 | **Japan snowboarding is a primary objective** | Quality over dates and over location — the resort region is flexible. Wants a dedicated multi-week block with rest days, not scattered days. Prefers riding away from holiday peaks and weekends. By default, extra snow time comes from Japan's city nights rather than the warm-weather block. |
+| P7 | **No repeat sightseeing** | Bangkok/Chiang Mai, Vietnam, Cambodia, Laos main sights are done. A few Bangkok days are acceptable, and a new region of a visited country is fine. |
+| P8 | **Beaches earn their nights** | Prefer A-tier water or exceptional scenery. B-tier sand is acceptable when it buys something real — a ferry bridge, an easy Christmas, a cheap slow week — just not at peak-season prices when better water comes later. |
+| P9 | **Forward-only geography** | Prefer no needless backtracking. A return leg is acceptable when it buys a materially better season or protects a fixed booking. |
+| P10 | **Budget is a monthly rate** | ~R$20k/month per person (~R$40k for the couple). Extending is allowed; state the run-rate impact rather than a grand total. |
+| P11 | **Elastic horizon** | 12–18 months. Prefer adding days over cutting places; a cramped chapter is usually a scheduling bug, not a reason to delete a good stop. |
+| P12 | **Visas are a cost** | Days, fees and rejection risk count. Weigh a country's visa burden against what it adds. |
 
 **Soft**
-- Variety beats a second helping of the same biome.
-- Prefer a new country when the marginal beach night is B-tier.
+- Variety beats a second helping of the same biome, but not at the cost of a rushed plan.
+- A new country is usually worth more than another B-tier beach week.
 - Keep one decompression stop after each China block.
 
 ## Sports (bounded lens — breadth first)
