@@ -76,13 +76,14 @@ wrong — cut a base or add days.
 
 - **Travelers:** 2 Brazilians (couple), carry-on + ~30L backpack each. Mid-range
   comfort; no luxury, no needless suffering.
-- **Budget is a monthly rate, not a total.** Working figure: **~R$20k/month**
-  (confirm whether per person or per couple). Extending the trip is allowed and
-  does not require cuts elsewhere — the model scales with nights. Optimise the
-  monthly run-rate, never a grand total.
-- **Horizon is elastic.** No hard end date is assumed. If a plan is cramped, add
-  days. If a chapter is weak, delete it. Do not defend a number that came from an
-  earlier draft.
+- **Budget is a monthly rate, not a total.** ~**R$20k/month per person**
+  (~R$40k/month for the couple ≈ ~$7.7k ≈ **$256/day for two**) — the current
+  model already sits here. Extending the trip is allowed and does **not** require
+  cuts elsewhere; the cost scales with nights. Optimise the monthly run-rate,
+  never a grand total.
+- **Horizon is elastic within 12–18 months.** No exact end date. Adding days to
+  fix a cramped chapter is the default move; delete a chapter only if it is weak
+  in its own right. Do not defend a number that came from an earlier draft.
 - **Committed = `done: true` in `todo-data.js`.** That file is the source of
   truth for what is actually booked, paid, or fixed — flights, stays, permits,
   cars. **Read it before proposing anything that would move those dates.** Never
