@@ -20,7 +20,7 @@ Options considered:
 **Rejected: Taipei 101.** Breaks P1 (gray/rain, fireworks often obscured) and P2
 (the largest crowd in the region). This was the canonical answer and the wrong
 one; it should have been eliminated in the first pass, not after a blanket
-rejection of "NYE in Taiwan". Lesson recorded in `AGENTS.md` D6.
+rejection of "NYE in Taiwan". Lesson recorded in `AGENTS.md` D5.
 
 **Live:** #47 (Lanta) vs #50 (Kaohsiung). The real trade is *Penang + 4 Andaman
 nights* vs *a new country*. Both are valid; left to the travelers.
@@ -32,13 +32,13 @@ nights* vs *a new country*. Both are valid; left to the travelers.
 Options considered: move to December (before or after Malaysia); keep in May;
 drop it and extend Indonesia B to May 6.
 
-**Decision: keep in May.** It absorbs China's May 1–5 Labor Day Golden Week,
-doubles as pre-China decompression, and sits naturally on the Bali → China
-routing. December has zero slack: Penang must end ~Dec 22 (before the Malaysian
-school-holiday crush) and Langkawi must sit on the Koh Lipe ferry date.
+**Decision: keep in May.** It absorbs China's Labor Day peak, doubles as
+pre-China decompression, and sits naturally on the Bali → China routing.
+December has no slack: the Malaysian run must clear the school-holiday crush and
+the island chain has to end on the cross-border ferry date.
 
 **Rejected: December placement.** Creates four urban stops before the first
-beach and pushes Penang into the holiday peak.
+beach and pushes the Malaysian stops into the holiday peak.
 
 **Rejected: dropping it.** Loses the Golden Week shield and a top-tier food city
 for only ~5 extra Indonesian nights.
@@ -70,8 +70,8 @@ wildlife, 2,000 km east and three months after the peninsula chapter. Relabelled
 
 ## 2026-10-22 — Korea moves to late spring; Taiwan and Guilin/Longji dropped
 
-December Korea (sub-zero, dark by 17:15) and December Sichuan (lowest-sun window
-of the year) both violated P1. Korea moved to May 28 – Jun 11; Sichuan moved to
-the May 6–28 sweet spot; Guilin/Longji dropped for late-June flood risk. Taiwan
-was dropped at this point for visa bureaucracy — reconsidered and reinstated as
-a southern-NYE variant in #50.
+Winter Korea (sub-zero, dark by late afternoon) and winter Sichuan (lowest-sun
+window of the year) both violated P1. Korea moved to late spring; Sichuan moved
+to the pre-monsoon sweet spot; Guilin/Longji dropped for flood-season risk.
+Taiwan was dropped at this point for visa bureaucracy — later reconsidered as a
+southern-NYE variant.

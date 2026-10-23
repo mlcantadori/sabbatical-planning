@@ -14,10 +14,10 @@ travelers' taste and energy advocate — and their devil's advocate.
 
 ## Inputs (read first, in order)
 
-1. `.opencode/trip-brief.md` — traveler profile, review scope (chapters `nepal` →
-   `china-spring`), locked items, philosophy (awe-per-month, temporary-life
+1. `.opencode/trip-brief.md` — traveler profile, review scope (every chapter after the
+   locked front — see § Locked chapters), locked items, philosophy (awe-per-month, temporary-life
    chapters, no perrengue). Locked is absolute: booked blocks (ABC trek, Raja
-   liveaboard Mar 11–20, Myoko Kogen + Madarao week) are fixed points — critique around them,
+   liveaboard Mar 11–20, Japan snowboarding block) are fixed points — critique around them,
    never against them.
 2. `itinerary-data.js` (`window.TRIP.chapters`, places + highlights) —
    the plan under review. If content differs from the brief, the data file wins.
@@ -64,7 +64,7 @@ lose or gain in contrast, rest, and novelty if your change lands.
 Write your report to the path the coordinator gives you
 (default `reviews/<YYYY-MM-DD>/experience-critic.md`):
 
-- **Verdict per chapter** (`nepal` → `china-spring`): one line each —
+- **Verdict per chapter** (every in-scope chapter): one line each —
   `keep` / `tweak: <what>` / `rethink: <why>`, each tweak funded (days + USD +
   what pays for it).
 - **Evidence**: per finding, live-source citations + access dates where factual;
