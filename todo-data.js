@@ -68,7 +68,7 @@ window.TODO_ITEMS = [
   { id: 'india-5', ch: 'india', place: 'Varanasi', cat: 'stay', title: 'Varanasi stay Oct 17–21 (4n)', note: 'Booked ✅ — Airbnb R$1,081, near the ghats for dawn boat + evening Aarti', due: '2026-09-26', done: true },
 
   // ── nepal ─────────────────────────────────────────────────────────
-  { id: 'nepal-2', ch: 'nepal', place: 'Annapurna', cat: 'attraction', title: 'ABC trek Oct 25 – Nov 4', note: 'Discovery World $1,440 for two ($144 paid, $1,296 balance due Oct 24 at Kathmandu office)', due: '2026-09-01', done: true },
+  { id: 'nepal-2', ch: 'nepal', place: 'Annapurna', cat: 'attraction', title: 'ABC trek Oct 25 – Nov 4', note: 'Discovery World $1,440 for two — paid in full ($144 advance + $1,296 balance Oct 24); briefing + gear check done', due: '2026-09-01', done: true },
   { id: 'nepal-3', ch: 'nepal', place: 'Kathmandu', cat: 'stay', title: 'Kathmandu hotels (pre/post-trek)', note: 'Pre-trek Oct 21–25 booked ✅ ($171) + post-trek Nov 4–7 booked ✅ ($129); Pokhara transit covered by the trek', due: '2026-09-30', done: true },
   { id: 'nepal-4', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'ACAP permit + TIMS card', note: 'Handled via agency — done', due: '2026-10-21', done: true },
   { id: 'nepal-5', ch: 'nepal', place: null, cat: 'admin', title: 'SafetyWing plan before Nepal', note: 'Credit-card insurance covers 60 days only — start SafetyWing ahead of the Oct 21 chapter; must cover heli-evac for the trek', due: '2026-10-15', done: false },
