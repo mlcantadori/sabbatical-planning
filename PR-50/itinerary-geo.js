@@ -118,7 +118,6 @@ window.TRIP_GEO = {
     'china-e2/Shenzhen':                       [22.5431,  114.0579],
     'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
     'china-e2/Guangzhou':                      [23.1291,  113.2644],
-    'china-e2/Shanghai':                       [31.2304,  121.4737],
     // China spring (Xi'an + Sichuan + south in peak season)
     'china-spring/Xi\'an':                    [34.3416,  108.9398],
     'china-spring/Chengdu':                   [30.5728,  104.0668],
@@ -126,5 +125,6 @@ window.TRIP_GEO = {
     'china-spring/Zhangjiajie + Tianmen':     [29.1170,  110.4790],
     'china-spring/Fenghuang + Furong':        [27.9538,  109.5991],
     'china-spring/Changsha (buffer)':         [28.2282,  112.9388], // Changsha Huanghua gateway
+    'china-spring/Shanghai':                  [31.2304,  121.4737],
   },
 };
