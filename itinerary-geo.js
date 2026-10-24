@@ -78,7 +78,6 @@ window.TRIP_GEO = {
     // Thailand — Andaman coast + Bangkok
     'thailand/Koh Lipe':                      [ 6.4890,   99.3025],
     'thailand/Ko Lanta':                      [ 7.6244,   99.0800],
-    'thailand/Railay + Krabi':                [ 8.0110,   98.8370],
     'thailand/Bangkok':                       [13.7563,  100.5018],
     // Taiwan — south to north
     'taiwan/Kaohsiung':                       [22.6273,  120.3014],
