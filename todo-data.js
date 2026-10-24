@@ -74,7 +74,7 @@ window.TODO_ITEMS = [
   { id: 'nepal-5', ch: 'nepal', place: null, cat: 'admin', title: 'SafetyWing plan before Nepal', note: 'Credit-card insurance covers 60 days only — start SafetyWing ahead of the Oct 21 chapter; must cover heli-evac for the trek', due: '2026-10-15', done: false },
   { id: 'nepal-6', ch: 'nepal', place: null, cat: 'transport', title: 'Kathmandu→Beijing flight Nov 7 11:45–23:15', note: 'Booked ✅ ($477 for two) — Entry 1 starts Nov 7', due: '2026-09-30', done: true },
   { id: 'nepal-7', ch: 'nepal', place: 'Kathmandu', cat: 'visa', title: 'Nepal visa — apply + pay online', note: 'Applied + paid online — done', due: '2026-10-15', done: true },
-  { id: 'nepal-8', ch: 'nepal', place: 'Kathmandu', cat: 'admin', title: 'Buy trekking gear in Thamel', note: 'Layers + essentials for ABC; bag + down jacket loaned by DWT — 9kg pp porter limit', due: '2026-10-22', done: false },
+  { id: 'nepal-8', ch: 'nepal', place: 'Kathmandu', cat: 'admin', title: 'Buy trekking gear in Thamel', note: 'Layers + essentials for ABC; bag + down jacket loaned by DWT — 9kg pp porter limit', due: '2026-10-22', done: true },
 
   // ── china-e1 ──────────────────────────────────────────────────────
   { id: 'china-e1-1-beijing', ch: 'china-e1', place: 'Beijing', cat: 'stay', title: 'Beijing stay (9n)', note: 'Nov 7–16 booked ✅ ($528), incl. 2 slow hutong days upfront (trek recovery)', due: '2026-10-17', done: true },
