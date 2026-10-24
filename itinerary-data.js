@@ -529,7 +529,7 @@ window.TRIP = (function () {
     { task: 'Flights Nov–Jan + China domestic hops', by: 'By Sep 2026', critical: true, notes: 'KTM→PEK Nov 7 · PEK→Huangshan HSR/flight Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→CKG direct flight Dec 6 · CKG→CTU HSR Dec 12 · CTU→SHA flight Dec 18 · PVG→PUS direct flight Dec 24 · ICN→TPE Jan 8 · KHH→KIX direct flight Jan 25' },
     { task: 'Taiwan visitor visa (2 pax)', by: 'File TECO Hong Kong Nov 24', critical: true, notes: 'Morning errand Nov 24, pickup Nov 25–26; request 30d grant for Jan 8–25 stay (17d); fallback TECO Seoul Jan 4–8; do not ticket ICN→TPE until answered' },
     { task: 'Korea K-ETA (2 pax)', by: 'By mid-Dec 2026', critical: true, notes: 'File online from Shanghai ≥1 week before Dec 24; Brazil visa-free but not K-ETA-exempt' },
-    { task: 'Annapurna trek balance + briefing', by: 'Oct 24 at DWT office, Thamel', critical: true, notes: 'Pay $1,296 balance, gear check, meet guide/porter; ACAP/TIMS via agency — confirm; 9kg pp porter limit' },
+    { task: 'Annapurna trek balance + briefing', by: 'Done ✅', critical: false, done: true, notes: 'Paid in full — $1,296 balance settled Oct 24; gear check + briefing done, guide/porter met; ACAP/TIMS confirmed; 9kg pp porter limit' },
     { task: 'Kinabatangan river lodge',  by: 'By Feb 2027', critical: false, notes: 'Book 2–3 months ahead; good lodges fill in dry season' },
     // ── Confirmed — Greece 100% ✅ ──
     { task: 'Greece stays — all 7 booked',  by: 'Done ✅', critical: false, done: true, notes: 'Athens 1–5 · Chania 5–9 · Rethymno 9–12 · Santorini 12–14 · Folegandros 14–16 · Milos 16–20 (checkout adjusted 22→20) · Athens 20–21' },
@@ -558,7 +558,7 @@ window.TRIP = (function () {
     locked: [
       { item: 'GRU–YYZ–ATH flights (2 pax)', cost: 1700, note: 'Bought ✅ — long-haul positioning into the trip' },
       { item: 'Raja Ampat liveaboard 10d (2 pax)', cost: 8400, note: 'Quoted/held — the trip splurge' },
-      { item: 'Annapurna Base Camp trek, Discovery World (2 pax)', cost: 1440, note: 'Booked ✅ — $720pp ($144 advance paid, $1,296 balance due Oct 24); guide + porter + teahouses + meals on trail' },
+      { item: 'Annapurna Base Camp trek, Discovery World (2 pax)', cost: 1440, note: 'Booked ✅ — $720pp, paid in full ($144 advance + $1,296 balance Oct 24); guide + porter + teahouses + meals on trail' },
       { item: 'Cumbuco Airbnb, 1 month', cost: 1900, note: 'Actual — paid' },
       { item: 'Greece ferries, 4 legs (2 pax)', cost: 770, note: 'Booked ✅ — €685 actual' },
       { item: 'Petrópolis–Teresópolis trail (2 pax)', cost: 770, note: 'Actual — R$4,000' },
