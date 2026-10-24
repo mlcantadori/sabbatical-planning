@@ -5,6 +5,7 @@
 
 window.STORE = (function () {
   // v22: Borneo chapter relabelled "Malaysian Borneo" (it shares Malaysia's country flag but is a separate March chapter).
+  // v25: Railay swapped for Bangkok (Dec 26-29) — Railay was sold out at peak.
   // v24: Shanghai moved from China E2 to the end of spring China; Malaysia 6n→8n,
   // Thailand 11n→15n, trip ends Jun 16 (360 days).
   // v23: Taiwan chapter added (NYE in Kaohsiung, not Taipei) — Malaysia 14n→6n, Thailand 18n→11n, Penang + Bangkok cut.
@@ -14,7 +15,7 @@ window.STORE = (function () {
   // to 18n south-to-north (Koh Lipe -> Ko Lanta -> Railay -> Bangkok 4n),
   // Japan swaps Kanazawa for Hakone/Mt. Fuji, China Spring moves to May 6-28
   // ahead of June plum rains, and Korea closes the trip May 28 - Jun 11.
-  const LS_KEY = 'trip-data-v24';
+  const LS_KEY = 'trip-data-v25';
   const listeners = new Set();
   let chapters;
 
