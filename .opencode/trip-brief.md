@@ -73,5 +73,5 @@ Two structural facts shape the route, so confirm them rather than assume:
 
 - **Indonesia** grants a short, non-extendable visa-free stay. A second stay needs
   an exit and re-entry — which is why Malaysian Borneo sits between Indonesia A and B.
-- **China's** visa-free window plus its SAR resets (Hong Kong, Macau) are why the
-  route has two mainland entries rather than one continuous stay.
+- **China's** visa-free window plus the Hong Kong SAR reset are why the route has
+  two mainland entries rather than one continuous stay.

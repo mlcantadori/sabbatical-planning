@@ -8,6 +8,28 @@ Format: **Decision** · date · options considered · why.
 
 ---
 
+## 2026-10-24 — Malaysia/Thailand un-hurried by moving Shanghai to spring
+
+The December block was boxed: Raja Ampat pins Indonesia A to late February, so
+extra nights could only come from before Japan. Moving Shanghai out of China E2
+and onto the end of spring China freed 6 nights with no cost to Japan or Taiwan.
+
+- Malaysia 6n → 8n (KL 4, Langkawi 4)
+- Thailand 11n → 15n (Lipe 4, Lanta 8, Railay 3)
+- Taiwan 15n unchanged, but now arrives Dec 29 with two days before NYE
+- China E2 14n → 8n (Guangzhou, Shenzhen, Macau only); spring China 22n → 27n
+- Trip 355 → 360 days, ending Jun 16
+
+**Rejected:** holding 32 nights and cutting a base — it would have dropped Railay
+and forced a Lanta→Krabi backtrack.
+**Rejected:** trimming Indonesia staging to buy the nights — Java/Bali is already
+at its minimum before the liveaboard.
+
+Shanghai is not cut, just rescheduled: December is its dampest, grayest month and
+May suits it. It also replaces Changsha as the departure hub.
+
+---
+
 ## 2026-10-23 — NYE: Ko Lanta (PR #47) vs Kaohsiung (PR #50) — **open, travelers decide**
 
 Options considered:
