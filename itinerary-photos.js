@@ -58,20 +58,23 @@ window.PHOTO_IDS = {
   'chengdu panda':               'extra-pictures/china-e2/chengdu-panda.jpg',
   'chongqing cyberpunk night':   'extra-pictures/china-e2/chongqing-cyberpunk-night.jpg',
   // ── Korea ─────────────────────────────────────────────────────────
-  'seoul palace winter':         'extra-pictures/korea/seoul-palace-winter.jpg',
   'busan gamcheon':              'extra-pictures/korea/busan-gamcheon.jpg',
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
-  'jeonju hanok':                'extra-pictures/korea/jeonju-hanok.jpg',
+  'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
   // ── Taiwan ────────────────────────────────────────────────────────
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
-  'taiwan night market':         'extra-pictures/taiwan/taiwan-night-market.jpg',
-  'anping fort':                 'extra-pictures/taiwan/anping-fort.jpg',
+  'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',
+  'alishan sea of clouds':       'extra-pictures/taiwan/alishan-sea-of-clouds.jpg',
+  'kaohsiung harbor':            'extra-pictures/taiwan/kaohsiung-harbor.jpg',
   // ── Japan ─────────────────────────────────────────────────────────
   'fushimi inari':               'extra-pictures/japan/fushimi-inari.jpg',
   'kyoto autumn maple':          'extra-pictures/japan/kyoto-autumn-maple.jpg',
   'osaka dotonbori':             'extra-pictures/japan/osaka-dotonbori.jpg',
   'tokyo shimokitazawa':         'extra-pictures/japan/tokyo-shimokitazawa.jpg',
+  'mount fuji winter':           'extra-pictures/japan/mount-fuji-winter.jpg',
+  'shirakawa-go snow':           'extra-pictures/japan/shirakawa-go-snow.jpg',
+  'nozawa onsen snow':           'extra-pictures/japan/nozawa-onsen-snow.jpg',
   'hakuba snowboarding':         'extra-pictures/japan/hakuba-snowboarding.png',
   // ── Indonesia A ───────────────────────────────────────────────────
   'raja ampat aerial wayag':     'extra-pictures/indonesia-a/raja-ampat-aerial-wayag.jpg',
@@ -102,16 +105,15 @@ window.PHOTO_IDS = {
   'petronas towers night':       'extra-pictures/malaysia/petronas-towers-night.jpg',
   'batu caves rainbow steps':    'extra-pictures/malaysia/batu-caves-rainbow-steps.jpg',
   'penang street art':           'extra-pictures/malaysia/penang-street-art.jpg',
+  'langkawi beach':              'extra-pictures/malaysia/langkawi-cenang-beach.jpg',
   // ── Thailand ──────────────────────────────────────────────────────
-  'koh tao diving':              'extra-pictures/thailand/koh-tao-diving.jpg',
-  'koh tao sail rock':           'extra-pictures/thailand/koh-tao-sail-rock.jpg',
-  'koh samui beach':             'extra-pictures/thailand/koh-samui-beach.jpg',
+  'koh lipe beach':              'extra-pictures/thailand/koh-lipe-beach.jpg',
+  'railay krabi':                'extra-pictures/thailand/railay-krabi.jpg',
+  'koh lanta beach':             'extra-pictures/thailand/koh-lanta-beach.jpg',
   'bangkok wat arun':            'extra-pictures/thailand/bangkok-wat-arun.jpg',
   // ── China Spring ──────────────────────────────────────────────────
   'xian terracotta warriors':    'extra-pictures/china-spring/xian-terracotta-warriors.jpg',
   'xian city wall':              'extra-pictures/china-spring/xian-city-wall.jpg',
-  'guilin karst li river':       'extra-pictures/china-spring/guilin-karst-li-river.jpg',
-  'longji terraces':             'extra-pictures/china-spring/longji-terraces.jpg',
   'zhangjiajie avatar pillars':  'extra-pictures/china-spring/zhangjiajie-avatar-pillars.jpg',
   'fenghuang riverside':         'extra-pictures/china-spring/fenghuang-riverside.jpg',
 };

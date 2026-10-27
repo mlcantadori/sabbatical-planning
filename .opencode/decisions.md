@@ -8,6 +8,47 @@ Format: **Decision** · date · options considered · why.
 
 ---
 
+## 2026-10-24 — Railay replaced by Bangkok for the Dec 26–29 peak
+
+Railay was sold out or priced at 2–3× for the three peakest days of the Thai
+season. Replaced with Bangkok, same 3 nights, same chapter length.
+
+- Lipe 4 (Dec 14–18) · Lanta 8 (Dec 18–26) · **Bangkok 3 (Dec 26–29)**
+- Krabi→Bangkok Dec 26, Bangkok→Kaohsiung Dec 29 (no same-day connection)
+- Slightly cheaper; Bangkok is in its best weather of the year (cool season)
+- Leaves Dec 29, before the Bangkok countdown — the largest crowd in Thailand
+
+**Rejected:** Ao Nang as a Railay substitute — cheap and available, but a
+charmless strip and a poor beach. **Rejected:** Koh Yao Noi — better scenery but
+adds a transfer day. **Rejected:** extending Lanta to 11 nights — no extra move,
+but a 3-hour airport transfer on departure day.
+
+Cost: the Thailand chapter now ends in a city rather than under the karst.
+
+---
+
+## 2026-10-24 — Malaysia/Thailand un-hurried by moving Shanghai to spring
+
+The December block was boxed: Raja Ampat pins Indonesia A to late February, so
+extra nights could only come from before Japan. Moving Shanghai out of China E2
+and onto the end of spring China freed 6 nights with no cost to Japan or Taiwan.
+
+- Malaysia 6n → 8n (KL 4, Langkawi 4)
+- Thailand 11n → 15n (Lipe 4, Lanta 8, Railay 3)
+- Taiwan 15n unchanged, but now arrives Dec 29 with two days before NYE
+- China E2 14n → 8n (Guangzhou, Shenzhen, Macau only); spring China 22n → 27n
+- Trip 355 → 360 days, ending Jun 16
+
+**Rejected:** holding 32 nights and cutting a base — it would have dropped Railay
+and forced a Lanta→Krabi backtrack.
+**Rejected:** trimming Indonesia staging to buy the nights — Java/Bali is already
+at its minimum before the liveaboard.
+
+Shanghai is not cut, just rescheduled: December is its dampest, grayest month and
+May suits it. It also replaces Changsha as the departure hub.
+
+---
+
 ## 2026-10-23 — NYE: Ko Lanta (PR #47) vs Kaohsiung (PR #50) — **open, travelers decide**
 
 Options considered:
