@@ -119,11 +119,13 @@ precompiled `dist/*.js` bundles.
   sums, date continuity, geo coverage, budget arithmetic, and todo chapter ids.
 - **Ship as a PR.** Comparison variants live on their own branches off the base,
   targeting `main`.
-- **GitHub auth is HTTPS + `gh`.** Remotes are `https://github.com/...`, not
-  `git@github.com:` — SSH key auth to GitHub fails from this machine (the key is
-  registered; GitHub rejects it on ports 22 and 443). `gh auth setup-git` wires
-  the token into git. If a clone fails, use the https URL; don't burn time
-  debugging the agent.
+- **GitHub auth is SSH.** Remotes are `git@github.com:...`. `~/.ssh/config`
+  pins the identity to `~/.ssh/id_ed25519` with `UseKeychain no` /
+  `AddKeysToAgent no`, so the key is read from disk in non-interactive shells
+  (keychain lookups and a stale agent are what produce a bogus "Permission
+  denied (publickey)" for a key that is in fact registered). If a push still
+  fails that way, retry once — GitHub throttles SSH auth from shared/cloud IPs.
+  Do not "fix" it by rewriting the remote to https.
 
 ## Where things live
 
