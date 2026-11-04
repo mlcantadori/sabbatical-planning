@@ -119,13 +119,14 @@ precompiled `dist/*.js` bundles.
   sums, date continuity, geo coverage, budget arithmetic, and todo chapter ids.
 - **Ship as a PR.** Comparison variants live on their own branches off the base,
   targeting `main`.
-- **GitHub auth is SSH.** Remotes are `git@github.com:...`. `~/.ssh/config`
-  pins the identity to `~/.ssh/id_ed25519` with `UseKeychain no` /
-  `AddKeysToAgent no`, so the key is read from disk in non-interactive shells
-  (keychain lookups and a stale agent are what produce a bogus "Permission
-  denied (publickey)" for a key that is in fact registered). If a push still
-  fails that way, retry once — GitHub throttles SSH auth from shared/cloud IPs.
-  Do not "fix" it by rewriting the remote to https.
+- **GitHub auth is SSH, over a persistent connection.** Remotes are
+  `git@github.com:...`. The handshake from this machine is intermittently refused
+  upstream (a *registered* key is rejected before signing, then accepted on the
+  next attempt — verified identical commands scoring 1/5 and 3/5, on ports 22 and
+  443). So `~/.ssh/config` pins the key from disk (no agent, no Keychain) and
+  keeps a ControlMaster. If git reports `Permission denied (publickey)`, run
+  `ssh -f -N github.com` to bootstrap the shared connection; every later
+  push/fetch rides it. Do not "fix" it by rewriting the remote to https.
 
 ## Where things live
 
