@@ -237,7 +237,7 @@ window.TRIP = (function () {
         { name: 'Kathmandu', photo: 'kathmandu boudhanath stupa', days: 4, query: 'Kathmandu, Nepal',
           highlights: ['Arrive Oct 21 from Varanasi (direct)','Boudhanath Stupa — one of the largest stupas on Earth','Pashupatinath Temple — sacred Hindu cremation ghats on the Bagmati','Swayambhunath (Monkey Temple)','Oct 24: DWT office, Thamel — gear check, pre-trek briefing, meet guide + porter','ACAP + TIMS via agency (confirm at office)'] },
         { name: 'Annapurna Base Camp Trek', photo: 'everest prayer flags', days: 11, query: 'Annapurna Base Camp, Nepal',
-          highlights: ['Oct 25 – Nov 4 with Discovery World Trekking','Oct 25: tourist bus Kathmandu → Pokhara (6–7h); lakeside evening briefing','Oct 26: drive to Tikhedhunga, trek to Ulleri (7km, stone-stair challenge)','Oct 27: Ulleri → Ghorepani (10km, rhododendron forest)','Oct 28: 4am Poon Hill sunrise (3,210m) → Tadapani (11.5km)','Oct 29: Tadapani → Chomrong, sanctuary gateway (10km)','Oct 30: Chomrong → Himalaya via Sinuwa + Bamboo (12km)','Oct 31: Himalaya → ABC (4,130m) via MBC — apex day','Nov 1: ABC → Bamboo descent (14km)','Nov 2: Bamboo → Jhinu Danda hot springs (8.5km)','Nov 3: drive Jhinu → Pokhara, farewell gathering','Nov 4: tourist bus Pokhara → Kathmandu — back to Thamel','Guide + porter per 2 (9kg pp limit — store rest free at DWT office); full-board on trail; bag + down jacket loan','Cash: tips ~$150, snacks/water, showers/WiFi, visa $50pp, heli-evac insurance (mandatory)'] },
+          highlights: ['Oct 25 – Nov 4 with Discovery World Trekking','Oct 25: tourist bus Kathmandu → Pokhara (6–7h); lakeside evening briefing','Oct 26: drive to Tikhedhunga, trek to Ulleri (7km, stone-stair challenge)','Oct 27: Ulleri → Ghorepani (10km, rhododendron forest)','Oct 28: 4am Poon Hill sunrise (3,210m) → Tadapani (11.5km)','Oct 29: Tadapani → Chomrong, sanctuary gateway (10km)','Oct 30: Chomrong → Himalaya via Sinuwa + Bamboo (12km)','Oct 31: Himalaya → ABC (4,130m) via MBC — apex day','Nov 1: ABC → Bamboo descent (14km)','Nov 2: Bamboo → Jhinu Danda hot springs (8.5km)','Nov 3: drive Jhinu → Pokhara, farewell gathering','Nov 4: tourist bus Pokhara → Kathmandu — back to Thamel','Guide + porter per 2 (9kg pp limit — store rest free at DWT office); full-board on trail; bag + down jacket loan','Cash: tips ~$150, snacks/water, showers/WiFi, visa $50pp — no heli-evac cover carried (risk accepted, not an oversight)'] },
         { name: 'Kathmandu', photo: 'patan durbar', days: 2, query: 'Thamel, Kathmandu',
           highlights: ['Nov 5–6: slow Thamel days — rest, massage, express laundry + repack for China','Nov 5: return loaned sleeping bag + down jacket at DWT office, buy down/fleece in Thamel','Nov 6: Boudhanath dawn kora farewell, Patan Durbar Square slow afternoon option, farewell dinner, pack for early departure','Nov 7: fly KTM → Beijing (late-night arrival)'] },
       ],
@@ -527,31 +527,7 @@ window.TRIP = (function () {
     },
   ];
 
-  // Bookings (flat list pulled from chapters + a few overall).
-  // done: true → already confirmed (rendered pre-checked; can't be lost to a
-  // localStorage wipe because it lives in the data).
-  const bookings = [
-    // ── Pending — Türkiye, by urgency ──
-    { task: 'India e-Visa',                             by: 'By mid-Sep 2026',       critical: false, notes: 'Before the Oct 14 flight to Delhi via Baku' },
-    { task: 'Close-to-date: Kleftiko boat', by: 'On the road, 1–2 days ahead', critical: false, notes: 'Boat tour is weather-dependent — book short' },
-    // ── Pending — rest of the trip ──
-    { task: 'Raja Ampat liveaboard',     by: 'By Oct 2025', critical: true,  notes: 'Papua Diving / Meridian Adventure — Mar 11–20 (MOVED — reconfirm!); books out 6+ months ahead' },
-    { task: 'Sipadan permits',           by: 'By Nov 2026', critical: true,  notes: '120 permits/day cap — if adding Sipadan to Borneo chapter' },
-    { task: 'Flights Nov–Jun + China domestic hops', by: 'ASAP — Dec 12 run', critical: true, notes: 'KTM→PEK Nov 7 · PEK→Huangshan HSR/flight Nov 16 · Huangshan→HGH HSR Nov 19 · SUZ→SHA→HKG Nov 23 · HK→CAN HSR Nov 28 · CAN→SZX HSR Nov 30 · SZX→Macau ferry Dec 4 · MFM→KUL direct Dec 6 · KUL→LGK Dec 10 · LGK→Koh Lipe ferry Dec 14 · KBV→BKK Dec 26 · BKK→KHH Dec 29 · TPE→KIX Jan 13 · SIN→XIY May 6 · PVG→ICN Jun 2 · ICN→home Jun 16' },
-    { task: 'Taiwan visitor visa (2 pax) — TECO Hong Kong', by: 'File Nov 24 2026 (in HK)', critical: true, notes: 'Brazil passports need a visa: no visa-free, no online TAC. File during the HK stop Nov 23–28; 3–5 business days, ~$50–160 pp; itinerary + hotel bookings + financial proof + photos. Gates the whole Taiwan chapter' },
-    { task: 'Korea K-ETA (2 pax)', by: 'By ~May 20 2027', critical: true, notes: 'File online ≥1 week before May 28; Brazil visa-free but not K-ETA-exempt' },
-    { task: 'Annapurna trek balance + briefing', by: 'Done ✅', critical: false, done: true, notes: 'Paid in full — $1,296 balance settled Oct 24; gear check + briefing done, guide/porter met; ACAP/TIMS confirmed; 9kg pp porter limit' },
-    { task: 'Kinabatangan river lodge',  by: 'By Feb 2027', critical: false, notes: 'Book 2–3 months ahead; good lodges fill in dry season' },
-    // ── Confirmed — Greece 100% ✅ ──
-    { task: 'Greece stays — all 7 booked',  by: 'Done ✅', critical: false, done: true, notes: 'Athens 1–5 · Chania 5–9 · Rethymno 9–12 · Santorini 12–14 · Folegandros 14–16 · Milos 16–20 (checkout adjusted 22→20) · Athens 20–21' },
-    { task: 'Greece ferries — all 4 bought', by: 'Done ✅', critical: false, done: true, notes: 'Rethymno→Santorini Sep 12 · Santorini→Folegandros Sep 14 · Folegandros→Milos Sep 16 · Milos→Athens Sep 20' },
-    { task: 'Flights: Athens→Chania + Athens→Cappadocia', by: 'Done ✅', critical: false, done: true, notes: 'Sep 5 06h45 to Chania · Sep 21 to Cappadocia via IST, single Turkish ticket' },
-    // ── Confirmed — Türkiye + Baku + DEL ✅ ──
-    { task: 'Cappadocia balloon — Sep 22 or 23', by: 'Done ✅', critical: false, done: true, notes: 'Royal Balloon / Butterfly Balloons — cancelled (bad weather), full refund received' },
-    { task: 'Flights until DEL — recheck', by: 'Done except ADB→IST', critical: true, done: false, notes: 'ASR→ADB Sep 24 22:50 bought ✅ · ADB→IST Oct 2, 19:45, TO BUY · IST→GYD Oct 12 · GYD→DEL Oct 14' },
-    { task: 'Türkiye stays until Izmir — rebook new dates', by: 'ASAP', critical: true, done: false, notes: 'Göreme Sep 21–24 booked ✅ · Alaçatı Sep 25–26 · Şirince Sep 27 · Kaş Sep 28–30 · Akyaka Oct 1' },
-    { task: 'Crete car in Chania — rented', by: 'Done ✅', critical: false, done: true, notes: 'Chania base — Balos, Elafonisi, Therisos Gorge, Falasarna' },
-  ];
+  // Bookings live in todo-data.js — the single todo ledger. Nothing here.
 
   // Budget — full-trip model, USD for two travelers (couple).
   // Per-chapter parts are researched estimates (see notes); the three locked
@@ -672,7 +648,7 @@ window.TRIP = (function () {
     { id: 'abctrek', title: 'Annapurna Base Camp trek', start: '2026-10-25', end: '2026-11-04', note: '11-day teahouse trek: Nayapul → ABC (4,130m) → Jhinu hot springs' },
     { id: 'rajaampatdiving', title: 'Raja Ampat Diving (liveaboard)', start: '2027-03-11', end: '2027-03-20', note: '10 days on the water: Wayag, Cape Kri, Manta Sandy' },
     { id: 'chaniacar', title: '🚗 Rental car — Chania', start: '2026-09-05', end: '2026-09-09', note: 'Return 8:30am Sep 9' },
-    { id: 'izmircar', title: '🚗 Rental car — Izmir (ADB)', start: '2026-09-25', end: '2026-10-02', note: 'Pickup ~1am Sep 25 · return Oct 2 before 16:45 flight' },
+    { id: 'izmircar', title: '🚗 Rental car — Izmir (ADB)', start: '2026-09-25', end: '2026-10-02', note: 'Pickup ~1am Sep 25 · return Oct 2 before the 19:45 flight' },
   ];
 
   // Ground + sea legs for the calendar sync. `date` is the departure day;
@@ -739,7 +715,7 @@ window.TRIP = (function () {
     start: START, end: END, totalDays,
     travelers: 2,
     chapters,
-    bookings, budget, packing,
+    budget, packing,
     calendarEvents, transports,
     REGIONS,
     CHAPTER_COLORS,
