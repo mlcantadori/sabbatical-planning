@@ -119,6 +119,11 @@ precompiled `dist/*.js` bundles.
   sums, date continuity, geo coverage, budget arithmetic, and todo chapter ids.
 - **Ship as a PR.** Comparison variants live on their own branches off the base,
   targeting `main`.
+- **GitHub auth is HTTPS + `gh`.** Remotes are `https://github.com/...`, not
+  `git@github.com:` — SSH key auth to GitHub fails from this machine (the key is
+  registered; GitHub rejects it on ports 22 and 443). `gh auth setup-git` wires
+  the token into git. If a clone fails, use the https URL; don't burn time
+  debugging the agent.
 
 ## Where things live
 
