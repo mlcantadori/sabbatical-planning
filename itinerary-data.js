@@ -267,7 +267,7 @@ window.TRIP = (function () {
       country: 'Hong Kong', flag: '🇭🇰', title: 'Hong Kong',
       start: '2026-11-23', end: '2026-11-28', days: 5,
       theme: 'Neon city + dim sum + visa reset, priced before Christmas week',
-      intro: 'Five late-November days: dry 20° air, early WinterFest lights, shoulder-season prices — the 30-day visa clock resets for the southern leg, and there is no Taiwan visa errand this time. Five days with friends and a proper chapter, not transit.',
+      intro: 'Five late-November days: dry 20° air, early WinterFest lights, shoulder-season prices — the 30-day visa clock resets for the southern leg, and the Tuesday-morning TECO errand files the Taiwan visitor visas for the December crossing. Five days with friends and a proper chapter, not transit.',
       tldr: 'Victoria Peak · Kowloon neon · Dim sum · Lamma Island',
       weather: { hi: 20, lo: 14, label: 'Pre-Christmas dry, 20°/14°', emoji: '🥟', rainyDays: 1 },
       photos: ['hong kong skyline'],
@@ -706,9 +706,9 @@ window.TRIP = (function () {
     { mode: 'train', route: 'Zhangjiajie → Fenghuang (via Furong)', date: '2027-05-24', note: 'HSR/bus with the Furong waterfall-town stop en route (~1–2h)' },
     { mode: 'train', route: 'Fenghuang → Changsha', date: '2027-05-27', note: 'HSR ~2h; buffer night before the Korea flight' },
     // Korea — early-summer finale (south-to-north)
-    { mode: 'flight', route: 'Jeju → Busan', date: '2027-05-31', note: 'In-chapter hop ~50min' },
-    { mode: 'train', route: 'Busan → Gyeongju', date: '2027-06-03', note: 'KTX/train ~35min' },
-    { mode: 'train', route: 'Gyeongju → Seoul', date: '2027-06-05', note: 'KTX ~2h — 6 final nights in Seoul before ICN flight home' },
+    { mode: 'flight', route: 'Jeju → Busan', date: '2027-06-05', note: 'In-chapter hop ~50min' },
+    { mode: 'train', route: 'Busan → Gyeongju', date: '2027-06-08', note: 'KTX/train ~35min' },
+    { mode: 'train', route: 'Gyeongju → Seoul', date: '2027-06-10', note: 'KTX ~2h — 6 final nights in Seoul before ICN flight home' },
   ];
 
   return {

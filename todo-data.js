@@ -85,13 +85,14 @@ window.TODO_ITEMS = [
   { id: 'china-e1-2', ch: 'china-e1', place: null, cat: 'admin', title: 'Confirm BR 30-day visa-free still holds', note: 'Confirmed ✅ — Brazil on the 30-day list through Dec 31, 2026; covers E1 + E2a/E2b entries', due: '2026-10-20', done: true },
   { id: 'china-e1-3', ch: 'china-e1', place: 'Beijing → Huangshan', cat: 'transport', title: 'Beijing–Huangshan HSR or flight Nov 16', note: 'HSR Beijing South → Huangshanbei (~5–5.5h, weather-proof) or direct flight to Tunxi (~2.5h)', due: '2026-10-20', done: false },
   { id: 'china-e1-5', ch: 'china-e1', place: 'Beijing', cat: 'attraction', title: 'Forbidden City tickets', note: 'Closed Mondays — Nov 9 + Nov 16 are Mondays, plan Tue–Sun; reservation-only, book ~1 week ahead', due: '2026-11-05', done: false },
-  { id: 'china-e1-6', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan summit hotel', note: 'Book ~3 days ahead; front-load the canyon days (West Sea Canyon closes Dec–Mar)', due: '2026-10-27', done: false },
+  { id: 'china-e1-6', ch: 'china-e1', place: 'Huangshan', cat: 'stay', title: 'Huangshan summit hotel (summit night only)', note: 'Tangkou base is china-e1-1-huangshan; this is the night ON the mountain — book ~3 days ahead, front-load the canyon days (West Sea Canyon closes Dec–Mar)', due: '2026-11-13', done: false },
   { id: 'china-e1-4', ch: 'china-e1', place: 'Suzhou → Hong Kong', cat: 'transport', title: 'Suzhou–Hong Kong Nov 23 (via Shanghai Hongqiao SHA)', note: 'HSR Suzhou → Shanghai Hongqiao (~25m direct to terminal), then fly SHA→HKG; HK visa reset next', due: '2026-10-25', done: false },
   { id: 'china-e1-7', ch: 'china-e1', place: 'Huangshan → Hangzhou', cat: 'transport', title: 'Huangshan–Hangzhou HSR Nov 19 (~1.5h)', note: 'Huangshanbei → Hangzhou East/West direct HSR; 12306 releases ~15 days out (from Nov 4)', due: '2026-11-04', done: false },
   { id: 'china-e1-8', ch: 'china-e1', place: 'Hangzhou → Suzhou', cat: 'transport', title: 'Hangzhou–Suzhou HSR Nov 21 (~1.5h)', note: '12306 releases ~15 days out — grab seats from Nov 6; frequent departures', due: '2026-11-06', done: false },
 
   // ── hk ────────────────────────────────────────────────────────────
   { id: 'hk-1', ch: 'hk', place: null, cat: 'stay', title: 'Hong Kong stay', note: '5 nights Nov 23–28 (shoulder-season prices, with friends)', due: '2026-11-02', done: false },
+  { id: 'hk-2', ch: 'hk', place: 'TECO', cat: 'visa', title: 'Taiwan visitor visa (2 pax) — TECO Hong Kong, Nov 24', note: 'Brazil passports need a visa: no visa-free, no online TAC. File during the HK stop (Nov 23–28) — go the morning of Nov 24; allow 3–5 business days, ~$50–160 pp. Bring itinerary, hotel bookings, financial proof, photos. Gates the whole Taiwan chapter (Dec 29), and there is no Seoul fallback any more', due: '2026-11-24', done: false },
   { id: 'hk-3', ch: 'hk', place: null, cat: 'transport', title: 'Hong Kong→Guangzhou HSR Nov 28', note: 'West Kowloon → Guangzhou South direct, ~1h; Entry 2 starts', due: '2026-11-20', done: false },
 
   // ── china-e2 ──────────────────────────────────────────────────────
@@ -100,9 +101,6 @@ window.TODO_ITEMS = [
   { id: 'china-e2-1-guangzhou', ch: 'china-e2', place: 'Guangzhou', cat: 'stay', title: 'Guangzhou stay (2n)', note: 'Nov 28–30, Cantonese opening straight off the Hong Kong HSR', due: '2026-11-07', done: false },
   { id: 'china-e2-7', ch: 'china-e2', place: 'Shenzhen → Macau', cat: 'transport', title: 'Shenzhen–Macau ferry Dec 4 (~1h)', note: 'Shekou departures, book ahead (Mainland exit)', due: '2026-11-24', done: false },
   { id: 'china-e2-10', ch: 'china-e2', place: 'Macau → Kuala Lumpur', cat: 'transport', title: 'Macau–Kuala Lumpur flight Dec 6 (~3h30)', note: 'MFM → KUL direct (AirAsia) — Malaysia begins', due: '2026-11-01', done: false },
-
-  // ── taiwan visa (do this in Hong Kong, Nov 24) ────────────────────
-  { id: 'taiwan-0-visa', ch: 'taiwan', place: null, cat: 'visa', title: 'Taiwan visitor visa (2 pax) — TECO Hong Kong', note: 'Brazil passports need a visa: no visa-free, no online TAC. File at TECO HK Nov 24 (you are in HK Nov 23–28); allow 3–5 business days, ~$50–160 pp. Bring itinerary, hotel bookings, financial proof, photos. This is the gating item for the whole Taiwan chapter', due: '2026-11-24', done: false },
 
   // ── malaysia (short west-coast run) ───────────────────────────────
   { id: 'malaysia-dec-1-kl', ch: 'malaysia', place: 'Kuala Lumpur', cat: 'stay', title: 'Kuala Lumpur stay (4n)', note: 'Dec 6–10 — Petronas, Batu Caves, Jalan Alor; decompression after the Pearl Delta', due: '2026-11-15', done: false },
@@ -114,7 +112,7 @@ window.TODO_ITEMS = [
   { id: 'thailand-1-lipe', ch: 'thailand', place: 'Koh Lipe', cat: 'stay', title: 'Koh Lipe stay (4n)', note: 'Dec 14–18 — Sunrise Beach, not Pattaya. Ahead of the Christmas peak', due: '2026-11-15', done: false },
   { id: 'thailand-2-lipe-lanta', ch: 'thailand', place: 'Koh Lipe → Ko Lanta', cat: 'transport', title: 'Koh Lipe→Ko Lanta speedboat Dec 18 (~3h)', note: 'Northbound Andaman speedboat (Satun Pakbara / Bundhaya); reserve a few days ahead', due: '2026-11-25', done: false },
   { id: 'thailand-3-lanta', ch: 'thailand', place: 'Ko Lanta', cat: 'stay', title: 'Ko Lanta stay (8n, incl. Christmas)', note: 'Dec 18–26 — Long Beach / Klong Nin / Kantiang. Christmas here is the quiet holiday', due: '2026-11-10', done: false },
-  { id: 'thailand-4-lanta-railay', ch: 'thailand', place: 'Ko Lanta → Krabi airport', cat: 'transport', title: 'Ko Lanta→Krabi airport transfer Dec 26 (~2.5–3h)', note: 'Ferry/van; leave early enough for an afternoon flight', due: '2026-12-01', done: false },
+  { id: 'thailand-4-lanta-krabi', ch: 'thailand', place: 'Ko Lanta → Krabi airport', cat: 'transport', title: 'Ko Lanta→Krabi airport transfer Dec 26 (~2.5–3h)', note: 'Ferry/van; leave early enough for an afternoon flight', due: '2026-12-01', done: false },
   { id: 'thailand-5-bangkok', ch: 'thailand', place: 'Bangkok', cat: 'stay', title: 'Bangkok stay (3n)', note: 'Dec 26–29 — Talad Noi/Charoenkrung for atmosphere or Ari for calm; skip Khao San and the Old Town', due: '2026-11-25', done: false },
   { id: 'thailand-6-krabi-bangkok', ch: 'thailand', place: 'Krabi → Bangkok', cat: 'transport', title: 'Krabi→Bangkok flight Dec 26 (~1h20)', note: 'Afternoon flight; book with the Lanta transfer', due: '2026-11-15', done: false },
   { id: 'thailand-8', ch: 'thailand', place: 'Bangkok → Kaohsiung', cat: 'transport', title: 'Bangkok→Kaohsiung flight Dec 29 (~3h30)', note: 'Direct; Taiwan begins. No same-day connection needed', due: '2026-11-10', done: false },
@@ -215,5 +213,4 @@ window.TODO_ITEMS = [
   { id: 'korea-3', ch: 'korea', place: 'Gyeongju → Seoul', cat: 'transport', title: 'Gyeongju→Seoul KTX Jun 10 (~2h)', note: 'Korail ~30-day window opens ~May 5 — reserve then', due: '2027-05-05', done: false },
   { id: 'korea-2-seoul', ch: 'korea', place: 'Seoul', cat: 'stay', title: 'Seoul stay (6n)', note: 'Jun 10–16 — final 6 nights of the trip; Bukchon/Insadong base', due: '2027-05-01', done: false },
   { id: 'korea-11', ch: 'korea', place: 'Seoul', cat: 'attraction', title: 'DMZ tour option Jun 15 (Tue)', note: 'DMZ closed Mon/weekends; needs passport details days ahead', due: '2027-05-25', done: false },
-  { id: 'korea-10', ch: 'korea', place: 'Seoul → São Paulo', cat: 'transport', title: 'Seoul (ICN)→São Paulo home flight Jun 16', note: '1-stop from Incheon megahub; sabbatical ends', due: '2027-04-01', done: false },
 ];

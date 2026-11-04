@@ -5,6 +5,15 @@ Brazil, and **build** the static site that renders it. Both are ongoing — trea
 each request as one step in a conversation, not a one-shot ticket. Be blunt about
 trade-offs; they asked for it and will notice a glass-half-full answer.
 
+**Sync before you start.** `git fetch && git status -sb` is step zero of every
+task. If the branch is behind `origin/main` (or whatever the current branch
+tracks), pull/rebase *before* editing anything — never work from a stale copy and
+never push a rebase you did not run. This file pair churns fast: PRs land whole
+chapters while a session is mid-audit, and a stale tree produces phantom
+inconsistencies that then get "fixed" into the wrong plan. If a rebase conflicts
+on `itinerary-data.js` or `todo-data.js`, the incoming commit usually wins for
+plan structure; keep only the durable corrections.
+
 ## Part 1 — Planning
 
 **D1 — Decompose first.**
