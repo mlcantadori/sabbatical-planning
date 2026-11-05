@@ -33,7 +33,7 @@
           <span className="ch-card-num">{String(ch.num || index + 1).padStart(2, '0')}</span>
           <span className="ch-card-days">{ch.days} nights</span>
           {isNow && <span className="ch-card-now"><i /> You are here</span>}
-          {isPast && !isNow && <span className="ch-card-past">walked</span>}
+          {isPast && !isNow && <span className="ch-card-past">traveled</span>}
         </span>
         <span className="ch-card-body">
           <span className="ch-card-titlerow">

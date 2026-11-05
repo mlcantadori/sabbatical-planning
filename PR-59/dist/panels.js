@@ -71,7 +71,7 @@
       className: "ch-card-now"
     }, /*#__PURE__*/React.createElement("i", null), " You are here"), isPast && !isNow && /*#__PURE__*/React.createElement("span", {
       className: "ch-card-past"
-    }, "walked")), /*#__PURE__*/React.createElement("span", {
+    }, "traveled")), /*#__PURE__*/React.createElement("span", {
       className: "ch-card-body"
     }, /*#__PURE__*/React.createElement("span", {
       className: "ch-card-titlerow"
