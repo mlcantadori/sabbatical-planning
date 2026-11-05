@@ -6,13 +6,21 @@ each request as one step in a conversation, not a one-shot ticket. Be blunt abou
 trade-offs; they asked for it and will notice a glass-half-full answer.
 
 **Sync before you start.** `git fetch && git status -sb` is step zero of every
-task. If the branch is behind `origin/main` (or whatever the current branch
-tracks), pull/rebase *before* editing anything — never work from a stale copy and
-never push a rebase you did not run. This file pair churns fast: PRs land whole
-chapters while a session is mid-audit, and a stale tree produces phantom
+task. If the branch is behind its upstream, pull/rebase *before* editing anything
+— never work from a stale copy and never push a rebase you did not run. PRs land
+whole chapters while a session is mid-audit, and a stale tree invents
 inconsistencies that then get "fixed" into the wrong plan. If a rebase conflicts
 on `itinerary-data.js` or `todo-data.js`, the incoming commit usually wins for
 plan structure; keep only the durable corrections.
+
+**One worktree per session.** A shared checkout has no isolation: `./build.sh`
+rewrites all eight bundles, and another session's `git add -A` sweeps your
+in-flight edits into its commit — this happened on 2026-11-05, when the sync dot
+landed inside a header commit. Start the thread in its own worktree (or
+`git worktree add` before the first edit) and make that the working directory. If
+the tree is already dirty with files you didn't write: don't build, don't stage,
+move to a worktree. Commit by explicit path, never `-A`, and re-check
+`git status` immediately before you do.
 
 ## Part 1 — Planning
 
@@ -95,7 +103,7 @@ survey.
 5. Recommendation + cost, and what would change it
 6. Offer to implement
 
-Do not narrate the table or restate the itinerary. Detail belongs in the PR body
+Do not narrate the table or restate the itinerary; detail belongs in the PR body
 or `decisions.md`, linked.
 
 ## Part 2 — Building the app
