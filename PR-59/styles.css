@@ -830,6 +830,11 @@ button:focus-visible, [role="button"]:focus-visible {
   background: #05080d;
 }
 .map-container.is-globe { background: radial-gradient(circle at 50% 45%, #0b1520, #04070b 70%); }
+/* Globe country and pin labels are HTML over a canvas: without this, dragging
+   the planet starts a text selection and you can highlight every country name
+   in the view. Leaflet already opts out on its own container. */
+.map-container.is-globe,
+.map-container.is-globe * { user-select: none; -webkit-user-select: none; }
 .leaflet-container {
   background: #05080d;
   font-family: var(--f-sans);
