@@ -129,10 +129,11 @@ function useStore() {
   return window.STORE;
 }
 
-// Header status: the chapter you are in right now and the one that follows
-// it. Both cells are buttons — tapping jumps to that chapter. Rendered twice:
-// full width in the desktop header, compact in the mobile status strip.
-function NowNext({ compact, onSelect }) {
+// Where the trip is right now: the chapter today falls in, and the one that
+// follows it. Both cells are buttons — tapping jumps to that chapter. It lives
+// in the rail's head on desktop and in the mobile status strip; the shape is
+// the same, only the type scale differs.
+function NowNext({ onSelect }) {
   const store = useStore();
   const chapters = store.getChapters();
   const today = window.TRIP_NOW.todayISO();
@@ -160,7 +161,7 @@ function NowNext({ compact, onSelect }) {
   if (!current && !next) {
     const last = chapters[chapters.length - 1];
     return (
-      <div className={`app-now ${compact ? 'is-compact' : ''}`}>
+      <div className="app-now">
         <span className="app-now-cell is-static">
           <span className="app-now-label">Trip</span>
           <span className="app-now-value">
@@ -172,18 +173,18 @@ function NowNext({ compact, onSelect }) {
     );
   }
 
+  // The countdown appears once: a chapter's exit day is the next chapter's
+  // arrival day, so "2 days left" and "in 2 days" are always the same number.
+  // It rides on the current chapter; the next one just gets its date.
   const left = current ? window.TRIP_NOW.daysUntil(current.end, today) : null;
   const currentMeta = left == null ? ''
-    : left <= 0 ? 'exit day'
-    : compact ? `${left}d left` : `${left} day${left === 1 ? '' : 's'} left`;
-  const toNext = next ? window.TRIP_NOW.daysUntil(next.start, today) : 0;
-  const nextMeta = !next ? ''
-    : toNext <= 1 ? 'tomorrow' : `in ${toNext}d`;
+    : left <= 0 ? 'exit day today'
+    : `${left} day${left === 1 ? '' : 's'} left`;
 
   return (
-    <div className={`app-now ${compact ? 'is-compact' : ''}`}>
+    <div className="app-now">
       {current && cell('Currently in', current, currentMeta)}
-      {next && cell('Next up', next, compact ? nextMeta : `${fmt(next.start)} · ${nextMeta}`)}
+      {next && cell('Next up', next, fmt(next.start))}
     </div>
   );
 }

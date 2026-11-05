@@ -121,20 +121,19 @@ button {
 }
 
 /* ── Now / next status ───────────────────────────────────────────────────
-   The header's answer to "where are we": the chapter you're in today and
-   the one that follows. Both are jump-to buttons. The compact variant rides
-   the mobile status strip instead (the header copy hides ≤880px). */
+   Where the trip is: the chapter today falls in and the one that follows,
+   both jump-to buttons. It heads the rail on desktop and rides the mobile
+   status strip below the header — same label/value type scale in both. */
 .app-now {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 9px;
   min-width: 0;
-  flex: 0 1 auto;
 }
 .app-now-cell {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
   min-width: 0;
   padding: 0;
   border: 0;
@@ -146,27 +145,25 @@ button {
 }
 .app-now-cell.is-static { cursor: default; }
 .app-now-label {
-  flex: none;
-  width: 84px;
   font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: 0.14em;
+  font-size: 10px; /* same kicker scale as the rest of the UI */
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-3);
   white-space: nowrap;
 }
 .app-now-value {
   display: flex;
-  align-items: center;
-  gap: 5px;
+  align-items: baseline;
+  gap: 6px;
   min-width: 0;
   font-family: var(--f-serif);
-  font-size: 13px;
-  line-height: 1.15;
-  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.2;
 }
 .app-now-dot {
   flex: none;
+  align-self: center;
   width: 6px;
   height: 6px;
   border-radius: 3px;
@@ -181,23 +178,11 @@ button {
 .app-now-meta {
   flex: none;
   font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
   color: var(--ink-3);
   white-space: nowrap;
 }
-.app-now.is-compact {
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2px 14px;
-  padding: 9px 14px 1px;
-  min-width: 0;
-}
-.app-now.is-compact .app-now-cell { flex: 0 1 auto; gap: 5px; }
-.app-now.is-compact .app-now-label { width: auto; font-size: 7.5px; }
-.app-now.is-compact .app-now-value { font-size: 12px; }
 
 .app-progress {
   display: flex;
@@ -329,14 +314,6 @@ button {
 .chapter-list-head {
   padding: 18px 20px 12px;
   border-bottom: 1px solid var(--rule-2);
-}
-.chapter-list-meta {
-  font-family: var(--f-mono);
-  font-size: 9.5px;
-  letter-spacing: 0.12em;
-  color: var(--ink-3);
-  margin-top: 4px;
-  text-transform: uppercase;
 }
 .chapter-list-body {
   flex: 1;
@@ -1514,12 +1491,6 @@ button {
   border-color: var(--accent);
 }
 
-.chapter-list-head-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 8px;
-}
 
 /* Header right-side cluster */
 .detail-head-actions {
@@ -1596,19 +1567,30 @@ button {
   .app { grid-template-rows: 54px auto auto 1fr; }
   .mobile-mode { display: flex; }
 
-  /* Progress strip below the header on mobile (the in-header one stays hidden) */
+  /* Now / next + day counter, stacked below the header on mobile */
   .mobile-status {
     border-bottom: 1px solid var(--rule);
     background: var(--paper);
   }
+  .mobile-status .app-now {
+    padding: 10px 14px 0;
+    gap: 6px;
+  }
+  /* One line per cell: label in a fixed column so the values line up,
+     full width so long chapter names never truncate. */
+  .mobile-status .app-now-cell {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .mobile-status .app-now-label { flex: none; width: 90px; }
+  .mobile-status .app-now-value { font-size: 14px; }
   .mobile-progress {
     display: flex;
-    padding: 8px 14px;
+    padding: 7px 14px 9px;
     border-bottom: none;
     background: var(--paper);
   }
-  /* The compact now/next replaces the header copy on mobile */
-  .app-header .app-now { display: none; }
 
   .app-header { padding: 0 14px; gap: 10px; }
   .app-brand-mark { font-size: 18px; }

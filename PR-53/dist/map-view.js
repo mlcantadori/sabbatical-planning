@@ -93,13 +93,13 @@
       const cur = homeChapter();
       if (cur) {
         const pts = (cur.places || []).map(p => p.coords).filter(Boolean);
-        // maxZoom keeps a single-city chapter at region/city level rather
-        // than street level — the opening frame is the place you're in,
-        // not the block you're on.
+        // maxZoom caps the fit at continent level (z4) — the opening frame
+        // should read "South Asia", not "Kathmandu". The fit still centers
+        // on the chapter, so the continent is the one you're standing in.
         return {
           pts,
-          padding: [56, 56],
-          maxZoom: 10,
+          padding: [24, 24],
+          maxZoom: 4,
           single: cur.anchor
         };
       }
@@ -127,11 +127,11 @@
           animate: false
         });
       } else if (pts.length === 1) {
-        map.setView(pts[0], maxZoom == null ? 6 : 11, {
+        map.setView(pts[0], 4, {
           animate: false
         });
       } else if (single) {
-        map.setView(single, 7, {
+        map.setView(single, 4, {
           animate: false
         });
       }
@@ -171,7 +171,7 @@
       const firstPt = cur ? cur.anchor || (cur.places || []).map(p => p.coords).filter(Boolean)[0] : null;
       const map = L.map(ref.current, {
         center: firstPt || [25, 105],
-        zoom: firstPt ? 7 : 4,
+        zoom: firstPt ? 4 : 3,
         minZoom: 2,
         maxZoom: 19,
         zoomControl: false,

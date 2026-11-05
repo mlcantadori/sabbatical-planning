@@ -58,13 +58,9 @@
       className: "chapter-list"
     }, /*#__PURE__*/React.createElement("div", {
       className: "chapter-list-head"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-head-row"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      className: "kicker"
-    }, "The Arc"), /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-meta"
-    }, chapters.length, " entries \xB7 ", store.getTotalDays(), " days")))), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement(window.NowNext, {
+      onSelect: onSelect
+    })), /*#__PURE__*/React.createElement("div", {
       className: "chapter-list-body",
       ref: bodyRef
     }, chapters.map(c => /*#__PURE__*/React.createElement(ChapterRow, {

@@ -156,9 +156,7 @@
       className: "app-brand-mark"
     }, "Asia"), /*#__PURE__*/React.createElement("div", {
       className: "app-brand-meta"
-    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers \xB7 Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement(window.NowNext, {
-      onSelect: onSelectChapter
-    }), /*#__PURE__*/React.createElement("div", {
+    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers \xB7 Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
       className: "app-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
     }, /*#__PURE__*/React.createElement("div", {
@@ -189,7 +187,6 @@
     }))), isMobile && /*#__PURE__*/React.createElement("div", {
       className: "mobile-status"
     }, /*#__PURE__*/React.createElement(window.NowNext, {
-      compact: true,
       onSelect: onSelectChapter
     }), /*#__PURE__*/React.createElement("div", {
       className: "app-progress mobile-progress",

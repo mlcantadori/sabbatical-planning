@@ -41,12 +41,7 @@
     return (
       <div className="chapter-list">
         <div className="chapter-list-head">
-          <div className="chapter-list-head-row">
-            <div>
-              <div className="kicker">The Arc</div>
-              <div className="chapter-list-meta">{chapters.length} entries · {store.getTotalDays()} days</div>
-            </div>
-          </div>
+          <window.NowNext onSelect={onSelect} />
         </div>
         <div className="chapter-list-body" ref={bodyRef}>
           {chapters.map((c) => (
