@@ -247,6 +247,7 @@
         if (!s) return;
         s.raf = requestAnimationFrame(tick);
         stepTween();
+        syncDragSpeed();
         s.controls.update();
         if (!s.noMotion) {
           const t = performance.now() * 0.001;
@@ -291,6 +292,20 @@
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // Drag sensitivity. OrbitControls turns 2π/clientHeight radians per
+    // pixel — roughly four times what the surface under your finger actually
+    // travels, which is why dragging felt twitchy (worst on a phone, where
+    // the globe is small). Matching the two gives 1:1 grabbing at every zoom
+    // level and on every screen:
+    //   speed = (distance − 1) · tan(fov/2) / π
+    // Recomputed each frame because it depends on where the camera is.
+    function syncDragSpeed() {
+      const s = st.current; if (!s) return;
+      const d = s.camera.position.length();
+      const k = (d - 1) * Math.tan((s.camera.fov / 2) * Math.PI / 180) / Math.PI;
+      s.controls.rotateSpeed = Math.max(0.04, Math.min(0.6, k));
+    }
 
     function dolly(f) {
       const s = st.current; if (!s) return;
