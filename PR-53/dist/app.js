@@ -156,7 +156,7 @@
       className: "app-brand-mark"
     }, "Asia"), /*#__PURE__*/React.createElement("div", {
       className: "app-brand-meta"
-    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers \xB7 Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
+    }, isMobile ? `Day ${today.n.toString().padStart(3, '0')} / ${store.getTotalDays()}` : `Sabbatical · 2026·2027 · Two travelers · Day ${today.n.toString().padStart(3, '0')} / ${store.getTotalDays()}`)), /*#__PURE__*/React.createElement("div", {
       className: "app-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
     }, /*#__PURE__*/React.createElement("div", {
@@ -189,11 +189,9 @@
     }, /*#__PURE__*/React.createElement(window.NowNext, {
       onSelect: onSelectChapter
     }), /*#__PURE__*/React.createElement("div", {
-      className: "app-progress mobile-progress",
+      className: "mobile-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-progress-label"
-    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays()), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "app-progress-bar"
     }, /*#__PURE__*/React.createElement("div", {
       style: {

@@ -287,6 +287,21 @@ button {
   cursor: default;
 }
 
+/* "Unsynced" nudge — a quiet amber dot, no badge or banner. It appears when
+   the itinerary or the to-dos have moved since the last successful push;
+   the button's tooltip names which one is behind. */
+.sync-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  flex: 0 0 auto;
+}
+.sync-menu .sync-dot {
+  margin-left: auto;
+}
+
 .app-main {
   position: relative;
   display: grid;
@@ -1584,15 +1599,19 @@ button {
   }
   .mobile-status .app-now-label { flex: none; width: 90px; }
   .mobile-status .app-now-value { font-size: 14px; }
+  /* The day counter moved into the header, so this is the progress rule
+     alone — a bare 3px line under the now/next block. */
   .mobile-progress {
-    display: flex;
-    padding: 7px 14px 9px;
-    border-bottom: none;
+    padding: 2px 14px 10px;
     background: var(--paper);
   }
+  .mobile-progress .app-progress-bar { transform: none; }
 
   .app-header { padding: 0 14px; gap: 10px; }
   .app-brand-mark { font-size: 18px; }
+  /* Desktop keeps the full meta line; mobile gets the day count alone, in
+     the identical mono/10px/0.16em style. */
+  .app-brand-meta { display: block; }
   .app-nav { padding: 2px; gap: 0; }
   .app-nav button { padding: 5px 8px; font-size: 9px; gap: 3px; }
 

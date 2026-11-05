@@ -220,7 +220,10 @@ function NowNext({ onSelect }) {
   return (
     <div className="app-now">
       {current && here && cell('Currently in', here, currentMeta)}
-      {next && cell(nextLabel, next, fmt(next.start))}
+      {/* No date here: the countdown on the line above already says when you
+          move. Before the trip there is no countdown, so the date earns its
+          place. */}
+      {next && cell(nextLabel, next, current ? null : fmt(next.start))}
     </div>
   );
 }
@@ -255,5 +258,22 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-Object.assign(window, { Photo, openMaps, Icon, useStore, ErrorBoundary, NowNext });
+// ── Data fingerprints ───────────────────────────────────────────────────
+// Stable, cheap digest (FNV-1a over a string) of a sync payload. Calendar and
+// Tasks each store one after a successful push and compare the current payload
+// on load, so the header can say "this moved since the last sync" without
+// calling Google. Payloads are built deterministically, so equal data always
+// digests equal — array order is part of the fingerprint on purpose.
+function dataDigest(value) {
+  const s = typeof value === 'string' ? value : JSON.stringify(value);
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  // Length rides along so a collision would also have to match size.
+  return (h >>> 0).toString(16) + ':' + s.length.toString(36);
+}
+
+Object.assign(window, { Photo, openMaps, Icon, useStore, ErrorBoundary, NowNext, dataDigest });
 window.TRIP_NOW = { todayISO, currentChapter, chapterStatus, daysUntil, placeWindows, currentCity, nextCity };

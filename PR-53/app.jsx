@@ -132,7 +132,11 @@
         <header className="app-header">
           <div className="app-brand">
             <div className="app-brand-mark">Asia</div>
-            <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers · Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</div>
+            <div className="app-brand-meta">
+              {isMobile
+                ? `Day ${today.n.toString().padStart(3,'0')} / ${store.getTotalDays()}`
+                : `Sabbatical · 2026·2027 · Two travelers · Day ${today.n.toString().padStart(3,'0')} / ${store.getTotalDays()}`}
+            </div>
           </div>
 
           <div className="app-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
@@ -151,12 +155,12 @@
           </div>
         </header>
 
-        {/* Mobile status strip: now / next + the day counter below the header */}
+        {/* Mobile status strip: now / next, with the trip-progress rule below
+            them (the day counter itself lives in the header on mobile too). */}
         {isMobile && (
           <div className="mobile-status">
             <window.NowNext onSelect={onSelectChapter} />
-            <div className="app-progress mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
-              <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
+            <div className="mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
               <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
             </div>
           </div>
