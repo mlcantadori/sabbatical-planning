@@ -384,31 +384,13 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
-
-// ── Data fingerprints ───────────────────────────────────────────────────
-// Stable, cheap digest (FNV-1a over a string) of a sync payload. Calendar and
-// Tasks each store one after a successful push and compare the current payload
-// on load, so the header can say "this moved since the last sync" without
-// calling Google. Payloads are built deterministically, so equal data always
-// digests equal — array order is part of the fingerprint on purpose.
-function dataDigest(value) {
-  const s = typeof value === 'string' ? value : JSON.stringify(value);
-  let h = 0x811c9dc5;
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i);
-    h = Math.imul(h, 0x01000193);
-  }
-  // Length rides along so a collision would also have to match size.
-  return (h >>> 0).toString(16) + ':' + s.length.toString(36);
-}
 Object.assign(window, {
   Photo,
   openMaps,
   Icon,
   useStore,
   ErrorBoundary,
-  NowNext,
-  dataDigest
+  NowNext
 });
 window.TRIP_NOW = {
   todayISO,

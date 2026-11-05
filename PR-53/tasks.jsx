@@ -26,7 +26,6 @@
   const LS_LIST = 'gtasks-list-id';
   const LS_MAP = 'gtasks-id-map';
   const LS_LAST = 'gtasks-last-sync';
-  const LS_FP = 'gtasks-synced-fingerprint';
   const LS_CLIENT = 'gcal-client-id'; // shared with the Calendar sync
   const SCOPES = 'https://www.googleapis.com/auth/tasks';
 
@@ -196,32 +195,6 @@
       return { key: 'ch:' + ch, title, due };
     });
     return { parents, items };
-  }
-
-  // Fingerprint of the tasks a push would carry right now — title, notes, due
-  // and status for every parent and child. Editing a note or a done flag in
-  // todo-data.js moves it; so does a chapter rename, because parents carry it.
-  function fingerprint(built) {
-    const b = built || buildTasks(window.TODO_ITEMS, (window.TRIP && window.TRIP.chapters) || []);
-    return window.dataDigest(b.parents.concat(b.items).map((t) => [
-      t.key,
-      t.title,
-      t.notes || '',
-      t.due || '',
-      t.status || '',
-    ].join('~')));
-  }
-
-  // No baseline until this browser has completed one full push: a device that
-  // never synced shows nothing, because the bare "Sync" label already asks.
-  function isStale() {
-    try {
-      const stored = localStorage.getItem(LS_FP);
-      if (!stored) return false;
-      return stored !== fingerprint();
-    } catch {
-      return false;
-    }
   }
 
   function errText(e) {
@@ -504,12 +477,9 @@
     try {
       localStorage.setItem(LS_LAST, stamp);
       localStorage.setItem('gtasks-last-report', JSON.stringify({ at: stamp, synced: n, skipped, failed }));
-      // Baseline for the header's "unsynced" dot — a clean run only, so a
-      // partial push keeps the nudge alive until it is actually done.
-      if (!failed.length) localStorage.setItem(LS_FP, fingerprint(built));
     } catch {}
     return { synced: n, skipped, failed, pruned, at: stamp };
   }
 
-  Object.assign(window, { TasksSync: { buildTasks, syncAll, LIST_NAME, fingerprint, isStale, _test: { sameDay, unchanged, retryableStatus, withRetry, sleep, buildIndex, resolveKey, normalizeMap, isMissingTaskError, insertedId, upsert } } });
+  Object.assign(window, { TasksSync: { buildTasks, syncAll, LIST_NAME, _test: { sameDay, unchanged, retryableStatus, withRetry, sleep, buildIndex, resolveKey, normalizeMap, isMissingTaskError, insertedId, upsert } } });
 })();
