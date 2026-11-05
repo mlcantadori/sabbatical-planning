@@ -505,7 +505,8 @@
       onPointerMove: onDragMove,
       onPointerUp: onDragEnd,
       onPointerCancel: onDragEnd,
-      onClickCapture: onClickCapture
+      onClickCapture: onClickCapture,
+      onDragStart: e => e.preventDefault()
     }, chapters.map(c => {
       const isNow = !!current && c.id === current.id;
       const isSelected = c.id === selectedId;

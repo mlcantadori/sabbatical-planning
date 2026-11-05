@@ -702,7 +702,12 @@ button:focus-visible, [role="button"]:focus-visible {
   text-transform: uppercase;
   color: var(--ink-4);
 }
-.reel-track.is-dragging { cursor: grabbing; user-select: none; }
+/* Dragging the strip must scroll it, not select the card's text or start the
+   browser's native image drag — the latter fires pointercancel and kills the
+   gesture on the spot. */
+.reel-track { user-select: none; -webkit-user-select: none; }
+.reel-track img { -webkit-user-drag: none; }
+.reel-track.is-dragging { cursor: grabbing; }
 .reel-track.is-dragging .reel-card { transform: none; }
 .reel-track {
   display: flex;
