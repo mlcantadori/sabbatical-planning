@@ -153,22 +153,30 @@
 
       // Esri World Imagery (satellite) + reference overlay for city names,
       // boundaries and water labels. Note the {z}/{y}/{x} order.
+      //
       // detectRetina: Esri ships only 256px tiles, so on a 2x display every
       // tile was being upscaled and the map read soft. Leaflet's retina
       // mode requests the next zoom level and draws it at half size — the
       // only way to get a genuinely sharp basemap out of this service.
+      //
+      // keepBuffer 4, not Leaflet's 2: a 600px flick at a chapter's zoom is
+      // ~2.3 tiles, so with a 2-tile ring the leading edge kept showing the
+      // page background through tiles that had not arrived yet. The wider
+      // ring is prefetched per view (~40% more tiles, cached after the first
+      // look) and covers the flick.
+      const TILE = { maxZoom: 19, attribution: '', detectRetina: true, keepBuffer: 4 };
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', detectRetina: true,
+        ...TILE,
       }).addTo(map);
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', opacity: 0.78, zIndex: 3, detectRetina: true,
+        ...TILE, opacity: 0.78, zIndex: 3,
       }).addTo(map);
       // Roads overlay only at country level and deeper (z7+) — at world
       // view it's visual noise. Toggled on zoomend (fitBounds/setView
       // fire it too, so programmatic fits stay in sync).
       const transport = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', opacity: 0.5, zIndex: 2,
-        className: 'transport-tiles', detectRetina: true,
+        ...TILE, opacity: 0.5, zIndex: 2,
+        className: 'transport-tiles',
       });
       const TRANSPORT_MIN_ZOOM = 7;
       const syncTransport = () => {
