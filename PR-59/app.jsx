@@ -250,8 +250,8 @@
       <div className={`atlas-title ${isLong ? 'is-long' : ''}`}>
         <div className="atlas-kicker">
           <span>Chapter {num} <i>/ {String(stats.chapters).padStart(2, '0')}</i></span>
-          <span>{region.name}</span>
-          <span>{active.flag} {active.country}</span>
+          <span className="atlas-kicker-geo">{region.name}</span>
+          <span className="atlas-kicker-geo">{active.flag} {active.country}</span>
         </div>
         <button className="atlas-name" onClick={onOpen} title={`Open ${active.title}`}>
           <span>{active.title}</span>
@@ -395,6 +395,27 @@
       } catch { return false; }
     });
     const isMobile = useIsMobile();
+    const stageRef = React.useRef(null);
+
+    // Trackpad pinch arrives as ctrl+wheel, and both OrbitControls and
+    // Leaflet listen on the map surface only — so a pinch that started over
+    // the chapter title or the map controls did nothing. Re-dispatch those
+    // gestures at the surface so the whole stage is pinchable.
+    React.useEffect(() => {
+      const stage = stageRef.current;
+      if (!stage) return undefined;
+      const onWheel = (e) => {
+        if (!e.ctrlKey) return;             // pinch only; plain wheel is not ours
+        const surface = stage.querySelector('.leaflet-container') || stage.querySelector('canvas');
+        if (!surface || surface.contains(e.target)) return;   // already on the map
+        surface.dispatchEvent(new WheelEvent('wheel', {
+          deltaX: e.deltaX, deltaY: e.deltaY, deltaMode: e.deltaMode,
+          ctrlKey: true, bubbles: true, cancelable: true,
+        }));
+      };
+      stage.addEventListener('wheel', onWheel, { passive: true });
+      return () => stage.removeEventListener('wheel', onWheel);
+    }, [mapMode, view, cover]);
 
     const today = todayISO();
     const current = currentChapter(chapters, today);
@@ -554,7 +575,7 @@
 
         <main className="app-body">
           {view === 'atlas' && (
-            <div className="atlas">
+            <div className="atlas" ref={stageRef}>
               <div className="atlas-canvas">
                 <window.ErrorBoundary key={`${mapMode}:${mapRetry}`} fallback={mapFallback}>
                   {mapMode === 'globe' ? (

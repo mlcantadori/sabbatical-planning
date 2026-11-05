@@ -31,9 +31,15 @@
   // 16k is 2607 texels per radian of longitude. At camera distance d the
   // surface under the camera sits (d-1) radii away, so it renders at
   // f/(d-1) px per radian — with a 1740px-tall retina canvas that is 1:1 at
-  // d = 2.0, and 1.72 is the last step before the image reads soft (≈1.3x
-  // upscale). Closer than that needs tiled imagery, not a bigger file.
-  const MIN_DIST = 1.72;
+  // d = 2.0. Each tier stops where its own texel budget runs out, so going
+  // closer costs the same ~2x upscale at the floor either way: the 16k buys
+  // desktop the extra 20% instead of buying sharpness at 1.72.
+  const MIN_DIST = {
+    big: 1.45,
+    mid: 1.72,
+    small: 2.0
+  };
+  const DEFAULT_MIN_DIST = 1.72;
 
   // [name, lng, lat] — major countries + trip-relevant places
   const COUNTRIES = [['United States', -100, 40], ['Canada', -105, 56], ['Mexico', -102, 23], ['Cuba', -79, 22], ['Colombia', -73, 4], ['Brazil', -52, -10], ['Peru', -76, -10], ['Argentina', -64, -35], ['Chile', -71, -33], ['Greenland', -42, 72], ['Iceland', -18, 65], ['United Kingdom', -2, 54], ['Ireland', -8, 53], ['France', 2, 47], ['Spain', -4, 40], ['Portugal', -8, 39.5], ['Italy', 12.5, 42.5], ['Germany', 10, 51], ['Poland', 20, 52], ['Norway', 8, 62], ['Sweden', 15, 62], ['Finland', 26, 64], ['Ukraine', 32, 49], ['Russia', 95, 62], ['Greece', 24, 39], ['Turkey', 35, 39], ['Georgia', 44, 42], ['Syria', 39, 35], ['Iraq', 44, 33], ['Saudi Arabia', 45, 24], ['Yemen', 48, 16], ['Oman', 58, 21], ['Iran', 54, 32], ['Afghanistan', 66, 34], ['Pakistan', 70, 30], ['Azerbaijan', 47.7, 40.3], ['Kazakhstan', 68, 48], ['Uzbekistan', 64, 41], ['India', 79, 22], ['Nepal', 84, 28], ['Sri Lanka', 81, 8], ['Bangladesh', 90, 24], ['Myanmar', 96, 21], ['Thailand', 101, 16], ['Laos', 104, 18], ['Vietnam', 108, 14], ['Cambodia', 105, 13], ['Malaysia', 102, 4], ['Singapore', 104, 1.35], ['Indonesia', 115, -2], ['Philippines', 122, 13], ['Taiwan', 121, 24], ['Hong Kong', 114, 22.3], ['China', 104, 35], ['Mongolia', 105, 46], ['Japan', 139, 37], ['South Korea', 128, 36], ['Egypt', 30, 27], ['Libya', 18, 28], ['Morocco', -6, 32], ['Algeria', 3, 28], ['Tunisia', 10, 34], ['Sudan', 30, 13], ['Chad', 19, 15], ['Niger', 12, 17], ['Mali', -2, 17], ['Nigeria', 8, 10], ['Ethiopia', 40, 9], ['Kenya', 38, 1], ['Somalia', 46, 6], ['DR Congo', 23, -3], ['Tanzania', 35, -6], ['Angola', 18, -12], ['Namibia', 17, -22], ['South Africa', 25, -29], ['Mozambique', 36, -18], ['Madagascar', 47, -20], ['Australia', 134, -25], ['New Zealand', 172, -42], ['Papua New Guinea', 141, -6]];
@@ -108,7 +114,9 @@
       const maxTex = renderer.capabilities.maxTextureSize || 4096;
       const dpr = window.devicePixelRatio || 1;
       const wide = window.innerWidth >= 1200;
-      const texUrl = dpr >= 1.5 && wide && maxTex >= 16384 ? EARTH_TEX.big : dpr >= 1.5 && maxTex >= 8192 ? EARTH_TEX.mid : EARTH_TEX.small;
+      const tier = dpr >= 1.5 && wide && maxTex >= 16384 ? 'big' : dpr >= 1.5 && maxTex >= 8192 ? 'mid' : 'small';
+      const texUrl = EARTH_TEX[tier];
+      const minDist = MIN_DIST[tier] || DEFAULT_MIN_DIST;
       // Same-origin vendored asset: clear three.js's default CORS mode, or
       // the globe goes black when index.html is opened straight from disk
       // (undefined leaves the attribute off; an empty string still means
@@ -163,7 +171,7 @@
       controls.enableDamping = true;
       controls.dampingFactor = 0.06;
       controls.enablePan = false;
-      controls.minDistance = MIN_DIST;
+      controls.minDistance = minDist;
       controls.maxDistance = 9;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.55;
@@ -200,6 +208,7 @@
         earth,
         arcs,
         stars,
+        minDist,
         overlay,
         popupEl,
         w: 0,
@@ -291,7 +300,8 @@
       if (!s) return;
       s.spinOff = true;
       s.controls.autoRotate = false;
-      const len = Math.max(MIN_DIST, Math.min(9, s.camera.position.length() * f));
+      const md = s.minDist || DEFAULT_MIN_DIST;
+      const len = Math.max(md, Math.min(9, s.camera.position.length() * f));
       s.camera.position.setLength(len);
     }
     function size() {
@@ -586,7 +596,8 @@
       if (focused && focused.coords) {
         // Sits just outside OrbitControls' minDistance; any closer and the
         // first wheel tick would snap the camera back out.
-        const camPos = llv(focused.coords[0], focused.coords[1], MIN_DIST + 0.18);
+        const md = st.current && st.current.minDist || DEFAULT_MIN_DIST;
+        const camPos = llv(focused.coords[0], focused.coords[1], md + 0.14);
         flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
       } else if (ch.anchor) {
         const camPos = llv(ch.anchor[0], ch.anchor[1], 2.35);

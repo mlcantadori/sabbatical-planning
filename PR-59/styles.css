@@ -519,7 +519,8 @@ button:focus-visible, [role="button"]:focus-visible {
   max-width: min(720px, 58vw);
   pointer-events: none;
 }
-.atlas-title > * { pointer-events: auto; }
+.atlas-title > * { pointer-events: none; }
+.atlas-title .atlas-name { pointer-events: auto; }
 .atlas-kicker {
   display: flex;
   align-items: center;
@@ -545,7 +546,7 @@ button:focus-visible, [role="button"]:focus-visible {
   gap: 14px;
   border: 0;
   background: transparent;
-  padding: 0;
+  padding: 0 0 .16em;
   margin: 10px 0 4px;
   font-family: var(--f-disp);
   font-size: clamp(58px, 8.4vw, 132px);
@@ -579,6 +580,9 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ink-2);
   text-transform: uppercase;
   margin-top: 6px;
+  /* Above the display title: its descenders hang into this row. */
+  position: relative;
+  z-index: 1;
 }
 .atlas-weather {
   display: inline-flex;
@@ -2547,6 +2551,12 @@ button:focus-visible, [role="button"]:focus-visible {
   .bar-row { grid-template-columns: 200px 1fr 86px 86px; }
 }
 
+/* Desktop: the kicker is the chapter index only. Region and country were
+   three labels competing with the display title for the same corner. */
+@media (min-width: 881px) {
+  .atlas-kicker-geo { display: none; }
+}
+
 @media (max-width: 1080px) {
   .topbar { gap: 12px; padding: 0 18px; }
   .topnav { margin-left: 0; }
@@ -2585,10 +2595,11 @@ button:focus-visible, [role="button"]:focus-visible {
 
   .atlas-tools {
     top: auto;
-    bottom: 196px;
-    left: 12px;
-    right: 12px;
-    justify-content: flex-start;
+    bottom: 176px;
+    left: 0;
+    right: 0;
+    padding: 0 12px;
+    justify-content: center;
     gap: 6px;
   }
   .tool-seg { padding: 2px; }

@@ -345,7 +345,11 @@
       className: `atlas-title ${isLong ? 'is-long' : ''}`
     }, /*#__PURE__*/React.createElement("div", {
       className: "atlas-kicker"
-    }, /*#__PURE__*/React.createElement("span", null, "Chapter ", num, " ", /*#__PURE__*/React.createElement("i", null, "/ ", String(stats.chapters).padStart(2, '0'))), /*#__PURE__*/React.createElement("span", null, region.name), /*#__PURE__*/React.createElement("span", null, active.flag, " ", active.country)), /*#__PURE__*/React.createElement("button", {
+    }, /*#__PURE__*/React.createElement("span", null, "Chapter ", num, " ", /*#__PURE__*/React.createElement("i", null, "/ ", String(stats.chapters).padStart(2, '0'))), /*#__PURE__*/React.createElement("span", {
+      className: "atlas-kicker-geo"
+    }, region.name), /*#__PURE__*/React.createElement("span", {
+      className: "atlas-kicker-geo"
+    }, active.flag, " ", active.country)), /*#__PURE__*/React.createElement("button", {
       className: "atlas-name",
       onClick: onOpen,
       title: `Open ${active.title}`
@@ -578,6 +582,33 @@
       }
     });
     const isMobile = useIsMobile();
+    const stageRef = React.useRef(null);
+
+    // Trackpad pinch arrives as ctrl+wheel, and both OrbitControls and
+    // Leaflet listen on the map surface only — so a pinch that started over
+    // the chapter title or the map controls did nothing. Re-dispatch those
+    // gestures at the surface so the whole stage is pinchable.
+    React.useEffect(() => {
+      const stage = stageRef.current;
+      if (!stage) return undefined;
+      const onWheel = e => {
+        if (!e.ctrlKey) return; // pinch only; plain wheel is not ours
+        const surface = stage.querySelector('.leaflet-container') || stage.querySelector('canvas');
+        if (!surface || surface.contains(e.target)) return; // already on the map
+        surface.dispatchEvent(new WheelEvent('wheel', {
+          deltaX: e.deltaX,
+          deltaY: e.deltaY,
+          deltaMode: e.deltaMode,
+          ctrlKey: true,
+          bubbles: true,
+          cancelable: true
+        }));
+      };
+      stage.addEventListener('wheel', onWheel, {
+        passive: true
+      });
+      return () => stage.removeEventListener('wheel', onWheel);
+    }, [mapMode, view, cover]);
     const today = todayISO();
     const current = currentChapter(chapters, today);
     const here = current ? currentCity(chapters, today) : null;
@@ -743,7 +774,8 @@
     }), /*#__PURE__*/React.createElement("main", {
       className: "app-body"
     }, view === 'atlas' && /*#__PURE__*/React.createElement("div", {
-      className: "atlas"
+      className: "atlas",
+      ref: stageRef
     }, /*#__PURE__*/React.createElement("div", {
       className: "atlas-canvas"
     }, /*#__PURE__*/React.createElement(window.ErrorBoundary, {
