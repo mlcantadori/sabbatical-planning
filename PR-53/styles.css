@@ -1570,11 +1570,10 @@ button {
 @media (max-width: 1180px) {
   .app-main { grid-template-columns: 240px 1fr 380px; }
   .app-main.no-detail { grid-template-columns: 240px 1fr; }
-  .app-brand-meta { display: none; }
 }
 @media (max-width: 980px) {
-  /* The bar survives down to 881px (the disabled brand meta frees the room);
-     below that it moves to the header's bottom edge. */
+  /* The bar survives down to 881px; below that it moves to the header's
+     bottom edge (see the 880 block). */
   .app-nav button { padding: 6px 10px; font-size: 9px; }
 }
 
@@ -1616,9 +1615,6 @@ button {
 
   .app-header { padding: 0 14px; gap: 10px; }
   .app-brand-mark { font-size: 18px; }
-  /* Desktop keeps the full meta line; mobile gets the day count alone, in
-     the identical mono/10px/0.16em style. */
-  .app-brand-meta { display: block; }
   .app-nav { padding: 2px; gap: 0; }
   .app-nav button { padding: 5px 8px; font-size: 9px; gap: 3px; }
 

@@ -133,9 +133,7 @@
           <div className="app-brand">
             <div className="app-brand-mark">Asia</div>
             <div className="app-brand-meta">
-              {isMobile
-                ? `Day ${today.n.toString().padStart(3,'0')} / ${store.getTotalDays()}`
-                : `Sabbatical · 2026·2027 · Two travelers · Day ${today.n.toString().padStart(3,'0')} / ${store.getTotalDays()}`}
+              Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}
             </div>
           </div>
 

@@ -156,7 +156,7 @@
       className: "app-brand-mark"
     }, "Asia"), /*#__PURE__*/React.createElement("div", {
       className: "app-brand-meta"
-    }, isMobile ? `Day ${today.n.toString().padStart(3, '0')} / ${store.getTotalDays()}` : `Sabbatical · 2026·2027 · Two travelers · Day ${today.n.toString().padStart(3, '0')} / ${store.getTotalDays()}`)), /*#__PURE__*/React.createElement("div", {
+    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
       className: "app-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
     }, /*#__PURE__*/React.createElement("div", {
