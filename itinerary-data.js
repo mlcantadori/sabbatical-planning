@@ -321,7 +321,7 @@ window.TRIP = (function () {
       intro: 'Fifteen days in peak Andaman dry season: step off the 90-minute Langkawi ferry onto Koh Lipe\'s turquoise beaches, hop north by speedboat to Ko Lanta for a quiet Christmas and eight unhurried nights, then move to Bangkok for the three peakest days of the Thai season — a city that absorbs the holiday instead of buckling under it, and in its best weather of the year. Bangkok earns its place here on logistics and comfort, not novelty.',
       tldr: 'Koh Lipe · Ko Lanta · Bangkok',
       weather: { hi: 31, lo: 23, label: 'Andaman peak dry season, 31°/23°', emoji: '🏝️', rainyDays: 2 },
-      photos: ['koh lanta beach'],
+      photos: ['koh lipe tropical beach'],
       places: [
         { name: 'Koh Lipe', photo: 'koh lipe beach', days: 4, query: 'Sunrise Beach, Koh Lipe, Thailand',
           highlights: ['Dec 14–18: arrive by 90-min ferry from Langkawi — stamp into Thailand right on the sand','Ahead of the Christmas peak: the island is near its calmest of the high season','Sunrise Beach & Pattaya Beach — the clearest turquoise water in Thailand','One longtail snorkel day around Koh Adang, Koh Rawi and Jabang soft-coral pinnacles','Dec 18: speedboat north up the Andaman chain to Ko Lanta (~3h)'] },
@@ -348,7 +348,7 @@ window.TRIP = (function () {
           highlights: ['Jan 2–6: Taiwan\'s food and temple capital, after the domestic New Year crowds have gone home','Guohua Street + Shennong Street lantern lanes; beef soup for breakfast','Chihkan Tower (Fort Provintia), Confucius Temple, Grand Matsu Temple','Anping old fort + treehouse + Sicao green tunnel mangrove boat','The Penang replacement: same slow-food-city rhythm, warmer and drier','Jan 6: train to Chiayi, then bus up to Alishan (~2.5h)'] },
         { name: 'Alishan', photo: 'alishan sea of clouds', days: 2, query: 'Alishan National Forest Recreation Area, Taiwan',
           highlights: ['Jan 6–8: giant red cypress forest at 2,200m — January is the dry-season sea-of-clouds window','Sunrise train to Chushan above the clouds and Jade Mountain','High-mountain oolong tasting; forest trails in crisp 6–10°C air','Book the forest railway and lodge months ahead — this is peak cloud season','Jan 8: descend to Chiayi → HSR to Taipei (~1h40)'] },
-        { name: 'Taipei', photo: 'taipei 101 night', days: 5, query: 'Xinyi District, Taipei',
+        { name: 'Taipei', photo: 'taipei taiyuan road', days: 5, query: 'Xinyi District, Taipei',
           highlights: ['Jan 8–13: the departure city, not the NYE city — Taipei 101 is a 20-minute look, not a six-hour crowd','National Palace Museum (closed Mon), Chiang Kai-shek Memorial, Dihua Street','Beitou hot springs on a drizzly afternoon — the rain is finally an asset','Jiufen at weekday dusk (arrive 15:00, stay past 18:30 for the lanterns)','Raohe + Ningxia night markets, Yongkang Street beef noodles','Jan 13: fly Taipei → Osaka — Japan begins'] },
       ],
       decisions: ['NYE in Kaohsiung, not Taipei: ~200–400k with space to stand versus ~500k–1.2M in Xinyi with station closures — and 20°C dry instead of 15°C drizzle', 'South-to-north order (Kaohsiung → Tainan → Alishan → Taipei) puts the warm, sunny half in the first week and leaves Taipei as the departure hub', 'Tainan positioned Jan 2–6, after Taiwan\'s Jan 1–3 domestic New Year travel surge', 'Two clear days in Kaohsiung before NYE, so a flight delay cannot cost you the countdown'],
@@ -390,7 +390,7 @@ window.TRIP = (function () {
       intro: 'Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). Ramadan-quiet Java — Borobudur without crowds, night markets after dark — then a Nyepi silent day in Ubud and a domestic hop to Sorong Mar 10. Board Mar 11 with zero international stress.',
       tldr: 'Jakarta · Yogyakarta · Ubud · Raja Ampat liveaboard',
       weather: { hi: 32, lo: 25, label: 'Wet-tail Java/Bali → Raja mid-season, 32°/25°', emoji: '🐠', rainyDays: 6 },
-      photos: ['raja ampat aerial wayag'],
+      photos: ['manta ray indonesia'],
       places: [
         { name: 'Jakarta', photo: 'jakarta monas', days: 2, query: 'Jakarta, Indonesia',
           highlights: ['Feb 24: land Jakarta from Tokyo direct — 30-day free entry starts (exit Mar 21)','Monas + Kota Tua old town, Ramadan-evening food markets','Executive train or 1h flight onward to Yogyakarta'] },

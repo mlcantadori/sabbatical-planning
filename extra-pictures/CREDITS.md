@@ -2,6 +2,26 @@
 
 Trip photos are vendored locally so the site has no hotlinked images.
 
+## Added Nov 2026 — Indonesia, Thailand, Ko Lanta, Taipei
+
+| File | Author | License |
+|---|---|---|
+| `indonesia-a/manta-ray-indonesia.jpg` | Daniel Sasse | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `thailand/koh-lipe-tropical-beach.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `thailand/koh-lanta-thailand-8.jpg` | Dronepicr | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) |
+| `taiwan/taipei-taiyuan-road.jpg` | Quintin Soloviev | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+
+All sourced from Wikimedia Commons and downscaled locally: the manta
+(`File:Giant oceanic manta ray.jpg`, 6000px) and the Koh Lipe beach
+(`File:Koh Lipe (island), Tropical beach 2, Thailand.jpg`, 3072px) are the new
+**chapter headers** for Indonesia (March) and Thailand (December), at 2000px
+wide. Ko Lanta's beach (`File:Ko Lanta Thailand-8.jpg`, 3567px → 1920px) is the
+**stop photo only** — the Thailand header no longer uses it. Taipei's Taiyuan
+Road (`File:Taiyuan Road in Taipei, Taiwan.jpg`, 3851px → 1920px) likewise
+replaces the stop photo only; the header stays the Elephant Mountain skyline.
+The old `koh-lanta-beach.jpg` and `taipei-101-night.jpg` credit above stands —
+the files remain in the tree, just unused by the current plan.
+
 ## Added Nov 2026 — Hong Kong (chapter header)
 
 | File | Author | License |

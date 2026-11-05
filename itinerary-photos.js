@@ -67,6 +67,7 @@ window.PHOTO_IDS = {
   'seoul skyline night':         'extra-pictures/korea/seoul-skyline-night.jpg',
   'myeongdong night market':     'extra-pictures/korea/myeongdong-night-market.jpg',
   // ── Taiwan ────────────────────────────────────────────────────────
+  'taipei taiyuan road':         'extra-pictures/taiwan/taipei-taiyuan-road.jpg',
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
   'taipei 101 elephant mountain':'extra-pictures/taiwan/taipei-101-elephant-mountain.jpg',
   'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',
@@ -86,6 +87,7 @@ window.PHOTO_IDS = {
   'jakarta monas':               'extra-pictures/indonesia-a/jakarta-monas.jpg',
   'borobudur sunrise':           'extra-pictures/indonesia-a/borobudur-sunrise.jpg',
   'bali ubud rice terrace':      'extra-pictures/indonesia-a/bali-ubud-rice-terrace.jpg',
+  'manta ray indonesia':         'extra-pictures/indonesia-a/manta-ray-indonesia.jpg',
   'manta ray cleaning station':  'extra-pictures/indonesia-a/manta-ray-cleaning-station.jpg',
   // ── Borneo ────────────────────────────────────────────────────────
   'borneo orangutan':            'extra-pictures/borneo/borneo-orangutan.jpg',
@@ -112,9 +114,10 @@ window.PHOTO_IDS = {
   'penang street art':           'extra-pictures/malaysia/penang-street-art.jpg',
   'langkawi beach':              'extra-pictures/malaysia/langkawi-cenang-beach.jpg',
   // ── Thailand ──────────────────────────────────────────────────────
+  'koh lipe tropical beach':     'extra-pictures/thailand/koh-lipe-tropical-beach.jpg',
   'koh lipe beach':              'extra-pictures/thailand/koh-lipe-beach.jpg',
   'railay krabi':                'extra-pictures/thailand/railay-krabi.jpg',
-  'koh lanta beach':             'extra-pictures/thailand/koh-lanta-beach.jpg',
+  'koh lanta beach':             'extra-pictures/thailand/koh-lanta-thailand-8.jpg',
   'bangkok wat arun':            'extra-pictures/thailand/bangkok-wat-arun.jpg',
   // ── China Spring ──────────────────────────────────────────────────
   'xian terracotta warriors':    'extra-pictures/china-spring/xian-terracotta-warriors.jpg',
