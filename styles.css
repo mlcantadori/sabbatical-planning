@@ -358,48 +358,24 @@ button:focus-visible, [role="button"]:focus-visible {
 .spine-tick:hover { opacity: 1; height: 11px; }
 .spine-tick.is-future { opacity: .3; }
 .spine-tick.is-now {
-  height: 14px;
   opacity: 1;
   background: var(--ink);
   box-shadow: 0 0 10px rgba(255,255,255,.55);
 }
+/* Today's playhead. One 2px bar, deliberately thicker than the 1px hairline it
+   replaced: a subpixel-positioned 1px line renders as two faint columns. No
+   dot and no extra tall tick, so nothing crosses it. */
 .spine-now {
   position: absolute;
-  /* Straddle the bar itself: centred on the tick height, not on the track. */
   top: calc(100% - var(--tick-h) / 2);
-  height: calc(var(--tick-h) * 2.5);
-  width: 1px;
-  background: rgba(243,236,221,.55);
-  pointer-events: none;
-  transform: translate(-.5px, -50%);
-}
-.spine-now i {
-  position: absolute;
-  top: -3px; left: 50%;
-  width: 5px; height: 5px;
-  margin-left: -2.5px;
-  border-radius: 50%;
+  height: calc(var(--tick-h) * 1.8);
+  width: 2px;
+  border-radius: 1px;
   background: var(--ink);
-  box-shadow: 0 0 8px rgba(255,255,255,.7);
-}
-.spine-now b {
-  display: none;
-}
-
-/* The day you picked. "Today" keeps its own white marker, so clicking a date
-   adds a reference instead of overwriting the one that actually matters.
-   Same height as the today line, no dot, both centred on the bar. */
-.spine-cursor {
-  position: absolute;
-  top: calc(100% - var(--tick-h) / 2);
-  height: calc(var(--tick-h) * 2.5);
-  width: 1px;
-  background: var(--gold);
+  box-shadow: 0 0 9px rgba(255,255,255,.45);
   pointer-events: none;
-  transform: translate(-.5px, -50%);
-  box-shadow: 0 0 8px rgba(239,197,94,.45);
+  transform: translate(-50%, -50%);
 }
-.spine-tick.is-focused { opacity: 1; filter: saturate(1.2) brightness(1.2); }
 
 /* Hover read-out: the date and the city the plan has you in that day. It sits
    below the bar so it never covers the header. */
@@ -2569,9 +2545,8 @@ button:focus-visible, [role="button"]:focus-visible {
   .spine-months { display: none; }
   .spine-track { height: 22px; padding-top: 5px; --tick-h: 5px; }
   .spine-tick { height: 5px; }
-  .spine-tick.is-now { height: 13px; }
-  /* Shorter here so the markers stay inside the 24px spine. */
-  .spine-now, .spine-cursor { height: 9px; }
+  .spine-tick.is-now { height: 5px; }
+  .spine-now { height: 9px; }
 
   .atlas-title { top: 16px; left: 14px; right: 14px; max-width: none; }
   .atlas-kicker { gap: 7px; font-size: 7.5px; }
