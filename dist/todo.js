@@ -163,7 +163,7 @@
       className: "page-head"
     }, /*#__PURE__*/React.createElement("div", {
       className: "page-eyebrow"
-    }, /*#__PURE__*/React.createElement("span", null, "04"), " Field kit"), /*#__PURE__*/React.createElement("h1", null, "The things that", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "must be booked.")), /*#__PURE__*/React.createElement("p", null, "Advance bookings only \u2014 transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.")), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("span", null, "04"), " Tasks"), /*#__PURE__*/React.createElement("h1", null, "The things that", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "must be booked.")), /*#__PURE__*/React.createElement("p", null, "Advance bookings only \u2014 transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.")), /*#__PURE__*/React.createElement("div", {
       className: "kit-hero"
     }, /*#__PURE__*/React.createElement("div", {
       className: "kit-ring",
@@ -257,18 +257,22 @@
       }, /*#__PURE__*/React.createElement("span", {
         className: "kit-caret"
       }, openState ? '−' : '+'), /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-label"
+      }, /*#__PURE__*/React.createElement("span", {
         className: "kit-group-title"
       }, title), /*#__PURE__*/React.createElement("span", {
         className: "kit-group-dates"
       }, sub), past && /*#__PURE__*/React.createElement("span", {
         className: "kit-group-past"
-      }, "ended"), /*#__PURE__*/React.createElement("span", {
+      }, "ended")), /*#__PURE__*/React.createElement("span", {
         className: "kit-group-bar"
       }, /*#__PURE__*/React.createElement("i", {
         style: {
           width: `${g.items.length ? gDone / g.items.length * 100 : 0}%`
         }
       })), /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-pct"
+      }, g.items.length ? Math.round(gDone / g.items.length * 100) : 0, "%"), /*#__PURE__*/React.createElement("span", {
         className: `kit-group-count${openN === 0 ? ' is-done' : ''}`
       }, openN === 0 ? 'done' : `${openN} open`)), openState && /*#__PURE__*/React.createElement("div", {
         className: "kit-list"

@@ -37,7 +37,7 @@
     return pts;
   }
 
-  function MapView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey, placeZoom }) {
+  function MapView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey, placeZoom, onBackgroundClick }) {
     const store = window.useStore();
     const chapters = store.getChapters();
     const ROUTE_CHAPTERS = chapters.filter((c) => c.kind !== 'transit' && c.anchor);
@@ -136,18 +136,22 @@
 
       // Esri World Imagery (satellite) + reference overlay for city names,
       // boundaries and water labels. Note the {z}/{y}/{x} order.
+      // detectRetina: Esri ships only 256px tiles, so on a 2x display every
+      // tile was being upscaled and the map read soft. Leaflet's retina
+      // mode requests the next zoom level and draws it at half size — the
+      // only way to get a genuinely sharp basemap out of this service.
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '',
+        maxZoom: 19, attribution: '', detectRetina: true,
       }).addTo(map);
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', opacity: 0.7, zIndex: 3,
+        maxZoom: 19, attribution: '', opacity: 0.78, zIndex: 3, detectRetina: true,
       }).addTo(map);
       // Roads overlay only at country level and deeper (z7+) — at world
       // view it's visual noise. Toggled on zoomend (fitBounds/setView
       // fire it too, so programmatic fits stay in sync).
       const transport = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19, attribution: '', opacity: 0.5, zIndex: 2,
-        className: 'transport-tiles',
+        className: 'transport-tiles', detectRetina: true,
       });
       const TRANSPORT_MIN_ZOOM = 7;
       const syncTransport = () => {
@@ -156,11 +160,12 @@
         if (show && !has) transport.addTo(map);
         else if (!show && has) map.removeLayer(transport);
       };
+      // Leaflet fires 'click' only for the surface itself — a marker's click
+      // does not bubble to it — and suppresses it after a drag, which is
+      // exactly the "background click" we want to forward.
+      map.on('click', () => { if (onBackgroundClick) onBackgroundClick(); });
       map.on('zoomend', syncTransport);
       syncTransport();
-      L.control.zoom({ position: 'bottomright' }).addTo(map);
-      L.control.attribution({ position: 'bottomleft', prefix: false })
-        .addAttribution('Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community').addTo(map);
 
       const onResize = () => {
         if (mapRef.current) mapRef.current.invalidateSize();
@@ -270,7 +275,7 @@
       const L = window.L;
 
       // Hide whole-route dots of the selected chapter (re-rendered below
-      // with popups) to avoid duplicates; restore everything on deselect.
+      // with their own markers) to avoid duplicates; restore on deselect.
       layersRef.current.chapters.forEach(({ id, marker }) => {
         if (id === selectedId) {
           if (map.hasLayer(marker)) marker.remove();
@@ -310,16 +315,6 @@
         const icon = L.divIcon({ html, className: 'map-place-wrap', iconSize: [14, 14], iconAnchor: [7, 7] });
         const m = L.marker(p.coords, { icon, riseOnHover: true, zIndexOffset: isActive ? 1000 : 0 });
         m.on('click', () => onSelectPlace && onSelectPlace(i));
-        const popupHtml = `
-          <div class="map-popup">
-            <div class="map-popup-num">${i + 1}</div>
-            <div>
-              <div class="map-popup-name">${p.name}</div>
-              <div class="map-popup-sub">${p.days} day${p.days > 1 ? 's' : ''}</div>
-              <a class="map-popup-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>
-            </div>
-          </div>`;
-        m.bindPopup(popupHtml, { closeButton: false, offset: [0, -4], className: 'map-popup-wrap' });
         m.addTo(map);
         layersRef.current.places.push(m);
       });
@@ -356,16 +351,18 @@
       setTimeout(doFit, 350);
     }, [selectedId, selectedPlaceIdx, chapters, placeZoom]);
 
-    // External "focus world" trigger
+    // External recentre trigger ("whole route"). The selection effect above
+    // frames the chosen chapter when there is one; this only takes over for
+    // the case with nothing selected, where the whole route is the answer.
     React.useEffect(() => {
-      if (focusKey === 'world' && mapRef.current) {
-        const pts = getStops().map(stopCoords).filter(Boolean);
-        mapRef.current.invalidateSize();
-        mapRef.current.fitBounds(pts, {
-          padding: [24, 24],
-          animate: false,
-        });
-      }
+      if (!focusKey || !mapRef.current || selectedIdRef.current) return;
+      const pts = getStops().map(stopCoords).filter(Boolean);
+      if (!pts.length) return;
+      mapRef.current.invalidateSize();
+      mapRef.current.fitBounds(pts, {
+        padding: [24, 24],
+        animate: false,
+      });
     }, [focusKey]);
 
     // CDN guard — render a message instead of crashing the whole app when

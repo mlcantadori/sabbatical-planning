@@ -51,7 +51,8 @@ window.PHOTO_IDS = {
   'hong kong skyline':           'extra-pictures/hk/hong-kong-skyline.jpg',
   'kowloon neon':                'extra-pictures/hk/kowloon-neon.jpg',
   // ── China E2 ──────────────────────────────────────────────────────
-  'shenzhen night skyline':      'extra-pictures/china-e2/shenzhen-night-skyline.jpg',
+  'guangzhou night skyline':     'extra-pictures/china-e2/guangzhou-night-skyline.jpg',
+  'guangzhou canton tower aerial':'extra-pictures/china-e2/guangzhou-canton-tower-day.jpg',
   'huaqiangbei':                 'extra-pictures/china-e2/huaqiangbei.jpg',
   'macau st paul':               'extra-pictures/china-e2/macau-st-paul.jpg',
   'guangzhou canton tower':      'extra-pictures/china-e2/guangzhou-canton-tower.jpg',
@@ -63,8 +64,11 @@ window.PHOTO_IDS = {
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
   'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
+  'seoul skyline night':         'extra-pictures/korea/seoul-skyline-night.jpg',
+  'myeongdong night market':     'extra-pictures/korea/myeongdong-night-market.jpg',
   // ── Taiwan ────────────────────────────────────────────────────────
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
+  'taipei 101 elephant mountain':'extra-pictures/taiwan/taipei-101-elephant-mountain.jpg',
   'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',
   'alishan sea of clouds':       'extra-pictures/taiwan/alishan-sea-of-clouds.jpg',
   'kaohsiung harbor':            'extra-pictures/taiwan/kaohsiung-harbor.jpg',

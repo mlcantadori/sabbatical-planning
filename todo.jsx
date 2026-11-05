@@ -150,7 +150,7 @@
     return (
       <div className="page-inner kit-page">
         <header className="page-head">
-          <div className="page-eyebrow"><span>04</span> Field kit</div>
+          <div className="page-eyebrow"><span>04</span> Tasks</div>
           <h1>The things that<br /><em>must be booked.</em></h1>
           <p>Advance bookings only — transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.</p>
         </header>
@@ -217,10 +217,16 @@
               <div key={g.key} className="kit-group" style={{ '--tint': tint }}>
                 <button className="kit-group-head" onClick={() => setGroup(g.key, !openState)}>
                   <span className="kit-caret">{openState ? '−' : '+'}</span>
-                  <span className="kit-group-title">{title}</span>
-                  <span className="kit-group-dates">{sub}</span>
-                  {past && <span className="kit-group-past">ended</span>}
+                  {/* One fixed-width label cell: the bar has to start at the
+                      same x on every row, so nothing before it may size to
+                      its own content. */}
+                  <span className="kit-group-label">
+                    <span className="kit-group-title">{title}</span>
+                    <span className="kit-group-dates">{sub}</span>
+                    {past && <span className="kit-group-past">ended</span>}
+                  </span>
                   <span className="kit-group-bar"><i style={{ width: `${g.items.length ? (gDone / g.items.length) * 100 : 0}%` }} /></span>
+                  <span className="kit-group-pct">{g.items.length ? Math.round((gDone / g.items.length) * 100) : 0}%</span>
                   <span className={`kit-group-count${openN === 0 ? ' is-done' : ''}`}>{openN === 0 ? 'done' : `${openN} open`}</span>
                 </button>
                 {openState && (

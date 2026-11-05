@@ -52,15 +52,22 @@ function Photo({
     background: '#11151c',
     ...style
   };
+
+  // Vendored photos have a 480px WebP twin beside them (scripts/make-reel-
+  // thumbs.py). Offering both by width lets a 240px reel slot pull 26KB
+  // instead of the 190KB original, while a full-width hero still gets the
+  // original because its sizes ask for it.
+  const thumb = (/^extra-pictures\/(.+)$/.exec(src) || [])[1];
   return /*#__PURE__*/React.createElement("div", {
     className: `photo ${className}`,
     style: wrap
   }, /*#__PURE__*/React.createElement("img", {
     src: src,
+    srcSet: thumb ? `extra-pictures/thumbs/${thumb.replace(/\.[^.]+$/, '.webp')} 480w, ${src} 1600w` : undefined,
     alt: alt || keyword,
     loading: loading,
     decoding: "async",
-    sizes: sizes,
+    sizes: thumb ? sizes || '100vw' : sizes,
     onLoad: () => setLoaded(true),
     onError: () => {
       if (src !== fallback) setSrc(fallback);
@@ -93,7 +100,7 @@ function Photo({
       color: 'rgba(244,236,220,.24)',
       textTransform: 'uppercase'
     }
-  }, "developing")), caption && /*#__PURE__*/React.createElement("div", {
+  }, "loading")), caption && /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
       bottom: 12,
@@ -198,12 +205,15 @@ function monthsBetween() {
   while (d <= end) {
     const y = d.getUTCFullYear(),
       m = d.getUTCMonth();
-    const first = new Date(Math.max(d.getTime(), Date.UTC(y, m, 1)));
-    out.push({
-      label: names[m],
-      year: y,
-      at: dayIndex(first.toISOString().slice(0, 10))
-    });
+    // A month the trip only clips — it began before the trip did — gets no
+    // label: JUN would sit ten days before JUL and the two collide.
+    if (d.getTime() === Date.UTC(y, m, 1)) {
+      out.push({
+        label: names[m],
+        year: y,
+        at: dayIndex(d.toISOString().slice(0, 10))
+      });
+    }
     d = new Date(Date.UTC(y, m + 1, 1));
   }
   return out;
@@ -459,7 +469,7 @@ const Icon = {
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }, /*#__PURE__*/React.createElement("path", {
-    d: "M15 5l-7 7 7 7"
+    d: "M15.5 5l-7 7 7 7"
   })),
   chevronRight: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
@@ -471,7 +481,7 @@ const Icon = {
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }, /*#__PURE__*/React.createElement("path", {
-    d: "M9 5l7 7-7 7"
+    d: "M8.5 5l7 7-7 7"
   })),
   compass: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",

@@ -33,6 +33,9 @@
   --spine: 44px;
   --shadow-1: 0 2px 10px rgba(0,0,0,.35), 0 20px 60px rgba(0,0,0,.35);
   --shadow-2: 0 8px 30px rgba(0,0,0,.5), 0 40px 120px rgba(0,0,0,.55);
+
+  /* Satellite basemap treatment — the single dial for map tone. */
+  --map-tile-filter: saturate(.85) brightness(.88) contrast(1.18);
 }
 
 * { box-sizing: border-box; }
@@ -194,15 +197,6 @@ button:focus-visible, [role="button"]:focus-visible {
 .topnav button:hover { color: var(--ink); background: rgba(243,236,221,.05); }
 .topnav button.is-active { color: var(--ink); background: rgba(243,236,221,.075); }
 .topnav button.is-active .topnav-index { color: var(--ember); }
-.topnav button.is-active::after {
-  content: '';
-  position: absolute;
-  left: 50%; bottom: 2px;
-  width: 4px; height: 4px;
-  margin-left: -2px;
-  border-radius: 50%;
-  background: var(--ember);
-}
 
 .topbar-right {
   margin-left: auto;
@@ -313,6 +307,10 @@ button:focus-visible, [role="button"]:focus-visible {
   flex: none;
   height: var(--spine);
   padding: 0 24px;
+  /* Month row + bar as one block, centred in the strip. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: rgba(6,9,13,.86);
   border-bottom: 1px solid var(--line-2);
   backdrop-filter: blur(14px);
@@ -477,15 +475,33 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .bottomnav > button.is-active { color: var(--ink); }
 .bottomnav > button.is-active svg { color: var(--ember); }
-.bottomnav .sync-wrap { flex: 1; display: flex; align-items: center; justify-content: center; }
+.bottomnav .sync-wrap { flex: 1; display: flex; }
+/* Same column as a view tab: icon, then label, so the two rows align across
+   the whole bar. The stale/busy dot rides on the icon instead of becoming a
+   third row that would push this label out of line. */
 .bottomnav .sync-wrap > button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   border: 0;
   background: transparent;
-  padding: 6px;
+  padding: 0;
   color: var(--ink-3);
-  font-size: 0;
+  font-family: var(--f-mono);
+  font-size: 7.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
-.bottomnav .sync-wrap > button svg { width: 17px; height: 17px; }
+.bottomnav .sync-nav-icon { position: relative; display: inline-flex; }
+.bottomnav .sync-nav-icon .sync-dot {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  margin: 0;
+}
 .bottomnav .sync-menu {
   top: auto;
   bottom: calc(100% + 10px);
@@ -497,7 +513,7 @@ button:focus-visible, [role="button"]:focus-visible {
    ════════════════════════════════════════════════════════════════════════ */
 .atlas { position: absolute; inset: 0; overflow: hidden; }
 .atlas-canvas { position: absolute; inset: 0; z-index: 0; }
-.atlas-title, .atlas-tools, .atlas-coords, .reel { transition: opacity .35s ease; }
+.atlas-title, .atlas-tools, .reel { transition: opacity .35s ease; }
 .atlas-vignette {
   position: absolute;
   inset: 0;
@@ -516,33 +532,15 @@ button:focus-visible, [role="button"]:focus-visible {
   max-width: min(720px, 58vw);
   pointer-events: none;
 }
-.atlas-title > * { pointer-events: auto; }
-.atlas-kicker {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.atlas-kicker span { display: inline-flex; align-items: center; gap: 6px; }
-.atlas-kicker span + span::before {
-  content: '';
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: var(--ink-4);
-}
-.atlas-kicker i { font-style: normal; color: var(--ink-4); }
+.atlas-title > * { pointer-events: none; }
+.atlas-title .atlas-name { pointer-events: auto; }
 .atlas-name {
   display: flex;
   align-items: flex-start;
   gap: 14px;
   border: 0;
   background: transparent;
-  padding: 0;
+  padding: 0 0 .16em;
   margin: 10px 0 4px;
   font-family: var(--f-disp);
   font-size: clamp(58px, 8.4vw, 132px);
@@ -576,6 +574,9 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ink-2);
   text-transform: uppercase;
   margin-top: 6px;
+  /* Above the display title: its descenders hang into this row. */
+  position: relative;
+  z-index: 1;
 }
 .atlas-weather {
   display: inline-flex;
@@ -657,33 +658,10 @@ button:focus-visible, [role="button"]:focus-visible {
   transition: all .18s;
 }
 .tool-btn:hover { border-color: rgba(243,236,221,.32); color: var(--ink); }
-.tool-btn.is-live {
-  border-color: rgba(255,122,69,.55);
-  color: var(--ember);
-  background: rgba(255,122,69,.1);
-}
-.atlas-coords {
-  position: absolute;
-  z-index: 20;
-  right: 30px;
-  bottom: 206px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .16em;
-  color: rgba(243,236,221,.42);
-  text-transform: uppercase;
-  pointer-events: none;
-}
-.atlas-coords i { width: 16px; height: 1px; background: rgba(243,236,221,.3); }
-
 /* With a chapter open, the atlas recedes and the spread takes the stage. */
 .app.has-detail .atlas-title,
 .app.has-detail .atlas-title > *,
-.app.has-detail .atlas-tools,
-.app.has-detail .atlas-coords {
+.app.has-detail .atlas-tools {
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s ease;
@@ -724,17 +702,13 @@ button:focus-visible, [role="button"]:focus-visible {
   text-transform: uppercase;
   color: var(--ink-4);
 }
-.reel-head-right { display: flex; gap: 4px; }
-.reel-arrow {
-  width: 26px; height: 26px;
-  display: grid; place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: transparent;
-  color: var(--ink-3);
-  transition: all .18s;
-}
-.reel-arrow:hover { color: var(--void); background: var(--ink); border-color: var(--ink); }
+/* Dragging the strip must scroll it, not select the card's text or start the
+   browser's native image drag — the latter fires pointercancel and kills the
+   gesture on the spot. */
+.reel-track { user-select: none; -webkit-user-select: none; }
+.reel-track img { -webkit-user-drag: none; }
+.reel-track.is-dragging { cursor: grabbing; }
+.reel-track.is-dragging .reel-card { transform: none; }
 .reel-track {
   display: flex;
   gap: 12px;
@@ -743,14 +717,12 @@ button:focus-visible, [role="button"]:focus-visible {
   /* Room for the hover lift (-4px) plus the 1px ring, so the top and left
      strokes are never clipped by this scroll container. */
   padding: 8px 6px 10px;
-  scroll-snap-type: x proximity;
   scrollbar-width: none;
 }
 .reel-track::-webkit-scrollbar { display: none; }
 .reel-card {
   flex: none;
   width: 202px;
-  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -849,52 +821,6 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .reel-date i { font-style: normal; opacity: .5; }
 
-/* ── Tour bar ────────────────────────────────────────────────────────── */
-.tourbar {
-  position: absolute;
-  z-index: 40;
-  top: 106px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 10px 8px 14px;
-  border: 1px solid rgba(255,122,69,.35);
-  border-radius: 999px;
-  background: rgba(9,13,19,.88);
-  backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-1);
-  font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.tourbar-live { display: inline-flex; align-items: center; gap: 5px; color: var(--ember); }
-.tourbar-live i {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--ember);
-  animation: pulse 1.4s ease infinite;
-}
-.tourbar-name { color: var(--ink); }
-.tourbar-track { width: 90px; height: 2px; background: var(--line); overflow: hidden; }
-.tourbar-track span { display: block; height: 100%; background: var(--ember); transition: width .4s ease; }
-.tourbar-count { color: var(--ink-3); }
-.tourbar button {
-  border: 0;
-  border-radius: 999px;
-  background: rgba(243,236,221,.1);
-  padding: 4px 9px;
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.tourbar button:hover { background: var(--ink); color: var(--void); }
-
 /* ════════════════════════════════════════════════════════════════════════
    MAP + GLOBE (dark canvas)
    ════════════════════════════════════════════════════════════════════════ */
@@ -904,44 +830,23 @@ button:focus-visible, [role="button"]:focus-visible {
   background: #05080d;
 }
 .map-container.is-globe { background: radial-gradient(circle at 50% 45%, #0b1520, #04070b 70%); }
+/* Globe country and pin labels are HTML over a canvas: without this, dragging
+   the planet starts a text selection and you can highlight every country name
+   in the view. Leaflet already opts out on its own container. */
+.map-container.is-globe,
+.map-container.is-globe * { user-select: none; -webkit-user-select: none; }
 .leaflet-container {
   background: #05080d;
   font-family: var(--f-sans);
   outline: none;
 }
 .leaflet-tile, .leaflet-tile-loaded { opacity: 1 !important; }
-.leaflet-tile-pane { filter: saturate(.82) brightness(.78) contrast(1.08); }
-.leaflet-control-zoom {
-  border: 1px solid var(--line) !important;
-  border-radius: 10px !important;
-  overflow: hidden;
-  margin: 16px !important;
-  margin-bottom: 194px !important;
-  box-shadow: var(--shadow-1);
-}
-.leaflet-control-zoom a {
-  background: var(--glass-2) !important;
-  color: var(--ink) !important;
-  border-bottom: 1px solid var(--line) !important;
-  font-size: 15px !important;
-  width: 31px !important;
-  height: 31px !important;
-  line-height: 31px !important;
-}
-.leaflet-control-zoom a:hover { background: var(--panel-2) !important; }
-.leaflet-control-attribution {
-  background: rgba(6,9,13,.7) !important;
-  font-family: var(--f-mono) !important;
-  font-size: 8px !important;
-  color: var(--ink-4) !important;
-  padding: 2px 8px !important;
-  margin: 12px !important;
-  margin-bottom: 196px !important;
-  border-radius: 4px !important;
-  backdrop-filter: blur(8px);
-}
-.leaflet-control-attribution a { color: var(--ink-3) !important; }
-
+/* Dark-theme treatment for satellite imagery. Brightness alone just crushed
+   the picture (hence the soft, muddy look) — most of the detail loss came
+   from contrast, not from the dimming. Contrast carries it back while the
+   0.88 brightness keeps the map from glowing against the dark UI. One dial,
+   in :root, if it needs tuning. */
+.leaflet-tile-pane { filter: var(--map-tile-filter); }
 .route-line { animation: route-ants 5s linear infinite; }
 .transport-tiles { filter: saturate(.5) brightness(1.02) contrast(.9); }
 @keyframes route-ants { to { stroke-dashoffset: -30; } }
@@ -977,58 +882,6 @@ button:focus-visible, [role="button"]:focus-visible {
   white-space: nowrap;
   pointer-events: none;
 }
-.eq-popup {
-  position: absolute;
-  transform: translate(-50%, calc(-100% - 16px));
-  background: var(--glass-2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: var(--shadow-2);
-  padding: 12px 14px;
-  z-index: 600;
-  pointer-events: auto;
-  backdrop-filter: blur(16px);
-}
-.eq-zoom {
-  position: absolute;
-  right: 16px;
-  bottom: 198px;
-  z-index: 500;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--glass-2);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadow-1);
-}
-.eq-zoom button {
-  width: 31px; height: 31px;
-  border: none;
-  background: transparent;
-  color: var(--ink);
-  font-size: 15px;
-  line-height: 1;
-  cursor: pointer;
-}
-.eq-zoom button + button { border-top: 1px solid var(--line); }
-.eq-zoom button:hover { background: rgba(243,236,221,.08); }
-.eq-attr {
-  position: absolute;
-  left: 14px;
-  bottom: 200px;
-  z-index: 500;
-  background: rgba(6,9,13,.7);
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .04em;
-  color: var(--ink-4);
-  padding: 2px 8px;
-  border-radius: 4px;
-  backdrop-filter: blur(8px);
-}
-
 /* Pins */
 .map-pin-wrap { background: transparent !important; border: none !important; pointer-events: none; }
 .map-pin {
@@ -1127,65 +980,6 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .map-place:hover .map-place-label,
 .map-place.is-active .map-place-label { opacity: 1; }
-
-.leaflet-popup-content-wrapper {
-  background: var(--glass-2) !important;
-  color: var(--ink) !important;
-  border-radius: 10px !important;
-  box-shadow: var(--shadow-2) !important;
-  border: 1px solid var(--line) !important;
-  padding: 0 !important;
-  backdrop-filter: blur(16px);
-}
-.leaflet-popup-content {
-  margin: 12px 14px !important;
-  font-family: var(--f-sans) !important;
-}
-.leaflet-popup-tip { background: var(--panel) !important; border: 1px solid var(--line) !important; }
-.map-popup {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: 10px;
-  min-width: 200px;
-}
-.map-popup-num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--ember);
-  color: #1a0d07;
-  font-family: var(--f-mono);
-  font-weight: 600;
-  font-size: 11px;
-  display: flex; align-items: center; justify-content: center;
-}
-.map-popup-name {
-  font-family: var(--f-disp);
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: -.01em;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-.map-popup-sub {
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: .12em;
-  color: var(--ink-3);
-  text-transform: uppercase;
-}
-.map-popup-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ember);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,122,69,.5);
-  padding-bottom: 1px;
-}
-.map-popup-link:hover { color: var(--ink); border-color: var(--ink); }
 
 /* Map failure fallback */
 .map-fallback {
@@ -1353,124 +1147,6 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ink-3);
 }
 
-/* ── Chapter grid ────────────────────────────────────────────────────── */
-.chapter-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px 26px;
-}
-.ch-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  text-align: left;
-  color: var(--ink);
-  transition: transform .35s cubic-bezier(.2,.7,.2,1);
-}
-.ch-card:hover { transform: translateY(-5px); }
-.ch-card-media {
-  position: relative;
-  display: block;
-  aspect-ratio: 4 / 3;
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--panel);
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  outline: 1px solid var(--line-2);
-  transition: box-shadow .3s, outline-color .3s;
-}
-.ch-card:hover .ch-card-media { box-shadow: 0 22px 55px rgba(0,0,0,.55); outline-color: var(--line); }
-.ch-card:hover .ch-card-media img { transform: scale(1.05); }
-.ch-card.is-now .ch-card-media { outline: 1px solid rgba(255,122,69,.6); box-shadow: 0 0 0 1px rgba(255,122,69,.2), 0 20px 50px rgba(255,122,69,.15); }
-.ch-card.is-selected .ch-card-media { outline: 1px solid rgba(243,236,221,.75); }
-.ch-card-shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(5,7,10,.82) 0%, rgba(5,7,10,.05) 55%, rgba(5,7,10,.2) 100%);
-  pointer-events: none;
-}
-.ch-card-num {
-  position: absolute;
-  top: 12px; left: 14px;
-  font-family: var(--f-disp);
-  font-size: 30px;
-  line-height: 1;
-  letter-spacing: -.04em;
-  color: var(--ink);
-  text-shadow: 0 2px 16px rgba(0,0,0,.65);
-}
-.ch-card-days {
-  position: absolute;
-  top: 16px; right: 14px;
-  font-family: var(--f-mono);
-  font-size: 7.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(243,236,221,.85);
-  background: rgba(5,7,10,.5);
-  border: 1px solid rgba(243,236,221,.18);
-  border-radius: 999px;
-  padding: 3px 7px;
-  backdrop-filter: blur(6px);
-}
-.ch-card-now, .ch-card-past {
-  position: absolute;
-  left: 14px; bottom: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--f-mono);
-  font-size: 7.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  padding: 4px 8px;
-}
-.ch-card-now { color: #1a0d07; background: var(--ember); font-weight: 600; }
-.ch-card-now i { width: 4px; height: 4px; border-radius: 50%; background: #1a0d07; animation: pulse 2s infinite; }
-.ch-card-past { color: var(--ink-2); background: rgba(5,7,10,.55); border: 1px solid var(--line); backdrop-filter: blur(6px); }
-.ch-card-body { display: flex; flex-direction: column; gap: 7px; padding: 0 2px; }
-.ch-card-titlerow { display: flex; align-items: baseline; gap: 8px; }
-.ch-card-title {
-  font-family: var(--f-disp);
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: -.03em;
-  line-height: 1.02;
-}
-.ch-card-flag { font-size: 16px; line-height: 1; }
-.ch-card-theme {
-  font-family: var(--f-sans);
-  font-size: 12.5px;
-  line-height: 1.55;
-  color: var(--ink-2);
-  text-wrap: pretty;
-}
-.ch-card-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.ch-card-meta i { width: 2px; height: 2px; border-radius: 50%; background: var(--ink-4); }
-.ch-card-route {
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .06em;
-  color: var(--ink-4);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /* ════════════════════════════════════════════════════════════════════════
    DETAIL PANEL — the chapter spread
    ════════════════════════════════════════════════════════════════════════ */
@@ -1527,6 +1203,8 @@ button:focus-visible, [role="button"]:focus-visible {
   background: linear-gradient(to top, rgba(9,13,19,.95) 0%, rgba(9,13,19,.1) 45%, rgba(9,13,19,.25) 100%);
   pointer-events: none;
 }
+/* A horizontal swipe is ours; vertical stays the panel's scroll. */
+.detail-hero.carousel { touch-action: pan-y; }
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -1569,18 +1247,6 @@ button:focus-visible, [role="button"]:focus-visible {
 .carousel-dot.is-active { background: var(--ink); transform: scale(1.3); }
 
 .detail-content { padding: 26px 28px 64px; }
-.detail-eyebrow {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 9px;
-  font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.detail-eyebrow i { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-4); }
 .detail-title {
   margin: 10px 0 8px;
   font-family: var(--f-disp);
@@ -1640,15 +1306,6 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ink-3);
   margin-top: 3px;
 }
-.detail-intro {
-  margin: 0 0 30px;
-  font-family: var(--f-sans);
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--ink-2);
-  text-wrap: pretty;
-}
-
 .section-head {
   display: flex;
   align-items: baseline;
@@ -1686,7 +1343,9 @@ button:focus-visible, [role="button"]:focus-visible {
   display: grid;
   grid-template-columns: 82px 16px 1fr;
   gap: 10px;
-  padding: 15px 8px 15px 0;
+  /* The row bleeds 8px into the content padding so its hover wash has room;
+     the extra 12px on the left keeps the dates off the card edge. */
+  padding: 15px 8px 15px 12px;
   border-bottom: 1px dashed var(--line-2);
   cursor: pointer;
   transition: background .16s;
@@ -1738,18 +1397,6 @@ button:focus-visible, [role="button"]:focus-visible {
   letter-spacing: -.02em;
   color: var(--ink);
 }
-.stop-map {
-  margin-left: auto;
-  width: 22px; height: 22px;
-  display: grid; place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: transparent;
-  color: var(--ink-3);
-  flex-shrink: 0;
-  transition: all .16s;
-}
-.stop-map:hover { background: var(--ink); color: var(--void); border-color: var(--ink); }
 .stop-highlights { display: flex; flex-direction: column; gap: 4px; margin-top: 7px; }
 .stop-highlight {
   position: relative;
@@ -1974,6 +1621,8 @@ button:focus-visible, [role="button"]:focus-visible {
 .donut-key li i { width: 6px; height: 6px; border-radius: 2px; flex: none; }
 .donut-key li span { flex: 1; }
 .donut-key li b { font-weight: 500; color: var(--ink-2); }
+/* The share of the total, spelled out instead of read off the ring. */
+.donut-pct { font-style: normal; font-weight: 400; margin-left: 5px; color: var(--ink-4); }
 
 .bar-list { display: flex; flex-direction: column; }
 .bar-row {
@@ -2274,7 +1923,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-group { margin-bottom: 8px; }
 .kit-group-head {
   display: grid;
-  grid-template-columns: 18px minmax(120px, auto) auto 1fr 120px 70px;
+  grid-template-columns: 18px 360px minmax(60px, 1fr) 40px 74px;
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -2288,7 +1937,17 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .kit-group-head:hover { background: rgba(243,236,221,.03); }
 .kit-caret { font-family: var(--f-mono); font-size: 14px; color: var(--ink-3); line-height: 1; }
-.kit-group-title { font-family: var(--f-disp); font-size: 22px; letter-spacing: -.02em; line-height: 1.1; }
+.kit-group-label { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.kit-group-title {
+  font-family: var(--f-disp);
+  font-size: 22px;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .kit-group-dates { font-family: var(--f-mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
 .kit-group-past {
   justify-self: start;
@@ -2303,6 +1962,15 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .kit-group-bar { height: 3px; background: rgba(243,236,221,.07); border-radius: 2px; overflow: hidden; min-width: 50px; }
 .kit-group-bar i { display: block; height: 100%; background: var(--tint, var(--ember)); }
+.kit-group-pct {
+  font-family: var(--f-mono);
+  font-size: 8px;
+  letter-spacing: .08em;
+  color: var(--ink-4);
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 .kit-group-count {
   font-family: var(--f-mono);
   font-size: 8px;
@@ -2469,16 +2137,6 @@ button:focus-visible, [role="button"]:focus-visible {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.cover-center p {
-  margin: 0;
-  font-family: var(--f-mono);
-  font-size: 10px;
-  line-height: 2;
-  letter-spacing: .06em;
-  color: var(--ink-3);
-  opacity: 0;
-  animation: rise 1s .5s ease both;
-}
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 .cover-route {
   position: absolute;
@@ -2533,8 +2191,6 @@ button:focus-visible, [role="button"]:focus-visible {
    RESPONSIVE
    ════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 1280px) {
-  .chapter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; }
-  .ch-card-title { font-size: 26px; }
   .ledger-notes { grid-template-columns: 1fr 1fr; }
   .bar-row { grid-template-columns: 200px 1fr 86px 86px; }
 }
@@ -2544,7 +2200,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .topnav { margin-left: 0; }
   .brand-sub { display: none; }
   .atlas-title { max-width: 64vw; }
-  .chapter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .money-hero { grid-template-columns: 1fr; }
   .donut-wrap { justify-content: flex-start; }
   .ledger-below { grid-template-columns: 1fr; }
@@ -2554,20 +2209,23 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 
 @media (max-width: 880px) {
-  :root { --hdr: 56px; --spine: 24px; }  .topbar { padding: 0 14px; }
+  :root { --hdr: 56px; --spine: 34px; }  .topbar { padding: 0 14px; }
   .brand-mark { width: 30px; height: 30px; }
   .brand-name { font-size: 16px; }
   .dayclock-ring { width: 30px; height: 30px; }
   .dayclock-meta { display: none; }
+  /* Months stay on mobile — an unlabelled bar was just a progress streak.
+     Smaller type, no year; the base rule centres the block. */
   .spine { padding: 0 12px; }
-  .spine-months { display: none; }
-  .spine-track { height: 22px; padding-top: 5px; --tick-h: 5px; }
+  .spine-months { display: block; height: 9px; }
+  .spine-months span { top: 0; font-size: 6px; letter-spacing: .06em; }
+  .spine-months span i { display: none; }
+  .spine-track { height: 13px; padding-top: 0; --tick-h: 5px; }
   .spine-tick { height: 5px; }
   .spine-tick.is-now { height: 5px; }
   .spine-now { height: 9px; }
 
   .atlas-title { top: 16px; left: 14px; right: 14px; max-width: none; }
-  .atlas-kicker { gap: 7px; font-size: 7.5px; }
   .atlas-name { font-size: clamp(44px, 12.5vw, 72px); margin-top: 8px; }
   .atlas-title.is-long .atlas-name { font-size: clamp(36px, 10.5vw, 58px); }
   .atlas-name svg { display: none; }
@@ -2577,10 +2235,11 @@ button:focus-visible, [role="button"]:focus-visible {
 
   .atlas-tools {
     top: auto;
-    bottom: 196px;
-    left: 12px;
-    right: 12px;
-    justify-content: flex-start;
+    bottom: 176px;
+    left: 0;
+    right: 0;
+    padding: 0 12px;
+    justify-content: center;
     gap: 6px;
   }
   .tool-seg { padding: 2px; }
@@ -2591,24 +2250,16 @@ button:focus-visible, [role="button"]:focus-visible {
     border-radius: 50%;
   }
   .tool-label { display: none; }
-  .atlas-coords { display: none; }
-  .leaflet-control-zoom, .eq-zoom { display: none !important; }
-  .leaflet-control-attribution { bottom: auto !important; top: 2px !important; left: 14px !important; margin: 0 !important; }
-  .eq-attr { bottom: auto; top: 4px; }
 
   .reel { padding: 34px 14px 10px; }
   .reel-head { margin-bottom: 7px; }
   .reel-kicker { font-size: 8px; }
   .reel-count { font-size: 7.5px; }
-  .reel-arrow { width: 24px; height: 24px; }
   .reel-card { width: 156px; gap: 5px; }
   .reel-photo { height: 82px; }
   .reel-title { font-size: 14px; }
   .reel-date { font-size: 6.5px; }
 
-  .tourbar { top: 210px; bottom: auto; font-size: 7px; gap: 7px; padding: 6px 7px 6px 10px; max-width: calc(100vw - 28px); }
-  .tourbar-track { width: 48px; }
-  .tourbar-name { max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
 
   .app-body { min-height: 0; }
   .detail-panel {
@@ -2631,9 +2282,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .page-head p { font-size: 13.5px; }
   .page-facts { gap: 24px; }
   .page-fact b { font-size: 30px; }
-  .chapter-grid { grid-template-columns: 1fr; gap: 30px; }
-  .ch-card-title { font-size: 28px; }
-  .ch-card-theme { font-size: 12px; }
 
   .binder-bar { padding: 0 16px; font-size: 7.5px; }
   .binder-crumb { display: none; }
@@ -2641,11 +2289,11 @@ button:focus-visible, [role="button"]:focus-visible {
   .money-hero { padding: 24px 20px; gap: 24px; }
   .money-big { font-size: 48px; }
   .money-sub { font-size: 8px; gap: 6px; }
-  .donut-wrap { gap: 16px; }
-  .donut { width: 150px; height: 150px; }
-  .donut-hole { width: 100px; height: 100px; }
-  .donut-hole span { font-size: 22px; }
-  .donut-key { min-width: 150px; }
+  /* Phones: the ring is a 150px circle you cannot read a slice of. The legend
+     already lists every spend, so it carries the share as a number instead. */
+  .donut-wrap { gap: 0; }
+  .donut, .donut-hole { display: none; }
+  .donut-key { min-width: 0; width: 100%; gap: 8px; }
   .donut-key li { font-size: 7px; }
   .bar-row { grid-template-columns: 1fr 78px; grid-template-areas: "ch val" "track per"; gap: 6px 10px; padding: 10px 2px; }
   .bar-ch { grid-area: ch; }
@@ -2664,8 +2312,8 @@ button:focus-visible, [role="button"]:focus-visible {
   .kit-stats b { font-size: 24px; }
   .kit-actions { grid-column: 1 / -1; }
   .kit-group-head { grid-template-columns: 16px 1fr auto; gap: 6px 8px; }
-  .kit-group-dates { grid-column: 2; }
-  .kit-group-bar { display: none; }
+  .kit-group-label { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .kit-group-bar, .kit-group-pct { display: none; }
   .kit-group-count { grid-column: 3; grid-row: 1; }
   .kit-group-past { display: none; }
   .kit-row { padding-left: 6px; grid-template-columns: 20px 1fr; }
@@ -2676,8 +2324,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .cover { padding: 24px 20px; }
   .cover-center h1 { font-size: clamp(54px, 16vw, 90px); }
   .cover-kicker { font-size: 8px; letter-spacing: .2em; }
-  .cover-center p { font-size: 8.5px; }
-  .cover-break { display: none; }
   .cover-route { left: 20px; right: 20px; bottom: 86px; }
   .cover-bottom { gap: 16px; font-size: 7.5px; padding-top: 14px; }
   .cover-enter { display: none; }

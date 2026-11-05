@@ -415,7 +415,8 @@
     };
   }
   function SyncButton({
-    compact
+    compact,
+    nav
   }) {
     const [unsynced, setUnsynced] = React.useState(unsyncedNow);
     const [label, setLabel] = React.useState(() => {
@@ -471,13 +472,25 @@
       title: staleTitle || 'Push to Google Calendar or Google Tasks',
       "aria-haspopup": "menu",
       "aria-expanded": open
+    }, nav ?
+    /*#__PURE__*/
+    /* Bottom nav: same icon-over-label shape as the view tabs, so the
+       icons line up with icons and the labels with labels. */
+    React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "sync-nav-icon"
     }, /*#__PURE__*/React.createElement(window.Icon.calendar, {
+      size: 16
+    }), (busy || staleTitle) && /*#__PURE__*/React.createElement("span", {
+      className: 'sync-dot' + (busy ? ' is-busy' : ''),
+      role: "img",
+      "aria-label": busy ? 'sync in progress' : 'unsynced changes'
+    })), /*#__PURE__*/React.createElement("span", null, "Sync")) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(window.Icon.calendar, {
       size: 12
     }), " ", !compact && label, " ", !compact && ' ▾', (busy || staleTitle) && /*#__PURE__*/React.createElement("span", {
       className: 'sync-dot' + (busy ? ' is-busy' : ''),
       role: "img",
       "aria-label": busy ? 'sync in progress' : 'unsynced changes'
-    })), open && /*#__PURE__*/React.createElement("span", {
+    }))), open && /*#__PURE__*/React.createElement("span", {
       className: "sync-backdrop",
       onClick: () => setOpen(false)
     }), open && /*#__PURE__*/React.createElement("span", {

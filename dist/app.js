@@ -1,7 +1,7 @@
 "use strict";
 
 // The Long Way East — app shell: chrome, year spine, atlas stage, chapter reel,
-// route tour, cover, and the four sections (Atlas / Chapters / Ledger / Kit).
+// cover, and the four sections (Atlas / Chapters / Budget / Tasks).
 
 (function () {
   const {
@@ -41,7 +41,7 @@
     try {
       const q = new URLSearchParams(window.location.search);
       const rawView = (q.get('view') || '').toLowerCase();
-      const view = rawView === 'chapters' ? 'chapters' : rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
+      const view = rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' || rawView === 'tasks' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
       const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe' : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
       const chId = q.get('chapter');
@@ -75,19 +75,14 @@
     index: '01',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.globe, p)
   }, {
-    id: 'chapters',
-    label: 'Chapters',
-    index: '02',
-    icon: p => /*#__PURE__*/React.createElement(window.Icon.grid, p)
-  }, {
     id: 'ledger',
-    label: 'Ledger',
-    index: '03',
+    label: 'Budget',
+    index: '02',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.wallet, p)
   }, {
     id: 'kit',
-    label: 'Kit',
-    index: '04',
+    label: 'Tasks',
+    index: '03',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.check, p)
   }];
 
@@ -143,9 +138,7 @@
       className: "cover-center"
     }, /*#__PURE__*/React.createElement("div", {
       className: "cover-kicker"
-    }, "One year \xB7 two travellers \xB7 twenty-one chapters"), /*#__PURE__*/React.createElement("h1", null, "The Long", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "Way East")), /*#__PURE__*/React.createElement("p", null, "Brasil \u2192 Canada \u2192 Greece \u2192 T\xFCrkiye \u2192 Azerbaijan \u2192 India \u2192 Nepal \u2192", /*#__PURE__*/React.createElement("br", {
-      className: "cover-break"
-    }), " China \u2192 Hong Kong \u2192 the Andaman \u2192 Taiwan \u2192 Japan \u2192 the archipelago \u2192 the long spring \u2192 Korea \u2192 home.")), /*#__PURE__*/React.createElement("div", {
+    }, "One year \xB7 two travellers \xB7 twenty-one chapters"), /*#__PURE__*/React.createElement("h1", null, "The Long", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "Way East"))), /*#__PURE__*/React.createElement("div", {
       className: "cover-route",
       "aria-hidden": "true"
     }, /*#__PURE__*/React.createElement("span", {
@@ -323,29 +316,27 @@
     selected,
     here,
     next,
-    stats,
+    nowId,
     onOpen
   }) {
-    const region = REGIONS[active.region] || {
-      name: ''
-    };
     const isLong = active.title.length > 12;
-    const num = active.kind === 'chapter' && active.num != null ? String(active.num).padStart(2, '0') : '··';
+    // "Now" selects a chapter so the camera has somewhere to go, but the
+    // title should keep the present-tense voice — today's city, the next
+    // stop — rather than switching to the "you opened this" one.
+    const isNow = !!nowId && active.id === nowId;
+    const live = !selected || isNow;
     let sub = '';
-    if (selected) {
+    if (selected && !isNow) {
       sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
     } else if (here && current) {
-      const left = next ? daysUntil(next.start) : daysUntil(current.end);
-      sub = `${here.place.name} · ${left <= 0 ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`}`;
+      sub = here.place.name;
     } else {
       sub = `${fmt(active.start)} – ${fmt(active.end)}`;
     }
     const weather = active.weather;
     return /*#__PURE__*/React.createElement("div", {
       className: `atlas-title ${isLong ? 'is-long' : ''}`
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "atlas-kicker"
-    }, /*#__PURE__*/React.createElement("span", null, "Chapter ", num, " ", /*#__PURE__*/React.createElement("i", null, "/ ", String(stats.chapters).padStart(2, '0'))), /*#__PURE__*/React.createElement("span", null, region.name), /*#__PURE__*/React.createElement("span", null, active.flag, " ", active.country)), /*#__PURE__*/React.createElement("button", {
+    }, /*#__PURE__*/React.createElement("button", {
       className: "atlas-name",
       onClick: onOpen,
       title: `Open ${active.title}`
@@ -361,7 +352,7 @@
       className: "atlas-weather"
     }, /*#__PURE__*/React.createElement(window.Icon.rain, {
       size: 12
-    }), " ", weather.rainyDays ?? 0, "d")), !selected && next && /*#__PURE__*/React.createElement("div", {
+    }), " ", weather.rainyDays ?? 0, "d")), live && next && /*#__PURE__*/React.createElement("div", {
       className: "atlas-next"
     }, /*#__PURE__*/React.createElement("span", {
       className: "atlas-next-label"
@@ -376,9 +367,7 @@
   function AtlasTools({
     mapMode,
     onMapMode,
-    onReset,
-    tour,
-    onTour
+    onReset
   }) {
     return /*#__PURE__*/React.createElement("div", {
       className: "atlas-tools"
@@ -405,22 +394,12 @@
     }, "Map"))), /*#__PURE__*/React.createElement("button", {
       className: "tool-btn",
       onClick: onReset,
-      title: "Zoom back to the whole route"
-    }, /*#__PURE__*/React.createElement(window.Icon.compass, {
+      title: "Back to where you are today"
+    }, /*#__PURE__*/React.createElement(window.Icon.pin, {
       size: 13
     }), " ", /*#__PURE__*/React.createElement("span", {
       className: "tool-label"
-    }, "Whole route")), /*#__PURE__*/React.createElement("button", {
-      className: `tool-btn ${tour ? 'is-live' : ''}`,
-      onClick: onTour,
-      title: "Fly through every chapter"
-    }, tour ? /*#__PURE__*/React.createElement(window.Icon.stop, {
-      size: 11
-    }) : /*#__PURE__*/React.createElement(window.Icon.play, {
-      size: 10
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "tool-label"
-    }, tour ? 'Stop tour' : 'Route tour')));
+    }, "Now")));
   }
 
   // ── Chapter reel ──────────────────────────────────────────────────────
@@ -443,12 +422,71 @@
         behavior: 'smooth'
       });
     }, [focusId, chapters.length]);
-    const nudge = d => {
+    // Mouse drag scrolls the strip. Touch already does it natively, so this
+    // only engages for a mouse.
+    //
+    // Capture is taken only once the pointer has actually travelled: holding
+    // it from pointerdown retargets pointerup to the track, and the browser
+    // then fires the click on the track instead of the card — which silently
+    // killed every card click. A press that never moves is a plain click and
+    // is left alone.
+    const drag = React.useRef({
+      active: false,
+      x: 0,
+      left: 0,
+      moved: 0,
+      captured: false
+    });
+    const DRAG_SLOP = 6;
+    const onDragStart = e => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
       const track = trackRef.current;
-      if (track) track.scrollBy({
-        left: d * Math.max(280, track.clientWidth * 0.7),
-        behavior: 'smooth'
-      });
+      if (!track) return;
+      drag.current = {
+        active: true,
+        x: e.clientX,
+        left: track.scrollLeft,
+        moved: 0,
+        captured: false
+      };
+    };
+    const onDragMove = e => {
+      const d = drag.current;
+      if (!d.active) return;
+      if (e.buttons === 0) {
+        onDragEnd(e);
+        return;
+      }
+      const dx = e.clientX - d.x;
+      d.moved = Math.max(d.moved, Math.abs(dx));
+      if (!d.captured && d.moved > DRAG_SLOP) {
+        const track = trackRef.current;
+        track.setPointerCapture(e.pointerId);
+        track.classList.add('is-dragging');
+        d.captured = true;
+      }
+      if (d.captured) trackRef.current.scrollLeft = d.left - dx;
+    };
+    const onDragEnd = e => {
+      const d = drag.current;
+      if (!d.active) return;
+      d.active = false;
+      const track = trackRef.current;
+      if (!track) return;
+      track.classList.remove('is-dragging');
+      if (d.captured) {
+        try {
+          track.releasePointerCapture(e.pointerId);
+        } catch {}
+        d.captured = false;
+      }
+    };
+    const onClickCapture = e => {
+      if (drag.current.moved > DRAG_SLOP) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      drag.current.moved = 0;
     };
     return /*#__PURE__*/React.createElement("div", {
       className: "reel"
@@ -460,23 +498,15 @@
       className: "reel-kicker"
     }, "The arc"), /*#__PURE__*/React.createElement("span", {
       className: "reel-count"
-    }, chapters.length, " chapters \xB7 ", totalDays, " days")), /*#__PURE__*/React.createElement("div", {
-      className: "reel-head-right"
-    }, /*#__PURE__*/React.createElement("button", {
-      className: "reel-arrow",
-      onClick: () => nudge(-1),
-      "aria-label": "Earlier chapters"
-    }, /*#__PURE__*/React.createElement(window.Icon.chevronLeft, {
-      size: 14
-    })), /*#__PURE__*/React.createElement("button", {
-      className: "reel-arrow",
-      onClick: () => nudge(1),
-      "aria-label": "Later chapters"
-    }, /*#__PURE__*/React.createElement(window.Icon.chevronRight, {
-      size: 14
-    })))), /*#__PURE__*/React.createElement("div", {
+    }, chapters.length, " chapters \xB7 ", totalDays, " days"))), /*#__PURE__*/React.createElement("div", {
       className: "reel-track",
-      ref: trackRef
+      ref: trackRef,
+      onPointerDown: onDragStart,
+      onPointerMove: onDragMove,
+      onPointerUp: onDragEnd,
+      onPointerCancel: onDragEnd,
+      onClickCapture: onClickCapture,
+      onDragStart: e => e.preventDefault()
     }, chapters.map(c => {
       const isNow = !!current && c.id === current.id;
       const isSelected = c.id === selectedId;
@@ -515,32 +545,6 @@
     })));
   }
 
-  // ── Tour bar ──────────────────────────────────────────────────────────
-  function TourBar({
-    index,
-    total,
-    chapter,
-    onStop
-  }) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "tourbar"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "tourbar-live"
-    }, /*#__PURE__*/React.createElement("i", null), " Live"), /*#__PURE__*/React.createElement("span", {
-      className: "tourbar-name"
-    }, chapter.title), /*#__PURE__*/React.createElement("span", {
-      className: "tourbar-track"
-    }, /*#__PURE__*/React.createElement("span", {
-      style: {
-        width: `${(index + 1) / total * 100}%`
-      }
-    })), /*#__PURE__*/React.createElement("span", {
-      className: "tourbar-count"
-    }, String(index + 1).padStart(2, '0'), " / ", String(total).padStart(2, '0')), /*#__PURE__*/React.createElement("button", {
-      onClick: onStop
-    }, "Stop"));
-  }
-
   // ── App ───────────────────────────────────────────────────────────────
   function App() {
     const store = window.useStore();
@@ -550,9 +554,6 @@
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusDay, setFocusDay] = React.useState(null);
-    // Whether the map should show the stop popup. Only a click on the map's own
-    // dot sets this; a spine click just recentres the camera.
-    const [placePopup, setPlacePopup] = React.useState(false);
     // How tight the 2D map frames a selected stop. A day on the spine is about
     // locating the city in its country (wide); a pin click is about the city.
     const [placeZoom, setPlaceZoom] = React.useState(null);
@@ -567,7 +568,6 @@
         return 'globe';
       }
     });
-    const [tour, setTour] = React.useState(null);
     const [cover, setCover] = React.useState(() => {
       try {
         const q = new URLSearchParams(window.location.search);
@@ -578,6 +578,33 @@
       }
     });
     const isMobile = useIsMobile();
+    const stageRef = React.useRef(null);
+
+    // Trackpad pinch arrives as ctrl+wheel, and both OrbitControls and
+    // Leaflet listen on the map surface only — so a pinch that started over
+    // the chapter title or the map controls did nothing. Re-dispatch those
+    // gestures at the surface so the whole stage is pinchable.
+    React.useEffect(() => {
+      const stage = stageRef.current;
+      if (!stage) return undefined;
+      const onWheel = e => {
+        if (!e.ctrlKey) return; // pinch only; plain wheel is not ours
+        const surface = stage.querySelector('.leaflet-container') || stage.querySelector('canvas');
+        if (!surface || surface.contains(e.target)) return; // already on the map
+        surface.dispatchEvent(new WheelEvent('wheel', {
+          deltaX: e.deltaX,
+          deltaY: e.deltaY,
+          deltaMode: e.deltaMode,
+          ctrlKey: true,
+          bubbles: true,
+          cancelable: true
+        }));
+      };
+      stage.addEventListener('wheel', onWheel, {
+        passive: true
+      });
+      return () => stage.removeEventListener('wheel', onWheel);
+    }, [mapMode, view, cover]);
     const today = todayISO();
     const current = currentChapter(chapters, today);
     const here = current ? currentCity(chapters, today) : null;
@@ -590,7 +617,8 @@
     React.useEffect(() => {
       try {
         const q = new URLSearchParams(window.location.search);
-        if (view === 'atlas') q.delete('view');else q.set('view', view);
+        // Public names in the URL, internal ids in state.
+        if (view === 'atlas') q.delete('view');else q.set('view', view === 'kit' ? 'tasks' : view === 'ledger' ? 'budget' : view);
         if (mapMode === 'globe') q.delete('map');else q.set('map', '2d');
         if (selectedId) q.set('chapter', selectedId);else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));else q.delete('place');
@@ -604,33 +632,13 @@
       } catch {}
     }, [view, mapMode, selectedId, selectedPlaceIdx, detailOpen]);
 
-    // Tour: one chapter every 5.2s, camera flying between anchors.
-    React.useEffect(() => {
-      if (tour == null) return undefined;
-      const idx = Math.min(tour, chapters.length - 1);
-      const ch = chapters[idx];
-      if (!ch) {
-        setTour(null);
-        return undefined;
-      }
-      setSelectedId(ch.id);
-      setSelectedPlaceIdx(null);
-      setFocusDay(null);
-      setPlacePopup(false);
-      setDetailOpen(false);
-      const t = setTimeout(() => {
-        setTour(cur => cur == null ? null : cur >= chapters.length - 1 ? null : cur + 1);
-      }, 5200);
-      return () => clearTimeout(t);
-    }, [tour, chapters.length]);
-
     // Escape closes the chapter panel; arrows step between chapters.
     React.useEffect(() => {
       const onKey = e => {
         const tag = (e.target && e.target.tagName || '').toLowerCase();
         if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
         if (e.key === 'Escape') {
-          if (detailOpen) setDetailOpen(false);else if (tour != null) setTour(null);
+          if (detailOpen) setDetailOpen(false);
         }
         if (detailOpen && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
           const i = chapters.findIndex(c => c.id === selectedId);
@@ -639,12 +647,11 @@
           setSelectedId(chapters[n].id);
           setSelectedPlaceIdx(null);
           setFocusDay(null);
-          setPlacePopup(false);
         }
       };
       window.addEventListener('keydown', onKey);
       return () => window.removeEventListener('keydown', onKey);
-    }, [detailOpen, selectedId, tour, chapters]);
+    }, [detailOpen, selectedId, chapters]);
     const setMapModeAndSave = m => {
       setMapMode(m);
       try {
@@ -652,63 +659,55 @@
       } catch {}
     };
     const goView = v => {
-      setTour(null);
       setDetailOpen(false);
       setView(v);
     };
     const openChapter = id => {
-      setTour(null);
       setSelectedId(id);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
-      setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
 
     // A spine click is a date, not a chapter: jump to the city the plan has
-    // you in that day, and leave the today marker where it is. The camera
-    // recentres; the Google-Maps popup stays shut unless you click the dot.
+    // you in that day, and leave the today marker where it is. The spread
+    // opens on that stop; the camera only recentres.
     const openDay = iso => {
       const ch = currentChapter(chapters, iso);
       if (!ch) return;
       const win = window.TRIP_NOW.placeWindows(ch).find(w => w.start <= iso && iso <= w.end);
-      setTour(null);
       setFocusDay(iso);
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
-      setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
+
+    // A city click is a request to read about it: open the spread and let it
+    // scroll itself to that stop. The map popup that used to appear here was
+    // a smaller answer to the same question.
     const onSelectPlace = idx => {
       setSelectedPlaceIdx(idx);
-      setPlacePopup(true);
       setPlaceZoom(12);
+      setDetailOpen(true);
       if (view !== 'atlas') setView('atlas');
     };
+
+    // "Whole route" is really "put me back where I am": today's chapter, and
+    // outside the timeline the first one before the trip or the last one
+    // after it. focusKey forces the view to re-frame even when the selection
+    // has not changed, since a no-op setState would otherwise do nothing.
+    const nowTarget = current || (chapters[0] && today < chapters[0].start ? chapters[0] : chapters[chapters.length - 1]);
     const onReset = () => {
-      setTour(null);
-      setSelectedId(null);
+      setSelectedId(nowTarget ? nowTarget.id : null);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
-      setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(false);
       setFocusKey(k => k + 1);
-    };
-    const startTour = () => {
-      if (tour != null) {
-        setTour(null);
-        return;
-      }
-      const base = current || chapters[0];
-      const i = Math.max(0, chapters.findIndex(c => c.id === (selectedId || base.id)));
-      setView('atlas');
-      setDetailOpen(false);
-      setTour(i >= chapters.length - 1 ? 0 : i);
     };
     const mapFallback = err => /*#__PURE__*/React.createElement("div", {
       className: "map-container"
@@ -743,7 +742,8 @@
     }), /*#__PURE__*/React.createElement("main", {
       className: "app-body"
     }, view === 'atlas' && /*#__PURE__*/React.createElement("div", {
-      className: "atlas"
+      className: "atlas",
+      ref: stageRef
     }, /*#__PURE__*/React.createElement("div", {
       className: "atlas-canvas"
     }, /*#__PURE__*/React.createElement(window.ErrorBoundary, {
@@ -752,17 +752,15 @@
     }, mapMode === 'globe' ? /*#__PURE__*/React.createElement(window.GlobeView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
-      showPlacePopup: placePopup,
       onSelectChapter: id => {
         setSelectedId(id);
         setSelectedPlaceIdx(null);
-        setPlacePopup(false);
         setPlaceZoom(null);
         setDetailOpen(true);
-        setTour(null);
       },
       onSelectPlace: onSelectPlace,
-      focusKey: focusKey === 0 ? null : 'world'
+      onBackgroundClick: () => setDetailOpen(false),
+      focusKey: focusKey
     }) : /*#__PURE__*/React.createElement(window.MapView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
@@ -770,13 +768,12 @@
       onSelectChapter: id => {
         setSelectedId(id);
         setSelectedPlaceIdx(null);
-        setPlacePopup(false);
         setPlaceZoom(null);
         setDetailOpen(true);
-        setTour(null);
       },
       onSelectPlace: onSelectPlace,
-      focusKey: focusKey === 0 ? null : 'world'
+      onBackgroundClick: () => setDetailOpen(false),
+      focusKey: focusKey
     })), /*#__PURE__*/React.createElement("div", {
       className: "atlas-vignette",
       "aria-hidden": "true"
@@ -786,32 +783,18 @@
       selected: !!selectedId,
       here: here,
       next: next,
-      stats: stats,
+      nowId: nowTarget ? nowTarget.id : null,
       onOpen: () => openChapter(active.id)
     }), /*#__PURE__*/React.createElement(AtlasTools, {
       mapMode: mapMode,
       onMapMode: setMapModeAndSave,
-      onReset: onReset,
-      tour: tour,
-      onTour: startTour
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "atlas-coords",
-      "aria-hidden": "true"
-    }, /*#__PURE__*/React.createElement("span", null, active.anchor ? `${Math.abs(active.anchor[0]).toFixed(2)}°${active.anchor[0] >= 0 ? 'N' : 'S'}` : ''), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, active.anchor ? `${Math.abs(active.anchor[1]).toFixed(2)}°${active.anchor[1] >= 0 ? 'E' : 'W'}` : '')), tour != null && /*#__PURE__*/React.createElement(TourBar, {
-      index: tour,
-      total: chapters.length,
-      chapter: chapters[tour],
-      onStop: () => setTour(null)
+      onReset: onReset
     }), /*#__PURE__*/React.createElement(ChapterReel, {
       chapters: chapters,
       current: current,
       selectedId: selectedId,
       onOpen: openChapter
-    })), view === 'chapters' && /*#__PURE__*/React.createElement(window.ChaptersView, {
-      current: current,
-      selectedId: selectedId,
-      onOpen: openChapter
-    }), (view === 'ledger' || view === 'kit') && /*#__PURE__*/React.createElement(window.Binder, {
+    })), (view === 'ledger' || view === 'kit') && /*#__PURE__*/React.createElement(window.Binder, {
       view: view,
       onClose: () => goView('atlas'),
       onOpenChapter: openChapter
@@ -825,7 +808,8 @@
     }, v.icon({
       size: 16
     }), /*#__PURE__*/React.createElement("span", null, v.label))), /*#__PURE__*/React.createElement(window.SyncButton, {
-      compact: true
+      compact: true,
+      nav: true
     })), showDetail && /*#__PURE__*/React.createElement(window.DetailPanel, {
       chapterId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,

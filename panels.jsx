@@ -2,7 +2,7 @@
 // and the ledger + field kit binder. Read-only.
 
 (function () {
-  const { totalDays, REGIONS, helpers, budget } = window.TRIP;
+  const { totalDays, helpers, budget } = window.TRIP;
   const { fmt, dayRange, dayCounter, contrastText } = helpers;
   const { placeWindows } = window.TRIP_NOW;
 
@@ -19,108 +19,60 @@
   // ══════════════════════════════════════════════════════════════════════
   // CHAPTERS — the editorial index of the whole year.
   // ══════════════════════════════════════════════════════════════════════
-  function ChapterCard({ ch, isNow, isPast, isSelected, index, onOpen }) {
-    const tint = window.chapterTint(ch);
-    return (
-      <button
-        className={`ch-card ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : ''} ${isSelected ? 'is-selected' : ''}`}
-        onClick={() => onOpen(ch.id)}
-        style={{ '--tint': tint }}
-        aria-label={`Open chapter ${ch.num}: ${ch.title}`}>
-        <span className="ch-card-media">
-          <window.Photo keyword={ch.photos && ch.photos[0]} alt={ch.title} ratio="4/3" sizes="(max-width: 880px) 90vw, 33vw" />
-          <span className="ch-card-shade" />
-          <span className="ch-card-num">{String(ch.num || index + 1).padStart(2, '0')}</span>
-          <span className="ch-card-days">{ch.days} nights</span>
-          {isNow && <span className="ch-card-now"><i /> You are here</span>}
-          {isPast && !isNow && <span className="ch-card-past">walked</span>}
-        </span>
-        <span className="ch-card-body">
-          <span className="ch-card-titlerow">
-            <span className="ch-card-title">{ch.title}</span>
-            <span className="ch-card-flag">{ch.flag}</span>
-          </span>
-          <span className="ch-card-theme">{ch.theme}</span>
-          <span className="ch-card-meta">
-            <span>{fmt(ch.start)} – {fmt(ch.end)}</span>
-            <i />
-            <span>{ch.weather ? `${ch.weather.hi}°/${ch.weather.lo}°` : '—'}</span>
-            <i />
-            <span>{ch.places.length} stop{ch.places.length === 1 ? '' : 's'}</span>
-          </span>
-          <span className="ch-card-route">{ch.tldr || (ch.places || []).map((p) => p.name).join(' · ')}</span>
-        </span>
-      </button>
-    );
-  }
-
-  function ChaptersView({ current, selectedId, onOpen }) {
-    const store = window.useStore();
-    const chapters = store.getChapters();
-    const stats = window.tripStats();
-    const today = window.TRIP_NOW.todayISO();
-    return (
-      <div className="page chapters-page">
-        <div className="page-inner">
-          <header className="page-head">
-            <div className="page-eyebrow"><span>02</span> The arc</div>
-            <h1>Twenty-one chapters,<br /><em>one long way east.</em></h1>
-            <p>
-              A year is not a list of countries. It is a shape: a long, slow opening at home,
-              a winter in the snow, an island spring, and a last bright month in the east.
-              Open any chapter to see the days, the stops, and the thinking behind them.
-            </p>
-            <div className="page-facts">
-              <div className="page-fact"><b>{stats.days}</b><span>days</span></div>
-              <div className="page-fact"><b>{stats.chapters}</b><span>chapters</span></div>
-              <div className="page-fact"><b>{stats.countries}</b><span>countries</span></div>
-              <div className="page-fact"><b>{stats.stops}</b><span>stops</span></div>
-            </div>
-          </header>
-
-          <div className="chapter-grid">
-            {chapters.map((c, i) => (
-              <ChapterCard
-                key={c.id}
-                ch={c}
-                index={i}
-                isNow={!!current && c.id === current.id}
-                isPast={!!current && c.end < today}
-                isSelected={c.id === selectedId}
-                onOpen={onOpen}
-              />
-            ))}
-          </div>
-
-          <footer className="page-foot">
-            <span>Jun 21, 2026 — Jun 16, 2027</span>
-            <button className="pill-btn" onClick={() => onOpen((current || chapters[0]).id)}>
-              Open {current ? 'where you are' : 'chapter one'} <window.Icon.arrow size={12} />
-            </button>
-          </footer>
-        </div>
-      </div>
-    );
-  }
-
   // ══════════════════════════════════════════════════════════════════════
   // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
-  function PhotoCarousel({ items }) {
-    const [idx, setIdx] = React.useState(0);
+  function PhotoCarousel({ items, startPlaceIdx }) {
+    const indexFor = (placeIdx) => {
+      if (placeIdx == null) return 0;
+      const i = items.findIndex((it) => it.placeIdx === placeIdx);
+      return i > 0 ? i : 0;
+    };
+    const [idx, setIdx] = React.useState(() => indexFor(startPlaceIdx));
     const n = items.length;
-    const touchX = React.useRef(null);
+    // Opening the chapter from a city pin starts on that city's photo, not
+    // always on the chapter hero. A place with no photo of its own leaves
+    // the carousel where it is rather than jumping to the first frame.
+    React.useEffect(() => {
+      if (startPlaceIdx == null) return;
+      setIdx((cur) => (indexFor(startPlaceIdx) || cur));
+    }, [startPlaceIdx]);
     if (!n) return null;
     const go = (d) => setIdx((i) => (i + d + n) % n);
     const cur = items[idx];
+
+    // Swipe works with a finger and with a mouse: touch events alone left a
+    // desktop reader with only the arrows, and 40px of travel is enough to
+    // tell a swipe from a tap on a dot or an arrow.
+    const swipe = React.useRef({ active: false, x: 0, y: 0, moved: 0 });
+    const SWIPE = 40;
+    const onSwipeStart = (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      swipe.current = { active: true, x: e.clientX, y: e.clientY, moved: 0 };
+    };
+    const onSwipeMove = (e) => {
+      const d = swipe.current; if (!d.active) return;
+      if (e.pointerType === 'mouse' && e.buttons === 0) { d.active = false; return; }
+      d.moved = Math.max(d.moved, Math.abs(e.clientX - d.x));
+    };
+    const onSwipeEnd = (e) => {
+      const d = swipe.current; if (!d.active) return;
+      d.active = false;
+      const dx = e.clientX - d.x, dy = e.clientY - d.y;
+      if (Math.abs(dx) > SWIPE && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+    };
     return (
       <div className="detail-hero carousel"
-        onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
-        onTouchEnd={(e) => {
-          if (touchX.current == null) return;
-          const dx = e.changedTouches[0].clientX - touchX.current;
-          touchX.current = null;
-          if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+        onPointerDown={onSwipeStart}
+        onPointerMove={onSwipeMove}
+        onPointerUp={onSwipeEnd}
+        onPointerCancel={onSwipeEnd}
+        onDragStart={(e) => e.preventDefault()}
+        onClickCapture={(e) => {
+          // A swipe that ends on an arrow or a dot would otherwise fire that
+          // control on top of the page turn it just caused.
+          if (swipe.current.moved > 10) { e.preventDefault(); e.stopPropagation(); }
+          swipe.current.moved = 0;
         }}>
         <window.Photo key={cur.keyword} keyword={cur.keyword} ratio="auto" loading="eager"
           style={{ width: '100%', height: '100%', aspectRatio: 'unset' }} caption={cur.caption} />
@@ -146,10 +98,26 @@
   function DetailPanel({ chapterId, onClose, onSelectPlace, selectedPlaceIdx, onOpenChapter }) {
     const store = window.useStore();
     const chapters = store.getChapters();
+    // Hooks before the early return, or the hook order changes when a chapter
+    // disappears underneath an open panel.
+    const scrollRef = React.useRef(null);
     const ch = store.getChapter(chapterId);
+
+    // Open the spread where the reader's attention already is: a city clicked
+    // on the map, or a day picked on the spine, centres its stop row instead
+    // of leaving them to scroll past the hero and the facts. With no stop
+    // picked, the spread opens at the top as usual.
+    React.useEffect(() => {
+      const box = scrollRef.current; if (!box) return;
+      if (selectedPlaceIdx == null) { box.scrollTop = 0; return; }
+      const row = box.querySelector(`[data-stop="${selectedPlaceIdx}"]`);
+      if (!row) return;
+      const delta = row.getBoundingClientRect().top - box.getBoundingClientRect().top;
+      box.scrollTop += delta - (box.clientHeight - row.offsetHeight) / 2;
+    }, [chapterId, selectedPlaceIdx]);
+
     if (!ch) return null;
 
-    const region = REGIONS[ch.region] || { name: '' };
     const tint = window.chapterTint(ch);
     const startDay = dayCounter(ch.start).n;
     const endDay = dayCounter(ch.end).n;
@@ -157,6 +125,7 @@
     const idx = chapters.findIndex((c) => c.id === ch.id);
     const prev = chapters[(idx - 1 + chapters.length) % chapters.length];
     const next = chapters[(idx + 1) % chapters.length];
+
 
     return (
       <aside className="detail-panel" role="dialog" aria-label={`Chapter ${ch.num}: ${ch.title}`}>
@@ -170,21 +139,17 @@
           </button>
         </div>
 
-        <div className="detail-scroll">
+        <div className="detail-scroll" ref={scrollRef}>
           <PhotoCarousel
             key={ch.id}
+            startPlaceIdx={selectedPlaceIdx}
             items={[
-              { keyword: ch.photos[0], caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}` },
-              ...ch.places.map((p, i) => (p.photo ? { keyword: p.photo, caption: `${i + 1}. ${p.name}` } : null)).filter(Boolean),
+              { keyword: ch.photos[0], caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}`, placeIdx: null },
+              ...ch.places.map((p, i) => (p.photo ? { keyword: p.photo, caption: `${i + 1}. ${p.name}`, placeIdx: i } : null)).filter(Boolean),
             ]}
           />
 
           <div className="detail-content">
-            <div className="detail-eyebrow">
-              <span style={{ color: tint }}>{region.name}</span>
-              <i />
-              <span>{ch.tldr}</span>
-            </div>
             <h1 className="detail-title">{ch.title}</h1>
             {ch.theme && <p className="detail-theme">{ch.theme}.</p>}
 
@@ -192,10 +157,8 @@
               <div className="detail-fact"><span>Window</span><b>{fmt(ch.start)} – {fmt(ch.end)}</b><i>{ch.days} nights</i></div>
               <div className="detail-fact"><span>Day of trip</span><b>{startDay}–{endDay}</b><i>of {totalDays}</i></div>
               <div className="detail-fact"><span>Weather</span><b>{ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—'}</b><i>{ch.weather ? ch.weather.label : ''}</i></div>
-              <div className="detail-fact"><span>Rain</span><b>{ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'}</b><i>{ch.weather ? ch.weather.emoji : ''}</i></div>
+              <div className="detail-fact"><span>Rain</span><b>{ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'}</b><i /></div>
             </div>
-
-            {ch.intro && <p className="detail-intro">{ch.intro}</p>}
 
             <SectionHead num="01" title="The stops" note={`${ch.places.length} stops · ${ch.days} nights`} />
             <div className="stop-timeline" style={{ '--tint': tint }}>
@@ -205,6 +168,7 @@
                 return (
                   <div
                     key={i}
+                    data-stop={i}
                     className={`stop-row ${active ? 'is-active' : ''}`}
                     onClick={() => onSelectPlace(i)}
                     role="button"
@@ -220,14 +184,6 @@
                       <div className="stop-titlerow">
                         <span className="stop-idx">{String(i + 1).padStart(2, '0')}</span>
                         <span className="stop-name">{p.name}</span>
-                        {p.coords && (
-                          <button
-                            className="stop-map"
-                            onClick={(e) => { e.stopPropagation(); window.openMaps(p.query); }}
-                            title="Open in Google Maps">
-                            <window.Icon.external size={10} />
-                          </button>
-                        )}
                       </div>
                       <div className="stop-highlights">
                         {(p.highlights || []).map((h, j) => (
@@ -274,7 +230,7 @@
       <div className="page binder-page">
         <div className="binder-bar">
           <button className="binder-back" onClick={onClose}><window.Icon.arrowLeft size={13} /> Atlas</button>
-          <span className="binder-crumb">The Long Way East <i>/</i> {isTodo ? 'Field kit' : 'Ledger'}</span>
+          <span className="binder-crumb">The Long Way East <i>/</i> {isTodo ? 'Tasks' : 'Budget'}</span>
           <span className="binder-date">{fmt(window.TRIP_NOW.todayISO())}</span>
         </div>
         <div className="binder-scroll">
@@ -351,7 +307,7 @@
     return (
       <div className="page-inner ledger-page">
         <header className="page-head">
-          <div className="page-eyebrow"><span>03</span> The ledger</div>
+          <div className="page-eyebrow"><span>03</span> The budget</div>
           <h1>What a year costs.<br /><em>And what it buys.</em></h1>
           <p>Mid-range with strategic splurges, priced for two across 360 days. Totals compute from the lines below — nothing is hardcoded, so the numbers cannot quietly lie.</p>
         </header>
@@ -379,7 +335,7 @@
                 <li key={s.label}>
                   <i style={{ background: s.color }} />
                   <span>{s.label}</span>
-                  <b>{fmt$(s.value)}</b>
+                  <b>{fmt$(s.value)}<em className="donut-pct">({Math.round((s.value / grand) * 100)}%)</em></b>
                 </li>
               ))}
             </ul>
@@ -485,5 +441,5 @@
     );
   }
 
-  Object.assign(window, { ChaptersView, DetailPanel, Binder });
+  Object.assign(window, { DetailPanel, Binder });
 })();

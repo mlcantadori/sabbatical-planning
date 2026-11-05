@@ -17,7 +17,30 @@
   // Base tube radius (world units, at the home distance) — the tick loop
   // thins tubes as you zoom in so the on-screen line weight stays ~constant.
   const ARC_R = 0.0014;
-  const TEX_URL = 'https://unpkg.com/three-globe@2.31.0/example/img/earth-blue-marble.jpg';
+  // Blue Marble (shaded relief + bathymetry), vendored rather than hotlinked
+  // from unpkg — NASA GIBS tiles stitched at 20480×10240, so the same winter
+  // composite the CDN file used, at up to 16k. Three tiers, picked by what
+  // the screen can actually resolve: 4k is already sharp at 1x, the 16k only
+  // pays off on a retina desktop, and it costs 537MB of VRAM.
+  // 16382, not 16384: libwebp refuses any dimension above 16383.
+  const EARTH_TEX = {
+    big: 'extra-pictures/earth/blue-marble-16k.webp',
+    mid: 'extra-pictures/earth/blue-marble-8k.webp',
+    small: 'extra-pictures/earth/blue-marble-4k.webp'
+  };
+  // 16k is 2607 texels per radian of longitude. At camera distance d the
+  // surface under the camera sits (d-1) radii away, so it renders at
+  // f/(d-1) px per radian — with a 1740px-tall retina canvas that is 1:1 at
+  // d = 2.0. Each tier stops where its own texel budget runs out, so going
+  // closer costs the same upscale at the floor either way: more texels buy
+  // reach, not sharpness. Mobile gets 1.5 on the 8k tier; it is a 3x-up-scaled
+  // view by then on a high-DPI phone, which is the price of the extra travel.
+  const MIN_DIST = {
+    big: 1.45,
+    mid: 1.5,
+    small: 1.85
+  };
+  const DEFAULT_MIN_DIST = 1.72;
 
   // [name, lng, lat] — major countries + trip-relevant places
   const COUNTRIES = [['United States', -100, 40], ['Canada', -105, 56], ['Mexico', -102, 23], ['Cuba', -79, 22], ['Colombia', -73, 4], ['Brazil', -52, -10], ['Peru', -76, -10], ['Argentina', -64, -35], ['Chile', -71, -33], ['Greenland', -42, 72], ['Iceland', -18, 65], ['United Kingdom', -2, 54], ['Ireland', -8, 53], ['France', 2, 47], ['Spain', -4, 40], ['Portugal', -8, 39.5], ['Italy', 12.5, 42.5], ['Germany', 10, 51], ['Poland', 20, 52], ['Norway', 8, 62], ['Sweden', 15, 62], ['Finland', 26, 64], ['Ukraine', 32, 49], ['Russia', 95, 62], ['Greece', 24, 39], ['Turkey', 35, 39], ['Georgia', 44, 42], ['Syria', 39, 35], ['Iraq', 44, 33], ['Saudi Arabia', 45, 24], ['Yemen', 48, 16], ['Oman', 58, 21], ['Iran', 54, 32], ['Afghanistan', 66, 34], ['Pakistan', 70, 30], ['Azerbaijan', 47.7, 40.3], ['Kazakhstan', 68, 48], ['Uzbekistan', 64, 41], ['India', 79, 22], ['Nepal', 84, 28], ['Sri Lanka', 81, 8], ['Bangladesh', 90, 24], ['Myanmar', 96, 21], ['Thailand', 101, 16], ['Laos', 104, 18], ['Vietnam', 108, 14], ['Cambodia', 105, 13], ['Malaysia', 102, 4], ['Singapore', 104, 1.35], ['Indonesia', 115, -2], ['Philippines', 122, 13], ['Taiwan', 121, 24], ['Hong Kong', 114, 22.3], ['China', 104, 35], ['Mongolia', 105, 46], ['Japan', 139, 37], ['South Korea', 128, 36], ['Egypt', 30, 27], ['Libya', 18, 28], ['Morocco', -6, 32], ['Algeria', 3, 28], ['Tunisia', 10, 34], ['Sudan', 30, 13], ['Chad', 19, 15], ['Niger', 12, 17], ['Mali', -2, 17], ['Nigeria', 8, 10], ['Ethiopia', 40, 9], ['Kenya', 38, 1], ['Somalia', 46, 6], ['DR Congo', 23, -3], ['Tanzania', 35, -6], ['Angola', 18, -12], ['Namibia', 17, -22], ['South Africa', 25, -29], ['Mozambique', 36, -18], ['Madagascar', 47, -20], ['Australia', 134, -25], ['New Zealand', 172, -42], ['Papua New Guinea', 141, -6]];
@@ -27,7 +50,7 @@
     onSelectChapter,
     onSelectPlace,
     focusKey,
-    showPlacePopup
+    onBackgroundClick
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
@@ -39,7 +62,7 @@
       onSelectChapter,
       onSelectPlace,
       chapters,
-      showPlacePopup
+      onBackgroundClick
     });
     propsRef.current = {
       selectedId,
@@ -47,7 +70,7 @@
       onSelectChapter,
       onSelectPlace,
       chapters,
-      showPlacePopup
+      onBackgroundClick
     };
     function llv(lat, lng, r) {
       const phi = (90 - lat) * Math.PI / 180;
@@ -89,7 +112,19 @@
       // Earth
       const earth = new THREE.Group();
       scene.add(earth);
-      const tex = new THREE.TextureLoader().setCrossOrigin('anonymous').load(TEX_URL, () => {});
+      const maxTex = renderer.capabilities.maxTextureSize || 4096;
+      const dpr = window.devicePixelRatio || 1;
+      const wide = window.innerWidth >= 1200;
+      const tier = dpr >= 1.5 && wide && maxTex >= 16384 ? 'big' : dpr >= 1.5 && maxTex >= 8192 ? 'mid' : 'small';
+      const texUrl = EARTH_TEX[tier];
+      const minDist = MIN_DIST[tier] || DEFAULT_MIN_DIST;
+      // Same-origin vendored asset: clear three.js's default CORS mode, or
+      // the globe goes black when index.html is opened straight from disk
+      // (undefined leaves the attribute off; an empty string still means
+      // "anonymous").
+      const loader = new THREE.TextureLoader();
+      loader.crossOrigin = undefined;
+      const tex = loader.load(texUrl, () => {});
       tex.encoding = THREE.sRGBEncoding;
       tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
       const globe = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 96), new THREE.MeshPhongMaterial({
@@ -137,7 +172,7 @@
       controls.enableDamping = true;
       controls.dampingFactor = 0.06;
       controls.enablePan = false;
-      controls.minDistance = 2.0;
+      controls.minDistance = minDist;
       controls.maxDistance = 9;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.55;
@@ -154,18 +189,6 @@
       const overlay = document.createElement('div');
       overlay.className = 'eq-pins';
       el.appendChild(overlay);
-      const popupEl = document.createElement('div');
-      popupEl.className = 'eq-popup';
-      popupEl.style.display = 'none';
-      el.appendChild(popupEl);
-      const ctl = document.createElement('div');
-      ctl.className = 'eq-zoom';
-      ctl.innerHTML = '<button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>';
-      el.appendChild(ctl);
-      const attr = document.createElement('div');
-      attr.className = 'eq-attr';
-      attr.textContent = 'Imagery © NASA Blue Marble · Country labels © Natural Earth';
-      el.appendChild(attr);
       st.current = {
         renderer,
         scene,
@@ -174,8 +197,8 @@
         earth,
         arcs,
         stars,
+        minDist,
         overlay,
-        popupEl,
         w: 0,
         h: 0,
         raf: 0,
@@ -199,14 +222,23 @@
         controls.autoRotate = false;
         st.current.spinOff = true;
       }
-      ctl.querySelector('[data-z="in"]').addEventListener('click', () => dolly(1 / 1.4));
-      ctl.querySelector('[data-z="out"]').addEventListener('click', () => dolly(1.4));
-      renderer.domElement.addEventListener('click', () => {
-        const s = st.current;
-        if (!s) return;
-        s.popupEl.style.display = 'none';
-        s.popupEl._anchor = null;
-      });
+
+      // A click on the ocean is a click on the background: it should close an
+      // open chapter. A drag ends with a click too, so a press that travelled
+      // is not one.
+      let downX = 0,
+        downY = 0;
+      const onDown = e => {
+        downX = e.clientX;
+        downY = e.clientY;
+      };
+      const onClick = e => {
+        if (Math.hypot(e.clientX - downX, e.clientY - downY) > 6) return;
+        const cb = propsRef.current.onBackgroundClick;
+        if (cb) cb();
+      };
+      renderer.domElement.addEventListener('pointerdown', onDown);
+      renderer.domElement.addEventListener('click', onClick);
       const ro = new ResizeObserver(() => size());
       ro.observe(el);
       size();
@@ -215,6 +247,7 @@
         if (!s) return;
         s.raf = requestAnimationFrame(tick);
         stepTween();
+        syncDragSpeed();
         s.controls.update();
         if (!s.noMotion) {
           const t = performance.now() * 0.001;
@@ -249,24 +282,30 @@
               });
             }
           });
+          st.current.renderer.domElement.removeEventListener('pointerdown', onDown);
+          st.current.renderer.domElement.removeEventListener('click', onClick);
           st.current.renderer.dispose();
           st.current.renderer.domElement.remove();
           st.current.overlay.remove();
-          st.current.popupEl.remove();
-          ctl.remove();
-          attr.remove();
           st.current = null;
         }
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    function dolly(f) {
+
+    // Drag sensitivity. OrbitControls turns 2π/clientHeight radians per
+    // pixel — roughly four times what the surface under your finger actually
+    // travels, which is why dragging felt twitchy (worst on a phone, where
+    // the globe is small). Matching the two gives 1:1 grabbing at every zoom
+    // level and on every screen:
+    //   speed = (distance − 1) · tan(fov/2) / π
+    // Recomputed each frame because it depends on where the camera is.
+    function syncDragSpeed() {
       const s = st.current;
       if (!s) return;
-      s.spinOff = true;
-      s.controls.autoRotate = false;
-      const len = Math.max(2.0, Math.min(9, s.camera.position.length() * f));
-      s.camera.position.setLength(len);
+      const d = s.camera.position.length();
+      const k = (d - 1) * Math.tan(s.camera.fov / 2 * Math.PI / 180) / Math.PI;
+      s.controls.rotateSpeed = Math.max(0.04, Math.min(0.6, k));
     }
     function size() {
       const s = st.current;
@@ -392,17 +431,6 @@
         el.style.display = null;
         el.style.transform = el._country ? `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) translate(-50%,-50%)` : `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;
       }
-      if (s.popupEl._anchor) {
-        const a = s.popupEl._anchor;
-        const wp = llv(a[0], a[1], 1);
-        if (wp.clone().normalize().dot(s.camera.position.clone().normalize()) < 0.08) {
-          s.popupEl.style.display = 'none';
-        } else {
-          const sp = wp.project(s.camera);
-          s.popupEl.style.left = ((sp.x * 0.5 + 0.5) * s.w).toFixed(1) + 'px';
-          s.popupEl.style.top = ((-sp.y * 0.5 + 0.5) * s.h).toFixed(1) + 'px';
-        }
-      }
     }
     function pinEl(c) {
       const accent = chapterColor(c);
@@ -497,24 +525,22 @@
       const {
         selectedId,
         selectedPlaceIdx,
+        onSelectChapter,
         onSelectPlace,
-        chapters,
-        showPlacePopup
+        chapters
       } = propsRef.current;
       [...s.overlay.children].forEach(el => {
         const pin = el.querySelector('.map-pin');
         if (pin) pin.classList.toggle('is-active', el._id === selectedId);
       });
       // Hide whole-route city dots of the selected chapter (re-rendered
-      // below with popups) to avoid duplicates; updateOverlay honors _hidden.
+      // below as their own markers) to avoid duplicates; updateOverlay honors _hidden.
       [...s.overlay.children].forEach(el => {
         if (el.classList && el.classList.contains('eq-city-wrap')) {
           el._hidden = el._chId === selectedId;
         }
       });
       [...s.overlay.querySelectorAll('.eq-place-wrap')].forEach(el => el.remove());
-      s.popupEl.style.display = 'none';
-      s.popupEl._anchor = null;
       s.controls.autoRotate = !selectedId && !s.spinOff;
       if (!selectedId) {
         // Panel just closed: make sure the orbit target is back at the
@@ -536,19 +562,11 @@
         wrap.innerHTML = `<div class="map-place${i === selectedPlaceIdx ? ' is-active' : ''}">` + `<div class="map-place-dot" style="--pin-c: ${accent}"></div>` + `<div class="map-place-label">${i + 1}. ${p.name}</div></div>`;
         wrap.querySelector('.map-place').addEventListener('click', e => {
           e.stopPropagation();
+          if (onSelectChapter) onSelectChapter(ch.id);
           if (onSelectPlace) onSelectPlace(i);
         });
         s.overlay.appendChild(wrap);
       });
-
-      // The popup is the "open in Google Maps" card. Only a click on the map's
-      // own dot asks for it; picking a day on the spine just moves the camera.
-      if (showPlacePopup && selectedPlaceIdx != null && ch.places[selectedPlaceIdx]) {
-        const p = ch.places[selectedPlaceIdx];
-        s.popupEl._anchor = p.coords;
-        s.popupEl.innerHTML = `<div class="map-popup"><div class="map-popup-num">${selectedPlaceIdx + 1}</div>` + `<div><div class="map-popup-name">${p.name}</div>` + `<div class="map-popup-sub">${p.days} day${p.days > 1 ? 's' : ''}</div>` + `<a class="map-popup-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>` + `</div></div>`;
-        s.popupEl.style.display = 'block';
-      }
 
       // Fly the camera to face the chapter. The orbit target stays at the
       // globe center — targeting a surface point would leave OrbitControls
@@ -558,9 +576,10 @@
       // not the whole chapter, is what fills the frame.
       const focused = selectedPlaceIdx != null ? ch.places[selectedPlaceIdx] : null;
       if (focused && focused.coords) {
-        // 2.02 sits just outside OrbitControls' minDistance (2.0); any closer
-        // and the first wheel tick would snap the camera back out.
-        const camPos = llv(focused.coords[0], focused.coords[1], 2.02);
+        // Sits just outside OrbitControls' minDistance; any closer and the
+        // first wheel tick would snap the camera back out.
+        const md = st.current && st.current.minDist || DEFAULT_MIN_DIST;
+        const camPos = llv(focused.coords[0], focused.coords[1], md + 0.14);
         flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
       } else if (ch.anchor) {
         const camPos = llv(ch.anchor[0], ch.anchor[1], 2.35);
@@ -579,17 +598,22 @@
     React.useEffect(() => {
       if (st.current) refreshSelection();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedId, selectedPlaceIdx, chapters, showPlacePopup]);
+    }, [selectedId, selectedPlaceIdx, chapters]);
 
-    // ── external "focus world" trigger ────────────────────────────────────
+    // ── external recentre trigger ─────────────────────────────────────────
+    // "Whole route" now means "back to where I am", which is the selected
+    // chapter — and a bump that changes nothing else, so it has to re-run the
+    // framing explicitly. With nothing selected it is still the whole planet.
     React.useEffect(() => {
       const s = st.current;
-      if (!s) return;
-      if (focusKey === 'world') {
-        flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r), 1100);
-        s.spinOff = false;
-        if (!propsRef.current.selectedId) s.controls.autoRotate = true;
+      if (!s || !focusKey) return;
+      if (propsRef.current.selectedId) {
+        refreshSelection();
+        return;
       }
+      flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r), 1100);
+      s.spinOff = false;
+      s.controls.autoRotate = true;
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [focusKey]);
 

@@ -50,14 +50,21 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
     ...style,
   };
 
+  // Vendored photos have a 480px WebP twin beside them (scripts/make-reel-
+  // thumbs.py). Offering both by width lets a 240px reel slot pull 26KB
+  // instead of the 190KB original, while a full-width hero still gets the
+  // original because its sizes ask for it.
+  const thumb = (/^extra-pictures\/(.+)$/.exec(src) || [])[1];
+
   return (
     <div className={`photo ${className}`} style={wrap}>
       <img
         src={src}
+        srcSet={thumb ? `extra-pictures/thumbs/${thumb.replace(/\.[^.]+$/, '.webp')} 480w, ${src} 1600w` : undefined}
         alt={alt || keyword}
         loading={loading}
         decoding="async"
-        sizes={sizes}
+        sizes={thumb ? (sizes || '100vw') : sizes}
         onLoad={() => setLoaded(true)}
         onError={() => { if (src !== fallback) setSrc(fallback); setLoaded(true); }}
         style={{
@@ -78,7 +85,7 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
             fontFamily: '"JetBrains Mono", monospace',
             fontSize: 8, letterSpacing: '0.24em',
             color: 'rgba(244,236,220,.24)', textTransform: 'uppercase',
-          }}>developing</div>
+          }}>loading</div>
         </div>
       )}
       {caption && (
@@ -183,8 +190,11 @@ function monthsBetween() {
   let d = new Date(start);
   while (d <= end) {
     const y = d.getUTCFullYear(), m = d.getUTCMonth();
-    const first = new Date(Math.max(d.getTime(), Date.UTC(y, m, 1)));
-    out.push({ label: names[m], year: y, at: dayIndex(first.toISOString().slice(0, 10)) });
+    // A month the trip only clips — it began before the trip did — gets no
+    // label: JUN would sit ten days before JUL and the two collide.
+    if (d.getTime() === Date.UTC(y, m, 1)) {
+      out.push({ label: names[m], year: y, at: dayIndex(d.toISOString().slice(0, 10)) });
+    }
     d = new Date(Date.UTC(y, m + 1, 1));
   }
   return out;
@@ -219,8 +229,8 @@ const Icon = {
   stop: (p) => <svg viewBox="0 0 24 24" width={p.size || 12} height={p.size || 12} fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>,
   arrow: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>,
   arrowLeft: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>,
-  chevronLeft: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M15 5l-7 7 7 7"/></svg>,
-  chevronRight: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5l7 7-7 7"/></svg>,
+  chevronLeft: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M15.5 5l-7 7 7 7"/></svg>,
+  chevronRight: (p) => <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 5l7 7-7 7"/></svg>,
   compass: (p) => <svg viewBox="0 0 24 24" width={p.size || 16} height={p.size || 16} fill="none" stroke="currentColor" strokeWidth="1.4"><circle cx="12" cy="12" r="9.2"/><path d="M15.6 8.4l-2.2 5.4-5.4 2.2 2.2-5.4z" fill="currentColor" stroke="none"/></svg>,
   pin: (p) => <svg viewBox="0 0 24 24" width={p.size || 13} height={p.size || 13} fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>,
   sun: (p) => <svg viewBox="0 0 24 24" width={p.size || 13} height={p.size || 13} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>,

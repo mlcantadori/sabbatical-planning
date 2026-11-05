@@ -285,7 +285,7 @@ window.TRIP = (function () {
       intro: 'Second mainland block, deliberately short: 8 days across the Pearl River Delta. Cantonese blitz in Guangzhou straight off the Hong Kong HSR, four friend-days in Shenzhen, then Macau for two nights before flying to Kuala Lumpur. Shanghai moves to the end of the spring China chapter — December is its dampest, grayest month and May suits it far better. The mainland stay is 6 days, comfortably inside the 30-day visa-free entry.',
       tldr: 'Guangzhou · Shenzhen · Macau',
       weather: { hi: 22, lo: 14, label: 'Subtropical south, mostly dry, 22°/14°', emoji: '🌉', rainyDays: 4 },
-      photos: ['shenzhen night skyline'],
+      photos: ['guangzhou canton tower aerial'],
       places: [
         { name: 'Guangzhou', photo: 'guangzhou canton tower', days: 2, query: 'Shamian Island, Guangzhou',
           highlights: ['Nov 28: HSR Hong Kong → Guangzhou South direct — Entry 2 starts','Cantonese food deep-dive — dim sum where it was born','Shamian Island colonial arcades, Chen Clan Academy','Canton Tower at night','Nov 30: HSR Guangzhou → Shenzhen (~30min)'] },
@@ -340,7 +340,7 @@ window.TRIP = (function () {
       intro: 'Fifteen days running south-to-north through Taiwan in its dry winter: land in Kaohsiung with two clear days before a warm, uncrowded harbour countdown, graze Tainan for four days (arguably the best street food in the Chinese-speaking world), climb to Alishan for the January sea of clouds, and finish in Taipei for museums, hot springs and the departure to Osaka. Deliberately avoids the Taipei 101 crush: NYE here is a harbour-front fireworks show with room to stand, 20°C and dry.',
       tldr: 'Kaohsiung (NYE) · Tainan · Alishan · Taipei',
       weather: { hi: 22, lo: 14, label: 'Dry mild south → cooler drizzly north, 22°/14°', emoji: '🏮', rainyDays: 6 },
-      photos: ['taipei 101 night'],
+      photos: ['taipei 101 elephant mountain'],
       places: [
         { name: 'Kaohsiung', photo: 'kaohsiung harbor', days: 4, query: 'Kaohsiung Harbor, Taiwan',
           highlights: ['Dec 29: fly Krabi → Bangkok → Kaohsiung — arrive warm and dry, two days before NYE','NYE Dec 31: harbour-front countdown and fireworks at Dream Mall / Kaohsiung Port — Taiwan\'s #2 event, but ~200–400k with space to stand (vs ~1M in Xinyi)','Pier-2 Art Center, Cijin Island ferry + sunset, Lotus Pond dragons','Ruifeng Night Market; 20°C and dry — you can walk home after midnight','Jan 2: 35-min train north to Tainan'] },
@@ -513,7 +513,7 @@ window.TRIP = (function () {
       intro: 'Fourteen days to close the sabbatical in sunny, pre-monsoon weather (24–26°C, two full weeks before Korea\'s late-June Jangma rains): start in the south on Jeju Island, hop to Busan\'s coast and Gyeongju\'s royal tombs, then finish with six nights in Seoul so the long-haul flight home to Brazil departs directly from Incheon with zero last-day domestic transit stress.',
       tldr: 'Jeju · Busan · Gyeongju · Seoul',
       weather: { hi: 25, lo: 16, label: 'Sunny late spring / early summer, 25°/16°', emoji: '🌸', rainyDays: 5 },
-      photos: ['korean street food'],
+      photos: ['myeongdong night market'],
       places: [
         { name: 'Jeju', photo: 'jeju yongmeori', days: 3, query: 'Jeju Island, South Korea',
           highlights: ['Jun 2–5: fly Shanghai → Jeju (direct or via Seoul) — open on Korea\'s volcanic island','Yongmeori Coast + Sanbangsan cliffs in early-June sun','Seongsan Ilchulbong sunrise crater; Udo island ferry','Hallasan lower trails, Jusangjeolli lava columns & green tea fields','Jun 5: 50-min flight Jeju → Busan'] },
