@@ -17,11 +17,12 @@
   // Base tube radius (world units, at the home distance) — the tick loop
   // thins tubes as you zoom in so the on-screen line weight stays ~constant.
   const ARC_R = 0.0014;
-  // Blue Marble, vendored rather than hotlinked from unpkg. The old 4k CDN
-  // texture was the reason the globe read soft: at a 100° span on a 2x
-  // display it was upscaled ~2x. The 8k copy is 4x the texels; the 4k copy
-  // stays as the fallback for 1x displays and GPUs that cap textures at
-  // 8192 (older phones), where the big one costs VRAM and buys nothing.
+  // Blue Marble (shaded relief + bathymetry), vendored rather than hotlinked
+  // from unpkg. Same composite the CDN file used — this now comes from NASA
+  // GIBS, stitched at 20480×10240 and downscaled, so the globe keeps its
+  // winter look at 5x the texels. The 4k copy is the fallback for 1x
+  // displays and GPUs that cap textures at 8192 (older phones), where the
+  // big one costs VRAM and buys nothing.
   const EARTH_TEX_8K = 'extra-pictures/earth/blue-marble-8192.webp';
   const EARTH_TEX_4K = 'extra-pictures/earth/blue-marble-4096.webp';
 
