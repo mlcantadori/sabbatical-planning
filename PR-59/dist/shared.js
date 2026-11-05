@@ -462,7 +462,7 @@ const Icon = {
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }, /*#__PURE__*/React.createElement("path", {
-    d: "M15 5l-7 7 7 7"
+    d: "M15.5 5l-7 7 7 7"
   })),
   chevronRight: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
@@ -474,7 +474,7 @@ const Icon = {
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }, /*#__PURE__*/React.createElement("path", {
-    d: "M9 5l7 7-7 7"
+    d: "M8.5 5l7 7-7 7"
   })),
   compass: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",

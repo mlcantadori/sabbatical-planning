@@ -221,9 +221,6 @@
       };
       map.on('zoomend', syncTransport);
       syncTransport();
-      L.control.zoom({
-        position: 'bottomright'
-      }).addTo(map);
       L.control.attribution({
         position: 'bottomleft',
         prefix: false

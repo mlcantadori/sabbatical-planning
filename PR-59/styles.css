@@ -513,7 +513,7 @@ button:focus-visible, [role="button"]:focus-visible {
    ════════════════════════════════════════════════════════════════════════ */
 .atlas { position: absolute; inset: 0; overflow: hidden; }
 .atlas-canvas { position: absolute; inset: 0; z-index: 0; }
-.atlas-title, .atlas-tools, .atlas-coords, .reel { transition: opacity .35s ease; }
+.atlas-title, .atlas-tools, .reel { transition: opacity .35s ease; }
 .atlas-vignette {
   position: absolute;
   inset: 0;
@@ -663,28 +663,10 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ember);
   background: rgba(255,122,69,.1);
 }
-.atlas-coords {
-  position: absolute;
-  z-index: 20;
-  right: 30px;
-  bottom: 206px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .16em;
-  color: rgba(243,236,221,.42);
-  text-transform: uppercase;
-  pointer-events: none;
-}
-.atlas-coords i { width: 16px; height: 1px; background: rgba(243,236,221,.3); }
-
 /* With a chapter open, the atlas recedes and the spread takes the stage. */
 .app.has-detail .atlas-title,
 .app.has-detail .atlas-title > *,
-.app.has-detail .atlas-tools,
-.app.has-detail .atlas-coords {
+.app.has-detail .atlas-tools {
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s ease;
@@ -733,8 +715,11 @@ button:focus-visible, [role="button"]:focus-visible {
   border-radius: 50%;
   background: transparent;
   color: var(--ink-3);
+  line-height: 0;
+  padding: 0;
   transition: all .18s;
 }
+.reel-arrow svg { display: block; }
 .reel-arrow:hover { color: var(--void); background: var(--ink); border-color: var(--ink); }
 .reel-track {
   display: flex;
@@ -917,24 +902,6 @@ button:focus-visible, [role="button"]:focus-visible {
    0.88 brightness keeps the map from glowing against the dark UI. One dial,
    in :root, if it needs tuning. */
 .leaflet-tile-pane { filter: var(--map-tile-filter); }
-.leaflet-control-zoom {
-  border: 1px solid var(--line) !important;
-  border-radius: 10px !important;
-  overflow: hidden;
-  margin: 16px !important;
-  margin-bottom: 194px !important;
-  box-shadow: var(--shadow-1);
-}
-.leaflet-control-zoom a {
-  background: var(--glass-2) !important;
-  color: var(--ink) !important;
-  border-bottom: 1px solid var(--line) !important;
-  font-size: 15px !important;
-  width: 31px !important;
-  height: 31px !important;
-  line-height: 31px !important;
-}
-.leaflet-control-zoom a:hover { background: var(--panel-2) !important; }
 .leaflet-control-attribution {
   background: rgba(6,9,13,.7) !important;
   font-family: var(--f-mono) !important;
@@ -995,31 +962,6 @@ button:focus-visible, [role="button"]:focus-visible {
   pointer-events: auto;
   backdrop-filter: blur(16px);
 }
-.eq-zoom {
-  position: absolute;
-  right: 16px;
-  bottom: 198px;
-  z-index: 500;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--glass-2);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadow-1);
-}
-.eq-zoom button {
-  width: 31px; height: 31px;
-  border: none;
-  background: transparent;
-  color: var(--ink);
-  font-size: 15px;
-  line-height: 1;
-  cursor: pointer;
-}
-.eq-zoom button + button { border-top: 1px solid var(--line); }
-.eq-zoom button:hover { background: rgba(243,236,221,.08); }
 .eq-attr {
   position: absolute;
   left: 14px;
@@ -2596,8 +2538,6 @@ button:focus-visible, [role="button"]:focus-visible {
     border-radius: 50%;
   }
   .tool-label { display: none; }
-  .atlas-coords { display: none; }
-  .leaflet-control-zoom, .eq-zoom { display: none !important; }
   .leaflet-control-attribution { bottom: auto !important; top: 2px !important; left: 14px !important; margin: 0 !important; }
   .eq-attr { bottom: auto; top: 4px; }
 

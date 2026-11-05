@@ -812,10 +812,7 @@
       onReset: onReset,
       tour: tour,
       onTour: startTour
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "atlas-coords",
-      "aria-hidden": "true"
-    }, /*#__PURE__*/React.createElement("span", null, active.anchor ? `${Math.abs(active.anchor[0]).toFixed(2)}°${active.anchor[0] >= 0 ? 'N' : 'S'}` : ''), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, active.anchor ? `${Math.abs(active.anchor[1]).toFixed(2)}°${active.anchor[1] >= 0 ? 'E' : 'W'}` : '')), tour != null && /*#__PURE__*/React.createElement(TourBar, {
+    }), tour != null && /*#__PURE__*/React.createElement(TourBar, {
       index: tour,
       total: chapters.length,
       chapter: chapters[tour],

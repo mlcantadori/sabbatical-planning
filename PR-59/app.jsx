@@ -610,12 +610,6 @@
                 onTour={startTour}
               />
 
-              <div className="atlas-coords" aria-hidden="true">
-                <span>{active.anchor ? `${Math.abs(active.anchor[0]).toFixed(2)}°${active.anchor[0] >= 0 ? 'N' : 'S'}` : ''}</span>
-                <i />
-                <span>{active.anchor ? `${Math.abs(active.anchor[1]).toFixed(2)}°${active.anchor[1] >= 0 ? 'E' : 'W'}` : ''}</span>
-              </div>
-
               {tour != null && (
                 <TourBar index={tour} total={chapters.length} chapter={chapters[tour]} onStop={() => setTour(null)} />
               )}

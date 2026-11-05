@@ -199,10 +199,6 @@
       popupEl.className = 'eq-popup';
       popupEl.style.display = 'none';
       el.appendChild(popupEl);
-      const ctl = document.createElement('div');
-      ctl.className = 'eq-zoom';
-      ctl.innerHTML = '<button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>';
-      el.appendChild(ctl);
       const attr = document.createElement('div');
       attr.className = 'eq-attr';
       attr.textContent = 'Imagery © NASA Blue Marble · Country labels © Natural Earth';
@@ -229,9 +225,6 @@
         controls.autoRotate = false;
         st.current.spinOff = true;
       }
-
-      ctl.querySelector('[data-z="in"]').addEventListener('click', () => dolly(1 / 1.4));
-      ctl.querySelector('[data-z="out"]').addEventListener('click', () => dolly(1.4));
 
       renderer.domElement.addEventListener('click', () => {
         const s = st.current; if (!s) return;
@@ -286,7 +279,6 @@
           st.current.renderer.domElement.remove();
           st.current.overlay.remove();
           st.current.popupEl.remove();
-          ctl.remove();
           attr.remove();
           st.current = null;
         }
@@ -306,15 +298,6 @@
       const d = s.camera.position.length();
       const k = (d - 1) * Math.tan((s.camera.fov / 2) * Math.PI / 180) / Math.PI;
       s.controls.rotateSpeed = Math.max(0.04, Math.min(0.6, k));
-    }
-
-    function dolly(f) {
-      const s = st.current; if (!s) return;
-      s.spinOff = true;
-      s.controls.autoRotate = false;
-      const md = s.minDist || DEFAULT_MIN_DIST;
-      const len = Math.max(md, Math.min(9, s.camera.position.length() * f));
-      s.camera.position.setLength(len);
     }
 
     function size() {
