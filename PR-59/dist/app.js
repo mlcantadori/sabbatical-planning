@@ -423,33 +423,49 @@
       });
     }, [focusId, chapters.length]);
     // Mouse drag scrolls the strip. Touch already does it natively, so this
-    // only kicks in for a mouse, and a drag that moves more than a few pixels
-    // must not also count as a click on the card underneath.
+    // only engages for a mouse.
+    //
+    // Capture is taken only once the pointer has actually travelled: holding
+    // it from pointerdown retargets pointerup to the track, and the browser
+    // then fires the click on the track instead of the card — which silently
+    // killed every card click. A press that never moves is a plain click and
+    // is left alone.
     const drag = React.useRef({
       active: false,
       x: 0,
       left: 0,
-      moved: 0
+      moved: 0,
+      captured: false
     });
+    const DRAG_SLOP = 6;
     const onDragStart = e => {
-      if (e.pointerType !== 'mouse') return;
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
       const track = trackRef.current;
       if (!track) return;
       drag.current = {
         active: true,
         x: e.clientX,
         left: track.scrollLeft,
-        moved: 0
+        moved: 0,
+        captured: false
       };
-      track.setPointerCapture(e.pointerId);
-      track.classList.add('is-dragging');
     };
     const onDragMove = e => {
       const d = drag.current;
       if (!d.active) return;
+      if (e.buttons === 0) {
+        onDragEnd(e);
+        return;
+      }
       const dx = e.clientX - d.x;
       d.moved = Math.max(d.moved, Math.abs(dx));
-      trackRef.current.scrollLeft = d.left - dx;
+      if (!d.captured && d.moved > DRAG_SLOP) {
+        const track = trackRef.current;
+        track.setPointerCapture(e.pointerId);
+        track.classList.add('is-dragging');
+        d.captured = true;
+      }
+      if (d.captured) trackRef.current.scrollLeft = d.left - dx;
     };
     const onDragEnd = e => {
       const d = drag.current;
@@ -458,12 +474,15 @@
       const track = trackRef.current;
       if (!track) return;
       track.classList.remove('is-dragging');
-      try {
-        track.releasePointerCapture(e.pointerId);
-      } catch {}
+      if (d.captured) {
+        try {
+          track.releasePointerCapture(e.pointerId);
+        } catch {}
+        d.captured = false;
+      }
     };
     const onClickCapture = e => {
-      if (drag.current.moved > 6) {
+      if (drag.current.moved > DRAG_SLOP) {
         e.preventDefault();
         e.stopPropagation();
       }
