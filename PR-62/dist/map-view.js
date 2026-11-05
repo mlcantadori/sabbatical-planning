@@ -18,6 +18,11 @@
   // not the up-to-five-level jumps this replaces.
   const CHAPTER_ZOOM = 6;
 
+  // Past this much ground a pan is a sweep across continents: about one screen
+  // at z6 (~31° of longitude at the equator). Under it, Leaflet's flyTo does
+  // not even need to zoom out to make the trip, which is the whole point.
+  const CUT_KM = 2600;
+
   // Great-circle interpolation between two [lat,lng] points — the actual
   // shortest path a flight follows over the sphere, not an arbitrary bulge.
   function greatCircleSegment(p1, p2, segments = 48) {
@@ -492,7 +497,7 @@
                 }));
                 return;
               }
-              if (held > 900) {
+              if (held > 380) {
                 mapEl.classList.remove('is-jumping');
                 return;
               }
@@ -508,13 +513,15 @@
             });
             return;
           }
-          const screen = map.getSize().x;
-          const travel = map.project(map.getCenter(), zoom).distanceTo(map.project(center, zoom));
-          if (travel > screen * 0.9) {
+          // Measured in ground, not pixels: a pin click from z6 to z12 is a
+          // short hop that happens to be thousands of pixels wide at the zoom
+          // it is heading to. Judging by pixels at the target zoom cut every
+          // city zoom instead of letting it dive.
+          const km = map.getCenter().distanceTo(L.latLng(center)) / 1000;
+          if (km > CUT_KM) {
             jumpTo(center, zoom);
             return;
           }
-          const km = map.getCenter().distanceTo(L.latLng(center)) / 1000;
           map.flyTo(center, zoom, {
             duration: Math.min(1.2, 0.6 + km / 9000),
             easeLinearity: 0.24
