@@ -546,8 +546,16 @@
       // Fly the camera to face the chapter. The orbit target stays at the
       // globe center — targeting a surface point would leave OrbitControls
       // orbiting off-center after the panel closes, making pan/zoom feel
-      // broken until the next "back to whole route".
-      if (ch.anchor) {
+      // broken until the next "back to whole route". A selected stop pulls
+      // the camera closer and off the chapter's anchor so the day's city,
+      // not the whole chapter, is what fills the frame.
+      const focused = selectedPlaceIdx != null ? ch.places[selectedPlaceIdx] : null;
+      if (focused && focused.coords) {
+        // 2.02 sits just outside OrbitControls' minDistance (2.0); any closer
+        // and the first wheel tick would snap the camera back out.
+        const camPos = llv(focused.coords[0], focused.coords[1], 2.02);
+        flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
+      } else if (ch.anchor) {
         const camPos = llv(ch.anchor[0], ch.anchor[1], 2.35);
         flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
       }

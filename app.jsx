@@ -154,30 +154,37 @@
   // ── The year spine ────────────────────────────────────────────────────
   // 360 individual days, coloured by chapter, dimmed once they are behind
   // you. It is the whole trip in one line and a jump target at the same time.
-  function YearSpine({ chapters, current, selectedId, onPick }) {
+  function YearSpine({ chapters, current, selectedId, onPickDay, focusDay }) {
     const today = todayISO();
     const idx = window.dayIndex(today);
     const total = totalDays;
     const months = window.monthsBetween();
-    const ranges = React.useMemo(() => {
-      let at = 0;
-      const out = chapters.map((c) => {
-        const r = { ch: c, start: at, end: at + (c.days || 0) };
-        at += c.days || 0;
-        return r;
-      });
-      // Chapters count nights; the final exit day is shared with the next
-      // chapter's start in the plan data. Let the last chapter own the last
-      // tick so the spine always covers the full 360 days.
-      if (out.length) out[out.length - 1].end = total;
+    const [hover, setHover] = React.useState(null);
+
+    // One cell per day: the chapter that owns it, its date, and the city you
+    // are actually in that day. The city is what the tooltip names and what a
+    // click flies the map to — a day is a place, not a chapter.
+    const cells = React.useMemo(() => {
+      const tripStart = Date.parse('2026-06-21T00:00:00Z');
+      const winsById = {};
+      chapters.forEach((ch) => { winsById[ch.id] = window.TRIP_NOW.placeWindows(ch); });
+      const out = [];
+      let carried = null;
+      for (let i = 0; i < total; i++) {
+        const date = new Date(tripStart + i * 86400000).toISOString().slice(0, 10);
+        // Same owner rule the rest of the app uses, so the tooltip's city and
+        // the click's destination can never disagree on a shared exit day.
+        const ch = currentChapter(chapters, date) || carried || chapters[chapters.length - 1];
+        carried = ch;
+        const wins = winsById[ch.id] || [];
+        const win = wins.find((w) => w.start <= date && date <= w.end) || wins[wins.length - 1] || null;
+        out.push({ ch, date, city: win ? win.place.name : ch.title, placeIdx: win ? win.idx : null });
+      }
       return out;
     }, [chapters, total]);
-    const owners = React.useMemo(() => {      const out = [];
-      ranges.forEach((r) => {
-        for (let i = r.start; i < r.end; i++) out[i] = { ch: r.ch, start: r.start };
-      });
-      return out;
-    }, [ranges]);
+
+    const focusIdx = focusDay ? window.dayIndex(focusDay) : null;
+    const tip = hover != null ? cells[hover] : null;
     return (
       <div className="spine" aria-label="The year">
         <div className="spine-months">
@@ -188,29 +195,45 @@
           ))}
         </div>
         <div className="spine-track">
-          {Array.from({ length: total }).map((_, i) => {
-            const owner = owners[i] || { ch: chapters[chapters.length - 1], start: 0 };
-            const ch = owner.ch;
+          {cells.map((cell, i) => {
+            const ch = cell.ch;
             const isNow = i === idx;
             const isPast = i < idx;
             const isSelected = ch.id === selectedId;
             const isCurrent = !!current && ch.id === current.id;
-            const tickDate = new Date(Date.parse(ch.start + 'T00:00:00Z') + (i - owner.start) * 86400000).toISOString().slice(0, 10);
+            const isFocused = focusIdx === i;
             return (
               <button
                 key={i}
-                className={`spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''}`}
+                className={`spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''} ${isFocused ? 'is-focused' : ''}`}
                 style={{ '--tint': window.chapterTint(ch) }}
-                onClick={() => onPick(ch.id)}
-                title={`Day ${i + 1} · ${ch.title} · ${fmt(tickDate)}`}
-                aria-label={`Day ${i + 1}, ${ch.title}`}
+                onClick={() => onPickDay(cell.date)}
+                onMouseEnter={() => setHover(i)}
+                onMouseLeave={() => setHover((h) => (h === i ? null : h))}
+                onFocus={() => setHover(i)}
+                onBlur={() => setHover((h) => (h === i ? null : h))}
+                aria-label={`Day ${i + 1}, ${cell.city}, ${fmt(cell.date)}`}
               />
             );
           })}
+          {tip && (
+            <div
+              className="spine-tip"
+              aria-hidden="true"
+              style={{ left: `clamp(78px, ${((hover + 0.5) / total) * 100}%, calc(100% - 78px))` }}>
+              <b>{fmt(tip.date)}</b>
+              <span>{tip.city}</span>
+            </div>
+          )}
           <span className="spine-now" style={{ left: `${((idx + 0.5) / total) * 100}%` }}>
             <i />
             <b>{fmt(today)}</b>
           </span>
+          {focusIdx != null && focusIdx !== idx && (
+            <span className="spine-cursor" style={{ left: `${((focusIdx + 0.5) / total) * 100}%` }}>
+              <i />
+            </span>
+          )}
         </div>
       </div>
     );
@@ -356,6 +379,7 @@
     const [view, setView] = React.useState(urlParams.view || 'atlas');
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
+    const [focusDay, setFocusDay] = React.useState(null);
     const [detailOpen, setDetailOpen] = React.useState(!!urlParams.chapterId && urlParams.detail !== false);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapRetry, setMapRetry] = React.useState(0);
@@ -410,6 +434,7 @@
       if (!ch) { setTour(null); return undefined; }
       setSelectedId(ch.id);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setDetailOpen(false);
       const t = setTimeout(() => {
         setTour((cur) => (cur == null ? null : cur >= chapters.length - 1 ? null : cur + 1));
@@ -432,6 +457,7 @@
           const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + chapters.length) % chapters.length;
           setSelectedId(chapters[n].id);
           setSelectedPlaceIdx(null);
+          setFocusDay(null);
         }
       };
       window.addEventListener('keydown', onKey);
@@ -453,6 +479,21 @@
       setTour(null);
       setSelectedId(id);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
+      setDetailOpen(true);
+      if (view === 'ledger' || view === 'kit') setView('atlas');
+    };
+
+    // A spine click is a date, not a chapter: jump to the city the plan has
+    // you in that day, and leave the today marker where it is.
+    const openDay = (iso) => {
+      const ch = currentChapter(chapters, iso);
+      if (!ch) return;
+      const win = window.TRIP_NOW.placeWindows(ch).find((w) => w.start <= iso && iso <= w.end);
+      setTour(null);
+      setFocusDay(iso);
+      setSelectedId(ch.id);
+      setSelectedPlaceIdx(win ? win.idx : null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
@@ -466,6 +507,7 @@
       setTour(null);
       setSelectedId(null);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setDetailOpen(false);
       setFocusKey((k) => k + 1);
     };
@@ -499,7 +541,7 @@
     return (
       <div className={`app view-${view} ${isMobile ? 'is-mobile' : ''} ${showDetail ? 'has-detail' : ''}`}>
         <Header view={view} onView={goView} day={day} total={totalDays} isMobile={isMobile} />
-        <YearSpine chapters={chapters} current={current} selectedId={selectedId} onPick={openChapter} />
+        <YearSpine chapters={chapters} current={current} selectedId={selectedId} onPickDay={openDay} focusDay={focusDay} />
 
         <main className="app-body">
           {view === 'atlas' && (

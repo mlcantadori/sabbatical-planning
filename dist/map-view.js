@@ -436,7 +436,14 @@
       });
       const doFit = () => {
         map.invalidateSize();
-        if (placeCoords.length > 1) {
+        // A selected stop is a city, so frame that city and not the whole
+        // chapter: the pins stay, the camera narrows.
+        const focused = selectedPlaceIdx != null ? ch.places[selectedPlaceIdx] : null;
+        if (focused && focused.coords) {
+          map.setView(focused.coords, 12, {
+            animate: false
+          });
+        } else if (placeCoords.length > 1) {
           // maxZoom 14 lets tightly-clustered places frame at
           // neighbourhood/street level instead of capping at region level.
           map.fitBounds(placeCoords, {
