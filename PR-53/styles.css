@@ -1573,7 +1573,8 @@ button {
   .app-brand-meta { display: none; }
 }
 @media (max-width: 980px) {
-  .app-progress { display: none; }
+  /* The bar survives down to 881px (the disabled brand meta frees the room);
+     below that it moves to the header's bottom edge. */
   .app-nav button { padding: 6px 10px; font-size: 9px; }
 }
 
@@ -1587,7 +1588,7 @@ button {
     background: var(--paper);
   }
   .mobile-status .app-now {
-    padding: 10px 14px 0;
+    padding: 10px 14px 11px;
     gap: 6px;
   }
   /* One line per cell: label in a fixed column so the values line up,
@@ -1599,13 +1600,19 @@ button {
   }
   .mobile-status .app-now-label { flex: none; width: 90px; }
   .mobile-status .app-now-value { font-size: 14px; }
-  /* The day counter moved into the header, so this is the progress rule
-     alone — a bare 3px line under the now/next block. */
-  .mobile-progress {
-    padding: 2px 14px 10px;
-    background: var(--paper);
+  /* Trip progress rides the header's bottom edge on mobile — no room for a
+     220px inline bar next to the brand, nav and day counter. The bar replaces
+     the 1px header rule so the two don't stack. */
+  .app-header { border-bottom: none; }
+  .app-progress {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex: none;
   }
-  .mobile-progress .app-progress-bar { transform: none; }
+  .app-progress .app-progress-bar { transform: none; }
 
   .app-header { padding: 0 14px; gap: 10px; }
   .app-brand-mark { font-size: 18px; }

@@ -155,14 +155,12 @@
           </div>
         </header>
 
-        {/* Mobile status strip: now / next, with the trip-progress rule below
-            them (the day counter itself lives in the header on mobile too). */}
+        {/* Mobile status strip: the now/next block. The trip-progress bar
+            rides the header's bottom edge on mobile (see styles.css), and the
+            day counter lives in the header at every width. */}
         {isMobile && (
           <div className="mobile-status">
             <window.NowNext onSelect={onSelectChapter} />
-            <div className="mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
-              <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
-            </div>
           </div>
         )}
 

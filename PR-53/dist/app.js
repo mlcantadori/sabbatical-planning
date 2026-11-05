@@ -188,16 +188,7 @@
       className: "mobile-status"
     }, /*#__PURE__*/React.createElement(window.NowNext, {
       onSelect: onSelectChapter
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "mobile-progress",
-      title: `Day ${today.n} of ${store.getTotalDays()}`
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "app-progress-bar"
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        width: `${today.n / Math.max(1, store.getTotalDays()) * 100}%`
-      }
-    })))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
+    })), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode"
     }, /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode-toggle"
