@@ -2,6 +2,16 @@
 
 Trip photos are vendored locally so the site has no hotlinked images.
 
+## Added Nov 2026 — Hong Kong (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `hk/hong-kong-skyline.jpg` | Benh Lieu Song | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Hong Kong Harbour Night 2019-06-11.jpg`),
+downscaled to 2000px and recompressed locally. Replaces a 1024×169 strip that
+had no usable detail at card or hero size.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |
