@@ -20,6 +20,7 @@
   const CAL_NAME = 'Sabbatical 2026–2027';
   const LS_CAL = 'gcal-calendar-id';
   const LS_LAST = 'gcal-last-sync';
+  const LS_FP = 'gcal-synced-fingerprint';
   const LS_CLIENT = 'gcal-client-id';
   const SCOPES = 'https://www.googleapis.com/auth/calendar';
 
@@ -224,6 +225,29 @@
     });
     return events;
   }
+
+  // Fingerprint of what a push would carry right now. Only the fields the
+  // calendar actually stores count, so editing prose elsewhere in
+  // itinerary-data.js doesn't cry wolf. IDs are included: a renamed stop makes
+  // a new event id, which is a real change to push.
+  function fingerprint(events) {
+    const list = events || buildEvents(window.TRIP);
+    return window.dataDigest(list.map(e => [e.id, e.summary, e.description || '', e.start && e.start.date || '', e.end && e.end.date || ''].join('~')));
+  }
+
+  // No baseline means one of two things: this browser never pushed (the bare
+  // "Sync" label is the nudge, no dot), or it pushed before fingerprints
+  // existed — then there is no proof it is current, so ask for one push rather
+  // than claim "synced" on data that may have moved since.
+  function isStale() {
+    try {
+      const stored = localStorage.getItem(LS_FP);
+      if (!stored) return !!localStorage.getItem(LS_LAST);
+      return stored !== fingerprint();
+    } catch {
+      return false;
+    }
+  }
   async function findOrCreateCalendar() {
     try {
       const saved = localStorage.getItem(LS_CAL);
@@ -370,6 +394,9 @@
         synced: n,
         failed
       }));
+      // Baseline for the header's "unsynced" dot. Only a clean run counts:
+      // a partial push leaves the fingerprint behind so the nudge survives.
+      if (!failed.length) localStorage.setItem(LS_FP, fingerprint(events));
     } catch {}
     return {
       synced: n,
@@ -378,10 +405,22 @@
       at: stamp
     };
   }
+
+  // Which push is behind the current data. Both modules are loaded by the
+  // time App renders (this bundle first, tasks.js second), but guarded anyway.
+  function unsyncedNow() {
+    return {
+      calendar: !!(window.CalendarSync && window.CalendarSync.isStale()),
+      tasks: !!(window.TasksSync && window.TasksSync.isStale())
+    };
+  }
   function SyncButton({
     compact
   }) {
+    const [unsynced, setUnsynced] = React.useState(unsyncedNow);
     const [label, setLabel] = React.useState(() => {
+      const u = unsyncedNow();
+      if (u.calendar || u.tasks) return 'Sync';
       try {
         return localStorage.getItem(LS_LAST) || localStorage.getItem('gtasks-last-sync') ? 'Synced ✓' : 'Sync';
       } catch {
@@ -390,6 +429,8 @@
     });
     const [busy, setBusy] = React.useState(false);
     const [open, setOpen] = React.useState(false);
+    const refresh = () => setUnsynced(unsyncedNow());
+    const staleTitle = [unsynced.calendar ? 'Calendar: itinerary changed since the last sync' : null, unsynced.tasks ? 'Tasks: to-dos changed since the last sync' : null].filter(Boolean).join(' · ');
     const run = async kind => {
       setOpen(false);
       if (busy) return;
@@ -418,6 +459,7 @@
         alert(noun + ' sync failed: ' + (e && (e.message || e.result && e.result.error && e.result.error.message) || e));
       } finally {
         setBusy(false);
+        refresh();
       }
     };
     return /*#__PURE__*/React.createElement("span", {
@@ -426,12 +468,16 @@
       onClick: () => {
         if (!busy) setOpen(o => !o);
       },
-      title: "Push to Google Calendar or Google Tasks",
+      title: staleTitle || 'Push to Google Calendar or Google Tasks',
       "aria-haspopup": "menu",
       "aria-expanded": open
     }, /*#__PURE__*/React.createElement(window.Icon.calendar, {
       size: 12
-    }), " ", !compact && label, " ", !compact && ' ▾'), open && /*#__PURE__*/React.createElement("span", {
+    }), " ", !compact && label, " ", !compact && ' ▾', staleTitle && /*#__PURE__*/React.createElement("span", {
+      className: "sync-dot",
+      role: "img",
+      "aria-label": "unsynced changes"
+    })), open && /*#__PURE__*/React.createElement("span", {
       className: "sync-backdrop",
       onClick: () => setOpen(false)
     }), open && /*#__PURE__*/React.createElement("span", {
@@ -444,14 +490,22 @@
       title: "Push chapter stops, flights, trains, buses and ferries to your Google Calendar"
     }, /*#__PURE__*/React.createElement(window.Icon.calendar, {
       size: 12
-    }), " Calendar"), /*#__PURE__*/React.createElement("button", {
+    }), " Calendar", unsynced.calendar && /*#__PURE__*/React.createElement("span", {
+      className: "sync-dot",
+      role: "img",
+      "aria-label": "changed since last sync"
+    })), /*#__PURE__*/React.createElement("button", {
       role: "menuitem",
       disabled: busy,
       onClick: () => run('tasks'),
       title: "Push the to-do checklist to a Sabbatical list in Google Tasks"
     }, /*#__PURE__*/React.createElement(window.Icon.list, {
       size: 12
-    }), " Tasks")));
+    }), " Tasks", unsynced.tasks && /*#__PURE__*/React.createElement("span", {
+      className: "sync-dot",
+      role: "img",
+      "aria-label": "changed since last sync"
+    }))));
   }
   Object.assign(window, {
     SyncButton,
@@ -459,7 +513,9 @@
       buildEvents,
       syncAll,
       clientId,
-      CAL_NAME
+      CAL_NAME,
+      fingerprint,
+      isStale
     }
   });
 })();

@@ -287,6 +287,21 @@ button {
   cursor: default;
 }
 
+/* "Unsynced" nudge — a quiet amber dot, no badge or banner. It appears when
+   the itinerary or the to-dos have moved since the last successful push;
+   the button's tooltip names which one is behind. */
+.sync-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  flex: 0 0 auto;
+}
+.sync-menu .sync-dot {
+  margin-left: auto;
+}
+
 .app-main {
   position: relative;
   display: grid;
