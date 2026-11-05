@@ -702,6 +702,8 @@ button:focus-visible, [role="button"]:focus-visible {
   text-transform: uppercase;
   color: var(--ink-4);
 }
+.reel-track.is-dragging { cursor: grabbing; user-select: none; }
+.reel-track.is-dragging .reel-card { transform: none; }
 .reel-track {
   display: flex;
   gap: 12px;

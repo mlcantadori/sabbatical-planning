@@ -294,6 +294,35 @@
       const target = card.offsetLeft - track.offsetLeft;
       track.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
     }, [focusId, chapters.length]);
+    // Mouse drag scrolls the strip. Touch already does it natively, so this
+    // only kicks in for a mouse, and a drag that moves more than a few pixels
+    // must not also count as a click on the card underneath.
+    const drag = React.useRef({ active: false, x: 0, left: 0, moved: 0 });
+    const onDragStart = (e) => {
+      if (e.pointerType !== 'mouse') return;
+      const track = trackRef.current; if (!track) return;
+      drag.current = { active: true, x: e.clientX, left: track.scrollLeft, moved: 0 };
+      track.setPointerCapture(e.pointerId);
+      track.classList.add('is-dragging');
+    };
+    const onDragMove = (e) => {
+      const d = drag.current; if (!d.active) return;
+      const dx = e.clientX - d.x;
+      d.moved = Math.max(d.moved, Math.abs(dx));
+      trackRef.current.scrollLeft = d.left - dx;
+    };
+    const onDragEnd = (e) => {
+      const d = drag.current; if (!d.active) return;
+      d.active = false;
+      const track = trackRef.current; if (!track) return;
+      track.classList.remove('is-dragging');
+      try { track.releasePointerCapture(e.pointerId); } catch {}
+    };
+    const onClickCapture = (e) => {
+      if (drag.current.moved > 6) { e.preventDefault(); e.stopPropagation(); }
+      drag.current.moved = 0;
+    };
+
     return (
       <div className="reel">
         <div className="reel-head">
@@ -302,7 +331,14 @@
             <span className="reel-count">{chapters.length} chapters · {totalDays} days</span>
           </div>
         </div>
-        <div className="reel-track" ref={trackRef}>
+        <div
+          className="reel-track"
+          ref={trackRef}
+          onPointerDown={onDragStart}
+          onPointerMove={onDragMove}
+          onPointerUp={onDragEnd}
+          onPointerCancel={onDragEnd}
+          onClickCapture={onClickCapture}>
           {chapters.map((c) => {
             const isNow = !!current && c.id === current.id;
             const isSelected = c.id === selectedId;

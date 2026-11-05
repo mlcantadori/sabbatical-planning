@@ -50,14 +50,21 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
     ...style,
   };
 
+  // Vendored photos have a 480px WebP twin beside them (scripts/make-reel-
+  // thumbs.py). Offering both by width lets a 240px reel slot pull 26KB
+  // instead of the 190KB original, while a full-width hero still gets the
+  // original because its sizes ask for it.
+  const thumb = (/^extra-pictures\/(.+)$/.exec(src) || [])[1];
+
   return (
     <div className={`photo ${className}`} style={wrap}>
       <img
         src={src}
+        srcSet={thumb ? `extra-pictures/thumbs/${thumb.replace(/\.[^.]+$/, '.webp')} 480w, ${src} 1600w` : undefined}
         alt={alt || keyword}
         loading={loading}
         decoding="async"
-        sizes={sizes}
+        sizes={thumb ? (sizes || '100vw') : sizes}
         onLoad={() => setLoaded(true)}
         onError={() => { if (src !== fallback) setSrc(fallback); setLoaded(true); }}
         style={{
