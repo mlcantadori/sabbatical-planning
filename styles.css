@@ -350,12 +350,19 @@ button:focus-visible, [role="button"]:focus-visible {
   background: var(--tint, var(--ember));
   opacity: .22;
   cursor: pointer;
-  transition: opacity .18s, height .18s, filter .18s;
+  transition: opacity .18s, height .18s, bottom .18s, filter .18s;
 }
 .spine-tick.is-past { opacity: .85; }
 .spine-tick.is-current { opacity: 1; }
 .spine-tick.is-selected { opacity: 1; filter: saturate(1.15) brightness(1.12); }
-.spine-tick:hover { opacity: 1; height: 11px; }
+.spine-tick:hover {
+  opacity: 1;
+  height: 11px;
+  /* Ticks are bottom-aligned, so growing one lifts it off centre. Nudge it
+     back down by half the extra height to keep it centred on the bar. */
+  position: relative;
+  bottom: calc((var(--tick-h) - 11px) / 2);
+}
 .spine-tick.is-future { opacity: .3; }
 .spine-tick.is-now {
   opacity: 1;
@@ -382,6 +389,8 @@ button:focus-visible, [role="button"]:focus-visible {
 .spine-tick.is-focused {
   opacity: 1;
   height: calc(var(--tick-h) * 1.8);
+  position: relative;
+  bottom: calc(var(--tick-h) * -0.4);
   filter: saturate(1.25) brightness(1.3);
   box-shadow: 0 0 9px var(--tint, var(--ember));
 }
