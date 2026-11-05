@@ -437,7 +437,17 @@
     const current = currentChapter(chapters, today);
     const here = current ? currentCity(chapters, today) : null;
     const next = nextCity(chapters, today);
-    const active = (selectedId && store.getChapter(selectedId))
+    // The giant name belongs to the atlas, not to the spread. A spread opens by
+    // sliding over the atlas while the atlas fades out under it — if the name
+    // swapped to the clicked chapter in the same commit, the new title stayed
+    // on screen for the whole fade: a flash of the next chapter's name before
+    // the panel covered it. So the name samples the selection only while the
+    // atlas is visible. Adjusting it during render (rather than in an effect)
+    // means the catch-up happens in the same paint the atlas is still hidden,
+    // and no half-faded title is ever shown in either direction.
+    const [titleId, setTitleId] = React.useState(selectedId);
+    if (!detailOpen && titleId !== selectedId) setTitleId(selectedId);
+    const active = (titleId && store.getChapter(titleId))
       || current
       || (next ? chapters[0] : chapters[chapters.length - 1]);
     const stats = window.tripStats();
