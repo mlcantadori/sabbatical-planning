@@ -54,6 +54,17 @@ Sourced from Wikimedia Commons (`File:Taipei night skyline from Elephant
 Mountain May 2025 2.jpg`), downscaled from 8256px to 2000x1333. The street-level
 Taipei 101 shot stays with the Taipei stop.
 
+## Added Nov 2026 — Canton Tower (South China header)
+
+| File | Author | License |
+|---|---|---|
+| `china-e2/guangzhou-canton-tower-day.jpg` | Tim Wu | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Canton Tower 20220626 (cropped).jpg`),
+an aerial of the tower over Zhujiang New Town; downscaled from 2709px to
+2000x1333. Distinct keyword from the Guangzhou stop's `guangzhou canton tower`
+street-level photo.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |

@@ -285,7 +285,7 @@ window.TRIP = (function () {
       intro: 'Second mainland block, deliberately short: 8 days across the Pearl River Delta. Cantonese blitz in Guangzhou straight off the Hong Kong HSR, four friend-days in Shenzhen, then Macau for two nights before flying to Kuala Lumpur. Shanghai moves to the end of the spring China chapter — December is its dampest, grayest month and May suits it far better. The mainland stay is 6 days, comfortably inside the 30-day visa-free entry.',
       tldr: 'Guangzhou · Shenzhen · Macau',
       weather: { hi: 22, lo: 14, label: 'Subtropical south, mostly dry, 22°/14°', emoji: '🌉', rainyDays: 4 },
-      photos: ['guangzhou night skyline'],
+      photos: ['guangzhou canton tower aerial'],
       places: [
         { name: 'Guangzhou', photo: 'guangzhou canton tower', days: 2, query: 'Shamian Island, Guangzhou',
           highlights: ['Nov 28: HSR Hong Kong → Guangzhou South direct — Entry 2 starts','Cantonese food deep-dive — dim sum where it was born','Shamian Island colonial arcades, Chen Clan Academy','Canton Tower at night','Nov 30: HSR Guangzhou → Shenzhen (~30min)'] },
