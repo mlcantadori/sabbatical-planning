@@ -6,13 +6,14 @@ Trip photos are vendored locally so the site has no hotlinked images.
 
 | File | Author | License |
 |---|---|---|
-| `earth/blue-marble-8192.webp` · `earth/blue-marble-4096.webp` | NASA/Goddard Space Flight Center — *Blue Marble: Land Surface, Shallow Water, and Shaded Topography* (Reto Stöckli; ocean colour and composite by Robert Simmon) | Public domain |
+| `earth/blue-marble-16k.webp` · `earth/blue-marble-8k.webp` · `earth/blue-marble-4k.webp` | NASA/Goddard Space Flight Center — *Blue Marble: Land Surface, Shallow Water, and Shaded Topography* (Reto Stöckli; ocean colour and composite by Robert Simmon) | Public domain |
 
 Stitched from NASA GIBS WMTS layer `BlueMarble_ShadedRelief_Bathymetry`
 (EPSG:4326, `500m`, level 5 = 40×20 tiles = 20480×10240 px), then downscaled to
-8192×4096 and 4096×2048 and encoded WebP q86. GIBS serves the same public-domain
-Visible Earth composite with bathymetry, which is what the old hotlinked
-`unpkg.com/three-globe` texture was — at five times the linear resolution.
+16382×8191, 8192×4096 and 4096×2048 and encoded WebP (q76 for the 16k, q86 for
+the rest). GIBS serves the same public-domain Visible Earth composite with
+bathymetry, which is what the old hotlinked `unpkg.com/three-globe` texture was —
+at five times the linear resolution.
 
 ## Added Nov 2026 — China E1 (Hongcun night)
 

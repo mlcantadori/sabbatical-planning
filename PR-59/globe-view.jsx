@@ -11,13 +11,22 @@
   // thins tubes as you zoom in so the on-screen line weight stays ~constant.
   const ARC_R = 0.0014;
   // Blue Marble (shaded relief + bathymetry), vendored rather than hotlinked
-  // from unpkg. Same composite the CDN file used — this now comes from NASA
-  // GIBS, stitched at 20480×10240 and downscaled, so the globe keeps its
-  // winter look at 5x the texels. The 4k copy is the fallback for 1x
-  // displays and GPUs that cap textures at 8192 (older phones), where the
-  // big one costs VRAM and buys nothing.
-  const EARTH_TEX_8K = 'extra-pictures/earth/blue-marble-8192.webp';
-  const EARTH_TEX_4K = 'extra-pictures/earth/blue-marble-4096.webp';
+  // from unpkg — NASA GIBS tiles stitched at 20480×10240, so the same winter
+  // composite the CDN file used, at up to 16k. Three tiers, picked by what
+  // the screen can actually resolve: 4k is already sharp at 1x, the 16k only
+  // pays off on a retina desktop, and it costs 537MB of VRAM.
+  // 16382, not 16384: libwebp refuses any dimension above 16383.
+  const EARTH_TEX = {
+    big: 'extra-pictures/earth/blue-marble-16k.webp',
+    mid: 'extra-pictures/earth/blue-marble-8k.webp',
+    small: 'extra-pictures/earth/blue-marble-4k.webp',
+  };
+  // 16k is 2607 texels per radian of longitude. At camera distance d the
+  // surface under the camera sits (d-1) radii away, so it renders at
+  // f/(d-1) px per radian — with a 1740px-tall retina canvas that is 1:1 at
+  // d = 2.0, and 1.72 is the last step before the image reads soft (≈1.3x
+  // upscale). Closer than that needs tiled imagery, not a bigger file.
+  const MIN_DIST = 1.72;
 
   // [name, lng, lat] — major countries + trip-relevant places
   const COUNTRIES = [
@@ -106,7 +115,11 @@
       const earth = new THREE.Group();
       scene.add(earth);
       const maxTex = renderer.capabilities.maxTextureSize || 4096;
-      const texUrl = (window.devicePixelRatio >= 1.5 && maxTex >= 8192) ? EARTH_TEX_8K : EARTH_TEX_4K;
+      const dpr = window.devicePixelRatio || 1;
+      const wide = window.innerWidth >= 1200;
+      const texUrl = (dpr >= 1.5 && wide && maxTex >= 16384) ? EARTH_TEX.big
+        : (dpr >= 1.5 && maxTex >= 8192) ? EARTH_TEX.mid
+        : EARTH_TEX.small;
       // Same-origin vendored asset: clear three.js's default CORS mode, or
       // the globe goes black when index.html is opened straight from disk
       // (undefined leaves the attribute off; an empty string still means
@@ -161,7 +174,7 @@
       controls.enableDamping = true;
       controls.dampingFactor = 0.06;
       controls.enablePan = false;
-      controls.minDistance = 2.0;
+      controls.minDistance = MIN_DIST;
       controls.maxDistance = 9;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.55;
@@ -279,7 +292,7 @@
       const s = st.current; if (!s) return;
       s.spinOff = true;
       s.controls.autoRotate = false;
-      const len = Math.max(2.0, Math.min(9, s.camera.position.length() * f));
+      const len = Math.max(MIN_DIST, Math.min(9, s.camera.position.length() * f));
       s.camera.position.setLength(len);
     }
 
@@ -570,9 +583,9 @@
       // not the whole chapter, is what fills the frame.
       const focused = selectedPlaceIdx != null ? ch.places[selectedPlaceIdx] : null;
       if (focused && focused.coords) {
-        // 2.02 sits just outside OrbitControls' minDistance (2.0); any closer
-        // and the first wheel tick would snap the camera back out.
-        const camPos = llv(focused.coords[0], focused.coords[1], 2.02);
+        // Sits just outside OrbitControls' minDistance; any closer and the
+        // first wheel tick would snap the camera back out.
+        const camPos = llv(focused.coords[0], focused.coords[1], MIN_DIST + 0.18);
         flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
       } else if (ch.anchor) {
         const camPos = llv(ch.anchor[0], ch.anchor[1], 2.35);
