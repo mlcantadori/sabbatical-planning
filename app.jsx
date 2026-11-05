@@ -51,6 +51,11 @@
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapRetry, setMapRetry] = React.useState(0);
+    // The map opens on today's chapter (see MapView/GlobeView). This flag
+    // tracks an explicit "show me the whole route" so the reset control
+    // only offers a way back that actually changes something.
+    const [worldView, setWorldView] = React.useState(false);
+    const currentChapter = window.TRIP_NOW ? window.TRIP_NOW.currentChapter(store.getChapters()) : null;
     const [mapMode, setMapMode] = React.useState(() => {
       if (urlParams.map) return urlParams.map;
       try { return localStorage.getItem('map-mode') || 'globe'; } catch { return 'globe'; }
@@ -83,6 +88,8 @@
     const onSelectChapter = (id) => {
       setSelectedId(id);
       setSelectedPlaceIdx(null);
+      setWorldView(false);
+      setFocusKey(0); // a pending "show world" pulse is spent; don't replay it on remount
       if (view !== 'map') setView('map');
     };
     const onSelectPlace = (idx) => setSelectedPlaceIdx(idx);
@@ -93,6 +100,7 @@
     const onReset = () => {
       setSelectedId(null);
       setSelectedPlaceIdx(null);
+      setWorldView(true);
       setFocusKey((k) => k + 1);
     };
 
@@ -124,7 +132,9 @@
         <header className="app-header">
           <div className="app-brand">
             <div className="app-brand-mark">Asia</div>
-            <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers · Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</div>
+            <div className="app-brand-meta">
+              Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}
+            </div>
           </div>
 
           <div className="app-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
@@ -143,11 +153,12 @@
           </div>
         </header>
 
-        {/* Mobile progress strip: days + bar below the header (hidden on desktop) */}
+        {/* Mobile status strip: the now/next block. The trip-progress bar
+            rides the header's bottom edge on mobile (see styles.css), and the
+            day counter lives in the header at every width. */}
         {isMobile && (
-          <div className="app-progress mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
-            <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
-            <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
+          <div className="mobile-status">
+            <window.NowNext onSelect={onSelectChapter} />
           </div>
         )}
 
@@ -215,7 +226,7 @@
                   }}>Globe</button>
               </div>
 
-              {selectedId && (
+              {(selectedId || (currentChapter && !worldView)) && (
                 <div className="map-reset">
                   <button onClick={onReset}>← Back to whole route</button>
                 </div>

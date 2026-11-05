@@ -183,9 +183,19 @@
       };
 
       const home = llv(HOME.lat, HOME.lng, HOME.r);
-      camera.position.copy(home);
+      // Open facing today's chapter instead of the world. With no current
+      // chapter (before the trip starts / after it ends) it is the world
+      // view with the slow spin. Opening on a chapter holds still — the
+      // spin would drift off the place you actually are.
+      const cur = window.TRIP_NOW ? window.TRIP_NOW.currentChapter(chapters) : null;
+      const openPos = cur && cur.anchor ? llv(cur.anchor[0], cur.anchor[1], 2.7) : home;
+      camera.position.copy(openPos);
       controls.target.set(0, 0, 0);
       controls.update();
+      if (cur) {
+        controls.autoRotate = false;
+        st.current.spinOff = true;
+      }
 
       ctl.querySelector('[data-z="in"]').addEventListener('click', () => dolly(1 / 1.4));
       ctl.querySelector('[data-z="out"]').addEventListener('click', () => dolly(1.4));

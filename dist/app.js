@@ -68,6 +68,11 @@
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapRetry, setMapRetry] = React.useState(0);
+    // The map opens on today's chapter (see MapView/GlobeView). This flag
+    // tracks an explicit "show me the whole route" so the reset control
+    // only offers a way back that actually changes something.
+    const [worldView, setWorldView] = React.useState(false);
+    const currentChapter = window.TRIP_NOW ? window.TRIP_NOW.currentChapter(store.getChapters()) : null;
     const [mapMode, setMapMode] = React.useState(() => {
       if (urlParams.map) return urlParams.map;
       try {
@@ -101,6 +106,8 @@
     const onSelectChapter = id => {
       setSelectedId(id);
       setSelectedPlaceIdx(null);
+      setWorldView(false);
+      setFocusKey(0); // a pending "show world" pulse is spent; don't replay it on remount
       if (view !== 'map') setView('map');
     };
     const onSelectPlace = idx => setSelectedPlaceIdx(idx);
@@ -111,6 +118,7 @@
     const onReset = () => {
       setSelectedId(null);
       setSelectedPlaceIdx(null);
+      setWorldView(true);
       setFocusKey(k => k + 1);
     };
     const showDetail = view === 'map' && selectedId;
@@ -148,7 +156,7 @@
       className: "app-brand-mark"
     }, "Asia"), /*#__PURE__*/React.createElement("div", {
       className: "app-brand-meta"
-    }, "Sabbatical \xB7 2026\xB72027 \xB7 Two travelers \xB7 Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
+    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
       className: "app-progress",
       title: `Day ${today.n} of ${store.getTotalDays()}`
     }, /*#__PURE__*/React.createElement("div", {
@@ -177,17 +185,10 @@
     }, isMobile ? '✓' : 'To-do'), /*#__PURE__*/React.createElement(window.SyncButton, {
       compact: isMobile
     }))), isMobile && /*#__PURE__*/React.createElement("div", {
-      className: "app-progress mobile-progress",
-      title: `Day ${today.n} of ${store.getTotalDays()}`
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-progress-label"
-    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays()), /*#__PURE__*/React.createElement("div", {
-      className: "app-progress-bar"
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        width: `${today.n / Math.max(1, store.getTotalDays()) * 100}%`
-      }
-    }))), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
+      className: "mobile-status"
+    }, /*#__PURE__*/React.createElement(window.NowNext, {
+      onSelect: onSelectChapter
+    })), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode"
     }, /*#__PURE__*/React.createElement("div", {
       className: "mobile-mode-toggle"
@@ -241,7 +242,7 @@
           localStorage.setItem('map-mode', 'globe');
         } catch {}
       }
-    }, "Globe")), selectedId && /*#__PURE__*/React.createElement("div", {
+    }, "Globe")), (selectedId || currentChapter && !worldView) && /*#__PURE__*/React.createElement("div", {
       className: "map-reset"
     }, /*#__PURE__*/React.createElement("button", {
       onClick: onReset

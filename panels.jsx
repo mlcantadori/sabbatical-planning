@@ -11,23 +11,46 @@
   function ChapterList({ selectedId, onSelect }) {
     const store = window.useStore();
     const chapters = store.getChapters();
+    const today = window.TRIP_NOW.todayISO();
+    const current = window.TRIP_NOW.currentChapter(chapters, today);
+    const bodyRef = React.useRef(null);
+
+    // Open the list where you are: today's chapter pinned to the top of the
+    // viewport, past chapters above it scrolled out of the way. A chapter
+    // opened by deep link (?chapter=…) wins, so a shared link lands on its
+    // own row. Runs once per mount (desktop load, and again when the mobile
+    // list is opened).
+    React.useEffect(() => {
+      const body = bodyRef.current;
+      if (!body) return;
+      const row = () => body.querySelector('.chapter-row.is-active') || body.querySelector('.chapter-row.is-current');
+      if (!row()) return;
+      const align = () => {
+        const r = row();
+        if (r) body.scrollTop += r.getBoundingClientRect().top - body.getBoundingClientRect().top;
+        return body.scrollTop;
+      };
+      const mine = align();
+      // Webfont swap can shift row heights a few px after first paint —
+      // realign only if the user hasn't scrolled away in the meantime.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => { if (body.scrollTop === mine) align(); });
+      }
+    }, []);
 
     return (
       <div className="chapter-list">
         <div className="chapter-list-head">
-          <div className="chapter-list-head-row">
-            <div>
-              <div className="kicker">The Arc</div>
-              <div className="chapter-list-meta">{chapters.length} entries · {store.getTotalDays()} days</div>
-            </div>
-          </div>
+          <window.NowNext onSelect={onSelect} />
         </div>
-        <div className="chapter-list-body">
+        <div className="chapter-list-body" ref={bodyRef}>
           {chapters.map((c) => (
             <ChapterRow
               key={c.id}
               ch={c}
               isActive={c.id === selectedId}
+              isCurrent={!!current && c.id === current.id}
+              status={window.TRIP_NOW.chapterStatus(c, current, today)}
               onSelect={() => onSelect(c.id)}
             />
           ))}
@@ -36,18 +59,21 @@
     );
   }
 
-  function ChapterRow({ ch, isActive, onSelect }) {
+  function ChapterRow({ ch, isActive, isCurrent, status, onSelect }) {
     const accent = chapterColor(ch);
     return (
       <div
-        className={`chapter-row ${isActive ? 'is-active' : ''}`}
+        className={`chapter-row ${isActive ? 'is-active' : ''} ${isCurrent ? 'is-current' : ''} ${status === 'past' ? 'is-past' : ''}`}
         onClick={onSelect}>
-        <span className="chapter-row-marker" style={{ background: isActive ? accent : 'transparent' }} />
+        <span className="chapter-row-marker" style={{ background: isActive || isCurrent ? accent : 'transparent' }} />
         <span className="chapter-row-num">
           {ch.kind === 'chapter' ? (ch.num || '').toString().padStart(2, '0') : '··'}
         </span>
         <span className="chapter-row-body">
-          <span className="chapter-row-title">{ch.title}</span>
+          <span className="chapter-row-title">
+            <span className="chapter-row-title-text">{ch.title}</span>
+            {isCurrent && <span className="chapter-row-now">Now</span>}
+          </span>
           <span className="chapter-row-dates">
             <span className="chapter-row-region-dot" style={{ background: accent }} />
             {fmt(ch.start)} – {fmt(ch.end)} · {ch.days}d

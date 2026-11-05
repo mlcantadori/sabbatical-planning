@@ -64,28 +64,51 @@
     };
     const stopCoords = (s) => (s.place ? s.place.coords : s.ch.anchor);
 
-    // Frame all city stops edge-to-edge (unconditional).
-    const fitWorld = () => {
+    // The chapter today falls in — the map opens here. Null before the trip
+    // starts and after it ends, when the whole route (world view) is home.
+    const homeChapter = () => (window.TRIP_NOW ? window.TRIP_NOW.currentChapter(chapters) : null);
+
+    // Points + framing for the home view: today's chapter when there is
+    // one, otherwise every city stop edge-to-edge.
+    const homeFrame = () => {
+      const cur = homeChapter();
+      if (cur) {
+        const pts = (cur.places || []).map((p) => p.coords).filter(Boolean);
+        // maxZoom caps the fit at continent level (z4) — the opening frame
+        // should read "South Asia", not "Kathmandu". The fit still centers
+        // on the chapter, so the continent is the one you're standing in.
+        return { pts, padding: [24, 24], maxZoom: 4, single: cur.anchor };
+      }
+      return { pts: getStops().map(stopCoords).filter(Boolean), padding: [24, 24], maxZoom: undefined, single: null };
+    };
+
+    const frameHome = () => {
       const map = mapRef.current;
       if (!map || selectedIdRef.current) return;
-      const pts = getStops().map(stopCoords).filter(Boolean);
-      if (pts.length < 2) return;
       map.invalidateSize();
-      map.fitBounds(pts, { padding: [24, 24], animate: false });
+      const { pts, padding, maxZoom, single } = homeFrame();
+      if (pts.length > 1) {
+        map.fitBounds(pts, { padding, maxZoom, animate: false });
+      } else if (pts.length === 1) {
+        map.setView(pts[0], 4, { animate: false });
+      } else if (single) {
+        map.setView(single, 4, { animate: false });
+      }
     };
 
     // Never rests more zoomed out than the fit requires (repairs a
     // premature fit computed while the layout/fonts were still
     // settling); never touches a manual zoom-in.
-    const ensureWorldFit = () => {
+    const ensureHomeFit = () => {
       const map = mapRef.current;
       if (!map || selectedIdRef.current) return;
-      const pts = getStops().map(stopCoords).filter(Boolean);
-      if (pts.length < 2) return;
       map.invalidateSize();
-      const need = map.getBoundsZoom(pts, false, [24, 24]);
+      const { pts, padding, maxZoom } = homeFrame();
+      if (pts.length < 2) return;
+      const capped = maxZoom == null ? Infinity : maxZoom;
+      const need = Math.min(map.getBoundsZoom(pts, false, padding), capped);
       if (map.getZoom() < need) {
-        map.fitBounds(pts, { padding: [24, 24], animate: false });
+        map.fitBounds(pts, { padding, maxZoom, animate: false });
       }
     };
 
@@ -93,9 +116,13 @@
     React.useEffect(() => {
       if (mapRef.current || !window.L) return;
       const L = window.L;
+      // First paint already faces today's chapter instead of a generic
+      // Asia-wide center (frameHome below settles the exact framing).
+      const cur = homeChapter();
+      const firstPt = cur ? (cur.anchor || (cur.places || []).map((p) => p.coords).filter(Boolean)[0]) : null;
       const map = L.map(ref.current, {
-        center: [25, 105],
-        zoom: 4,
+        center: firstPt || [25, 105],
+        zoom: firstPt ? 4 : 3,
         minZoom: 2,
         maxZoom: 19,
         zoomControl: false,
@@ -138,13 +165,13 @@
       const onResize = () => {
         if (mapRef.current) mapRef.current.invalidateSize();
         clearTimeout(onResize._t);
-        onResize._t = setTimeout(() => ensureWorldFit(), 250);
+        onResize._t = setTimeout(() => ensureHomeFit(), 250);
       };
       window.addEventListener('resize', onResize);
       // Late layout shifts (webfonts, images) don't fire resize — refit
       // once they're settled so the initial frame isn't stuck too wide.
       if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => ensureWorldFit());
+        document.fonts.ready.then(() => ensureHomeFit());
       }
       return () => {
         window.removeEventListener('resize', onResize);
@@ -225,13 +252,14 @@
         if (pin) pin.classList.toggle('is-active', id === selectedIdRef.current);
       });
 
-      // If no chapter selected, do an initial fit so new chapters get
-      // included in the framing. The map lives in its own grid column
-      // (no overlaid sidebar), so small symmetric padding frames the
-      // dots tightly. ensureWorldFit also repairs it after late layout
-      // shifts and window resizes (see the build-once effect above).
+      // If no chapter selected, apply the home framing (today's chapter,
+      // or the whole route) so the opening view is where you actually
+      // are. The map lives in its own grid column (no overlaid sidebar),
+      // so small symmetric padding frames the dots tightly. ensureHomeFit
+      // also repairs it after late layout shifts and window resizes (see
+      // the build-once effect above).
       if (!selectedIdRef.current && routePoints.length) {
-        setTimeout(() => fitWorld(), 100);
+        setTimeout(() => frameHome(), 100);
       }
       // Deps: chapter ids + anchors + place coords (any add/remove/edit re-runs)
     }, [chapters.map((c) => c.id + ':' + (c.anchor || []).join(',') + ':' + (c.places || []).map((p) => (p.coords || []).join(',')).join(';')).join('|')]);

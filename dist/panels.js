@@ -26,38 +26,67 @@
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
+    const today = window.TRIP_NOW.todayISO();
+    const current = window.TRIP_NOW.currentChapter(chapters, today);
+    const bodyRef = React.useRef(null);
+
+    // Open the list where you are: today's chapter pinned to the top of the
+    // viewport, past chapters above it scrolled out of the way. A chapter
+    // opened by deep link (?chapter=…) wins, so a shared link lands on its
+    // own row. Runs once per mount (desktop load, and again when the mobile
+    // list is opened).
+    React.useEffect(() => {
+      const body = bodyRef.current;
+      if (!body) return;
+      const row = () => body.querySelector('.chapter-row.is-active') || body.querySelector('.chapter-row.is-current');
+      if (!row()) return;
+      const align = () => {
+        const r = row();
+        if (r) body.scrollTop += r.getBoundingClientRect().top - body.getBoundingClientRect().top;
+        return body.scrollTop;
+      };
+      const mine = align();
+      // Webfont swap can shift row heights a few px after first paint —
+      // realign only if the user hasn't scrolled away in the meantime.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          if (body.scrollTop === mine) align();
+        });
+      }
+    }, []);
     return /*#__PURE__*/React.createElement("div", {
       className: "chapter-list"
     }, /*#__PURE__*/React.createElement("div", {
       className: "chapter-list-head"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-head-row"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      className: "kicker"
-    }, "The Arc"), /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-meta"
-    }, chapters.length, " entries \xB7 ", store.getTotalDays(), " days")))), /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-body"
+    }, /*#__PURE__*/React.createElement(window.NowNext, {
+      onSelect: onSelect
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "chapter-list-body",
+      ref: bodyRef
     }, chapters.map(c => /*#__PURE__*/React.createElement(ChapterRow, {
       key: c.id,
       ch: c,
       isActive: c.id === selectedId,
+      isCurrent: !!current && c.id === current.id,
+      status: window.TRIP_NOW.chapterStatus(c, current, today),
       onSelect: () => onSelect(c.id)
     }))));
   }
   function ChapterRow({
     ch,
     isActive,
+    isCurrent,
+    status,
     onSelect
   }) {
     const accent = chapterColor(ch);
     return /*#__PURE__*/React.createElement("div", {
-      className: `chapter-row ${isActive ? 'is-active' : ''}`,
+      className: `chapter-row ${isActive ? 'is-active' : ''} ${isCurrent ? 'is-current' : ''} ${status === 'past' ? 'is-past' : ''}`,
       onClick: onSelect
     }, /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-marker",
       style: {
-        background: isActive ? accent : 'transparent'
+        background: isActive || isCurrent ? accent : 'transparent'
       }
     }), /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-num"
@@ -65,7 +94,11 @@
       className: "chapter-row-body"
     }, /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-title"
-    }, ch.title), /*#__PURE__*/React.createElement("span", {
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "chapter-row-title-text"
+    }, ch.title), isCurrent && /*#__PURE__*/React.createElement("span", {
+      className: "chapter-row-now"
+    }, "Now")), /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-dates"
     }, /*#__PURE__*/React.createElement("span", {
       className: "chapter-row-region-dot",
