@@ -2012,7 +2012,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .donut-key li span { flex: 1; }
 .donut-key li b { font-weight: 500; color: var(--ink-2); }
 /* The share of the total, spelled out instead of read off the ring. */
-.donut-pct { font-style: normal; font-weight: 400; margin-left: 5px; color: var(--ink-4); display: none; }
+.donut-pct { font-style: normal; font-weight: 400; margin-left: 5px; color: var(--ink-4); }
 
 .bar-list { display: flex; flex-direction: column; }
 .bar-row {
@@ -2686,7 +2686,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .donut-wrap { gap: 0; }
   .donut, .donut-hole { display: none; }
   .donut-key { min-width: 0; width: 100%; gap: 8px; }
-  .donut-pct { display: inline; }
   .donut-key li { font-size: 7px; }
   .bar-row { grid-template-columns: 1fr 78px; grid-template-areas: "ch val" "track per"; gap: 6px 10px; padding: 10px 2px; }
   .bar-ch { grid-area: ch; }
