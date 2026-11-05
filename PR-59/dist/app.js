@@ -326,7 +326,7 @@
   }) {
     const isLong = active.title.length > 12;
     // "Now" selects a chapter so the camera has somewhere to go, but the
-    // title should keep the present-tense voice — "3 days left", the next
+    // title should keep the present-tense voice — today's city, the next
     // stop — rather than switching to the "you opened this" one.
     const isNow = !!nowId && active.id === nowId;
     const live = !selected || isNow;
@@ -334,8 +334,7 @@
     if (selected && !isNow) {
       sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
     } else if (here && current) {
-      const left = next ? daysUntil(next.start) : daysUntil(current.end);
-      sub = `${here.place.name} · ${left <= 0 ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`}`;
+      sub = here.place.name;
     } else {
       sub = `${fmt(active.start)} – ${fmt(active.end)}`;
     }
