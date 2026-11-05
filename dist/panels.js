@@ -369,20 +369,27 @@
       const to = acc / grand * 100;
       return `${s.color} ${from}% ${to}%`;
     }).join(', ');
-    const rows = budget.chapters.map((r, i) => ({
-      ...r,
-      idx: i + 1,
-      title: byId[r.id] && byId[r.id].title || r.id,
-      total: rowTotal(r),
-      perDay: rowTotal(r) / r.days,
-      tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45'
-    }));
+    const rows = budget.chapters.map((r, i) => {
+      const total = rowTotal(r);
+      return {
+        ...r,
+        idx: i + 1,
+        title: byId[r.id] && byId[r.id].title || r.id,
+        total,
+        perDay: total / r.days,
+        nightly: Object.fromEntries(CATS.map(([k]) => [k, (r[k] || 0) / r.days])),
+        tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45'
+      };
+    });
     const maxRow = Math.max(...rows.map(r => r.total));
     const [sortKey, setSortKey] = React.useState('idx');
     const [sortDir, setSortDir] = React.useState(1);
+    // Sort on what the cell shows: nightly rates for the cost columns,
+    // nights/total for the rest.
+    const sortVal = (r, k) => r.nightly && k in r.nightly ? r.nightly[k] : r[k];
     const sorted = [...rows].sort((a, b) => {
-      const va = a[sortKey],
-        vb = b[sortKey];
+      const va = sortVal(a, sortKey),
+        vb = sortVal(b, sortKey);
       const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
       return cmp * sortDir;
     });
@@ -392,6 +399,7 @@
         setSortDir(1);
       }
     };
+    const chapterNights = budget.chapters.reduce((s, r) => s + r.days, 0);
     const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'Nights'], ['perDay', '$/night'], ['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Transport'], ['activities', 'Activities'], ['fees', 'Fees'], ['total', 'Total']];
     return /*#__PURE__*/React.createElement("div", {
       className: "page-inner ledger-page"
@@ -465,14 +473,15 @@
     }, fmt$(r.perDay), /*#__PURE__*/React.createElement("i", null, "/night"))))), /*#__PURE__*/React.createElement(SectionHead, {
       num: "02",
       title: "The long table",
-      note: "click a column to sort"
+      note: "per night, except total \xB7 click to sort"
     }), /*#__PURE__*/React.createElement("div", {
       className: "ledger-table-wrap"
     }, /*#__PURE__*/React.createElement("table", {
       className: "ledger-table"
     }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, COLS.map(([k, label]) => /*#__PURE__*/React.createElement("th", {
       key: k,
-      className: k === 'total' ? 'is-num' : ''
+      className: k === 'total' ? 'is-num' : '',
+      title: rows.length && k in rows[0].nightly ? 'Per night, two travellers' : undefined
     }, /*#__PURE__*/React.createElement("button", {
       onClick: () => toggleSort(k)
     }, label, sortKey === k ? sortDir === 1 ? ' ▲' : ' ▼' : ''))))), /*#__PURE__*/React.createElement("tbody", null, sorted.map(r => /*#__PURE__*/React.createElement("tr", {
@@ -482,13 +491,16 @@
       className: "is-muted"
     }, r.idx), /*#__PURE__*/React.createElement("td", {
       className: "is-name"
-    }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay)), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging)), /*#__PURE__*/React.createElement("td", null, fmt$(r.food)), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport)), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities)), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees)), /*#__PURE__*/React.createElement("td", {
+    }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.lodging)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.food)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.transport)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.activities)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.fees)), /*#__PURE__*/React.createElement("td", {
       className: "is-num is-total"
     }, fmt$(r.total)))), /*#__PURE__*/React.createElement("tr", {
-      className: "is-sum"
+      className: "is-sum",
+      title: `Weighted by nights (${chapterNights}). Total column is all chapter spend.`
     }, /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
       className: "is-name"
-    }, "Chapters"), /*#__PURE__*/React.createElement("td", null, budget.chapters.reduce((s, r) => s + r.days, 0)), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+    }, "Chapters \xB7 avg / night"), /*#__PURE__*/React.createElement("td", null, chapterNights), /*#__PURE__*/React.createElement("td", null, fmt$(chTotal / chapterNights)), CATS.map(([k]) => /*#__PURE__*/React.createElement("td", {
+      key: k
+    }, fmt$(catTotals[k] / chapterNights))), /*#__PURE__*/React.createElement("td", {
       className: "is-num is-total"
     }, fmt$(chTotal)))))), /*#__PURE__*/React.createElement("div", {
       className: "ledger-below"

@@ -276,16 +276,23 @@
       return `${s.color} ${from}% ${to}%`;
     }).join(', ');
 
-    const rows = budget.chapters.map((r, i) => ({
-      ...r, idx: i + 1, title: (byId[r.id] && byId[r.id].title) || r.id,
-      total: rowTotal(r), perDay: rowTotal(r) / r.days,
-      tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45',
-    }));
+    const rows = budget.chapters.map((r, i) => {
+      const total = rowTotal(r);
+      return {
+        ...r, idx: i + 1, title: (byId[r.id] && byId[r.id].title) || r.id,
+        total, perDay: total / r.days,
+        nightly: Object.fromEntries(CATS.map(([k]) => [k, (r[k] || 0) / r.days])),
+        tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45',
+      };
+    });
     const maxRow = Math.max(...rows.map((r) => r.total));
     const [sortKey, setSortKey] = React.useState('idx');
     const [sortDir, setSortDir] = React.useState(1);
+    // Sort on what the cell shows: nightly rates for the cost columns,
+    // nights/total for the rest.
+    const sortVal = (r, k) => (r.nightly && k in r.nightly ? r.nightly[k] : r[k]);
     const sorted = [...rows].sort((a, b) => {
-      const va = a[sortKey], vb = b[sortKey];
+      const va = sortVal(a, sortKey), vb = sortVal(b, sortKey);
       const cmp = typeof va === 'string' ? va.localeCompare(vb) : va - vb;
       return cmp * sortDir;
     });
@@ -293,6 +300,7 @@
       if (k === sortKey) setSortDir((d) => -d);
       else { setSortKey(k); setSortDir(1); }
     };
+    const chapterNights = budget.chapters.reduce((s, r) => s + r.days, 0);
     const COLS = [
       ['idx', '#'], ['title', 'Chapter'], ['days', 'Nights'], ['perDay', '$/night'],
       ['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Transport'],
@@ -348,13 +356,17 @@
           ))}
         </div>
 
-        <SectionHead num="02" title="The long table" note="click a column to sort" />
+        <SectionHead num="02" title="The long table" note="per night, except total · click to sort" />
         <div className="ledger-table-wrap">
           <table className="ledger-table">
             <thead>
               <tr>
                 {COLS.map(([k, label]) => (
-                  <th key={k} className={k === 'total' ? 'is-num' : ''}>
+                  <th
+                    key={k}
+                    className={k === 'total' ? 'is-num' : ''}
+                    title={rows.length && k in rows[0].nightly ? 'Per night, two travellers' : undefined}
+                  >
                     <button onClick={() => toggleSort(k)}>
                       {label}{sortKey === k ? (sortDir === 1 ? ' ▲' : ' ▼') : ''}
                     </button>
@@ -369,24 +381,23 @@
                   <td className="is-name">{r.title}</td>
                   <td>{r.days}</td>
                   <td>{fmt$(r.perDay)}</td>
-                  <td>{fmt$(r.lodging)}</td>
-                  <td>{fmt$(r.food)}</td>
-                  <td>{fmt$(r.transport)}</td>
-                  <td>{fmt$(r.activities)}</td>
-                  <td>{fmt$(r.fees)}</td>
+                  <td>{fmt$(r.nightly.lodging)}</td>
+                  <td>{fmt$(r.nightly.food)}</td>
+                  <td>{fmt$(r.nightly.transport)}</td>
+                  <td>{fmt$(r.nightly.activities)}</td>
+                  <td>{fmt$(r.nightly.fees)}</td>
                   <td className="is-num is-total">{fmt$(r.total)}</td>
                 </tr>
               ))}
-              <tr className="is-sum">
+              <tr
+                className="is-sum"
+                title={`Weighted by nights (${chapterNights}). Total column is all chapter spend.`}
+              >
                 <td />
-                <td className="is-name">Chapters</td>
-                <td>{budget.chapters.reduce((s, r) => s + r.days, 0)}</td>
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
+                <td className="is-name">Chapters · avg / night</td>
+                <td>{chapterNights}</td>
+                <td>{fmt$(chTotal / chapterNights)}</td>
+                {CATS.map(([k]) => <td key={k}>{fmt$(catTotals[k] / chapterNights)}</td>)}
                 <td className="is-num is-total">{fmt$(chTotal)}</td>
               </tr>
             </tbody>
