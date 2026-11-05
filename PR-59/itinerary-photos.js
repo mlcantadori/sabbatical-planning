@@ -67,6 +67,7 @@ window.PHOTO_IDS = {
   'myeongdong night market':     'extra-pictures/korea/myeongdong-night-market.jpg',
   // ── Taiwan ────────────────────────────────────────────────────────
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
+  'taipei 101 elephant mountain':'extra-pictures/taiwan/taipei-101-elephant-mountain.jpg',
   'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',
   'alishan sea of clouds':       'extra-pictures/taiwan/alishan-sea-of-clouds.jpg',
   'kaohsiung harbor':            'extra-pictures/taiwan/kaohsiung-harbor.jpg',

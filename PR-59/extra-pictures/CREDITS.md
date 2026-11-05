@@ -44,6 +44,16 @@ Sourced from Wikimedia Commons (`File:Myeongdong night market seoul 2.jpg`),
 downscaled from 4032px to 2000x1500. Replaces a photograph from trotop.be that
 was all rights reserved.
 
+## Added Nov 2026 — Taiwan (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `taiwan/taipei-101-elephant-mountain.jpg` | 4300streetcar | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+
+Sourced from Wikimedia Commons (`File:Taipei night skyline from Elephant
+Mountain May 2025 2.jpg`), downscaled from 8256px to 2000x1333. The street-level
+Taipei 101 shot stays with the Taipei stop.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |

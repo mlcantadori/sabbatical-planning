@@ -340,7 +340,7 @@ window.TRIP = (function () {
       intro: 'Fifteen days running south-to-north through Taiwan in its dry winter: land in Kaohsiung with two clear days before a warm, uncrowded harbour countdown, graze Tainan for four days (arguably the best street food in the Chinese-speaking world), climb to Alishan for the January sea of clouds, and finish in Taipei for museums, hot springs and the departure to Osaka. Deliberately avoids the Taipei 101 crush: NYE here is a harbour-front fireworks show with room to stand, 20°C and dry.',
       tldr: 'Kaohsiung (NYE) · Tainan · Alishan · Taipei',
       weather: { hi: 22, lo: 14, label: 'Dry mild south → cooler drizzly north, 22°/14°', emoji: '🏮', rainyDays: 6 },
-      photos: ['taipei 101 night'],
+      photos: ['taipei 101 elephant mountain'],
       places: [
         { name: 'Kaohsiung', photo: 'kaohsiung harbor', days: 4, query: 'Kaohsiung Harbor, Taiwan',
           highlights: ['Dec 29: fly Krabi → Bangkok → Kaohsiung — arrive warm and dry, two days before NYE','NYE Dec 31: harbour-front countdown and fireworks at Dream Mall / Kaohsiung Port — Taiwan\'s #2 event, but ~200–400k with space to stand (vs ~1M in Xinyi)','Pier-2 Art Center, Cijin Island ferry + sunset, Lotus Pond dragons','Ruifeng Night Market; 20°C and dry — you can walk home after midnight','Jan 2: 35-min train north to Tainan'] },
