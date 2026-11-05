@@ -122,10 +122,10 @@ window.TRIP = (function () {
       places: [
         { name: 'Rio de Janeiro', photo: 'copacabana beach', days: 29, query: 'Ipanema, Rio de Janeiro',
           highlights: ['Petrópolis–Teresópolis trail (Serra dos Órgãos)','Diving certifications: Advanced Open Water + NITROX','Fly Rio → Fortaleza Jul 20'] },
-        { name: 'Cumbuco', photo: 'cumbuco beach kites', days: 29, query: 'Cumbuco, Caucaia, Ceará',
+        { name: 'Cumbuco', photo: 'cumbuco beach kites', days: 30, query: 'Cumbuco, Caucaia, Ceará',
           highlights: ['Stayed in a condo — home base','Short kitesurfing sessions from the condo','Occasional downwinders from the village center','Fly Fortaleza → São Paulo Aug 19'] },
         { name: 'São Paulo', photo: 'masp sao paulo', days: 7, query: 'Avenida Paulista, São Paulo',
-          highlights: ['Farewell BBQ before leaving Brazil','Fly São Paulo → Toronto to open the international leg'] },
+          highlights: ['Farewell BBQ before leaving Brazil','Aug 26: fly São Paulo → Toronto 21:35 — lands Aug 27, the international leg opens'] },
       ],
     },
     {
@@ -587,7 +587,7 @@ window.TRIP = (function () {
     // Every leg carries a `date` (departure day) so the calendar sync can
     // place flight blocks; totals are unchanged by leg splits.
     flights: [
-      { route: 'São Paulo → Toronto', cost: 900, date: '2026-08-27', note: 'Bought ✅ (locked)' },
+      { route: 'São Paulo → Toronto', cost: 900, date: '2026-08-26', note: 'Bought ✅ (locked) — 21:35 departure, lands Toronto Aug 27; overnight, so the Canada chapter starts the next day' },
       { route: 'Toronto → Athens', cost: 800, date: '2026-08-31', note: 'Bought ✅ (locked), overnight, lands Sep 1' },
       { route: 'Athens → Cappadocia via IST', cost: 500, date: '2026-09-21', note: 'Bought ✅ (est.)' },
       { route: 'Istanbul → Baku', cost: 450, date: '2026-10-12', note: 'Bought ✅ (est.)' },
