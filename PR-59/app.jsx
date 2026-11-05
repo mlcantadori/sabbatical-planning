@@ -1,5 +1,5 @@
 // The Long Way East — app shell: chrome, year spine, atlas stage, chapter reel,
-// route tour, cover, and the four sections (Atlas / Chapters / Budget / Tasks).
+// cover, and the four sections (Atlas / Chapters / Budget / Tasks).
 
 (function () {
   const { totalDays, helpers, REGIONS } = window.TRIP;
@@ -266,18 +266,14 @@
   }
 
   // ── Atlas tools ───────────────────────────────────────────────────────
-  function AtlasTools({ mapMode, onMapMode, onReset, tour, onTour }) {
+  function AtlasTools({ mapMode, onMapMode, onReset }) {
     return (
       <div className="atlas-tools">
         <div className="tool-seg" role="group" aria-label="Map style">
           <button className={mapMode === 'globe' ? 'is-active' : ''} onClick={() => onMapMode('globe')} title="3D globe"><window.Icon.globe size={12} /> <span className="tool-label">Globe</span></button>
           <button className={mapMode === 'map' ? 'is-active' : ''} onClick={() => onMapMode('map')} title="2D map"><window.Icon.map size={12} /> <span className="tool-label">Map</span></button>
         </div>
-        <button className="tool-btn" onClick={onReset} title="Zoom back to the whole route"><window.Icon.compass size={13} /> <span className="tool-label">Whole route</span></button>
-        <button className={`tool-btn ${tour ? 'is-live' : ''}`} onClick={onTour} title="Fly through every chapter">
-          {tour ? <window.Icon.stop size={11} /> : <window.Icon.play size={10} />}
-          <span className="tool-label">{tour ? 'Stop tour' : 'Route tour'}</span>
-        </button>
+        <button className="tool-btn" onClick={onReset} title="Back to where you are today"><window.Icon.compass size={13} /> <span className="tool-label">Whole route</span></button>
       </div>
     );
   }
@@ -342,19 +338,6 @@
     );
   }
 
-  // ── Tour bar ──────────────────────────────────────────────────────────
-  function TourBar({ index, total, chapter, onStop }) {
-    return (
-      <div className="tourbar">
-        <span className="tourbar-live"><i /> Live</span>
-        <span className="tourbar-name">{chapter.title}</span>
-        <span className="tourbar-track"><span style={{ width: `${((index + 1) / total) * 100}%` }} /></span>
-        <span className="tourbar-count">{String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
-        <button onClick={onStop}>Stop</button>
-      </div>
-    );
-  }
-
   // ── App ───────────────────────────────────────────────────────────────
   function App() {
     const store = window.useStore();
@@ -377,7 +360,6 @@
       if (urlParams.map) return urlParams.map;
       try { return localStorage.getItem('map-mode') || 'globe'; } catch { return 'globe'; }
     });
-    const [tour, setTour] = React.useState(null);
     const [cover, setCover] = React.useState(() => {
       try {
         const q = new URLSearchParams(window.location.search);
@@ -437,23 +419,6 @@
       } catch {}
     }, [view, mapMode, selectedId, selectedPlaceIdx, detailOpen]);
 
-    // Tour: one chapter every 5.2s, camera flying between anchors.
-    React.useEffect(() => {
-      if (tour == null) return undefined;
-      const idx = Math.min(tour, chapters.length - 1);
-      const ch = chapters[idx];
-      if (!ch) { setTour(null); return undefined; }
-      setSelectedId(ch.id);
-      setSelectedPlaceIdx(null);
-      setFocusDay(null);
-      setPlacePopup(false);
-      setDetailOpen(false);
-      const t = setTimeout(() => {
-        setTour((cur) => (cur == null ? null : cur >= chapters.length - 1 ? null : cur + 1));
-      }, 5200);
-      return () => clearTimeout(t);
-    }, [tour, chapters.length]);
-
     // Escape closes the chapter panel; arrows step between chapters.
     React.useEffect(() => {
       const onKey = (e) => {
@@ -461,7 +426,6 @@
         if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
         if (e.key === 'Escape') {
           if (detailOpen) setDetailOpen(false);
-          else if (tour != null) setTour(null);
         }
         if (detailOpen && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
           const i = chapters.findIndex((c) => c.id === selectedId);
@@ -475,7 +439,7 @@
       };
       window.addEventListener('keydown', onKey);
       return () => window.removeEventListener('keydown', onKey);
-    }, [detailOpen, selectedId, tour, chapters]);
+    }, [detailOpen, selectedId, chapters]);
 
     const setMapModeAndSave = (m) => {
       setMapMode(m);
@@ -483,13 +447,11 @@
     };
 
     const goView = (v) => {
-      setTour(null);
       setDetailOpen(false);
       setView(v);
     };
 
     const openChapter = (id) => {
-      setTour(null);
       setSelectedId(id);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
@@ -506,7 +468,6 @@
       const ch = currentChapter(chapters, iso);
       if (!ch) return;
       const win = window.TRIP_NOW.placeWindows(ch).find((w) => w.start <= iso && iso <= w.end);
-      setTour(null);
       setFocusDay(iso);
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
@@ -523,24 +484,20 @@
       if (view !== 'atlas') setView('atlas');
     };
 
+    // "Whole route" is really "put me back where I am": today's chapter, and
+    // outside the timeline the first one before the trip or the last one
+    // after it. focusKey forces the view to re-frame even when the selection
+    // has not changed, since a no-op setState would otherwise do nothing.
     const onReset = () => {
-      setTour(null);
-      setSelectedId(null);
+      const target = current
+        || (chapters[0] && today < chapters[0].start ? chapters[0] : chapters[chapters.length - 1]);
+      setSelectedId(target ? target.id : null);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
       setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(false);
       setFocusKey((k) => k + 1);
-    };
-
-    const startTour = () => {
-      if (tour != null) { setTour(null); return; }
-      const base = current || chapters[0];
-      const i = Math.max(0, chapters.findIndex((c) => c.id === (selectedId || base.id)));
-      setView('atlas');
-      setDetailOpen(false);
-      setTour(i >= chapters.length - 1 ? 0 : i);
     };
 
     const mapFallback = (err) => (
@@ -575,18 +532,18 @@
                       selectedId={selectedId}
                       selectedPlaceIdx={selectedPlaceIdx}
                       showPlacePopup={placePopup}
-                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlacePopup(false); setPlaceZoom(null); setDetailOpen(true); setTour(null); }}
+                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlacePopup(false); setPlaceZoom(null); setDetailOpen(true); }}
                       onSelectPlace={onSelectPlace}
-                      focusKey={focusKey === 0 ? null : 'world'}
+                      focusKey={focusKey}
                     />
                   ) : (
                     <window.MapView
                       selectedId={selectedId}
                       selectedPlaceIdx={selectedPlaceIdx}
                       placeZoom={placeZoom}
-                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlacePopup(false); setPlaceZoom(null); setDetailOpen(true); setTour(null); }}
+                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlacePopup(false); setPlaceZoom(null); setDetailOpen(true); }}
                       onSelectPlace={onSelectPlace}
-                      focusKey={focusKey === 0 ? null : 'world'}
+                      focusKey={focusKey}
                     />
                   )}
                 </window.ErrorBoundary>
@@ -606,13 +563,7 @@
                 mapMode={mapMode}
                 onMapMode={setMapModeAndSave}
                 onReset={onReset}
-                tour={tour}
-                onTour={startTour}
               />
-
-              {tour != null && (
-                <TourBar index={tour} total={chapters.length} chapter={chapters[tour]} onStop={() => setTour(null)} />
-              )}
 
               <ChapterReel
                 chapters={chapters}

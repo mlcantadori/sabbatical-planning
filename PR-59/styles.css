@@ -658,11 +658,6 @@ button:focus-visible, [role="button"]:focus-visible {
   transition: all .18s;
 }
 .tool-btn:hover { border-color: rgba(243,236,221,.32); color: var(--ink); }
-.tool-btn.is-live {
-  border-color: rgba(255,122,69,.55);
-  color: var(--ember);
-  background: rgba(255,122,69,.1);
-}
 /* With a chapter open, the atlas recedes and the spread takes the stage. */
 .app.has-detail .atlas-title,
 .app.has-detail .atlas-title > *,
@@ -834,52 +829,6 @@ button:focus-visible, [role="button"]:focus-visible {
   text-overflow: ellipsis;
 }
 .reel-date i { font-style: normal; opacity: .5; }
-
-/* ── Tour bar ────────────────────────────────────────────────────────── */
-.tourbar {
-  position: absolute;
-  z-index: 40;
-  top: 106px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 10px 8px 14px;
-  border: 1px solid rgba(255,122,69,.35);
-  border-radius: 999px;
-  background: rgba(9,13,19,.88);
-  backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-1);
-  font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.tourbar-live { display: inline-flex; align-items: center; gap: 5px; color: var(--ember); }
-.tourbar-live i {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--ember);
-  animation: pulse 1.4s ease infinite;
-}
-.tourbar-name { color: var(--ink); }
-.tourbar-track { width: 90px; height: 2px; background: var(--line); overflow: hidden; }
-.tourbar-track span { display: block; height: 100%; background: var(--ember); transition: width .4s ease; }
-.tourbar-count { color: var(--ink-3); }
-.tourbar button {
-  border: 0;
-  border-radius: 999px;
-  background: rgba(243,236,221,.1);
-  padding: 4px 9px;
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.tourbar button:hover { background: var(--ink); color: var(--void); }
 
 /* ════════════════════════════════════════════════════════════════════════
    MAP + GLOBE (dark canvas)
@@ -2521,9 +2470,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .reel-title { font-size: 14px; }
   .reel-date { font-size: 6.5px; }
 
-  .tourbar { top: 210px; bottom: auto; font-size: 7px; gap: 7px; padding: 6px 7px 6px 10px; max-width: calc(100vw - 28px); }
-  .tourbar-track { width: 48px; }
-  .tourbar-name { max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
 
   .app-body { min-height: 0; }
   .detail-panel {

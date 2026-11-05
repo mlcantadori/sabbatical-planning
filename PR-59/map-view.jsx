@@ -357,16 +357,18 @@
       setTimeout(doFit, 350);
     }, [selectedId, selectedPlaceIdx, chapters, placeZoom]);
 
-    // External "focus world" trigger
+    // External recentre trigger ("whole route"). The selection effect above
+    // frames the chosen chapter when there is one; this only takes over for
+    // the case with nothing selected, where the whole route is the answer.
     React.useEffect(() => {
-      if (focusKey === 'world' && mapRef.current) {
-        const pts = getStops().map(stopCoords).filter(Boolean);
-        mapRef.current.invalidateSize();
-        mapRef.current.fitBounds(pts, {
-          padding: [24, 24],
-          animate: false,
-        });
-      }
+      if (!focusKey || !mapRef.current || selectedIdRef.current) return;
+      const pts = getStops().map(stopCoords).filter(Boolean);
+      if (!pts.length) return;
+      mapRef.current.invalidateSize();
+      mapRef.current.fitBounds(pts, {
+        padding: [24, 24],
+        animate: false,
+      });
     }, [focusKey]);
 
     // CDN guard — render a message instead of crashing the whole app when

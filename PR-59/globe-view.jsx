@@ -606,14 +606,16 @@
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedId, selectedPlaceIdx, chapters, showPlacePopup]);
 
-    // ── external "focus world" trigger ────────────────────────────────────
+    // ── external recentre trigger ─────────────────────────────────────────
+    // "Whole route" now means "back to where I am", which is the selected
+    // chapter — and a bump that changes nothing else, so it has to re-run the
+    // framing explicitly. With nothing selected it is still the whole planet.
     React.useEffect(() => {
-      const s = st.current; if (!s) return;
-      if (focusKey === 'world') {
-        flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r), 1100);
-        s.spinOff = false;
-        if (!propsRef.current.selectedId) s.controls.autoRotate = true;
-      }
+      const s = st.current; if (!s || !focusKey) return;
+      if (propsRef.current.selectedId) { refreshSelection(); return; }
+      flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r), 1100);
+      s.spinOff = false;
+      s.controls.autoRotate = true;
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [focusKey]);
 
