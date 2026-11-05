@@ -484,15 +484,33 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .bottomnav > button.is-active { color: var(--ink); }
 .bottomnav > button.is-active svg { color: var(--ember); }
-.bottomnav .sync-wrap { flex: 1; display: flex; align-items: center; justify-content: center; }
+.bottomnav .sync-wrap { flex: 1; display: flex; }
+/* Same column as a view tab: icon, then label, so the two rows align across
+   the whole bar. The stale/busy dot rides on the icon instead of becoming a
+   third row that would push this label out of line. */
 .bottomnav .sync-wrap > button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   border: 0;
   background: transparent;
-  padding: 6px;
+  padding: 0;
   color: var(--ink-3);
-  font-size: 0;
+  font-family: var(--f-mono);
+  font-size: 7.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
-.bottomnav .sync-wrap > button svg { width: 17px; height: 17px; }
+.bottomnav .sync-nav-icon { position: relative; display: inline-flex; }
+.bottomnav .sync-nav-icon .sync-dot {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  margin: 0;
+}
 .bottomnav .sync-menu {
   top: auto;
   bottom: calc(100% + 10px);
@@ -2485,16 +2503,6 @@ button:focus-visible, [role="button"]:focus-visible {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.cover-center p {
-  margin: 0;
-  font-family: var(--f-mono);
-  font-size: 10px;
-  line-height: 2;
-  letter-spacing: .06em;
-  color: var(--ink-3);
-  opacity: 0;
-  animation: rise 1s .5s ease both;
-}
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 .cover-route {
   position: absolute;
@@ -2703,8 +2711,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .cover { padding: 24px 20px; }
   .cover-center h1 { font-size: clamp(54px, 16vw, 90px); }
   .cover-kicker { font-size: 8px; letter-spacing: .2em; }
-  .cover-center p { font-size: 8.5px; }
-  .cover-break { display: none; }
   .cover-route { left: 20px; right: 20px; bottom: 86px; }
   .cover-bottom { gap: 16px; font-size: 7.5px; padding-top: 14px; }
   .cover-enter { display: none; }

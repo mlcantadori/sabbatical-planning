@@ -78,7 +78,7 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
             fontFamily: '"JetBrains Mono", monospace',
             fontSize: 8, letterSpacing: '0.24em',
             color: 'rgba(244,236,220,.24)', textTransform: 'uppercase',
-          }}>developing</div>
+          }}>loading</div>
         </div>
       )}
       {caption && (

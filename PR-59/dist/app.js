@@ -143,9 +143,7 @@
       className: "cover-center"
     }, /*#__PURE__*/React.createElement("div", {
       className: "cover-kicker"
-    }, "One year \xB7 two travellers \xB7 twenty-one chapters"), /*#__PURE__*/React.createElement("h1", null, "The Long", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "Way East")), /*#__PURE__*/React.createElement("p", null, "Brasil \u2192 Canada \u2192 Greece \u2192 T\xFCrkiye \u2192 Azerbaijan \u2192 India \u2192 Nepal \u2192", /*#__PURE__*/React.createElement("br", {
-      className: "cover-break"
-    }), " China \u2192 Hong Kong \u2192 the Andaman \u2192 Taiwan \u2192 Japan \u2192 the archipelago \u2192 the long spring \u2192 Korea \u2192 home.")), /*#__PURE__*/React.createElement("div", {
+    }, "One year \xB7 two travellers \xB7 twenty-one chapters"), /*#__PURE__*/React.createElement("h1", null, "The Long", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "Way East"))), /*#__PURE__*/React.createElement("div", {
       className: "cover-route",
       "aria-hidden": "true"
     }, /*#__PURE__*/React.createElement("span", {
@@ -857,7 +855,8 @@
     }, v.icon({
       size: 16
     }), /*#__PURE__*/React.createElement("span", null, v.label))), /*#__PURE__*/React.createElement(window.SyncButton, {
-      compact: true
+      compact: true,
+      nav: true
     })), showDetail && /*#__PURE__*/React.createElement(window.DetailPanel, {
       chapterId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,

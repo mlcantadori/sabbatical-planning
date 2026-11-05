@@ -91,7 +91,6 @@
         <div className="cover-center">
           <div className="cover-kicker">One year · two travellers · twenty-one chapters</div>
           <h1>The Long<br /><em>Way East</em></h1>
-          <p>Brasil → Canada → Greece → Türkiye → Azerbaijan → India → Nepal →<br className="cover-break" /> China → Hong Kong → the Andaman → Taiwan → Japan → the archipelago → the long spring → Korea → home.</p>
         </div>
         <div className="cover-route" aria-hidden="true">
           <span className="cover-route-line" />
@@ -659,7 +658,7 @@
                 <span>{v.label}</span>
               </button>
             ))}
-            <window.SyncButton compact />
+            <window.SyncButton compact nav />
           </nav>
         )}
 

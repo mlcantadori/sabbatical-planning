@@ -93,7 +93,7 @@ function Photo({
       color: 'rgba(244,236,220,.24)',
       textTransform: 'uppercase'
     }
-  }, "developing")), caption && /*#__PURE__*/React.createElement("div", {
+  }, "loading")), caption && /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
       bottom: 12,

@@ -330,7 +330,7 @@
     };
   }
 
-  function SyncButton({ compact }) {
+  function SyncButton({ compact, nav }) {
     const [unsynced, setUnsynced] = React.useState(unsyncedNow);
     const [label, setLabel] = React.useState(() => {
       const u = unsyncedNow();
@@ -387,14 +387,33 @@
           title={staleTitle || 'Push to Google Calendar or Google Tasks'}
           aria-haspopup="menu"
           aria-expanded={open}>
-          <window.Icon.calendar size={12} /> {!compact && label} {!compact && ' ▾'}
-          {/* Busy wins over stale: while a push runs the dot turns blue and
-              blinks, which is the only progress cue on mobile (no label). */}
-          {(busy || staleTitle) && (
-            <span
-              className={'sync-dot' + (busy ? ' is-busy' : '')}
-              role="img"
-              aria-label={busy ? 'sync in progress' : 'unsynced changes'} />
+          {nav ? (
+            /* Bottom nav: same icon-over-label shape as the view tabs, so the
+               icons line up with icons and the labels with labels. */
+            <React.Fragment>
+              <span className="sync-nav-icon">
+                <window.Icon.calendar size={16} />
+                {(busy || staleTitle) && (
+                  <span
+                    className={'sync-dot' + (busy ? ' is-busy' : '')}
+                    role="img"
+                    aria-label={busy ? 'sync in progress' : 'unsynced changes'} />
+                )}
+              </span>
+              <span>Sync</span>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <window.Icon.calendar size={12} /> {!compact && label} {!compact && ' ▾'}
+              {/* Busy wins over stale: while a push runs the dot turns blue and
+                  blinks, which is the only progress cue on mobile (no label). */}
+              {(busy || staleTitle) && (
+                <span
+                  className={'sync-dot' + (busy ? ' is-busy' : '')}
+                  role="img"
+                  aria-label={busy ? 'sync in progress' : 'unsynced changes'} />
+              )}
+            </React.Fragment>
           )}
         </button>
         {open && <span className="sync-backdrop" onClick={() => setOpen(false)} />}
