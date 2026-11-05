@@ -759,6 +759,7 @@
         setDetailOpen(true);
       },
       onSelectPlace: onSelectPlace,
+      onBackgroundClick: () => setDetailOpen(false),
       focusKey: focusKey
     }) : /*#__PURE__*/React.createElement(window.MapView, {
       selectedId: selectedId,
@@ -771,6 +772,7 @@
         setDetailOpen(true);
       },
       onSelectPlace: onSelectPlace,
+      onBackgroundClick: () => setDetailOpen(false),
       focusKey: focusKey
     })), /*#__PURE__*/React.createElement("div", {
       className: "atlas-vignette",

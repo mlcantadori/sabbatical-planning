@@ -46,7 +46,8 @@
     onSelectChapter,
     onSelectPlace,
     focusKey,
-    placeZoom
+    placeZoom,
+    onBackgroundClick
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
@@ -219,6 +220,12 @@
         const has = map.hasLayer(transport);
         if (show && !has) transport.addTo(map);else if (!show && has) map.removeLayer(transport);
       };
+      // Leaflet fires 'click' only for the surface itself — a marker's click
+      // does not bubble to it — and suppresses it after a drag, which is
+      // exactly the "background click" we want to forward.
+      map.on('click', () => {
+        if (onBackgroundClick) onBackgroundClick();
+      });
       map.on('zoomend', syncTransport);
       syncTransport();
       const onResize = () => {

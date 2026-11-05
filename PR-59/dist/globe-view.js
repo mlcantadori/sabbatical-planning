@@ -49,7 +49,8 @@
     selectedPlaceIdx,
     onSelectChapter,
     onSelectPlace,
-    focusKey
+    focusKey,
+    onBackgroundClick
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
@@ -60,14 +61,16 @@
       selectedPlaceIdx,
       onSelectChapter,
       onSelectPlace,
-      chapters
+      chapters,
+      onBackgroundClick
     });
     propsRef.current = {
       selectedId,
       selectedPlaceIdx,
       onSelectChapter,
       onSelectPlace,
-      chapters
+      chapters,
+      onBackgroundClick
     };
     function llv(lat, lng, r) {
       const phi = (90 - lat) * Math.PI / 180;
@@ -219,6 +222,23 @@
         controls.autoRotate = false;
         st.current.spinOff = true;
       }
+
+      // A click on the ocean is a click on the background: it should close an
+      // open chapter. A drag ends with a click too, so a press that travelled
+      // is not one.
+      let downX = 0,
+        downY = 0;
+      const onDown = e => {
+        downX = e.clientX;
+        downY = e.clientY;
+      };
+      const onClick = e => {
+        if (Math.hypot(e.clientX - downX, e.clientY - downY) > 6) return;
+        const cb = propsRef.current.onBackgroundClick;
+        if (cb) cb();
+      };
+      renderer.domElement.addEventListener('pointerdown', onDown);
+      renderer.domElement.addEventListener('click', onClick);
       const ro = new ResizeObserver(() => size());
       ro.observe(el);
       size();
@@ -262,6 +282,8 @@
               });
             }
           });
+          st.current.renderer.domElement.removeEventListener('pointerdown', onDown);
+          st.current.renderer.domElement.removeEventListener('click', onClick);
           st.current.renderer.dispose();
           st.current.renderer.domElement.remove();
           st.current.overlay.remove();

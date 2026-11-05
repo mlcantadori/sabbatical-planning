@@ -62,14 +62,14 @@
     ['Australia', 134, -25], ['New Zealand', 172, -42], ['Papua New Guinea', 141, -6],
   ];
 
-  function GlobeView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey }) {
+  function GlobeView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey, onBackgroundClick }) {
     const store = window.useStore();
     const chapters = store.getChapters();
 
     const ref = React.useRef(null);
     const st = React.useRef(null);
-    const propsRef = React.useRef({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters });
-    propsRef.current = { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters };
+    const propsRef = React.useRef({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters, onBackgroundClick });
+    propsRef.current = { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters, onBackgroundClick };
 
     function llv(lat, lng, r) {
       const phi = (90 - lat) * Math.PI / 180;
@@ -218,6 +218,19 @@
         st.current.spinOff = true;
       }
 
+      // A click on the ocean is a click on the background: it should close an
+      // open chapter. A drag ends with a click too, so a press that travelled
+      // is not one.
+      let downX = 0, downY = 0;
+      const onDown = (e) => { downX = e.clientX; downY = e.clientY; };
+      const onClick = (e) => {
+        if (Math.hypot(e.clientX - downX, e.clientY - downY) > 6) return;
+        const cb = propsRef.current.onBackgroundClick;
+        if (cb) cb();
+      };
+      renderer.domElement.addEventListener('pointerdown', onDown);
+      renderer.domElement.addEventListener('click', onClick);
+
       const ro = new ResizeObserver(() => size());
       ro.observe(el);
       size();
@@ -261,6 +274,8 @@
               ms.forEach((m) => { if (m.map) m.map.dispose(); m.dispose(); });
             }
           });
+          st.current.renderer.domElement.removeEventListener('pointerdown', onDown);
+          st.current.renderer.domElement.removeEventListener('click', onClick);
           st.current.renderer.dispose();
           st.current.renderer.domElement.remove();
           st.current.overlay.remove();

@@ -575,9 +575,9 @@
                     <window.GlobeView
                       selectedId={selectedId}
                       selectedPlaceIdx={selectedPlaceIdx}
-                      
                       onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlaceZoom(null); setDetailOpen(true); }}
                       onSelectPlace={onSelectPlace}
+                      onBackgroundClick={() => setDetailOpen(false)}
                       focusKey={focusKey}
                     />
                   ) : (
@@ -587,6 +587,7 @@
                       placeZoom={placeZoom}
                       onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlaceZoom(null); setDetailOpen(true); }}
                       onSelectPlace={onSelectPlace}
+                      onBackgroundClick={() => setDetailOpen(false)}
                       focusKey={focusKey}
                     />
                   )}
