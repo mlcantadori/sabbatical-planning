@@ -52,7 +52,6 @@ window.PHOTO_IDS = {
   'kowloon neon':                'extra-pictures/hk/kowloon-neon.jpg',
   // ── China E2 ──────────────────────────────────────────────────────
   'guangzhou night skyline':     'extra-pictures/china-e2/guangzhou-night-skyline.jpg',
-  'guangzhou sunset skyline':    'extra-pictures/china-e2/guangzhou-sunset-skyline.jpg',
   'huaqiangbei':                 'extra-pictures/china-e2/huaqiangbei.jpg',
   'macau st paul':               'extra-pictures/china-e2/macau-st-paul.jpg',
   'guangzhou canton tower':      'extra-pictures/china-e2/guangzhou-canton-tower.jpg',
@@ -65,7 +64,7 @@ window.PHOTO_IDS = {
   'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
   'seoul skyline night':         'extra-pictures/korea/seoul-skyline-night.jpg',
-  'seoul street food night':     'extra-pictures/korea/seoul-street-food-night.jpg',
+  'myeongdong night market':     'extra-pictures/korea/myeongdong-night-market.jpg',
   // ── Taiwan ────────────────────────────────────────────────────────
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
   'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',

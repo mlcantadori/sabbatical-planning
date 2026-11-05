@@ -285,7 +285,7 @@ window.TRIP = (function () {
       intro: 'Second mainland block, deliberately short: 8 days across the Pearl River Delta. Cantonese blitz in Guangzhou straight off the Hong Kong HSR, four friend-days in Shenzhen, then Macau for two nights before flying to Kuala Lumpur. Shanghai moves to the end of the spring China chapter — December is its dampest, grayest month and May suits it far better. The mainland stay is 6 days, comfortably inside the 30-day visa-free entry.',
       tldr: 'Guangzhou · Shenzhen · Macau',
       weather: { hi: 22, lo: 14, label: 'Subtropical south, mostly dry, 22°/14°', emoji: '🌉', rainyDays: 4 },
-      photos: ['guangzhou sunset skyline'],
+      photos: ['guangzhou night skyline'],
       places: [
         { name: 'Guangzhou', photo: 'guangzhou canton tower', days: 2, query: 'Shamian Island, Guangzhou',
           highlights: ['Nov 28: HSR Hong Kong → Guangzhou South direct — Entry 2 starts','Cantonese food deep-dive — dim sum where it was born','Shamian Island colonial arcades, Chen Clan Academy','Canton Tower at night','Nov 30: HSR Guangzhou → Shenzhen (~30min)'] },
@@ -513,7 +513,7 @@ window.TRIP = (function () {
       intro: 'Fourteen days to close the sabbatical in sunny, pre-monsoon weather (24–26°C, two full weeks before Korea\'s late-June Jangma rains): start in the south on Jeju Island, hop to Busan\'s coast and Gyeongju\'s royal tombs, then finish with six nights in Seoul so the long-haul flight home to Brazil departs directly from Incheon with zero last-day domestic transit stress.',
       tldr: 'Jeju · Busan · Gyeongju · Seoul',
       weather: { hi: 25, lo: 16, label: 'Sunny late spring / early summer, 25°/16°', emoji: '🌸', rainyDays: 5 },
-      photos: ['seoul street food night'],
+      photos: ['myeongdong night market'],
       places: [
         { name: 'Jeju', photo: 'jeju yongmeori', days: 3, query: 'Jeju Island, South Korea',
           highlights: ['Jun 2–5: fly Shanghai → Jeju (direct or via Seoul) — open on Korea\'s volcanic island','Yongmeori Coast + Sanbangsan cliffs in early-June sun','Seongsan Ilchulbong sunrise crater; Udo island ferry','Hallasan lower trails, Jusangjeolli lava columns & green tea fields','Jun 5: 50-min flight Jeju → Busan'] },

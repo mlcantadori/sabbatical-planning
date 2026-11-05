@@ -30,32 +30,19 @@ The street-food photo stays with the Seoul stop, where it belongs.
 
 Sourced from Wikimedia Commons (`File:Guangzhou at night - 2017.jpg`) —
 Zhujiang New Town and Liede Bridge. Downscaled to 2000px. Replaces a low-res
-Shenzhen header; Shenzhen keeps its own detail photo on the stop.
+Shenzhen header; Shenzhen keeps its own detail photo on the stop. A sunset
+version from voyagefox.net was tried and dropped: no licence granted, and no
+freely licensed sunset equivalent exists on Commons.
 
-## Added Nov 2026 — South Korea (chapter header, PERMISSION NEEDED)
+## Added Nov 2026 — South Korea (chapter header)
 
-| File | Source | Status |
+| File | Author | License |
 |---|---|---|
-| `korea/seoul-street-food-night.jpg` | [trotop.be — Seoul Travel Guide](https://www.trotop.be/en/seoul-travel-guide/), © Jonathan Ramael | **All rights reserved — not licensed for reuse** |
+| `korea/myeongdong-night-market.jpg` | Sgroey | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
 
-The site states: *"Text and images may not be used for any purpose outside of
-this blog without the author's permission."* Do not merge this file to main
-until permission is granted (info@jonathanramael.com) or it is replaced with a
-freely licensed photograph.
-
-Native size is 1072x713, so it is recompressed rather than upscaled — soft on a
-2x display at hero size, sharp at card size.
-
-## Added Nov 2026 — South China (chapter header, PERMISSION NEEDED)
-
-| File | Source | Status |
-|---|---|---|
-| `china-e2/guangzhou-sunset-skyline.jpg` | [voyagefox.net — Guangzhou travel guide](https://voyagefox.net/guangzhou-china-travel-guide-sights/), © VoyageFox | **No licence granted — do not publish without permission** |
-
-The site carries a bare copyright notice (`© 2026 VoyageFox`) and no reuse
-grant, so default copyright applies. Native 1200x800, recompressed only.
-The CC0 night version (`guangzhou-night-skyline.jpg`) is still on disk and one
-keyword away — same view, licensed.
+Sourced from Wikimedia Commons (`File:Myeongdong night market seoul 2.jpg`),
+downscaled from 4032px to 2000x1500. Replaces a photograph from trotop.be that
+was all rights reserved.
 
 ## Map textures (not trip photos)
 
