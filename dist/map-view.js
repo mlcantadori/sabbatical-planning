@@ -45,7 +45,8 @@
     selectedPlaceIdx,
     onSelectChapter,
     onSelectPlace,
-    focusKey
+    focusKey,
+    placeZoom
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
@@ -436,11 +437,20 @@
       });
       const doFit = () => {
         map.invalidateSize();
-        // A selected stop is a city, so frame that city and not the whole
-        // chapter: the pins stay, the camera narrows.
+        // A selected stop centres the map on that city. How tight that
+        // framing is depends on how it was picked: a day on the spine wants
+        // the country as context, a pin click wants the city itself.
         const focused = selectedPlaceIdx != null ? ch.places[selectedPlaceIdx] : null;
         if (focused && focused.coords) {
-          map.setView(focused.coords, 12, {
+          // Centre on the picked city, but keep the chapter's own framing so
+          // the whole country stays inside the viewport. A pin click asks for
+          // the city itself, so that path passes a tight zoom instead.
+          let zoom = placeZoom;
+          if (zoom == null) {
+            zoom = placeCoords.length > 1 ? map.getBoundsZoom(L.latLngBounds(placeCoords), false, L.point(40, 40)) : 7;
+            zoom = Math.max(5, Math.min(10, zoom));
+          }
+          map.setView(focused.coords, zoom, {
             animate: false
           });
         } else if (placeCoords.length > 1) {
@@ -463,7 +473,7 @@
       };
       setTimeout(doFit, 50);
       setTimeout(doFit, 350);
-    }, [selectedId, selectedPlaceIdx, chapters]);
+    }, [selectedId, selectedPlaceIdx, chapters, placeZoom]);
 
     // External "focus world" trigger
     React.useEffect(() => {
