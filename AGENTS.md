@@ -22,6 +22,11 @@ the tree is already dirty with files you didn't write: don't build, don't stage,
 move to a worktree. Commit by explicit path, never `-A`, and re-check
 `git status` immediately before you do.
 
+**Clean up when the merge lands.** Back on the main checkout, `git pull
+--ff-only`, remove your worktree, then delete the merged local and remote
+branch. `git worktree list` should show main plus only worktrees another session
+still owns — a merged branch left behind becomes tomorrow's stale checkout.
+
 ## Part 1 — Planning
 
 **D1 — Decompose first.**
