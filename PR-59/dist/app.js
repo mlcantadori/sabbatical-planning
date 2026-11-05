@@ -321,14 +321,9 @@
     selected,
     here,
     next,
-    stats,
     onOpen
   }) {
-    const region = REGIONS[active.region] || {
-      name: ''
-    };
     const isLong = active.title.length > 12;
-    const num = active.kind === 'chapter' && active.num != null ? String(active.num).padStart(2, '0') : '··';
     let sub = '';
     if (selected) {
       sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
@@ -341,13 +336,7 @@
     const weather = active.weather;
     return /*#__PURE__*/React.createElement("div", {
       className: `atlas-title ${isLong ? 'is-long' : ''}`
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "atlas-kicker"
-    }, /*#__PURE__*/React.createElement("span", null, "Chapter ", num, " ", /*#__PURE__*/React.createElement("i", null, "/ ", String(stats.chapters).padStart(2, '0'))), /*#__PURE__*/React.createElement("span", {
-      className: "atlas-kicker-geo"
-    }, region.name), /*#__PURE__*/React.createElement("span", {
-      className: "atlas-kicker-geo"
-    }, active.flag, " ", active.country)), /*#__PURE__*/React.createElement("button", {
+    }, /*#__PURE__*/React.createElement("button", {
       className: "atlas-name",
       onClick: onOpen,
       title: `Open ${active.title}`
@@ -816,7 +805,6 @@
       selected: !!selectedId,
       here: here,
       next: next,
-      stats: stats,
       onOpen: () => openChapter(active.id)
     }), /*#__PURE__*/React.createElement(AtlasTools, {
       mapMode: mapMode,

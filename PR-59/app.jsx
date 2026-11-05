@@ -231,10 +231,8 @@
   }
 
   // ── Atlas: giant chapter name ─────────────────────────────────────────
-  function AtlasTitle({ active, current, selected, here, next, stats, onOpen }) {
-    const region = REGIONS[active.region] || { name: '' };
+  function AtlasTitle({ active, current, selected, here, next, onOpen }) {
     const isLong = active.title.length > 12;
-    const num = active.kind === 'chapter' && active.num != null ? String(active.num).padStart(2, '0') : '··';
     let sub = '';
     if (selected) {
       sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
@@ -247,11 +245,6 @@
     const weather = active.weather;
     return (
       <div className={`atlas-title ${isLong ? 'is-long' : ''}`}>
-        <div className="atlas-kicker">
-          <span>Chapter {num} <i>/ {String(stats.chapters).padStart(2, '0')}</i></span>
-          <span className="atlas-kicker-geo">{region.name}</span>
-          <span className="atlas-kicker-geo">{active.flag} {active.country}</span>
-        </div>
         <button className="atlas-name" onClick={onOpen} title={`Open ${active.title}`}>
           <span>{active.title}</span>
           <window.Icon.arrow size={18} />
@@ -606,7 +599,6 @@
                 selected={!!selectedId}
                 here={here}
                 next={next}
-                stats={stats}
                 onOpen={() => openChapter(active.id)}
               />
 
