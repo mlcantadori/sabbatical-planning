@@ -231,7 +231,8 @@
     chapters,
     current,
     selectedId,
-    onPickDay
+    onPickDay,
+    focusDay
   }) {
     const today = todayISO();
     const idx = window.dayIndex(today);
@@ -267,6 +268,7 @@
       }
       return out;
     }, [chapters, total]);
+    const focusIdx = focusDay ? window.dayIndex(focusDay) : null;
     const tip = hover != null ? cells[hover] : null;
     return /*#__PURE__*/React.createElement("div", {
       className: "spine",
@@ -286,9 +288,10 @@
       const isPast = i < idx;
       const isSelected = ch.id === selectedId;
       const isCurrent = !!current && ch.id === current.id;
+      const isFocused = focusIdx === i;
       return /*#__PURE__*/React.createElement("button", {
         key: i,
-        className: `spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''}`,
+        className: `spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''} ${isFocused ? 'is-focused' : ''}`,
         style: {
           '--tint': window.chapterTint(ch)
         },
@@ -546,6 +549,7 @@
     const [view, setView] = React.useState(urlParams.view || 'atlas');
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
+    const [focusDay, setFocusDay] = React.useState(null);
     // Whether the map should show the stop popup. Only a click on the map's own
     // dot sets this; a spine click just recentres the camera.
     const [placePopup, setPlacePopup] = React.useState(false);
@@ -608,6 +612,7 @@
       }
       setSelectedId(ch.id);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setPlacePopup(false);
       setDetailOpen(false);
       const t = setTimeout(() => {
@@ -630,6 +635,7 @@
           const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + chapters.length) % chapters.length;
           setSelectedId(chapters[n].id);
           setSelectedPlaceIdx(null);
+          setFocusDay(null);
           setPlacePopup(false);
         }
       };
@@ -651,6 +657,7 @@
       setTour(null);
       setSelectedId(id);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setPlacePopup(false);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
@@ -664,6 +671,7 @@
       if (!ch) return;
       const win = window.TRIP_NOW.placeWindows(ch).find(w => w.start <= iso && iso <= w.end);
       setTour(null);
+      setFocusDay(iso);
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
       setPlacePopup(false);
@@ -679,6 +687,7 @@
       setTour(null);
       setSelectedId(null);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setPlacePopup(false);
       setDetailOpen(false);
       setFocusKey(k => k + 1);
@@ -722,7 +731,8 @@
       chapters: chapters,
       current: current,
       selectedId: selectedId,
-      onPickDay: openDay
+      onPickDay: openDay,
+      focusDay: focusDay
     }), /*#__PURE__*/React.createElement("main", {
       className: "app-body"
     }, view === 'atlas' && /*#__PURE__*/React.createElement("div", {

@@ -377,6 +377,15 @@ button:focus-visible, [role="button"]:focus-visible {
   transform: translate(-50%, -50%);
 }
 
+/* The day you clicked. The tick itself is the marker: taller than its
+   neighbours, fully opaque, glowing in its own chapter colour. */
+.spine-tick.is-focused {
+  opacity: 1;
+  height: calc(var(--tick-h) * 1.8);
+  filter: saturate(1.25) brightness(1.3);
+  box-shadow: 0 0 9px var(--tint, var(--ember));
+}
+
 /* Hover read-out: the date and the city the plan has you in that day. It sits
    below the bar so it never covers the header. */
 .spine-tip {

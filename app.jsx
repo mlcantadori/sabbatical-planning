@@ -154,7 +154,7 @@
   // ── The year spine ────────────────────────────────────────────────────
   // 360 individual days, coloured by chapter, dimmed once they are behind
   // you. It is the whole trip in one line and a jump target at the same time.
-  function YearSpine({ chapters, current, selectedId, onPickDay }) {
+  function YearSpine({ chapters, current, selectedId, onPickDay, focusDay }) {
     const today = todayISO();
     const idx = window.dayIndex(today);
     const total = totalDays;
@@ -183,6 +183,7 @@
       return out;
     }, [chapters, total]);
 
+    const focusIdx = focusDay ? window.dayIndex(focusDay) : null;
     const tip = hover != null ? cells[hover] : null;
     return (
       <div className="spine" aria-label="The year">
@@ -200,10 +201,11 @@
             const isPast = i < idx;
             const isSelected = ch.id === selectedId;
             const isCurrent = !!current && ch.id === current.id;
+            const isFocused = focusIdx === i;
             return (
               <button
                 key={i}
-                className={`spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''}`}
+                className={`spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''} ${isFocused ? 'is-focused' : ''}`}
                 style={{ '--tint': window.chapterTint(ch) }}
                 onClick={() => onPickDay(cell.date)}
                 onMouseEnter={() => setHover(i)}
@@ -369,6 +371,7 @@
     const [view, setView] = React.useState(urlParams.view || 'atlas');
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
+    const [focusDay, setFocusDay] = React.useState(null);
     // Whether the map should show the stop popup. Only a click on the map's own
     // dot sets this; a spine click just recentres the camera.
     const [placePopup, setPlacePopup] = React.useState(false);
@@ -426,6 +429,7 @@
       if (!ch) { setTour(null); return undefined; }
       setSelectedId(ch.id);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setPlacePopup(false);
       setDetailOpen(false);
       const t = setTimeout(() => {
@@ -449,7 +453,8 @@
           const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + chapters.length) % chapters.length;
           setSelectedId(chapters[n].id);
           setSelectedPlaceIdx(null);
-              setPlacePopup(false);
+          setFocusDay(null);
+          setPlacePopup(false);
         }
       };
       window.addEventListener('keydown', onKey);
@@ -471,6 +476,7 @@
       setTour(null);
       setSelectedId(id);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setPlacePopup(false);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
@@ -484,6 +490,7 @@
       if (!ch) return;
       const win = window.TRIP_NOW.placeWindows(ch).find((w) => w.start <= iso && iso <= w.end);
       setTour(null);
+      setFocusDay(iso);
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
       setPlacePopup(false);
@@ -501,6 +508,7 @@
       setTour(null);
       setSelectedId(null);
       setSelectedPlaceIdx(null);
+      setFocusDay(null);
       setPlacePopup(false);
       setDetailOpen(false);
       setFocusKey((k) => k + 1);
@@ -535,7 +543,7 @@
     return (
       <div className={`app view-${view} ${isMobile ? 'is-mobile' : ''} ${showDetail ? 'has-detail' : ''}`}>
         <Header view={view} onView={goView} day={day} total={totalDays} isMobile={isMobile} />
-        <YearSpine chapters={chapters} current={current} selectedId={selectedId} onPickDay={openDay} />
+        <YearSpine chapters={chapters} current={current} selectedId={selectedId} onPickDay={openDay} focusDay={focusDay} />
 
         <main className="app-body">
           {view === 'atlas' && (
