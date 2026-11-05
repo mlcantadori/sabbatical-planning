@@ -257,12 +257,14 @@
       }, /*#__PURE__*/React.createElement("span", {
         className: "kit-caret"
       }, openState ? '−' : '+'), /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-label"
+      }, /*#__PURE__*/React.createElement("span", {
         className: "kit-group-title"
       }, title), /*#__PURE__*/React.createElement("span", {
         className: "kit-group-dates"
       }, sub), past && /*#__PURE__*/React.createElement("span", {
         className: "kit-group-past"
-      }, "ended"), /*#__PURE__*/React.createElement("span", {
+      }, "ended")), /*#__PURE__*/React.createElement("span", {
         className: "kit-group-bar"
       }, /*#__PURE__*/React.createElement("i", {
         style: {
