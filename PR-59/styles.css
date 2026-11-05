@@ -1299,15 +1299,6 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ink-3);
   margin-top: 3px;
 }
-.detail-intro {
-  margin: 0 0 30px;
-  font-family: var(--f-sans);
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--ink-2);
-  text-wrap: pretty;
-}
-
 .section-head {
   display: flex;
   align-items: baseline;

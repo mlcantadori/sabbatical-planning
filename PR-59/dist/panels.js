@@ -194,9 +194,7 @@
       className: "detail-fact"
     }, /*#__PURE__*/React.createElement("span", null, "Weather"), /*#__PURE__*/React.createElement("b", null, ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—'), /*#__PURE__*/React.createElement("i", null, ch.weather ? ch.weather.label : '')), /*#__PURE__*/React.createElement("div", {
       className: "detail-fact"
-    }, /*#__PURE__*/React.createElement("span", null, "Rain"), /*#__PURE__*/React.createElement("b", null, ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'), /*#__PURE__*/React.createElement("i", null, ch.weather ? ch.weather.emoji : ''))), ch.intro && /*#__PURE__*/React.createElement("p", {
-      className: "detail-intro"
-    }, ch.intro), /*#__PURE__*/React.createElement(SectionHead, {
+    }, /*#__PURE__*/React.createElement("span", null, "Rain"), /*#__PURE__*/React.createElement("b", null, ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'), /*#__PURE__*/React.createElement("i", null))), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
       title: "The stops",
       note: `${ch.places.length} stops · ${ch.days} nights`

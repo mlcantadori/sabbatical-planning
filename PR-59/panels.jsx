@@ -133,10 +133,8 @@
               <div className="detail-fact"><span>Window</span><b>{fmt(ch.start)} – {fmt(ch.end)}</b><i>{ch.days} nights</i></div>
               <div className="detail-fact"><span>Day of trip</span><b>{startDay}–{endDay}</b><i>of {totalDays}</i></div>
               <div className="detail-fact"><span>Weather</span><b>{ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—'}</b><i>{ch.weather ? ch.weather.label : ''}</i></div>
-              <div className="detail-fact"><span>Rain</span><b>{ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'}</b><i>{ch.weather ? ch.weather.emoji : ''}</i></div>
+              <div className="detail-fact"><span>Rain</span><b>{ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'}</b><i /></div>
             </div>
-
-            {ch.intro && <p className="detail-intro">{ch.intro}</p>}
 
             <SectionHead num="01" title="The stops" note={`${ch.places.length} stops · ${ch.days} nights`} />
             <div className="stop-timeline" style={{ '--tint': tint }}>
