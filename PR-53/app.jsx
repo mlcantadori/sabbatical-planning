@@ -135,6 +135,8 @@
             <div className="app-brand-meta">Sabbatical · 2026·2027 · Two travelers · Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</div>
           </div>
 
+          <window.NowNext onSelect={onSelectChapter} />
+
           <div className="app-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
             <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
           </div>
@@ -151,11 +153,14 @@
           </div>
         </header>
 
-        {/* Mobile progress strip: days + bar below the header (hidden on desktop) */}
+        {/* Mobile status strip: now / next + the day counter below the header */}
         {isMobile && (
-          <div className="app-progress mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
-            <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
-            <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
+          <div className="mobile-status">
+            <window.NowNext compact onSelect={onSelectChapter} />
+            <div className="app-progress mobile-progress" title={`Day ${today.n} of ${store.getTotalDays()}`}>
+              <span className="app-progress-label">Day {today.n.toString().padStart(3,'0')} / {store.getTotalDays()}</span>
+              <div className="app-progress-bar"><div style={{ width: `${(today.n / Math.max(1, store.getTotalDays())) * 100}%` }} /></div>
+            </div>
           </div>
         )}
 
