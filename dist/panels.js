@@ -1,122 +1,148 @@
 "use strict";
 
-// Chapter list (left rail / mobile list), detail panel (right slideover /
-// mobile full-screen) and binder overlay. Read-only: no editing UI.
+// Sections beyond the atlas — the chapter grid, the full chapter spread,
+// and the ledger + field kit binder. Read-only.
 
 (function () {
   const {
     totalDays,
     REGIONS,
-    chapterColor,
     helpers,
     budget
   } = window.TRIP;
   const {
     fmt,
     dayRange,
-    dayCounter
+    dayCounter,
+    contrastText
   } = helpers;
+  const {
+    placeWindows
+  } = window.TRIP_NOW;
+  function SectionHead({
+    num,
+    title,
+    note
+  }) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "section-head"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "section-head-num"
+    }, num), /*#__PURE__*/React.createElement("h2", {
+      className: "section-head-title"
+    }, title), note && /*#__PURE__*/React.createElement("span", {
+      className: "section-head-note"
+    }, note));
+  }
 
   // ══════════════════════════════════════════════════════════════════════
-  // CHAPTER LIST — left rail (desktop) or main list view (mobile).
+  // CHAPTERS — the editorial index of the whole year.
   // ══════════════════════════════════════════════════════════════════════
-  function ChapterList({
+  function ChapterCard({
+    ch,
+    isNow,
+    isPast,
+    isSelected,
+    index,
+    onOpen
+  }) {
+    const tint = window.chapterTint(ch);
+    return /*#__PURE__*/React.createElement("button", {
+      className: `ch-card ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : ''} ${isSelected ? 'is-selected' : ''}`,
+      onClick: () => onOpen(ch.id),
+      style: {
+        '--tint': tint
+      },
+      "aria-label": `Open chapter ${ch.num}: ${ch.title}`
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-media"
+    }, /*#__PURE__*/React.createElement(window.Photo, {
+      keyword: ch.photos && ch.photos[0],
+      alt: ch.title,
+      ratio: "4/3",
+      sizes: "(max-width: 880px) 90vw, 33vw"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-shade"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-num"
+    }, String(ch.num || index + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-days"
+    }, ch.days, " nights"), isNow && /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-now"
+    }, /*#__PURE__*/React.createElement("i", null), " You are here"), isPast && !isNow && /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-past"
+    }, "walked")), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-body"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-titlerow"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-title"
+    }, ch.title), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-flag"
+    }, ch.flag)), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-theme"
+    }, ch.theme), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-meta"
+    }, /*#__PURE__*/React.createElement("span", null, fmt(ch.start), " \u2013 ", fmt(ch.end)), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, ch.weather ? `${ch.weather.hi}°/${ch.weather.lo}°` : '—'), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, ch.places.length, " stop", ch.places.length === 1 ? '' : 's')), /*#__PURE__*/React.createElement("span", {
+      className: "ch-card-route"
+    }, ch.tldr || (ch.places || []).map(p => p.name).join(' · '))));
+  }
+  function ChaptersView({
+    current,
     selectedId,
-    onSelect
+    onOpen
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
+    const stats = window.tripStats();
     const today = window.TRIP_NOW.todayISO();
-    const current = window.TRIP_NOW.currentChapter(chapters, today);
-    const bodyRef = React.useRef(null);
-
-    // Open the list where you are: today's chapter pinned to the top of the
-    // viewport, past chapters above it scrolled out of the way. A chapter
-    // opened by deep link (?chapter=…) wins, so a shared link lands on its
-    // own row. Runs once per mount (desktop load, and again when the mobile
-    // list is opened).
-    React.useEffect(() => {
-      const body = bodyRef.current;
-      if (!body) return;
-      const row = () => body.querySelector('.chapter-row.is-active') || body.querySelector('.chapter-row.is-current');
-      if (!row()) return;
-      const align = () => {
-        const r = row();
-        if (r) body.scrollTop += r.getBoundingClientRect().top - body.getBoundingClientRect().top;
-        return body.scrollTop;
-      };
-      const mine = align();
-      // Webfont swap can shift row heights a few px after first paint —
-      // realign only if the user hasn't scrolled away in the meantime.
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => {
-          if (body.scrollTop === mine) align();
-        });
-      }
-    }, []);
     return /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list"
+      className: "page chapters-page"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-head"
-    }, /*#__PURE__*/React.createElement(window.NowNext, {
-      onSelect: onSelect
-    })), /*#__PURE__*/React.createElement("div", {
-      className: "chapter-list-body",
-      ref: bodyRef
-    }, chapters.map(c => /*#__PURE__*/React.createElement(ChapterRow, {
+      className: "page-inner"
+    }, /*#__PURE__*/React.createElement("header", {
+      className: "page-head"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "page-eyebrow"
+    }, /*#__PURE__*/React.createElement("span", null, "02"), " The arc"), /*#__PURE__*/React.createElement("h1", null, "Twenty-one chapters,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "one long way east.")), /*#__PURE__*/React.createElement("p", null, "A year is not a list of countries. It is a shape: a long, slow opening at home, a winter in the snow, an island spring, and a last bright month in the east. Open any chapter to see the days, the stops, and the thinking behind them."), /*#__PURE__*/React.createElement("div", {
+      className: "page-facts"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "page-fact"
+    }, /*#__PURE__*/React.createElement("b", null, stats.days), /*#__PURE__*/React.createElement("span", null, "days")), /*#__PURE__*/React.createElement("div", {
+      className: "page-fact"
+    }, /*#__PURE__*/React.createElement("b", null, stats.chapters), /*#__PURE__*/React.createElement("span", null, "chapters")), /*#__PURE__*/React.createElement("div", {
+      className: "page-fact"
+    }, /*#__PURE__*/React.createElement("b", null, stats.countries), /*#__PURE__*/React.createElement("span", null, "countries")), /*#__PURE__*/React.createElement("div", {
+      className: "page-fact"
+    }, /*#__PURE__*/React.createElement("b", null, stats.stops), /*#__PURE__*/React.createElement("span", null, "stops")))), /*#__PURE__*/React.createElement("div", {
+      className: "chapter-grid"
+    }, chapters.map((c, i) => /*#__PURE__*/React.createElement(ChapterCard, {
       key: c.id,
       ch: c,
-      isActive: c.id === selectedId,
-      isCurrent: !!current && c.id === current.id,
-      status: window.TRIP_NOW.chapterStatus(c, current, today),
-      onSelect: () => onSelect(c.id)
-    }))));
-  }
-  function ChapterRow({
-    ch,
-    isActive,
-    isCurrent,
-    status,
-    onSelect
-  }) {
-    const accent = chapterColor(ch);
-    return /*#__PURE__*/React.createElement("div", {
-      className: `chapter-row ${isActive ? 'is-active' : ''} ${isCurrent ? 'is-current' : ''} ${status === 'past' ? 'is-past' : ''}`,
-      onClick: onSelect
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-marker",
-      style: {
-        background: isActive || isCurrent ? accent : 'transparent'
-      }
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-num"
-    }, ch.kind === 'chapter' ? (ch.num || '').toString().padStart(2, '0') : '··'), /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-body"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-title"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-title-text"
-    }, ch.title), isCurrent && /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-now"
-    }, "Now")), /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-dates"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-region-dot",
-      style: {
-        background: accent
-      }
-    }), fmt(ch.start), " \u2013 ", fmt(ch.end), " \xB7 ", ch.days, "d"), ch.weather && /*#__PURE__*/React.createElement("span", {
-      className: "chapter-row-weather"
-    }, ch.weather.hi, "\xB0/", ch.weather.lo, "\xB0 \xB7 \uD83C\uDF27 ", ch.weather.rainyDays ?? 0, "d")));
+      index: i,
+      isNow: !!current && c.id === current.id,
+      isPast: !!current && c.end < today,
+      isSelected: c.id === selectedId,
+      onOpen: onOpen
+    }))), /*#__PURE__*/React.createElement("footer", {
+      className: "page-foot"
+    }, /*#__PURE__*/React.createElement("span", null, "Jun 21, 2026 \u2014 Jun 16, 2027"), /*#__PURE__*/React.createElement("button", {
+      className: "pill-btn",
+      onClick: () => onOpen((current || chapters[0]).id)
+    }, "Open ", current ? 'where you are' : 'chapter one', " ", /*#__PURE__*/React.createElement(window.Icon.arrow, {
+      size: 12
+    })))));
   }
 
   // ══════════════════════════════════════════════════════════════════════
-  // DETAIL PANEL — full chapter detail. Read-only.
+  // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
-  // Photo carousel — chapter header + one photo per stop with a photo.
-  // Arrows, dots, counter, swipe. Remount per chapter via key.
   function PhotoCarousel({
-    items
+    items,
+    tint,
+    num,
+    flag,
+    country
   }) {
     const [idx, setIdx] = React.useState(0);
     const n = items.length;
@@ -139,13 +165,23 @@
       key: cur.keyword,
       keyword: cur.keyword,
       ratio: "auto",
+      loading: "eager",
       style: {
         width: '100%',
         height: '100%',
         aspectRatio: 'unset'
       },
       caption: cur.caption
-    }), n > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "detail-hero-shade"
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "detail-hero-num",
+      style: {
+        color: tint
+      }
+    }, String(num || '').padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
+      className: "detail-hero-tag"
+    }, flag, " ", country), n > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
       className: "carousel-arrow is-left",
       onClick: () => go(-1),
       "aria-label": "Previous photo"
@@ -155,7 +191,7 @@
       "aria-label": "Next photo"
     }, "\u203A"), /*#__PURE__*/React.createElement("div", {
       className: "carousel-count"
-    }, idx + 1, " / ", n), /*#__PURE__*/React.createElement("div", {
+    }, String(idx + 1).padStart(2, '0'), " / ", String(n).padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
       className: "carousel-dots"
     }, items.map((it, i) => /*#__PURE__*/React.createElement("button", {
       key: i,
@@ -164,46 +200,51 @@
       "aria-label": `Photo ${i + 1}: ${it.caption}`
     })))));
   }
+
+  // ══════════════════════════════════════════════════════════════════════
+  // DETAIL — a full editorial spread for one chapter.
+  // ══════════════════════════════════════════════════════════════════════
   function DetailPanel({
     chapterId,
     onClose,
     onSelectPlace,
-    selectedPlaceIdx
+    selectedPlaceIdx,
+    onOpenChapter
   }) {
     const store = window.useStore();
+    const chapters = store.getChapters();
     const ch = store.getChapter(chapterId);
     if (!ch) return null;
     const region = REGIONS[ch.region] || {
-      accent: '#c2693a',
       name: ''
     };
-    const accent = chapterColor(ch);
-    const today = dayCounter(ch.start);
-    const todayEnd = dayCounter(ch.end);
-    return /*#__PURE__*/React.createElement("div", {
-      className: "detail-panel"
+    const tint = window.chapterTint(ch);
+    const startDay = dayCounter(ch.start).n;
+    const endDay = dayCounter(ch.end).n;
+    const windows = placeWindows(ch);
+    const idx = chapters.findIndex(c => c.id === ch.id);
+    const prev = chapters[(idx - 1 + chapters.length) % chapters.length];
+    const next = chapters[(idx + 1) % chapters.length];
+    return /*#__PURE__*/React.createElement("aside", {
+      className: "detail-panel",
+      role: "dialog",
+      "aria-label": `Chapter ${ch.num}: ${ch.title}`
     }, /*#__PURE__*/React.createElement("div", {
-      className: "detail-head"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "detail-head-meta"
+      className: "detail-topbar"
     }, /*#__PURE__*/React.createElement("span", {
-      className: "detail-pill",
+      className: "detail-topbar-label"
+    }, /*#__PURE__*/React.createElement("i", {
       style: {
-        background: accent,
-        color: helpers.contrastText(accent)
+        background: tint
       }
-    }, ch.kind === 'chapter' ? `Chapter ${(ch.num || '').toString().padStart(2, '0')}` : ch.kind.toUpperCase()), /*#__PURE__*/React.createElement("span", {
-      className: "kicker"
-    }, region.name, " \xB7 ", ch.country, " ", ch.flag)), /*#__PURE__*/React.createElement("div", {
-      className: "detail-head-actions"
-    }, /*#__PURE__*/React.createElement("button", {
+    }), "Chapter ", ch.kind === 'chapter' && ch.num != null ? String(ch.num).padStart(2, '0') : '··', " ", /*#__PURE__*/React.createElement("b", null, "/ ", String(chapters.length).padStart(2, '0'))), /*#__PURE__*/React.createElement("button", {
       className: "icon-btn",
       onClick: onClose,
-      title: "Close"
+      title: "Close chapter (Esc)"
     }, /*#__PURE__*/React.createElement(window.Icon.close, {
       size: 16
-    })))), /*#__PURE__*/React.createElement("div", {
-      className: "detail-body"
+    }))), /*#__PURE__*/React.createElement("div", {
+      className: "detail-scroll"
     }, /*#__PURE__*/React.createElement(PhotoCarousel, {
       key: ch.id,
       items: [{
@@ -212,178 +253,155 @@
       }, ...ch.places.map((p, i) => p.photo ? {
         keyword: p.photo,
         caption: `${i + 1}. ${p.name}`
-      } : null).filter(Boolean)]
-    }), /*#__PURE__*/React.createElement("h1", {
+      } : null).filter(Boolean)],
+      tint: tint,
+      num: ch.num,
+      flag: ch.flag,
+      country: ch.country
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "detail-content"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "detail-eyebrow"
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: tint
+      }
+    }, region.name), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, ch.tldr)), /*#__PURE__*/React.createElement("h1", {
       className: "detail-title"
-    }, ch.title), ch.theme && /*#__PURE__*/React.createElement("div", {
+    }, ch.title), ch.theme && /*#__PURE__*/React.createElement("p", {
       className: "detail-theme"
     }, ch.theme, "."), /*#__PURE__*/React.createElement("div", {
-      className: "detail-stats"
-    }, /*#__PURE__*/React.createElement(Stat, {
-      label: "Window",
-      value: `${fmt(ch.start)} – ${fmt(ch.end)}`,
-      sub: `${ch.days} days`
-    }), /*#__PURE__*/React.createElement(Stat, {
-      label: "Day of trip",
-      value: `${today.n}–${todayEnd.n}`,
-      sub: `of ${totalDays}`
-    }), /*#__PURE__*/React.createElement(Stat, {
-      label: "Weather",
-      value: ch.weather?.label || '—',
-      sub: ch.weather?.emoji
-    }), /*#__PURE__*/React.createElement(Stat, {
-      label: "Temp",
-      value: ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—',
-      sub: "high / low"
-    }), /*#__PURE__*/React.createElement(Stat, {
-      label: "Rain",
-      value: ch.weather ? `${ch.weather.rainyDays ?? 0} days` : '—',
-      sub: "rainy days"
-    })), ch.intro && /*#__PURE__*/React.createElement("div", {
+      className: "detail-facts"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "detail-fact"
+    }, /*#__PURE__*/React.createElement("span", null, "Window"), /*#__PURE__*/React.createElement("b", null, fmt(ch.start), " \u2013 ", fmt(ch.end)), /*#__PURE__*/React.createElement("i", null, ch.days, " nights")), /*#__PURE__*/React.createElement("div", {
+      className: "detail-fact"
+    }, /*#__PURE__*/React.createElement("span", null, "Day of trip"), /*#__PURE__*/React.createElement("b", null, startDay, "\u2013", endDay), /*#__PURE__*/React.createElement("i", null, "of ", totalDays)), /*#__PURE__*/React.createElement("div", {
+      className: "detail-fact"
+    }, /*#__PURE__*/React.createElement("span", null, "Weather"), /*#__PURE__*/React.createElement("b", null, ch.weather ? `${ch.weather.hi}° / ${ch.weather.lo}°` : '—'), /*#__PURE__*/React.createElement("i", null, ch.weather ? ch.weather.label : '')), /*#__PURE__*/React.createElement("div", {
+      className: "detail-fact"
+    }, /*#__PURE__*/React.createElement("span", null, "Rain"), /*#__PURE__*/React.createElement("b", null, ch.weather ? `${ch.weather.rainyDays ?? 0} day${(ch.weather.rainyDays ?? 0) === 1 ? '' : 's'}` : '—'), /*#__PURE__*/React.createElement("i", null, ch.weather ? ch.weather.emoji : ''))), ch.intro && /*#__PURE__*/React.createElement("p", {
       className: "detail-intro"
     }, ch.intro), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
-      title: `Itinerary · ${ch.places.length} stop${ch.places.length === 1 ? '' : 's'}`
-    }), ch.places.map((p, i) => {
-      const offsetDays = ch.places.slice(0, i).reduce((s, x) => s + x.days, 0);
-      const startDate = new Date(new Date(ch.start).getTime() + offsetDays * 86400000);
-      const endDate = new Date(startDate.getTime() + (p.days - 1) * 86400000);
-      return /*#__PURE__*/React.createElement(PlaceRow, {
+      title: "The stops",
+      note: `${ch.places.length} stops · ${ch.days} nights`
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "stop-timeline",
+      style: {
+        '--tint': tint
+      }
+    }, ch.places.map((p, i) => {
+      const w = windows[i] || {};
+      const active = selectedPlaceIdx === i;
+      return /*#__PURE__*/React.createElement("div", {
         key: i,
-        chapterId: ch.id,
-        place: p,
-        idx: i,
-        startDate: startDate,
-        endDate: endDate,
-        region: region,
-        accent: accent,
-        isActive: selectedPlaceIdx === i,
-        onSelect: () => onSelectPlace(i)
-      });
-    }), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
+        className: `stop-row ${active ? 'is-active' : ''}`,
+        onClick: () => onSelectPlace(i),
+        role: "button",
+        tabIndex: 0,
+        onKeyDown: e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onSelectPlace(i);
+          }
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "stop-date"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "stop-date-day"
+      }, fmt(w.start)), /*#__PURE__*/React.createElement("span", {
+        className: "stop-date-end"
+      }, w.end && w.end !== w.start ? `→ ${fmt(w.end)}` : ''), /*#__PURE__*/React.createElement("span", {
+        className: "stop-date-nights"
+      }, p.days, " night", p.days === 1 ? '' : 's')), /*#__PURE__*/React.createElement("div", {
+        className: "stop-node"
+      }, /*#__PURE__*/React.createElement("i", null)), /*#__PURE__*/React.createElement("div", {
+        className: "stop-body"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "stop-titlerow"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "stop-idx"
+      }, String(i + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("span", {
+        className: "stop-name"
+      }, p.name), p.coords && /*#__PURE__*/React.createElement("button", {
+        className: "stop-map",
+        onClick: e => {
+          e.stopPropagation();
+          window.openMaps(p.query);
+        },
+        title: "Open in Google Maps"
+      }, /*#__PURE__*/React.createElement(window.Icon.external, {
+        size: 10
+      }))), /*#__PURE__*/React.createElement("div", {
+        className: "stop-highlights"
+      }, (p.highlights || []).map((h, j) => /*#__PURE__*/React.createElement("span", {
+        key: j,
+        className: "stop-highlight"
+      }, h)))));
+    })), ch.decisions && ch.decisions.length > 0 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SectionHead, {
       num: "02",
-      title: "Route decisions",
-      small: true
-    }), /*#__PURE__*/React.createElement("ul", {
-      className: "alert-list"
+      title: "Why it looks like this",
+      note: "route decisions"
+    }), /*#__PURE__*/React.createElement("ol", {
+      className: "decision-list"
     }, ch.decisions.map((d, i) => /*#__PURE__*/React.createElement("li", {
       key: i
-    }, d))))));
-  }
-  function Stat({
-    label,
-    value,
-    sub
-  }) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "stat"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "kicker"
-    }, label), /*#__PURE__*/React.createElement("div", {
-      className: "stat-value"
-    }, value), sub && /*#__PURE__*/React.createElement("div", {
-      className: "stat-sub"
-    }, sub));
-  }
-  function SectionHead({
-    num,
-    title,
-    small
-  }) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: `section-head ${small ? 'is-small' : ''}`
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "section-head-num"
-    }, "\xA7", num), /*#__PURE__*/React.createElement("span", {
-      className: "section-head-title"
-    }, title));
-  }
-  function PlaceRow({
-    chapterId,
-    place,
-    idx,
-    startDate,
-    endDate,
-    region,
-    accent,
-    isActive,
-    onSelect
-  }) {
-    const coords = place.coords;
-    const sameDay = startDate.getTime() === endDate.getTime();
-    const sameMonth = !sameDay && startDate.getUTCMonth() === endDate.getUTCMonth() && startDate.getUTCFullYear() === endDate.getUTCFullYear();
-    return /*#__PURE__*/React.createElement("div", {
-      className: `place-row ${isActive ? 'is-active' : ''}`,
-      onClick: onSelect
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "place-row-day"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "place-row-day-num"
-    }, fmt(startDate), !sameDay && /*#__PURE__*/React.createElement("span", {
-      className: "place-row-day-dash"
-    }, "\u2013", sameMonth ? endDate.getUTCDate() : fmt(endDate))), /*#__PURE__*/React.createElement("span", {
-      className: "place-row-day-label"
-    }, place.days, "d")), /*#__PURE__*/React.createElement("span", {
-      className: "place-row-body"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "place-row-title"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "place-row-idx"
-    }, (idx + 1).toString().padStart(2, '0')), /*#__PURE__*/React.createElement("span", null, place.name)), /*#__PURE__*/React.createElement("ul", {
-      className: "place-row-list"
-    }, place.highlights.map((h, j) => /*#__PURE__*/React.createElement("li", {
-      key: j,
-      style: {
-        '--bullet': accent
-      }
-    }, h)))), /*#__PURE__*/React.createElement("div", {
-      className: "place-row-actions"
-    }, coords && /*#__PURE__*/React.createElement("button", {
-      className: "place-row-map",
-      onClick: e => {
-        e.stopPropagation();
-        window.openMaps(place.query);
-      },
-      title: "Open in Google Maps"
-    }, /*#__PURE__*/React.createElement(window.Icon.external, {
-      size: 11
-    }))));
+    }, d)))), /*#__PURE__*/React.createElement("div", {
+      className: "detail-nav"
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => onOpenChapter(prev.id)
+    }, /*#__PURE__*/React.createElement(window.Icon.arrowLeft, {
+      size: 13
+    }), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("i", null, "Previous"), prev.title)), /*#__PURE__*/React.createElement("button", {
+      className: "is-next",
+      onClick: () => onOpenChapter(next.id)
+    }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("i", null, "Next"), next.title), /*#__PURE__*/React.createElement(window.Icon.arrow, {
+      size: 13
+    }))))));
   }
 
   // ══════════════════════════════════════════════════════════════════════
-  // BINDER (Budget)
+  // BINDER — Ledger and Field Kit pages.
   // ══════════════════════════════════════════════════════════════════════
   function Binder({
     view,
-    onClose
+    onClose,
+    onOpenChapter
   }) {
-    const isTodo = view === 'todo';
+    const isTodo = view === 'kit';
     return /*#__PURE__*/React.createElement("div", {
-      className: "binder"
+      className: "page binder-page"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "binder-head"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "binder-tabs"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "kicker"
-    }, isTodo ? 'Checklist' : 'Budget')), /*#__PURE__*/React.createElement("button", {
-      className: "icon-btn",
-      onClick: onClose,
-      title: "Close binder"
-    }, /*#__PURE__*/React.createElement(window.Icon.close, {
-      size: 16
-    }))), /*#__PURE__*/React.createElement("div", {
-      className: "binder-body"
-    }, isTodo ? /*#__PURE__*/React.createElement(window.TodoView, null) : /*#__PURE__*/React.createElement(BudgetView, null)));
+      className: "binder-bar"
+    }, /*#__PURE__*/React.createElement("button", {
+      className: "binder-back",
+      onClick: onClose
+    }, /*#__PURE__*/React.createElement(window.Icon.arrowLeft, {
+      size: 13
+    }), " Atlas"), /*#__PURE__*/React.createElement("span", {
+      className: "binder-crumb"
+    }, "The Long Way East ", /*#__PURE__*/React.createElement("i", null, "/"), " ", isTodo ? 'Field kit' : 'Ledger'), /*#__PURE__*/React.createElement("span", {
+      className: "binder-date"
+    }, fmt(window.TRIP_NOW.todayISO()))), /*#__PURE__*/React.createElement("div", {
+      className: "binder-scroll"
+    }, isTodo ? /*#__PURE__*/React.createElement(window.TodoView, null) : /*#__PURE__*/React.createElement(BudgetView, {
+      onOpenChapter: onOpenChapter
+    })));
   }
-  function BudgetView() {
-    const store = useStore();
-    const fmt$ = n => 'USD ' + Math.round(n).toLocaleString('en-US');
-    const CATS = [['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Local transport'], ['activities', 'Activities & diving'], ['fees', 'Visas & park fees']];
-    const titleById = Object.fromEntries(store.getChapters().map(c => [c.id, c.title]));
-    const datesById = Object.fromEntries(store.getChapters().map(c => [c.id, dayRange(c.start, c.end)]));
+
+  // ══════════════════════════════════════════════════════════════════════
+  // BUDGET — the ledger.
+  // ══════════════════════════════════════════════════════════════════════
+  function BudgetView({
+    onOpenChapter
+  }) {
+    const store = window.useStore();
+    const fmt$ = n => '$' + Math.round(n).toLocaleString('en-US');
+    const CATS = [['lodging', 'Lodging', '#ff9a4c'], ['food', 'Food', '#efc55e'], ['transport', 'Local transport', '#84ca96'], ['activities', 'Activities & diving', '#5bb0c1'], ['fees', 'Visas & park fees', '#8b77b8']];
+    const chapters = store.getChapters();
+    const byId = Object.fromEntries(chapters.map(c => [c.id, c]));
     const rowTotal = r => CATS.reduce((s, [k]) => s + (r[k] || 0), 0);
-    const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
     const chTotal = budget.chapters.reduce((s, r) => s + rowTotal(r), 0);
     const flightsTotal = budget.flights.reduce((s, f) => s + f.cost, 0);
     const extrasTotal = budget.extras.reduce((s, e) => s + e.cost, 0);
@@ -393,17 +411,42 @@
     const perDay = Math.round(grand / totalDays);
     const perPersonMonth = Math.round(grand / 2 / (totalDays / 30.44));
     const perPersonMonthBRL = Math.round(perPersonMonth * budget.fxBRL);
-    // Sortable per-chapter table: click any header to sort asc/desc.
-    const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'd'], ['perDay', '$/d'], ['lodging', 'Lodg.'], ['food', 'Food'], ['transport', 'Trans.'], ['activities', 'Activ.'], ['fees', 'Fees'], ['total', 'Total']];
-    const [sortKey, setSortKey] = React.useState('idx');
-    const [sortDir, setSortDir] = React.useState(1);
+    const catTotals = Object.fromEntries(CATS.map(([k]) => [k, budget.chapters.reduce((s, r) => s + (r[k] || 0), 0)]));
+    const slices = [...CATS.map(([k, label, color]) => ({
+      label,
+      value: catTotals[k],
+      color
+    })), {
+      label: 'Inter-chapter flights',
+      value: flightsTotal,
+      color: '#c98a2a'
+    }, {
+      label: 'Insurance & extras',
+      value: extrasTotal,
+      color: '#7f9dd8'
+    }, {
+      label: `Contingency ${budget.contingencyPct}%`,
+      value: contingency,
+      color: 'rgba(244,236,220,.28)'
+    }];
+    let acc = 0;
+    const gradient = slices.map(s => {
+      const from = acc / grand * 100;
+      acc += s.value;
+      const to = acc / grand * 100;
+      return `${s.color} ${from}% ${to}%`;
+    }).join(', ');
     const rows = budget.chapters.map((r, i) => ({
       ...r,
       idx: i + 1,
-      title: titleById[r.id] || r.id,
+      title: byId[r.id] && byId[r.id].title || r.id,
       total: rowTotal(r),
-      perDay: rowTotal(r) / r.days
+      perDay: rowTotal(r) / r.days,
+      tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45'
     }));
+    const maxRow = Math.max(...rows.map(r => r.total));
+    const [sortKey, setSortKey] = React.useState('idx');
+    const [sortDir, setSortDir] = React.useState(1);
     const sorted = [...rows].sort((a, b) => {
       const va = a[sortKey],
         vb = b[sortKey];
@@ -416,236 +459,141 @@
         setSortDir(1);
       }
     };
-    const pct = n => Math.round(n / grand * 100) + '%';
+    const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'Nights'], ['perDay', '$/night'], ['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Transport'], ['activities', 'Activities'], ['fees', 'Fees'], ['total', 'Total']];
     return /*#__PURE__*/React.createElement("div", {
-      className: "binder-pane"
+      className: "page-inner ledger-page"
+    }, /*#__PURE__*/React.createElement("header", {
+      className: "page-head"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "binder-pane-head"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      className: "kicker"
-    }, "\xA7 Money"), /*#__PURE__*/React.createElement("h2", {
-      className: "binder-pane-title"
-    }, "Budget"), /*#__PURE__*/React.createElement("p", {
-      className: "binder-pane-sub"
-    }, budget.basis, ". Totals compute from the lines below \u2014 nothing hardcoded."))), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero"
+      className: "page-eyebrow"
+    }, /*#__PURE__*/React.createElement("span", null, "03"), " The ledger"), /*#__PURE__*/React.createElement("h1", null, "What a year costs.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "And what it buys.")), /*#__PURE__*/React.createElement("p", null, "Mid-range with strategic splurges, priced for two across 360 days. Totals compute from the lines below \u2014 nothing is hardcoded, so the numbers cannot quietly lie.")), /*#__PURE__*/React.createElement("div", {
+      className: "money-hero"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-big"
-    }, fmt$(grand), " for two"), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-sub"
-    }, fmt$(perDay), "/day \xB7 ", totalDays, " days \xB7 ", budget.inBRL), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-sub"
-    }, "\u2248 $", perPersonMonth.toLocaleString('en-US'), " / R$", perPersonMonthBRL.toLocaleString('en-US'), " per person/month")), /*#__PURE__*/React.createElement(SectionHead, {
+      className: "money-total"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "money-label"
+    }, "Grand total \xB7 two travellers"), /*#__PURE__*/React.createElement("span", {
+      className: "money-big"
+    }, fmt$(grand)), /*#__PURE__*/React.createElement("span", {
+      className: "money-sub"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "money-stat"
+    }, /*#__PURE__*/React.createElement("b", null, fmt$(perDay)), /*#__PURE__*/React.createElement("em", null, "per day for two")), /*#__PURE__*/React.createElement("span", {
+      className: "money-stat"
+    }, /*#__PURE__*/React.createElement("b", null, fmt$(perPersonMonth)), /*#__PURE__*/React.createElement("em", null, "per person / month")), /*#__PURE__*/React.createElement("span", {
+      className: "money-stat"
+    }, /*#__PURE__*/React.createElement("b", null, "R$", perPersonMonthBRL.toLocaleString('en-US')), /*#__PURE__*/React.createElement("em", null, "per person / month"))), /*#__PURE__*/React.createElement("span", {
+      className: "money-note"
+    }, totalDays, " days \xB7 ", budget.inBRL)), /*#__PURE__*/React.createElement("div", {
+      className: "donut-wrap"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "donut",
+      style: {
+        background: `conic-gradient(${gradient})`
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "donut-hole"
+    }, /*#__PURE__*/React.createElement("span", null, budget.contingencyPct, "%"), /*#__PURE__*/React.createElement("i", null, "contingency"))), /*#__PURE__*/React.createElement("ul", {
+      className: "donut-key"
+    }, slices.map(s => /*#__PURE__*/React.createElement("li", {
+      key: s.label
+    }, /*#__PURE__*/React.createElement("i", {
+      style: {
+        background: s.color
+      }
+    }), /*#__PURE__*/React.createElement("span", null, s.label), /*#__PURE__*/React.createElement("b", null, fmt$(s.value))))))), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
-      title: "Where it goes",
-      small: true
+      title: "Where the nights go",
+      note: "total spend per chapter"
     }), /*#__PURE__*/React.createElement("div", {
-      className: "budget-grid"
-    }, CATS.map(([k, label]) => /*#__PURE__*/React.createElement(BudgetCard, {
-      key: k,
-      title: label,
-      items: [fmt$(catTotals[k]), pct(catTotals[k]) + ' of trip'],
-      tone: "neutral"
-    })), /*#__PURE__*/React.createElement(BudgetCard, {
-      title: "Inter-chapter flights",
-      items: [fmt$(flightsTotal), pct(flightsTotal) + ' of trip'],
-      tone: "warn"
-    }), /*#__PURE__*/React.createElement(BudgetCard, {
-      title: "Insurance & extras",
-      items: [fmt$(extrasTotal), pct(extrasTotal) + ' of trip'],
-      tone: "cool"
-    }), /*#__PURE__*/React.createElement(BudgetCard, {
-      title: `Contingency ${budget.contingencyPct}%`,
-      items: [fmt$(contingency), 'peak fares, FX, surprises'],
-      tone: "neutral",
-      bordered: true
-    })), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "02",
-      title: "Per chapter",
-      small: true
-    }), /*#__PURE__*/React.createElement("div", {
-      style: {
-        overflowX: 'auto'
-      }
-    }, /*#__PURE__*/React.createElement("table", {
-      style: {
-        width: '100%',
-        borderCollapse: 'collapse',
-        fontSize: 12
-      }
-    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
-      style: {
-        textAlign: 'left',
-        opacity: 0.65
-      }
-    }, COLS.map(([k, label]) => /*#__PURE__*/React.createElement("th", {
-      key: k,
-      onClick: () => toggleSort(k),
-      style: {
-        padding: '6px 8px 6px 0',
-        cursor: 'pointer',
-        whiteSpace: 'nowrap',
-        textAlign: k === 'total' ? 'right' : 'left'
-      }
-    }, label, sortKey === k ? sortDir === 1 ? ' ▲' : ' ▼' : '')))), /*#__PURE__*/React.createElement("tbody", null, sorted.map(r => /*#__PURE__*/React.createElement("tr", {
+      className: "bar-list"
+    }, rows.map(r => /*#__PURE__*/React.createElement("button", {
       key: r.id,
+      className: "bar-row",
+      onClick: () => onOpenChapter && onOpenChapter(r.id),
+      title: r.note
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "bar-ch"
+    }, /*#__PURE__*/React.createElement("i", {
       style: {
-        borderTop: '1px solid rgba(0,0,0,.08)'
-      },
+        background: r.tint
+      }
+    }), String(r.idx).padStart(2, '0'), " ", r.title), /*#__PURE__*/React.createElement("span", {
+      className: "bar-track"
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: `${Math.max(2, r.total / maxRow * 100)}%`,
+        background: r.tint
+      }
+    })), /*#__PURE__*/React.createElement("span", {
+      className: "bar-val"
+    }, fmt$(r.total)), /*#__PURE__*/React.createElement("span", {
+      className: "bar-per"
+    }, fmt$(r.perDay), /*#__PURE__*/React.createElement("i", null, "/night"))))), /*#__PURE__*/React.createElement(SectionHead, {
+      num: "02",
+      title: "The long table",
+      note: "click a column to sort"
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "ledger-table-wrap"
+    }, /*#__PURE__*/React.createElement("table", {
+      className: "ledger-table"
+    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, COLS.map(([k, label]) => /*#__PURE__*/React.createElement("th", {
+      key: k,
+      className: k === 'total' ? 'is-num' : ''
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => toggleSort(k)
+    }, label, sortKey === k ? sortDir === 1 ? ' ▲' : ' ▼' : ''))))), /*#__PURE__*/React.createElement("tbody", null, sorted.map(r => /*#__PURE__*/React.createElement("tr", {
+      key: r.id,
       title: r.note
     }, /*#__PURE__*/React.createElement("td", {
-      style: {
-        opacity: 0.55
-      }
+      className: "is-muted"
     }, r.idx), /*#__PURE__*/React.createElement("td", {
-      style: {
-        padding: '6px 8px 6px 0',
-        whiteSpace: 'nowrap'
-      }
-    }, r.title, /*#__PURE__*/React.createElement("div", {
-      style: {
-        opacity: 0.55,
-        fontSize: 11
-      }
-    }, datesById[r.id] || '')), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.food).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees).replace('USD ', '$')), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right',
-        whiteSpace: 'nowrap'
-      }
+      className: "is-name"
+    }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay)), /*#__PURE__*/React.createElement("td", null, fmt$(r.lodging)), /*#__PURE__*/React.createElement("td", null, fmt$(r.food)), /*#__PURE__*/React.createElement("td", null, fmt$(r.transport)), /*#__PURE__*/React.createElement("td", null, fmt$(r.activities)), /*#__PURE__*/React.createElement("td", null, fmt$(r.fees)), /*#__PURE__*/React.createElement("td", {
+      className: "is-num is-total"
     }, fmt$(r.total)))), /*#__PURE__*/React.createElement("tr", {
-      style: {
-        borderTop: '2px solid rgba(0,0,0,.2)',
-        fontWeight: 700
-      }
-    }, /*#__PURE__*/React.createElement("td", {
-      style: {
-        padding: '6px 8px 6px 0'
-      }
-    }, "Chapters"), /*#__PURE__*/React.createElement("td", null, budget.chapters.reduce((s, r) => s + r.days, 0)), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right'
-      }
-    }, fmt$(chTotal)))))), /*#__PURE__*/React.createElement("p", {
-      className: "binder-pane-sub"
-    }, "Click a column header to sort \u25B2\u25BC \xB7 hover a row for its note. $/d is per couple."), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "03",
-      title: "From chapters to grand total",
-      small: true
-    }), /*#__PURE__*/React.createElement("div", {
-      style: {
-        overflowX: 'auto'
-      }
-    }, /*#__PURE__*/React.createElement("table", {
-      style: {
-        width: '100%',
-        borderCollapse: 'collapse',
-        fontSize: 12
-      }
-    }, /*#__PURE__*/React.createElement("tbody", null, [[`Chapters subtotal (${budget.chapters.length} chapters)`, chTotal, chTotal], [`+ Inter-chapter flights (${budget.flights.length} legs)`, flightsTotal, chTotal + flightsTotal], ['+ Insurance & extras', extrasTotal, subtotal]].map(([label, amount, running], i) => /*#__PURE__*/React.createElement("tr", {
-      key: i,
-      style: {
-        borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,.08)'
-      }
-    }, /*#__PURE__*/React.createElement("td", {
-      style: {
-        padding: '6px 8px 6px 0'
-      }
-    }, label), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right',
-        whiteSpace: 'nowrap'
-      }
-    }, fmt$(amount)), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right',
-        whiteSpace: 'nowrap',
-        opacity: 0.55
-      }
-    }, "= ", fmt$(running)))), /*#__PURE__*/React.createElement("tr", {
-      style: {
-        borderTop: '1px solid rgba(0,0,0,.08)'
-      }
-    }, /*#__PURE__*/React.createElement("td", {
-      style: {
-        padding: '6px 8px 6px 0'
-      }
-    }, "= Subtotal"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right',
-        whiteSpace: 'nowrap',
-        fontWeight: 700
-      }
-    }, fmt$(subtotal))), /*#__PURE__*/React.createElement("tr", {
-      style: {
-        borderTop: '1px solid rgba(0,0,0,.08)'
-      }
-    }, /*#__PURE__*/React.createElement("td", {
-      style: {
-        padding: '6px 8px 6px 0'
-      }
-    }, "+ Contingency ", budget.contingencyPct, "%"), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right',
-        whiteSpace: 'nowrap'
-      }
-    }, fmt$(contingency)), /*#__PURE__*/React.createElement("td", null)), /*#__PURE__*/React.createElement("tr", {
-      style: {
-        borderTop: '2px solid rgba(0,0,0,.2)',
-        fontWeight: 700
-      }
-    }, /*#__PURE__*/React.createElement("td", {
-      style: {
-        padding: '6px 8px 6px 0'
-      }
-    }, "= Grand total"), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
-      style: {
-        textAlign: 'right',
-        whiteSpace: 'nowrap'
-      }
-    }, fmt$(grand)))))), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "04",
-      title: "Locked costs",
-      small: true
-    }), /*#__PURE__*/React.createElement("ul", {
-      className: "alert-list"
-    }, budget.locked.map((l, i) => /*#__PURE__*/React.createElement("li", {
+      className: "is-sum"
+    }, /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      className: "is-name"
+    }, "Chapters"), /*#__PURE__*/React.createElement("td", null, budget.chapters.reduce((s, r) => s + r.days, 0)), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", null), /*#__PURE__*/React.createElement("td", {
+      className: "is-num is-total"
+    }, fmt$(chTotal)))))), /*#__PURE__*/React.createElement("div", {
+      className: "ledger-below"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "receipt"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "receipt-head"
+    }, /*#__PURE__*/React.createElement("span", null, "The whole bill"), /*#__PURE__*/React.createElement("span", null, "USD \xB7 two")), [[`Chapters (${budget.chapters.length})`, chTotal], [`Inter-chapter flights (${budget.flights.length} legs)`, flightsTotal], ['Insurance & extras', extrasTotal]].map(([label, value]) => /*#__PURE__*/React.createElement("div", {
+      key: label,
+      className: "receipt-row"
+    }, /*#__PURE__*/React.createElement("span", null, label), /*#__PURE__*/React.createElement("b", null, fmt$(value)))), /*#__PURE__*/React.createElement("div", {
+      className: "receipt-row is-sub"
+    }, /*#__PURE__*/React.createElement("span", null, "Subtotal"), /*#__PURE__*/React.createElement("b", null, fmt$(subtotal))), /*#__PURE__*/React.createElement("div", {
+      className: "receipt-row"
+    }, /*#__PURE__*/React.createElement("span", null, "Contingency ", budget.contingencyPct, "%"), /*#__PURE__*/React.createElement("b", null, fmt$(contingency))), /*#__PURE__*/React.createElement("div", {
+      className: "receipt-row is-grand"
+    }, /*#__PURE__*/React.createElement("span", null, "Grand total"), /*#__PURE__*/React.createElement("b", null, fmt$(grand))), /*#__PURE__*/React.createElement("div", {
+      className: "receipt-foot"
+    }, "\u2248 R$", Math.round(grand * budget.fxBRL).toLocaleString('en-US'), " at today's rate")), /*#__PURE__*/React.createElement("div", {
+      className: "ledger-notes"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ledger-note"
+    }, /*#__PURE__*/React.createElement("h3", null, "Locked & paid"), /*#__PURE__*/React.createElement("ul", null, budget.locked.map((l, i) => /*#__PURE__*/React.createElement("li", {
       key: i
-    }, /*#__PURE__*/React.createElement("strong", null, l.item, " \u2014 ", fmt$(l.cost), "."), " ", l.note))), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "05",
-      title: "Key flights (couple)",
-      small: true
-    }), /*#__PURE__*/React.createElement("ul", {
-      className: "alert-list"
-    }, budget.flights.map((f, i) => /*#__PURE__*/React.createElement("li", {
+    }, /*#__PURE__*/React.createElement("b", null, l.item, " \u2014 ", fmt$(l.cost), "."), " ", l.note)))), /*#__PURE__*/React.createElement("div", {
+      className: "ledger-note"
+    }, /*#__PURE__*/React.createElement("h3", null, "Key flights"), /*#__PURE__*/React.createElement("ul", null, budget.flights.map((f, i) => /*#__PURE__*/React.createElement("li", {
       key: i
-    }, /*#__PURE__*/React.createElement("strong", null, f.route, " \u2014 ", fmt$(f.cost), "."), " ", f.note))), /*#__PURE__*/React.createElement(SectionHead, {
-      num: "06",
-      title: "Assumptions & levers",
-      small: true
-    }), /*#__PURE__*/React.createElement("ul", {
-      className: "alert-list"
-    }, budget.assumptions.map((a, i) => /*#__PURE__*/React.createElement("li", {
+    }, /*#__PURE__*/React.createElement("b", null, f.route, " \u2014 ", fmt$(f.cost), "."), " ", f.note)))), /*#__PURE__*/React.createElement("div", {
+      className: "ledger-note"
+    }, /*#__PURE__*/React.createElement("h3", null, "Assumptions & levers"), /*#__PURE__*/React.createElement("ul", null, budget.assumptions.map((a, i) => /*#__PURE__*/React.createElement("li", {
       key: i
     }, a)), budget.levers.map((l, i) => /*#__PURE__*/React.createElement("li", {
       key: 'l' + i
-    }, l))));
-  }
-  function BudgetCard({
-    title,
-    items,
-    tone,
-    bordered
-  }) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: `budget-card budget-card-${tone} ${bordered ? 'is-bordered' : ''}`
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "kicker"
-    }, title), /*#__PURE__*/React.createElement("ul", null, items.map((it, i) => /*#__PURE__*/React.createElement("li", {
-      key: i
-    }, it))));
+    }, l)))))));
   }
   Object.assign(window, {
-    ChapterList,
+    ChaptersView,
     DetailPanel,
     Binder
   });

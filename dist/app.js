@@ -1,22 +1,30 @@
 "use strict";
 
-// App shell — header + body + binder switch + detail panel + mobile mode.
+// The Long Way East — app shell: chrome, year spine, atlas stage, chapter reel,
+// route tour, cover, and the four sections (Atlas / Chapters / Ledger / Kit).
 
 (function () {
   const {
     totalDays,
-    helpers
+    helpers,
+    REGIONS
   } = window.TRIP;
   const {
+    fmt,
     dayCounter
   } = helpers;
-  // Real current date (UTC-normalized so the day never flips with timezones).
+  const {
+    todayISO,
+    currentChapter,
+    currentCity,
+    nextCity,
+    daysUntil,
+    chapterStatus
+  } = window.TRIP_NOW;
   const TODAY = (() => {
     const n = new Date();
     return new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()));
   })();
-
-  // Track viewport width for mobile layout switch
   function useIsMobile(bp = 880) {
     const [m, setM] = React.useState(typeof window !== 'undefined' && window.innerWidth < bp);
     React.useEffect(() => {
@@ -27,14 +35,13 @@
     return m;
   }
 
-  // Deep-link params (?view=budget|todo&map=2d|3d&chapter=<id>&place=<idx>):
-  // read once on load, then reflected back via replaceState so any view is
-  // shareable. Invalid values fall back to defaults (never crash).
+  // Deep-link params. New names win; the old map/budget/todo names still work
+  // so links shared before the redesign keep landing somewhere sensible.
   function readUrlParams() {
     try {
       const q = new URLSearchParams(window.location.search);
-      const viewRaw = (q.get('view') || '').toLowerCase();
-      const view = viewRaw === 'budget' || viewRaw === 'todo' ? viewRaw : null;
+      const rawView = (q.get('view') || '').toLowerCase();
+      const view = rawView === 'chapters' ? 'chapters' : rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
       const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe' : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
       const chId = q.get('chapter');
@@ -44,35 +51,498 @@
         const n = parseInt(q.get('place'), 10);
         if (Number.isInteger(n) && n >= 0 && ch.places && n < ch.places.length) place = n;
       }
+      const detail = q.get('detail');
       return {
         view,
         map,
         chapterId: ch ? ch.id : null,
-        placeIdx: place
+        placeIdx: place,
+        detail: detail === '0' ? false : null
       };
     } catch {
       return {
         view: null,
         map: null,
         chapterId: null,
-        placeIdx: null
+        placeIdx: null,
+        detail: null
       };
     }
   }
+  const VIEWS = [{
+    id: 'atlas',
+    label: 'Atlas',
+    index: '01',
+    icon: p => /*#__PURE__*/React.createElement(window.Icon.globe, p)
+  }, {
+    id: 'chapters',
+    label: 'Chapters',
+    index: '02',
+    icon: p => /*#__PURE__*/React.createElement(window.Icon.grid, p)
+  }, {
+    id: 'ledger',
+    label: 'Ledger',
+    index: '03',
+    icon: p => /*#__PURE__*/React.createElement(window.Icon.wallet, p)
+  }, {
+    id: 'kit',
+    label: 'Kit',
+    index: '04',
+    icon: p => /*#__PURE__*/React.createElement(window.Icon.check, p)
+  }];
+
+  // ── Cover / title card ────────────────────────────────────────────────
+  // Shown once per browser session. It is a curtain, not a gate: a click,
+  // a key, or two seconds and it is gone.
+  function Cover({
+    onDone,
+    stats
+  }) {
+    const [leaving, setLeaving] = React.useState(false);
+    React.useEffect(() => {
+      const t = setTimeout(() => setLeaving(true), 2300);
+      return () => clearTimeout(t);
+    }, []);
+    React.useEffect(() => {
+      if (!leaving) return undefined;
+      const t = setTimeout(onDone, 750);
+      return () => clearTimeout(t);
+    }, [leaving, onDone]);
+    React.useEffect(() => {
+      const skip = () => setLeaving(true);
+      window.addEventListener('keydown', skip);
+      return () => window.removeEventListener('keydown', skip);
+    }, []);
+    const chapters = window.STORE.getChapters();
+    let acc = 0;
+    return /*#__PURE__*/React.createElement("div", {
+      className: `cover ${leaving ? 'is-leaving' : ''}`,
+      onClick: () => setLeaving(true),
+      role: "button",
+      tabIndex: 0,
+      "aria-label": "Enter the atlas"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "cover-grain"
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "cover-glow"
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "cover-stars",
+      "aria-hidden": "true"
+    }, Array.from({
+      length: 46
+    }).map((_, i) => /*#__PURE__*/React.createElement("i", {
+      key: i,
+      style: {
+        left: `${i * 37.3 % 100}%`,
+        top: `${i * 61.7 % 100}%`,
+        animationDelay: `${i % 9 * 0.4}s`
+      }
+    }))), /*#__PURE__*/React.createElement("div", {
+      className: "cover-top"
+    }, /*#__PURE__*/React.createElement("span", null, "2026 \u2014 2027"), /*#__PURE__*/React.createElement("span", null, "SABBATICAL \xB7 NO. 01")), /*#__PURE__*/React.createElement("div", {
+      className: "cover-center"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "cover-kicker"
+    }, "One year \xB7 two travellers \xB7 twenty-one chapters"), /*#__PURE__*/React.createElement("h1", null, "The Long", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "Way East")), /*#__PURE__*/React.createElement("p", null, "Brasil \u2192 Canada \u2192 Greece \u2192 T\xFCrkiye \u2192 Azerbaijan \u2192 India \u2192 Nepal \u2192", /*#__PURE__*/React.createElement("br", {
+      className: "cover-break"
+    }), " China \u2192 Hong Kong \u2192 the Andaman \u2192 Taiwan \u2192 Japan \u2192 the archipelago \u2192 the long spring \u2192 Korea \u2192 home.")), /*#__PURE__*/React.createElement("div", {
+      className: "cover-route",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "cover-route-line"
+    }), chapters.map((c, i) => {
+      const left = acc / totalDays;
+      acc += c.days || 0;
+      return /*#__PURE__*/React.createElement("span", {
+        key: c.id,
+        className: "cover-route-dot",
+        style: {
+          left: `${left * 100}%`,
+          background: window.chapterTint(c),
+          animationDelay: `${0.8 + i * 0.035}s`
+        }
+      });
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "cover-bottom"
+    }, /*#__PURE__*/React.createElement("span", null, stats.days, " days"), /*#__PURE__*/React.createElement("span", null, stats.countries, " countries"), /*#__PURE__*/React.createElement("span", null, stats.stops, " stops"), /*#__PURE__*/React.createElement("span", {
+      className: "cover-enter"
+    }, "Enter the atlas ", /*#__PURE__*/React.createElement(window.Icon.arrow, {
+      size: 12
+    }))));
+  }
+
+  // ── Header ────────────────────────────────────────────────────────────
+  function Header({
+    view,
+    onView,
+    day,
+    total,
+    isMobile
+  }) {
+    const pct = Math.max(0, Math.min(1, day / Math.max(1, total)));
+    return /*#__PURE__*/React.createElement("header", {
+      className: "topbar"
+    }, /*#__PURE__*/React.createElement("button", {
+      className: "brand",
+      onClick: () => onView('atlas'),
+      "aria-label": "The Long Way East \u2014 open the atlas"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "brand-mark"
+    }, /*#__PURE__*/React.createElement(window.Icon.compass, {
+      size: 19
+    })), /*#__PURE__*/React.createElement("span", {
+      className: "brand-text"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "brand-name"
+    }, "The Long Way ", /*#__PURE__*/React.createElement("em", null, "East")), /*#__PURE__*/React.createElement("span", {
+      className: "brand-sub"
+    }, "Sabbatical \xB7 2026\u201427"))), !isMobile && /*#__PURE__*/React.createElement("nav", {
+      className: "topnav",
+      "aria-label": "Sections"
+    }, VIEWS.map(v => /*#__PURE__*/React.createElement("button", {
+      key: v.id,
+      className: view === v.id ? 'is-active' : '',
+      onClick: () => onView(v.id)
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "topnav-index"
+    }, v.index), /*#__PURE__*/React.createElement("span", null, v.label)))), /*#__PURE__*/React.createElement("div", {
+      className: "topbar-right"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "dayclock",
+      title: `Day ${day} of ${total}`
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "dayclock-ring",
+      style: {
+        '--p': `${pct * 360}deg`
+      }
+    }, /*#__PURE__*/React.createElement("span", null, String(day).padStart(3, '0'))), /*#__PURE__*/React.createElement("div", {
+      className: "dayclock-meta"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "dayclock-of"
+    }, "/ ", total, " days"), /*#__PURE__*/React.createElement("span", {
+      className: "dayclock-label"
+    }, "on the road"))), !isMobile && /*#__PURE__*/React.createElement(window.SyncButton, null)));
+  }
+
+  // ── The year spine ────────────────────────────────────────────────────
+  // 360 individual days, coloured by chapter, dimmed once they are behind
+  // you. It is the whole trip in one line and a jump target at the same time.
+  function YearSpine({
+    chapters,
+    current,
+    selectedId,
+    onPick
+  }) {
+    const today = todayISO();
+    const idx = window.dayIndex(today);
+    const total = totalDays;
+    const months = window.monthsBetween();
+    const ranges = React.useMemo(() => {
+      let at = 0;
+      const out = chapters.map(c => {
+        const r = {
+          ch: c,
+          start: at,
+          end: at + (c.days || 0)
+        };
+        at += c.days || 0;
+        return r;
+      });
+      // Chapters count nights; the final exit day is shared with the next
+      // chapter's start in the plan data. Let the last chapter own the last
+      // tick so the spine always covers the full 360 days.
+      if (out.length) out[out.length - 1].end = total;
+      return out;
+    }, [chapters, total]);
+    const owners = React.useMemo(() => {
+      const out = [];
+      ranges.forEach(r => {
+        for (let i = r.start; i < r.end; i++) out[i] = {
+          ch: r.ch,
+          start: r.start
+        };
+      });
+      return out;
+    }, [ranges]);
+    return /*#__PURE__*/React.createElement("div", {
+      className: "spine",
+      "aria-label": "The year"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "spine-months"
+    }, months.map(m => /*#__PURE__*/React.createElement("span", {
+      key: `${m.label}-${m.year}`,
+      style: {
+        left: `${m.at / total * 100}%`
+      }
+    }, m.label, /*#__PURE__*/React.createElement("i", null, String(m.year).slice(2))))), /*#__PURE__*/React.createElement("div", {
+      className: "spine-track"
+    }, Array.from({
+      length: total
+    }).map((_, i) => {
+      const owner = owners[i] || {
+        ch: chapters[chapters.length - 1],
+        start: 0
+      };
+      const ch = owner.ch;
+      const isNow = i === idx;
+      const isPast = i < idx;
+      const isSelected = ch.id === selectedId;
+      const isCurrent = !!current && ch.id === current.id;
+      const tickDate = new Date(Date.parse(ch.start + 'T00:00:00Z') + (i - owner.start) * 86400000).toISOString().slice(0, 10);
+      return /*#__PURE__*/React.createElement("button", {
+        key: i,
+        className: `spine-tick ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : 'is-future'} ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''}`,
+        style: {
+          '--tint': window.chapterTint(ch)
+        },
+        onClick: () => onPick(ch.id),
+        title: `Day ${i + 1} · ${ch.title} · ${fmt(tickDate)}`,
+        "aria-label": `Day ${i + 1}, ${ch.title}`
+      });
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "spine-now",
+      style: {
+        left: `${(idx + 0.5) / total * 100}%`
+      }
+    }, /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("b", null, fmt(today)))));
+  }
+
+  // ── Atlas: giant chapter name ─────────────────────────────────────────
+  function AtlasTitle({
+    active,
+    current,
+    selected,
+    here,
+    next,
+    stats,
+    onOpen
+  }) {
+    const region = REGIONS[active.region] || {
+      name: ''
+    };
+    const isLong = active.title.length > 12;
+    const num = active.kind === 'chapter' && active.num != null ? String(active.num).padStart(2, '0') : '··';
+    let sub = '';
+    if (selected) {
+      sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
+    } else if (here && current) {
+      const left = next ? daysUntil(next.start) : daysUntil(current.end);
+      sub = `${here.place.name} · ${left <= 0 ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`}`;
+    } else {
+      sub = `${fmt(active.start)} – ${fmt(active.end)}`;
+    }
+    const weather = active.weather;
+    return /*#__PURE__*/React.createElement("div", {
+      className: `atlas-title ${isLong ? 'is-long' : ''}`
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "atlas-kicker"
+    }, /*#__PURE__*/React.createElement("span", null, "Chapter ", num, " ", /*#__PURE__*/React.createElement("i", null, "/ ", String(stats.chapters).padStart(2, '0'))), /*#__PURE__*/React.createElement("span", null, region.name), /*#__PURE__*/React.createElement("span", null, active.flag, " ", active.country)), /*#__PURE__*/React.createElement("button", {
+      className: "atlas-name",
+      onClick: onOpen,
+      title: `Open ${active.title}`
+    }, /*#__PURE__*/React.createElement("span", null, active.title), /*#__PURE__*/React.createElement(window.Icon.arrow, {
+      size: 18
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "atlas-sub"
+    }, /*#__PURE__*/React.createElement("span", null, sub), weather && /*#__PURE__*/React.createElement("span", {
+      className: "atlas-weather"
+    }, /*#__PURE__*/React.createElement(window.Icon.sun, {
+      size: 12
+    }), " ", weather.hi, "\xB0 / ", weather.lo, "\xB0"), weather && /*#__PURE__*/React.createElement("span", {
+      className: "atlas-weather"
+    }, /*#__PURE__*/React.createElement(window.Icon.rain, {
+      size: 12
+    }), " ", weather.rainyDays ?? 0, "d")), !selected && next && /*#__PURE__*/React.createElement("div", {
+      className: "atlas-next"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "atlas-next-label"
+    }, current && next.chapter.id === current.id ? 'Next stop' : current ? 'Next up' : 'Begins'), /*#__PURE__*/React.createElement("span", {
+      className: "atlas-next-city"
+    }, next.place.name), /*#__PURE__*/React.createElement("span", {
+      className: "atlas-next-when"
+    }, current ? `in ${Math.max(0, daysUntil(next.start))} days` : fmt(next.start))));
+  }
+
+  // ── Atlas tools ───────────────────────────────────────────────────────
+  function AtlasTools({
+    mapMode,
+    onMapMode,
+    onReset,
+    tour,
+    onTour
+  }) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "atlas-tools"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "tool-seg",
+      role: "group",
+      "aria-label": "Map style"
+    }, /*#__PURE__*/React.createElement("button", {
+      className: mapMode === 'globe' ? 'is-active' : '',
+      onClick: () => onMapMode('globe'),
+      title: "3D globe"
+    }, /*#__PURE__*/React.createElement(window.Icon.globe, {
+      size: 12
+    }), " ", /*#__PURE__*/React.createElement("span", {
+      className: "tool-label"
+    }, "Globe")), /*#__PURE__*/React.createElement("button", {
+      className: mapMode === 'map' ? 'is-active' : '',
+      onClick: () => onMapMode('map'),
+      title: "2D map"
+    }, /*#__PURE__*/React.createElement(window.Icon.map, {
+      size: 12
+    }), " ", /*#__PURE__*/React.createElement("span", {
+      className: "tool-label"
+    }, "Map"))), /*#__PURE__*/React.createElement("button", {
+      className: "tool-btn",
+      onClick: onReset,
+      title: "Zoom back to the whole route"
+    }, /*#__PURE__*/React.createElement(window.Icon.compass, {
+      size: 13
+    }), " ", /*#__PURE__*/React.createElement("span", {
+      className: "tool-label"
+    }, "Whole route")), /*#__PURE__*/React.createElement("button", {
+      className: `tool-btn ${tour ? 'is-live' : ''}`,
+      onClick: onTour,
+      title: "Fly through every chapter"
+    }, tour ? /*#__PURE__*/React.createElement(window.Icon.stop, {
+      size: 11
+    }) : /*#__PURE__*/React.createElement(window.Icon.play, {
+      size: 10
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "tool-label"
+    }, tour ? 'Stop tour' : 'Route tour')));
+  }
+
+  // ── Chapter reel ──────────────────────────────────────────────────────
+  function ChapterReel({
+    chapters,
+    current,
+    selectedId,
+    onOpen
+  }) {
+    const trackRef = React.useRef(null);
+    const focusId = selectedId || current && current.id;
+    React.useEffect(() => {
+      const track = trackRef.current;
+      if (!track) return;
+      const card = track.querySelector('.reel-card.is-selected') || track.querySelector('.reel-card.is-now') || track.querySelector('.reel-card.is-focus');
+      if (!card) return;
+      const target = card.offsetLeft - track.offsetLeft;
+      track.scrollTo({
+        left: Math.max(0, target),
+        behavior: 'smooth'
+      });
+    }, [focusId, chapters.length]);
+    const nudge = d => {
+      const track = trackRef.current;
+      if (track) track.scrollBy({
+        left: d * Math.max(280, track.clientWidth * 0.7),
+        behavior: 'smooth'
+      });
+    };
+    return /*#__PURE__*/React.createElement("div", {
+      className: "reel"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "reel-head"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "reel-head-left"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "reel-kicker"
+    }, "The arc"), /*#__PURE__*/React.createElement("span", {
+      className: "reel-count"
+    }, chapters.length, " chapters \xB7 ", totalDays, " days")), /*#__PURE__*/React.createElement("div", {
+      className: "reel-head-right"
+    }, /*#__PURE__*/React.createElement("button", {
+      className: "reel-arrow",
+      onClick: () => nudge(-1),
+      "aria-label": "Earlier chapters"
+    }, /*#__PURE__*/React.createElement(window.Icon.chevronLeft, {
+      size: 14
+    })), /*#__PURE__*/React.createElement("button", {
+      className: "reel-arrow",
+      onClick: () => nudge(1),
+      "aria-label": "Later chapters"
+    }, /*#__PURE__*/React.createElement(window.Icon.chevronRight, {
+      size: 14
+    })))), /*#__PURE__*/React.createElement("div", {
+      className: "reel-track",
+      ref: trackRef
+    }, chapters.map(c => {
+      const isNow = !!current && c.id === current.id;
+      const isSelected = c.id === selectedId;
+      const isPast = current && c.end < todayISO();
+      const status = isNow ? 'is-now' : isSelected ? 'is-selected' : isPast ? 'is-past' : '';
+      return /*#__PURE__*/React.createElement("button", {
+        key: c.id,
+        className: `reel-card ${status} ${isNow || isSelected ? 'is-focus' : ''}`,
+        onClick: () => onOpen(c.id),
+        title: `${c.title} · ${fmt(c.start)} – ${fmt(c.end)}`
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "reel-photo"
+      }, /*#__PURE__*/React.createElement(window.Photo, {
+        keyword: c.photos && c.photos[0],
+        alt: c.title,
+        ratio: "auto",
+        style: {
+          width: '100%',
+          height: '100%',
+          aspectRatio: 'unset'
+        },
+        sizes: "240px"
+      }), /*#__PURE__*/React.createElement("span", {
+        className: "reel-num"
+      }, c.kind === 'chapter' && c.num != null ? String(c.num).padStart(2, '0') : '··'), isNow && /*#__PURE__*/React.createElement("span", {
+        className: "reel-now"
+      }, /*#__PURE__*/React.createElement("i", null), " Now"), /*#__PURE__*/React.createElement("span", {
+        className: "reel-days"
+      }, c.days, " nights")), /*#__PURE__*/React.createElement("span", {
+        className: "reel-meta"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "reel-title"
+      }, c.title), /*#__PURE__*/React.createElement("span", {
+        className: "reel-date"
+      }, fmt(c.start), " \u2013 ", fmt(c.end), " ", /*#__PURE__*/React.createElement("i", null, "\xB7"), " ", c.flag)));
+    })));
+  }
+
+  // ── Tour bar ──────────────────────────────────────────────────────────
+  function TourBar({
+    index,
+    total,
+    chapter,
+    onStop
+  }) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "tourbar"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "tourbar-live"
+    }, /*#__PURE__*/React.createElement("i", null), " Live"), /*#__PURE__*/React.createElement("span", {
+      className: "tourbar-name"
+    }, chapter.title), /*#__PURE__*/React.createElement("span", {
+      className: "tourbar-track"
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: `${(index + 1) / total * 100}%`
+      }
+    })), /*#__PURE__*/React.createElement("span", {
+      className: "tourbar-count"
+    }, String(index + 1).padStart(2, '0'), " / ", String(total).padStart(2, '0')), /*#__PURE__*/React.createElement("button", {
+      onClick: onStop
+    }, "Stop"));
+  }
+
+  // ── App ───────────────────────────────────────────────────────────────
   function App() {
     const store = window.useStore();
+    const chapters = store.getChapters();
     const [urlParams] = React.useState(readUrlParams);
-    const [view, setView] = React.useState(urlParams.view || 'map');
-    const [mobileMode, setMobileMode] = React.useState('map'); // 'map' | 'list'
+    const [view, setView] = React.useState(urlParams.view || 'atlas');
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
+    const [detailOpen, setDetailOpen] = React.useState(!!urlParams.chapterId && urlParams.detail !== false);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapRetry, setMapRetry] = React.useState(0);
-    // The map opens on today's chapter (see MapView/GlobeView). This flag
-    // tracks an explicit "show me the whole route" so the reset control
-    // only offers a way back that actually changes something.
-    const [worldView, setWorldView] = React.useState(false);
-    const currentChapter = window.TRIP_NOW ? window.TRIP_NOW.currentChapter(store.getChapters()) : null;
     const [mapMode, setMapMode] = React.useState(() => {
       if (urlParams.map) return urlParams.map;
       try {
@@ -81,55 +551,119 @@
         return 'globe';
       }
     });
+    const [tour, setTour] = React.useState(null);
+    const [cover, setCover] = React.useState(() => {
+      try {
+        const q = new URLSearchParams(window.location.search);
+        // A shared chapter or section link should open straight into it.
+        return !sessionStorage.getItem('tlwe-cover') && !q.has('nocover') && !q.has('chapter') && !q.has('view') && !q.has('map');
+      } catch {
+        return false;
+      }
+    });
     const isMobile = useIsMobile();
+    const today = todayISO();
+    const current = currentChapter(chapters, today);
+    const here = current ? currentCity(chapters, today) : null;
+    const next = nextCity(chapters, today);
+    const active = selectedId && store.getChapter(selectedId) || current || (next ? chapters[0] : chapters[chapters.length - 1]);
+    const stats = window.tripStats();
+    const day = window.dayIndex(today) + 1;
 
-    // Reflect the current view back into the URL (replaceState: no
-    // history spam, no reload) so links reproduce exactly what's on
-    // screen. Defaults stay clean: map page + globe (the default views)
-    // are omitted, so a fresh load shows no parameters at all.
+    // Reflect the whole state into the URL so any view is shareable.
     React.useEffect(() => {
       try {
         const q = new URLSearchParams(window.location.search);
-        if (view === 'map') q.delete('view');else q.set('view', view);
+        if (view === 'atlas') q.delete('view');else q.set('view', view);
         if (mapMode === 'globe') q.delete('map');else q.set('map', '2d');
         if (selectedId) q.set('chapter', selectedId);else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));else q.delete('place');
+        if (selectedId && !detailOpen) q.set('detail', '0');else q.delete('detail');
+        q.delete('nocover');
         const qs = q.toString();
-        const next = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
-        if (next !== window.location.pathname + window.location.search) {
-          window.history.replaceState(null, '', next);
+        const nextUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+        if (nextUrl !== window.location.pathname + window.location.search) {
+          window.history.replaceState(null, '', nextUrl);
         }
       } catch {}
-    }, [view, mapMode, selectedId, selectedPlaceIdx]);
-    const today = dayCounter(TODAY);
-    const isBinder = view !== 'map';
-    const onSelectChapter = id => {
-      setSelectedId(id);
-      setSelectedPlaceIdx(null);
-      setWorldView(false);
-      setFocusKey(0); // a pending "show world" pulse is spent; don't replay it on remount
-      if (view !== 'map') setView('map');
-    };
-    const onSelectPlace = idx => setSelectedPlaceIdx(idx);
-    const onCloseDetail = () => {
-      setSelectedId(null);
-      setSelectedPlaceIdx(null);
-    };
-    const onReset = () => {
-      setSelectedId(null);
-      setSelectedPlaceIdx(null);
-      setWorldView(true);
-      setFocusKey(k => k + 1);
-    };
-    const showDetail = view === 'map' && selectedId;
+    }, [view, mapMode, selectedId, selectedPlaceIdx, detailOpen]);
 
-    // If a map view crashes (e.g. its CDN failed), the boundary keeps the
-    // header + tabs alive and offers a way out instead of a blank page.
+    // Tour: one chapter every 5.2s, camera flying between anchors.
+    React.useEffect(() => {
+      if (tour == null) return undefined;
+      const idx = Math.min(tour, chapters.length - 1);
+      const ch = chapters[idx];
+      if (!ch) {
+        setTour(null);
+        return undefined;
+      }
+      setSelectedId(ch.id);
+      setSelectedPlaceIdx(null);
+      setDetailOpen(false);
+      const t = setTimeout(() => {
+        setTour(cur => cur == null ? null : cur >= chapters.length - 1 ? null : cur + 1);
+      }, 5200);
+      return () => clearTimeout(t);
+    }, [tour, chapters.length]);
+
+    // Escape closes the chapter panel; arrows step between chapters.
+    React.useEffect(() => {
+      const onKey = e => {
+        const tag = (e.target && e.target.tagName || '').toLowerCase();
+        if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+        if (e.key === 'Escape') {
+          if (detailOpen) setDetailOpen(false);else if (tour != null) setTour(null);
+        }
+        if (detailOpen && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+          const i = chapters.findIndex(c => c.id === selectedId);
+          if (i < 0) return;
+          const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + chapters.length) % chapters.length;
+          setSelectedId(chapters[n].id);
+          setSelectedPlaceIdx(null);
+        }
+      };
+      window.addEventListener('keydown', onKey);
+      return () => window.removeEventListener('keydown', onKey);
+    }, [detailOpen, selectedId, tour, chapters]);
     const setMapModeAndSave = m => {
       setMapMode(m);
       try {
         localStorage.setItem('map-mode', m);
       } catch {}
+    };
+    const goView = v => {
+      setTour(null);
+      setDetailOpen(false);
+      setView(v);
+    };
+    const openChapter = id => {
+      setTour(null);
+      setSelectedId(id);
+      setSelectedPlaceIdx(null);
+      setDetailOpen(true);
+      if (view === 'ledger' || view === 'kit') setView('atlas');
+    };
+    const onSelectPlace = idx => {
+      setSelectedPlaceIdx(idx);
+      if (view !== 'atlas') setView('atlas');
+    };
+    const onReset = () => {
+      setTour(null);
+      setSelectedId(null);
+      setSelectedPlaceIdx(null);
+      setDetailOpen(false);
+      setFocusKey(k => k + 1);
+    };
+    const startTour = () => {
+      if (tour != null) {
+        setTour(null);
+        return;
+      }
+      const base = current || chapters[0];
+      const i = Math.max(0, chapters.findIndex(c => c.id === (selectedId || base.id)));
+      setView('atlas');
+      setDetailOpen(false);
+      setTour(i >= chapters.length - 1 ? 0 : i);
     };
     const mapFallback = err => /*#__PURE__*/React.createElement("div", {
       className: "map-container"
@@ -137,7 +671,7 @@
       className: "map-fallback"
     }, /*#__PURE__*/React.createElement("div", {
       className: "kicker"
-    }, "Map failed to load"), /*#__PURE__*/React.createElement("p", null, String(err && err.message || err || 'Unknown error')), /*#__PURE__*/React.createElement("div", {
+    }, "The map missed its connection"), /*#__PURE__*/React.createElement("p", null, String(err && err.message || err || 'Unknown error')), /*#__PURE__*/React.createElement("div", {
       className: "map-fallback-actions"
     }, /*#__PURE__*/React.createElement("button", {
       className: "pill-btn",
@@ -146,115 +680,115 @@
       className: "pill-btn",
       onClick: () => setMapModeAndSave(mapMode === 'map' ? 'globe' : 'map')
     }, "Switch to ", mapMode === 'map' ? '3D globe' : '2D map'))));
+    const showDetail = detailOpen && !!selectedId && !!store.getChapter(selectedId);
     return /*#__PURE__*/React.createElement("div", {
-      className: `app ${isMobile ? 'is-mobile' : ''}`
-    }, /*#__PURE__*/React.createElement("header", {
-      className: "app-header"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "app-brand"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "app-brand-mark"
-    }, "Asia"), /*#__PURE__*/React.createElement("div", {
-      className: "app-brand-meta"
-    }, "Day ", today.n.toString().padStart(3, '0'), " / ", store.getTotalDays())), /*#__PURE__*/React.createElement("div", {
-      className: "app-progress",
-      title: `Day ${today.n} of ${store.getTotalDays()}`
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "app-progress-bar"
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        width: `${today.n / Math.max(1, store.getTotalDays()) * 100}%`
-      }
-    }))), /*#__PURE__*/React.createElement("div", {
-      style: {
-        flex: 1
-      }
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "app-nav"
-    }, /*#__PURE__*/React.createElement("button", {
-      className: view === 'map' ? 'is-active' : '',
-      onClick: () => setView('map')
-    }, /*#__PURE__*/React.createElement(window.Icon.map, {
-      size: 12
-    }), " ", !isMobile && 'Map'), /*#__PURE__*/React.createElement("button", {
-      className: view === 'budget' ? 'is-active' : '',
-      onClick: () => setView('budget')
-    }, isMobile ? '$' : 'Budget'), /*#__PURE__*/React.createElement("button", {
-      className: view === 'todo' ? 'is-active' : '',
-      onClick: () => setView('todo')
-    }, isMobile ? '✓' : 'To-do'), /*#__PURE__*/React.createElement(window.SyncButton, {
-      compact: isMobile
-    }))), isMobile && /*#__PURE__*/React.createElement("div", {
-      className: "mobile-status"
-    }, /*#__PURE__*/React.createElement(window.NowNext, {
-      onSelect: onSelectChapter
-    })), isMobile && view === 'map' && /*#__PURE__*/React.createElement("div", {
-      className: "mobile-mode"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "mobile-mode-toggle"
-    }, /*#__PURE__*/React.createElement("button", {
-      className: mobileMode === 'map' ? 'is-active' : '',
-      onClick: () => setMobileMode('map')
-    }, /*#__PURE__*/React.createElement(window.Icon.map, {
-      size: 12
-    }), " Map"), /*#__PURE__*/React.createElement("button", {
-      className: mobileMode === 'list' ? 'is-active' : '',
-      onClick: () => setMobileMode('list')
-    }, /*#__PURE__*/React.createElement(window.Icon.list, {
-      size: 12
-    }), " List"))), /*#__PURE__*/React.createElement("div", {
-      className: `app-main ${showDetail ? '' : 'no-detail'} mobile-${mobileMode}`
-    }, (!isMobile || mobileMode === 'list') && /*#__PURE__*/React.createElement(window.ChapterList, {
+      className: `app view-${view} ${isMobile ? 'is-mobile' : ''} ${showDetail ? 'has-detail' : ''}`
+    }, /*#__PURE__*/React.createElement(Header, {
+      view: view,
+      onView: goView,
+      day: day,
+      total: totalDays,
+      isMobile: isMobile
+    }), /*#__PURE__*/React.createElement(YearSpine, {
+      chapters: chapters,
+      current: current,
       selectedId: selectedId,
-      onSelect: onSelectChapter
-    }), (!isMobile || mobileMode === 'map') && /*#__PURE__*/React.createElement("div", {
-      className: "map-stage"
+      onPick: openChapter
+    }), /*#__PURE__*/React.createElement("main", {
+      className: "app-body"
+    }, view === 'atlas' && /*#__PURE__*/React.createElement("div", {
+      className: "atlas"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "atlas-canvas"
     }, /*#__PURE__*/React.createElement(window.ErrorBoundary, {
       key: `${mapMode}:${mapRetry}`,
       fallback: mapFallback
     }, mapMode === 'globe' ? /*#__PURE__*/React.createElement(window.GlobeView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
-      onSelectChapter: onSelectChapter,
+      onSelectChapter: id => {
+        setSelectedId(id);
+        setSelectedPlaceIdx(null);
+        setDetailOpen(true);
+        setTour(null);
+      },
       onSelectPlace: onSelectPlace,
       focusKey: focusKey === 0 ? null : 'world'
     }) : /*#__PURE__*/React.createElement(window.MapView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
-      onSelectChapter: onSelectChapter,
+      onSelectChapter: id => {
+        setSelectedId(id);
+        setSelectedPlaceIdx(null);
+        setDetailOpen(true);
+        setTour(null);
+      },
       onSelectPlace: onSelectPlace,
       focusKey: focusKey === 0 ? null : 'world'
     })), /*#__PURE__*/React.createElement("div", {
-      className: "mobile-mode-toggle eq-mode"
-    }, /*#__PURE__*/React.createElement("button", {
-      className: mapMode === 'map' ? 'is-active' : '',
-      onClick: () => {
-        setMapMode('map');
-        try {
-          localStorage.setItem('map-mode', 'map');
-        } catch {}
-      }
-    }, "Map"), /*#__PURE__*/React.createElement("button", {
-      className: mapMode === 'globe' ? 'is-active' : '',
-      onClick: () => {
-        setMapMode('globe');
-        try {
-          localStorage.setItem('map-mode', 'globe');
-        } catch {}
-      }
-    }, "Globe")), (selectedId || currentChapter && !worldView) && /*#__PURE__*/React.createElement("div", {
-      className: "map-reset"
-    }, /*#__PURE__*/React.createElement("button", {
-      onClick: onReset
-    }, "\u2190 Back to whole route"))), showDetail && /*#__PURE__*/React.createElement(window.DetailPanel, {
+      className: "atlas-vignette",
+      "aria-hidden": "true"
+    })), /*#__PURE__*/React.createElement(AtlasTitle, {
+      active: active,
+      current: current,
+      selected: !!selectedId,
+      here: here,
+      next: next,
+      stats: stats,
+      onOpen: () => openChapter(active.id)
+    }), /*#__PURE__*/React.createElement(AtlasTools, {
+      mapMode: mapMode,
+      onMapMode: setMapModeAndSave,
+      onReset: onReset,
+      tour: tour,
+      onTour: startTour
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "atlas-coords",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("span", null, active.anchor ? `${Math.abs(active.anchor[0]).toFixed(2)}°${active.anchor[0] >= 0 ? 'N' : 'S'}` : ''), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, active.anchor ? `${Math.abs(active.anchor[1]).toFixed(2)}°${active.anchor[1] >= 0 ? 'E' : 'W'}` : '')), tour != null && /*#__PURE__*/React.createElement(TourBar, {
+      index: tour,
+      total: chapters.length,
+      chapter: chapters[tour],
+      onStop: () => setTour(null)
+    }), /*#__PURE__*/React.createElement(ChapterReel, {
+      chapters: chapters,
+      current: current,
+      selectedId: selectedId,
+      onOpen: openChapter
+    })), view === 'chapters' && /*#__PURE__*/React.createElement(window.ChaptersView, {
+      current: current,
+      selectedId: selectedId,
+      onOpen: openChapter
+    }), (view === 'ledger' || view === 'kit') && /*#__PURE__*/React.createElement(window.Binder, {
+      view: view,
+      onClose: () => goView('atlas'),
+      onOpenChapter: openChapter
+    })), isMobile && /*#__PURE__*/React.createElement("nav", {
+      className: "bottomnav",
+      "aria-label": "Sections"
+    }, VIEWS.map(v => /*#__PURE__*/React.createElement("button", {
+      key: v.id,
+      className: view === v.id ? 'is-active' : '',
+      onClick: () => goView(v.id)
+    }, v.icon({
+      size: 16
+    }), /*#__PURE__*/React.createElement("span", null, v.label))), /*#__PURE__*/React.createElement(window.SyncButton, {
+      compact: true
+    })), showDetail && /*#__PURE__*/React.createElement(window.DetailPanel, {
       chapterId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
       onSelectPlace: onSelectPlace,
-      onClose: onCloseDetail
-    }), isBinder && /*#__PURE__*/React.createElement(window.Binder, {
-      view: view,
-      onClose: () => setView('map')
-    })));
+      onClose: () => setDetailOpen(false),
+      onOpenChapter: openChapter
+    }), cover && /*#__PURE__*/React.createElement(Cover, {
+      stats: stats,
+      onDone: () => {
+        setCover(false);
+        try {
+          sessionStorage.setItem('tlwe-cover', '1');
+        } catch {}
+      }
+    }));
   }
   window.App = App;
 })();

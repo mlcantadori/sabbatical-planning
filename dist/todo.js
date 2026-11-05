@@ -1,9 +1,8 @@
 "use strict";
 
-// To-do checklist — advance bookings grouped by chapter. Chapters that are
-// past (ended before today) or fully completed start collapsed to avoid
-// crowding; everything else starts open. Done states seed from todo-data.js
-// and persist per-browser in localStorage; Export copies the current states
+// Field kit — advance bookings grouped by chapter. Chapters that are past
+// (ended before today) or fully completed start collapsed. Done states seed
+// from todo-data.js and persist per-browser; Export copies the current states
 // back into file format.
 
 (function () {
@@ -102,9 +101,6 @@
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [items, chapters]);
     const isPast = ch => !!ch && ch.end && ch.end < today;
-    // Chapters collapse when the trip is past OR every booking is done — a
-    // finished country folds away even while the trip is still underway.
-    // The dateless prep group (and any orphans) collapse when all items done.
     const allDone = g => g.items.length > 0 && g.items.every(t => t.done);
     const autoOpen = g => g.ch ? !isPast(g.ch) && !allDone(g) : !allDone(g);
     const isOpen = g => explicitOpen[g.key] !== undefined ? explicitOpen[g.key] : autoOpen(g);
@@ -115,6 +111,8 @@
     const expandAll = () => setExplicitOpen(Object.fromEntries(groups.map(g => [g.key, true])));
     const collapseAll = () => setExplicitOpen(Object.fromEntries(groups.map(g => [g.key, false])));
     const open = items.filter(t => !t.done);
+    const doneN = items.length - open.length;
+    const donePct = items.length ? Math.round(doneN / items.length * 100) : 0;
     const overdue = open.filter(t => t.due && t.due < today);
     const dueSoon = open.filter(t => t.due && t.due <= plusDaysStr(today, 14)).filter(t => catFilter === 'all' || t.cat === catFilter).slice().sort((a, b) => a.due < b.due ? -1 : a.due > b.due ? 1 : 0);
     const exportText = React.useMemo(() => '// Paste each line into the matching item in todo-data.js (done: …),\n' + '// then rebuild. Generated from current checklist state.\n' + items.map(t => `${t.id}: ${t.done ? 'true' : 'false'},`).join('\n'), [items]);
@@ -135,52 +133,55 @@
       const soon = !t.done && !od && t.due && t.due <= plusDaysStr(today, 14);
       return /*#__PURE__*/React.createElement("div", {
         key: t.id,
-        className: `todo-row${t.done ? ' is-done' : ''}`
+        className: `kit-row${t.done ? ' is-done' : ''}`
       }, /*#__PURE__*/React.createElement("button", {
         className: `booking-check${t.done ? ' is-done' : ''}`,
         onClick: () => toggle(t.id),
         title: t.done ? 'Mark open' : 'Mark done'
       }, t.done ? '✓' : ''), /*#__PURE__*/React.createElement("div", {
-        className: "todo-row-body"
+        className: "kit-row-body"
       }, /*#__PURE__*/React.createElement("div", {
-        className: "todo-row-title"
+        className: "kit-row-title"
       }, t.title), /*#__PURE__*/React.createElement("div", {
-        className: "todo-row-meta"
+        className: "kit-row-meta"
       }, /*#__PURE__*/React.createElement("span", {
-        className: "kicker"
+        className: "kit-cat"
       }, CAT_LABEL[t.cat] || t.cat), showGroup && /*#__PURE__*/React.createElement("span", {
-        className: "todo-row-group"
+        className: "kit-row-group"
       }, groupTag(t)), t.place && /*#__PURE__*/React.createElement("span", {
-        className: "todo-row-place"
+        className: "kit-row-place"
       }, t.place), t.note && /*#__PURE__*/React.createElement("span", {
-        className: "todo-row-note"
+        className: "kit-row-note"
       }, t.note))), /*#__PURE__*/React.createElement("div", {
-        className: `todo-due${od ? ' is-overdue' : soon ? ' is-soon' : ''}`,
+        className: `kit-due${od ? ' is-overdue' : soon ? ' is-soon' : ''}`,
         title: `Book by ${t.due}`
       }, t.done ? t.due ? fmt(t.due) : '—' : `${relDue(t.due, today)} · ${fmt(t.due)}`));
     };
     return /*#__PURE__*/React.createElement("div", {
-      className: "binder-pane"
+      className: "page-inner kit-page"
+    }, /*#__PURE__*/React.createElement("header", {
+      className: "page-head"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "binder-pane-head"
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      className: "kicker"
-    }, "\xA7 Before you go"), /*#__PURE__*/React.createElement("h2", {
-      className: "binder-pane-title"
-    }, "To-do"), /*#__PURE__*/React.createElement("p", {
-      className: "binder-pane-sub"
-    }, "Advance bookings only \u2014 transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out."))), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero"
+      className: "page-eyebrow"
+    }, /*#__PURE__*/React.createElement("span", null, "04"), " Field kit"), /*#__PURE__*/React.createElement("h1", null, "The things that", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "must be booked.")), /*#__PURE__*/React.createElement("p", null, "Advance bookings only \u2014 transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.")), /*#__PURE__*/React.createElement("div", {
+      className: "kit-hero"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-big"
-    }, open.length, " open"), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-sub"
-    }, items.length - open.length, "/", items.length, " done", overdue.length ? ` · ${overdue.length} overdue` : ''), /*#__PURE__*/React.createElement("div", {
-      className: "budget-hero-sub"
+      className: "kit-ring",
+      style: {
+        '--p': `${donePct / 100 * 360}deg`
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "kit-ring-hole"
+    }, /*#__PURE__*/React.createElement("b", null, donePct, /*#__PURE__*/React.createElement("i", null, "%")), /*#__PURE__*/React.createElement("span", null, "ready"))), /*#__PURE__*/React.createElement("div", {
+      className: "kit-stats"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("b", null, open.length), /*#__PURE__*/React.createElement("span", null, "still open")), /*#__PURE__*/React.createElement("div", {
+      className: overdue.length ? 'is-alert' : ''
+    }, /*#__PURE__*/React.createElement("b", null, overdue.length), /*#__PURE__*/React.createElement("span", null, "overdue")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("b", null, dueSoon.length), /*#__PURE__*/React.createElement("span", null, "due in 14 days")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("b", null, items.length), /*#__PURE__*/React.createElement("span", null, "total items"))), /*#__PURE__*/React.createElement("div", {
+      className: "kit-actions"
     }, /*#__PURE__*/React.createElement("button", {
       className: "pill-btn",
       onClick: () => setShowExport(v => !v)
-    }, "Export status"), ' ', /*#__PURE__*/React.createElement("button", {
+    }, "Export status"), /*#__PURE__*/React.createElement("button", {
       className: "pill-btn",
       onClick: resetOverrides,
       title: "Forget browser ticks, go back to file defaults"
@@ -197,7 +198,7 @@
       className: "pill-btn",
       onClick: copyExport
     }, "Copy"))), /*#__PURE__*/React.createElement("div", {
-      className: "todo-filters"
+      className: "kit-filters"
     }, /*#__PURE__*/React.createElement("div", {
       className: "seg"
     }, /*#__PURE__*/React.createElement("button", {
@@ -207,7 +208,7 @@
       className: groupBy === 'due' ? 'is-active' : '',
       onClick: () => setGroupBy('due')
     }, "Due soon", dueSoon.length ? ` (${dueSoon.length})` : '')), /*#__PURE__*/React.createElement("div", {
-      className: "seg"
+      className: "kit-cats"
     }, /*#__PURE__*/React.createElement("button", {
       className: catFilter === 'all' ? 'is-active' : '',
       onClick: () => setCatFilter('all')
@@ -216,7 +217,7 @@
       className: catFilter === k ? 'is-active' : '',
       onClick: () => setCatFilter(k)
     }, label))), /*#__PURE__*/React.createElement("div", {
-      className: "todo-filter-row"
+      className: "kit-filter-row"
     }, /*#__PURE__*/React.createElement("label", {
       className: "todo-check-label"
     }, /*#__PURE__*/React.createElement("input", {
@@ -232,37 +233,47 @@
       className: "pill-btn",
       onClick: collapseAll
     }, "Collapse all")))), groupBy === 'due' ? /*#__PURE__*/React.createElement("div", {
-      className: "todo-list"
+      className: "kit-list"
     }, dueSoon.length === 0 && /*#__PURE__*/React.createElement("div", {
-      className: "todo-empty"
-    }, "Nothing overdue or due in the next 14 days. \uD83C\uDF89"), dueSoon.map(t => renderItem(t, true))) : groups.map(g => {
+      className: "kit-empty"
+    }, "Nothing overdue or due in the next 14 days."), dueSoon.map(t => renderItem(t, true))) : groups.map(g => {
       const list = visibleItems(g.items);
-      const doneN = g.items.filter(t => t.done).length;
-      const openN = g.items.length - doneN;
+      const gDone = g.items.filter(t => t.done).length;
+      const openN = g.items.length - gDone;
       const past = isPast(g.ch);
       const openState = isOpen(g);
+      const tint = g.ch ? window.chapterTint(g.ch) : '#ff7a45';
       const title = g.key === 'prep' ? 'Before you leave' : g.key === 'other' ? 'Unsorted' : `${g.ch.num != null ? String(g.ch.num).padStart(2, '0') + ' · ' : ''}${g.ch.flag || ''} ${g.ch.title}`;
       const sub = g.ch ? dayRange(g.ch.start, g.ch.end) : g.key === 'prep' ? 'Visas, insurance, paperwork' : '';
       return /*#__PURE__*/React.createElement("div", {
         key: g.key,
-        className: "todo-group"
+        className: "kit-group",
+        style: {
+          '--tint': tint
+        }
       }, /*#__PURE__*/React.createElement("button", {
-        className: "todo-group-head",
+        className: "kit-group-head",
         onClick: () => setGroup(g.key, !openState)
       }, /*#__PURE__*/React.createElement("span", {
-        className: "todo-group-caret"
-      }, openState ? '▾' : '▸'), /*#__PURE__*/React.createElement("span", {
-        className: "todo-group-title"
+        className: "kit-caret"
+      }, openState ? '−' : '+'), /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-title"
       }, title), /*#__PURE__*/React.createElement("span", {
-        className: "todo-group-dates"
-      }, sub), /*#__PURE__*/React.createElement("span", {
-        className: `todo-group-count${openN === 0 ? ' is-done' : ''}`
-      }, openN, " open"), past && /*#__PURE__*/React.createElement("span", {
-        className: "todo-group-past"
-      }, "ended")), openState && /*#__PURE__*/React.createElement("div", {
-        className: "todo-list"
+        className: "kit-group-dates"
+      }, sub), past && /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-past"
+      }, "ended"), /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-bar"
+      }, /*#__PURE__*/React.createElement("i", {
+        style: {
+          width: `${g.items.length ? gDone / g.items.length * 100 : 0}%`
+        }
+      })), /*#__PURE__*/React.createElement("span", {
+        className: `kit-group-count${openN === 0 ? ' is-done' : ''}`
+      }, openN === 0 ? 'done' : `${openN} open`)), openState && /*#__PURE__*/React.createElement("div", {
+        className: "kit-list"
       }, list.length === 0 && /*#__PURE__*/React.createElement("div", {
-        className: "todo-empty"
+        className: "kit-empty"
       }, "Nothing here \u2014 try another filter."), list.map(t => renderItem(t, false))));
     }));
   }

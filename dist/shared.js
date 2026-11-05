@@ -1,6 +1,24 @@
 "use strict";
 
-// Photo component — Curated sources (Unsplash ID or full URL) → loremflickr fallback.
+// Shared UI primitives — photography, icons, "now" math, the journey spectrum.
+// Loaded after the data scripts and the store.
+
+// ── The journey spectrum ────────────────────────────────────────────────
+// One continuous arc from departure ember to the violet of the last spring.
+// Chapter colour is derived from position in the arc, so the year reads as a
+// single gesture — on the globe, in the spine, and on every card.
+const SPECTRUM = ['#ff7a45', '#ff8a48', '#ff9a4c', '#fdaa51', '#f8b957', '#efc55e', '#e2cd66', '#d2d16e', '#bfd376', '#aad27f', '#96cf8a', '#84ca96', '#75c5a3', '#69bfae', '#60b8b8', '#5bb0c1', '#5aa7c8', '#5f9ccb', '#6990c9', '#7a83c2', '#8b77b8'];
+(function applySpectrum() {
+  const chapters = window.STORE.getChapters();
+  chapters.forEach((c, i) => {
+    window.TRIP.CHAPTER_COLORS[c.id] = SPECTRUM[i % SPECTRUM.length];
+  });
+})();
+function chapterTint(ch) {
+  return ch && window.TRIP.chapterColor(ch) || SPECTRUM[0];
+}
+
+// Photo component — curated local sources (or Unsplash IDs), loremflickr fallback.
 function Photo({
   keyword,
   alt,
@@ -8,18 +26,19 @@ function Photo({
   radius = 0,
   caption,
   className = '',
-  style = {}
+  style = {},
+  loading = 'lazy',
+  sizes
 }) {
   const {
     photoUrl
   } = window.TRIP.helpers;
   const [loaded, setLoaded] = React.useState(false);
   const photoVal = window.PHOTO_IDS?.[keyword];
-  // photoVal can be a full URL (Wikipedia/Commons), a local relative path
-  // (e.g. "extra-pictures/…"), or an Unsplash photo-ID string. URLs and local
-  // paths contain a "/"; Unsplash IDs ("photo-xxxx") never do.
-  const primary = photoVal ? photoVal.includes('/') ? photoVal : `https://images.unsplash.com/${photoVal}?w=1200&h=900&fit=crop&auto=format` : photoUrl(keyword, 1200, 900);
-  const fallback = photoUrl(keyword, 1200, 900);
+  // photoVal can be a full URL (Wikimedia/Commons), a local relative path, or
+  // an Unsplash photo-ID. URLs and paths contain "/"; IDs never do.
+  const primary = photoVal ? photoVal.includes('/') ? photoVal : `https://images.unsplash.com/${photoVal}?w=1600&h=1200&fit=crop&auto=format` : photoUrl(keyword, 1600, 1200);
+  const fallback = photoUrl(keyword, 1600, 1200);
   const [src, setSrc] = React.useState(primary);
   React.useEffect(() => {
     setLoaded(false);
@@ -30,7 +49,7 @@ function Photo({
     aspectRatio: ratio === 'auto' ? undefined : ratio,
     overflow: 'hidden',
     borderRadius: radius,
-    background: '#1a1814',
+    background: '#11151c',
     ...style
   };
   return /*#__PURE__*/React.createElement("div", {
@@ -39,6 +58,9 @@ function Photo({
   }, /*#__PURE__*/React.createElement("img", {
     src: src,
     alt: alt || keyword,
+    loading: loading,
+    decoding: "async",
+    sizes: sizes,
     onLoad: () => setLoaded(true),
     onError: () => {
       if (src !== fallback) setSrc(fallback);
@@ -51,38 +73,38 @@ function Photo({
       height: '100%',
       objectFit: 'cover',
       opacity: loaded ? 1 : 0,
-      transition: 'opacity .35s ease',
+      transition: 'opacity .5s ease, transform .8s cubic-bezier(.2,.7,.2,1)',
       display: 'block'
     }
   }), !loaded && /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
       inset: 0,
-      background: 'linear-gradient(135deg, #2a241e, #1a1612)',
+      background: 'linear-gradient(135deg, #151b24, #0b0f15)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: 9,
-      letterSpacing: '0.18em',
-      color: 'rgba(255,255,255,.3)',
+      fontFamily: '"JetBrains Mono", monospace',
+      fontSize: 8,
+      letterSpacing: '0.24em',
+      color: 'rgba(244,236,220,.24)',
       textTransform: 'uppercase'
     }
-  }, "loading")), caption && /*#__PURE__*/React.createElement("div", {
+  }, "developing")), caption && /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
-      bottom: 10,
-      left: 12,
-      right: 12,
-      fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: 10,
-      color: 'rgba(255,255,255,.9)',
-      letterSpacing: '0.1em',
+      bottom: 12,
+      left: 14,
+      right: 14,
+      fontFamily: '"JetBrains Mono", monospace',
+      fontSize: 9,
+      color: 'rgba(255,255,255,.92)',
+      letterSpacing: '0.16em',
       textTransform: 'uppercase',
-      textShadow: '0 1px 4px rgba(0,0,0,.7)'
+      textShadow: '0 1px 8px rgba(0,0,0,.8)'
     }
   }, caption));
 }
@@ -91,10 +113,6 @@ function openMaps(query) {
 }
 
 // ── "Now" ───────────────────────────────────────────────────────────────
-// Which chapter today falls in, and how each chapter stands relative to it.
-// Chapter dates are plain YYYY-MM-DD strings (an `end` is the exit day,
-// inclusive), so string comparison is exact; today is UTC-normalised so the
-// day never flips with the viewer's clock.
 function todayISO() {
   const n = new Date();
   return new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())).toISOString().slice(0, 10);
@@ -104,32 +122,24 @@ function currentChapter(chapters, today) {
   let cur = null;
   (chapters || []).forEach(c => {
     if (!c.start || !c.end || c.kind === 'transit') return;
-    // Exit days are shared with the next chapter's start, so the later
-    // start wins: on a move day you are already in the new chapter.
+    // Exit days are shared with the next chapter's start, so the later start wins.
     if (c.start <= t && t <= c.end) cur = c;
   });
   return cur;
 }
-
-// 'current' for today's chapter, 'past' for chapters already exited,
-// 'future' otherwise. With no current chapter (before the trip starts or
-// after it ends) nothing is greyed out — the whole arc reads the same.
 function chapterStatus(ch, current, today) {
   const t = today || todayISO();
   if (!current || !ch.end) return 'future';
   if (ch.id === current.id) return 'current';
   return ch.end <= t ? 'past' : 'future';
 }
-
-// Whole days from today to a YYYY-MM-DD date (0 = today, 2 = two days out).
 function daysUntil(iso, today) {
   const t = today || todayISO();
   return Math.round((Date.parse(iso + 'T00:00:00Z') - Date.parse(t + 'T00:00:00Z')) / 86400000);
 }
 
-// Every stop in a chapter with its own date window, derived from the chapter
-// start and the cumulative day counts — the same math the detail panel uses.
-// Windows are inclusive; a chapter's exit day usually falls outside them.
+// Every stop with its own inclusive date window, derived from chapter start
+// and cumulative night counts — the same math the detail panel uses.
 function placeWindows(ch) {
   if (!ch || !ch.start) return [];
   const base = Date.parse(ch.start + 'T00:00:00Z');
@@ -147,21 +157,14 @@ function placeWindows(ch) {
     };
   });
 }
-
-// The town you are in today. On a chapter's exit day (or any day past the
-// last stop) you are still in the last town of that chapter.
 function currentCity(chapters, today) {
   const t = today || todayISO();
   const ch = currentChapter(chapters, t);
   if (!ch) return null;
   const wins = placeWindows(ch);
   const hit = wins.find(w => w.start <= t && t <= w.end);
-  if (hit) return hit;
-  return wins.filter(w => w.start <= t).pop() || null;
+  return hit || wins.filter(w => w.start <= t).pop() || null;
 }
-
-// The next town you move to — later in this chapter, or the first stop of the
-// next one. Null once the final stop has begun.
 function nextCity(chapters, today) {
   const t = today || todayISO();
   const stops = [];
@@ -173,85 +176,52 @@ function nextCity(chapters, today) {
   return stops.find(s => s.start > t) || null;
 }
 
-// Subscribe to the store and trigger re-render on any mutation.
+// Subscribe to the store and re-render on mutation.
 function useStore() {
   const [, force] = React.useReducer(x => x + 1, 0);
   React.useEffect(() => window.STORE.subscribe(force), []);
   return window.STORE;
 }
 
-// Where the trip is right now — the town you're in and the one you move to
-// next. Both cells are buttons that jump to that chapter. It heads the rail
-// on desktop and rides the mobile status strip; same shape, different scale.
-function NowNext({
-  onSelect
-}) {
-  const store = useStore();
-  const chapters = store.getChapters();
-  const today = window.TRIP_NOW.todayISO();
-  const current = window.TRIP_NOW.currentChapter(chapters, today);
-  const here = current ? window.TRIP_NOW.currentCity(chapters, today) : null;
-  const next = window.TRIP_NOW.nextCity(chapters, today);
-  const {
-    helpers
-  } = window.TRIP;
-  const {
-    fmt
-  } = helpers;
-  const cell = (label, stop, meta) => {
-    const ch = stop.chapter;
-    return /*#__PURE__*/React.createElement("button", {
-      className: "app-now-cell",
-      onClick: () => {
-        if (onSelect) onSelect(ch.id);
-      },
-      title: `${label} — ${stop.place.name}, ${ch.title} (${fmt(stop.start)} – ${fmt(stop.end)})`
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-now-label"
-    }, label), /*#__PURE__*/React.createElement("span", {
-      className: "app-now-value"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-now-flag",
-      "aria-hidden": "true"
-    }, ch.flag), /*#__PURE__*/React.createElement("span", {
-      className: "app-now-title"
-    }, stop.place.name), meta && /*#__PURE__*/React.createElement("span", {
-      className: "app-now-meta"
-    }, meta)));
-  };
-
-  // No chapter contains today and none follows: the trip is over.
-  if (!current && !next) {
-    const last = chapters[chapters.length - 1];
-    return /*#__PURE__*/React.createElement("div", {
-      className: "app-now"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-now-cell is-static"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-now-label"
-    }, "Trip"), /*#__PURE__*/React.createElement("span", {
-      className: "app-now-value"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "app-now-title"
-    }, "Complete"), last && /*#__PURE__*/React.createElement("span", {
-      className: "app-now-meta"
-    }, fmt(last.end)))));
+// Index of a date within the 360-day arc (0-based), clamped.
+function dayIndex(iso) {
+  const start = Date.parse('2026-06-21T00:00:00Z');
+  const d = Date.parse((iso || todayISO()) + 'T00:00:00Z');
+  return Math.max(0, Math.min(window.TRIP.totalDays - 1, Math.round((d - start) / 86400000)));
+}
+function monthsBetween() {
+  const out = [];
+  const start = new Date(Date.UTC(2026, 5, 21));
+  const end = new Date(Date.UTC(2027, 5, 16));
+  const names = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  let d = new Date(start);
+  while (d <= end) {
+    const y = d.getUTCFullYear(),
+      m = d.getUTCMonth();
+    const first = new Date(Math.max(d.getTime(), Date.UTC(y, m, 1)));
+    out.push({
+      label: names[m],
+      year: y,
+      at: dayIndex(first.toISOString().slice(0, 10))
+    });
+    d = new Date(Date.UTC(y, m + 1, 1));
   }
+  return out;
+}
 
-  // The countdown appears once: it runs to the next town's arrival, which on a
-  // chapter's last stop is its exit day — so "2 days left" and the next cell's
-  // date always agree. The next cell just gets its date.
-  const left = !current ? 0 : next ? window.TRIP_NOW.daysUntil(next.start, today) : window.TRIP_NOW.daysUntil(current.end, today);
-  const currentMeta = left <= 0 || today >= current.end ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`;
-
-  // "Next up" is the next *move*, which is often just the next town in the
-  // chapter you're already in — say "Next stop" then, and keep "Next up" for
-  // a chapter change so the two are never confused.
-  const sameChapter = !!(current && next && next.chapter.id === current.id);
-  const nextLabel = sameChapter ? 'Next stop' : 'Next up';
-  return /*#__PURE__*/React.createElement("div", {
-    className: "app-now"
-  }, current && here && cell('Currently in', here, currentMeta), next && cell(nextLabel, next, current ? null : fmt(next.start)));
+// Trip-wide facts used in headers and the cover.
+function tripStats() {
+  const chapters = window.STORE.getChapters().filter(c => c.kind !== 'transit');
+  const countries = new Set(chapters.map(c => c.country));
+  const stops = chapters.reduce((s, c) => s + (c.places ? c.places.length : 0), 0);
+  return {
+    chapters: chapters.length,
+    days: window.TRIP.totalDays,
+    countries: countries.size,
+    stops,
+    starts: window.TRIP.start,
+    ends: window.TRIP.end
+  };
 }
 const Icon = {
   external: p => /*#__PURE__*/React.createElement("svg", {
@@ -316,6 +286,21 @@ const Icon = {
     x2: "16",
     y2: "22"
   })),
+  globe: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.5",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "9.5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M2.5 12h19M12 2.5c2.7 2.7 4 6.1 4 9.5s-1.3 6.8-4 9.5c-2.7-2.7-4-6.1-4-9.5s1.3-6.8 4-9.5z"
+  })),
   list: p => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 24 24",
     width: p.size || 14,
@@ -354,11 +339,201 @@ const Icon = {
     y1: "18",
     x2: "3.01",
     y2: "18"
+  })),
+  grid: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "3",
+    width: "7.5",
+    height: "7.5",
+    rx: "1"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "13.5",
+    y: "3",
+    width: "7.5",
+    height: "7.5",
+    rx: "1"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "13.5",
+    width: "7.5",
+    height: "7.5",
+    rx: "1"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "13.5",
+    y: "13.5",
+    width: "7.5",
+    height: "7.5",
+    rx: "1"
+  })),
+  wallet: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3 7.5A2.5 2.5 0 0 1 5.5 5H19a1 1 0 0 1 1 1v2.5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 7.5V18a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H5.5A2.5 2.5 0 0 1 3 7.5z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "16.5",
+    cy: "14.5",
+    r: "1.2",
+    fill: "currentColor",
+    stroke: "none"
+  })),
+  check: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3 12.5l6 6L21 5"
+  })),
+  play: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 12,
+    height: p.size || 12,
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M7 4.5v15l13-7.5z"
+  })),
+  stop: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 12,
+    height: p.size || 12,
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "6",
+    y: "6",
+    width: "12",
+    height: "12",
+    rx: "1"
+  })),
+  arrow: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.7",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M4 12h16M14 6l6 6-6 6"
+  })),
+  arrowLeft: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.7",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M20 12H4M10 6l-6 6 6 6"
+  })),
+  chevronLeft: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M15 5l-7 7 7 7"
+  })),
+  chevronRight: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 14,
+    height: p.size || 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M9 5l7 7-7 7"
+  })),
+  compass: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 16,
+    height: p.size || 16,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.4"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "9.2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M15.6 8.4l-2.2 5.4-5.4 2.2 2.2-5.4z",
+    fill: "currentColor",
+    stroke: "none"
+  })),
+  pin: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 13,
+    height: p.size || 13,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "10",
+    r: "2.4"
+  })),
+  sun: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 13,
+    height: p.size || 13,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "4.2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+  })),
+  rain: p => /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 24 24",
+    width: p.size || 13,
+    height: p.size || 13,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M7 15a4.5 4.5 0 0 1 .4-9A6 6 0 0 1 19 7.5a3.8 3.8 0 0 1 .5 7.5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M8 18l-1 3M12 18l-1 3M16 18l-1 3"
   }))
 };
 
-// Error boundary — isolates a crashing subtree (e.g. a map view whose CDN
-// failed to load) so the rest of the app keeps working. Remount via key.
+// Error boundary — isolates a crashing subtree (e.g. a map view whose CDN failed).
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -407,8 +582,12 @@ Object.assign(window, {
   Icon,
   useStore,
   ErrorBoundary,
-  NowNext,
-  dataDigest
+  dataDigest,
+  chapterTint,
+  SPECTRUM,
+  dayIndex,
+  monthsBetween,
+  tripStats
 });
 window.TRIP_NOW = {
   todayISO,

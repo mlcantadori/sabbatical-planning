@@ -1,7 +1,6 @@
-// To-do checklist — advance bookings grouped by chapter. Chapters that are
-// past (ended before today) or fully completed start collapsed to avoid
-// crowding; everything else starts open. Done states seed from todo-data.js
-// and persist per-browser in localStorage; Export copies the current states
+// Field kit — advance bookings grouped by chapter. Chapters that are past
+// (ended before today) or fully completed start collapsed. Done states seed
+// from todo-data.js and persist per-browser; Export copies the current states
 // back into file format.
 
 (function () {
@@ -88,9 +87,6 @@
     }, [items, chapters]);
 
     const isPast = (ch) => !!ch && ch.end && ch.end < today;
-    // Chapters collapse when the trip is past OR every booking is done — a
-    // finished country folds away even while the trip is still underway.
-    // The dateless prep group (and any orphans) collapse when all items done.
     const allDone = (g) => g.items.length > 0 && g.items.every((t) => t.done);
     const autoOpen = (g) => g.ch ? (!isPast(g.ch) && !allDone(g)) : !allDone(g);
     const isOpen = (g) => explicitOpen[g.key] !== undefined ? explicitOpen[g.key] : autoOpen(g);
@@ -99,6 +95,8 @@
     const collapseAll = () => setExplicitOpen(Object.fromEntries(groups.map((g) => [g.key, false])));
 
     const open = items.filter((t) => !t.done);
+    const doneN = items.length - open.length;
+    const donePct = items.length ? Math.round((doneN / items.length) * 100) : 0;
     const overdue = open.filter((t) => t.due && t.due < today);
     const dueSoon = open
       .filter((t) => t.due && t.due <= plusDaysStr(today, 14))
@@ -129,20 +127,20 @@
       const od = !t.done && t.due && t.due < today;
       const soon = !t.done && !od && t.due && t.due <= plusDaysStr(today, 14);
       return (
-        <div key={t.id} className={`todo-row${t.done ? ' is-done' : ''}`}>
+        <div key={t.id} className={`kit-row${t.done ? ' is-done' : ''}`}>
           <button className={`booking-check${t.done ? ' is-done' : ''}`} onClick={() => toggle(t.id)} title={t.done ? 'Mark open' : 'Mark done'}>
             {t.done ? '✓' : ''}
           </button>
-          <div className="todo-row-body">
-            <div className="todo-row-title">{t.title}</div>
-            <div className="todo-row-meta">
-              <span className="kicker">{CAT_LABEL[t.cat] || t.cat}</span>
-              {showGroup && <span className="todo-row-group">{groupTag(t)}</span>}
-              {t.place && <span className="todo-row-place">{t.place}</span>}
-              {t.note && <span className="todo-row-note">{t.note}</span>}
+          <div className="kit-row-body">
+            <div className="kit-row-title">{t.title}</div>
+            <div className="kit-row-meta">
+              <span className="kit-cat">{CAT_LABEL[t.cat] || t.cat}</span>
+              {showGroup && <span className="kit-row-group">{groupTag(t)}</span>}
+              {t.place && <span className="kit-row-place">{t.place}</span>}
+              {t.note && <span className="kit-row-note">{t.note}</span>}
             </div>
           </div>
-          <div className={`todo-due${od ? ' is-overdue' : soon ? ' is-soon' : ''}`} title={`Book by ${t.due}`}>
+          <div className={`kit-due${od ? ' is-overdue' : soon ? ' is-soon' : ''}`} title={`Book by ${t.due}`}>
             {t.done ? (t.due ? fmt(t.due) : '—') : `${relDue(t.due, today)} · ${fmt(t.due)}`}
           </div>
         </div>
@@ -150,20 +148,26 @@
     };
 
     return (
-      <div className="binder-pane">
-        <div className="binder-pane-head">
-          <div>
-            <div className="kicker">§ Before you go</div>
-            <h2 className="binder-pane-title">To-do</h2>
-            <p className="binder-pane-sub">Advance bookings only — transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out.</p>
+      <div className="page-inner kit-page">
+        <header className="page-head">
+          <div className="page-eyebrow"><span>04</span> Field kit</div>
+          <h1>The things that<br /><em>must be booked.</em></h1>
+          <p>Advance bookings only — transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.</p>
+        </header>
+
+        <div className="kit-hero">
+          <div className="kit-ring" style={{ '--p': `${(donePct / 100) * 360}deg` }}>
+            <div className="kit-ring-hole"><b>{donePct}<i>%</i></b><span>ready</span></div>
           </div>
-        </div>
-        <div className="budget-hero">
-          <div className="budget-hero-big">{open.length} open</div>
-          <div className="budget-hero-sub">{items.length - open.length}/{items.length} done{overdue.length ? ` · ${overdue.length} overdue` : ''}</div>
-          <div className="budget-hero-sub">
+          <div className="kit-stats">
+            <div><b>{open.length}</b><span>still open</span></div>
+            <div className={overdue.length ? 'is-alert' : ''}><b>{overdue.length}</b><span>overdue</span></div>
+            <div><b>{dueSoon.length}</b><span>due in 14 days</span></div>
+            <div><b>{items.length}</b><span>total items</span></div>
+          </div>
+          <div className="kit-actions">
             <button className="pill-btn" onClick={() => setShowExport((v) => !v)}>Export status</button>
-            {' '}<button className="pill-btn" onClick={resetOverrides} title="Forget browser ticks, go back to file defaults">Reset to file</button>
+            <button className="pill-btn" onClick={resetOverrides} title="Forget browser ticks, go back to file defaults">Reset to file</button>
           </div>
         </div>
 
@@ -175,18 +179,18 @@
           </div>
         )}
 
-        <div className="todo-filters">
+        <div className="kit-filters">
           <div className="seg">
             <button className={groupBy === 'chapter' ? 'is-active' : ''} onClick={() => setGroupBy('chapter')}>By chapter</button>
             <button className={groupBy === 'due' ? 'is-active' : ''} onClick={() => setGroupBy('due')}>Due soon{dueSoon.length ? ` (${dueSoon.length})` : ''}</button>
           </div>
-          <div className="seg">
+          <div className="kit-cats">
             <button className={catFilter === 'all' ? 'is-active' : ''} onClick={() => setCatFilter('all')}>All</button>
             {CATS.map(([k, label]) => (
               <button key={k} className={catFilter === k ? 'is-active' : ''} onClick={() => setCatFilter(k)}>{label}</button>
             ))}
           </div>
-          <div className="todo-filter-row">
+          <div className="kit-filter-row">
             <label className="todo-check-label"><input type="checkbox" checked={hideDone} onChange={(e) => setHideDone(e.target.checked)} /> Hide done</label>
             {groupBy === 'chapter' && (
               <span className="todo-expand-links"><button className="pill-btn" onClick={expandAll}>Expand all</button> <button className="pill-btn" onClick={collapseAll}>Collapse all</button></span>
@@ -195,37 +199,39 @@
         </div>
 
         {groupBy === 'due' ? (
-          <div className="todo-list">
-            {dueSoon.length === 0 && <div className="todo-empty">Nothing overdue or due in the next 14 days. 🎉</div>}
+          <div className="kit-list">
+            {dueSoon.length === 0 && <div className="kit-empty">Nothing overdue or due in the next 14 days.</div>}
             {dueSoon.map((t) => renderItem(t, true))}
           </div>
         ) : (
-        groups.map((g) => {
-          const list = visibleItems(g.items);
-          const doneN = g.items.filter((t) => t.done).length;
-          const openN = g.items.length - doneN;
-          const past = isPast(g.ch);
-          const openState = isOpen(g);
-          const title = g.key === 'prep' ? 'Before you leave' : g.key === 'other' ? 'Unsorted' : `${g.ch.num != null ? String(g.ch.num).padStart(2, '0') + ' · ' : ''}${g.ch.flag || ''} ${g.ch.title}`;
-          const sub = g.ch ? dayRange(g.ch.start, g.ch.end) : (g.key === 'prep' ? 'Visas, insurance, paperwork' : '');
-          return (
-            <div key={g.key} className="todo-group">
-              <button className="todo-group-head" onClick={() => setGroup(g.key, !openState)}>
-                <span className="todo-group-caret">{openState ? '▾' : '▸'}</span>
-                <span className="todo-group-title">{title}</span>
-                <span className="todo-group-dates">{sub}</span>
-                <span className={`todo-group-count${openN === 0 ? ' is-done' : ''}`}>{openN} open</span>
-                {past && <span className="todo-group-past">ended</span>}
-              </button>
-              {openState && (
-                <div className="todo-list">
-                  {list.length === 0 && <div className="todo-empty">Nothing here — try another filter.</div>}
-                  {list.map((t) => renderItem(t, false))}
-                </div>
-              )}
-            </div>
-          );
-        })
+          groups.map((g) => {
+            const list = visibleItems(g.items);
+            const gDone = g.items.filter((t) => t.done).length;
+            const openN = g.items.length - gDone;
+            const past = isPast(g.ch);
+            const openState = isOpen(g);
+            const tint = g.ch ? window.chapterTint(g.ch) : '#ff7a45';
+            const title = g.key === 'prep' ? 'Before you leave' : g.key === 'other' ? 'Unsorted' : `${g.ch.num != null ? String(g.ch.num).padStart(2, '0') + ' · ' : ''}${g.ch.flag || ''} ${g.ch.title}`;
+            const sub = g.ch ? dayRange(g.ch.start, g.ch.end) : (g.key === 'prep' ? 'Visas, insurance, paperwork' : '');
+            return (
+              <div key={g.key} className="kit-group" style={{ '--tint': tint }}>
+                <button className="kit-group-head" onClick={() => setGroup(g.key, !openState)}>
+                  <span className="kit-caret">{openState ? '−' : '+'}</span>
+                  <span className="kit-group-title">{title}</span>
+                  <span className="kit-group-dates">{sub}</span>
+                  {past && <span className="kit-group-past">ended</span>}
+                  <span className="kit-group-bar"><i style={{ width: `${g.items.length ? (gDone / g.items.length) * 100 : 0}%` }} /></span>
+                  <span className={`kit-group-count${openN === 0 ? ' is-done' : ''}`}>{openN === 0 ? 'done' : `${openN} open`}</span>
+                </button>
+                {openState && (
+                  <div className="kit-list">
+                    {list.length === 0 && <div className="kit-empty">Nothing here — try another filter.</div>}
+                    {list.map((t) => renderItem(t, false))}
+                  </div>
+                )}
+              </div>
+            );
+          })
         )}
       </div>
     );
