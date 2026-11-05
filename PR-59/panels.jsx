@@ -2,7 +2,7 @@
 // and the ledger + field kit binder. Read-only.
 
 (function () {
-  const { totalDays, REGIONS, helpers, budget } = window.TRIP;
+  const { totalDays, helpers, budget } = window.TRIP;
   const { fmt, dayRange, dayCounter, contrastText } = helpers;
   const { placeWindows } = window.TRIP_NOW;
 
@@ -161,7 +161,6 @@
     const ch = store.getChapter(chapterId);
     if (!ch) return null;
 
-    const region = REGIONS[ch.region] || { name: '' };
     const tint = window.chapterTint(ch);
     const startDay = dayCounter(ch.start).n;
     const endDay = dayCounter(ch.end).n;
@@ -193,11 +192,6 @@
           />
 
           <div className="detail-content">
-            <div className="detail-eyebrow">
-              <span style={{ color: tint }}>{region.name}</span>
-              <i />
-              <span>{ch.tldr}</span>
-            </div>
             <h1 className="detail-title">{ch.title}</h1>
             {ch.theme && <p className="detail-theme">{ch.theme}.</p>}
 

@@ -6,7 +6,6 @@
 (function () {
   const {
     totalDays,
-    REGIONS,
     helpers,
     budget
   } = window.TRIP;
@@ -215,9 +214,6 @@
     const chapters = store.getChapters();
     const ch = store.getChapter(chapterId);
     if (!ch) return null;
-    const region = REGIONS[ch.region] || {
-      name: ''
-    };
     const tint = window.chapterTint(ch);
     const startDay = dayCounter(ch.start).n;
     const endDay = dayCounter(ch.end).n;
@@ -259,13 +255,7 @@
       } : null).filter(Boolean)]
     }), /*#__PURE__*/React.createElement("div", {
       className: "detail-content"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "detail-eyebrow"
-    }, /*#__PURE__*/React.createElement("span", {
-      style: {
-        color: tint
-      }
-    }, region.name), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, ch.tldr)), /*#__PURE__*/React.createElement("h1", {
+    }, /*#__PURE__*/React.createElement("h1", {
       className: "detail-title"
     }, ch.title), ch.theme && /*#__PURE__*/React.createElement("p", {
       className: "detail-theme"
