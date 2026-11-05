@@ -27,8 +27,7 @@
     try {
       const q = new URLSearchParams(window.location.search);
       const rawView = (q.get('view') || '').toLowerCase();
-      const view = rawView === 'chapters' ? 'chapters'
-        : rawView === 'budget' || rawView === 'ledger' ? 'ledger'
+      const view = rawView === 'budget' || rawView === 'ledger' ? 'ledger'
         : rawView === 'todo' || rawView === 'kit' || rawView === 'tasks' ? 'kit'
         : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas'
         : null;
@@ -49,9 +48,8 @@
 
   const VIEWS = [
     { id: 'atlas', label: 'Atlas', index: '01', icon: (p) => <window.Icon.globe {...p} /> },
-    { id: 'chapters', label: 'Chapters', index: '02', icon: (p) => <window.Icon.grid {...p} /> },
-    { id: 'ledger', label: 'Budget', index: '03', icon: (p) => <window.Icon.wallet {...p} /> },
-    { id: 'kit', label: 'Tasks', index: '04', icon: (p) => <window.Icon.check {...p} /> },
+    { id: 'ledger', label: 'Budget', index: '02', icon: (p) => <window.Icon.wallet {...p} /> },
+    { id: 'kit', label: 'Tasks', index: '03', icon: (p) => <window.Icon.check {...p} /> },
   ];
 
   // ── Cover / title card ────────────────────────────────────────────────
@@ -406,7 +404,9 @@
     React.useEffect(() => {
       try {
         const q = new URLSearchParams(window.location.search);
-        if (view === 'atlas') q.delete('view'); else q.set('view', view);
+        // Public names in the URL, internal ids in state.
+        if (view === 'atlas') q.delete('view');
+        else q.set('view', view === 'kit' ? 'tasks' : view === 'ledger' ? 'budget' : view);
         if (mapMode === 'globe') q.delete('map'); else q.set('map', '2d');
         if (selectedId) q.set('chapter', selectedId); else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx)); else q.delete('place');
@@ -574,14 +574,6 @@
                 onOpen={openChapter}
               />
             </div>
-          )}
-
-          {view === 'chapters' && (
-            <window.ChaptersView
-              current={current}
-              selectedId={selectedId}
-              onOpen={openChapter}
-            />
           )}
 
           {(view === 'ledger' || view === 'kit') && (

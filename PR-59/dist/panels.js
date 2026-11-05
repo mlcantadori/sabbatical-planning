@@ -37,102 +37,6 @@
   // ══════════════════════════════════════════════════════════════════════
   // CHAPTERS — the editorial index of the whole year.
   // ══════════════════════════════════════════════════════════════════════
-  function ChapterCard({
-    ch,
-    isNow,
-    isPast,
-    isSelected,
-    index,
-    onOpen
-  }) {
-    const tint = window.chapterTint(ch);
-    return /*#__PURE__*/React.createElement("button", {
-      className: `ch-card ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : ''} ${isSelected ? 'is-selected' : ''}`,
-      onClick: () => onOpen(ch.id),
-      style: {
-        '--tint': tint
-      },
-      "aria-label": `Open chapter ${ch.num}: ${ch.title}`
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-media"
-    }, /*#__PURE__*/React.createElement(window.Photo, {
-      keyword: ch.photos && ch.photos[0],
-      alt: ch.title,
-      ratio: "4/3",
-      sizes: "(max-width: 880px) 90vw, 33vw"
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-shade"
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-num"
-    }, String(ch.num || index + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-days"
-    }, ch.days, " nights"), isNow && /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-now"
-    }, /*#__PURE__*/React.createElement("i", null), " You are here"), isPast && !isNow && /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-past"
-    }, "traveled")), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-body"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-titlerow"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-title"
-    }, ch.title), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-flag"
-    }, ch.flag)), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-theme"
-    }, ch.theme), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-meta"
-    }, /*#__PURE__*/React.createElement("span", null, fmt(ch.start), " \u2013 ", fmt(ch.end)), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, ch.weather ? `${ch.weather.hi}°/${ch.weather.lo}°` : '—'), /*#__PURE__*/React.createElement("i", null), /*#__PURE__*/React.createElement("span", null, ch.places.length, " stop", ch.places.length === 1 ? '' : 's')), /*#__PURE__*/React.createElement("span", {
-      className: "ch-card-route"
-    }, ch.tldr || (ch.places || []).map(p => p.name).join(' · '))));
-  }
-  function ChaptersView({
-    current,
-    selectedId,
-    onOpen
-  }) {
-    const store = window.useStore();
-    const chapters = store.getChapters();
-    const stats = window.tripStats();
-    const today = window.TRIP_NOW.todayISO();
-    return /*#__PURE__*/React.createElement("div", {
-      className: "page chapters-page"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "page-inner"
-    }, /*#__PURE__*/React.createElement("header", {
-      className: "page-head"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "page-eyebrow"
-    }, /*#__PURE__*/React.createElement("span", null, "02"), " The arc"), /*#__PURE__*/React.createElement("h1", null, "Twenty-one chapters,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "one long way east.")), /*#__PURE__*/React.createElement("p", null, "A year is not a list of countries. It is a shape: a long, slow opening at home, a winter in the snow, an island spring, and a last bright month in the east. Open any chapter to see the days, the stops, and the thinking behind them."), /*#__PURE__*/React.createElement("div", {
-      className: "page-facts"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "page-fact"
-    }, /*#__PURE__*/React.createElement("b", null, stats.days), /*#__PURE__*/React.createElement("span", null, "days")), /*#__PURE__*/React.createElement("div", {
-      className: "page-fact"
-    }, /*#__PURE__*/React.createElement("b", null, stats.chapters), /*#__PURE__*/React.createElement("span", null, "chapters")), /*#__PURE__*/React.createElement("div", {
-      className: "page-fact"
-    }, /*#__PURE__*/React.createElement("b", null, stats.countries), /*#__PURE__*/React.createElement("span", null, "countries")), /*#__PURE__*/React.createElement("div", {
-      className: "page-fact"
-    }, /*#__PURE__*/React.createElement("b", null, stats.stops), /*#__PURE__*/React.createElement("span", null, "stops")))), /*#__PURE__*/React.createElement("div", {
-      className: "chapter-grid"
-    }, chapters.map((c, i) => /*#__PURE__*/React.createElement(ChapterCard, {
-      key: c.id,
-      ch: c,
-      index: i,
-      isNow: !!current && c.id === current.id,
-      isPast: !!current && c.end < today,
-      isSelected: c.id === selectedId,
-      onOpen: onOpen
-    }))), /*#__PURE__*/React.createElement("footer", {
-      className: "page-foot"
-    }, /*#__PURE__*/React.createElement("span", null, "Jun 21, 2026 \u2014 Jun 16, 2027"), /*#__PURE__*/React.createElement("button", {
-      className: "pill-btn",
-      onClick: () => onOpen((current || chapters[0]).id)
-    }, "Open ", current ? 'where you are' : 'chapter one', " ", /*#__PURE__*/React.createElement(window.Icon.arrow, {
-      size: 12
-    })))));
-  }
-
   // ══════════════════════════════════════════════════════════════════════
   // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
@@ -597,7 +501,6 @@
     }, l)))))));
   }
   Object.assign(window, {
-    ChaptersView,
     DetailPanel,
     Binder
   });

@@ -226,6 +226,7 @@
                     {past && <span className="kit-group-past">ended</span>}
                   </span>
                   <span className="kit-group-bar"><i style={{ width: `${g.items.length ? (gDone / g.items.length) * 100 : 0}%` }} /></span>
+                  <span className="kit-group-pct">{g.items.length ? Math.round((gDone / g.items.length) * 100) : 0}%</span>
                   <span className={`kit-group-count${openN === 0 ? ' is-done' : ''}`}>{openN === 0 ? 'done' : `${openN} open`}</span>
                 </button>
                 {openState && (

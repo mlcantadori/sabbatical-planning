@@ -19,90 +19,6 @@
   // ══════════════════════════════════════════════════════════════════════
   // CHAPTERS — the editorial index of the whole year.
   // ══════════════════════════════════════════════════════════════════════
-  function ChapterCard({ ch, isNow, isPast, isSelected, index, onOpen }) {
-    const tint = window.chapterTint(ch);
-    return (
-      <button
-        className={`ch-card ${isNow ? 'is-now' : ''} ${isPast ? 'is-past' : ''} ${isSelected ? 'is-selected' : ''}`}
-        onClick={() => onOpen(ch.id)}
-        style={{ '--tint': tint }}
-        aria-label={`Open chapter ${ch.num}: ${ch.title}`}>
-        <span className="ch-card-media">
-          <window.Photo keyword={ch.photos && ch.photos[0]} alt={ch.title} ratio="4/3" sizes="(max-width: 880px) 90vw, 33vw" />
-          <span className="ch-card-shade" />
-          <span className="ch-card-num">{String(ch.num || index + 1).padStart(2, '0')}</span>
-          <span className="ch-card-days">{ch.days} nights</span>
-          {isNow && <span className="ch-card-now"><i /> You are here</span>}
-          {isPast && !isNow && <span className="ch-card-past">traveled</span>}
-        </span>
-        <span className="ch-card-body">
-          <span className="ch-card-titlerow">
-            <span className="ch-card-title">{ch.title}</span>
-            <span className="ch-card-flag">{ch.flag}</span>
-          </span>
-          <span className="ch-card-theme">{ch.theme}</span>
-          <span className="ch-card-meta">
-            <span>{fmt(ch.start)} – {fmt(ch.end)}</span>
-            <i />
-            <span>{ch.weather ? `${ch.weather.hi}°/${ch.weather.lo}°` : '—'}</span>
-            <i />
-            <span>{ch.places.length} stop{ch.places.length === 1 ? '' : 's'}</span>
-          </span>
-          <span className="ch-card-route">{ch.tldr || (ch.places || []).map((p) => p.name).join(' · ')}</span>
-        </span>
-      </button>
-    );
-  }
-
-  function ChaptersView({ current, selectedId, onOpen }) {
-    const store = window.useStore();
-    const chapters = store.getChapters();
-    const stats = window.tripStats();
-    const today = window.TRIP_NOW.todayISO();
-    return (
-      <div className="page chapters-page">
-        <div className="page-inner">
-          <header className="page-head">
-            <div className="page-eyebrow"><span>02</span> The arc</div>
-            <h1>Twenty-one chapters,<br /><em>one long way east.</em></h1>
-            <p>
-              A year is not a list of countries. It is a shape: a long, slow opening at home,
-              a winter in the snow, an island spring, and a last bright month in the east.
-              Open any chapter to see the days, the stops, and the thinking behind them.
-            </p>
-            <div className="page-facts">
-              <div className="page-fact"><b>{stats.days}</b><span>days</span></div>
-              <div className="page-fact"><b>{stats.chapters}</b><span>chapters</span></div>
-              <div className="page-fact"><b>{stats.countries}</b><span>countries</span></div>
-              <div className="page-fact"><b>{stats.stops}</b><span>stops</span></div>
-            </div>
-          </header>
-
-          <div className="chapter-grid">
-            {chapters.map((c, i) => (
-              <ChapterCard
-                key={c.id}
-                ch={c}
-                index={i}
-                isNow={!!current && c.id === current.id}
-                isPast={!!current && c.end < today}
-                isSelected={c.id === selectedId}
-                onOpen={onOpen}
-              />
-            ))}
-          </div>
-
-          <footer className="page-foot">
-            <span>Jun 21, 2026 — Jun 16, 2027</span>
-            <button className="pill-btn" onClick={() => onOpen((current || chapters[0]).id)}>
-              Open {current ? 'where you are' : 'chapter one'} <window.Icon.arrow size={12} />
-            </button>
-          </footer>
-        </div>
-      </div>
-    );
-  }
-
   // ══════════════════════════════════════════════════════════════════════
   // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
@@ -503,5 +419,5 @@
     );
   }
 
-  Object.assign(window, { ChaptersView, DetailPanel, Binder });
+  Object.assign(window, { DetailPanel, Binder });
 })();

@@ -41,7 +41,7 @@
     try {
       const q = new URLSearchParams(window.location.search);
       const rawView = (q.get('view') || '').toLowerCase();
-      const view = rawView === 'chapters' ? 'chapters' : rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' || rawView === 'tasks' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
+      const view = rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' || rawView === 'tasks' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
       const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe' : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
       const chId = q.get('chapter');
@@ -75,19 +75,14 @@
     index: '01',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.globe, p)
   }, {
-    id: 'chapters',
-    label: 'Chapters',
-    index: '02',
-    icon: p => /*#__PURE__*/React.createElement(window.Icon.grid, p)
-  }, {
     id: 'ledger',
     label: 'Budget',
-    index: '03',
+    index: '02',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.wallet, p)
   }, {
     id: 'kit',
     label: 'Tasks',
-    index: '04',
+    index: '03',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.check, p)
   }];
 
@@ -571,7 +566,8 @@
     React.useEffect(() => {
       try {
         const q = new URLSearchParams(window.location.search);
-        if (view === 'atlas') q.delete('view');else q.set('view', view);
+        // Public names in the URL, internal ids in state.
+        if (view === 'atlas') q.delete('view');else q.set('view', view === 'kit' ? 'tasks' : view === 'ledger' ? 'budget' : view);
         if (mapMode === 'globe') q.delete('map');else q.set('map', '2d');
         if (selectedId) q.set('chapter', selectedId);else q.delete('chapter');
         if (selectedId && selectedPlaceIdx != null) q.set('place', String(selectedPlaceIdx));else q.delete('place');
@@ -745,11 +741,7 @@
       current: current,
       selectedId: selectedId,
       onOpen: openChapter
-    })), view === 'chapters' && /*#__PURE__*/React.createElement(window.ChaptersView, {
-      current: current,
-      selectedId: selectedId,
-      onOpen: openChapter
-    }), (view === 'ledger' || view === 'kit') && /*#__PURE__*/React.createElement(window.Binder, {
+    })), (view === 'ledger' || view === 'kit') && /*#__PURE__*/React.createElement(window.Binder, {
       view: view,
       onClose: () => goView('atlas'),
       onOpenChapter: openChapter

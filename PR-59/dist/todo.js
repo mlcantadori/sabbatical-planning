@@ -271,6 +271,8 @@
           width: `${g.items.length ? gDone / g.items.length * 100 : 0}%`
         }
       })), /*#__PURE__*/React.createElement("span", {
+        className: "kit-group-pct"
+      }, g.items.length ? Math.round(gDone / g.items.length * 100) : 0, "%"), /*#__PURE__*/React.createElement("span", {
         className: `kit-group-count${openN === 0 ? ' is-done' : ''}`
       }, openN === 0 ? 'done' : `${openN} open`)), openState && /*#__PURE__*/React.createElement("div", {
         className: "kit-list"
