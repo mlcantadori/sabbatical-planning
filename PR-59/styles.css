@@ -197,15 +197,6 @@ button:focus-visible, [role="button"]:focus-visible {
 .topnav button:hover { color: var(--ink); background: rgba(243,236,221,.05); }
 .topnav button.is-active { color: var(--ink); background: rgba(243,236,221,.075); }
 .topnav button.is-active .topnav-index { color: var(--ember); }
-.topnav button.is-active::after {
-  content: '';
-  position: absolute;
-  left: 50%; bottom: 2px;
-  width: 4px; height: 4px;
-  margin-left: -2px;
-  border-radius: 50%;
-  background: var(--ember);
-}
 
 .topbar-right {
   margin-left: auto;
