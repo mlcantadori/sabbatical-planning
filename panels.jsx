@@ -224,15 +224,10 @@
   // ══════════════════════════════════════════════════════════════════════
   // BINDER — Ledger and Field Kit pages.
   // ══════════════════════════════════════════════════════════════════════
-  function Binder({ view, onClose, onOpenChapter }) {
+  function Binder({ view, onOpenChapter }) {
     const isTodo = view === 'kit';
     return (
       <div className="page binder-page">
-        <div className="binder-bar">
-          <button className="binder-back" onClick={onClose}><window.Icon.arrowLeft size={13} /> Atlas</button>
-          <span className="binder-crumb">The Long Way East <i>/</i> {isTodo ? 'Tasks' : 'Budget'}</span>
-          <span className="binder-date">{fmt(window.TRIP_NOW.todayISO())}</span>
-        </div>
         <div className="binder-scroll">
           {isTodo ? <window.TodoView /> : <BudgetView onOpenChapter={onOpenChapter} />}
         </div>

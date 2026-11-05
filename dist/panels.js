@@ -311,24 +311,12 @@
   // ══════════════════════════════════════════════════════════════════════
   function Binder({
     view,
-    onClose,
     onOpenChapter
   }) {
     const isTodo = view === 'kit';
     return /*#__PURE__*/React.createElement("div", {
       className: "page binder-page"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "binder-bar"
-    }, /*#__PURE__*/React.createElement("button", {
-      className: "binder-back",
-      onClick: onClose
-    }, /*#__PURE__*/React.createElement(window.Icon.arrowLeft, {
-      size: 13
-    }), " Atlas"), /*#__PURE__*/React.createElement("span", {
-      className: "binder-crumb"
-    }, "The Long Way East ", /*#__PURE__*/React.createElement("i", null, "/"), " ", isTodo ? 'Tasks' : 'Budget'), /*#__PURE__*/React.createElement("span", {
-      className: "binder-date"
-    }, fmt(window.TRIP_NOW.todayISO()))), /*#__PURE__*/React.createElement("div", {
       className: "binder-scroll"
     }, isTodo ? /*#__PURE__*/React.createElement(window.TodoView, null) : /*#__PURE__*/React.createElement(BudgetView, {
       onOpenChapter: onOpenChapter

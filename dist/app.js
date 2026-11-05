@@ -796,7 +796,6 @@
       onOpen: openChapter
     })), (view === 'ledger' || view === 'kit') && /*#__PURE__*/React.createElement(window.Binder, {
       view: view,
-      onClose: () => goView('atlas'),
       onOpenChapter: openChapter
     })), isMobile && /*#__PURE__*/React.createElement("nav", {
       className: "bottomnav",

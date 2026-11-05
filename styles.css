@@ -1480,40 +1480,11 @@ button:focus-visible, [role="button"]:focus-visible {
    BINDER (Ledger / Field kit)
    ════════════════════════════════════════════════════════════════════════ */
 .binder-page { display: flex; flex-direction: column; height: 100%; }
-.binder-bar {
-  flex: none;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0 34px;
-  border-bottom: 1px solid var(--line-2);
-  font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.binder-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  font-family: var(--f-mono);
-  font-size: 8.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-.binder-back:hover { color: var(--ember); }
-.binder-crumb i { font-style: normal; color: var(--ink-4); margin: 0 4px; }
-.binder-date { margin-left: auto; color: var(--ink-4); }
 .binder-scroll { flex: 1; overflow-y: auto; }
 
-/* Ledger */
-.ledger-page { max-width: 1280px; }
+/* Both binder pages share one measure so switching tabs does not shift the
+   content column. */
+.ledger-page, .kit-page { max-width: 1280px; }
 .money-hero {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -1773,7 +1744,6 @@ button:focus-visible, [role="button"]:focus-visible {
 /* ════════════════════════════════════════════════════════════════════════
    FIELD KIT
    ════════════════════════════════════════════════════════════════════════ */
-.kit-page { max-width: 1180px; }
 .kit-hero {
   display: grid;
   grid-template-columns: 132px 1fr auto;
@@ -2283,8 +2253,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .page-facts { gap: 24px; }
   .page-fact b { font-size: 30px; }
 
-  .binder-bar { padding: 0 16px; font-size: 7.5px; }
-  .binder-crumb { display: none; }
   .ledger-page, .kit-page { max-width: none; }
   .money-hero { padding: 24px 20px; gap: 24px; }
   .money-big { font-size: 48px; }

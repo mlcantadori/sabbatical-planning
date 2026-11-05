@@ -621,7 +621,7 @@
           )}
 
           {(view === 'ledger' || view === 'kit') && (
-            <window.Binder view={view} onClose={() => goView('atlas')} onOpenChapter={openChapter} />
+            <window.Binder view={view} onOpenChapter={openChapter} />
           )}
         </main>
 
