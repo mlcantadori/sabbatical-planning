@@ -473,10 +473,10 @@
       "aria-expanded": open
     }, /*#__PURE__*/React.createElement(window.Icon.calendar, {
       size: 12
-    }), " ", !compact && label, " ", !compact && ' ▾', staleTitle && /*#__PURE__*/React.createElement("span", {
-      className: "sync-dot",
+    }), " ", !compact && label, " ", !compact && ' ▾', (busy || staleTitle) && /*#__PURE__*/React.createElement("span", {
+      className: 'sync-dot' + (busy ? ' is-busy' : ''),
       role: "img",
-      "aria-label": "unsynced changes"
+      "aria-label": busy ? 'sync in progress' : 'unsynced changes'
     })), open && /*#__PURE__*/React.createElement("span", {
       className: "sync-backdrop",
       onClick: () => setOpen(false)

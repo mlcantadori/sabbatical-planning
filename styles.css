@@ -18,6 +18,7 @@
   --ocean:    #1c4a5e;
   --sage:     #5d6e4a;
   --stamp:    #b03a2a;
+  --info:     #2d6cd4;
 
   --f-serif: "Newsreader", "DM Serif Display", Georgia, serif;
   --f-disp:  "DM Serif Display", "Newsreader", Georgia, serif;
@@ -300,6 +301,19 @@ button {
 }
 .sync-menu .sync-dot {
   margin-left: auto;
+}
+/* A push in flight: the dot goes blue and blinks. On mobile the button is
+   compact (no "Syncing…" label), so this is the whole progress cue. */
+.sync-dot.is-busy {
+  background: var(--info);
+  animation: sync-blink 1s ease-in-out infinite;
+}
+@keyframes sync-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sync-dot.is-busy { animation: none; }
 }
 
 .app-main {

@@ -388,7 +388,14 @@
           aria-haspopup="menu"
           aria-expanded={open}>
           <window.Icon.calendar size={12} /> {!compact && label} {!compact && ' ▾'}
-          {staleTitle && <span className="sync-dot" role="img" aria-label="unsynced changes" />}
+          {/* Busy wins over stale: while a push runs the dot turns blue and
+              blinks, which is the only progress cue on mobile (no label). */}
+          {(busy || staleTitle) && (
+            <span
+              className={'sync-dot' + (busy ? ' is-busy' : '')}
+              role="img"
+              aria-label={busy ? 'sync in progress' : 'unsynced changes'} />
+          )}
         </button>
         {open && <span className="sync-backdrop" onClick={() => setOpen(false)} />}
         {open && (
