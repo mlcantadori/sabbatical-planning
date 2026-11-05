@@ -335,16 +335,7 @@
         className: "stop-idx"
       }, String(i + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("span", {
         className: "stop-name"
-      }, p.name), p.coords && /*#__PURE__*/React.createElement("button", {
-        className: "stop-map",
-        onClick: e => {
-          e.stopPropagation();
-          window.openMaps(p.query);
-        },
-        title: "Open in Google Maps"
-      }, /*#__PURE__*/React.createElement(window.Icon.external, {
-        size: 10
-      }))), /*#__PURE__*/React.createElement("div", {
+      }, p.name)), /*#__PURE__*/React.createElement("div", {
         className: "stop-highlights"
       }, (p.highlights || []).map((h, j) => /*#__PURE__*/React.createElement("span", {
         key: j,

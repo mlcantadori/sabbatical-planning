@@ -246,14 +246,6 @@
                       <div className="stop-titlerow">
                         <span className="stop-idx">{String(i + 1).padStart(2, '0')}</span>
                         <span className="stop-name">{p.name}</span>
-                        {p.coords && (
-                          <button
-                            className="stop-map"
-                            onClick={(e) => { e.stopPropagation(); window.openMaps(p.query); }}
-                            title="Open in Google Maps">
-                            <window.Icon.external size={10} />
-                          </button>
-                        )}
                       </div>
                       <div className="stop-highlights">
                         {(p.highlights || []).map((h, j) => (
