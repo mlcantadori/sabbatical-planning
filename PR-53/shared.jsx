@@ -104,22 +104,50 @@ function chapterStatus(ch, current, today) {
   return ch.end <= t ? 'past' : 'future';
 }
 
-// First chapter that starts after today — the one you're moving into
-// next. Null once the final chapter has begun (nothing follows it).
-function nextChapter(chapters, today) {
-  const t = today || todayISO();
-  let next = null;
-  (chapters || []).forEach((c) => {
-    if (!c.start || c.kind === 'transit') return;
-    if (c.start > t && (!next || c.start < next.start)) next = c;
-  });
-  return next;
-}
-
 // Whole days from today to a YYYY-MM-DD date (0 = today, 2 = two days out).
 function daysUntil(iso, today) {
   const t = today || todayISO();
   return Math.round((Date.parse(iso + 'T00:00:00Z') - Date.parse(t + 'T00:00:00Z')) / 86400000);
+}
+
+// Every stop in a chapter with its own date window, derived from the chapter
+// start and the cumulative day counts — the same math the detail panel uses.
+// Windows are inclusive; a chapter's exit day usually falls outside them.
+function placeWindows(ch) {
+  if (!ch || !ch.start) return [];
+  const base = Date.parse(ch.start + 'T00:00:00Z');
+  let offset = 0;
+  return (ch.places || []).map((place, idx) => {
+    const start = new Date(base + offset * 86400000).toISOString().slice(0, 10);
+    const end = new Date(base + (offset + (place.days || 1) - 1) * 86400000).toISOString().slice(0, 10);
+    offset += place.days || 1;
+    return { place, idx, start, end, chapter: ch };
+  });
+}
+
+// The town you are in today. On a chapter's exit day (or any day past the
+// last stop) you are still in the last town of that chapter.
+function currentCity(chapters, today) {
+  const t = today || todayISO();
+  const ch = currentChapter(chapters, t);
+  if (!ch) return null;
+  const wins = placeWindows(ch);
+  const hit = wins.find((w) => w.start <= t && t <= w.end);
+  if (hit) return hit;
+  return wins.filter((w) => w.start <= t).pop() || null;
+}
+
+// The next town you move to — later in this chapter, or the first stop of the
+// next one. Null once the final stop has begun.
+function nextCity(chapters, today) {
+  const t = today || todayISO();
+  const stops = [];
+  (chapters || []).forEach((c) => {
+    if (c.kind === 'transit') return;
+    placeWindows(c).forEach((w) => stops.push(w));
+  });
+  stops.sort((a, b) => a.start.localeCompare(b.start));
+  return stops.find((s) => s.start > t) || null;
 }
 
 // Subscribe to the store and trigger re-render on any mutation.
@@ -129,33 +157,35 @@ function useStore() {
   return window.STORE;
 }
 
-// Where the trip is right now: the chapter today falls in, and the one that
-// follows it. Both cells are buttons — tapping jumps to that chapter. It lives
-// in the rail's head on desktop and in the mobile status strip; the shape is
-// the same, only the type scale differs.
+// Where the trip is right now — the town you're in and the one you move to
+// next. Both cells are buttons that jump to that chapter. It heads the rail
+// on desktop and rides the mobile status strip; same shape, different scale.
 function NowNext({ onSelect }) {
   const store = useStore();
   const chapters = store.getChapters();
   const today = window.TRIP_NOW.todayISO();
   const current = window.TRIP_NOW.currentChapter(chapters, today);
-  const next = window.TRIP_NOW.nextChapter(chapters, today);
+  const here = current ? window.TRIP_NOW.currentCity(chapters, today) : null;
+  const next = window.TRIP_NOW.nextCity(chapters, today);
   const { chapterColor, helpers } = window.TRIP;
   const { fmt } = helpers;
-  const go = (ch) => () => { if (onSelect) onSelect(ch.id); };
 
-  const cell = (label, ch, meta) => (
-    <button
-      className="app-now-cell"
-      onClick={go(ch)}
-      title={`${label} — ${ch.title} (${fmt(ch.start)} – ${fmt(ch.end)})`}>
-      <span className="app-now-label">{label}</span>
-      <span className="app-now-value">
-        <span className="app-now-dot" style={{ background: chapterColor(ch) }} />
-        <span className="app-now-title">{ch.title}</span>
-        {meta && <span className="app-now-meta">{meta}</span>}
-      </span>
-    </button>
-  );
+  const cell = (label, stop, meta) => {
+    const ch = stop.chapter;
+    return (
+      <button
+        className="app-now-cell"
+        onClick={() => { if (onSelect) onSelect(ch.id); }}
+        title={`${label} — ${stop.place.name}, ${ch.title} (${fmt(stop.start)} – ${fmt(stop.end)})`}>
+        <span className="app-now-label">{label}</span>
+        <span className="app-now-value">
+          <span className="app-now-dot" style={{ background: chapterColor(ch) }} />
+          <span className="app-now-title">{stop.place.name}</span>
+          {meta && <span className="app-now-meta">{meta}</span>}
+        </span>
+      </button>
+    );
+  };
 
   // No chapter contains today and none follows: the trip is over.
   if (!current && !next) {
@@ -173,17 +203,17 @@ function NowNext({ onSelect }) {
     );
   }
 
-  // The countdown appears once: a chapter's exit day is the next chapter's
-  // arrival day, so "2 days left" and "in 2 days" are always the same number.
-  // It rides on the current chapter; the next one just gets its date.
-  const left = current ? window.TRIP_NOW.daysUntil(current.end, today) : null;
-  const currentMeta = left == null ? ''
-    : left <= 0 ? 'exit day today'
-    : `${left} day${left === 1 ? '' : 's'} left`;
+  // The countdown appears once: it runs to the next town's arrival, which on a
+  // chapter's last stop is its exit day — so "2 days left" and the next cell's
+  // date always agree. The next cell just gets its date.
+  const left = !current ? 0
+    : next ? window.TRIP_NOW.daysUntil(next.start, today)
+    : window.TRIP_NOW.daysUntil(current.end, today);
+  const currentMeta = left <= 0 || today >= current.end ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`;
 
   return (
     <div className="app-now">
-      {current && cell('Currently in', current, currentMeta)}
+      {current && here && cell('Currently in', here, currentMeta)}
       {next && cell('Next up', next, fmt(next.start))}
     </div>
   );
@@ -220,4 +250,4 @@ class ErrorBoundary extends React.Component {
 }
 
 Object.assign(window, { Photo, openMaps, Icon, useStore, ErrorBoundary, NowNext });
-window.TRIP_NOW = { todayISO, currentChapter, chapterStatus, nextChapter, daysUntil };
+window.TRIP_NOW = { todayISO, currentChapter, chapterStatus, daysUntil, placeWindows, currentCity, nextCity };
