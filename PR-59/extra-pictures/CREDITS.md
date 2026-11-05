@@ -1,0 +1,55 @@
+# Photo credits
+
+Trip photos are vendored locally so the site has no hotlinked images.
+
+## Map textures (not trip photos)
+
+| File | Author | License |
+|---|---|---|
+| `earth/blue-marble-8192.webp` · `earth/blue-marble-4096.webp` | NASA/Goddard Space Flight Center — *Blue Marble: Land Surface, Shallow Water, and Shaded Topography* (Reto Stöckli; ocean colour and composite by Robert Simmon; 24000×12000 assembly by HighInBC) | Public domain |
+
+Sourced from Wikimedia Commons (`File:Whole world - land and oceans 12000.jpg`,
+itself from NASA Visible Earth), downscaled to 8192×4096 and 4096×2048, encoded
+WebP q85.
+
+## Added Nov 2026 — China E1 (Hongcun night)
+
+| File | Author | License |
+|---|---|---|
+| `china-e1/hongcun-moon-pond.jpg` | EditQ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Moon Pond, Hongcun.jpg`); cropped and
+recompressed locally.
+
+## Added Oct 2026
+
+| File | Author | License |
+|---|---|---|
+| `korea/jeju-yongmeori.jpg` | Bernard Gagnon | CC0 1.0 |
+| `thailand/koh-lipe-beach.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `thailand/railay-krabi.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `malaysia/langkawi-cenang-beach.jpg` | Khairil Yusof | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `thailand/koh-lanta-beach.jpg` | Fabio Achilli | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+
+All sourced from Wikimedia Commons.
+
+## Added Oct 2026 — Taiwan (NYE south variant)
+
+| File | Author | License |
+|---|---|---|
+| `taiwan/taipei-101-night.jpg` | Titoni Thomas | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
+| `taiwan/tainan-chihkan-tower.jpg` | xiquinhosilva | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `taiwan/alishan-sea-of-clouds.jpg` | Huaiwun | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `taiwan/kaohsiung-harbor.jpg` | Yu-Jheng Fang | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) |
+
+All sourced from Wikimedia Commons.
+
+## Added Oct 2026 — Japan winter extension
+
+| File | Author | License |
+|---|---|---|
+| `japan/mount-fuji-winter.jpg` | Suicasmo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `japan/shirakawa-go-snow.jpg` | Suicasmo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `japan/nozawa-onsen-snow.jpg` | Hoboesque | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+All sourced from Wikimedia Commons.
