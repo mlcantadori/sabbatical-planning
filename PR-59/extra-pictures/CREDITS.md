@@ -32,6 +32,16 @@ Sourced from Wikimedia Commons (`File:Guangzhou at night - 2017.jpg`) —
 Zhujiang New Town and Liede Bridge. Downscaled to 2000px. Replaces a low-res
 Shenzhen header; Shenzhen keeps its own detail photo on the stop.
 
+## Added Nov 2026 — South Korea (chapter header, supplied)
+
+| File | Author | License |
+|---|---|---|
+| `korea/seoul-street-food-night.jpg` | *(unconfirmed — supplied by the travellers)* | *(unconfirmed)* |
+
+Provided directly rather than sourced from Commons; licence to be filled in.
+Native size is 1072x713, so it is recompressed rather than upscaled — soft on a
+2x display at hero size, sharp at card size.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |
