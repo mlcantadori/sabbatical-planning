@@ -43,14 +43,14 @@
     ['Australia', 134, -25], ['New Zealand', 172, -42], ['Papua New Guinea', 141, -6],
   ];
 
-  function GlobeView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey }) {
+  function GlobeView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey, showPlacePopup }) {
     const store = window.useStore();
     const chapters = store.getChapters();
 
     const ref = React.useRef(null);
     const st = React.useRef(null);
-    const propsRef = React.useRef({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters });
-    propsRef.current = { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters };
+    const propsRef = React.useRef({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters, showPlacePopup });
+    propsRef.current = { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters, showPlacePopup };
 
     function llv(lat, lng, r) {
       const phi = (90 - lat) * Math.PI / 180;
@@ -490,7 +490,7 @@
 
     function refreshSelection() {
       const s = st.current; if (!s) return;
-      const { selectedId, selectedPlaceIdx, onSelectPlace, chapters } = propsRef.current;
+      const { selectedId, selectedPlaceIdx, onSelectPlace, chapters, showPlacePopup } = propsRef.current;
       [...s.overlay.children].forEach((el) => {
         const pin = el.querySelector('.map-pin');
         if (pin) pin.classList.toggle('is-active', el._id === selectedId);
@@ -534,7 +534,9 @@
         s.overlay.appendChild(wrap);
       });
 
-      if (selectedPlaceIdx != null && ch.places[selectedPlaceIdx]) {
+      // The popup is the "open in Google Maps" card. Only a click on the map's
+      // own dot asks for it; picking a day on the spine just moves the camera.
+      if (showPlacePopup && selectedPlaceIdx != null && ch.places[selectedPlaceIdx]) {
         const p = ch.places[selectedPlaceIdx];
         s.popupEl._anchor = p.coords;
         s.popupEl.innerHTML = `<div class="map-popup"><div class="map-popup-num">${selectedPlaceIdx + 1}</div>`
@@ -574,7 +576,7 @@
     React.useEffect(() => {
       if (st.current) refreshSelection();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedId, selectedPlaceIdx, chapters]);
+    }, [selectedId, selectedPlaceIdx, chapters, showPlacePopup]);
 
     // ── external "focus world" trigger ────────────────────────────────────
     React.useEffect(() => {

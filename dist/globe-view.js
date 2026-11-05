@@ -26,7 +26,8 @@
     selectedPlaceIdx,
     onSelectChapter,
     onSelectPlace,
-    focusKey
+    focusKey,
+    showPlacePopup
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
@@ -37,14 +38,16 @@
       selectedPlaceIdx,
       onSelectChapter,
       onSelectPlace,
-      chapters
+      chapters,
+      showPlacePopup
     });
     propsRef.current = {
       selectedId,
       selectedPlaceIdx,
       onSelectChapter,
       onSelectPlace,
-      chapters
+      chapters,
+      showPlacePopup
     };
     function llv(lat, lng, r) {
       const phi = (90 - lat) * Math.PI / 180;
@@ -495,7 +498,8 @@
         selectedId,
         selectedPlaceIdx,
         onSelectPlace,
-        chapters
+        chapters,
+        showPlacePopup
       } = propsRef.current;
       [...s.overlay.children].forEach(el => {
         const pin = el.querySelector('.map-pin');
@@ -536,7 +540,10 @@
         });
         s.overlay.appendChild(wrap);
       });
-      if (selectedPlaceIdx != null && ch.places[selectedPlaceIdx]) {
+
+      // The popup is the "open in Google Maps" card. Only a click on the map's
+      // own dot asks for it; picking a day on the spine just moves the camera.
+      if (showPlacePopup && selectedPlaceIdx != null && ch.places[selectedPlaceIdx]) {
         const p = ch.places[selectedPlaceIdx];
         s.popupEl._anchor = p.coords;
         s.popupEl.innerHTML = `<div class="map-popup"><div class="map-popup-num">${selectedPlaceIdx + 1}</div>` + `<div><div class="map-popup-name">${p.name}</div>` + `<div class="map-popup-sub">${p.days} day${p.days > 1 ? 's' : ''}</div>` + `<a class="map-popup-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>` + `</div></div>`;
@@ -572,7 +579,7 @@
     React.useEffect(() => {
       if (st.current) refreshSelection();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedId, selectedPlaceIdx, chapters]);
+    }, [selectedId, selectedPlaceIdx, chapters, showPlacePopup]);
 
     // ── external "focus world" trigger ────────────────────────────────────
     React.useEffect(() => {

@@ -555,6 +555,9 @@
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusDay, setFocusDay] = React.useState(null);
+    // Whether the map should show the stop popup. Only a click on the map's own
+    // dot sets this; a spine click just recentres the camera.
+    const [placePopup, setPlacePopup] = React.useState(false);
     const [detailOpen, setDetailOpen] = React.useState(!!urlParams.chapterId && urlParams.detail !== false);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapRetry, setMapRetry] = React.useState(0);
@@ -615,6 +618,7 @@
       setSelectedId(ch.id);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
+      setPlacePopup(false);
       setDetailOpen(false);
       const t = setTimeout(() => {
         setTour(cur => cur == null ? null : cur >= chapters.length - 1 ? null : cur + 1);
@@ -637,6 +641,7 @@
           setSelectedId(chapters[n].id);
           setSelectedPlaceIdx(null);
           setFocusDay(null);
+          setPlacePopup(false);
         }
       };
       window.addEventListener('keydown', onKey);
@@ -658,12 +663,14 @@
       setSelectedId(id);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
+      setPlacePopup(false);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
 
     // A spine click is a date, not a chapter: jump to the city the plan has
-    // you in that day, and leave the today marker where it is.
+    // you in that day, and leave the today marker where it is. The camera
+    // recentres; the Google-Maps popup stays shut unless you click the dot.
     const openDay = iso => {
       const ch = currentChapter(chapters, iso);
       if (!ch) return;
@@ -672,11 +679,13 @@
       setFocusDay(iso);
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
+      setPlacePopup(false);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
     const onSelectPlace = idx => {
       setSelectedPlaceIdx(idx);
+      setPlacePopup(true);
       if (view !== 'atlas') setView('atlas');
     };
     const onReset = () => {
@@ -684,6 +693,7 @@
       setSelectedId(null);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
+      setPlacePopup(false);
       setDetailOpen(false);
       setFocusKey(k => k + 1);
     };
@@ -740,9 +750,11 @@
     }, mapMode === 'globe' ? /*#__PURE__*/React.createElement(window.GlobeView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
+      showPlacePopup: placePopup,
       onSelectChapter: id => {
         setSelectedId(id);
         setSelectedPlaceIdx(null);
+        setPlacePopup(false);
         setDetailOpen(true);
         setTour(null);
       },
@@ -754,6 +766,7 @@
       onSelectChapter: id => {
         setSelectedId(id);
         setSelectedPlaceIdx(null);
+        setPlacePopup(false);
         setDetailOpen(true);
         setTour(null);
       },
