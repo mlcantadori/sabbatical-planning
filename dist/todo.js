@@ -161,9 +161,7 @@
       className: "page-inner kit-page"
     }, /*#__PURE__*/React.createElement("header", {
       className: "page-head"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "page-eyebrow"
-    }, /*#__PURE__*/React.createElement("span", null, "04"), " Tasks"), /*#__PURE__*/React.createElement("h1", null, "The things that", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "must be booked.")), /*#__PURE__*/React.createElement("p", null, "Advance bookings only \u2014 transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.")), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("h1", null, "The things that", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "must be booked.")), /*#__PURE__*/React.createElement("p", null, "Advance bookings only \u2014 transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.")), /*#__PURE__*/React.createElement("div", {
       className: "kit-hero"
     }, /*#__PURE__*/React.createElement("div", {
       className: "kit-ring",

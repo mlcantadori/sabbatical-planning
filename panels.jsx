@@ -302,7 +302,6 @@
     return (
       <div className="page-inner ledger-page">
         <header className="page-head">
-          <div className="page-eyebrow"><span>03</span> The budget</div>
           <h1>What a year costs.<br /><em>And what it buys.</em></h1>
           <p>Mid-range with strategic splurges, priced for two across 360 days. Totals compute from the lines below — nothing is hardcoded, so the numbers cannot quietly lie.</p>
         </header>
