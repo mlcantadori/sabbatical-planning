@@ -379,7 +379,7 @@
                 <li key={s.label}>
                   <i style={{ background: s.color }} />
                   <span>{s.label}</span>
-                  <b>{fmt$(s.value)}</b>
+                  <b>{fmt$(s.value)}<em className="donut-pct">({Math.round((s.value / grand) * 100)}%)</em></b>
                 </li>
               ))}
             </ul>

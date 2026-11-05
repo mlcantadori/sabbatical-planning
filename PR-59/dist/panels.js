@@ -484,7 +484,9 @@
       style: {
         background: s.color
       }
-    }), /*#__PURE__*/React.createElement("span", null, s.label), /*#__PURE__*/React.createElement("b", null, fmt$(s.value))))))), /*#__PURE__*/React.createElement(SectionHead, {
+    }), /*#__PURE__*/React.createElement("span", null, s.label), /*#__PURE__*/React.createElement("b", null, fmt$(s.value), /*#__PURE__*/React.createElement("em", {
+      className: "donut-pct"
+    }, "(", Math.round(s.value / grand * 100), "%)"))))))), /*#__PURE__*/React.createElement(SectionHead, {
       num: "01",
       title: "Where the nights go",
       note: "total spend per chapter"

@@ -2011,6 +2011,8 @@ button:focus-visible, [role="button"]:focus-visible {
 .donut-key li i { width: 6px; height: 6px; border-radius: 2px; flex: none; }
 .donut-key li span { flex: 1; }
 .donut-key li b { font-weight: 500; color: var(--ink-2); }
+/* The share of the total, spelled out instead of read off the ring. */
+.donut-pct { font-style: normal; font-weight: 400; margin-left: 5px; color: var(--ink-4); display: none; }
 
 .bar-list { display: flex; flex-direction: column; }
 .bar-row {
@@ -2679,11 +2681,12 @@ button:focus-visible, [role="button"]:focus-visible {
   .money-hero { padding: 24px 20px; gap: 24px; }
   .money-big { font-size: 48px; }
   .money-sub { font-size: 8px; gap: 6px; }
-  .donut-wrap { gap: 16px; }
-  .donut { width: 150px; height: 150px; }
-  .donut-hole { width: 100px; height: 100px; }
-  .donut-hole span { font-size: 22px; }
-  .donut-key { min-width: 150px; }
+  /* Phones: the ring is a 150px circle you cannot read a slice of. The legend
+     already lists every spend, so it carries the share as a number instead. */
+  .donut-wrap { gap: 0; }
+  .donut, .donut-hole { display: none; }
+  .donut-key { min-width: 0; width: 100%; gap: 8px; }
+  .donut-pct { display: inline; }
   .donut-key li { font-size: 7px; }
   .bar-row { grid-template-columns: 1fr 78px; grid-template-areas: "ch val" "track per"; gap: 6px 10px; padding: 10px 2px; }
   .bar-ch { grid-area: ch; }
