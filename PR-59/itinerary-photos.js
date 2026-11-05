@@ -52,6 +52,7 @@ window.PHOTO_IDS = {
   'kowloon neon':                'extra-pictures/hk/kowloon-neon.jpg',
   // ── China E2 ──────────────────────────────────────────────────────
   'guangzhou night skyline':     'extra-pictures/china-e2/guangzhou-night-skyline.jpg',
+  'guangzhou sunset skyline':    'extra-pictures/china-e2/guangzhou-sunset-skyline.jpg',
   'huaqiangbei':                 'extra-pictures/china-e2/huaqiangbei.jpg',
   'macau st paul':               'extra-pictures/china-e2/macau-st-paul.jpg',
   'guangzhou canton tower':      'extra-pictures/china-e2/guangzhou-canton-tower.jpg',

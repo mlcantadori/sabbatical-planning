@@ -46,6 +46,17 @@ freely licensed photograph.
 Native size is 1072x713, so it is recompressed rather than upscaled — soft on a
 2x display at hero size, sharp at card size.
 
+## Added Nov 2026 — South China (chapter header, PERMISSION NEEDED)
+
+| File | Source | Status |
+|---|---|---|
+| `china-e2/guangzhou-sunset-skyline.jpg` | [voyagefox.net — Guangzhou travel guide](https://voyagefox.net/guangzhou-china-travel-guide-sights/), © VoyageFox | **No licence granted — do not publish without permission** |
+
+The site carries a bare copyright notice (`© 2026 VoyageFox`) and no reuse
+grant, so default copyright applies. Native 1200x800, recompressed only.
+The CC0 night version (`guangzhou-night-skyline.jpg`) is still on disk and one
+keyword away — same view, licensed.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |
