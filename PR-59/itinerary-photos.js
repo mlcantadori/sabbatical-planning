@@ -51,7 +51,7 @@ window.PHOTO_IDS = {
   'hong kong skyline':           'extra-pictures/hk/hong-kong-skyline.jpg',
   'kowloon neon':                'extra-pictures/hk/kowloon-neon.jpg',
   // ── China E2 ──────────────────────────────────────────────────────
-  'shenzhen night skyline':      'extra-pictures/china-e2/shenzhen-night-skyline.jpg',
+  'guangzhou night skyline':     'extra-pictures/china-e2/guangzhou-night-skyline.jpg',
   'huaqiangbei':                 'extra-pictures/china-e2/huaqiangbei.jpg',
   'macau st paul':               'extra-pictures/china-e2/macau-st-paul.jpg',
   'guangzhou canton tower':      'extra-pictures/china-e2/guangzhou-canton-tower.jpg',

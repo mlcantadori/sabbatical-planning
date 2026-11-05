@@ -22,6 +22,16 @@ Sourced from Wikimedia Commons (`File:N Seoul Tower view 1.jpg`), the city from
 Namsan at night; cropped off the near-black foreground, downscaled to 2000px.
 The street-food photo stays with the Seoul stop, where it belongs.
 
+## Added Nov 2026 — South China (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `china-e2/guangzhou-night-skyline.jpg` | Dairui Chen (tallnut) | CC0 1.0 |
+
+Sourced from Wikimedia Commons (`File:Guangzhou at night - 2017.jpg`) —
+Zhujiang New Town and Liede Bridge. Downscaled to 2000px. Replaces a low-res
+Shenzhen header; Shenzhen keeps its own detail photo on the stop.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |
