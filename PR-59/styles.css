@@ -886,18 +886,6 @@ button:focus-visible, [role="button"]:focus-visible {
   white-space: nowrap;
   pointer-events: none;
 }
-.eq-popup {
-  position: absolute;
-  transform: translate(-50%, calc(-100% - 16px));
-  background: var(--glass-2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: var(--shadow-2);
-  padding: 12px 14px;
-  z-index: 600;
-  pointer-events: auto;
-  backdrop-filter: blur(16px);
-}
 /* Pins */
 .map-pin-wrap { background: transparent !important; border: none !important; pointer-events: none; }
 .map-pin {
@@ -996,65 +984,6 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .map-place:hover .map-place-label,
 .map-place.is-active .map-place-label { opacity: 1; }
-
-.leaflet-popup-content-wrapper {
-  background: var(--glass-2) !important;
-  color: var(--ink) !important;
-  border-radius: 10px !important;
-  box-shadow: var(--shadow-2) !important;
-  border: 1px solid var(--line) !important;
-  padding: 0 !important;
-  backdrop-filter: blur(16px);
-}
-.leaflet-popup-content {
-  margin: 12px 14px !important;
-  font-family: var(--f-sans) !important;
-}
-.leaflet-popup-tip { background: var(--panel) !important; border: 1px solid var(--line) !important; }
-.map-popup {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: 10px;
-  min-width: 200px;
-}
-.map-popup-num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--ember);
-  color: #1a0d07;
-  font-family: var(--f-mono);
-  font-weight: 600;
-  font-size: 11px;
-  display: flex; align-items: center; justify-content: center;
-}
-.map-popup-name {
-  font-family: var(--f-disp);
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: -.01em;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-.map-popup-sub {
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: .12em;
-  color: var(--ink-3);
-  text-transform: uppercase;
-}
-.map-popup-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ember);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,122,69,.5);
-  padding-bottom: 1px;
-}
-.map-popup-link:hover { color: var(--ink); border-color: var(--ink); }
 
 /* Map failure fallback */
 .map-fallback {

@@ -158,7 +158,24 @@
   function DetailPanel({ chapterId, onClose, onSelectPlace, selectedPlaceIdx, onOpenChapter }) {
     const store = window.useStore();
     const chapters = store.getChapters();
+    // Hooks before the early return, or the hook order changes when a chapter
+    // disappears underneath an open panel.
+    const scrollRef = React.useRef(null);
     const ch = store.getChapter(chapterId);
+
+    // Open the spread where the reader's attention already is: a city clicked
+    // on the map, or a day picked on the spine, centres its stop row instead
+    // of leaving them to scroll past the hero and the facts. With no stop
+    // picked, the spread opens at the top as usual.
+    React.useEffect(() => {
+      const box = scrollRef.current; if (!box) return;
+      if (selectedPlaceIdx == null) { box.scrollTop = 0; return; }
+      const row = box.querySelector(`[data-stop="${selectedPlaceIdx}"]`);
+      if (!row) return;
+      const delta = row.getBoundingClientRect().top - box.getBoundingClientRect().top;
+      box.scrollTop += delta - (box.clientHeight - row.offsetHeight) / 2;
+    }, [chapterId, selectedPlaceIdx]);
+
     if (!ch) return null;
 
     const tint = window.chapterTint(ch);
@@ -168,6 +185,7 @@
     const idx = chapters.findIndex((c) => c.id === ch.id);
     const prev = chapters[(idx - 1 + chapters.length) % chapters.length];
     const next = chapters[(idx + 1) % chapters.length];
+
 
     return (
       <aside className="detail-panel" role="dialog" aria-label={`Chapter ${ch.num}: ${ch.title}`}>
@@ -181,7 +199,7 @@
           </button>
         </div>
 
-        <div className="detail-scroll">
+        <div className="detail-scroll" ref={scrollRef}>
           <PhotoCarousel
             key={ch.id}
             startPlaceIdx={selectedPlaceIdx}
@@ -212,6 +230,7 @@
                 return (
                   <div
                     key={i}
+                    data-stop={i}
                     className={`stop-row ${active ? 'is-active' : ''}`}
                     onClick={() => onSelectPlace(i)}
                     role="button"

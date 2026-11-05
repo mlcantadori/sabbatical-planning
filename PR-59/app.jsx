@@ -347,9 +347,6 @@
     const [selectedId, setSelectedId] = React.useState(urlParams.chapterId);
     const [selectedPlaceIdx, setSelectedPlaceIdx] = React.useState(urlParams.placeIdx);
     const [focusDay, setFocusDay] = React.useState(null);
-    // Whether the map should show the stop popup. Only a click on the map's own
-    // dot sets this; a spine click just recentres the camera.
-    const [placePopup, setPlacePopup] = React.useState(false);
     // How tight the 2D map frames a selected stop. A day on the spine is about
     // locating the city in its country (wide); a pin click is about the city.
     const [placeZoom, setPlaceZoom] = React.useState(null);
@@ -434,8 +431,7 @@
           setSelectedId(chapters[n].id);
           setSelectedPlaceIdx(null);
           setFocusDay(null);
-          setPlacePopup(false);
-        }
+                  }
       };
       window.addEventListener('keydown', onKey);
       return () => window.removeEventListener('keydown', onKey);
@@ -455,15 +451,14 @@
       setSelectedId(id);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
-      setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
 
     // A spine click is a date, not a chapter: jump to the city the plan has
-    // you in that day, and leave the today marker where it is. The camera
-    // recentres; the Google-Maps popup stays shut unless you click the dot.
+    // you in that day, and leave the today marker where it is. The spread
+    // opens on that stop; the camera only recentres.
     const openDay = (iso) => {
       const ch = currentChapter(chapters, iso);
       if (!ch) return;
@@ -471,16 +466,18 @@
       setFocusDay(iso);
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
-      setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
 
+    // A city click is a request to read about it: open the spread and let it
+    // scroll itself to that stop. The map popup that used to appear here was
+    // a smaller answer to the same question.
     const onSelectPlace = (idx) => {
       setSelectedPlaceIdx(idx);
-      setPlacePopup(true);
       setPlaceZoom(12);
+      setDetailOpen(true);
       if (view !== 'atlas') setView('atlas');
     };
 
@@ -494,7 +491,6 @@
       setSelectedId(target ? target.id : null);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
-      setPlacePopup(false);
       setPlaceZoom(null);
       setDetailOpen(false);
       setFocusKey((k) => k + 1);
@@ -531,8 +527,8 @@
                     <window.GlobeView
                       selectedId={selectedId}
                       selectedPlaceIdx={selectedPlaceIdx}
-                      showPlacePopup={placePopup}
-                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlacePopup(false); setPlaceZoom(null); setDetailOpen(true); }}
+                      
+                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlaceZoom(null); setDetailOpen(true); }}
                       onSelectPlace={onSelectPlace}
                       focusKey={focusKey}
                     />
@@ -541,7 +537,7 @@
                       selectedId={selectedId}
                       selectedPlaceIdx={selectedPlaceIdx}
                       placeZoom={placeZoom}
-                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlacePopup(false); setPlaceZoom(null); setDetailOpen(true); }}
+                      onSelectChapter={(id) => { setSelectedId(id); setSelectedPlaceIdx(null); setPlaceZoom(null); setDetailOpen(true); }}
                       onSelectPlace={onSelectPlace}
                       focusKey={focusKey}
                     />

@@ -62,14 +62,14 @@
     ['Australia', 134, -25], ['New Zealand', 172, -42], ['Papua New Guinea', 141, -6],
   ];
 
-  function GlobeView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey, showPlacePopup }) {
+  function GlobeView({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, focusKey }) {
     const store = window.useStore();
     const chapters = store.getChapters();
 
     const ref = React.useRef(null);
     const st = React.useRef(null);
-    const propsRef = React.useRef({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters, showPlacePopup });
-    propsRef.current = { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters, showPlacePopup };
+    const propsRef = React.useRef({ selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters });
+    propsRef.current = { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters };
 
     function llv(lat, lng, r) {
       const phi = (90 - lat) * Math.PI / 180;
@@ -195,14 +195,10 @@
       const overlay = document.createElement('div');
       overlay.className = 'eq-pins';
       el.appendChild(overlay);
-      const popupEl = document.createElement('div');
-      popupEl.className = 'eq-popup';
-      popupEl.style.display = 'none';
-      el.appendChild(popupEl);
 
       st.current = {
         renderer, scene, camera, controls, earth, arcs, stars, minDist,
-        overlay, popupEl, w: 0, h: 0, raf: 0, tween: null, world: true,
+        overlay, w: 0, h: 0, raf: 0, tween: null, world: true,
         spinOff: false, arcMats: [],
         noMotion: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       };
@@ -221,12 +217,6 @@
         controls.autoRotate = false;
         st.current.spinOff = true;
       }
-
-      renderer.domElement.addEventListener('click', () => {
-        const s = st.current; if (!s) return;
-        s.popupEl.style.display = 'none';
-        s.popupEl._anchor = null;
-      });
 
       const ro = new ResizeObserver(() => size());
       ro.observe(el);
@@ -274,7 +264,6 @@
           st.current.renderer.dispose();
           st.current.renderer.domElement.remove();
           st.current.overlay.remove();
-          st.current.popupEl.remove();
           st.current = null;
         }
       };
@@ -418,17 +407,6 @@
           ? `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) translate(-50%,-50%)`
           : `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;
       }
-      if (s.popupEl._anchor) {
-        const a = s.popupEl._anchor;
-        const wp = llv(a[0], a[1], 1);
-        if (wp.clone().normalize().dot(s.camera.position.clone().normalize()) < 0.08) {
-          s.popupEl.style.display = 'none';
-        } else {
-          const sp = wp.project(s.camera);
-          s.popupEl.style.left = ((sp.x * 0.5 + 0.5) * s.w).toFixed(1) + 'px';
-          s.popupEl.style.top = ((-sp.y * 0.5 + 0.5) * s.h).toFixed(1) + 'px';
-        }
-      }
     }
 
     function pinEl(c) {
@@ -517,21 +495,19 @@
 
     function refreshSelection() {
       const s = st.current; if (!s) return;
-      const { selectedId, selectedPlaceIdx, onSelectPlace, chapters, showPlacePopup } = propsRef.current;
+      const { selectedId, selectedPlaceIdx, onSelectChapter, onSelectPlace, chapters } = propsRef.current;
       [...s.overlay.children].forEach((el) => {
         const pin = el.querySelector('.map-pin');
         if (pin) pin.classList.toggle('is-active', el._id === selectedId);
       });
       // Hide whole-route city dots of the selected chapter (re-rendered
-      // below with popups) to avoid duplicates; updateOverlay honors _hidden.
+      // below as their own markers) to avoid duplicates; updateOverlay honors _hidden.
       [...s.overlay.children].forEach((el) => {
         if (el.classList && el.classList.contains('eq-city-wrap')) {
           el._hidden = el._chId === selectedId;
         }
       });
       [...s.overlay.querySelectorAll('.eq-place-wrap')].forEach((el) => el.remove());
-      s.popupEl.style.display = 'none';
-      s.popupEl._anchor = null;
       s.controls.autoRotate = !selectedId && !s.spinOff;
 
       if (!selectedId) {
@@ -556,23 +532,11 @@
           + `<div class="map-place-label">${i + 1}. ${p.name}</div></div>`;
         wrap.querySelector('.map-place').addEventListener('click', (e) => {
           e.stopPropagation();
+          if (onSelectChapter) onSelectChapter(ch.id);
           if (onSelectPlace) onSelectPlace(i);
         });
         s.overlay.appendChild(wrap);
       });
-
-      // The popup is the "open in Google Maps" card. Only a click on the map's
-      // own dot asks for it; picking a day on the spine just moves the camera.
-      if (showPlacePopup && selectedPlaceIdx != null && ch.places[selectedPlaceIdx]) {
-        const p = ch.places[selectedPlaceIdx];
-        s.popupEl._anchor = p.coords;
-        s.popupEl.innerHTML = `<div class="map-popup"><div class="map-popup-num">${selectedPlaceIdx + 1}</div>`
-          + `<div><div class="map-popup-name">${p.name}</div>`
-          + `<div class="map-popup-sub">${p.days} day${p.days > 1 ? 's' : ''}</div>`
-          + `<a class="map-popup-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>`
-          + `</div></div>`;
-        s.popupEl.style.display = 'block';
-      }
 
       // Fly the camera to face the chapter. The orbit target stays at the
       // globe center — targeting a surface point would leave OrbitControls
@@ -604,7 +568,7 @@
     React.useEffect(() => {
       if (st.current) refreshSelection();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedId, selectedPlaceIdx, chapters, showPlacePopup]);
+    }, [selectedId, selectedPlaceIdx, chapters]);
 
     // ── external recentre trigger ─────────────────────────────────────────
     // "Whole route" now means "back to where I am", which is the selected

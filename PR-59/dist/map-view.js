@@ -364,7 +364,7 @@
       const L = window.L;
 
       // Hide whole-route dots of the selected chapter (re-rendered below
-      // with popups) to avoid duplicates; restore everything on deselect.
+      // with their own markers) to avoid duplicates; restore on deselect.
       layersRef.current.chapters.forEach(({
         id,
         marker
@@ -418,20 +418,6 @@
           zIndexOffset: isActive ? 1000 : 0
         });
         m.on('click', () => onSelectPlace && onSelectPlace(i));
-        const popupHtml = `
-          <div class="map-popup">
-            <div class="map-popup-num">${i + 1}</div>
-            <div>
-              <div class="map-popup-name">${p.name}</div>
-              <div class="map-popup-sub">${p.days} day${p.days > 1 ? 's' : ''}</div>
-              <a class="map-popup-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.query)}" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>
-            </div>
-          </div>`;
-        m.bindPopup(popupHtml, {
-          closeButton: false,
-          offset: [0, -4],
-          className: 'map-popup-wrap'
-        });
         m.addTo(map);
         layersRef.current.places.push(m);
       });

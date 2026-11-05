@@ -212,7 +212,27 @@
   }) {
     const store = window.useStore();
     const chapters = store.getChapters();
+    // Hooks before the early return, or the hook order changes when a chapter
+    // disappears underneath an open panel.
+    const scrollRef = React.useRef(null);
     const ch = store.getChapter(chapterId);
+
+    // Open the spread where the reader's attention already is: a city clicked
+    // on the map, or a day picked on the spine, centres its stop row instead
+    // of leaving them to scroll past the hero and the facts. With no stop
+    // picked, the spread opens at the top as usual.
+    React.useEffect(() => {
+      const box = scrollRef.current;
+      if (!box) return;
+      if (selectedPlaceIdx == null) {
+        box.scrollTop = 0;
+        return;
+      }
+      const row = box.querySelector(`[data-stop="${selectedPlaceIdx}"]`);
+      if (!row) return;
+      const delta = row.getBoundingClientRect().top - box.getBoundingClientRect().top;
+      box.scrollTop += delta - (box.clientHeight - row.offsetHeight) / 2;
+    }, [chapterId, selectedPlaceIdx]);
     if (!ch) return null;
     const tint = window.chapterTint(ch);
     const startDay = dayCounter(ch.start).n;
@@ -240,7 +260,8 @@
     }, /*#__PURE__*/React.createElement(window.Icon.close, {
       size: 16
     }))), /*#__PURE__*/React.createElement("div", {
-      className: "detail-scroll"
+      className: "detail-scroll",
+      ref: scrollRef
     }, /*#__PURE__*/React.createElement(PhotoCarousel, {
       key: ch.id,
       startPlaceIdx: selectedPlaceIdx,
@@ -285,6 +306,7 @@
       const active = selectedPlaceIdx === i;
       return /*#__PURE__*/React.createElement("div", {
         key: i,
+        "data-stop": i,
         className: `stop-row ${active ? 'is-active' : ''}`,
         onClick: () => onSelectPlace(i),
         role: "button",
