@@ -840,6 +840,13 @@ button:focus-visible, [role="button"]:focus-visible {
   font-family: var(--f-sans);
   outline: none;
 }
+/* A jump across the world is a cut, not a flight: dip the map to the stage
+   colour, move while nothing is watching, fade back once the new tiles are in.
+   The alternative — flying — makes Leaflet zoom out to ~z3.5 to cover the
+   distance, which drags every route line and a half-loaded world across the
+   screen. Short hops still fly; see map-view.jsx. */
+.map-container.leaflet-container { transition: opacity .16s linear; }
+.map-container.is-jumping { opacity: 0; }
 .leaflet-tile, .leaflet-tile-loaded { opacity: 1 !important; }
 /* Dark-theme treatment for satellite imagery. Brightness alone just crushed
    the picture (hence the soft, muddy look) — most of the detail loss came
