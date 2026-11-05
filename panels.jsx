@@ -106,7 +106,7 @@
   // ══════════════════════════════════════════════════════════════════════
   // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
-  function PhotoCarousel({ items, tint, num, flag, country }) {
+  function PhotoCarousel({ items }) {
     const [idx, setIdx] = React.useState(0);
     const n = items.length;
     const touchX = React.useRef(null);
@@ -125,13 +125,10 @@
         <window.Photo key={cur.keyword} keyword={cur.keyword} ratio="auto" loading="eager"
           style={{ width: '100%', height: '100%', aspectRatio: 'unset' }} caption={cur.caption} />
         <div className="detail-hero-shade" />
-        <div className="detail-hero-num" style={{ color: tint }}>{String(num || '').padStart(2, '0')}</div>
-        <div className="detail-hero-tag">{flag} {country}</div>
         {n > 1 && (
           <>
             <button className="carousel-arrow is-left" onClick={() => go(-1)} aria-label="Previous photo">‹</button>
             <button className="carousel-arrow is-right" onClick={() => go(1)} aria-label="Next photo">›</button>
-            <div className="carousel-count">{String(idx + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</div>
             <div className="carousel-dots">
               {items.map((it, i) => (
                 <button key={i} className={`carousel-dot${i === idx ? ' is-active' : ''}`} onClick={() => setIdx(i)} aria-label={`Photo ${i + 1}: ${it.caption}`} />
@@ -180,10 +177,6 @@
               { keyword: ch.photos[0], caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}` },
               ...ch.places.map((p, i) => (p.photo ? { keyword: p.photo, caption: `${i + 1}. ${p.name}` } : null)).filter(Boolean),
             ]}
-            tint={tint}
-            num={ch.num}
-            flag={ch.flag}
-            country={ch.country}
           />
 
           <div className="detail-content">

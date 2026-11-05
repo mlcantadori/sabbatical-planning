@@ -138,11 +138,7 @@
   // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
   function PhotoCarousel({
-    items,
-    tint,
-    num,
-    flag,
-    country
+    items
   }) {
     const [idx, setIdx] = React.useState(0);
     const n = items.length;
@@ -174,14 +170,7 @@
       caption: cur.caption
     }), /*#__PURE__*/React.createElement("div", {
       className: "detail-hero-shade"
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "detail-hero-num",
-      style: {
-        color: tint
-      }
-    }, String(num || '').padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
-      className: "detail-hero-tag"
-    }, flag, " ", country), n > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    }), n > 1 && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
       className: "carousel-arrow is-left",
       onClick: () => go(-1),
       "aria-label": "Previous photo"
@@ -190,8 +179,6 @@
       onClick: () => go(1),
       "aria-label": "Next photo"
     }, "\u203A"), /*#__PURE__*/React.createElement("div", {
-      className: "carousel-count"
-    }, String(idx + 1).padStart(2, '0'), " / ", String(n).padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
       className: "carousel-dots"
     }, items.map((it, i) => /*#__PURE__*/React.createElement("button", {
       key: i,
@@ -253,11 +240,7 @@
       }, ...ch.places.map((p, i) => p.photo ? {
         keyword: p.photo,
         caption: `${i + 1}. ${p.name}`
-      } : null).filter(Boolean)],
-      tint: tint,
-      num: ch.num,
-      flag: ch.flag,
-      country: ch.country
+      } : null).filter(Boolean)]
     }), /*#__PURE__*/React.createElement("div", {
       className: "detail-content"
     }, /*#__PURE__*/React.createElement("div", {
