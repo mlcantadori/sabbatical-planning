@@ -321,11 +321,17 @@
     selected,
     here,
     next,
+    nowId,
     onOpen
   }) {
     const isLong = active.title.length > 12;
+    // "Now" selects a chapter so the camera has somewhere to go, but the
+    // title should keep the present-tense voice — "3 days left", the next
+    // stop — rather than switching to the "you opened this" one.
+    const isNow = !!nowId && active.id === nowId;
+    const live = !selected || isNow;
     let sub = '';
-    if (selected) {
+    if (selected && !isNow) {
       sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
     } else if (here && current) {
       const left = next ? daysUntil(next.start) : daysUntil(current.end);
@@ -352,7 +358,7 @@
       className: "atlas-weather"
     }, /*#__PURE__*/React.createElement(window.Icon.rain, {
       size: 12
-    }), " ", weather.rainyDays ?? 0, "d")), !selected && next && /*#__PURE__*/React.createElement("div", {
+    }), " ", weather.rainyDays ?? 0, "d")), live && next && /*#__PURE__*/React.createElement("div", {
       className: "atlas-next"
     }, /*#__PURE__*/React.createElement("span", {
       className: "atlas-next-label"
@@ -395,11 +401,11 @@
       className: "tool-btn",
       onClick: onReset,
       title: "Back to where you are today"
-    }, /*#__PURE__*/React.createElement(window.Icon.compass, {
+    }, /*#__PURE__*/React.createElement(window.Icon.pin, {
       size: 13
     }), " ", /*#__PURE__*/React.createElement("span", {
       className: "tool-label"
-    }, "Whole route")));
+    }, "Now")));
   }
 
   // ── Chapter reel ──────────────────────────────────────────────────────
@@ -648,9 +654,9 @@
     // outside the timeline the first one before the trip or the last one
     // after it. focusKey forces the view to re-frame even when the selection
     // has not changed, since a no-op setState would otherwise do nothing.
+    const nowTarget = current || (chapters[0] && today < chapters[0].start ? chapters[0] : chapters[chapters.length - 1]);
     const onReset = () => {
-      const target = current || (chapters[0] && today < chapters[0].start ? chapters[0] : chapters[chapters.length - 1]);
-      setSelectedId(target ? target.id : null);
+      setSelectedId(nowTarget ? nowTarget.id : null);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
       setPlaceZoom(null);
@@ -729,6 +735,7 @@
       selected: !!selectedId,
       here: here,
       next: next,
+      nowId: nowTarget ? nowTarget.id : null,
       onOpen: () => openChapter(active.id)
     }), /*#__PURE__*/React.createElement(AtlasTools, {
       mapMode: mapMode,

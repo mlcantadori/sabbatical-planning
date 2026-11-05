@@ -231,10 +231,15 @@
   }
 
   // ── Atlas: giant chapter name ─────────────────────────────────────────
-  function AtlasTitle({ active, current, selected, here, next, onOpen }) {
+  function AtlasTitle({ active, current, selected, here, next, nowId, onOpen }) {
     const isLong = active.title.length > 12;
+    // "Now" selects a chapter so the camera has somewhere to go, but the
+    // title should keep the present-tense voice — "3 days left", the next
+    // stop — rather than switching to the "you opened this" one.
+    const isNow = !!nowId && active.id === nowId;
+    const live = !selected || isNow;
     let sub = '';
-    if (selected) {
+    if (selected && !isNow) {
       sub = `${fmt(active.start)} – ${fmt(active.end)} · ${active.days} nights`;
     } else if (here && current) {
       const left = next ? daysUntil(next.start) : daysUntil(current.end);
@@ -254,7 +259,7 @@
           {weather && <span className="atlas-weather"><window.Icon.sun size={12} /> {weather.hi}° / {weather.lo}°</span>}
           {weather && <span className="atlas-weather"><window.Icon.rain size={12} /> {weather.rainyDays ?? 0}d</span>}
         </div>
-        {!selected && next && (
+        {live && next && (
           <div className="atlas-next">
             <span className="atlas-next-label">{current && next.chapter.id === current.id ? 'Next stop' : current ? 'Next up' : 'Begins'}</span>
             <span className="atlas-next-city">{next.place.name}</span>
@@ -273,7 +278,7 @@
           <button className={mapMode === 'globe' ? 'is-active' : ''} onClick={() => onMapMode('globe')} title="3D globe"><window.Icon.globe size={12} /> <span className="tool-label">Globe</span></button>
           <button className={mapMode === 'map' ? 'is-active' : ''} onClick={() => onMapMode('map')} title="2D map"><window.Icon.map size={12} /> <span className="tool-label">Map</span></button>
         </div>
-        <button className="tool-btn" onClick={onReset} title="Back to where you are today"><window.Icon.compass size={13} /> <span className="tool-label">Whole route</span></button>
+        <button className="tool-btn" onClick={onReset} title="Back to where you are today"><window.Icon.pin size={13} /> <span className="tool-label">Now</span></button>
       </div>
     );
   }
@@ -485,10 +490,11 @@
     // outside the timeline the first one before the trip or the last one
     // after it. focusKey forces the view to re-frame even when the selection
     // has not changed, since a no-op setState would otherwise do nothing.
+    const nowTarget = current
+      || (chapters[0] && today < chapters[0].start ? chapters[0] : chapters[chapters.length - 1]);
+
     const onReset = () => {
-      const target = current
-        || (chapters[0] && today < chapters[0].start ? chapters[0] : chapters[chapters.length - 1]);
-      setSelectedId(target ? target.id : null);
+      setSelectedId(nowTarget ? nowTarget.id : null);
       setSelectedPlaceIdx(null);
       setFocusDay(null);
       setPlaceZoom(null);
@@ -552,6 +558,7 @@
                 selected={!!selectedId}
                 here={here}
                 next={next}
+                nowId={nowTarget ? nowTarget.id : null}
                 onOpen={() => openChapter(active.id)}
               />
 
