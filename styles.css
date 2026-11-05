@@ -658,14 +658,20 @@ button:focus-visible, [role="button"]:focus-visible {
   transition: all .18s;
 }
 .tool-btn:hover { border-color: rgba(243,236,221,.32); color: var(--ink); }
-/* With a chapter open, the atlas recedes and the spread takes the stage. */
+/* With a chapter open, the atlas recedes and the spread takes the stage.
+   One opacity per element: fading the wrapper *and* each child multiplies the
+   two curves, so the name sat at 28% half-way through the fade and was
+   effectively gone by ~150ms — a cut wearing a fade's clothes. The wrapper
+   does the fading (children only lose their pointer events, since the name
+   re-enables them), and it now runs for the same 400ms as the spread's
+   arrival instead of finishing while the panel is still half in. */
 .app.has-detail .atlas-title,
-.app.has-detail .atlas-title > *,
 .app.has-detail .atlas-tools {
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s ease;
+  transition: opacity .4s cubic-bezier(.4, 0, .6, 1);
 }
+.app.has-detail .atlas-title > * { pointer-events: none; }
 .app.has-detail .reel {
   opacity: .28;
   pointer-events: none;
