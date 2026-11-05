@@ -609,7 +609,7 @@ window.TRIP = (function () {
       { route: 'Bali → Singapore', cost: 200, date: '2027-05-01', note: 'Estimate, AirAsia' },
       { route: 'Singapore → Xi\'an (direct)', cost: 300, date: '2027-05-06', note: 'Estimate — Scoot direct ~5h30; China spring begins right after May Day Golden Week' },
       { route: 'Shanghai → Seoul (direct)', cost: 280, date: '2027-06-02', note: 'Estimate — PVG–ICN ~2h; South Korea finale begins' },
-      { route: 'Seoul → São Paulo (return, unticketed)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp — 1-stop from Incheon (ICN); the trip ends here. Unticketed by design, no todo row: the travelers deferred booking it. This is the only modelled return leg — do not delete it as stale' },
+      { route: 'Seoul → São Paulo (return, unticketed)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp — 1-stop from Incheon (ICN); the trip ends here. The only modelled return leg; booking tracked as todo `korea-10` (due ~3 months out)' },
     ],
     extras: [
       { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },

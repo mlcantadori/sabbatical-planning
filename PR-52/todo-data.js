@@ -211,4 +211,5 @@ window.TODO_ITEMS = [
   { id: 'korea-3', ch: 'korea', place: 'Gyeongju → Seoul', cat: 'transport', title: 'Gyeongju→Seoul KTX Jun 10 (~2h)', note: 'Korail ~30-day window opens ~May 5 — reserve then', due: '2027-05-05', done: false },
   { id: 'korea-2-seoul', ch: 'korea', place: 'Seoul', cat: 'stay', title: 'Seoul stay (6n)', note: 'Jun 10–16 — final 6 nights of the trip; Bukchon/Insadong base', due: '2027-05-01', done: false },
   { id: 'korea-11', ch: 'korea', place: 'Seoul', cat: 'attraction', title: 'DMZ tour option Jun 15 (Tue)', note: 'DMZ closed Mon/weekends; needs passport details days ahead', due: '2027-05-25', done: false },
+  { id: 'korea-10', ch: 'korea', place: 'Seoul → São Paulo', cat: 'transport', title: 'Seoul→São Paulo return flight Jun 16 (~$700pp)', note: 'The last event of the trip and the only modelled return leg — `flights` carries $1,400 for two. Unticketed: buy ~3 months out for the ICN 1-stop; booking earlier locks Jun 16, booking later costs more', due: '2027-03-15', done: false },
 ];
