@@ -1,7 +1,7 @@
 "use strict";
 
 // The Long Way East — app shell: chrome, year spine, atlas stage, chapter reel,
-// route tour, cover, and the four sections (Atlas / Chapters / Ledger / Kit).
+// route tour, cover, and the four sections (Atlas / Chapters / Budget / Tasks).
 
 (function () {
   const {
@@ -41,7 +41,7 @@
     try {
       const q = new URLSearchParams(window.location.search);
       const rawView = (q.get('view') || '').toLowerCase();
-      const view = rawView === 'chapters' ? 'chapters' : rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
+      const view = rawView === 'chapters' ? 'chapters' : rawView === 'budget' || rawView === 'ledger' ? 'ledger' : rawView === 'todo' || rawView === 'kit' || rawView === 'tasks' ? 'kit' : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas' : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
       const map = mapRaw === 'globe' || mapRaw === '3d' ? 'globe' : mapRaw === 'map' || mapRaw === '2d' ? 'map' : null;
       const chId = q.get('chapter');
@@ -81,12 +81,12 @@
     icon: p => /*#__PURE__*/React.createElement(window.Icon.grid, p)
   }, {
     id: 'ledger',
-    label: 'Ledger',
+    label: 'Budget',
     index: '03',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.wallet, p)
   }, {
     id: 'kit',
-    label: 'Kit',
+    label: 'Tasks',
     index: '04',
     icon: p => /*#__PURE__*/React.createElement(window.Icon.check, p)
   }];

@@ -274,7 +274,7 @@
       <div className="page binder-page">
         <div className="binder-bar">
           <button className="binder-back" onClick={onClose}><window.Icon.arrowLeft size={13} /> Atlas</button>
-          <span className="binder-crumb">The Long Way East <i>/</i> {isTodo ? 'Field kit' : 'Ledger'}</span>
+          <span className="binder-crumb">The Long Way East <i>/</i> {isTodo ? 'Tasks' : 'Budget'}</span>
           <span className="binder-date">{fmt(window.TRIP_NOW.todayISO())}</span>
         </div>
         <div className="binder-scroll">
@@ -351,7 +351,7 @@
     return (
       <div className="page-inner ledger-page">
         <header className="page-head">
-          <div className="page-eyebrow"><span>03</span> The ledger</div>
+          <div className="page-eyebrow"><span>03</span> The budget</div>
           <h1>What a year costs.<br /><em>And what it buys.</em></h1>
           <p>Mid-range with strategic splurges, priced for two across 360 days. Totals compute from the lines below — nothing is hardcoded, so the numbers cannot quietly lie.</p>
         </header>

@@ -1,5 +1,5 @@
 // The Long Way East — app shell: chrome, year spine, atlas stage, chapter reel,
-// route tour, cover, and the four sections (Atlas / Chapters / Ledger / Kit).
+// route tour, cover, and the four sections (Atlas / Chapters / Budget / Tasks).
 
 (function () {
   const { totalDays, helpers, REGIONS } = window.TRIP;
@@ -29,7 +29,7 @@
       const rawView = (q.get('view') || '').toLowerCase();
       const view = rawView === 'chapters' ? 'chapters'
         : rawView === 'budget' || rawView === 'ledger' ? 'ledger'
-        : rawView === 'todo' || rawView === 'kit' ? 'kit'
+        : rawView === 'todo' || rawView === 'kit' || rawView === 'tasks' ? 'kit'
         : rawView === 'map' || rawView === 'atlas' || rawView === 'journey' ? 'atlas'
         : null;
       const mapRaw = (q.get('map') || '').toLowerCase();
@@ -50,8 +50,8 @@
   const VIEWS = [
     { id: 'atlas', label: 'Atlas', index: '01', icon: (p) => <window.Icon.globe {...p} /> },
     { id: 'chapters', label: 'Chapters', index: '02', icon: (p) => <window.Icon.grid {...p} /> },
-    { id: 'ledger', label: 'Ledger', index: '03', icon: (p) => <window.Icon.wallet {...p} /> },
-    { id: 'kit', label: 'Kit', index: '04', icon: (p) => <window.Icon.check {...p} /> },
+    { id: 'ledger', label: 'Budget', index: '03', icon: (p) => <window.Icon.wallet {...p} /> },
+    { id: 'kit', label: 'Tasks', index: '04', icon: (p) => <window.Icon.check {...p} /> },
   ];
 
   // ── Cover / title card ────────────────────────────────────────────────

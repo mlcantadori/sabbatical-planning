@@ -364,7 +364,7 @@
       size: 13
     }), " Atlas"), /*#__PURE__*/React.createElement("span", {
       className: "binder-crumb"
-    }, "The Long Way East ", /*#__PURE__*/React.createElement("i", null, "/"), " ", isTodo ? 'Field kit' : 'Ledger'), /*#__PURE__*/React.createElement("span", {
+    }, "The Long Way East ", /*#__PURE__*/React.createElement("i", null, "/"), " ", isTodo ? 'Tasks' : 'Budget'), /*#__PURE__*/React.createElement("span", {
       className: "binder-date"
     }, fmt(window.TRIP_NOW.todayISO()))), /*#__PURE__*/React.createElement("div", {
       className: "binder-scroll"
@@ -449,7 +449,7 @@
       className: "page-head"
     }, /*#__PURE__*/React.createElement("div", {
       className: "page-eyebrow"
-    }, /*#__PURE__*/React.createElement("span", null, "03"), " The ledger"), /*#__PURE__*/React.createElement("h1", null, "What a year costs.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "And what it buys.")), /*#__PURE__*/React.createElement("p", null, "Mid-range with strategic splurges, priced for two across 360 days. Totals compute from the lines below \u2014 nothing is hardcoded, so the numbers cannot quietly lie.")), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("span", null, "03"), " The budget"), /*#__PURE__*/React.createElement("h1", null, "What a year costs.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "And what it buys.")), /*#__PURE__*/React.createElement("p", null, "Mid-range with strategic splurges, priced for two across 360 days. Totals compute from the lines below \u2014 nothing is hardcoded, so the numbers cannot quietly lie.")), /*#__PURE__*/React.createElement("div", {
       className: "money-hero"
     }, /*#__PURE__*/React.createElement("div", {
       className: "money-total"

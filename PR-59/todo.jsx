@@ -150,7 +150,7 @@
     return (
       <div className="page-inner kit-page">
         <header className="page-head">
-          <div className="page-eyebrow"><span>04</span> Field kit</div>
+          <div className="page-eyebrow"><span>04</span> Tasks</div>
           <h1>The things that<br /><em>must be booked.</em></h1>
           <p>Advance bookings only — transport, stays, cars, scarce attractions, visas. Day-to-day stuff stays out. Ticks live in this browser until you export them back to the file.</p>
         </header>
