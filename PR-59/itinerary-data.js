@@ -513,7 +513,7 @@ window.TRIP = (function () {
       intro: 'Fourteen days to close the sabbatical in sunny, pre-monsoon weather (24–26°C, two full weeks before Korea\'s late-June Jangma rains): start in the south on Jeju Island, hop to Busan\'s coast and Gyeongju\'s royal tombs, then finish with six nights in Seoul so the long-haul flight home to Brazil departs directly from Incheon with zero last-day domestic transit stress.',
       tldr: 'Jeju · Busan · Gyeongju · Seoul',
       weather: { hi: 25, lo: 16, label: 'Sunny late spring / early summer, 25°/16°', emoji: '🌸', rainyDays: 5 },
-      photos: ['korean street food'],
+      photos: ['seoul skyline night'],
       places: [
         { name: 'Jeju', photo: 'jeju yongmeori', days: 3, query: 'Jeju Island, South Korea',
           highlights: ['Jun 2–5: fly Shanghai → Jeju (direct or via Seoul) — open on Korea\'s volcanic island','Yongmeori Coast + Sanbangsan cliffs in early-June sun','Seongsan Ilchulbong sunrise crater; Udo island ferry','Hallasan lower trails, Jusangjeolli lava columns & green tea fields','Jun 5: 50-min flight Jeju → Busan'] },

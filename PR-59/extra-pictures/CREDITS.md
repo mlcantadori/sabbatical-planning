@@ -12,6 +12,16 @@ Sourced from Wikimedia Commons (`File:Hong Kong Harbour Night 2019-06-11.jpg`),
 downscaled to 2000px and recompressed locally. Replaces a 1024×169 strip that
 had no usable detail at card or hero size.
 
+## Added Nov 2026 — South Korea (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `korea/seoul-skyline-night.jpg` | kallerna | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:N Seoul Tower view 1.jpg`), the city from
+Namsan at night; cropped off the near-black foreground, downscaled to 2000px.
+The street-food photo stays with the Seoul stop, where it belongs.
+
 ## Map textures (not trip photos)
 
 | File | Author | License |

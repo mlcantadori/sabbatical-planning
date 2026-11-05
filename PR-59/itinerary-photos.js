@@ -63,6 +63,7 @@ window.PHOTO_IDS = {
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
   'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
+  'seoul skyline night':         'extra-pictures/korea/seoul-skyline-night.jpg',
   // ── Taiwan ────────────────────────────────────────────────────────
   'taipei 101 night':            'extra-pictures/taiwan/taipei-101-night.jpg',
   'tainan chihkan tower':        'extra-pictures/taiwan/tainan-chihkan-tower.jpg',
