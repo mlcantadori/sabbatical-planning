@@ -162,8 +162,6 @@
       };
       map.on('zoomend', syncTransport);
       syncTransport();
-      L.control.attribution({ position: 'bottomleft', prefix: false })
-        .addAttribution('Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community').addTo(map);
 
       const onResize = () => {
         if (mapRef.current) mapRef.current.invalidateSize();

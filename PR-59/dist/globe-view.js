@@ -193,10 +193,6 @@
       popupEl.className = 'eq-popup';
       popupEl.style.display = 'none';
       el.appendChild(popupEl);
-      const attr = document.createElement('div');
-      attr.className = 'eq-attr';
-      attr.textContent = 'Imagery © NASA Blue Marble · Country labels © Natural Earth';
-      el.appendChild(attr);
       st.current = {
         renderer,
         scene,
@@ -284,7 +280,6 @@
           st.current.renderer.domElement.remove();
           st.current.overlay.remove();
           st.current.popupEl.remove();
-          attr.remove();
           st.current = null;
         }
       };

@@ -902,19 +902,6 @@ button:focus-visible, [role="button"]:focus-visible {
    0.88 brightness keeps the map from glowing against the dark UI. One dial,
    in :root, if it needs tuning. */
 .leaflet-tile-pane { filter: var(--map-tile-filter); }
-.leaflet-control-attribution {
-  background: rgba(6,9,13,.7) !important;
-  font-family: var(--f-mono) !important;
-  font-size: 8px !important;
-  color: var(--ink-4) !important;
-  padding: 2px 8px !important;
-  margin: 12px !important;
-  margin-bottom: 196px !important;
-  border-radius: 4px !important;
-  backdrop-filter: blur(8px);
-}
-.leaflet-control-attribution a { color: var(--ink-3) !important; }
-
 .route-line { animation: route-ants 5s linear infinite; }
 .transport-tiles { filter: saturate(.5) brightness(1.02) contrast(.9); }
 @keyframes route-ants { to { stroke-dashoffset: -30; } }
@@ -962,21 +949,6 @@ button:focus-visible, [role="button"]:focus-visible {
   pointer-events: auto;
   backdrop-filter: blur(16px);
 }
-.eq-attr {
-  position: absolute;
-  left: 14px;
-  bottom: 200px;
-  z-index: 500;
-  background: rgba(6,9,13,.7);
-  font-family: var(--f-mono);
-  font-size: 8px;
-  letter-spacing: .04em;
-  color: var(--ink-4);
-  padding: 2px 8px;
-  border-radius: 4px;
-  backdrop-filter: blur(8px);
-}
-
 /* Pins */
 .map-pin-wrap { background: transparent !important; border: none !important; pointer-events: none; }
 .map-pin {
@@ -2538,8 +2510,6 @@ button:focus-visible, [role="button"]:focus-visible {
     border-radius: 50%;
   }
   .tool-label { display: none; }
-  .leaflet-control-attribution { bottom: auto !important; top: 2px !important; left: 14px !important; margin: 0 !important; }
-  .eq-attr { bottom: auto; top: 4px; }
 
   .reel { padding: 34px 14px 10px; }
   .reel-head { margin-bottom: 7px; }
