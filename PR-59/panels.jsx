@@ -106,10 +106,22 @@
   // ══════════════════════════════════════════════════════════════════════
   // PHOTO CAROUSEL — chapter header + one photo per stop with a photo.
   // ══════════════════════════════════════════════════════════════════════
-  function PhotoCarousel({ items }) {
-    const [idx, setIdx] = React.useState(0);
+  function PhotoCarousel({ items, startPlaceIdx }) {
+    const indexFor = (placeIdx) => {
+      if (placeIdx == null) return 0;
+      const i = items.findIndex((it) => it.placeIdx === placeIdx);
+      return i > 0 ? i : 0;
+    };
+    const [idx, setIdx] = React.useState(() => indexFor(startPlaceIdx));
     const n = items.length;
     const touchX = React.useRef(null);
+    // Opening the chapter from a city pin starts on that city's photo, not
+    // always on the chapter hero. A place with no photo of its own leaves
+    // the carousel where it is rather than jumping to the first frame.
+    React.useEffect(() => {
+      if (startPlaceIdx == null) return;
+      setIdx((cur) => (indexFor(startPlaceIdx) || cur));
+    }, [startPlaceIdx]);
     if (!n) return null;
     const go = (d) => setIdx((i) => (i + d + n) % n);
     const cur = items[idx];
@@ -173,9 +185,10 @@
         <div className="detail-scroll">
           <PhotoCarousel
             key={ch.id}
+            startPlaceIdx={selectedPlaceIdx}
             items={[
-              { keyword: ch.photos[0], caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}` },
-              ...ch.places.map((p, i) => (p.photo ? { keyword: p.photo, caption: `${i + 1}. ${p.name}` } : null)).filter(Boolean),
+              { keyword: ch.photos[0], caption: `${ch.country.toUpperCase()} · ${fmt(ch.start)}`, placeIdx: null },
+              ...ch.places.map((p, i) => (p.photo ? { keyword: p.photo, caption: `${i + 1}. ${p.name}`, placeIdx: i } : null)).filter(Boolean),
             ]}
           />
 
