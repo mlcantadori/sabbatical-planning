@@ -117,6 +117,9 @@ precompiled `dist/*.js` bundles.
   credit it in `extra-pictures/CREDITS.md`.
 - **Every data edit must pass** `node scripts/validate-photo-urls.mjs`, plus day
   sums, date continuity, geo coverage, budget arithmetic, and todo chapter ids.
+  A chapter's `end` is its **exit day, not its last night**; `places[].days` are
+  nights summing to `days`; and an overnight flight means the next chapter starts
+  after `end` (São Paulo 21:35 Aug 26 → Toronto Aug 27). Not a gap — don't "fix" it.
 - **Ship as a PR.** Comparison variants live on their own branches off the base,
   targeting `main`.
 

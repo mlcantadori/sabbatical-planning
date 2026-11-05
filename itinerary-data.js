@@ -122,10 +122,10 @@ window.TRIP = (function () {
       places: [
         { name: 'Rio de Janeiro', photo: 'copacabana beach', days: 29, query: 'Ipanema, Rio de Janeiro',
           highlights: ['Petrópolis–Teresópolis trail (Serra dos Órgãos)','Diving certifications: Advanced Open Water + NITROX','Fly Rio → Fortaleza Jul 20'] },
-        { name: 'Cumbuco', photo: 'cumbuco beach kites', days: 29, query: 'Cumbuco, Caucaia, Ceará',
+        { name: 'Cumbuco', photo: 'cumbuco beach kites', days: 30, query: 'Cumbuco, Caucaia, Ceará',
           highlights: ['Stayed in a condo — home base','Short kitesurfing sessions from the condo','Occasional downwinders from the village center','Fly Fortaleza → São Paulo Aug 19'] },
         { name: 'São Paulo', photo: 'masp sao paulo', days: 7, query: 'Avenida Paulista, São Paulo',
-          highlights: ['Farewell BBQ before leaving Brazil','Fly São Paulo → Toronto to open the international leg'] },
+          highlights: ['Farewell BBQ before leaving Brazil','Aug 26: fly São Paulo → Toronto 21:35 — lands Aug 27, the international leg opens'] },
       ],
     },
     {
@@ -246,21 +246,20 @@ window.TRIP = (function () {
       id: 'china-e1', kind: 'chapter', region: 'middle',
       country: 'China', flag: '🇨🇳', title: 'China',
       start: '2026-11-07', end: '2026-11-23', days: 16,
-      theme: 'First entry: slow Beijing start (trek recovery), then Jiangnan — canyon, gardens, Suzhou sendoff',
-      intro: 'The first mainland admission is a 16-day north-to-Jiangnan run. Land Beijing Nov 7 late night and open slow — two extra hutong days absorb the post-trek fatigue while winter light is crisp (empty Wall, three weather picks instead of one) — then straight south to Huangshan with West Sea Canyon still open, Jiangnan gardens at foliage peak, ending in Suzhou, with Hong Kong next for the visa reset.',
-      tldr: 'Beijing · Huangshan · Hangzhou · Suzhou',
-      weather: { hi: 12, lo: 0, label: 'North cold → south mild, 12°/0°', emoji: '🍁', rainyDays: 4 },
+      theme: 'First entry: slow Beijing start (trek recovery), the Yellow Mountain, and a West Lake finish',
+      intro: 'The first mainland admission is a 16-day north-to-south run. Land Beijing Nov 7 late night and open slow — hutong days absorb the post-trek fatigue while the capital\'s last autumn light holds — then take the one morning train that lands before noon, for four Huangshan nights based in Tangkou through the best week of the mountain\'s year: autumn colour, cloud-sea season, West Sea Canyon still open. Finish with four Hangzhou nights at peak gingko-and-maple colour, timed to the booked 08:00 HGH flight to Hong Kong. Suzhou moves to the spring chapter as a day trip from Shanghai.',
+      tldr: 'Beijing · Huangshan · Hangzhou',
+      weather: { hi: 15, lo: 2, label: 'Cold north → mild Jiangnan, 15°/2°', emoji: '🍁', rainyDays: 4 },
       photos: ['great wall snow'],
       places: [
-        { name: 'Beijing', photo: 'forbidden city', days: 9, query: 'Mutianyu Great Wall, Beijing',
-          highlights: ['Arrive Beijing Nov 7, late night — Entry 1 starts Nov 7','Nov 8: sleep in, hutong slow day + Drum/Bell Towers, Peking duck — trek-recovery day','Nov 9 (Mon): Summer Palace + Lama Temple + Jingshan — Forbidden City closed Mondays (Nov 9 + Nov 16)','Great Wall (Mutianyu) — empty, pick the bluest morning','Forbidden City in crisp winter light (closed Mondays — plan Tue–Sun)','Temple of Heaven + 798 Art District','Down/fleece from Kathmandu Thamel','HSR Beijing South → Huangshanbei (~5–5.5h) or direct flight to Tunxi Nov 16'] },
-        { name: 'Huangshan', photo: 'huangshan sea of clouds', days: 3, query: 'Huangshan, Anhui',
-          highlights: ['Yellow Mountain — autumn foliage + early rime, sea of clouds','West Sea Canyon OPEN (closes Dec–Mar) — November timing is the whole point','Bright Summit sunrise above the cloud sea','Windproof shell + traction spikes in Tangkou if icy','Summit hotel; front-load the canyon days','HSR Huangshanbei → Hangzhou East/West (~1.5h) Nov 19'] },
-        { name: 'Hangzhou', photo: 'west lake', days: 2, query: 'West Lake, Hangzhou',
-          highlights: ['West Lake in autumn color — Broken Bridge, Su Causeway, golden gingkoes','Lingyin Temple in cedar quiet, Meijiawu tea village','Hefang Street old town','HSR Hangzhou → Suzhou (~1.5h) Nov 21'] },
-        { name: 'Suzhou', photo: 'suzhou garden', days: 2, query: 'Humble Administrator\'s Garden, Suzhou',
-          highlights: ['Humble Administrator\'s Garden + Lion Grove in autumn color — peak week','Pingjiang Road canals at dusk (skip the Silk Museum for lived-in lanes)','Nov 23: HSR Suzhou → Shanghai Hongqiao (SHA, ~25min direct to terminal) — fly SHA → Hong Kong (visa reset)'] },
+        { name: 'Beijing', photo: 'forbidden city', days: 8, query: 'Mutianyu Great Wall, Beijing',
+          highlights: ['Arrive Beijing Nov 7, late night — Entry 1 starts Nov 7','Nov 8: sleep in, hutong slow day + Drum/Bell Towers, Peking duck — trek-recovery day','Nov 9 (Mon): Summer Palace + Lama Temple + Jingshan — Forbidden City closed Mondays (Nov 9)','Great Wall (Mutianyu) — front-load it, Nov 8–12: the last foliage is already going and the heating-season air starts Nov 15','Forbidden City in crisp winter light — Tue 10 to Sat 14 (Mon 9 is the only Monday in this window, and it is closed)','Temple of Heaven + 798 Art District','Down/fleece from Kathmandu Thamel','Nov 15: G87 Beijing South 06:56 → Huangshan North 12:13 (5h17) — the only train that lands before noon; later departures arrive 13:46–21:11 and eat the day'] },
+        { name: 'Huangshan', photo: 'huangshan sea of clouds', days: 4, query: 'Huangshan, Anhui',
+          highlights: ['Nov 15–19, based in Tangkou at the transfer centre — no summit hotel, and summit dorm beds are already gone for these dates','Yellow Mountain in its best week: autumn colour + cloud-sea season + West Sea Canyon still open (it closes Dec–Mar)','The ¥190 ticket is valid 3 days with re-entry — so two full cableway days cost only lifts (~¥308pp), not a second ticket','Big day: Yungu cableway up → Beihai → West Sea Canyon loops (2–2.5h) → Guangmingding → Yuping cableway down — ~12km, 7h moving, 9h out. Last cable down 17:10 and the canyon rail shuts 16:00, so be at the gate 06:45 and walk the canyon before 11:00','No summit bed means no sunrise above the cloud sea — cableway starts at 07:00, so this is a dawn-on-the-mountain stop, not a sunrise one. Pick the clearest of Nov 16–18','Third day (Nov 17 or 18): Hongcun + Xidi whitewashed Huizhou villages, or Tunxi old street and the hot springs','Windproof shell + traction spikes rentable in Tangkou — summit lows sit near 2.6°C with rime on the steps','Nov 19: Huangshan North → Hangzhou East (~1h30, 40+/day) — book to East, not West. Shexian/Huizhou town is a southward 8-minute detour, so do it as a half-day from Tangkou, not en route'] },
+        { name: 'Hangzhou', photo: 'west lake', days: 4, query: 'West Lake, Hangzhou',
+          highlights: ['Nov 19–23: West Lake at peak autumn colour — golden gingkoes and red maples at Jiuxi and Hupao, 17°/8° and mild','Broken Bridge, Su Causeway, boat out to Three Pools Mirroring the Moon','Lingyin Temple in cedar quiet; Meijiawu and Longjing tea villages','Shaoxing day trip (18–20min HSR, 60+/day) — Lu Xun\'s old town, canals, yellow rice wine. Wuzhen also works but the last train back leaves ~19:56, so you miss the evening lights','Hefang Street old town; Wulin Square or West Lake Cultural Square as the base — Line 19 runs straight to the airport','Nov 23: HGH → Hong Kong 08:00. Wake 04:45, pre-booked taxi 05:20 (30–40min) or Line 19 from West Lake Cultural Square 05:59 — check-in shuts 07:10'] },
       ],
+      decisions: ['Suzhou dropped and moved to spring China as a day trip from Shanghai: the gardens are a May repeat of what the spring chapter already covers, and the flight out is now HGH, not SHA — the old Suzhou→Hongqiao→SHA chain was two connections for one morning', 'Beijing cut 9→8 nights: the marginal night was Monday Nov 16 (Forbidden City and National Museum closed), the first day of the municipal heating season, and the darkest, coldest night in the chapter. That night funds the 4th Huangshan night instead', 'Hangzhou grown 2→4 nights: the chapter now ends at a booked 08:00 flight, so the last night cannot move, and two nights could hold neither West Lake nor a day trip', 'Huangshan base is Tangkou, not the summit: the doubles are ¥1,000–1,680 and the ¥250–300pp dorm beds are sold out for these dates. The cost is the summit sunrise, which a day-hiker cannot reach — so the chapter sells two full mountain days and the canyon instead', 'Beijing→Huangshan is pinned to G87 (06:56→12:13), the only train arriving before noon; it is a single daily fast service, so the ticket is the chapter\'s one time-critical booking'],
     },
     {
       id: 'hk', kind: 'chapter', region: 'middle',
@@ -500,9 +499,9 @@ window.TRIP = (function () {
         { name: 'Changsha (buffer)', days: 1, query: 'Changsha, China',
           highlights: ['May 27–28: laundry, last Hunan meal','May 28: HSR Changsha → Shanghai (~5h) — the finale city'] },
         { name: 'Shanghai', photo: 'shanghai bund night', days: 5, query: 'The Bund, Shanghai',
-          highlights: ['May 28 – Jun 2: Shanghai in its best month — 24°C, gardens green, café terraces open','The Bund at night, Yu Garden, Tianzifang, M50 art district','French Concession long lunches and the Shanghai Museum East','Slow final days: laundry, packing, a proper last dinner','Jun 2: fly Shanghai (PVG) → Seoul (ICN) — South Korea finale begins'] },
+          highlights: ['May 28 – Jun 2: Shanghai in its best month — 24°C, gardens green, café terraces open','The Bund at night, Yu Garden, Tianzifang, M50 art district','French Concession long lunches and the Shanghai Museum East','Suzhou day trip — 21–30min from Hongqiao, 240+ pairs/day, ~¥40. Humble Administrator\'s Garden + Lion Grove at spring green: this is where the November gardens landed, so it is a day trip, not a chapter','Slow final days: laundry, packing, a proper last dinner','Jun 2: fly Shanghai (PVG) → Seoul (ICN) — South Korea finale begins'] },
       ],
-      decisions: ['Moved from June into May by dropping the redundant May Thailand Gulf chapter and placing China before Korea', 'Enters May 6 (right after the Labor Day peak) and exits Jun 2, still ahead of the Dragon Boat holiday and the Meiyu plum rains', 'Hits Chengdu, Chongqing, Zhangjiajie and Fenghuang in May (23–26°C, ~40% less rain than mid-June)', 'Shanghai relocated here from December: same chapter, better month, and it replaces Changsha as the departure hub', 'Chongqing → Zhangjiajie → Fenghuang → Changsha → Shanghai runs on direct HSR, with Guilin/Longji permanently dropped'],
+      decisions: ['Moved from June into May by dropping the redundant May Thailand Gulf chapter and placing China before Korea', 'Enters May 6 (right after the Labor Day peak) and exits Jun 2, still ahead of the Dragon Boat holiday and the Meiyu plum rains', 'Hits Chengdu, Chongqing, Zhangjiajie and Fenghuang in May (23–26°C, ~40% less rain than mid-June)', 'Shanghai relocated here from December: same chapter, better month, and it replaces Changsha as the departure hub', 'Suzhou inherits the Jiangnan-garden slot dropped from November China E1 — a day trip from Shanghai (21–30min, 240+ pairs/day) rather than a second city chapter', 'Chongqing → Zhangjiajie → Fenghuang → Changsha → Shanghai runs on direct HSR, with Guilin/Longji permanently dropped'],
     },
     {
       id: 'korea', kind: 'chapter', region: 'northeast',
@@ -535,7 +534,7 @@ window.TRIP = (function () {
   // (BudgetView) from these parts — never hardcoded — so edits stay consistent.
   const budget = {
     currency: 'USD',
-    basis: 'couple · 355 days · mid-range with strategic splurges',
+    basis: 'couple · 360 days · mid-range with strategic splurges',
     fxBRL: 5.2,
     estimate: 'USD ~94.3k for two',
     perDay: '~USD 262/day for two',
@@ -556,7 +555,8 @@ window.TRIP = (function () {
       { item: 'Kathmandu → Beijing flight Nov 7 (2 pax)', cost: 477, note: 'Actual — $477 for two' },
       { item: 'Kathmandu hotel, Oct 21–25 (4n)', cost: 171, note: 'Booked ✅ — $171 pre-trek' },
       { item: 'Kathmandu hotel, Nov 4–7 (3n)', cost: 129, note: 'Booked ✅ — $129 post-trek' },
-      { item: 'Beijing stay, Nov 7–16 (9n)', cost: 528, note: 'Booked ✅ — $528' },
+      { item: 'Beijing stay, Nov 7–15 (8n)', cost: 528, note: 'Booked ✅ — $528 at 9n, free cancellation; 9th night released (re-cut to 8n, refund due)' },
+      { item: 'Hangzhou → Hong Kong flight Nov 23 (2 pax)', cost: 183, note: 'Booked ✅ — $183, 08:00–10:40, includes the HK visa reset entry' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
     // is in-chapter only (inter-chapter flights live in `flights` below).
@@ -568,7 +568,7 @@ window.TRIP = (function () {
       { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
       { id: 'india', days: 7, lodging: 315, food: 315, transport: 190, activities: 120, fees: 55, note: 'Agra day trip Oct 15 · Varanasi train Oct 17 booked ✅ · Varanasi Airbnb R$1,081 · VNS→KTM $343 booked ✅ · Taj + forts + boats' },
       { id: 'nepal', days: 17, lodging: 300, food: 260, transport: 100, activities: 1440, fees: 100, note: 'Trek $1,440 locked w/ Discovery World ($720pp; $144 paid, $1,296 due Oct 24) · KTM 7n (pre 4n Oct 21–25 booked ✅ $171 + post 3n Nov 4–7 booked ✅ $129) · KTM→PEK Nov 7 ($477) · tips/visa cash' },
-      { id: 'china-e1', days: 16, lodging: 1390, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 9n Nov 7–16 booked ✅ $528 (slow start) + Huangshan 3n + HGH 2n + SUZ 2n · PEK→Huangshan HSR/flight + Huangshan→HGH HSR + SUZ→SHA→HKG hops' },
+      { id: 'china-e1', days: 16, lodging: 1190, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 8n Nov 7–15 (booked $528, re-cut to 8n) + Huangshan 4n Tangkou (no summit) + Hangzhou 4n · G87 Beijing South→Huangshan North + Huangshan North→Hangzhou East HSR · HGH→HKG $183 booked in flights · Suzhou moved to spring' },
       { id: 'hk', days: 5, lodging: 750, food: 450, transport: 120, activities: 0, fees: 0, note: '~$150/n · Peak tram + ferries + Lamma · free gardens/markets' },
       { id: 'china-e2', days: 8, lodging: 620, food: 520, transport: 170, activities: 120, fees: 0, note: 'CAN 2n + Shenzhen 4n + Macau 2n · Shekou ferry + MFM→KUL direct · Shanghai moved to spring China' },
       { id: 'malaysia', days: 8, lodging: 440, food: 320, transport: 190, activities: 70, fees: 0, note: 'KL 4n + Langkawi 4n · KL→Langkawi flight · Langkawi is the ferry bridge to Koh Lipe' },
@@ -587,13 +587,14 @@ window.TRIP = (function () {
     // Every leg carries a `date` (departure day) so the calendar sync can
     // place flight blocks; totals are unchanged by leg splits.
     flights: [
-      { route: 'São Paulo → Toronto', cost: 900, date: '2026-08-27', note: 'Bought ✅ (locked)' },
+      { route: 'São Paulo → Toronto', cost: 900, date: '2026-08-26', note: 'Bought ✅ (locked) — 21:35 departure, lands Toronto Aug 27; overnight, so the Canada chapter starts the next day' },
       { route: 'Toronto → Athens', cost: 800, date: '2026-08-31', note: 'Bought ✅ (locked), overnight, lands Sep 1' },
       { route: 'Athens → Cappadocia via IST', cost: 500, date: '2026-09-21', note: 'Bought ✅ (est.)' },
       { route: 'Istanbul → Baku', cost: 450, date: '2026-10-12', note: 'Bought ✅ (est.)' },
       { route: 'Baku → Delhi', cost: 550, date: '2026-10-14', note: 'Bought ✅ (est.)' },
       { route: 'Varanasi → Kathmandu (direct)', cost: 343, date: '2026-10-21', note: 'Bought ✅ ($343 for two), 08:30 direct' },
       { route: 'Kathmandu → Beijing', cost: 477, date: '2026-11-07', note: 'Late-night arrival; Entry 1 starts Nov 7' },
+      { route: 'Hangzhou (HGH) → Hong Kong', cost: 183, date: '2026-11-23', note: 'Bought ✅ $183 — 08:00–10:40; HK visa reset next' },
       { route: 'Hong Kong → Guangzhou (HSR)', cost: 70, date: '2026-11-28', note: 'Estimate — West Kowloon → Guangzhou South direct, ~1h; Entry 2 starts' },
       { route: 'Macau → Kuala Lumpur (direct)', cost: 300, date: '2026-12-06', note: 'Estimate — MFM–KUL ~3h30; Malaysia begins' },
       { route: 'Langkawi → Koh Lipe (ferry)', cost: 110, date: '2026-12-14', note: 'Estimate — 90-min cross-border ferry from Telaga Harbour; Thailand Andaman begins' },
@@ -608,7 +609,7 @@ window.TRIP = (function () {
       { route: 'Bali → Singapore', cost: 200, date: '2027-05-01', note: 'Estimate, AirAsia' },
       { route: 'Singapore → Xi\'an (direct)', cost: 300, date: '2027-05-06', note: 'Estimate — Scoot direct ~5h30; China spring begins right after May Day Golden Week' },
       { route: 'Shanghai → Seoul (direct)', cost: 280, date: '2027-06-02', note: 'Estimate — PVG–ICN ~2h; South Korea finale begins' },
-      { route: 'Seoul → São Paulo (home)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp — 1-stop from Incheon (ICN) megahub; trip ends' },
+      { route: 'Seoul → São Paulo (return, unticketed)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp — 1-stop from Incheon (ICN); the trip ends here. The only modelled return leg; booking tracked as todo `korea-10` (due ~3 months out)' },
     ],
     extras: [
       { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },
@@ -667,10 +668,10 @@ window.TRIP = (function () {
     // India
     { mode: 'train', route: 'Delhi → Varanasi', date: '2026-10-17', note: 'Early train (06:00) — booked ✅' },
     // China E1
-    { mode: 'train', route: 'Beijing South → Huangshanbei', date: '2026-11-16', note: 'HSR ~5–5.5h (weather-proof alternative to the Tunxi flight)' },
-    { mode: 'train', route: 'Huangshanbei → Hangzhou East', date: '2026-11-19', note: 'HSR ~1.5h' },
-    { mode: 'train', route: 'Hangzhou → Suzhou', date: '2026-11-21', note: 'HSR ~1.5h' },
-    { mode: 'train', route: 'Suzhou → Shanghai Hongqiao', date: '2026-11-23', note: 'HSR ~25min direct into the SHA terminal, then flight to HK' },
+    { mode: 'train', route: 'Beijing South → Huangshan North', date: '2026-11-15', note: 'G87 06:56→12:13 (5h17) — the only train landing before noon; later ones arrive 13:46–21:11. ¥982 2nd class' },
+    { mode: 'bus', route: 'Huangshan North → Tangkou', date: '2026-11-15', note: 'Shuttle ¥28–33, 40–65min, every 20–30min; taxi ¥140–180. Tangkou is the mountain transfer centre base' },
+    { mode: 'bus', route: 'Tangkou → Huangshan North', date: '2026-11-19', note: 'Return shuttle to the station for the Hangzhou train' },
+    { mode: 'train', route: 'Huangshan North → Hangzhou East', date: '2026-11-19', note: 'HSR ~1h30, 40+/day, ¥120–156 — book to East (West adds 35min on Line 19)' },
     // China E2
     { mode: 'train', route: 'Guangzhou → Shenzhen', date: '2026-11-30', note: 'HSR ~30min' },
     { mode: 'ferry', route: 'Shenzhen (Shekou) → Macau', date: '2026-12-04', note: 'Ferry ~1h — Mainland exit' },

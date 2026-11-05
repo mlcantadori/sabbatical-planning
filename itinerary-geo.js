@@ -112,7 +112,6 @@ window.TRIP_GEO = {
     'china-e1/Beijing':                       [39.9042,  116.4074],
     'china-e1/Huangshan':                      [30.1300,  118.1700],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
-    'china-e1/Suzhou':                         [31.2989,  120.5853],
     // China E2 (Pearl Delta → Shanghai finale)
     'china-e2/Shenzhen':                       [22.5431,  114.0579],
     'china-e2/Macau':                          [22.1978,  113.5407], // Ruins of St. Paul's
