@@ -32,12 +32,13 @@
   // surface under the camera sits (d-1) radii away, so it renders at
   // f/(d-1) px per radian — with a 1740px-tall retina canvas that is 1:1 at
   // d = 2.0. Each tier stops where its own texel budget runs out, so going
-  // closer costs the same ~2x upscale at the floor either way: the 16k buys
-  // desktop the extra 20% instead of buying sharpness at 1.72.
+  // closer costs the same upscale at the floor either way: more texels buy
+  // reach, not sharpness. Mobile gets 1.5 on the 8k tier; it is a 3x-up-scaled
+  // view by then on a high-DPI phone, which is the price of the extra travel.
   const MIN_DIST = {
     big: 1.45,
-    mid: 1.72,
-    small: 2.0
+    mid: 1.5,
+    small: 1.85
   };
   const DEFAULT_MIN_DIST = 1.72;
 
