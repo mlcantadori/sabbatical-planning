@@ -193,7 +193,6 @@ function NowNext({
   const here = current ? window.TRIP_NOW.currentCity(chapters, today) : null;
   const next = window.TRIP_NOW.nextCity(chapters, today);
   const {
-    chapterColor,
     helpers
   } = window.TRIP;
   const {
@@ -212,11 +211,9 @@ function NowNext({
     }, label), /*#__PURE__*/React.createElement("span", {
       className: "app-now-value"
     }, /*#__PURE__*/React.createElement("span", {
-      className: "app-now-dot",
-      style: {
-        background: chapterColor(ch)
-      }
-    }), /*#__PURE__*/React.createElement("span", {
+      className: "app-now-flag",
+      "aria-hidden": "true"
+    }, ch.flag), /*#__PURE__*/React.createElement("span", {
       className: "app-now-title"
     }, stop.place.name), meta && /*#__PURE__*/React.createElement("span", {
       className: "app-now-meta"
@@ -246,9 +243,15 @@ function NowNext({
   // date always agree. The next cell just gets its date.
   const left = !current ? 0 : next ? window.TRIP_NOW.daysUntil(next.start, today) : window.TRIP_NOW.daysUntil(current.end, today);
   const currentMeta = left <= 0 || today >= current.end ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`;
+
+  // "Next up" is the next *move*, which is often just the next town in the
+  // chapter you're already in — say "Next stop" then, and keep "Next up" for
+  // a chapter change so the two are never confused.
+  const sameChapter = !!(current && next && next.chapter.id === current.id);
+  const nextLabel = sameChapter ? 'Next stop' : 'Next up';
   return /*#__PURE__*/React.createElement("div", {
     className: "app-now"
-  }, current && here && cell('Currently in', here, currentMeta), next && cell('Next up', next, fmt(next.start)));
+  }, current && here && cell('Currently in', here, currentMeta), next && cell(nextLabel, next, fmt(next.start)));
 }
 const Icon = {
   external: p => /*#__PURE__*/React.createElement("svg", {

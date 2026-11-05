@@ -167,7 +167,7 @@ function NowNext({ onSelect }) {
   const current = window.TRIP_NOW.currentChapter(chapters, today);
   const here = current ? window.TRIP_NOW.currentCity(chapters, today) : null;
   const next = window.TRIP_NOW.nextCity(chapters, today);
-  const { chapterColor, helpers } = window.TRIP;
+  const { helpers } = window.TRIP;
   const { fmt } = helpers;
 
   const cell = (label, stop, meta) => {
@@ -179,7 +179,7 @@ function NowNext({ onSelect }) {
         title={`${label} — ${stop.place.name}, ${ch.title} (${fmt(stop.start)} – ${fmt(stop.end)})`}>
         <span className="app-now-label">{label}</span>
         <span className="app-now-value">
-          <span className="app-now-dot" style={{ background: chapterColor(ch) }} />
+          <span className="app-now-flag" aria-hidden="true">{ch.flag}</span>
           <span className="app-now-title">{stop.place.name}</span>
           {meta && <span className="app-now-meta">{meta}</span>}
         </span>
@@ -211,10 +211,16 @@ function NowNext({ onSelect }) {
     : window.TRIP_NOW.daysUntil(current.end, today);
   const currentMeta = left <= 0 || today >= current.end ? 'leaving today' : `${left} day${left === 1 ? '' : 's'} left`;
 
+  // "Next up" is the next *move*, which is often just the next town in the
+  // chapter you're already in — say "Next stop" then, and keep "Next up" for
+  // a chapter change so the two are never confused.
+  const sameChapter = !!(current && next && next.chapter.id === current.id);
+  const nextLabel = sameChapter ? 'Next stop' : 'Next up';
+
   return (
     <div className="app-now">
       {current && here && cell('Currently in', here, currentMeta)}
-      {next && cell('Next up', next, fmt(next.start))}
+      {next && cell(nextLabel, next, fmt(next.start))}
     </div>
   );
 }
