@@ -553,6 +553,9 @@
     // Whether the map should show the stop popup. Only a click on the map's own
     // dot sets this; a spine click just recentres the camera.
     const [placePopup, setPlacePopup] = React.useState(false);
+    // How tight the 2D map frames a selected stop. A day on the spine is about
+    // locating the city in its country (wide); a pin click is about the city.
+    const [placeZoom, setPlaceZoom] = React.useState(null);
     const [detailOpen, setDetailOpen] = React.useState(!!urlParams.chapterId && urlParams.detail !== false);
     const [focusKey, setFocusKey] = React.useState(0);
     const [mapRetry, setMapRetry] = React.useState(0);
@@ -659,6 +662,7 @@
       setSelectedPlaceIdx(null);
       setFocusDay(null);
       setPlacePopup(false);
+      setPlaceZoom(null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
@@ -675,12 +679,14 @@
       setSelectedId(ch.id);
       setSelectedPlaceIdx(win ? win.idx : null);
       setPlacePopup(false);
+      setPlaceZoom(null);
       setDetailOpen(true);
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
     const onSelectPlace = idx => {
       setSelectedPlaceIdx(idx);
       setPlacePopup(true);
+      setPlaceZoom(12);
       if (view !== 'atlas') setView('atlas');
     };
     const onReset = () => {
@@ -689,6 +695,7 @@
       setSelectedPlaceIdx(null);
       setFocusDay(null);
       setPlacePopup(false);
+      setPlaceZoom(null);
       setDetailOpen(false);
       setFocusKey(k => k + 1);
     };
@@ -750,6 +757,7 @@
         setSelectedId(id);
         setSelectedPlaceIdx(null);
         setPlacePopup(false);
+        setPlaceZoom(null);
         setDetailOpen(true);
         setTour(null);
       },
@@ -758,10 +766,12 @@
     }) : /*#__PURE__*/React.createElement(window.MapView, {
       selectedId: selectedId,
       selectedPlaceIdx: selectedPlaceIdx,
+      placeZoom: placeZoom,
       onSelectChapter: id => {
         setSelectedId(id);
         setSelectedPlaceIdx(null);
         setPlacePopup(false);
+        setPlaceZoom(null);
         setDetailOpen(true);
         setTour(null);
       },
