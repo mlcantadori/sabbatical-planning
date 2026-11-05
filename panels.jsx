@@ -280,7 +280,7 @@
       const total = rowTotal(r);
       return {
         ...r, idx: i + 1, title: (byId[r.id] && byId[r.id].title) || r.id,
-        total, perDay: total / r.days,
+        total, perDay: total / r.days, share: total / chTotal,
         nightly: Object.fromEntries(CATS.map(([k]) => [k, (r[k] || 0) / r.days])),
         tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45',
       };
@@ -301,10 +301,12 @@
       else { setSortKey(k); setSortDir(1); }
     };
     const chapterNights = budget.chapters.reduce((s, r) => s + r.days, 0);
+    // Percentages are rounded, but a sub-1% chapter must not read as "0%".
+    const pct = (v) => (v > 0 && v < 1 ? v.toFixed(1) + '%' : Math.round(v) + '%');
     const COLS = [
       ['idx', '#'], ['title', 'Chapter'], ['days', 'Nights'], ['perDay', '$/night'],
       ['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Transport'],
-      ['activities', 'Activities'], ['fees', 'Fees'], ['total', 'Total'],
+      ['activities', 'Activities'], ['fees', 'Fees'], ['share', 'Share'], ['total', 'Total'],
     ];
 
     return (
@@ -356,7 +358,7 @@
           ))}
         </div>
 
-        <SectionHead num="02" title="The long table" note="per night, except total · click to sort" />
+        <SectionHead num="02" title="The long table" note="per night, except share & total · click to sort" />
         <div className="ledger-table-wrap">
           <table className="ledger-table">
             <thead>
@@ -364,8 +366,10 @@
                 {COLS.map(([k, label]) => (
                   <th
                     key={k}
-                    className={k === 'total' ? 'is-num' : ''}
-                    title={rows.length && k in rows[0].nightly ? 'Per night, two travellers' : undefined}
+                    className={k === 'total' || k === 'share' ? 'is-num' : ''}
+                    title={k === 'share'
+                      ? 'Share of all chapter spend'
+                      : (rows.length && k in rows[0].nightly ? 'Per night, two travellers' : undefined)}
                   >
                     <button onClick={() => toggleSort(k)}>
                       {label}{sortKey === k ? (sortDir === 1 ? ' ▲' : ' ▼') : ''}
@@ -386,6 +390,7 @@
                   <td>{fmt$(r.nightly.transport)}</td>
                   <td>{fmt$(r.nightly.activities)}</td>
                   <td>{fmt$(r.nightly.fees)}</td>
+                  <td className="is-share">{pct(r.share * 100)}</td>
                   <td className="is-num is-total">{fmt$(r.total)}</td>
                 </tr>
               ))}
@@ -398,6 +403,7 @@
                 <td>{chapterNights}</td>
                 <td>{fmt$(chTotal / chapterNights)}</td>
                 {CATS.map(([k]) => <td key={k}>{fmt$(catTotals[k] / chapterNights)}</td>)}
+                <td className="is-share">100%</td>
                 <td className="is-num is-total">{fmt$(chTotal)}</td>
               </tr>
             </tbody>

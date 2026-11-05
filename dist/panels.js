@@ -377,6 +377,7 @@
         title: byId[r.id] && byId[r.id].title || r.id,
         total,
         perDay: total / r.days,
+        share: total / chTotal,
         nightly: Object.fromEntries(CATS.map(([k]) => [k, (r[k] || 0) / r.days])),
         tint: byId[r.id] ? window.chapterTint(byId[r.id]) : '#ff7a45'
       };
@@ -400,7 +401,9 @@
       }
     };
     const chapterNights = budget.chapters.reduce((s, r) => s + r.days, 0);
-    const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'Nights'], ['perDay', '$/night'], ['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Transport'], ['activities', 'Activities'], ['fees', 'Fees'], ['total', 'Total']];
+    // Percentages are rounded, but a sub-1% chapter must not read as "0%".
+    const pct = v => v > 0 && v < 1 ? v.toFixed(1) + '%' : Math.round(v) + '%';
+    const COLS = [['idx', '#'], ['title', 'Chapter'], ['days', 'Nights'], ['perDay', '$/night'], ['lodging', 'Lodging'], ['food', 'Food'], ['transport', 'Transport'], ['activities', 'Activities'], ['fees', 'Fees'], ['share', 'Share'], ['total', 'Total']];
     return /*#__PURE__*/React.createElement("div", {
       className: "page-inner ledger-page"
     }, /*#__PURE__*/React.createElement("header", {
@@ -473,15 +476,15 @@
     }, fmt$(r.perDay), /*#__PURE__*/React.createElement("i", null, "/night"))))), /*#__PURE__*/React.createElement(SectionHead, {
       num: "02",
       title: "The long table",
-      note: "per night, except total \xB7 click to sort"
+      note: "per night, except share & total \xB7 click to sort"
     }), /*#__PURE__*/React.createElement("div", {
       className: "ledger-table-wrap"
     }, /*#__PURE__*/React.createElement("table", {
       className: "ledger-table"
     }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, COLS.map(([k, label]) => /*#__PURE__*/React.createElement("th", {
       key: k,
-      className: k === 'total' ? 'is-num' : '',
-      title: rows.length && k in rows[0].nightly ? 'Per night, two travellers' : undefined
+      className: k === 'total' || k === 'share' ? 'is-num' : '',
+      title: k === 'share' ? 'Share of all chapter spend' : rows.length && k in rows[0].nightly ? 'Per night, two travellers' : undefined
     }, /*#__PURE__*/React.createElement("button", {
       onClick: () => toggleSort(k)
     }, label, sortKey === k ? sortDir === 1 ? ' ▲' : ' ▼' : ''))))), /*#__PURE__*/React.createElement("tbody", null, sorted.map(r => /*#__PURE__*/React.createElement("tr", {
@@ -492,6 +495,8 @@
     }, r.idx), /*#__PURE__*/React.createElement("td", {
       className: "is-name"
     }, r.title), /*#__PURE__*/React.createElement("td", null, r.days), /*#__PURE__*/React.createElement("td", null, fmt$(r.perDay)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.lodging)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.food)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.transport)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.activities)), /*#__PURE__*/React.createElement("td", null, fmt$(r.nightly.fees)), /*#__PURE__*/React.createElement("td", {
+      className: "is-share"
+    }, pct(r.share * 100)), /*#__PURE__*/React.createElement("td", {
       className: "is-num is-total"
     }, fmt$(r.total)))), /*#__PURE__*/React.createElement("tr", {
       className: "is-sum",
@@ -501,6 +506,8 @@
     }, "Chapters \xB7 avg / night"), /*#__PURE__*/React.createElement("td", null, chapterNights), /*#__PURE__*/React.createElement("td", null, fmt$(chTotal / chapterNights)), CATS.map(([k]) => /*#__PURE__*/React.createElement("td", {
       key: k
     }, fmt$(catTotals[k] / chapterNights))), /*#__PURE__*/React.createElement("td", {
+      className: "is-share"
+    }, "100%"), /*#__PURE__*/React.createElement("td", {
       className: "is-num is-total"
     }, fmt$(chTotal)))))), /*#__PURE__*/React.createElement("div", {
       className: "ledger-below"

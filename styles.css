@@ -1648,6 +1648,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .ledger-table .is-name { color: var(--ink); }
 .ledger-table .is-num { text-align: right; }
 .ledger-table .is-total { color: var(--ink); font-weight: 500; }
+.ledger-table .is-share { text-align: right; color: var(--ink-3); padding-left: 10px; }
 .ledger-table tr.is-sum td { border-top: 1px solid var(--line); border-bottom: 0; padding-top: 12px; color: var(--ink); }
 
 .ledger-below {
