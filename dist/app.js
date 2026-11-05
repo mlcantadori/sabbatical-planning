@@ -318,7 +318,7 @@
       style: {
         left: `${(focusIdx + 0.5) / total * 100}%`
       }
-    }, /*#__PURE__*/React.createElement("i", null))));
+    })));
   }
 
   // ── Atlas: giant chapter name ─────────────────────────────────────────

@@ -335,6 +335,8 @@ button:focus-visible, [role="button"]:focus-visible {
   gap: 0;
   height: 18px;
   padding-top: 4px;
+  /* Height of a day's bar. The today/picked markers centre on it. */
+  --tick-h: 6px;
 }
 .spine-tick {
   appearance: none;
@@ -363,12 +365,13 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .spine-now {
   position: absolute;
-  top: 3px;
-  bottom: 0;
+  /* Straddle the bar itself: centred on the tick height, not on the track. */
+  top: calc(100% - var(--tick-h) / 2);
+  height: calc(var(--tick-h) * 2.5);
   width: 1px;
   background: rgba(243,236,221,.55);
   pointer-events: none;
-  transform: translateX(-.5px);
+  transform: translate(-.5px, -50%);
 }
 .spine-now i {
   position: absolute;
@@ -384,24 +387,17 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 
 /* The day you picked. "Today" keeps its own white marker, so clicking a date
-   adds a reference instead of overwriting the one that actually matters. */
+   adds a reference instead of overwriting the one that actually matters.
+   Same height as the today line, no dot, both centred on the bar. */
 .spine-cursor {
   position: absolute;
-  top: 1px;
-  bottom: -1px;
+  top: calc(100% - var(--tick-h) / 2);
+  height: calc(var(--tick-h) * 2.5);
   width: 1px;
   background: var(--gold);
   pointer-events: none;
-  transform: translateX(-.5px);
+  transform: translate(-.5px, -50%);
   box-shadow: 0 0 8px rgba(239,197,94,.45);
-}
-.spine-cursor i {
-  position: absolute;
-  top: -3px; left: 50%;
-  width: 5px; height: 5px;
-  margin-left: -2.5px;
-  border-radius: 50%;
-  background: var(--gold);
 }
 .spine-tick.is-focused { opacity: 1; filter: saturate(1.2) brightness(1.2); }
 
@@ -2571,9 +2567,11 @@ button:focus-visible, [role="button"]:focus-visible {
   .dayclock-meta { display: none; }
   .spine { padding: 0 12px; }
   .spine-months { display: none; }
-  .spine-track { height: 22px; padding-top: 5px; }
+  .spine-track { height: 22px; padding-top: 5px; --tick-h: 5px; }
   .spine-tick { height: 5px; }
   .spine-tick.is-now { height: 13px; }
+  /* Shorter here so the markers stay inside the 24px spine. */
+  .spine-now, .spine-cursor { height: 9px; }
 
   .atlas-title { top: 16px; left: 14px; right: 14px; max-width: none; }
   .atlas-kicker { gap: 7px; font-size: 7.5px; }

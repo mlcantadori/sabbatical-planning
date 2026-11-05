@@ -230,9 +230,7 @@
             <b>{fmt(today)}</b>
           </span>
           {focusIdx != null && focusIdx !== idx && (
-            <span className="spine-cursor" style={{ left: `${((focusIdx + 0.5) / total) * 100}%` }}>
-              <i />
-            </span>
+            <span className="spine-cursor" style={{ left: `${((focusIdx + 0.5) / total) * 100}%` }} />
           )}
         </div>
       </div>
