@@ -422,13 +422,6 @@
         behavior: 'smooth'
       });
     }, [focusId, chapters.length]);
-    const nudge = d => {
-      const track = trackRef.current;
-      if (track) track.scrollBy({
-        left: d * Math.max(280, track.clientWidth * 0.7),
-        behavior: 'smooth'
-      });
-    };
     return /*#__PURE__*/React.createElement("div", {
       className: "reel"
     }, /*#__PURE__*/React.createElement("div", {
@@ -439,21 +432,7 @@
       className: "reel-kicker"
     }, "The arc"), /*#__PURE__*/React.createElement("span", {
       className: "reel-count"
-    }, chapters.length, " chapters \xB7 ", totalDays, " days")), /*#__PURE__*/React.createElement("div", {
-      className: "reel-head-right"
-    }, /*#__PURE__*/React.createElement("button", {
-      className: "reel-arrow",
-      onClick: () => nudge(-1),
-      "aria-label": "Earlier chapters"
-    }, /*#__PURE__*/React.createElement(window.Icon.chevronLeft, {
-      size: 14
-    })), /*#__PURE__*/React.createElement("button", {
-      className: "reel-arrow",
-      onClick: () => nudge(1),
-      "aria-label": "Later chapters"
-    }, /*#__PURE__*/React.createElement(window.Icon.chevronRight, {
-      size: 14
-    })))), /*#__PURE__*/React.createElement("div", {
+    }, chapters.length, " chapters \xB7 ", totalDays, " days"))), /*#__PURE__*/React.createElement("div", {
       className: "reel-track",
       ref: trackRef
     }, chapters.map(c => {

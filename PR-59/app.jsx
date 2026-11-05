@@ -294,20 +294,12 @@
       const target = card.offsetLeft - track.offsetLeft;
       track.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
     }, [focusId, chapters.length]);
-    const nudge = (d) => {
-      const track = trackRef.current;
-      if (track) track.scrollBy({ left: d * Math.max(280, track.clientWidth * 0.7), behavior: 'smooth' });
-    };
     return (
       <div className="reel">
         <div className="reel-head">
           <div className="reel-head-left">
             <span className="reel-kicker">The arc</span>
             <span className="reel-count">{chapters.length} chapters · {totalDays} days</span>
-          </div>
-          <div className="reel-head-right">
-            <button className="reel-arrow" onClick={() => nudge(-1)} aria-label="Earlier chapters"><window.Icon.chevronLeft size={14} /></button>
-            <button className="reel-arrow" onClick={() => nudge(1)} aria-label="Later chapters"><window.Icon.chevronRight size={14} /></button>
           </div>
         </div>
         <div className="reel-track" ref={trackRef}>

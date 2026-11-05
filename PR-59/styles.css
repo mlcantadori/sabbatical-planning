@@ -702,20 +702,6 @@ button:focus-visible, [role="button"]:focus-visible {
   text-transform: uppercase;
   color: var(--ink-4);
 }
-.reel-head-right { display: flex; gap: 4px; }
-.reel-arrow {
-  width: 26px; height: 26px;
-  display: grid; place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: transparent;
-  color: var(--ink-3);
-  line-height: 0;
-  padding: 0;
-  transition: all .18s;
-}
-.reel-arrow svg { display: block; }
-.reel-arrow:hover { color: var(--void); background: var(--ink); border-color: var(--ink); }
 .reel-track {
   display: flex;
   gap: 12px;
@@ -2266,7 +2252,6 @@ button:focus-visible, [role="button"]:focus-visible {
   .reel-head { margin-bottom: 7px; }
   .reel-kicker { font-size: 8px; }
   .reel-count { font-size: 7.5px; }
-  .reel-arrow { width: 24px; height: 24px; }
   .reel-card { width: 156px; gap: 5px; }
   .reel-photo { height: 82px; }
   .reel-title { font-size: 14px; }
