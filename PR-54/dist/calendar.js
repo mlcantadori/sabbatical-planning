@@ -235,12 +235,14 @@
     return window.dataDigest(list.map(e => [e.id, e.summary, e.description || '', e.start && e.start.date || '', e.end && e.end.date || ''].join('~')));
   }
 
-  // Baseline is absent until this browser has completed one full push — a
-  // device that never synced gets no dot; the bare "Sync" label is the nudge.
+  // No baseline means one of two things: this browser never pushed (the bare
+  // "Sync" label is the nudge, no dot), or it pushed before fingerprints
+  // existed — then there is no proof it is current, so ask for one push rather
+  // than claim "synced" on data that may have moved since.
   function isStale() {
     try {
       const stored = localStorage.getItem(LS_FP);
-      if (!stored) return false;
+      if (!stored) return !!localStorage.getItem(LS_LAST);
       return stored !== fingerprint();
     } catch {
       return false;

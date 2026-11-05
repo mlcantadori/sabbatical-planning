@@ -212,12 +212,13 @@
     ].join('~')));
   }
 
-  // No baseline until this browser has completed one full push: a device that
-  // never synced shows nothing, because the bare "Sync" label already asks.
+  // No baseline means this browser never pushed (no dot — the bare "Sync"
+  // label already asks) or it pushed before fingerprints existed, in which
+  // case nothing proves it is current and one push is due.
   function isStale() {
     try {
       const stored = localStorage.getItem(LS_FP);
-      if (!stored) return false;
+      if (!stored) return !!localStorage.getItem(LS_LAST);
       return stored !== fingerprint();
     } catch {
       return false;
