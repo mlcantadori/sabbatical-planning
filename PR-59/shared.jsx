@@ -183,8 +183,11 @@ function monthsBetween() {
   let d = new Date(start);
   while (d <= end) {
     const y = d.getUTCFullYear(), m = d.getUTCMonth();
-    const first = new Date(Math.max(d.getTime(), Date.UTC(y, m, 1)));
-    out.push({ label: names[m], year: y, at: dayIndex(first.toISOString().slice(0, 10)) });
+    // A month the trip only clips — it began before the trip did — gets no
+    // label: JUN would sit ten days before JUL and the two collide.
+    if (d.getTime() === Date.UTC(y, m, 1)) {
+      out.push({ label: names[m], year: y, at: dayIndex(d.toISOString().slice(0, 10)) });
+    }
     d = new Date(Date.UTC(y, m + 1, 1));
   }
   return out;
