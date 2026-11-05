@@ -717,14 +717,12 @@ button:focus-visible, [role="button"]:focus-visible {
   /* Room for the hover lift (-4px) plus the 1px ring, so the top and left
      strokes are never clipped by this scroll container. */
   padding: 8px 6px 10px;
-  scroll-snap-type: x proximity;
   scrollbar-width: none;
 }
 .reel-track::-webkit-scrollbar { display: none; }
 .reel-card {
   flex: none;
   width: 202px;
-  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 7px;
