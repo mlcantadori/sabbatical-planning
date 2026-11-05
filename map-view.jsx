@@ -4,6 +4,21 @@
 (function () {
   const { chapterColor } = window.TRIP;
 
+  // One zoom for every chapter. Moving between chapters is then a pure pan:
+  // Leaflet animates a zoom by CSS-scaling the whole map pane, so any zoom
+  // change drags the dashed route lines with it (they stretch and shimmer for
+  // the length of the move) and, at these distances, dips the camera to ~z3.5
+  // and back through a half-loaded world. Fixed zoom, no scaling, no dip.
+  // Chapters that simply do not fit at z6 (Brasil and the Philippines are ~20°
+  // of latitude) still ease out to their own fit — a ≤0.6-level difference,
+  // not the up-to-five-level jumps this replaces.
+  const CHAPTER_ZOOM = 6;
+
+  // Past this much ground a pan is a sweep across continents: about one screen
+  // at z6 (~31° of longitude at the equator). Under it, Leaflet's flyTo does
+  // not even need to zoom out to make the trip, which is the whole point.
+  const CUT_KM = 2600;
+
   // Great-circle interpolation between two [lat,lng] points — the actual
   // shortest path a flight follows over the sphere, not an arbitrary bulge.
   function greatCircleSegment(p1, p2, segments = 48) {
@@ -45,6 +60,7 @@
     const ref = React.useRef(null);
     const mapRef = React.useRef(null);
     const layersRef = React.useRef({ chapters: [], places: [], routes: [] });
+    const jumpRef = React.useRef({ timer: null, token: null });
     const selectedIdRef = React.useRef(selectedId);
     React.useEffect(() => { selectedIdRef.current = selectedId; }, [selectedId]);
 
@@ -74,10 +90,11 @@
       const cur = homeChapter();
       if (cur) {
         const pts = (cur.places || []).map((p) => p.coords).filter(Boolean);
-        // maxZoom caps the fit at continent level (z4) — the opening frame
-        // should read "South Asia", not "Kathmandu". The fit still centers
-        // on the chapter, so the continent is the one you're standing in.
-        return { pts, padding: [24, 24], maxZoom: 4, single: cur.anchor };
+        // "Where I am" is framed exactly like a selected chapter: same zoom,
+        // same padding. It used to be capped at z4 ("South Asia, not
+        // Kathmandu"), which made the landing view wider than every chapter
+        // you could click to — and wider than what the Now button restored.
+        return { pts, padding: [40, 40], maxZoom: CHAPTER_ZOOM, single: cur.anchor };
       }
       return { pts: getStops().map(stopCoords).filter(Boolean), padding: [24, 24], maxZoom: undefined, single: null };
     };
@@ -90,9 +107,9 @@
       if (pts.length > 1) {
         map.fitBounds(pts, { padding, maxZoom, animate: false });
       } else if (pts.length === 1) {
-        map.setView(pts[0], 4, { animate: false });
+        map.setView(pts[0], CHAPTER_ZOOM, { animate: false });
       } else if (single) {
-        map.setView(single, 4, { animate: false });
+        map.setView(single, CHAPTER_ZOOM, { animate: false });
       }
     };
 
@@ -136,22 +153,30 @@
 
       // Esri World Imagery (satellite) + reference overlay for city names,
       // boundaries and water labels. Note the {z}/{y}/{x} order.
+      //
       // detectRetina: Esri ships only 256px tiles, so on a 2x display every
       // tile was being upscaled and the map read soft. Leaflet's retina
       // mode requests the next zoom level and draws it at half size — the
       // only way to get a genuinely sharp basemap out of this service.
+      //
+      // keepBuffer 4, not Leaflet's 2: a 600px flick at a chapter's zoom is
+      // ~2.3 tiles, so with a 2-tile ring the leading edge kept showing the
+      // page background through tiles that had not arrived yet. The wider
+      // ring is prefetched per view (~40% more tiles, cached after the first
+      // look) and covers the flick.
+      const TILE = { maxZoom: 19, attribution: '', detectRetina: true, keepBuffer: 4 };
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', detectRetina: true,
+        ...TILE,
       }).addTo(map);
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', opacity: 0.78, zIndex: 3, detectRetina: true,
+        ...TILE, opacity: 0.78, zIndex: 3,
       }).addTo(map);
       // Roads overlay only at country level and deeper (z7+) — at world
       // view it's visual noise. Toggled on zoomend (fitBounds/setView
       // fire it too, so programmatic fits stay in sync).
       const transport = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19, attribution: '', opacity: 0.5, zIndex: 2,
-        className: 'transport-tiles', detectRetina: true,
+        ...TILE, opacity: 0.5, zIndex: 2,
+        className: 'transport-tiles',
       });
       const TRANSPORT_MIN_ZOOM = 7;
       const syncTransport = () => {
@@ -183,6 +208,8 @@
         clearTimeout(onResize._t);
         map.remove();
         mapRef.current = null;
+        if (jumpRef.current.timer) clearTimeout(jumpRef.current.timer);
+        jumpRef.current = { timer: null, token: null };
       };
     }, []);
 
@@ -323,32 +350,89 @@
         map.invalidateSize();
         // A selected stop centres the map on that city. How tight that
         // framing is depends on how it was picked: a day on the spine wants
-        // the country as context, a pin click wants the city itself.
+        // the chapter as context, a pin click wants the city itself.
+        //
+        // Short hops glide: `flyTo` pans and zooms on one curve, with a
+        // duration that grows with distance, so a hop across town is a nudge.
+        // Long ones cut — see jumpTo. Reduced-motion users get an instant
+        // setView for both, which is the one case where that is the polite
+        // answer.
+        const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        // Crossing the world is a cut, not a flight. Leaflet's zoom-out is
+        // what makes the transit readable, and it is also what drags the whole
+        // route and a half-loaded world across the stage: past roughly one
+        // screen of travel, dip to the stage colour, move while nothing is
+        // watching, and come back when the new tiles are in.
+        const jumpTo = (center, zoom) => {
+          const mapEl = map.getContainer();
+          const token = {};
+          jumpRef.current.token = token;
+          if (jumpRef.current.timer) clearTimeout(jumpRef.current.timer);
+          mapEl.classList.add('is-jumping');          // CSS fades it out
+          jumpRef.current.timer = setTimeout(() => {
+            if (jumpRef.current.token !== token) return;
+            map.setView(center, zoom, { animate: false });
+            // Come back once the view is actually painted: Leaflet's map-level
+            // 'load' fires once per map (at init), not per view, so watch the
+            // tiles instead. The deadline keeps a failed tile from holding the
+            // curtain shut.
+            const startedAt = performance.now();
+            const waitTiles = () => {
+              if (jumpRef.current.token !== token) return;
+              const pending = mapEl.querySelectorAll('.leaflet-tile:not(.leaflet-tile-loaded)').length;
+              const held = performance.now() - startedAt;
+              if (pending === 0 && held > 120) {
+                // Loaded is not the same as painted: let two frames go by so
+                // the new tiles are on screen before the curtain lifts.
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                  if (jumpRef.current.token === token) mapEl.classList.remove('is-jumping');
+                }));
+                return;
+              }
+              if (held > 380) { mapEl.classList.remove('is-jumping'); return; }
+              jumpRef.current.timer = setTimeout(waitTiles, 50);
+            };
+            jumpRef.current.timer = setTimeout(waitTiles, 60);
+          }, 170);
+        };
+        const moveTo = (center, zoom) => {
+          if (reduced) { map.setView(center, zoom, { animate: false }); return; }
+          // Measured in ground, not pixels: a pin click from z6 to z12 is a
+          // short hop that happens to be thousands of pixels wide at the zoom
+          // it is heading to. Judging by pixels at the target zoom cut every
+          // city zoom instead of letting it dive.
+          const km = map.getCenter().distanceTo(L.latLng(center)) / 1000;
+          if (km > CUT_KM) { jumpTo(center, zoom); return; }
+          map.flyTo(center, zoom, {
+            duration: Math.min(1.2, 0.6 + km / 9000),
+            easeLinearity: 0.24,
+          });
+        };
         const focused = selectedPlaceIdx != null ? ch.places[selectedPlaceIdx] : null;
+        const bounds = placeCoords.length ? L.latLngBounds(placeCoords) : null;
+        // The chapter's own framing: z6 unless its stops genuinely do not fit,
+        // in which case widen just enough (never tighter than z6).
+        const chapterZoom = bounds && placeCoords.length > 1
+          ? Math.min(CHAPTER_ZOOM, map.getBoundsZoom(bounds, false, L.point(80, 80)))
+          : CHAPTER_ZOOM;
         if (focused && focused.coords) {
-          // Centre on the picked city, but keep the chapter's own framing so
-          // the whole country stays inside the viewport. A pin click asks for
-          // the city itself, so that path passes a tight zoom instead.
-          let zoom = placeZoom;
-          if (zoom == null) {
-            zoom = placeCoords.length > 1
-              ? map.getBoundsZoom(L.latLngBounds(placeCoords), false, L.point(40, 40))
-              : 7;
-            zoom = Math.max(5, Math.min(10, zoom));
-          }
-          map.setView(focused.coords, zoom, { animate: false });
-        } else if (placeCoords.length > 1) {
-          // maxZoom 14 lets tightly-clustered places frame at
-          // neighbourhood/street level instead of capping at region level.
-          map.fitBounds(placeCoords, { padding: [40, 40], maxZoom: 14, animate: false });
-        } else if (placeCoords.length === 1) {
-          map.setView(placeCoords[0], 12, { animate: false });
+          // A day on the spine locates the city at the chapter's zoom; a pin
+          // click is its own request for the city itself and passes a tight
+          // zoom, which is the one place a deliberate zoom-in is wanted.
+          moveTo(focused.coords, placeZoom == null ? chapterZoom : placeZoom);
+        } else if (bounds) {
+          // fitBounds cannot animate a pan (it computes a zoom and jumps), so
+          // the same framing is derived twice: bounds → zoom, then flown to.
+          moveTo(bounds.getCenter(), chapterZoom);
         } else if (ch.anchor) {
-          map.setView(ch.anchor, 9, { animate: false });
+          moveTo(ch.anchor, CHAPTER_ZOOM);
         }
       };
-      setTimeout(doFit, 50);
-      setTimeout(doFit, 350);
+      // One move per selection. The spread is a fixed overlay — the map keeps
+      // its width behind it — so the second fit 350ms later only yanked the
+      // freshly framed view off its new centre: a cut, then a correction.
+      map.invalidateSize();
+      doFit();
     }, [selectedId, selectedPlaceIdx, chapters, placeZoom]);
 
     // External recentre trigger ("whole route"). The selection effect above

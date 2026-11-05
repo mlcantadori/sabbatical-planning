@@ -317,7 +317,16 @@
       const t = Math.min(1, (performance.now() - tw.start) / tw.dur);
       const e = 1 - Math.pow(1 - t, 3);
       s.controls.target.lerpVectors(tw.fromT, tw.toT, e);
-      s.camera.position.lerpVectors(tw.fromP, tw.toP, e);
+      // Swing the camera *around* the globe instead of sliding it through the
+      // middle: a straight line between two points on a sphere passes under
+      // the surface, so a Rio→Tokyo selection used to dive inside the planet
+      // and pop back out. Interpolating the bearing and the distance to the
+      // centre keeps the whole flight outside the surface and reads as an
+      // orbit rather than a cut with a zoom baked in.
+      tw.tmpQ.identity().slerp(tw.rot, e);
+      tw.tmpV.copy(tw.fromDir).applyQuaternion(tw.tmpQ);
+      s.camera.position.copy(tw.tmpV)
+        .multiplyScalar(tw.fromR + (tw.toR - tw.fromR) * e);
       if (t >= 1) {
         s.tween = null;
         s.controls.enabled = true;
@@ -326,10 +335,28 @@
 
     function flyTo(targetPos, camPos, dur) {
       const s = st.current; if (!s) return;
+      if (s.noMotion) {
+        s.tween = null;
+        s.controls.target.copy(targetPos);
+        s.camera.position.copy(camPos);
+        s.controls.enabled = true;
+        return;
+      }
+      const fromP = s.camera.position.clone();
+      const fromDir = fromP.clone().normalize();
+      const toDir = camPos.clone().normalize();
+      const angle = fromDir.angleTo(toDir);
       s.tween = {
-        start: performance.now(), dur: dur || 1100,
+        start: performance.now(),
+        // Near hops settle quickly; an intercontinental swing earns its
+        // ~1.3s. A fixed duration made both feel wrong in opposite ways.
+        dur: dur || 520 + 800 * (angle / Math.PI),
         fromT: s.controls.target.clone(), toT: targetPos.clone(),
-        fromP: s.camera.position.clone(), toP: camPos.clone(),
+        fromDir, toDir,
+        fromR: fromP.length(), toR: camPos.length(),
+        rot: new window.THREE.Quaternion().setFromUnitVectors(fromDir, toDir),
+        tmpQ: new window.THREE.Quaternion(),
+        tmpV: new window.THREE.Vector3(),
       };
       s.controls.enabled = false;
       s.controls.autoRotate = false;
@@ -565,10 +592,10 @@
         // first wheel tick would snap the camera back out.
         const md = (st.current && st.current.minDist) || DEFAULT_MIN_DIST;
         const camPos = llv(focused.coords[0], focused.coords[1], md + 0.14);
-        flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
+        flyTo(new window.THREE.Vector3(0, 0, 0), camPos);
       } else if (ch.anchor) {
         const camPos = llv(ch.anchor[0], ch.anchor[1], 2.35);
-        flyTo(new window.THREE.Vector3(0, 0, 0), camPos, 1100);
+        flyTo(new window.THREE.Vector3(0, 0, 0), camPos);
       }
     }
 
@@ -592,7 +619,7 @@
     React.useEffect(() => {
       const s = st.current; if (!s || !focusKey) return;
       if (propsRef.current.selectedId) { refreshSelection(); return; }
-      flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r), 1100);
+      flyTo(new window.THREE.Vector3(0, 0, 0), llv(HOME.lat, HOME.lng, HOME.r));
       s.spinOff = false;
       s.controls.autoRotate = true;
       // eslint-disable-next-line react-hooks/exhaustive-deps
