@@ -90,10 +90,11 @@
       const cur = homeChapter();
       if (cur) {
         const pts = (cur.places || []).map((p) => p.coords).filter(Boolean);
-        // maxZoom caps the fit at continent level (z4) — the opening frame
-        // should read "South Asia", not "Kathmandu". The fit still centers
-        // on the chapter, so the continent is the one you're standing in.
-        return { pts, padding: [24, 24], maxZoom: 4, single: cur.anchor };
+        // "Where I am" is framed exactly like a selected chapter: same zoom,
+        // same padding. It used to be capped at z4 ("South Asia, not
+        // Kathmandu"), which made the landing view wider than every chapter
+        // you could click to — and wider than what the Now button restored.
+        return { pts, padding: [40, 40], maxZoom: CHAPTER_ZOOM, single: cur.anchor };
       }
       return { pts: getStops().map(stopCoords).filter(Boolean), padding: [24, 24], maxZoom: undefined, single: null };
     };
@@ -106,9 +107,9 @@
       if (pts.length > 1) {
         map.fitBounds(pts, { padding, maxZoom, animate: false });
       } else if (pts.length === 1) {
-        map.setView(pts[0], 4, { animate: false });
+        map.setView(pts[0], CHAPTER_ZOOM, { animate: false });
       } else if (single) {
-        map.setView(single, 4, { animate: false });
+        map.setView(single, CHAPTER_ZOOM, { animate: false });
       }
     };
 
