@@ -111,6 +111,7 @@ window.TRIP_GEO = {
     // China E1 (Beijing first, then Huangshan + Jiangnan)
     'china-e1/Beijing':                       [39.9042,  116.4074],
     'china-e1/Huangshan':                      [30.1300,  118.1700],
+    'china-e1/Hongcun':                        [29.9962,  117.9862],
     'china-e1/Hangzhou':                       [30.2741,  120.1551],
     // China E2 (Pearl Delta → Shanghai finale)
     'china-e2/Shenzhen':                       [22.5431,  114.0579],

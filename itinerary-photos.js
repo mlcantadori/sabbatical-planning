@@ -44,6 +44,7 @@ window.PHOTO_IDS = {
   'great wall snow':             'extra-pictures/china-e1/great-wall-snow.jpg',
   'forbidden city':              'extra-pictures/china-e1/forbidden-city.jpg',
   'huangshan sea of clouds':     'extra-pictures/china-e1/huangshan-sea-of-clouds.jpg',
+  'hongcun moon pond':           'extra-pictures/china-e1/hongcun-moon-pond.jpg',
   'west lake':                   'extra-pictures/china-e1/west-lake.jpg',
   'suzhou garden':               'extra-pictures/china-e1/suzhou-garden.jpg',
   // ── Hong Kong ─────────────────────────────────────────────────────

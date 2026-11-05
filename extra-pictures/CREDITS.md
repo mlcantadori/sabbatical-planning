@@ -2,6 +2,15 @@
 
 Trip photos are vendored locally so the site has no hotlinked images.
 
+## Added Nov 2026 — China E1 (Hongcun night)
+
+| File | Author | License |
+|---|---|---|
+| `china-e1/hongcun-moon-pond.jpg` | EditQ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Moon Pond, Hongcun.jpg`); cropped and
+recompressed locally.
+
 ## Added Oct 2026
 
 | File | Author | License |
