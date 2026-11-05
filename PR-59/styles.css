@@ -316,6 +316,10 @@ button:focus-visible, [role="button"]:focus-visible {
   flex: none;
   height: var(--spine);
   padding: 0 24px;
+  /* Month row + bar as one block, centred in the strip. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: rgba(6,9,13,.86);
   border-bottom: 1px solid var(--line-2);
   backdrop-filter: blur(14px);
@@ -2572,14 +2576,18 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 
 @media (max-width: 880px) {
-  :root { --hdr: 56px; --spine: 24px; }  .topbar { padding: 0 14px; }
+  :root { --hdr: 56px; --spine: 34px; }  .topbar { padding: 0 14px; }
   .brand-mark { width: 30px; height: 30px; }
   .brand-name { font-size: 16px; }
   .dayclock-ring { width: 30px; height: 30px; }
   .dayclock-meta { display: none; }
+  /* Months stay on mobile — an unlabelled bar was just a progress streak.
+     Smaller type, no year; the base rule centres the block. */
   .spine { padding: 0 12px; }
-  .spine-months { display: none; }
-  .spine-track { height: 22px; padding-top: 5px; --tick-h: 5px; }
+  .spine-months { display: block; height: 9px; }
+  .spine-months span { top: 0; font-size: 6px; letter-spacing: .06em; }
+  .spine-months span i { display: none; }
+  .spine-track { height: 13px; padding-top: 0; --tick-h: 5px; }
   .spine-tick { height: 5px; }
   .spine-tick.is-now { height: 5px; }
   .spine-now { height: 9px; }
