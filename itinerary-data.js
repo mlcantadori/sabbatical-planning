@@ -521,7 +521,7 @@ window.TRIP = (function () {
           highlights: ['Jun 5–8: Gamcheon hillside village & Haeundae / Gwangalli beach walks in warm 24°C weather','Jagalchi Fish Market + BIFF Square street food','Haedong Yonggungsa seaside temple at dawn','Gwangalli Bridge lit up at night','Jun 8: 35-min train north to Gyeongju'] },
         { name: 'Gyeongju', photo: 'gyeongju temple', days: 2, query: 'Bulguksa Temple, Gyeongju',
           highlights: ['Jun 8–10: Bulguksa Temple (UNESCO) + Seokguram Grotto','Daereungwon Tumuli Park burial mounds & Hwangridan-gil cafés','Wolji (Anapji) Pond + Woljeonggyo Bridge lit up at dusk','Jun 10: KTX north to Seoul (~2h)'] },
-        { name: 'Seoul', photo: 'korean street food', days: 6, query: 'Bukchon Hanok Village, Seoul',
+        { name: 'Seoul', photo: 'seoul deoksugung autumn', days: 6, query: 'Bukchon Hanok Village, Seoul',
           highlights: ['Jun 10–16: six final nights of the sabbatical in Seoul — long daylight, green palaces','Gyeongbokgung (closed Tue) + Changdeokgung Secret Garden (closed Mon)','Bukchon Hanok Village mornings; Insadong, Ikseon-dong & Seongsu-dong cafés','Gwangjang Market + Euljiro pocha/BBQ nights + Han River sunset picnic','DMZ day trip (Tue–Fri) or Suwon Hwaseong fortress wall walk','Jun 16: AREX train to Seoul Incheon (ICN) → fly home to São Paulo'] },
       ],
       decisions: ['Placed Jun 2–16 right after China Spring: Korea stays warm, dry, and sunny (24–26°C) until the Jangma monsoon arrives in late June', 'Routed south-to-north (Jeju → Busan → Gyeongju → Seoul) so the last 6 nights of the entire trip are in Seoul, giving a stress-free departure from Incheon (ICN) megahub to São Paulo'],

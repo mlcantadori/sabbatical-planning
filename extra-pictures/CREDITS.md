@@ -2,6 +2,18 @@
 
 Trip photos are vendored locally so the site has no hotlinked images.
 
+## Added Nov 2026 — Seoul (stop photo)
+
+| File | Author | License |
+|---|---|---|
+| `korea/seoul-deoksugung-autumn.jpg` | 라성민 (Ra Seong-min) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
+
+Sourced from Wikimedia Commons (`File:덕수궁의 가을.jpg`), an aerial of Deoksugung
+in autumn foliage against the downtown skyline; 7360px → 1920x1281, recompressed.
+Replaces `korean-street-food.jpg` on the Seoul stop only — the South Korea
+chapter header stays the Myeongdong night market. The street-food file stays in
+the tree, credited below; it was 1024px and read as generic at card size.
+
 ## Added Nov 2026 — Indonesia, Thailand, Ko Lanta, Taipei
 
 | File | Author | License |

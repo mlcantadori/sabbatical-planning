@@ -63,6 +63,7 @@ window.PHOTO_IDS = {
   'busan gamcheon':              'extra-pictures/korea/busan-gamcheon.jpg',
   'gyeongju temple':             'extra-pictures/korea/gyeongju-temple.jpg',
   'jeju yongmeori':              'extra-pictures/korea/jeju-yongmeori.jpg',
+  'seoul deoksugung autumn':     'extra-pictures/korea/seoul-deoksugung-autumn.jpg',
   'korean street food':          'extra-pictures/korea/korean-street-food.jpg',
   'seoul skyline night':         'extra-pictures/korea/seoul-skyline-night.jpg',
   'myeongdong night market':     'extra-pictures/korea/myeongdong-night-market.jpg',
