@@ -534,7 +534,7 @@ window.TRIP = (function () {
   // (BudgetView) from these parts — never hardcoded — so edits stay consistent.
   const budget = {
     currency: 'USD',
-    basis: 'couple · 355 days · mid-range with strategic splurges',
+    basis: 'couple · 360 days · mid-range with strategic splurges',
     fxBRL: 5.2,
     estimate: 'USD ~94.3k for two',
     perDay: '~USD 262/day for two',
@@ -609,7 +609,7 @@ window.TRIP = (function () {
       { route: 'Bali → Singapore', cost: 200, date: '2027-05-01', note: 'Estimate, AirAsia' },
       { route: 'Singapore → Xi\'an (direct)', cost: 300, date: '2027-05-06', note: 'Estimate — Scoot direct ~5h30; China spring begins right after May Day Golden Week' },
       { route: 'Shanghai → Seoul (direct)', cost: 280, date: '2027-06-02', note: 'Estimate — PVG–ICN ~2h; South Korea finale begins' },
-      { route: 'Seoul → São Paulo (home)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp — 1-stop from Incheon (ICN) megahub; trip ends' },
+      { route: 'Seoul → São Paulo (return, unticketed)', cost: 1400, date: '2027-06-16', note: 'Estimate ~$700pp — 1-stop from Incheon (ICN); the trip ends here. Unticketed by design, no todo row: the travelers deferred booking it. This is the only modelled return leg — do not delete it as stale' },
     ],
     extras: [
       { item: 'Health insurance, $150/mo × 12 months (couple)', cost: 1800, note: 'Covers the full trip, both travelers' },
