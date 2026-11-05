@@ -790,7 +790,9 @@ button:focus-visible, [role="button"]:focus-visible {
 .reel-title {
   font-family: var(--f-disp);
   font-size: 17px;
-  line-height: 1.1;
+  /* Fraunces descenders (Singapore's g) run ~1.28em off the baseline; a 1.1
+     line box clipped them against this element's overflow: hidden. */
+  line-height: 1.3;
   letter-spacing: -.015em;
   white-space: nowrap;
   overflow: hidden;
