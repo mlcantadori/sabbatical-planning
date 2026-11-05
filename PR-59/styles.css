@@ -1203,6 +1203,8 @@ button:focus-visible, [role="button"]:focus-visible {
   background: linear-gradient(to top, rgba(9,13,19,.95) 0%, rgba(9,13,19,.1) 45%, rgba(9,13,19,.25) 100%);
   pointer-events: none;
 }
+/* A horizontal swipe is ours; vertical stays the panel's scroll. */
+.detail-hero.carousel { touch-action: pan-y; }
 .carousel-arrow {
   position: absolute;
   top: 50%;

@@ -51,7 +51,6 @@
     };
     const [idx, setIdx] = React.useState(() => indexFor(startPlaceIdx));
     const n = items.length;
-    const touchX = React.useRef(null);
     // Opening the chapter from a city pin starts on that city's photo, not
     // always on the chapter hero. A place with no photo of its own leaves
     // the carousel where it is rather than jumping to the first frame.
@@ -62,16 +61,58 @@
     if (!n) return null;
     const go = d => setIdx(i => (i + d + n) % n);
     const cur = items[idx];
+
+    // Swipe works with a finger and with a mouse: touch events alone left a
+    // desktop reader with only the arrows, and 40px of travel is enough to
+    // tell a swipe from a tap on a dot or an arrow.
+    const swipe = React.useRef({
+      active: false,
+      x: 0,
+      y: 0,
+      moved: 0
+    });
+    const SWIPE = 40;
+    const onSwipeStart = e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      swipe.current = {
+        active: true,
+        x: e.clientX,
+        y: e.clientY,
+        moved: 0
+      };
+    };
+    const onSwipeMove = e => {
+      const d = swipe.current;
+      if (!d.active) return;
+      if (e.pointerType === 'mouse' && e.buttons === 0) {
+        d.active = false;
+        return;
+      }
+      d.moved = Math.max(d.moved, Math.abs(e.clientX - d.x));
+    };
+    const onSwipeEnd = e => {
+      const d = swipe.current;
+      if (!d.active) return;
+      d.active = false;
+      const dx = e.clientX - d.x,
+        dy = e.clientY - d.y;
+      if (Math.abs(dx) > SWIPE && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+    };
     return /*#__PURE__*/React.createElement("div", {
       className: "detail-hero carousel",
-      onTouchStart: e => {
-        touchX.current = e.touches[0].clientX;
-      },
-      onTouchEnd: e => {
-        if (touchX.current == null) return;
-        const dx = e.changedTouches[0].clientX - touchX.current;
-        touchX.current = null;
-        if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+      onPointerDown: onSwipeStart,
+      onPointerMove: onSwipeMove,
+      onPointerUp: onSwipeEnd,
+      onPointerCancel: onSwipeEnd,
+      onDragStart: e => e.preventDefault(),
+      onClickCapture: e => {
+        // A swipe that ends on an arrow or a dot would otherwise fire that
+        // control on top of the page turn it just caused.
+        if (swipe.current.moved > 10) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        swipe.current.moved = 0;
       }
     }, /*#__PURE__*/React.createElement(window.Photo, {
       key: cur.keyword,
