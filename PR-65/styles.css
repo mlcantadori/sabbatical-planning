@@ -516,10 +516,13 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   right: -5px;
   margin: 0;
 }
+/* The menu hangs off the last tab, and the tab is flush with the screen edge:
+   right:-30px pushed a 160px panel 30px past the viewport, where the app's
+   overflow:hidden cut it in half. Anchor it inside the edge instead. */
 .bottomnav .sync-menu {
   top: auto;
   bottom: calc(100% + 10px);
-  right: -30px;
+  right: 10px;
 }
 
 /* ════════════════════════════════════════════════════════════════════════
