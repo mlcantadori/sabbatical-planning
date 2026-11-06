@@ -1,0 +1,153 @@
+# Photo credits
+
+Trip photos are vendored locally so the site has no hotlinked images.
+
+## Added Nov 2026 — Seoul (stop photo)
+
+| File | Author | License |
+|---|---|---|
+| `korea/seoul-deoksugung-autumn.jpg` | 라성민 (Ra Seong-min) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
+
+Sourced from Wikimedia Commons (`File:덕수궁의 가을.jpg`), an aerial of Deoksugung
+in autumn foliage against the downtown skyline; 7360px → 1920x1281, recompressed.
+Replaces `korean-street-food.jpg` on the Seoul stop only — the South Korea
+chapter header stays the Myeongdong night market. The street-food file stays in
+the tree, credited below; it was 1024px and read as generic at card size.
+
+## Added Nov 2026 — Indonesia, Thailand, Ko Lanta, Taipei
+
+| File | Author | License |
+|---|---|---|
+| `indonesia-a/manta-ray-indonesia.jpg` | Daniel Sasse | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `thailand/koh-lipe-tropical-beach.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `thailand/koh-lanta-thailand-8.jpg` | Dronepicr | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) |
+| `taiwan/taipei-taiyuan-road.jpg` | Quintin Soloviev | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+
+All sourced from Wikimedia Commons and downscaled locally: the manta
+(`File:Giant oceanic manta ray.jpg`, 6000px) and the Koh Lipe beach
+(`File:Koh Lipe (island), Tropical beach 2, Thailand.jpg`, 3072px) are the new
+**chapter headers** for Indonesia (March) and Thailand (December), at 2000px
+wide. Ko Lanta's beach (`File:Ko Lanta Thailand-8.jpg`, 3567px → 1920px) is the
+**stop photo only** — the Thailand header no longer uses it. Taipei's Taiyuan
+Road (`File:Taiyuan Road in Taipei, Taiwan.jpg`, 3851px → 1920px) likewise
+replaces the stop photo only; the header stays the Elephant Mountain skyline.
+The old `koh-lanta-beach.jpg` and `taipei-101-night.jpg` credit above stands —
+the files remain in the tree, just unused by the current plan.
+
+## Added Nov 2026 — Hong Kong (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `hk/hong-kong-skyline.jpg` | Benh Lieu Song | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Hong Kong Harbour Night 2019-06-11.jpg`),
+downscaled to 2000px and recompressed locally. Replaces a 1024×169 strip that
+had no usable detail at card or hero size.
+
+## Added Nov 2026 — South Korea (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `korea/seoul-skyline-night.jpg` | kallerna | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:N Seoul Tower view 1.jpg`), the city from
+Namsan at night; cropped off the near-black foreground, downscaled to 2000px.
+The street-food photo stays with the Seoul stop, where it belongs.
+
+## Added Nov 2026 — South China (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `china-e2/guangzhou-night-skyline.jpg` | Dairui Chen (tallnut) | CC0 1.0 |
+
+Sourced from Wikimedia Commons (`File:Guangzhou at night - 2017.jpg`) —
+Zhujiang New Town and Liede Bridge. Downscaled to 2000px. Replaces a low-res
+Shenzhen header; Shenzhen keeps its own detail photo on the stop. A sunset
+version from voyagefox.net was tried and dropped: no licence granted, and no
+freely licensed sunset equivalent exists on Commons.
+
+## Added Nov 2026 — South Korea (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `korea/myeongdong-night-market.jpg` | Sgroey | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Myeongdong night market seoul 2.jpg`),
+downscaled from 4032px to 2000x1500. Replaces a photograph from trotop.be that
+was all rights reserved.
+
+## Added Nov 2026 — Taiwan (chapter header)
+
+| File | Author | License |
+|---|---|---|
+| `taiwan/taipei-101-elephant-mountain.jpg` | 4300streetcar | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+
+Sourced from Wikimedia Commons (`File:Taipei night skyline from Elephant
+Mountain May 2025 2.jpg`), downscaled from 8256px to 2000x1333. The street-level
+Taipei 101 shot stays with the Taipei stop.
+
+## Added Nov 2026 — Canton Tower (South China header)
+
+| File | Author | License |
+|---|---|---|
+| `china-e2/guangzhou-canton-tower-day.jpg` | Tim Wu | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Canton Tower 20220626 (cropped).jpg`),
+an aerial of the tower over Zhujiang New Town; downscaled from 2709px to
+2000x1333. Distinct keyword from the Guangzhou stop's `guangzhou canton tower`
+street-level photo.
+
+## Map textures (not trip photos)
+
+| File | Author | License |
+|---|---|---|
+| `earth/blue-marble-16k.webp` · `earth/blue-marble-8k.webp` · `earth/blue-marble-4k.webp` | NASA/Goddard Space Flight Center — *Blue Marble: Land Surface, Shallow Water, and Shaded Topography* (Reto Stöckli; ocean colour and composite by Robert Simmon) | Public domain |
+
+Stitched from NASA GIBS WMTS layer `BlueMarble_ShadedRelief_Bathymetry`
+(EPSG:4326, `500m`, level 5 = 40×20 tiles = 20480×10240 px), then downscaled to
+16382×8191, 8192×4096 and 4096×2048 and encoded WebP (q76 for the 16k, q86 for
+the rest). GIBS serves the same public-domain Visible Earth composite with
+bathymetry, which is what the old hotlinked `unpkg.com/three-globe` texture was —
+at five times the linear resolution.
+
+## Added Nov 2026 — China E1 (Hongcun night)
+
+| File | Author | License |
+|---|---|---|
+| `china-e1/hongcun-moon-pond.jpg` | EditQ | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+Sourced from Wikimedia Commons (`File:Moon Pond, Hongcun.jpg`); cropped and
+recompressed locally.
+
+## Added Oct 2026
+
+| File | Author | License |
+|---|---|---|
+| `korea/jeju-yongmeori.jpg` | Bernard Gagnon | CC0 1.0 |
+| `thailand/koh-lipe-beach.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `thailand/railay-krabi.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| `malaysia/langkawi-cenang-beach.jpg` | Khairil Yusof | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `thailand/koh-lanta-beach.jpg` | Fabio Achilli | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+
+All sourced from Wikimedia Commons.
+
+## Added Oct 2026 — Taiwan (NYE south variant)
+
+| File | Author | License |
+|---|---|---|
+| `taiwan/taipei-101-night.jpg` | Titoni Thomas | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
+| `taiwan/tainan-chihkan-tower.jpg` | xiquinhosilva | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) |
+| `taiwan/alishan-sea-of-clouds.jpg` | Huaiwun | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `taiwan/kaohsiung-harbor.jpg` | Yu-Jheng Fang | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) |
+
+All sourced from Wikimedia Commons.
+
+## Added Oct 2026 — Japan winter extension
+
+| File | Author | License |
+|---|---|---|
+| `japan/mount-fuji-winter.jpg` | Suicasmo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `japan/shirakawa-go-snow.jpg` | Suicasmo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| `japan/nozawa-onsen-snow.jpg` | Hoboesque | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+
+All sourced from Wikimedia Commons.
