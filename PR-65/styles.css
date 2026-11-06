@@ -558,6 +558,16 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 }
 .atlas-title > * { pointer-events: none; }
 .atlas-title .atlas-name { pointer-events: auto; }
+/* A finger on the giant name used to steal the gesture from the map. The name
+   is a button, so a pinch with one thumb over the title hit the button and
+   Leaflet/OrbitControls never saw a second touch — the one place on the stage
+   where pinching simply did not work, and it is the biggest target on the
+   screen. On touch it becomes scenery: the reel's current card opens the same
+   chapter, and phones never showed the hover arrow that made the name read as
+   a button in the first place. Desktop keeps the shortcut. */
+@media (hover: none) {
+  .atlas-title .atlas-name { pointer-events: none; }
+}
 .atlas-name {
   display: flex;
   align-items: flex-start;
@@ -2256,8 +2266,8 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
      and gives the imagery back. The text shadows carry the last few percent. */
   .atlas-vignette {
     background:
-      linear-gradient(to bottom, rgba(6,9,13,.9) 0%, rgba(6,9,13,.8) 20%, rgba(6,9,13,.45) 36%, rgba(6,9,13,0) 52%),
-      linear-gradient(to bottom, transparent 64%, rgba(6,9,13,.9) 100%);
+      linear-gradient(to bottom, rgba(6,9,13,.82) 0%, rgba(6,9,13,.72) 20%, rgba(6,9,13,.4) 36%, rgba(6,9,13,0) 52%),
+      linear-gradient(to bottom, transparent 64%, rgba(6,9,13,.82) 100%);
   }
 
   .atlas-tools {
