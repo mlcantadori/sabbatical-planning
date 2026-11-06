@@ -602,8 +602,13 @@
                     />
                   )}
                 </window.ErrorBoundary>
-                <div className="atlas-vignette" aria-hidden="true" />
               </div>
+              {/* Stage-level scrim, deliberately a sibling of .atlas-canvas
+                  rather than a child: inside it, the Leaflet panes (200–700)
+                  paint over anything at z-index 1, so the vignette rendered
+                  behind the tiles and did nothing. Here it sits above the map
+                  and below the title, reel and tools. */}
+              <div className="atlas-vignette" aria-hidden="true" />
 
               <AtlasTitle
                 active={active}

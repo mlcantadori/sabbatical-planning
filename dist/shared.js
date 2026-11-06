@@ -95,7 +95,7 @@ function Photo({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: '"JetBrains Mono", monospace',
-      fontSize: 8,
+      fontSize: 10,
       letterSpacing: '0.24em',
       color: 'rgba(244,236,220,.24)',
       textTransform: 'uppercase'
@@ -107,7 +107,7 @@ function Photo({
       left: 14,
       right: 14,
       fontFamily: '"JetBrains Mono", monospace',
-      fontSize: 9,
+      fontSize: 11,
       color: 'rgba(255,255,255,.92)',
       letterSpacing: '0.16em',
       textTransform: 'uppercase',

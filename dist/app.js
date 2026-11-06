@@ -784,10 +784,10 @@
       onSelectPlace: onSelectPlace,
       onBackgroundClick: () => setDetailOpen(false),
       focusKey: focusKey
-    })), /*#__PURE__*/React.createElement("div", {
+    }))), /*#__PURE__*/React.createElement("div", {
       className: "atlas-vignette",
       "aria-hidden": "true"
-    })), /*#__PURE__*/React.createElement(AtlasTitle, {
+    }), /*#__PURE__*/React.createElement(AtlasTitle, {
       active: active,
       current: current,
       selected: !!selectedId,

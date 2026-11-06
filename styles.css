@@ -29,6 +29,20 @@
   --f-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 
+  /* Type scale, in px, as literals so each rule reads at a glance.
+     The micro tiers were set for a print page and then lived on a screen:
+     7–9px mono uppercase is legible only if you lean in, which nobody does
+     with a map underneath. The floor is now 9.5–11.5px for labels and 12px for
+     mono metadata; body sans starts at 14px. What the lift bought:
+       label / kicker        9.5 – 11.5px  (was 6.5 – 9)
+       mono metadata, pills  12 – 13px     (was 9.5 – 11)
+       prose                 14 – 16px     (was 12 – 14.5)
+       heads / numerals      as before, +1
+     The phone breakpoints below keep their own smaller steps — they moved up by
+     the same mapping, not to the desktop sizes. Display sizes are clamp()ed and
+     were never the problem. Adding 2px is not the lever that fixes a layout: if
+     a row needs more room, raise the row. */
+
   --hdr: 66px;
   --spine: 44px;
   --shadow-1: 0 2px 10px rgba(0,0,0,.35), 0 20px 60px rgba(0,0,0,.35);
@@ -88,7 +102,7 @@ button:focus-visible, [role="button"]:focus-visible {
 
 .kicker {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -150,7 +164,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .brand-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .brand-name {
   font-family: var(--f-disp);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.05;
@@ -159,7 +173,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .brand-name em { font-style: italic; color: var(--ember); }
 .brand-sub {
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -182,14 +196,14 @@ button:focus-visible, [role="button"]:focus-visible {
   padding: 8px 13px;
   border-radius: 999px;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-3);
   transition: color .18s, background .18s;
 }
 .topnav-index {
-  font-size: 7.5px;
+  font-size: 9.5px;
   color: var(--ink-4);
   letter-spacing: .04em;
   transition: color .18s;
@@ -224,7 +238,7 @@ button:focus-visible, [role="button"]:focus-visible {
   position: relative;
   z-index: 1;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0;
   color: var(--ink);
@@ -232,14 +246,14 @@ button:focus-visible, [role="button"]:focus-visible {
 .dayclock-meta { display: flex; flex-direction: column; gap: 1px; }
 .dayclock-of {
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
 .dayclock-label {
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -256,7 +270,7 @@ button:focus-visible, [role="button"]:focus-visible {
   border-radius: 999px;
   padding: 6px 11px;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -290,7 +304,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding: 9px 10px;
   border-radius: 8px;
   font-family: var(--f-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--ink-2);
   cursor: pointer;
@@ -315,12 +329,12 @@ button:focus-visible, [role="button"]:focus-visible {
   border-bottom: 1px solid var(--line-2);
   backdrop-filter: blur(14px);
 }
-.spine-months { position: relative; height: 15px; }
+.spine-months { position: relative; height: 17px; }
 .spine-months span {
   position: absolute;
-  top: 4px;
+  top: 3px;
   font-family: var(--f-mono);
-  font-size: 7.5px;
+  font-size: 9.5px;
   letter-spacing: .14em;
   color: var(--ink-4);
   white-space: nowrap;
@@ -410,7 +424,7 @@ button:focus-visible, [role="button"]:focus-visible {
   box-shadow: 0 12px 28px rgba(0,0,0,.6);
   backdrop-filter: blur(10px);
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: .1em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -469,7 +483,7 @@ button:focus-visible, [role="button"]:focus-visible {
   background: transparent;
   color: var(--ink-3);
   font-family: var(--f-mono);
-  font-size: 7.5px;
+  font-size: 9.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
@@ -491,7 +505,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding: 0;
   color: var(--ink-3);
   font-family: var(--f-mono);
-  font-size: 7.5px;
+  font-size: 9.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
@@ -513,13 +527,23 @@ button:focus-visible, [role="button"]:focus-visible {
    ════════════════════════════════════════════════════════════════════════ */
 .atlas { position: absolute; inset: 0; overflow: hidden; }
 .atlas-canvas { position: absolute; inset: 0; z-index: 0; }
-.atlas-title, .atlas-tools, .reel { transition: opacity .35s ease; }
+.atlas-title, .atlas-tools, .reel, .atlas-vignette { transition: opacity .35s ease; }
 .atlas-vignette {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  /* Above the map's panes, below the title (20), reel (25) and tools (30). */
+  z-index: 5;
+  /* The chapter title and its metadata sit straight on the imagery, and the
+     imagery has no respect for small type: a bright desert or a snowfield
+     behind 12px mono is unreadable. The two edge gradients alone read as a
+     frame, not as backing — by the "next up" row they had all but run out. The
+     first layer is the one that does the work: a fixed throw anchored on the
+     title corner, sized in px so it reaches zero inside the viewport on every
+     side (a gradient that is still opaque at its own edge draws a rectangle)
+     and fades out over the first ~800px of map. */
   background:
+    radial-gradient(ellipse 820px 660px at 140px 160px, rgba(6,9,13,.9) 0%, rgba(6,9,13,.6) 42%, rgba(6,9,13,.22) 70%, rgba(6,9,13,0) 100%),
     linear-gradient(to bottom, rgba(6,9,13,.55) 0%, transparent 22%, transparent 62%, rgba(6,9,13,.88) 100%),
     linear-gradient(to right, rgba(6,9,13,.55) 0%, transparent 34%, transparent 72%, rgba(6,9,13,.3) 100%);
 }
@@ -563,17 +587,22 @@ button:focus-visible, [role="button"]:focus-visible {
 .atlas-name:hover { color: #fffdf6; }
 .atlas-name:hover svg { opacity: 1; transform: none; }
 .atlas-title.is-long .atlas-name { font-size: clamp(45px, 6.3vw, 98px); line-height: .88; }
+/* The title block is the one piece of UI with no surface of its own: it sits
+   straight on the imagery. The corner scrim in .atlas-vignette does the heavy
+   lifting, but a shadow on the text itself is the insurance — it survives a
+   snowfield or a bright city grid sliding under the row while the map pans. */
 .atlas-sub {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
   font-family: var(--f-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .08em;
-  color: var(--ink-2);
+  color: var(--ink);
   text-transform: uppercase;
   margin-top: 6px;
+  text-shadow: 0 1px 3px rgba(6,9,13,.95), 0 2px 14px rgba(6,9,13,.9);
   /* Above the display title: its descenders hang into this row. */
   position: relative;
   z-index: 1;
@@ -583,10 +612,11 @@ button:focus-visible, [role="button"]:focus-visible {
   align-items: center;
   gap: 5px;
   padding: 3px 8px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(243,236,221,.18);
   border-radius: 999px;
-  background: rgba(9,13,19,.5);
-  font-size: 9px;
+  background: rgba(6,9,13,.72);
+  backdrop-filter: blur(6px);
+  font-size: 11px;
   color: var(--ink-2);
 }
 .atlas-next {
@@ -595,15 +625,16 @@ button:focus-visible, [role="button"]:focus-visible {
   gap: 8px;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(243,236,221,.18);
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .1em;
   text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(6,9,13,.95), 0 2px 14px rgba(6,9,13,.9);
 }
-.atlas-next-label { color: var(--ink-4); }
+.atlas-next-label { color: var(--ink-2); }
 .atlas-next-city { color: var(--gold); }
-.atlas-next-when { color: var(--ink-3); }
+.atlas-next-when { color: var(--ink-2); }
 
 .atlas-tools {
   position: absolute;
@@ -633,7 +664,7 @@ button:focus-visible, [role="button"]:focus-visible {
   border-radius: 999px;
   padding: 6px 11px;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -651,7 +682,7 @@ button:focus-visible, [role="button"]:focus-visible {
   backdrop-filter: blur(14px);
   padding: 7px 12px;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -671,6 +702,10 @@ button:focus-visible, [role="button"]:focus-visible {
   pointer-events: none;
   transition: opacity .4s cubic-bezier(.4, 0, .6, 1);
 }
+/* The corner scrim only exists to carry the title block. Once the spread takes
+   the stage the map should get its light back rather than keep a dark thumb-
+   print where the title used to be. */
+.app.has-detail .atlas-vignette { opacity: .25; }
 .app.has-detail .atlas-title > * { pointer-events: none; }
 .app.has-detail .reel {
   opacity: .28;
@@ -696,14 +731,14 @@ button:focus-visible, [role="button"]:focus-visible {
 .reel-head-left { display: flex; align-items: baseline; gap: 12px; }
 .reel-kicker {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .24em;
   text-transform: uppercase;
   color: var(--ink-2);
 }
 .reel-count {
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -765,7 +800,7 @@ button:focus-visible, [role="button"]:focus-visible {
   position: absolute;
   top: 8px; left: 9px;
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: .08em;
   color: #fff;
@@ -782,7 +817,7 @@ button:focus-visible, [role="button"]:focus-visible {
   background: var(--ember);
   color: #1a0d07;
   font-family: var(--f-mono);
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -798,7 +833,7 @@ button:focus-visible, [role="button"]:focus-visible {
   position: absolute;
   right: 8px; bottom: 7px;
   font-family: var(--f-mono);
-  font-size: 7.5px;
+  font-size: 9.5px;
   letter-spacing: .08em;
   color: rgba(255,255,255,.85);
   text-shadow: 0 1px 5px rgba(0,0,0,.9);
@@ -806,7 +841,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .reel-meta { display: flex; flex-direction: column; gap: 1px; padding: 0 2px; }
 .reel-title {
   font-family: var(--f-disp);
-  font-size: 17px;
+  font-size: 18px;
   /* Fraunces descenders (Singapore's g) run ~1.28em off the baseline; a 1.1
      line box clipped them against this element's overflow: hidden. */
   line-height: 1.3;
@@ -817,7 +852,7 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .reel-date {
   font-family: var(--f-mono);
-  font-size: 7.5px;
+  font-size: 9.5px;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -886,7 +921,7 @@ button:focus-visible, [role="button"]:focus-visible {
   left: 0; top: 0;
   transform: translate(-50%, -50%);
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   font-weight: 500;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -915,7 +950,7 @@ button:focus-visible, [role="button"]:focus-visible {
   color: #120c08;
   font-family: var(--f-mono);
   font-weight: 600;
-  font-size: 10px;
+  font-size: 12px;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 0 0 1.5px rgba(6,9,13,.9), 0 0 0 2.5px rgba(255,255,255,.16), 0 4px 14px rgba(0,0,0,.55);
   letter-spacing: -.02em;
@@ -932,7 +967,7 @@ button:focus-visible, [role="button"]:focus-visible {
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: .06em;
   color: var(--ink);
@@ -978,7 +1013,7 @@ button:focus-visible, [role="button"]:focus-visible {
   left: calc(50% + 8px);
   transform: translateY(-50%);
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--ink);
   background: rgba(6,9,13,.92);
@@ -1013,7 +1048,7 @@ button:focus-visible, [role="button"]:focus-visible {
   margin: 0;
   max-width: 420px;
   font-family: var(--f-mono);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
   color: var(--ink-3);
   word-break: break-word;
@@ -1028,7 +1063,7 @@ button:focus-visible, [role="button"]:focus-visible {
   align-items: center;
   gap: 6px;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -1094,7 +1129,7 @@ button:focus-visible, [role="button"]:focus-visible {
   max-width: 660px;
   margin: 0;
   font-family: var(--f-sans);
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.75;
   color: var(--ink-2);
   letter-spacing: .005em;
@@ -1111,7 +1146,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .page-fact b {
   display: block;
   font-family: var(--f-disp);
-  font-size: 38px;
+  font-size: 39px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -.03em;
@@ -1119,7 +1154,7 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .page-fact span {
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1133,7 +1168,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding-top: 20px;
   border-top: 1px solid var(--line);
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1173,7 +1208,7 @@ button:focus-visible, [role="button"]:focus-visible {
   align-items: center;
   gap: 8px;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -1206,7 +1241,7 @@ button:focus-visible, [role="button"]:focus-visible {
   border: 1px solid var(--line);
   background: rgba(6,9,13,.65);
   color: var(--ink);
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
@@ -1251,7 +1286,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .detail-theme {
   margin: 0 0 26px;
   font-family: var(--f-serif);
-  font-size: 19px;
+  font-size: 20px;
   font-style: italic;
   line-height: 1.38;
   color: var(--gold);
@@ -1275,7 +1310,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .detail-fact span {
   display: block;
   font-family: var(--f-mono);
-  font-size: 7.5px;
+  font-size: 9.5px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1284,7 +1319,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .detail-fact b {
   display: block;
   font-family: var(--f-sans);
-  font-size: 12.5px;
+  font-size: 14.5px;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.35;
@@ -1293,7 +1328,7 @@ button:focus-visible, [role="button"]:focus-visible {
   display: block;
   font-style: normal;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .04em;
   color: var(--ink-3);
   margin-top: 3px;
@@ -1308,14 +1343,14 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .section-head-num {
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: .16em;
   color: var(--ember);
 }
 .section-head-title {
   margin: 0;
   font-family: var(--f-disp);
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 400;
   letter-spacing: -.025em;
   color: var(--ink);
@@ -1323,7 +1358,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .section-head-note {
   margin-left: auto;
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1352,9 +1387,9 @@ button:focus-visible, [role="button"]:focus-visible {
   padding-top: 3px;
   font-family: var(--f-mono);
 }
-.stop-date-day { font-size: 10px; color: var(--ink); letter-spacing: .02em; }
-.stop-date-end { font-size: 8.5px; color: var(--ink-3); }
-.stop-date-nights { font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-4); margin-top: 3px; }
+.stop-date-day { font-size: 12px; color: var(--ink); letter-spacing: .02em; }
+.stop-date-end { font-size: 10.5px; color: var(--ink-3); }
+.stop-date-nights { font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-4); margin-top: 3px; }
 .stop-node {
   position: relative;
   display: flex;
@@ -1381,10 +1416,10 @@ button:focus-visible, [role="button"]:focus-visible {
 .stop-row.is-active .stop-node i { box-shadow: 0 0 0 3px var(--night), 0 0 0 4px var(--tint), 0 0 12px var(--tint); }
 .stop-body { min-width: 0; }
 .stop-titlerow { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
-.stop-idx { font-family: var(--f-mono); font-size: 8px; color: var(--ink-4); }
+.stop-idx { font-family: var(--f-mono); font-size: 10px; color: var(--ink-4); }
 .stop-name {
   font-family: var(--f-disp);
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.1;
   letter-spacing: -.02em;
   color: var(--ink);
@@ -1393,7 +1428,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .stop-highlight {
   position: relative;
   font-family: var(--f-sans);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--ink-2);
   padding-left: 12px;
@@ -1418,7 +1453,7 @@ button:focus-visible, [role="button"]:focus-visible {
   position: relative;
   padding: 10px 0 10px 26px;
   font-family: var(--f-sans);
-  font-size: 12.5px;
+  font-size: 14.5px;
   line-height: 1.6;
   color: var(--ink-2);
   border-bottom: 1px solid var(--line-2);
@@ -1430,7 +1465,7 @@ button:focus-visible, [role="button"]:focus-visible {
   left: 9px;
   top: 11px;
   font-family: var(--f-mono);
-  font-size: 8px;
+  font-size: 10px;
   color: var(--ember);
 }
 .detail-nav {
@@ -1452,7 +1487,7 @@ button:focus-visible, [role="button"]:focus-visible {
   color: var(--ink);
   text-align: left;
   font-family: var(--f-disp);
-  font-size: 15px;
+  font-size: 16.5px;
   line-height: 1.15;
   transition: all .16s;
 }
@@ -1462,7 +1497,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .detail-nav button i {
   font-style: normal;
   font-family: var(--f-mono);
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1477,16 +1512,14 @@ button:focus-visible, [role="button"]:focus-visible {
 /* Both binder pages share one measure so switching tabs does not shift the
    content column. */
 .ledger-page, .kit-page { max-width: 1280px; }
-/* Binder labels are deliberately small, but 7–8px is below comfortable at
-   laptop distance. Raise the shared micro-type on these two pages only. */
-.ledger-page .section-head-note,
-.kit-page .section-head-note { font-size: 9px; }
-.ledger-page .pill-btn,
-.kit-page .pill-btn { font-size: 9.5px; }
+/* These two pages once needed a local +1.5px on the shared micro-type because
+   7–8px is below comfortable at laptop distance. That reasoning now holds
+   everywhere (see the type scale note in :root), so the exception is gone —
+   the binder inherits the same floor as the atlas. */
 .money-hero {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 34px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   align-items: center;
   padding: 34px 36px;
   border: 1px solid var(--line);
@@ -1500,7 +1533,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .money-label {
   display: block;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1522,7 +1555,7 @@ button:focus-visible, [role="button"]:focus-visible {
   gap: 8px 18px;
   margin-top: 12px;
   font-family: var(--f-mono);
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: .04em;
   color: var(--ink-3);
 }
@@ -1530,7 +1563,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .money-stat b { font-weight: 500; color: var(--ink-2); }
 .money-stat em {
   font-style: normal;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1539,7 +1572,7 @@ button:focus-visible, [role="button"]:focus-visible {
   display: block;
   margin-top: 8px;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1573,20 +1606,20 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .donut-hole span {
   font-family: var(--f-disp);
-  font-size: 27px;
+  font-size: 28px;
   line-height: 1;
   letter-spacing: -.02em;
 }
 .donut-hole i {
   font-style: normal;
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-4);
 }
-.donut-key { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; min-width: 190px; }
-.donut-key li { display: flex; align-items: center; gap: 7px; font-family: var(--f-mono); font-size: 10px; letter-spacing: .04em; color: var(--ink-3); }
+.donut-key { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; min-width: 210px; }
+.donut-key li { display: flex; align-items: center; gap: 7px; font-family: var(--f-mono); font-size: 12px; letter-spacing: .04em; color: var(--ink-3); }
 .donut-key li i { width: 6px; height: 6px; border-radius: 2px; flex: none; }
 .donut-key li span { flex: 1; }
 .donut-key li b { font-weight: 500; color: var(--ink-2); }
@@ -1614,7 +1647,7 @@ button:focus-visible, [role="button"]:focus-visible {
   align-items: center;
   gap: 8px;
   font-family: var(--f-mono);
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: .04em;
   color: var(--ink-2);
   white-space: nowrap;
@@ -1624,8 +1657,8 @@ button:focus-visible, [role="button"]:focus-visible {
 .bar-ch i { width: 7px; height: 7px; border-radius: 50%; flex: none; }
 .bar-track { height: 7px; background: rgba(243,236,221,.06); border-radius: 4px; overflow: hidden; }
 .bar-track span { display: block; height: 100%; border-radius: 4px; opacity: .85; }
-.bar-val { text-align: right; font-family: var(--f-mono); font-size: 11px; color: var(--ink); }
-.bar-per { text-align: right; font-family: var(--f-mono); font-size: 10px; color: var(--ink-4); }
+.bar-val { text-align: right; font-family: var(--f-mono); font-size: 13px; color: var(--ink); }
+.bar-per { text-align: right; font-family: var(--f-mono); font-size: 12px; color: var(--ink-4); }
 .bar-per i { font-style: normal; opacity: .6; }
 
 .ledger-table-wrap { overflow-x: auto; margin: 0 -4px; }
@@ -1634,7 +1667,7 @@ button:focus-visible, [role="button"]:focus-visible {
   min-width: 860px;
   border-collapse: collapse;
   font-family: var(--f-mono);
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: .02em;
 }
 .ledger-table th {
@@ -1648,7 +1681,7 @@ button:focus-visible, [role="button"]:focus-visible {
   background: transparent;
   padding: 0;
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1683,7 +1716,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding: 20px 20px 16px;
   background: rgba(12,17,24,.45);
   font-family: var(--f-mono);
-  font-size: 10.5px;
+  font-size: 12.5px;
   color: var(--ink-2);
 }
 .receipt-head {
@@ -1692,7 +1725,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding-bottom: 12px;
   margin-bottom: 12px;
   border-bottom: 1px dashed rgba(243,236,221,.24);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1705,7 +1738,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding-top: 12px;
   border-top: 1px solid var(--ink);
   font-family: var(--f-disp);
-  font-size: 19px;
+  font-size: 20px;
   letter-spacing: -.01em;
 }
 .receipt-row.is-grand b { font-weight: 500; }
@@ -1713,7 +1746,7 @@ button:focus-visible, [role="button"]:focus-visible {
   margin-top: 12px;
   padding-top: 10px;
   border-top: 1px dashed rgba(243,236,221,.18);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1722,7 +1755,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .ledger-note h3 {
   margin: 0 0 10px;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   font-weight: 500;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -1733,7 +1766,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding: 7px 0;
   border-bottom: 1px solid var(--line-2);
   font-family: var(--f-sans);
-  font-size: 12.5px;
+  font-size: 14.5px;
   line-height: 1.55;
   color: var(--ink-3);
   text-wrap: pretty;
@@ -1772,16 +1805,16 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-ring-hole b {
   display: block;
   font-family: var(--f-disp);
-  font-size: 34px;
+  font-size: 35px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -.03em;
   color: var(--ink);
 }
-.kit-ring-hole b i { font-style: normal; font-size: 14px; color: var(--ink-3); }
+.kit-ring-hole b i { font-style: normal; font-size: 15.5px; color: var(--ink-3); }
 .kit-ring-hole span {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1791,14 +1824,14 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-stats b {
   display: block;
   font-family: var(--f-disp);
-  font-size: 30px;
+  font-size: 31px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -.02em;
 }
 .kit-stats span {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1818,7 +1851,7 @@ button:focus-visible, [role="button"]:focus-visible {
   margin: 10px 0;
   padding: 10px 12px;
   font-family: var(--f-mono);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--ink-2);
   background: var(--void);
@@ -1840,10 +1873,10 @@ button:focus-visible, [role="button"]:focus-visible {
 .seg button {
   border: 0;
   background: transparent;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 999px;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1857,10 +1890,10 @@ button:focus-visible, [role="button"]:focus-visible {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: transparent;
-  padding: 5px 10px;
+  padding: 4px 9px;
   font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: .1em;
+  font-size: 11px;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   transition: all .16s;
@@ -1880,7 +1913,7 @@ button:focus-visible, [role="button"]:focus-visible {
   align-items: center;
   gap: 6px;
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1892,7 +1925,9 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-group { margin-bottom: 8px; }
 .kit-group-head {
   display: grid;
-  grid-template-columns: 18px 360px minmax(60px, 1fr) 40px 74px;
+  /* Label column grew with the type: "Before you leave" + its 12px mono
+     subtitle on one line is ~410px at the current sizes. */
+  grid-template-columns: 18px 430px minmax(60px, 1fr) 34px 74px;
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -1905,11 +1940,11 @@ button:focus-visible, [role="button"]:focus-visible {
   transition: background .16s;
 }
 .kit-group-head:hover { background: rgba(243,236,221,.03); }
-.kit-caret { font-family: var(--f-mono); font-size: 14px; color: var(--ink-3); line-height: 1; }
+.kit-caret { font-family: var(--f-mono); font-size: 15.5px; color: var(--ink-3); line-height: 1; }
 .kit-group-label { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .kit-group-title {
   font-family: var(--f-disp);
-  font-size: 22px;
+  font-size: 23px;
   letter-spacing: -.02em;
   line-height: 1.1;
   min-width: 0;
@@ -1917,11 +1952,11 @@ button:focus-visible, [role="button"]:focus-visible {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.kit-group-dates { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+.kit-group-dates { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
 .kit-group-past {
   justify-self: start;
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1933,7 +1968,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-group-bar i { display: block; height: 100%; background: var(--tint, var(--ember)); }
 .kit-group-pct {
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .08em;
   color: var(--ink-4);
   text-align: right;
@@ -1942,7 +1977,7 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .kit-group-count {
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -1954,7 +1989,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-empty {
   padding: 14px 0 14px 28px;
   font-family: var(--f-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
   color: var(--ink-4);
 }
@@ -1971,7 +2006,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-row-body { min-width: 0; }
 .kit-row-title {
   font-family: var(--f-sans);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
   color: var(--ink);
@@ -1981,7 +2016,7 @@ button:focus-visible, [role="button"]:focus-visible {
 .kit-row-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 9px; margin-top: 3px; }
 .kit-cat {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-4);
@@ -1991,18 +2026,18 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .kit-row-group {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .06em;
   color: var(--ink-2);
   background: rgba(255,122,69,.1);
   border-radius: 3px;
   padding: 1px 5px;
 }
-.kit-row-place { font-family: var(--f-mono); font-size: 9.5px; color: var(--ink-3); }
-.kit-row-note { font-family: var(--f-sans); font-size: 11px; font-style: italic; color: var(--ink-4); }
+.kit-row-place { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3); }
+.kit-row-note { font-family: var(--f-sans); font-size: 13px; font-style: italic; color: var(--ink-4); }
 .kit-due {
   font-family: var(--f-mono);
-  font-size: 9.5px;
+  font-size: 11.5px;
   letter-spacing: .04em;
   color: var(--ink-4);
   white-space: nowrap;
@@ -2021,7 +2056,7 @@ button:focus-visible, [role="button"]:focus-visible {
   display: flex; align-items: center; justify-content: center;
   padding: 0;
   color: var(--void);
-  font-size: 11px;
+  font-size: 13px;
   transition: all .16s;
 }
 .booking-check:hover { border-color: var(--jade); }
@@ -2068,7 +2103,7 @@ button:focus-visible, [role="button"]:focus-visible {
   display: flex;
   justify-content: space-between;
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .24em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -2081,7 +2116,7 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .cover-kicker {
   font-family: var(--f-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .3em;
   text-transform: uppercase;
   color: var(--ember);
@@ -2141,7 +2176,7 @@ button:focus-visible, [role="button"]:focus-visible {
   padding-top: 18px;
   border-top: 1px solid var(--line);
   font-family: var(--f-mono);
-  font-size: 8.5px;
+  font-size: 10.5px;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -2180,14 +2215,14 @@ button:focus-visible, [role="button"]:focus-visible {
 @media (max-width: 880px) {
   :root { --hdr: 56px; --spine: 34px; }  .topbar { padding: 0 14px; }
   .brand-mark { width: 30px; height: 30px; }
-  .brand-name { font-size: 16px; }
+  .brand-name { font-size: 17px; }
   .dayclock-ring { width: 30px; height: 30px; }
   .dayclock-meta { display: none; }
   /* Months stay on mobile — an unlabelled bar was just a progress streak.
      Smaller type, no year; the base rule centres the block. */
   .spine { padding: 0 12px; }
-  .spine-months { display: block; height: 9px; }
-  .spine-months span { top: 0; font-size: 6px; letter-spacing: .06em; }
+  .spine-months { display: block; height: 11px; }
+  .spine-months span { top: 0; font-size: 8px; letter-spacing: .06em; }
   .spine-months span i { display: none; }
   .spine-track { height: 13px; padding-top: 0; --tick-h: 5px; }
   .spine-tick { height: 5px; }
@@ -2198,13 +2233,23 @@ button:focus-visible, [role="button"]:focus-visible {
   .atlas-name { font-size: clamp(44px, 12.5vw, 72px); margin-top: 8px; }
   .atlas-title.is-long .atlas-name { font-size: clamp(36px, 10.5vw, 58px); }
   .atlas-name svg { display: none; }
-  .atlas-sub { font-size: 8.5px; gap: 7px; }
-  .atlas-weather { font-size: 8px; padding: 2px 6px; }
-  .atlas-next { margin-top: 10px; padding-top: 9px; font-size: 8px; }
+  .atlas-sub { font-size: 10.5px; gap: 7px; }
+  .atlas-weather { font-size: 10px; padding: 2px 6px; }
+  .atlas-next { margin-top: 10px; padding-top: 9px; font-size: 10px; }
+
+  /* On a phone the desktop corner throw is a different object: it covers more
+     than half the screen, and the map is the whole point of the page. A band
+     that dies by roughly a third of the stage keeps the title block readable
+     and gives the imagery back. The text shadows carry the last few percent. */
+  .atlas-vignette {
+    background:
+      linear-gradient(to bottom, rgba(6,9,13,.9) 0%, rgba(6,9,13,.8) 20%, rgba(6,9,13,.45) 36%, rgba(6,9,13,0) 52%),
+      linear-gradient(to bottom, transparent 64%, rgba(6,9,13,.9) 100%);
+  }
 
   .atlas-tools {
     top: auto;
-    bottom: 176px;
+    bottom: 200px;
     left: 0;
     right: 0;
     padding: 0 12px;
@@ -2222,12 +2267,12 @@ button:focus-visible, [role="button"]:focus-visible {
 
   .reel { padding: 34px 14px 10px; }
   .reel-head { margin-bottom: 7px; }
-  .reel-kicker { font-size: 8px; }
-  .reel-count { font-size: 7.5px; }
+  .reel-kicker { font-size: 10px; }
+  .reel-count { font-size: 9.5px; }
   .reel-card { width: 156px; gap: 5px; }
   .reel-photo { height: 82px; }
-  .reel-title { font-size: 14px; }
-  .reel-date { font-size: 6.5px; }
+  .reel-title { font-size: 15.5px; }
+  .reel-date { font-size: 8.5px; }
 
 
   .app-body { min-height: 0; }
@@ -2242,26 +2287,26 @@ button:focus-visible, [role="button"]:focus-visible {
   .detail-topbar { height: 54px; padding: 0 12px 0 16px; }
   .detail-hero { height: 260px; }
   .detail-content { padding: 22px 18px 48px; }
-  .detail-title { font-size: 50px; }
-  .detail-theme { font-size: 16px; }
+  .detail-title { font-size: 51px; }
+  .detail-theme { font-size: 17px; }
 
   .page-inner { padding: 34px 18px 70px; }
   .page-head { margin-bottom: 36px; }
   .page-head h1 { font-size: clamp(40px, 11vw, 56px); }
-  .page-head p { font-size: 13.5px; }
+  .page-head p { font-size: 15px; }
   .page-facts { gap: 24px; }
-  .page-fact b { font-size: 30px; }
+  .page-fact b { font-size: 31px; }
 
   .ledger-page, .kit-page { max-width: none; }
   .money-hero { padding: 24px 20px; gap: 24px; }
-  .money-big { font-size: 48px; }
-  .money-sub { font-size: 8px; gap: 6px; }
+  .money-big { font-size: 49px; }
+  .money-sub { font-size: 10px; gap: 6px; }
   /* Phones: the ring is a 150px circle you cannot read a slice of. The legend
      already lists every spend, so it carries the share as a number instead. */
   .donut-wrap { gap: 0; }
   .donut, .donut-hole { display: none; }
   .donut-key { min-width: 0; width: 100%; gap: 8px; }
-  .donut-key li { font-size: 7px; }
+  .donut-key li { font-size: 9px; }
   .bar-row { grid-template-columns: 1fr 78px; grid-template-areas: "ch val" "track per"; gap: 6px 10px; padding: 10px 2px; }
   .bar-ch { grid-area: ch; }
   .bar-val { grid-area: val; }
@@ -2274,9 +2319,9 @@ button:focus-visible, [role="button"]:focus-visible {
   .kit-hero { grid-template-columns: 94px 1fr; padding: 20px; gap: 18px; }
   .kit-ring { width: 90px; height: 90px; }
   .kit-ring::before { inset: 3px; }
-  .kit-ring-hole b { font-size: 26px; }
+  .kit-ring-hole b { font-size: 27px; }
   .kit-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .kit-stats b { font-size: 24px; }
+  .kit-stats b { font-size: 25px; }
   .kit-actions { grid-column: 1 / -1; }
   .kit-group-head { grid-template-columns: 16px 1fr auto; gap: 6px 8px; }
   .kit-group-label { flex-direction: column; align-items: flex-start; gap: 2px; }
@@ -2290,9 +2335,9 @@ button:focus-visible, [role="button"]:focus-visible {
 
   .cover { padding: 24px 20px; }
   .cover-center h1 { font-size: clamp(54px, 16vw, 90px); }
-  .cover-kicker { font-size: 8px; letter-spacing: .2em; }
+  .cover-kicker { font-size: 10px; letter-spacing: .2em; }
   .cover-route { left: 20px; right: 20px; bottom: 86px; }
-  .cover-bottom { gap: 16px; font-size: 7.5px; padding-top: 14px; }
+  .cover-bottom { gap: 16px; font-size: 9.5px; padding-top: 14px; }
   .cover-enter { display: none; }
 }
 

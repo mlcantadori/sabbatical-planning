@@ -83,7 +83,7 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
         }}>
           <div style={{
             fontFamily: '"JetBrains Mono", monospace',
-            fontSize: 8, letterSpacing: '0.24em',
+            fontSize: 10, letterSpacing: '0.24em',
             color: 'rgba(244,236,220,.24)', textTransform: 'uppercase',
           }}>loading</div>
         </div>
@@ -92,7 +92,7 @@ function Photo({ keyword, alt, ratio = '4/3', radius = 0, caption, className = '
         <div style={{
           position: 'absolute', bottom: 12, left: 14, right: 14,
           fontFamily: '"JetBrains Mono", monospace',
-          fontSize: 9, color: 'rgba(255,255,255,.92)',
+          fontSize: 11, color: 'rgba(255,255,255,.92)',
           letterSpacing: '0.16em', textTransform: 'uppercase',
           textShadow: '0 1px 8px rgba(0,0,0,.8)',
         }}>{caption}</div>
