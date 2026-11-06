@@ -387,7 +387,7 @@ window.TRIP = (function () {
       country: 'Indonesia', flag: '🇮🇩', title: 'Indonesia',
       start: '2027-02-24', end: '2027-03-21', days: 25,
       theme: 'Java temples in Ramadan calm, Bali staging, then the best diving on Earth',
-      intro: 'Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). Ramadan-quiet Java — Borobudur without crowds, night markets after dark — then a Nyepi silent day in Ubud and a domestic hop to Sorong Mar 10. Board Mar 11 with zero international stress.',
+      intro: 'Fly in from Tokyo Feb 24 on the 30-day free entry (exit Mar 21, ~26 days used). Ramadan-quiet Java — Borobudur without crowds, night markets after dark — then a Nyepi silent day in Ubud and a domestic hop to Sorong Mar 10. Board Mar 11, off the boat Mar 20, fly to Borneo the next morning — zero international stress until then.',
       tldr: 'Jakarta · Yogyakarta · Ubud · Raja Ampat liveaboard',
       weather: { hi: 32, lo: 25, label: 'Wet-tail Java/Bali → Raja mid-season, 32°/25°', emoji: '🐠', rainyDays: 6 },
       photos: ['manta ray indonesia'],
@@ -397,11 +397,13 @@ window.TRIP = (function () {
         { name: 'Yogyakarta', photo: 'borobudur sunrise', days: 4, query: 'Borobudur, Yogyakarta',
           highlights: ['Borobudur sunrise — Ramadan-quiet','Prambanan + Kraton + Malioboro','Kampung Ramadan night market after dark','Daytime food via malls/hotels (warungs curtained); earplugs for 3am sahur drums','Fly Yogyakarta → Bali by Mar 2 (pre-mudik)'] },
         { name: 'Ubud', photo: 'bali ubud rice terrace', days: 8, query: 'Ubud, Bali',
-          highlights: ['Mar 2–9: slow staging before the liveaboard','Tegallalang rice terraces at dawn, Tirta Empul water temple','Monkey Forest, massages — no agenda','Mar 8: Nyepi silent day — hotel-only rest day','Gear check; Mar 10: fly Bali → Sorong via Makassar'] },
-        { name: 'Sorong', days: 1, query: 'Sorong, West Papua',
+          highlights: ['Mar 2–10: slow staging before the liveaboard','Tegallalang rice terraces at dawn, Tirta Empul water temple','Monkey Forest, massages — no agenda','Mar 8: Nyepi silent day — hotel-only rest day','Gear check; Mar 10: fly Bali → Sorong via Makassar'] },
+        { name: 'Sorong (pre-boat)', days: 1, query: 'Sorong, West Papua',
           highlights: ['Transit day: Mar 10 Bali → Sorong domestic — already in-country, no immigration stress','Buffer night in Sorong before the Mar 11 boarding'] },
-        { name: 'Raja Ampat Liveaboard', photo: 'manta ray cleaning station', days: 10, query: 'Wayag, Raja Ampat',
+        { name: 'Raja Ampat Liveaboard', photo: 'manta ray cleaning station', days: 9, query: 'Wayag, Raja Ampat',
           highlights: ['Mar 11–20: Wayag — postcard karst islands, kayak + hike viewpoint','Cape Kri — world record fish count dive site','Manta Sandy — manta ray cleaning station','Melissa\'s Garden — pristine hard coral','Pianemo — smaller Wayag, equally dramatic, fewer boats','Blue Water Mantas — oceanic, 6m wingspan','Wobbegongs, walking sharks, pygmy seahorses, nudibranchs'] },
+        { name: 'Sorong (post-boat)', days: 1, query: 'Sorong, West Papua',
+          highlights: ['Mar 20: off the boat in Sorong — the operator\'s 9-night run ends here, not at the Mar 21 flight','Repack dive gear, last Papua meal, early night'] },
       ],
     },
     {
@@ -440,10 +442,8 @@ window.TRIP = (function () {
           highlights: ['Japanese WWII wrecks — Okikawa Maru, Irako, Akitsushima (sunk 1944)','Day 1 check-dive first, deep wrecks after','Kayangan Lake — crystal-clear inland lake framed by karst','Barracuda Lake — thermocline diving (hot/cold layers)','CYC Beach + Twin Lagoon by banca boat'] },
         { name: 'El Nido', photo: 'el nido big lagoon', days: 4, query: 'El Nido, Palawan',
           highlights: ['Island-hopping: Big + Small Lagoons, Cadlao Island','Second lagoon day — glassy-seas bonus + weather buffer','Nacpan Beach — empty twin beach','Limestone cliffs, turquoise shallows, snorkeling'] },
-        { name: 'Cebu / Moalboal', photo: 'moalboal sardine run', days: 2, query: 'Moalboal, Cebu, Philippines',
-          highlights: ['Sardine Run — millions of sardines schooling at Pescador Island (accessible from shore)','Turtle Beach — sea turtles feeding right off the beach','Malapascua thresher dropped — Raja already delivered the apex','Kawasan Falls canyoneering (if time)'] },
-        { name: 'Denpasar', days: 1, query: 'Ngurah Rai Airport, Bali',
-          highlights: ['Transit day: Apr 14 Cebu → Denpasar (daily, easy)','Indonesia Entry 2 starts ~Apr 14 — onward ticket to Singapore May 1 in hand'] },
+        { name: 'Cebu / Moalboal', photo: 'moalboal sardine run', days: 3, query: 'Moalboal, Cebu, Philippines',
+          highlights: ['Sardine Run — millions of sardines schooling at Pescador Island (accessible from shore)','Turtle Beach — sea turtles feeding right off the beach','Malapascua thresher dropped — Raja already delivered the apex','Kawasan Falls canyoneering (if time)','Apr 14: fly Cebu → Denpasar (via Manila/Singapore) — Indonesia Entry 2 starts; onward ticket to Singapore May 1 in hand'] },
       ],
     },
     {
@@ -456,8 +456,10 @@ window.TRIP = (function () {
       weather: { hi: 32, lo: 24, label: 'Dry season building, 32°/24°', emoji: '🐉', rainyDays: 4 },
       photos: ['kelingking beach trex'],
       places: [
-        { name: 'Nusa Penida', photo: 'broken beach', days: 4, query: 'Kelingking Beach, Nusa Penida',
-          highlights: ['Apr 14: land Bali from Cebu (Entry 2 starts); fast boat Sanur → Penida Apr 15','Kelingking Beach — T-Rex cliff, most photographed in the Bali region','Angel\'s Billabong + Broken Beach — natural infinity pool carved into clifftop','Crystal Bay — reef mantas year-round (early morning dive)','Atuh Beach — remote east coast, dramatic rock formations','Scooter rental for full freedom'] },
+        { name: 'Sanur (arrival night)', days: 1, query: 'Sanur, Bali',
+          highlights: ['Apr 14: land Bali from Cebu (Entry 2 starts) — Sanur, because the fast boat leaves from there and a same-day connection after an international arrival is not worth the risk','Slow evening on the beach path; book the Penida boat for tomorrow morning'] },
+        { name: 'Nusa Penida', photo: 'broken beach', days: 3, query: 'Kelingking Beach, Nusa Penida',
+          highlights: ['Apr 15: fast boat Sanur → Penida (~45min)','Kelingking Beach — T-Rex cliff, most photographed in the Bali region','Angel\'s Billabong + Broken Beach — natural infinity pool carved into clifftop','Crystal Bay — reef mantas year-round (early morning dive)','Atuh Beach — remote east coast, dramatic rock formations','Scooter rental for full freedom'] },
         { name: 'Komodo', photo: 'komodo dragon', days: 7, query: 'Komodo National Park',
           highlights: ['Apr 18: fly Bali → Labuan Bajo — dramatic harbor, wooden phinisi boats','Manta Point — oceanic mantas in strong current','Crystal Rock + Castle Rock — world-class drift dives','Pink Beach — crushed red coral, excellent snorkeling','Batu Bolong — coral so dense no bare rock visible','Komodo dragons with ranger at Rinca or Komodo Island','Padar Island sunrise hike — three colored bays stretching below'] },
         { name: 'Bali + Volcano', photo: 'mount batur sunrise', days: 6, query: 'Ubud, Bali',
@@ -659,6 +661,12 @@ window.TRIP = (function () {
   // flights stay in budget.flights; this list covers trains, buses, ferries and
   // in-chapter flights so every travel day reaches the calendar.
   const transports = [
+    // Brasil — internal hops (travelled)
+    { mode: 'flight', route: 'Rio de Janeiro → Fortaleza', date: '2026-07-20', note: 'In-chapter hop — Cumbuco next' },
+    { mode: 'flight', route: 'Fortaleza → São Paulo', date: '2026-08-19', note: 'In-chapter hop — farewell week, then the Toronto flight Aug 26' },
+    // Turkey — in-chapter flights inside the Aegean car loop
+    { mode: 'flight', route: 'Kayseri → Izmir', date: '2026-09-24', note: 'In-chapter hop, 22:50 — car collected ~01:00 at ADB' },
+    { mode: 'flight', route: 'Izmir → Istanbul', date: '2026-10-02', note: 'In-chapter hop, 19:45 — car returned at ADB first' },
     // Greece — ferries
     { mode: 'ferry', route: 'Rethymno → Santorini', date: '2026-09-12', note: 'Seasonal fast ferry (~2h)' },
     { mode: 'ferry', route: 'Santorini → Folegandros', date: '2026-09-14', note: 'Inter-island ferry' },
@@ -701,8 +709,19 @@ window.TRIP = (function () {
     { mode: 'train', route: 'Myoko Kogen → Tokyo', date: '2027-02-23', note: 'Hokuriku Shinkansen + local transfer' },
     // Indonesia A
     { mode: 'train', route: 'Jakarta → Yogyakarta', date: '2027-02-26', note: 'Executive train (or 1h flight)' },
+    { mode: 'flight', route: 'Yogyakarta → Bali', date: '2027-03-02', note: 'In-chapter hop ~1h — pre-mudik, book 14+ days ahead' },
+    // Borneo — KK base, rainforest, back
+    { mode: 'flight', route: 'Kota Kinabalu → Sandakan (Sepilok)', date: '2027-03-23', note: '~45min to Sandakan + 30min road; the all-road alternative is ~6h' },
+    { mode: 'bus', route: 'Sepilok → Kinabatangan (Sukau)', date: '2027-03-24', note: '~2h lodge transfer, usually bundled with the river lodge' },
+    { mode: 'bus', route: 'Kinabatangan → Kota Kinabalu', date: '2027-03-29', note: 'Road via Sandakan, ~5–6h — the long transfer day' },
+    // Philippines — Palawan south, then Cebu
+    { mode: 'flight', route: 'Manila → Coron (Busuanga)', date: '2027-04-02', note: '~1h20, then a 30min van into Coron town' },
+    { mode: 'ferry', route: 'Coron → El Nido', date: '2027-04-07', note: 'Fast ferry ~3h30–4h — weather-exposed; van + boat is the fallback' },
+    { mode: 'flight', route: 'El Nido → Cebu', date: '2027-04-11', note: 'Via Manila (Lio–MNL–CEB) — half a travel day' },
     // Indonesia B
-    { mode: 'ferry', route: 'Sanur → Nusa Penida', date: '2027-04-15', note: 'Fast boat ~45min' },
+    { mode: 'ferry', route: 'Sanur → Nusa Penida', date: '2027-04-15', note: 'Fast boat ~45min — the morning after the Cebu arrival' },
+    { mode: 'flight', route: 'Bali → Labuan Bajo', date: '2027-04-18', note: 'In-chapter hop ~1h10 into Komodo' },
+    { mode: 'flight', route: 'Labuan Bajo → Bali', date: '2027-04-25', note: 'In-chapter hop ~1h10 — back for the volcano finish' },
     // China Spring — May sweet spot
     { mode: 'train', route: 'Xi\'an → Chengdu', date: '2027-05-11', note: 'HSR ~3.5h' },
     { mode: 'train', route: 'Chengdu → Chongqing', date: '2027-05-16', note: 'HSR ~1h' },

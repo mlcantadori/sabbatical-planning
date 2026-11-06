@@ -48,7 +48,7 @@ window.TODO_ITEMS = [
   { id: 'turkey-2', ch: 'turkey', place: 'Göreme', cat: 'stay', title: 'Göreme stay Sep 21–24', note: 'Booked', due: '2026-08-31', done: true },
   { id: 'turkey-3-alacati', ch: 'turkey', place: 'Alaçatı', cat: 'stay', title: 'Alaçatı stay Sep 24–27 (3n)', note: 'Room from Sep 24 for the 1am Sep 25 arrival — booked; drives to Şirince on Sep 27', due: '2026-09-03', done: true },
   { id: 'turkey-3-sirince', ch: 'turkey', place: 'Şirince', cat: 'stay', title: 'Şirince stay Sep 27', note: 'Booked', due: '2026-09-06', done: true },
-  { id: 'turkey-3-kas', ch: 'turkey', place: 'Kaş', cat: 'stay', title: 'Kaş stay Sep 28–30', note: 'Booked', due: '2026-09-07', done: true },
+  { id: 'turkey-3-kas', ch: 'turkey', place: 'Kaş', cat: 'stay', title: 'Kaş stay Sep 28 – Oct 1 (3n)', note: 'Booked', due: '2026-09-07', done: true },
   { id: 'turkey-3-akyaka', ch: 'turkey', place: 'Akyaka', cat: 'stay', title: 'Akyaka stay Oct 1', note: 'Booked', due: '2026-09-10', done: true },
   { id: 'turkey-4', ch: 'turkey', place: 'Izmir', cat: 'car', title: 'Izmir rental car Sep 25 – Oct 2', note: 'Collect ~1am Sep 25; loop Alaçatı→Şirince→Kaş→Akyaka; return Oct 2 — rented, €220', due: '2026-09-20', done: true },
   { id: 'turkey-5', ch: 'turkey', place: null, cat: 'transport', title: 'Kayseri→Izmir Sep 24 22:50', note: 'Bought', due: '2026-09-01', done: true },
@@ -59,6 +59,7 @@ window.TODO_ITEMS = [
 
   // ── baku ──────────────────────────────────────────────────────────
   { id: 'baku-1', ch: 'baku', place: null, cat: 'visa', title: 'Azerbaijan ASAN e-Visa', note: 'Done — issued', due: '2026-10-05', done: true },
+  { id: 'baku-2', ch: 'baku', place: 'Baku', cat: 'stay', title: 'Baku hotel (2n) — free stopover', note: 'No booking: the Azerbaijan Airlines stopover programme covers the hotel both nights, which is why the budget carries $0 lodging for Baku. Book the stopover when ticketing, not a room', due: '2026-09-01', done: true },
 
   // ── india ─────────────────────────────────────────────────────────
   { id: 'india-1', ch: 'india', place: 'Agra + Delhi + Varanasi', cat: 'transport', title: 'Agra–Delhi round trip + Delhi–Varanasi trains', note: 'Booked via IRCTC', due: '2026-09-01', done: true },
@@ -152,29 +153,32 @@ window.TODO_ITEMS = [
   { id: 'indonesia-a-3', ch: 'indonesia-a', place: 'Java', cat: 'transport', title: 'Java executive trains', note: 'Book 60+ days ahead (mudik)', due: '2027-01-10', done: false },
   { id: 'indonesia-a-9', ch: 'indonesia-a', place: 'Yogyakarta → Bali', cat: 'transport', title: 'Yogyakarta→Bali flight by Mar 2', note: '1h flight, pre-mudik; book 14+ days ahead', due: '2027-02-10', done: false },
   { id: 'indonesia-a-4', ch: 'indonesia-a', place: 'Bali → Sorong', cat: 'transport', title: 'Bali→Sorong Mar 10 via Makassar', note: 'Book 6–8 weeks ahead (Lebaran surge)', due: '2027-01-20', done: false },
-  { id: 'indonesia-a-5', ch: 'indonesia-a', place: 'Ubud', cat: 'stay', title: 'Ubud slow 8n stay (Mar 2–9)', note: 'Staging before the liveaboard; Nyepi silent day Mar 8 (hotel-only)', due: '2027-02-09', done: false },
+  { id: 'indonesia-a-5', ch: 'indonesia-a', place: 'Ubud', cat: 'stay', title: 'Ubud slow 8n stay (Mar 2–10)', note: 'Staging before the liveaboard; Nyepi silent day Mar 8 (hotel-only)', due: '2027-02-09', done: false },
   { id: 'indonesia-a-7', ch: 'indonesia-a', place: 'Jakarta', cat: 'stay', title: 'Jakarta stay (2n)', note: 'Feb 24–26, Ramadan-evening markets', due: '2027-02-03', done: false },
   { id: 'indonesia-a-8', ch: 'indonesia-a', place: 'Yogyakarta', cat: 'stay', title: 'Yogyakarta stay (4n)', note: 'Borobudur + Prambanan base', due: '2027-02-05', done: false },
+  { id: 'indonesia-a-10', ch: 'indonesia-a', place: 'Sorong', cat: 'stay', title: 'Sorong hotel ×2 (pre-boat Mar 10, post-boat Mar 20)', note: 'One night before boarding, one after the boat returns — the operator\'s run is Mar 11–20, and the flight to Kota Kinabalu leaves Mar 21. Confirm whether the liveaboard bundles the pre-night', due: '2027-01-20', done: false },
   { id: 'indonesia-a-6', ch: 'indonesia-a', place: 'Sorong → Kota Kinabalu', cat: 'transport', title: 'Sorong→Kota Kinabalu Mar 21 exit', note: 'Entry 1 uses ~26 of 30 free days — onward ticket in hand; starts the Borneo chapter', due: '2027-02-01', done: false },
 
   // ── borneo ────────────────────────────────────────────────────────
-  { id: 'borneo-2', ch: 'borneo', place: 'Kinabatangan', cat: 'stay', title: 'Kinabatangan river lodge', note: 'Mar 21–31 chapter; book 2–3 months ahead — Mar 26 Good Friday (Sabah holiday), lodges operate', due: '2027-03-03', done: false },
+  { id: 'borneo-2', ch: 'borneo', place: 'Kinabatangan', cat: 'stay', title: 'Kinabatangan river lodge (5n, Mar 24–29)', note: 'Book 2–3 months ahead — Mar 26 Good Friday (Sabah holiday), lodges operate', due: '2027-03-03', done: false },
   { id: 'borneo-3', ch: 'borneo', place: 'Sipadan', cat: 'attraction', title: 'Sipadan permits (only if adding 3 days)', note: '120 permits/day cap — book by Nov 2026', due: '2026-11-30', done: false },
   { id: 'borneo-4', ch: 'borneo', place: 'Kota Kinabalu → Manila', cat: 'transport', title: 'Kota Kinabalu→Manila Mar 31 via Kuala Lumpur', note: 'Entry leg for the Philippines', due: '2027-02-15', done: false },
-  { id: 'borneo-5', ch: 'borneo', place: 'Kota Kinabalu', cat: 'stay', title: 'Kota Kinabalu stays (Mar 21–22 + 29–31)', note: 'Waterfront nights bracketing Sepilok + Kinabatangan', due: '2027-02-28', done: false },
+  { id: 'borneo-5', ch: 'borneo', place: 'Kota Kinabalu', cat: 'stay', title: 'Kota Kinabalu stays (Mar 21–23 + 29–31)', note: 'Waterfront nights bracketing Sepilok + Kinabatangan', due: '2027-02-28', done: false },
+  { id: 'borneo-6', ch: 'borneo', place: 'Sepilok + Sandakan', cat: 'stay', title: 'Sepilok/Sandakan night (1n, Mar 23)', note: 'Orangutan + sun bear morning needs a bed 30min away. Confirm first whether the Kinabatangan operator bundles this night and the transfer — many do, which would make this item redundant', due: '2027-03-03', done: false },
 
   // ── philippines ───────────────────────────────────────────────────
   { id: 'philippines-2-manila', ch: 'philippines', place: 'Manila', cat: 'stay', title: 'Manila stay (2n)', note: 'Mar 31 – Apr 2, rest + dive-gear prep', due: '2027-03-10', done: false },
   { id: 'philippines-2-coron', ch: 'philippines', place: 'Coron', cat: 'stay', title: 'Coron stay (5n)', note: 'Wreck week base', due: '2027-03-12', done: false },
   { id: 'philippines-2-elnido', ch: 'philippines', place: 'El Nido', cat: 'stay', title: 'El Nido stay (4n)', note: 'Lagoon days', due: '2027-03-17', done: false },
-  { id: 'philippines-2-cebu', ch: 'philippines', place: 'Cebu / Moalboal', cat: 'stay', title: 'Cebu/Moalboal stay (2n)', note: 'Sardine-run finale', due: '2027-03-22', done: false },
+  { id: 'philippines-2-cebu', ch: 'philippines', place: 'Cebu / Moalboal', cat: 'stay', title: 'Cebu/Moalboal stay (3n)', note: 'Sardine-run finale', due: '2027-03-22', done: false },
   { id: 'philippines-3', ch: 'philippines', place: 'Coron', cat: 'attraction', title: 'Coron wreck dive package (Apr 4–8 window)', note: 'Check-dive first, deep wrecks after; book the dive shop ahead', due: '2027-03-10', done: false },
   { id: 'philippines-6', ch: 'philippines', place: 'Cebu → Bali', cat: 'transport', title: 'Cebu→Bali Apr 14 (routing TBD)', note: 'Via Manila or Singapore — decide routing, then ticket; Entry 2 starts; onward ticket to Singapore May 1 in hand', due: '2027-03-01', done: false },
 
   // ── indonesia-b ───────────────────────────────────────────────────
-  { id: 'indonesia-b-1-penida', ch: 'indonesia-b', place: 'Nusa Penida', cat: 'stay', title: 'Penida stay (4n)', note: 'Apr 14–18, scooter freedom', due: '2027-03-24', done: false },
+  { id: 'indonesia-b-1-penida', ch: 'indonesia-b', place: 'Nusa Penida', cat: 'stay', title: 'Penida stay (3n)', note: 'Apr 15–18, scooter freedom — Sanur gets the arrival night', due: '2027-03-24', done: false },
+  { id: 'indonesia-b-0-sanur', ch: 'indonesia-b', place: 'Sanur', cat: 'stay', title: 'Sanur arrival night (1n, Apr 14)', note: 'Land Bali from Cebu Apr 14; the fast boat to Penida leaves Sanur, and a same-day connection through an international arrival is not worth it', due: '2027-03-24', done: false },
   { id: 'indonesia-b-1-komodo', ch: 'indonesia-b', place: 'Labuan Bajo', cat: 'stay', title: 'Labuan Bajo stay (7n)', note: 'Apr 18–25, phinisi-harbor base', due: '2027-03-28', done: false },
-  { id: 'indonesia-b-1-bali', ch: 'indonesia-b', place: 'Bali', cat: 'stay', title: 'Bali stay (6n)', note: 'Apr 25–30, temples + volcano finish', due: '2027-04-04', done: false },
+  { id: 'indonesia-b-1-bali', ch: 'indonesia-b', place: 'Bali', cat: 'stay', title: 'Bali stay (6n)', note: 'Apr 25 – May 1, temples + volcano finish', due: '2027-04-04', done: false },
   { id: 'indonesia-b-2', ch: 'indonesia-b', place: 'Bali → Labuan Bajo', cat: 'transport', title: 'Bali–Labuan Bajo flight Apr 18', note: 'Into Komodo', due: '2027-03-15', done: false },
   { id: 'indonesia-b-3', ch: 'indonesia-b', place: 'Komodo', cat: 'attraction', title: 'Komodo boat + dives', note: 'Manta Point + drift dives + dragons with ranger; book the operator ahead', due: '2027-03-20', done: false },
   { id: 'indonesia-b-4', ch: 'indonesia-b', place: 'Labuan Bajo → Bali', cat: 'transport', title: 'Labuan Bajo–Bali flight Apr 25', note: 'Back for the Bali + volcano finish', due: '2027-03-20', done: false },

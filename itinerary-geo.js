@@ -73,7 +73,6 @@ window.TRIP_GEO = {
     'korea/Seoul':                            [37.5665,  126.9780],
     // Malaysia — Dec west-coast chapter
     'malaysia/Kuala Lumpur':                  [ 3.1579,  101.7117],
-    'malaysia/Penang':                        [ 5.4141,  100.3288],
     'malaysia/Langkawi':                      [ 6.3500,   99.8000], // Pantai Cenang
     // Thailand — Andaman coast + Bangkok
     'thailand/Koh Lipe':                      [ 6.4890,   99.3025],
@@ -91,14 +90,15 @@ window.TRIP_GEO = {
     'philippines/Coron':                      [11.9964,  119.4192],
     'philippines/El Nido':                    [11.1949,  119.4013],
     'philippines/Cebu / Moalboal':            [10.2720,  123.4220],
-    'philippines/Denpasar':                    [-8.6500,  115.2167], // Ngurah Rai Airport
     // Indonesia A — Java + Bali staging + Raja (first stay)
     'indonesia-a/Jakarta':                      [ -6.2088,  106.8456],
     'indonesia-a/Yogyakarta':                   [ -7.7956,  110.3695], // Borobudur ~40km NW
     'indonesia-a/Ubud':                         [-8.5069,  115.2625],
-    'indonesia-a/Sorong':                      [-0.8917,  131.2500],
+    'indonesia-a/Sorong (pre-boat)':           [-0.8917,  131.2500],
+    'indonesia-a/Sorong (post-boat)':          [-0.8917,  131.2500],
     'indonesia-a/Raja Ampat Liveaboard':        [-0.5897,  130.1053], // Wayag
     // Indonesia B — Penida + Komodo + Batur (second stay)
+    'indonesia-b/Sanur (arrival night)':        [-8.6870,  115.2620],
     'indonesia-b/Nusa Penida':                  [-8.7270,  115.5444],
     'indonesia-b/Komodo':                       [-8.4889,  119.8825], // Labuan Bajo
     'indonesia-b/Bali + Volcano':               [-8.5069,  115.2625], // Ubud
