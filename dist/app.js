@@ -533,7 +533,22 @@
         className: "reel-num"
       }, c.kind === 'chapter' && c.num != null ? String(c.num).padStart(2, '0') : '··'), isNow && /*#__PURE__*/React.createElement("span", {
         className: "reel-now"
-      }, /*#__PURE__*/React.createElement("i", null), " Now"), /*#__PURE__*/React.createElement("span", {
+      }, /*#__PURE__*/React.createElement("i", null), " Now"), isPast && !isNow && /*#__PURE__*/React.createElement("span", {
+        className: "reel-done",
+        role: "img",
+        title: "Already travelled",
+        "aria-label": "Already travelled"
+      }, /*#__PURE__*/React.createElement("svg", {
+        viewBox: "0 0 12 12",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "1.8",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        "aria-hidden": "true"
+      }, /*#__PURE__*/React.createElement("path", {
+        d: "M2.4 6.4 4.8 8.8 9.6 3.4"
+      }))), /*#__PURE__*/React.createElement("span", {
         className: "reel-days"
       }, c.days, " nights")), /*#__PURE__*/React.createElement("span", {
         className: "reel-meta"
@@ -579,6 +594,9 @@
     });
     const isMobile = useIsMobile();
     const stageRef = React.useRef(null);
+    // Timestamp of the last title tap that opened the sheet, so the map's click
+    // on the same release does not immediately close it again (see below).
+    const swallowClick = React.useRef(0);
 
     // Trackpad pinch arrives as ctrl+wheel, and both OrbitControls and
     // Leaflet listen on the map surface only — so a pinch that started over
@@ -681,6 +699,79 @@
       if (view === 'ledger' || view === 'kit') setView('atlas');
     };
 
+    // The giant name is scenery on touch — pointer-events: none, so a thumb on
+    // it still pans and pinches the map (a button there ate one finger of every
+    // pinch, and Leaflet/OrbitControls never saw the other). Its tap is
+    // recovered here instead of in CSS: on release, a short single-finger tap
+    // inside the name's box opens the chapter, unless a pin or a real control
+    // was under the finger — the title is the biggest target, not the top one.
+    React.useEffect(() => {
+      const stage = stageRef.current;
+      if (!stage || view !== 'atlas') return undefined;
+      const slop = 12;
+      let start = null;
+      const inName = (x, y) => {
+        const el = stage.querySelector('.atlas-name');
+        if (!el) return false;
+        const r = el.getBoundingClientRect();
+        return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+      };
+      const onTouchStart = e => {
+        // Two fingers on the title is a pinch, not two taps.
+        if (e.touches.length !== 1 || e.target.closest && e.target.closest('.atlas-name')) {
+          start = null;
+          return;
+        }
+        const t = e.touches[0];
+        start = inName(t.clientX, t.clientY) ? {
+          x: t.clientX,
+          y: t.clientY,
+          at: Date.now()
+        } : null;
+      };
+      const onTouchMove = e => {
+        if (!start) return;
+        const t = e.touches[0];
+        if (e.touches.length !== 1 || !t || Math.hypot(t.clientX - start.x, t.clientY - start.y) > slop) start = null;
+      };
+      const onTouchEnd = e => {
+        const s = start;
+        start = null;
+        if (!s) return;
+        const t = e.changedTouches && e.changedTouches[0];
+        if (!t || Date.now() - s.at > 700) return;
+        if (Math.hypot(t.clientX - s.x, t.clientY - s.y) > slop) return;
+        const under = document.elementFromPoint(t.clientX, t.clientY);
+        if (!under || !under.closest) return;
+        // A pin, a reel card or a tool under the finger keeps its own tap.
+        if (under.closest('.map-pin, .map-place, button, a, input, .reel-card')) return;
+        // And only a tap that actually landed on the map counts: the title box
+        // can sit under the open spread, and a thumb on the spread is not a tap
+        // on the title.
+        if (under.tagName !== 'CANVAS' && !under.closest('.map-container, .leaflet-container')) return;
+        // The map treats the same release as a click on empty water and would
+        // close the sheet we are about to open. preventDefault kills the
+        // compatibility click; the flag catches it if a browser sends one anyway.
+        e.preventDefault();
+        swallowClick.current = Date.now();
+        if (active) openChapter(active.id);
+      };
+      stage.addEventListener('touchstart', onTouchStart, {
+        passive: true
+      });
+      stage.addEventListener('touchmove', onTouchMove, {
+        passive: true
+      });
+      stage.addEventListener('touchend', onTouchEnd);
+      stage.addEventListener('touchcancel', onTouchEnd);
+      return () => {
+        stage.removeEventListener('touchstart', onTouchStart);
+        stage.removeEventListener('touchmove', onTouchMove);
+        stage.removeEventListener('touchend', onTouchEnd);
+        stage.removeEventListener('touchcancel', onTouchEnd);
+      };
+    }, [view, cover, active && active.id]);
+
     // A spine click is a date, not a chapter: jump to the city the plan has
     // you in that day, and leave the today marker where it is. The spread
     // opens on that stop; the camera only recentres.
@@ -704,6 +795,13 @@
       setPlaceZoom(12);
       setDetailOpen(true);
       if (view !== 'atlas') setView('atlas');
+    };
+
+    // Tapping empty map closes the spread — except on the release that a title
+    // tap just used to open it, which is the same click from the map's side.
+    const onBackgroundClick = () => {
+      if (Date.now() - swallowClick.current < 600) return;
+      setDetailOpen(false);
     };
 
     // "Whole route" is really "put me back where I am": today's chapter, and
@@ -769,7 +867,7 @@
         setDetailOpen(true);
       },
       onSelectPlace: onSelectPlace,
-      onBackgroundClick: () => setDetailOpen(false),
+      onBackgroundClick: onBackgroundClick,
       focusKey: focusKey
     }) : /*#__PURE__*/React.createElement(window.MapView, {
       selectedId: selectedId,
@@ -782,7 +880,7 @@
         setDetailOpen(true);
       },
       onSelectPlace: onSelectPlace,
-      onBackgroundClick: () => setDetailOpen(false),
+      onBackgroundClick: onBackgroundClick,
       focusKey: focusKey
     }))), /*#__PURE__*/React.createElement("div", {
       className: "atlas-vignette",

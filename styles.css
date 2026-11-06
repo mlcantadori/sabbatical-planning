@@ -90,15 +90,15 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 ::selection { background: rgba(255,122,69,.35); color: var(--ink); }
 
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: rgba(243,236,221,.16);
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb:hover { background: rgba(243,236,221,.3); background-clip: padding-box; }
+/* No visible scrollbars. The shell is a fixed stage, and the panels that do
+   scroll (binder, detail sheet, ledger table, the reel) read as pages — a
+   10px rail of chrome down the side of every one of them was the loudest thing
+   on screen. Nothing is taken away: wheel, trackpad, keys, scrollbar-gutter and
+   touch all still scroll normally; only the rail is withheld. */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+::-webkit-scrollbar { width: 0; height: 0; display: none; }
+/* Firefox ignores ::-webkit-scrollbar, so the containers opt out by name. */
+.page, .detail-scroll, .binder-scroll, .ledger-table-wrap, .reel-track { scrollbar-width: none; }
 
 .kicker {
   font-family: var(--f-mono);
@@ -516,10 +516,13 @@ button:focus-visible, [role="button"]:focus-visible {
   right: -5px;
   margin: 0;
 }
+/* The menu hangs off the last tab, and the tab is flush with the screen edge:
+   right:-30px pushed a 160px panel 30px past the viewport, where the app's
+   overflow:hidden cut it in half. Anchor it inside the edge instead. */
 .bottomnav .sync-menu {
   top: auto;
   bottom: calc(100% + 10px);
-  right: -30px;
+  right: 10px;
 }
 
 /* ════════════════════════════════════════════════════════════════════════
@@ -543,9 +546,9 @@ button:focus-visible, [role="button"]:focus-visible {
      side (a gradient that is still opaque at its own edge draws a rectangle)
      and fades out over the first ~800px of map. */
   background:
-    radial-gradient(ellipse 820px 660px at 140px 160px, rgba(6,9,13,.9) 0%, rgba(6,9,13,.6) 42%, rgba(6,9,13,.22) 70%, rgba(6,9,13,0) 100%),
-    linear-gradient(to bottom, rgba(6,9,13,.55) 0%, transparent 22%, transparent 62%, rgba(6,9,13,.88) 100%),
-    linear-gradient(to right, rgba(6,9,13,.55) 0%, transparent 34%, transparent 72%, rgba(6,9,13,.3) 100%);
+    radial-gradient(ellipse 820px 660px at 140px 160px, rgba(6,9,13,.76) 0%, rgba(6,9,13,.44) 42%, rgba(6,9,13,.15) 70%, rgba(6,9,13,0) 100%),
+    linear-gradient(to bottom, rgba(6,9,13,.42) 0%, transparent 22%, transparent 62%, rgba(6,9,13,.74) 100%),
+    linear-gradient(to right, rgba(6,9,13,.42) 0%, transparent 34%, transparent 72%, rgba(6,9,13,.22) 100%);
 }
 
 .atlas-title {
@@ -558,6 +561,16 @@ button:focus-visible, [role="button"]:focus-visible {
 }
 .atlas-title > * { pointer-events: none; }
 .atlas-title .atlas-name { pointer-events: auto; }
+/* A finger on the giant name used to steal the gesture from the map. The name
+   is a button, so a pinch with one thumb over the title hit the button and
+   Leaflet/OrbitControls never saw a second touch — the one place on the stage
+   where pinching simply did not work, and it is the biggest target on the
+   screen. On touch it becomes scenery: the reel's current card opens the same
+   chapter, and phones never showed the hover arrow that made the name read as
+   a button in the first place. Desktop keeps the shortcut. */
+@media (hover: none) {
+  .atlas-title .atlas-name { pointer-events: none; }
+}
 .atlas-name {
   display: flex;
   align-items: flex-start;
@@ -794,8 +807,21 @@ button:focus-visible, [role="button"]:focus-visible {
   box-shadow: 0 10px 30px rgba(255,122,69,.18);
 }
 .reel-card.is-selected .reel-photo { outline-color: rgba(243,236,221,.85); }
-.reel-card.is-past { opacity: .58; }
-.reel-card.is-past:hover, .reel-card.is-now, .reel-card.is-selected { opacity: 1; }
+/* A chapter you have left keeps its photograph at full strength: dimming a
+   third of the reel made the arc read as disabled, not as travelled. The check
+   is the signal — earned, quiet, and only on the four cards that have one. */
+.reel-done {
+  position: absolute;
+  top: 7px; right: 7px;
+  width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(6,9,13,.6);
+  box-shadow: inset 0 0 0 1px rgba(243,236,221,.24);
+  color: rgba(243,236,221,.9);
+  backdrop-filter: blur(3px);
+}
+.reel-done svg { width: 9px; height: 9px; }
 .reel-num {
   position: absolute;
   top: 8px; left: 9px;
@@ -2243,8 +2269,8 @@ button:focus-visible, [role="button"]:focus-visible {
      and gives the imagery back. The text shadows carry the last few percent. */
   .atlas-vignette {
     background:
-      linear-gradient(to bottom, rgba(6,9,13,.9) 0%, rgba(6,9,13,.8) 20%, rgba(6,9,13,.45) 36%, rgba(6,9,13,0) 52%),
-      linear-gradient(to bottom, transparent 64%, rgba(6,9,13,.9) 100%);
+      linear-gradient(to bottom, rgba(6,9,13,.82) 0%, rgba(6,9,13,.72) 20%, rgba(6,9,13,.4) 36%, rgba(6,9,13,0) 52%),
+      linear-gradient(to bottom, transparent 64%, rgba(6,9,13,.82) 100%);
   }
 
   .atlas-tools {
