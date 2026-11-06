@@ -699,7 +699,7 @@ window.TRIP = (function () {
     { mode: 'bus', route: 'Ko Lanta → Krabi airport', date: '2026-12-26', note: 'Ferry/van ~2.5–3h; then the afternoon flight to Bangkok' },
     // Taiwan — south to north
     { mode: 'train', route: 'Kaohsiung → Tainan', date: '2027-01-02', note: 'TRA ~35min' },
-    { mode: 'train', route: 'Tainan → Chiayi → Alishan', date: '2027-01-06', note: 'TRA to Chiayi + Alishan forest railway / bus up (~2.5h); book the forest railway ahead' },
+    { mode: 'train', route: 'Tainan → Chiayi → Alishan', date: '2027-01-06', note: 'TRA Tainan→Chiayi ~35min (no booking), then the forest railway — Chiayi 09:00 or 10:00, Alishan 14:56 on the second. Online booking opens 06:00 exactly 14 days out (Dec 23 for Jan 6); the county bus from Chiayi bus station is the fallback' },
     { mode: 'train', route: 'Chiayi → Taipei', date: '2027-01-08', note: 'Alishan bus down + HSR ~1h40' },
     // China spring finale
     { mode: 'train', route: 'Changsha → Shanghai', date: '2027-05-28', note: 'HSR ~5h' },
