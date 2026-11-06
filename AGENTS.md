@@ -77,7 +77,7 @@ and report only what is actually wrong:
 | Logistics | Visa validity and re-entry; impossible same-day connections; transfer days that eat a stop; last boat or flight |
 | Pacing | Stops under 4 nights; runs of 3-nighters; moves per fortnight |
 | Geography | Backtracking; hops that don't advance the arc; what moves downstream — recompute dates and run-rate |
-| Bookings | `todo-data.js` `done: true` before proposing to move a fixed date |
+| Bookings | `todo-data.js` `done: true` before proposing to move a fixed date; a `budget.locked` entry marked "Booked ✅" must agree with it |
 
 **D10 — Leave the repo smarter.**
 Every session should sharpen the next one:
