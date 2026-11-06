@@ -560,6 +560,9 @@ window.TRIP = (function () {
       { item: 'Kathmandu hotel, Oct 21–25 (4n)', cost: 171, note: 'Booked ✅ — $171 pre-trek' },
       { item: 'Kathmandu hotel, Nov 4–7 (3n)', cost: 129, note: 'Booked ✅ — $129 post-trek' },
       { item: 'Beijing stay, Nov 7–15 (8n)', cost: 472, note: 'Booked ✅ — $472 total for the 8 nights (was $528 at 9n; 9th night released)' },
+      { item: 'Huangshan stay, Nov 15–18 (3n)', cost: 79, note: 'Booked ✅ — $79 total, Tangkou (Zhaixi end), $26.33/n' },
+      { item: 'Hongcun stay, Nov 18–19 (1n)', cost: 60, note: 'Booked ✅ — $60, inside the village' },
+      { item: 'Hangzhou stay, Nov 19–23 (4n)', cost: 156, note: 'Booked ✅ — $156 total, Wulin Square / West Lake Cultural Square, $39/n' },
       { item: 'Hangzhou → Hong Kong flight Nov 23 (2 pax)', cost: 183, note: 'Booked ✅ — $183, 08:00–10:40, includes the HK visa reset entry' },
     ],
     // Per-chapter estimates for two. lodging/food are chapter totals; transport
@@ -572,7 +575,7 @@ window.TRIP = (function () {
       { id: 'baku', days: 2, lodging: 0, food: 140, transport: 60, activities: 30, fees: 50, note: 'Stopover program — lodging free · ASAN e-visa · walkable old city' },
       { id: 'india', days: 7, lodging: 315, food: 315, transport: 190, activities: 120, fees: 55, note: 'Agra day trip Oct 15 · Varanasi train Oct 17 booked ✅ · Varanasi Airbnb R$1,081 · VNS→KTM $343 booked ✅ · Taj + forts + boats' },
       { id: 'nepal', days: 17, lodging: 300, food: 260, transport: 100, activities: 1440, fees: 100, note: 'Trek $1,440 locked w/ Discovery World ($720pp; $144 paid, $1,296 due Oct 24) · KTM 7n (pre 4n Oct 21–25 booked ✅ $171 + post 3n Nov 4–7 booked ✅ $129) · KTM→PEK Nov 7 ($477) · tips/visa cash' },
-      { id: 'china-e1', days: 16, lodging: 1134, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 8n Nov 7–15 (booked $472) + Tangkou 3n + Hongcun 1n (no summit) + Hangzhou 4n · G87 Beijing South→Huangshan North + Huangshan North→Hangzhou East HSR · HGH→HKG $183 booked in flights · Suzhou moved to spring' },
+      { id: 'china-e1', days: 16, lodging: 1134, food: 1045, transport: 550, activities: 350, fees: 0, note: 'Beijing 8n Nov 7–15 (booked $472) + Tangkou 3n Nov 15–18 (booked $79) + Hongcun 1n Nov 18–19 (booked $60) + Hangzhou 4n Nov 19–23 (booked $156) — all 16 nights locked at $767 vs $1,134 est (−$367, $47.94/n) · G87 Beijing South→Huangshan North + Huangshan North→Hangzhou East HSR · HGH→HKG $183 booked in flights · Suzhou moved to spring' },
       { id: 'hk', days: 5, lodging: 750, food: 450, transport: 120, activities: 0, fees: 0, note: '~$150/n · Peak tram + ferries + Lamma · free gardens/markets' },
       { id: 'china-e2', days: 8, lodging: 620, food: 520, transport: 170, activities: 120, fees: 0, note: 'CAN 2n + Shenzhen 4n + Macau 2n · Shekou ferry + MFM→KUL direct · Shanghai moved to spring China' },
       { id: 'malaysia', days: 8, lodging: 440, food: 320, transport: 190, activities: 70, fees: 0, note: 'KL 4n + Langkawi 4n · KL→Langkawi flight · Langkawi is the ferry bridge to Koh Lipe' },
